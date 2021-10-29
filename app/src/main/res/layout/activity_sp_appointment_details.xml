@@ -286,14 +286,12 @@
                     android:textSize="14sp" />
 
             </LinearLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="5dp"
-                android:orientation="horizontal"
-                android:visibility="gone">
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="@dimen/width_appoitmentdetails"
@@ -414,7 +412,7 @@
                 <TextView
                     android:layout_width="@dimen/width_appoitmentdetails"
                     android:layout_height="wrap_content"
-                    android:text="@string/height"
+                    android:text="@string/vaccinated_details"
                     android:textColor="@color/black"
                     android:textSize="14sp" />
 
@@ -426,15 +424,13 @@
                     android:textSize="14sp" />
 
             </LinearLayout>
-
             <LinearLayout
-                android:id="@+id/ll_petlastvacinateddate"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="5dp"
                 android:orientation="horizontal"
-                android:visibility="gone">
+                android:id="@+id/ll_petlastvacinateddate">
 
                 <TextView
                     android:id="@+id/txt_lbl_petlastvaccinated"
