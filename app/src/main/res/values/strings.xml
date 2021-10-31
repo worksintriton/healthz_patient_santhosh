@@ -592,9 +592,22 @@
     <string name="shop_name">Shop Name</string>
     <string name="successfullycancelled">Successfully Cancelled</string>
     <string name="turn_off">Turn off</string>
-    <string name="version">Version V.13.10</string>
+    <string name="version">Version V.1.0</string>
     <string name="tablet_name">Tablet Name</string>
     <string name="consumption">Consumption</string>
     <string name="seems_there_is_a_connectivity_issue_please_check_your_internet_connection_and_try_again">Seems there is a connectivity issue. Please check your internet connection and try again</string>
+    <string name="welcome_to_healthz_shopping">Welcome to HealthZ shopping</string>
+    <string name="btn_log_in">Log In</string>
+    <string name="btn_sign_up">Sign Up</string>
+    <string name="phn_num_hint">Enter Phone Number</string>
+    <string name="verify_your_phone_number">Verify your phone number</string>
+    <string name="we_have_sent_you_an_sms_with_a_code_to_enter_number">We have sent you an SMS with a code to enter number</string>
+
+    <string-array name="array_name">
+        <item>+91</item>
+        <item>+81</item>
+        <item>+123</item>
+    </string-array>
+
 
 </resources>

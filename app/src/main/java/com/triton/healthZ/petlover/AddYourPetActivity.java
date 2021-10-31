@@ -28,7 +28,7 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.triton.healthZ.R;
-import com.triton.healthZ.activity.LoginActivity;
+import com.triton.healthZ.activity.VerifyPhoneNumberActivity;
 import com.triton.healthZ.api.APIClient;
 import com.triton.healthZ.api.RestApiInterface;
 import com.triton.healthZ.requestpojo.AddYourPetRequest;
@@ -636,7 +636,7 @@ public class AddYourPetActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        startActivity(new Intent(AddYourPetActivity.this,LoginActivity.class));
+        startActivity(new Intent(AddYourPetActivity.this, VerifyPhoneNumberActivity.class));
         finish();
     }
 

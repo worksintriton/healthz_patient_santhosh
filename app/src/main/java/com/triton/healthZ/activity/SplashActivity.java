@@ -10,29 +10,15 @@ import android.util.Log;
 
 
 import com.triton.healthZ.R;
-import com.triton.healthZ.doctor.DoctorDashboardActivity;
-import com.triton.healthZ.doctor.DoctorMyOrdrersActivity;
-
-import com.triton.healthZ.doctor.DoctorWalkinAppointmentsActivity;
-import com.triton.healthZ.petlover.PetLoverDashboardActivity;
-import com.triton.healthZ.petlover.PetMyOrdrersNewActivity;
-import com.triton.healthZ.petlover.PetMyappointmentsActivity;
-import com.triton.healthZ.petlover.PetWalkinappointmentsActivity;
-import com.triton.healthZ.serviceprovider.ServiceProviderDashboardActivity;
-import com.triton.healthZ.serviceprovider.shop.SPMyOrdrersActivity;
-import com.triton.healthZ.sessionmanager.SessionManager;
-import com.triton.healthZ.vendor.VendorDashboardActivity;
-
-import java.util.HashMap;
 
 public class SplashActivity extends AppCompatActivity {
 
     private static final String TAG = "SplashActivity";
     private static final long SPLASH_TIME_OUT = 3000;
-    private SessionManager session;
+ /*   private SessionManager session;
     private String usertype;
 
-    Boolean isNotifications = false;
+    Boolean isNotifications = false;*/
 
     @SuppressLint("LogNotTimber")
     @Override
@@ -40,7 +26,17 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        session = new SessionManager(getApplicationContext());
+        Log.w(TAG,"onCreate-->");
+
+        new Handler().postDelayed(() -> {
+
+                Intent i = new Intent(SplashActivity.this, WelcomeScreenActivity.class);
+                startActivity(i);
+                finish();
+
+        }, SPLASH_TIME_OUT);
+
+   /*     session = new SessionManager(getApplicationContext());
         boolean islogedin = session.isLoggedIn();
         Log.w(TAG,"islogedin-->"+islogedin);
 
@@ -70,10 +66,10 @@ public class SplashActivity extends AppCompatActivity {
             }
 
             if(!islogedin) {
-              /*  Intent i = new Intent(SplashActivity.this, LoginActivity.class);
+              *//*  Intent i = new Intent(SplashActivity.this, VerifyPhoneNumberActivity.class);
                 startActivity(i);
-                finish();*/
-                Intent i = new Intent(SplashActivity.this, SliderAfterSplashActivity.class);
+                finish();*//*
+                Intent i = new Intent(SplashActivity.this, WelcomeScreenActivity.class);
                 startActivity(i);
                 finish();
             }else{
@@ -173,10 +169,10 @@ public class SplashActivity extends AppCompatActivity {
 
                 boolean islogedin1 = session.isLoggedIn();
                 if(!islogedin1) {
-                   /* Intent i = new Intent(SplashActivity.this, LoginActivity.class);
+                   *//* Intent i = new Intent(SplashActivity.this, VerifyPhoneNumberActivity.class);
                     startActivity(i);
-                    finish(); */
-                    Intent i = new Intent(SplashActivity.this, SliderAfterSplashActivity.class);
+                    finish(); *//*
+                    Intent i = new Intent(SplashActivity.this, WelcomeScreenActivity.class);
                     startActivity(i);
                     finish();
                 }
@@ -217,6 +213,6 @@ public class SplashActivity extends AppCompatActivity {
             }, SPLASH_TIME_OUT);
         }
 
-
+*/
     }
 }

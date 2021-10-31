@@ -245,7 +245,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        startActivity(new Intent(SignUpActivity.this,LoginActivity.class));
+        startActivity(new Intent(SignUpActivity.this, VerifyPhoneNumberActivity.class));
         finish();
     }
 
@@ -576,7 +576,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         if (requestCode == REQUEST_CODE_ASK_PERMISSIONS) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-               /* startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+               /* startActivity(new Intent(getApplicationContext(), VerifyPhoneNumberActivity.class));
                 finish();*/
                 // Permission Granted
                 if (new ConnectionDetector(SignUpActivity.this).isNetworkAvailable(SignUpActivity.this)) {

@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.facebook.react.modules.core.PermissionListener;
 import com.triton.healthZ.R;
-import com.triton.healthZ.activity.LoginActivity;
+import com.triton.healthZ.activity.VerifyPhoneNumberActivity;
 import com.triton.healthZ.sessionmanager.SessionManager;
 
 
@@ -139,7 +139,7 @@ public class VideoCallPetLoverActivity extends AppCompatActivity implements Jits
     @Override
     public void onConferenceTerminated(Map<String, Object> data) {
         JitsiMeetLogger.i("Conference terminated: " + data);
-        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+        startActivity(new Intent(getApplicationContext(), VerifyPhoneNumberActivity.class));
         finish();
     }
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#2896c2</color>
-    <color name="colorPrimaryDark"> #2896c2</color>
+    <color name="colorPrimary">#2AC17E</color>
+    <color name="colorPrimaryDark"> #2AC17E</color>
     <color name="colorAccent">#FF4081</color>
    <!-- <color name="color1">#56B9A4</color>-->
     <color name="color1"> #2896c2</color>
@@ -13,7 +13,7 @@
     <color name="red">#BA0D4C</color>
     <color name="red_back">#c40505</color>
   <!--  <color name="green">#71D1BD</color>-->
-    <color name="green">#2896c2</color>
+    <color name="green">#2AC17E</color>
     <color name="light_red">#ccc5c7</color>
     <color name="hollo">#606060</color>
     <color name="light_gray_green1">#2ab7ca</color>
@@ -101,6 +101,7 @@
     <color name="new_thick_red_bgm_color">#E8571E</color>
     <color name="new_gree_color">#2896c2</color>
     <color name="darker_grey_new">#515151</color>
+    <color name="text_colors">#575757</color>
 
 
 </resources>

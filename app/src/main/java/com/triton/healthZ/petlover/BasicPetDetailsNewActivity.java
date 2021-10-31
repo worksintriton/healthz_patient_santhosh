@@ -34,7 +34,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.gson.Gson;
 import com.triton.healthZ.R;
-import com.triton.healthZ.activity.LoginActivity;
+import com.triton.healthZ.activity.VerifyPhoneNumberActivity;
 import com.triton.healthZ.adapter.PetBreedTypesListAdapter;
 import com.triton.healthZ.adapter.PetTypesListAdapter;
 import com.triton.healthZ.api.APIClient;
@@ -543,7 +543,7 @@ public class BasicPetDetailsNewActivity extends AppCompatActivity implements Pet
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+        startActivity(new Intent(getApplicationContext(), VerifyPhoneNumberActivity.class));
         finish();
     }
 

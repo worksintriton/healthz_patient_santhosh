@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/drawable/button_blue_rounded_corner.xml" value="0.290625" />
+        <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/drawable/new_rounded_corner_btn.xml" value="0.290625" />
+        <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/drawable/new_rounded_corner_btn_white.xml" value="0.290625" />
+        <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/drawable/user_bgm_trans.xml" value="0.290625" />
+        <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/drawable/white_corner_background.xml" value="0.290625" />
+        <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/activity_add_your_pet.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/activity_basic_pet_details.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/activity_login.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/activity_slider_after_splash.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/activity_splash.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/activity_verify_phone_number.xml" value="0.25" />
+        <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/activity_welcome_screen.xml" value="0.27447916666666666" />
+      </map>
+    </option>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+</project>

@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.triton.healthZ.R;
-import com.triton.healthZ.activity.LoginActivity;
+import com.triton.healthZ.activity.VerifyPhoneNumberActivity;
 import com.triton.healthZ.api.APIClient;
 import com.triton.healthZ.api.RestApiInterface;
 import com.triton.healthZ.requestpojo.PetUpdateOtherInformationRequest;
@@ -434,7 +434,7 @@ public class PetOtherInformationsActivity extends AppCompatActivity {
             intent.putExtra("petid", petid);
             startActivity(intent);
         }else{
-            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+            startActivity(new Intent(getApplicationContext(), VerifyPhoneNumberActivity.class));
             finish();
         }
 

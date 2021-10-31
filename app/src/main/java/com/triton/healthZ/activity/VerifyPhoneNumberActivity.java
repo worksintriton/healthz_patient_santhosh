@@ -36,19 +36,19 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
-    private final String TAG = "LoginActivity";
+public class VerifyPhoneNumberActivity extends AppCompatActivity implements View.OnClickListener {
+    private final String TAG = "VerifyPhoneNumberActivity";
 
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_loginheader)
-    ImageView img_loginheader;
+//    @SuppressLint("NonConstantResourceId")
+//    @BindView(R.id.img_loginheader)
+//    ImageView img_loginheader;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.avi_indicator)
     AVLoadingIndicatorView avi_indicator;
 
     @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.edt_emailorphone)
+    @BindView(R.id.edt_phoneno)
     EditText edt_emailorphone;
 
     @SuppressLint("NonConstantResourceId")
@@ -72,7 +72,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_verify_phone_number);
         ButterKnife.bind(this);
         edt_emailorphone.setTransformationMethod(new NumericKeyBoardTransformationMethod());
 
@@ -94,12 +94,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.txt_signup:
+         /*   case R.id.txt_signup:
                 startActivity(new Intent(LoginActivity.this,SignUpActivity.class));
                 break;
             case R.id.btn_verifyotp:
                 verifyValidator();
-                break;
+                break;*/
         }
 
     }
@@ -116,14 +116,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
 
         if (can_proceed) {
-            insertmappermission();
+        //    insertmappermission();
 
         }
 
     }
 
 
-    @SuppressLint("LogNotTimber")
+/*    @SuppressLint("LogNotTimber")
     private void loginResponseCall() {
         avi_indicator.setVisibility(View.VISIBLE);
         avi_indicator.smoothToShow();
@@ -200,9 +200,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }catch (Exception ignored){
 
         }
-    }
+    }*/
 
-    private void insertmappermission() {
+   /* private void insertmappermission() {
 
         int haslocationpermission;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -229,13 +229,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             }
         }
 
-    }
+    }*/
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        if (requestCode == REQUEST_CODE_ASK_PERMISSIONS) {
+        /*if (requestCode == REQUEST_CODE_ASK_PERMISSIONS) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-               /* startActivity(new Intent(getApplicationContext(), LoginActivity.class));
-                finish();*/
+               *//* startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                finish();*//*
                 // Permission Granted
                  if (new ConnectionDetector(LoginActivity.this).isNetworkAvailable(LoginActivity.this)) {
 
@@ -248,16 +248,17 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             }
         } else {
             super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        }
+        }*/
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 
     @Override
     public void onBackPressed() {
-        new android.app.AlertDialog.Builder(LoginActivity.this)
+/*        new android.app.AlertDialog.Builder(LoginActivity.this)
                 .setMessage("Are you sure you want to exit?")
                 .setCancelable(false)
                 .setPositiveButton("Yes", (dialog, id) -> LoginActivity.this.finishAffinity())
                 .setNegativeButton("No", null)
-                .show();
+                .show();*/
     }
 }

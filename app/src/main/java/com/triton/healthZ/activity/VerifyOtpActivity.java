@@ -159,7 +159,7 @@ public class VerifyOtpActivity extends AppCompatActivity implements View.OnClick
         }
 
 
-        if(fromactivity != null && fromactivity.equalsIgnoreCase("LoginActivity")){
+        if(fromactivity != null && fromactivity.equalsIgnoreCase("VerifyPhoneNumberActivity")){
             img_back.setVisibility(View.VISIBLE);
         }else{
             img_back.setVisibility(View.INVISIBLE);
@@ -288,8 +288,8 @@ public class VerifyOtpActivity extends AppCompatActivity implements View.OnClick
             timer = null;
 
         }
-        if(fromactivity != null && fromactivity.equalsIgnoreCase("LoginActivity")) {
-            Intent intent = new Intent(VerifyOtpActivity.this, LoginActivity.class);
+        if(fromactivity != null && fromactivity.equalsIgnoreCase("VerifyPhoneNumberActivity")) {
+            Intent intent = new Intent(VerifyOtpActivity.this, VerifyPhoneNumberActivity.class);
             intent.putExtra("phonemumber", phonenumber);
             startActivity(intent);
             finish();
@@ -423,7 +423,7 @@ public class VerifyOtpActivity extends AppCompatActivity implements View.OnClick
                                 String.valueOf(response.body().getPayment_gateway_detail().isIsproduction()));
                         Log.w(TAG,"ref_code : "+response.body().getData().getRef_code()+" fromactivity : "+fromactivity+" usertype : "+usertype);
 
-                        if(fromactivity != null && fromactivity.equalsIgnoreCase("LoginActivity")){
+                        if(fromactivity != null && fromactivity.equalsIgnoreCase("VerifyPhoneNumberActivity")){
                             if(usertype != 0){
                                 if(usertype == 1){
                                     startActivity(new Intent(VerifyOtpActivity.this, PetLoverDashboardActivity.class));

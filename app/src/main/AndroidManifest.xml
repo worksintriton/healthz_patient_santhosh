@@ -69,7 +69,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.triton.healthZ.activity.SliderAfterSplashActivity"
+            android:name="com.triton.healthZ.activity.WelcomeScreenActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
@@ -201,7 +201,7 @@
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.activity.LoginActivity"
+            android:name="com.triton.healthZ.activity.VerifyPhoneNumberActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
