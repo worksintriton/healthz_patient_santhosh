@@ -602,6 +602,18 @@
     <string name="phn_num_hint">Enter Phone Number</string>
     <string name="verify_your_phone_number">Verify your phone number</string>
     <string name="we_have_sent_you_an_sms_with_a_code_to_enter_number">We have sent you an SMS with a code to enter number</string>
+    <string name="phone_verification">Phone Verification</string>
+    <string name="enter_your_otp_code_here">Enter your OTP code here</string>
+    <string name="verify">Verify</string>
+    <string name="didn_t_you_received_any_code">Didn’t you received any code?</string>
+    <string name="resent_new_code">Resent new code</string>
+    <string name="create_your_account">Create your Account</string>
+    <string name="email_address">Email Address</string>
+    <string name="password">Password</string>
+    <string name="terms">By creating an account you agree with our terms and conditions</string>
+    <string name="create_an_account">Create an account</string>
+    <string name="already_a_member">Already a member?</string>
+    <string name="type_location">Type Location</string>
 
     <string-array name="array_name">
         <item>+91</item>

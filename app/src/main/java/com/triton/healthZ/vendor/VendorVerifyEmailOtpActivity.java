@@ -44,7 +44,7 @@ public class VendorVerifyEmailOtpActivity extends AppCompatActivity implements V
 
     private final String TAG = "SPVerifyEmailOtpActivity";
 
-    @SuppressLint("NonConstantResourceId")
+   /* @SuppressLint("NonConstantResourceId")
     @BindView(R.id.img_back)
     ImageView img_back;
 
@@ -93,14 +93,13 @@ public class VendorVerifyEmailOtpActivity extends AppCompatActivity implements V
     private String userid;
     private String token = "";
     private String firstname,lastname,useremail;
-
-
+*/
     @SuppressLint({"SetTextI18n", "LongLogTag"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verify_otp);
-        applicationData = (ApplicationData) getApplication();
+      /*  applicationData = (ApplicationData) getApplication();
 
         ButterKnife.bind(this);
         edt_otp.setTransformationMethod(new NumericKeyBoardTransformationMethod());
@@ -126,11 +125,11 @@ public class VendorVerifyEmailOtpActivity extends AppCompatActivity implements V
         btn_verify.setOnClickListener(this);
         txt_resend.setOnClickListener(this);
         startTimer();
-
+*/
 
     }
 
-    private void startTimer() {
+ /*   private void startTimer() {
         isOTPExpired = false;
           long timer_milliseconds = 120000;
           timer = new CountDownTimer(timer_milliseconds, 1000) {
@@ -157,13 +156,13 @@ public class VendorVerifyEmailOtpActivity extends AppCompatActivity implements V
             }
         };
         timer.start();
-    }
+    }*/
 
     @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.btn_verify:
+     /*       case R.id.btn_verify:
                 verifyValidator();
                 break;
             case R.id.img_back:
@@ -177,13 +176,14 @@ public class VendorVerifyEmailOtpActivity extends AppCompatActivity implements V
                         }
 
                     }
-                break;
+                break;*/
 
 
         }
 
 
     }
+/*
     public void verifyValidator() {
         boolean can_proceed = true;
         String enteredotp = edt_otp.getText().toString();
@@ -272,9 +272,11 @@ public class VendorVerifyEmailOtpActivity extends AppCompatActivity implements V
 
     }
     private EmailOTPRequest emailOTPRequest() {
-        /*
+        */
+/*
          * user_email : mohammedimthi2395@gmail.com
-         */
+         *//*
+
         EmailOTPRequest emailOTPRequest = new EmailOTPRequest();
         emailOTPRequest.setUser_email(useremail);
         Log.w(TAG,"EmailOTPRequest "+ new Gson().toJson(emailOTPRequest));
@@ -305,6 +307,7 @@ public class VendorVerifyEmailOtpActivity extends AppCompatActivity implements V
         super.onPause();
 
     }
+*/
 
 
 

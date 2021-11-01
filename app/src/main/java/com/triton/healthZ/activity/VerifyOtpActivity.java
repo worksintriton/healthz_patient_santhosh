@@ -47,31 +47,35 @@ import java.util.concurrent.TimeUnit;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import es.dmoral.toasty.Toasty;
+import in.aabhasjindal.otptextview.OTPListener;
+import in.aabhasjindal.otptextview.OtpTextView;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class VerifyOtpActivity extends AppCompatActivity implements View.OnClickListener {
-    @SuppressLint("NonConstantResourceId")
+   /* @SuppressLint("NonConstantResourceId")
     @BindView(R.id.img_back)
-    ImageView img_back;
+    ImageView img_back;*/
+   private final String TAG = "VerifyOtpActivity";
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.avi_indicator)
     AVLoadingIndicatorView avi_indicator;
 
     @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.btn_verify)
-    Button btn_verify;
+    @BindView(R.id.btn_verifyotp)
+    Button btn_verifyotp;
 
     @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.edt_otp)
-    EditText edt_otp;
+    @BindView(R.id.otp_view)
+    OtpTextView otp_view;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_resend)
     TextView txt_resend;
 
+/*
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_timer_count)
     TextView txt_timer_count;
@@ -80,7 +84,7 @@ public class VerifyOtpActivity extends AppCompatActivity implements View.OnClick
     @BindView(R.id.llresendotp)
     LinearLayout llresendotp;
 
-    private final String TAG = "VerifyOtpActivity";
+
     private CountDownTimer timer;
 
     private ApplicationData applicationData;
@@ -99,6 +103,9 @@ public class VerifyOtpActivity extends AppCompatActivity implements View.OnClick
     private String firstname,lastname,useremail;
     private String verifyemailstatus = "false";
     private String myrefcode = "";
+*/
+    String enteredotp , responseotp;
+    boolean can_proceed = true;
 
 
     @SuppressLint("LogNotTimber")
@@ -106,15 +113,20 @@ public class VerifyOtpActivity extends AppCompatActivity implements View.OnClick
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verify_otp);
-        applicationData = (ApplicationData) getApplication();
+       // applicationData = (ApplicationData) getApplication();
 
         ButterKnife.bind(this);
-        edt_otp.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+
+        Log.w(TAG,"onCreate-->");
+
+       // edt_otp.setTransformationMethod(new NumericKeyBoardTransformationMethod());
 
 
         avi_indicator.setVisibility(View.GONE);
 
-        Bundle extras = getIntent().getExtras();
+        btn_verifyotp.setOnClickListener(this);
+
+     /*   Bundle extras = getIntent().getExtras();
         if (extras != null) {
             phonenumber = extras.getString("phonemumber");
             otp = extras.getInt("otp");
@@ -169,7 +181,7 @@ public class VerifyOtpActivity extends AppCompatActivity implements View.OnClick
         btn_verify.setOnClickListener(this);
         txt_resend.setOnClickListener(this);
 
-/*
+*//*
         SmsBroadcastListener.bindListener(otpText -> {
             avi_indicator.smoothToHide();
             Log.w(TAG,"extractedOTP--->"+otpText);
@@ -181,17 +193,98 @@ public class VerifyOtpActivity extends AppCompatActivity implements View.OnClick
 
 
         });
-*/
+*//*
 
 
 
 
         startTimer();
+*/
+
+
+
+      /*
+        otp_view.setOtpListener(new OTPListener() {
+            @Override
+            public void onInteractionListener() {
+                // fired when user types something in the Otpbox
+            }
+
+            @Override
+            public void onOTPComplete(String otp) {
+                // fired when user has entered the OTP fully.
+
+
+            }
+
+
+        });
+*/
+
+    }
+
+    @SuppressLint("NonConstantResourceId")
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.btn_verifyotp:
+                verifyValidator();
+                break;
+            /*case R.id.img_back:
+                onBackPressed();
+                break;*/
+
+            case R.id.txt_resend:
+                /*if (new ConnectionDetector(VerifyOtpActivity.this).isNetworkAvailable(VerifyOtpActivity.this)) {
+                    resendOtpResponseCall();
+                }*/
+                break;
+
+
+        }
 
 
     }
 
-    private void startTimer() {
+    public void verifyValidator() {
+
+        enteredotp = otp_view.getOTP();
+
+        Log.w(TAG, "enteredotp : "+enteredotp);
+
+        responseotp = "123456";
+
+        if (enteredotp.trim().equals("")) {
+
+            can_proceed = false;
+
+            Toasty.warning(getApplicationContext(), "Please Enter OTP", Toast.LENGTH_SHORT, true).show();
+
+        } else if (!responseotp.equalsIgnoreCase(enteredotp)) {
+
+            can_proceed = false;
+
+            Toasty.warning(getApplicationContext(), "Incorrect OTP", Toast.LENGTH_SHORT, true).show();
+        }
+
+        if (can_proceed) {
+            //  Toasty.success(getApplicationContext(),"userid : "+userid+ "fbtoken : "+token, Toast.LENGTH_SHORT, true).show();
+
+             /*   if (new ConnectionDetector(VerifyOtpActivity.this).isNetworkAvailable(VerifyOtpActivity.this)) {
+                    if(userid != null){
+                        fBTokenUpdateResponseCall();
+                    }*/
+
+            Toasty.success(getApplicationContext(), "Success", Toast.LENGTH_SHORT, true).show();
+
+            Intent intent = new Intent(VerifyOtpActivity.this, PetLoverDashboardActivity.class);
+            startActivity(intent);
+        }
+
+
+    }
+
+    /*private void startTimer() {
         isOTPExpired = false;
         long timer_milliseconds = 120000;
         timer = new CountDownTimer(timer_milliseconds, 1000) {
@@ -220,64 +313,7 @@ public class VerifyOtpActivity extends AppCompatActivity implements View.OnClick
         timer.start();
     }
 
-    @SuppressLint("NonConstantResourceId")
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.btn_verify:
-                verifyValidator();
-                break;
-            case R.id.img_back:
-                onBackPressed();
-                break;
 
-            case R.id.txt_resend:
-                if (new ConnectionDetector(VerifyOtpActivity.this).isNetworkAvailable(VerifyOtpActivity.this)) {
-                    resendOtpResponseCall();
-                }
-                break;
-
-
-        }
-
-
-    }
-
-    public void verifyValidator() {
-        boolean can_proceed = true;
-        String enteredotp = edt_otp.getText().toString();
-        String responseotp = String.valueOf(otp);
-        if (edt_otp.getText().toString().trim().equals("")) {
-            edt_otp.setError("Please enter your OTP");
-            edt_otp.requestFocus();
-            can_proceed = false;
-        }else if(!responseotp.equalsIgnoreCase(enteredotp)){
-            edt_otp.setError("Invalid OTP.");
-            edt_otp.requestFocus();
-            can_proceed = false;
-        }else if(isOTPExpired){
-            edt_otp.setError("Your otp is expired. please regenerate otp. ");
-            edt_otp.requestFocus();
-            can_proceed = false;
-        }
-
-        if (can_proceed) {
-            //  Toasty.success(getApplicationContext(),"userid : "+userid+ "fbtoken : "+token, Toast.LENGTH_SHORT, true).show();
-
-            if (new ConnectionDetector(VerifyOtpActivity.this).isNetworkAvailable(VerifyOtpActivity.this)) {
-                if(userid != null){
-                    fBTokenUpdateResponseCall();
-                }
-
-            }
-
-
-
-
-
-        }
-
-    }
 
 
     @Override
@@ -486,6 +522,7 @@ public class VerifyOtpActivity extends AppCompatActivity implements View.OnClick
 
         return fbTokenUpdateRequest;
     }
+*/
 
 
 }

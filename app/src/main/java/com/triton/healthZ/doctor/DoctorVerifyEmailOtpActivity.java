@@ -43,7 +43,7 @@ public class DoctorVerifyEmailOtpActivity extends AppCompatActivity implements V
 
     private final String TAG = "DoctorVerifyEmailOtpActivity";
 
-    @SuppressLint("NonConstantResourceId")
+    /*@SuppressLint("NonConstantResourceId")
     @BindView(R.id.img_back)
     ImageView img_back;
 
@@ -91,7 +91,7 @@ public class DoctorVerifyEmailOtpActivity extends AppCompatActivity implements V
     private boolean isOTPExpired ;
     private String userid;
     private String token = "";
-    private String firstname,lastname,useremail;
+    private String firstname,lastname,useremail;*/
 
 
     @SuppressLint({"SetTextI18n", "LongLogTag"})
@@ -99,7 +99,7 @@ public class DoctorVerifyEmailOtpActivity extends AppCompatActivity implements V
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verify_otp);
-        applicationData = (ApplicationData) getApplication();
+     /*   applicationData = (ApplicationData) getApplication();
 
         ButterKnife.bind(this);
         edt_otp.setTransformationMethod(new NumericKeyBoardTransformationMethod());
@@ -124,12 +124,12 @@ public class DoctorVerifyEmailOtpActivity extends AppCompatActivity implements V
         img_back.setOnClickListener(this);
         btn_verify.setOnClickListener(this);
         txt_resend.setOnClickListener(this);
-        startTimer();
+        startTimer();*/
 
 
     }
 
-    private void startTimer() {
+  /*  private void startTimer() {
         isOTPExpired = false;
           long timer_milliseconds = 120000;
           timer = new CountDownTimer(timer_milliseconds, 1000) {
@@ -156,12 +156,12 @@ public class DoctorVerifyEmailOtpActivity extends AppCompatActivity implements V
             }
         };
         timer.start();
-    }
+    }*/
 
     @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+    /*    switch (v.getId()){
             case R.id.btn_verify:
                 verifyValidator();
                 break;
@@ -179,12 +179,12 @@ public class DoctorVerifyEmailOtpActivity extends AppCompatActivity implements V
                 break;
 
 
-        }
+        }*/
 
 
     }
     public void verifyValidator() {
-        boolean can_proceed = true;
+      /*  boolean can_proceed = true;
         String enteredotp = edt_otp.getText().toString();
         String responseotp = String.valueOf(otp);
          if (edt_otp.getText().toString().trim().equals("")) {
@@ -214,11 +214,11 @@ public class DoctorVerifyEmailOtpActivity extends AppCompatActivity implements V
 
 
         }
-
+*/
     }
 
 
-    @Override
+   /* @Override
     public void onBackPressed() {
         super.onBackPressed();
         if(timer != null){
@@ -271,9 +271,9 @@ public class DoctorVerifyEmailOtpActivity extends AppCompatActivity implements V
 
     }
     private EmailOTPRequest emailOTPRequest() {
-        /*
+        *//*
          * user_email : mohammedimthi2395@gmail.com
-         */
+         *//*
         EmailOTPRequest emailOTPRequest = new EmailOTPRequest();
         emailOTPRequest.setUser_email(useremail);
         Log.w(TAG,"EmailOTPRequest "+ new Gson().toJson(emailOTPRequest));
@@ -303,7 +303,7 @@ public class DoctorVerifyEmailOtpActivity extends AppCompatActivity implements V
     protected void onPause() {
         super.onPause();
 
-    }
+    }*/
 
 
 

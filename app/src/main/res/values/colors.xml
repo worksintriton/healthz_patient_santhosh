@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#2AC17E</color>
     <color name="colorPrimaryDark"> #2AC17E</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#2AC17E</color>
    <!-- <color name="color1">#56B9A4</color>-->
     <color name="color1"> #2896c2</color>
     <!-- <color name="color">#33a9ee</color>-->
@@ -101,7 +101,12 @@
     <color name="new_thick_red_bgm_color">#E8571E</color>
     <color name="new_gree_color">#2896c2</color>
     <color name="darker_grey_new">#515151</color>
+
     <color name="text_colors">#575757</color>
+    <color name="dark_green">#135a3b</color>
+    <color name="border_line">#999999</color>
+    <color name="lato_black">#1E0702</color>
+    <color name="lato_grey">#999999</color>
 
 
 </resources>

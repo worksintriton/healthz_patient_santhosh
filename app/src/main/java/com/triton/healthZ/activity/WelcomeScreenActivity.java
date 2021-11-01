@@ -56,6 +56,8 @@ public class WelcomeScreenActivity extends AppCompatActivity implements View.OnC
 
         btn_login.setOnClickListener(this);
 
+        btn_signup.setOnClickListener(this);
+
     }
 
 
@@ -67,11 +69,22 @@ public class WelcomeScreenActivity extends AppCompatActivity implements View.OnC
         if (v.getId() == R.id.btn_login) {
             gotoLoginActivity();
         }
+
+        else if (v.getId() == R.id.btn_signup) {
+            gotoSignupActivity();
+        }
     }
 
     private void gotoLoginActivity() {
 
         Intent intent = new Intent(WelcomeScreenActivity.this, VerifyPhoneNumberActivity.class);
+        intent.putExtra("fromactivity", TAG);
+        startActivity(intent);
+    }
+
+    private void gotoSignupActivity() {
+
+        Intent intent = new Intent(WelcomeScreenActivity.this, SignUpActivity.class);
         intent.putExtra("fromactivity", TAG);
         startActivity(intent);
     }

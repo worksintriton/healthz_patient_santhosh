@@ -40,7 +40,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class VerifyEmailOtpActivity extends AppCompatActivity implements View.OnClickListener {
-    @SuppressLint("NonConstantResourceId")
+   /* @SuppressLint("NonConstantResourceId")
     @BindView(R.id.img_back)
     ImageView img_back;
 
@@ -90,7 +90,7 @@ public class VerifyEmailOtpActivity extends AppCompatActivity implements View.On
     private String token = "";
     private String firstname,lastname,useremail;
     private String UserType;
-    private int UserTypeValue;
+    private int UserTypeValue;*/
 
 
     @SuppressLint("SetTextI18n")
@@ -98,7 +98,7 @@ public class VerifyEmailOtpActivity extends AppCompatActivity implements View.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verify_otp);
-        applicationData = (ApplicationData) getApplication();
+       /* applicationData = (ApplicationData) getApplication();
 
         ButterKnife.bind(this);
         edt_otp.setTransformationMethod(new NumericKeyBoardTransformationMethod());
@@ -125,45 +125,45 @@ public class VerifyEmailOtpActivity extends AppCompatActivity implements View.On
         img_back.setOnClickListener(this);
         btn_verify.setOnClickListener(this);
         txt_resend.setOnClickListener(this);
-        startTimer();
+        startTimer();*/
 
 
     }
 
-    private void startTimer() {
-        isOTPExpired = false;
-          long timer_milliseconds = 120000;
-          timer = new CountDownTimer(timer_milliseconds, 1000) {
-            @SuppressLint({"DefaultLocale", "SetTextI18n"})
-            @Override
-            public void onTick(long millisUntilFinished) {
-                llresendotp.setVisibility(View.GONE);
-                txt_timer_count.setVisibility(View.VISIBLE);
-
-                applicationData.setTimer_milliseconds(millisUntilFinished);
-                txt_timer_count.setText(getResources().getString(R.string.resendotp)+" " + String.format("%02d : %02d ",
-                        TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished),
-                        TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) -
-                                TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished))));
-
-            }
-
-            @Override
-            public void onFinish() {
-                isOTPExpired = true;
-                txt_timer_count.setVisibility(View.GONE);
-                llresendotp.setVisibility(View.VISIBLE);
-                timer.cancel();
-            }
-        };
-        timer.start();
-    }
+//    private void startTimer() {
+//        isOTPExpired = false;
+//          long timer_milliseconds = 120000;
+//          timer = new CountDownTimer(timer_milliseconds, 1000) {
+//            @SuppressLint({"DefaultLocale", "SetTextI18n"})
+//            @Override
+//            public void onTick(long millisUntilFinished) {
+//                llresendotp.setVisibility(View.GONE);
+//                txt_timer_count.setVisibility(View.VISIBLE);
+//
+//                applicationData.setTimer_milliseconds(millisUntilFinished);
+//                txt_timer_count.setText(getResources().getString(R.string.resendotp)+" " + String.format("%02d : %02d ",
+//                        TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished),
+//                        TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) -
+//                                TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished))));
+//
+//            }
+//
+//            @Override
+//            public void onFinish() {
+//                isOTPExpired = true;
+//                txt_timer_count.setVisibility(View.GONE);
+//                llresendotp.setVisibility(View.VISIBLE);
+//                timer.cancel();
+//            }
+//        };
+//        timer.start();
+//    }
 
     @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.btn_verify:
+       /*     case R.id.btn_verify:
                 verifyValidator();
                 break;
             case R.id.img_back:
@@ -177,14 +177,14 @@ public class VerifyEmailOtpActivity extends AppCompatActivity implements View.On
                         }
 
                     }
-                break;
+                break;*/
 
 
         }
 
 
     }
-    public void verifyValidator() {
+   /* public void verifyValidator() {
         boolean can_proceed = true;
         String enteredotp = edt_otp.getText().toString();
         String responseotp = String.valueOf(otp);
@@ -275,9 +275,9 @@ public class VerifyEmailOtpActivity extends AppCompatActivity implements View.On
     }
     @SuppressLint("LogNotTimber")
     private EmailOTPRequest emailOTPRequest() {
-        /*
+        *//*
          * user_email : mohammedimthi2395@gmail.com
-         */
+         *//*
         EmailOTPRequest emailOTPRequest = new EmailOTPRequest();
         emailOTPRequest.setUser_email(useremail);
         Log.w(TAG,"EmailOTPRequest "+ new Gson().toJson(emailOTPRequest));
@@ -308,7 +308,7 @@ public class VerifyEmailOtpActivity extends AppCompatActivity implements View.On
         super.onPause();
 
     }
-
+*/
 
 
 }

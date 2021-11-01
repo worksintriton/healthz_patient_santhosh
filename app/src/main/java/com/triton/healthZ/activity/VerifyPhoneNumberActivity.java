@@ -9,13 +9,16 @@ import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -56,8 +59,12 @@ public class VerifyPhoneNumberActivity extends AppCompatActivity implements View
     TextView txt_signup;
 
     @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.btn_verifyotp)
-    Button btn_verifyotp;
+    @BindView(R.id.btn_next)
+    Button btn_next;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.spr_phnnum)
+    Spinner spr_phnnum;
 
     Dialog alertDialog;
 
@@ -69,16 +76,19 @@ public class VerifyPhoneNumberActivity extends AppCompatActivity implements View
             "check"};
 
 
+    @SuppressLint("LogNotTimber")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verify_phone_number);
         ButterKnife.bind(this);
+        Log.w(TAG,"onCreate-->");
+
         edt_emailorphone.setTransformationMethod(new NumericKeyBoardTransformationMethod());
 
         avi_indicator.setVisibility(View.GONE);
         txt_signup.setOnClickListener(this);
-        btn_verifyotp.setOnClickListener(this);
+        btn_next.setOnClickListener(this);
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -88,18 +98,30 @@ public class VerifyPhoneNumberActivity extends AppCompatActivity implements View
             }
         }
 
+        spr_phnnum.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                ((TextView) parent.getChildAt(0)).setTextColor(Color.WHITE); /* if you want your item to be white */
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+
+
     }
 
     @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-         /*   case R.id.txt_signup:
-                startActivity(new Intent(LoginActivity.this,SignUpActivity.class));
+          case R.id.txt_signup:
+                startActivity(new Intent(VerifyPhoneNumberActivity.this,SignUpActivity.class));
                 break;
-            case R.id.btn_verifyotp:
+            case R.id.btn_next:
                 verifyValidator();
-                break;*/
+                break;
         }
 
     }
@@ -117,7 +139,7 @@ public class VerifyPhoneNumberActivity extends AppCompatActivity implements View
 
         if (can_proceed) {
         //    insertmappermission();
-
+            startActivity(new Intent(VerifyPhoneNumberActivity.this,VerifyOtpActivity.class));
         }
 
     }

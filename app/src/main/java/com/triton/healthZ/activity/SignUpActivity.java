@@ -49,7 +49,7 @@ import retrofit2.Response;
 
 public class SignUpActivity extends AppCompatActivity implements View.OnClickListener {
 
-    @SuppressLint("NonConstantResourceId")
+  /*  @SuppressLint("NonConstantResourceId")
     @BindView(R.id.img_back)
     ImageView img_back;
 
@@ -109,7 +109,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     private String firstname,lastname,useremail,userphone,referralcode;
     private String verified;
     private String ref_code = "";
-
+*/
 
     @SuppressLint({"SetTextI18n", "LogNotTimber"})
     @Override
@@ -117,7 +117,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
         ButterKnife.bind(this);
-        avi_indicator.setVisibility(View.GONE);
+       /* avi_indicator.setVisibility(View.GONE);
         edt_phone.setTransformationMethod(new NumericKeyBoardTransformationMethod());
 
         img_back.setOnClickListener(this);
@@ -204,7 +204,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
             }
         });
-
+*/
 
 
 
@@ -213,34 +213,35 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.btn_continue:
-                signUpValidator();
-                break;
-            case R.id.img_back:
-                 onBackPressed();
-                break;
-
-                case R.id.btn_verify_email:
-                    ValidEmailValidator();
-                break;
-
-                case R.id.btn_changeusertype:
-                    Intent intent = new Intent(SignUpActivity.this,ChooseUserTypeActivity.class);
-                    intent.putExtra("UserType",UserType);
-                    intent.putExtra("UserTypeValue",UserTypeValue);
-                    intent.putExtra("verified",verified);
-                    intent.putExtra("firstname",edt_firstname.getText().toString());
-                    intent.putExtra("lastname",edt_lastname.getText().toString());
-                    intent.putExtra("useremail",edt_email.getText().toString());
-                    intent.putExtra("userphone",edt_phone.getText().toString());
-                    intent.putExtra("referralcode",edt_ref_code.getText().toString());
-                    startActivity(intent);
-                    break;
+        switch (v.getId()) {
+//            case R.id.btn_continue:
+//                signUpValidator();
+//                break;
+//            case R.id.img_back:
+//                 onBackPressed();
+//                break;
+//
+//                case R.id.btn_verify_email:
+//                    ValidEmailValidator();
+//                break;
+//
+//                case R.id.btn_changeusertype:
+//                    Intent intent = new Intent(SignUpActivity.this,ChooseUserTypeActivity.class);
+//                    intent.putExtra("UserType",UserType);
+//                    intent.putExtra("UserTypeValue",UserTypeValue);
+//                    intent.putExtra("verified",verified);
+//                    intent.putExtra("firstname",edt_firstname.getText().toString());
+//                    intent.putExtra("lastname",edt_lastname.getText().toString());
+//                    intent.putExtra("useremail",edt_email.getText().toString());
+//                    intent.putExtra("userphone",edt_phone.getText().toString());
+//                    intent.putExtra("referralcode",edt_ref_code.getText().toString());
+//                    startActivity(intent);
+//                    break;
+//        }
         }
-    }
 
 
+/*
 
     @Override
     public void onBackPressed() {
@@ -290,6 +291,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
     }
     private SignupRequest signupRequest() {
+        */
         /*
          * first_name : mohammed
          * last_name : imthiyas
@@ -300,7 +302,8 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
          * user_email_verification :true
          * mobile_type : "Android"
          * user_email_verification: true
-         */
+         *//*
+
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm aa", Locale.getDefault());
         String currentDateandTime = sdf.format(new Date());
 
@@ -374,10 +377,12 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     @SuppressLint("LogNotTimber")
     private UserStatusUpdateRequest userStatusUpdateRequest(String id) {
 
+        */
         /*
          * user_id : 5fb6162a211fce241eaf53a9
          * user_status : complete
-         */
+         *//*
+
         UserStatusUpdateRequest userStatusUpdateRequest = new UserStatusUpdateRequest();
         userStatusUpdateRequest.setUser_id(id);
         userStatusUpdateRequest.setUser_status("complete");
@@ -434,9 +439,11 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
     }
     private EmailOTPRequest emailOTPRequest(String emailid) {
+        */
         /*
          * user_email : mohammedimthi2395@gmail.com
-         */
+         *//*
+
         EmailOTPRequest emailOTPRequest = new EmailOTPRequest();
         emailOTPRequest.setUser_email(emailid);
         Log.w(TAG,"EmailOTPRequest "+ new Gson().toJson(emailOTPRequest));
@@ -504,12 +511,14 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
             edt_phone.setError("Please enter valid mobile number");
             edt_phone.requestFocus();
             can_proceed = false;
-        }/*else if(!emailAddress.matches(emailPattern)){
+        }*/
+/*else if(!emailAddress.matches(emailPattern)){
             edt_email.setError("Please enter correct email address");
             edt_email.requestFocus();
             can_proceed = false;
         }
-*/
+*//*
+
 
 
 
@@ -576,8 +585,10 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         if (requestCode == REQUEST_CODE_ASK_PERMISSIONS) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-               /* startActivity(new Intent(getApplicationContext(), VerifyPhoneNumberActivity.class));
-                finish();*/
+               */
+/* startActivity(new Intent(getApplicationContext(), VerifyPhoneNumberActivity.class));
+                finish();*//*
+
                 // Permission Granted
                 if (new ConnectionDetector(SignUpActivity.this).isNetworkAvailable(SignUpActivity.this)) {
                     signupResponseCall();
@@ -592,5 +603,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
             super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
+*/
 
+    }
 }
