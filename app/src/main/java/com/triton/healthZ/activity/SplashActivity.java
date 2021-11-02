@@ -10,15 +10,17 @@ import android.util.Log;
 
 
 import com.triton.healthZ.R;
+import com.triton.healthZ.customer.CustomerDashboardActivity;
+import com.triton.healthZ.sessionmanager.SessionManager;
 
 public class SplashActivity extends AppCompatActivity {
 
     private static final String TAG = "SplashActivity";
     private static final long SPLASH_TIME_OUT = 3000;
- /*   private SessionManager session;
+   private SessionManager session;
     private String usertype;
 
-    Boolean isNotifications = false;*/
+    Boolean isNotifications = false;
 
     @SuppressLint("LogNotTimber")
     @Override
@@ -28,11 +30,23 @@ public class SplashActivity extends AppCompatActivity {
 
         Log.w(TAG,"onCreate-->");
 
+        session = new SessionManager(getApplicationContext());
+        boolean islogedin = session.isLoggedIn();
+        Log.w(TAG,"islogedin-->"+islogedin);
+
         new Handler().postDelayed(() -> {
+
+            if(islogedin) {
+
+                Intent i = new Intent(SplashActivity.this, CustomerDashboardActivity.class);
+                startActivity(i);
+                finish();
+            }else {
 
                 Intent i = new Intent(SplashActivity.this, WelcomeScreenActivity.class);
                 startActivity(i);
                 finish();
+            }
 
         }, SPLASH_TIME_OUT);
 
@@ -94,7 +108,7 @@ public class SplashActivity extends AppCompatActivity {
                             startActivity(intent);
                             finish();
                         }else{
-                            Intent intent = new Intent(SplashActivity.this, PetLoverDashboardActivity.class);
+                            Intent intent = new Intent(SplashActivity.this, CustomerDashboardActivity.class);
                             startActivity(intent);
                             finish();
                         }
@@ -185,7 +199,7 @@ public class SplashActivity extends AppCompatActivity {
 
                     if(usertype != null){
                         if(usertype.equalsIgnoreCase("1")){
-                            startActivity(new Intent(SplashActivity.this, PetLoverDashboardActivity.class));
+                            startActivity(new Intent(SplashActivity.this, CustomerDashboardActivity.class));
                             finish();
 
                         }else if(usertype.equalsIgnoreCase("2")){

@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.triton.healthZ.R;
-import com.triton.healthZ.petlover.ListOfProductsSeeMoreActivity;
+import com.triton.healthZ.customer.ListOfProductsSeeMoreActivity;
 import com.triton.healthZ.responsepojo.ShopDashboardResponse;
 import com.triton.healthZ.doctor.shop.DoctorListOfProductsSeeMoreActivity;
 import com.triton.healthZ.serviceprovider.shop.SPListOfProductsSeeMoreActivity;

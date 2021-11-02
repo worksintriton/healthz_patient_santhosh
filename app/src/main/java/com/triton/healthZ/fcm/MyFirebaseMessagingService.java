@@ -19,10 +19,10 @@ import com.triton.healthZ.R;
 import com.triton.healthZ.doctor.DoctorDashboardActivity;
 import com.triton.healthZ.doctor.DoctorMyOrdrersActivity;
 import com.triton.healthZ.doctor.DoctorWalkinAppointmentsActivity;
-import com.triton.healthZ.petlover.PetLoverDashboardActivity;
-import com.triton.healthZ.petlover.PetMyOrdrersNewActivity;
-import com.triton.healthZ.petlover.PetMyappointmentsActivity;
-import com.triton.healthZ.petlover.PetWalkinappointmentsActivity;
+import com.triton.healthZ.customer.CustomerDashboardActivity;
+import com.triton.healthZ.customer.PetMyOrdrersNewActivity;
+import com.triton.healthZ.customer.PetMyappointmentsActivity;
+import com.triton.healthZ.customer.PetWalkinappointmentsActivity;
 import com.triton.healthZ.serviceprovider.ServiceProviderDashboardActivity;
 import com.triton.healthZ.serviceprovider.shop.SPMyOrdrersActivity;
 import com.triton.healthZ.sessionmanager.SessionManager;
@@ -261,7 +261,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                     intent.putExtra("orders",orders);
                     Log.w(TAG,"usertype 1 orders : "+orders);
                 }else{
-                    intent = new Intent(this, PetLoverDashboardActivity.class);
+                    intent = new Intent(this, CustomerDashboardActivity.class);
                 }
 
 

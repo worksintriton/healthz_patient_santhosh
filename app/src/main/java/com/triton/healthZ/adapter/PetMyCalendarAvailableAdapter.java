@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.triton.healthZ.R;
 import com.triton.healthZ.interfaces.OnItemSelectedTime;
-import com.triton.healthZ.petlover.PetAppointment_Doctor_Date_Time_Activity;
+import com.triton.healthZ.customer.PetAppointment_Doctor_Date_Time_Activity;
 import com.triton.healthZ.responsepojo.PetDoctorAvailableTimeResponse;
 
 

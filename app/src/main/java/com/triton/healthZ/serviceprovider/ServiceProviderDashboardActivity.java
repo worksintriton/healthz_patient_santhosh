@@ -334,10 +334,10 @@ public class ServiceProviderDashboardActivity  extends ServiceProviderNavigation
         Log.w(TAG, "tag : " + tag);
 //        if (bottom_navigation_view.getSelectedItemId() == R.id.home) {
             showExitAppAlert();
-          /*  new android.app.AlertDialog.Builder(PetLoverDashboardActivity.this)
+          /*  new android.app.AlertDialog.Builder(CustomerDashboardActivity.this)
                     .setMessage("Are you sure you want to exit?")
                     .setCancelable(false)
-                    .setPositiveButton("Yes", (dialog, id) -> PetLoverDashboardActivity.this.finishAffinity())
+                    .setPositiveButton("Yes", (dialog, id) -> CustomerDashboardActivity.this.finishAffinity())
                     .setNegativeButton("No", null)
                     .show();*/
 //        } else if (tag != null) {

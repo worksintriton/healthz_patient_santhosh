@@ -29,7 +29,7 @@ import com.triton.healthZ.api.RestApiInterface;
 import com.triton.healthZ.interfaces.OnDeleteShipAddrListener;
 import com.triton.healthZ.interfaces.OnEditShipAddrListener;
 import com.triton.healthZ.interfaces.OnSelectingShipIdListener;
-import com.triton.healthZ.petlover.ShippingAddressActivity;
+import com.triton.healthZ.customer.ShippingAddressActivity;
 import com.triton.healthZ.requestpojo.LocationDeleteRequest;
 import com.triton.healthZ.requestpojo.LocationListAddressRequest;
 import com.triton.healthZ.requestpojo.LocationStatusChangeRequest;

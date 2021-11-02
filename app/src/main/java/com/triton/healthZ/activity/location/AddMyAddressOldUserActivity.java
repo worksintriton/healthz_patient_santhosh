@@ -38,7 +38,7 @@ import com.triton.healthZ.R;
 import com.triton.healthZ.activity.NotificationActivity;
 import com.triton.healthZ.api.APIClient;
 import com.triton.healthZ.api.RestApiInterface;
-import com.triton.healthZ.petlover.PetLoverProfileScreenActivity;
+import com.triton.healthZ.customer.PetLoverProfileScreenActivity;
 import com.triton.healthZ.requestpojo.LocationAddRequest;
 import com.triton.healthZ.responsepojo.LocationAddResponse;
 import com.triton.healthZ.sessionmanager.SessionManager;

@@ -23,7 +23,7 @@ import com.google.gson.Gson;
 import com.triton.healthZ.R;
 import com.triton.healthZ.api.APIClient;
 import com.triton.healthZ.api.RestApiInterface;
-import com.triton.healthZ.petlover.PetMyappointmentsActivity;
+import com.triton.healthZ.customer.PetMyappointmentsActivity;
 import com.triton.healthZ.requestpojo.AppoinmentCancelledRequest;
 import com.triton.healthZ.requestpojo.DoctorStartAppointmentRequest;
 import com.triton.healthZ.requestpojo.PetNewAppointmentDetailsRequest;

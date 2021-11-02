@@ -35,7 +35,7 @@ import com.google.gson.Gson;
 import com.triton.healthZ.R;
 import com.triton.healthZ.api.APIClient;
 import com.triton.healthZ.api.RestApiInterface;
-import com.triton.healthZ.petlover.ShippingAddressAddActivity;
+import com.triton.healthZ.customer.ShippingAddressAddActivity;
 import com.triton.healthZ.requestpojo.LocationUpdateRequest;
 import com.triton.healthZ.responsepojo.CartDetailsResponse;
 import com.triton.healthZ.responsepojo.LocationUpdateResponse;

@@ -46,7 +46,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.gson.Gson;
 import com.triton.healthZ.R;
 import com.triton.healthZ.api.API;
-import com.triton.healthZ.petlover.ShippingAddressAddActivity;
+import com.triton.healthZ.customer.ShippingAddressAddActivity;
 import com.triton.healthZ.responsepojo.CartDetailsResponse;
 import com.triton.healthZ.responsepojo.GetAddressResultResponse;
 import com.triton.healthZ.service.GPSTracker;

@@ -23,7 +23,7 @@ import com.triton.healthZ.api.APIClient;
 
 import com.triton.healthZ.doctor.shop.DoctorProductDetailsActivity;
 import com.triton.healthZ.interfaces.AddandRemoveProductListener;
-import com.triton.healthZ.petlover.ProductDetailsActivity;
+import com.triton.healthZ.customer.ProductDetailsActivity;
 import com.triton.healthZ.responsepojo.CartDetailsResponse;
 import com.triton.healthZ.serviceprovider.shop.SPProductDetailsActivity;
 

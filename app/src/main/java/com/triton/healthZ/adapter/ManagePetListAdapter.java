@@ -20,8 +20,8 @@ import com.google.gson.Gson;
 import com.triton.healthZ.R;
 import com.triton.healthZ.api.APIClient;
 import com.triton.healthZ.interfaces.PetDeleteListener;
-import com.triton.healthZ.petlover.BasicPetDetailsActivity;
-import com.triton.healthZ.petlover.EditYourPetProfileInfoActivity;
+import com.triton.healthZ.customer.BasicPetDetailsActivity;
+import com.triton.healthZ.customer.EditYourPetProfileInfoActivity;
 import com.triton.healthZ.responsepojo.PetListResponse;
 
 import java.io.Serializable;

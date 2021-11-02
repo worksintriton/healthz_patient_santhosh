@@ -18,7 +18,7 @@ import com.google.gson.Gson;
 import com.triton.healthZ.R;
 import com.triton.healthZ.api.APIClient;
 import com.triton.healthZ.api.RestApiInterface;
-import com.triton.healthZ.petlover.SelectedServiceActivity;
+import com.triton.healthZ.customer.SelectedServiceActivity;
 import com.triton.healthZ.responsepojo.SPFilterPriceListResponse;
 import com.triton.healthZ.utils.ConnectionDetector;
 import com.triton.healthZ.utils.RestUtils;

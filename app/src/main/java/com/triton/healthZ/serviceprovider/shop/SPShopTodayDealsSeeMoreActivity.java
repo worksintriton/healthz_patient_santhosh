@@ -33,7 +33,7 @@ import com.triton.healthZ.adapter.PetShopTodayDealsSeeMoreAdapter;
 import com.triton.healthZ.adapter.ProductsSearchAdapter;
 import com.triton.healthZ.api.APIClient;
 import com.triton.healthZ.api.RestApiInterface;
-import com.triton.healthZ.petlover.ProductFiltersActivity;
+import com.triton.healthZ.customer.ProductFiltersActivity;
 import com.triton.healthZ.requestpojo.NotificationCartCountRequest;
 import com.triton.healthZ.requestpojo.ProductFiltersRequest;
 import com.triton.healthZ.requestpojo.ProductSearchRequest;

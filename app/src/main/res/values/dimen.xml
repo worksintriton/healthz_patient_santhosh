@@ -102,4 +102,6 @@
     <dimen name="description">15dp</dimen>
     <dimen name="price">13dp</dimen>
 
+    <dimen name="design_navigation_icon_size">24dp</dimen>
+
 </resources>

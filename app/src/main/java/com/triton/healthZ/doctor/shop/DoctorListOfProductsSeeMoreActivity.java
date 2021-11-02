@@ -36,7 +36,7 @@ import com.triton.healthZ.api.RestApiInterface;
 import com.triton.healthZ.doctor.DoctorDashboardActivity;
 import com.triton.healthZ.doctor.DoctorProfileScreenActivity;
 
-import com.triton.healthZ.petlover.ProductFiltersActivity;
+import com.triton.healthZ.customer.ProductFiltersActivity;
 import com.triton.healthZ.requestpojo.FetctProductByCatRequest;
 import com.triton.healthZ.requestpojo.NotificationCartCountRequest;
 import com.triton.healthZ.requestpojo.ProductFiltersRequest;

@@ -22,8 +22,8 @@ import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.triton.healthZ.R;
 import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.petlover.DoctorClinicDetailsActivity;
-import com.triton.healthZ.petlover.PetAppointment_Doctor_Date_Time_Activity;
+import com.triton.healthZ.customer.DoctorClinicDetailsActivity;
+import com.triton.healthZ.customer.PetAppointment_Doctor_Date_Time_Activity;
 import com.triton.healthZ.responsepojo.DoctorSearchResponse;
 
 import java.util.List;

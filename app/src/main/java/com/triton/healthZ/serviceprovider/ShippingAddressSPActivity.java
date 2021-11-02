@@ -26,7 +26,7 @@ import com.triton.healthZ.activity.location.ShippingAddressAddSPActivity;
 import com.triton.healthZ.api.APIClient;
 import com.triton.healthZ.api.RestApiInterface;
 
-import com.triton.healthZ.petlover.ShippingAddressEditActivity;
+import com.triton.healthZ.customer.ShippingAddressEditActivity;
 import com.triton.healthZ.requestpojo.ShippingAddressDeleteRequest;
 import com.triton.healthZ.requestpojo.ShippingAddressFetchByUserIDRequest;
 import com.triton.healthZ.responsepojo.CartDetailsResponse;

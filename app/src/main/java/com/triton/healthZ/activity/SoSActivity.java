@@ -31,8 +31,8 @@ import com.triton.healthZ.R;
 import com.triton.healthZ.adapter.PetLoverSOSAdapter;
 import com.triton.healthZ.api.APIClient;
 import com.triton.healthZ.api.RestApiInterface;
+import com.triton.healthZ.customer.CustomerDashboardActivity;
 import com.triton.healthZ.interfaces.SoSCallListener;
-import com.triton.healthZ.petlover.PetLoverDashboardActivity;
 
 import com.triton.healthZ.requestpojo.SOSListRequest;
 import com.triton.healthZ.responsepojo.SOSListResponse;
@@ -263,11 +263,11 @@ public class SoSActivity extends AppCompatActivity implements SoSCallListener {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        if(fromactivity != null && fromactivity.equalsIgnoreCase("PetLoverNavigationDrawerNew")){
-            startActivity(new Intent(getApplicationContext(), PetLoverDashboardActivity.class));
+        if(fromactivity != null && fromactivity.equalsIgnoreCase("CustomerNavigationDrawer")){
+            startActivity(new Intent(getApplicationContext(), CustomerDashboardActivity.class));
             finish();
         }else{
-            startActivity(new Intent(getApplicationContext(), PetLoverDashboardActivity.class));
+            startActivity(new Intent(getApplicationContext(), CustomerDashboardActivity.class));
             finish();
         }
 

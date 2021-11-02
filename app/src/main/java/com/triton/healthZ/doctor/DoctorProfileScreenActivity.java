@@ -35,7 +35,7 @@ import com.triton.healthZ.activity.location.PickUpLocationEditDoctorActivity;
 import com.triton.healthZ.adapter.ViewPagerDoctorClinicDetailsAdapter;
 import com.triton.healthZ.api.APIClient;
 import com.triton.healthZ.api.RestApiInterface;
-import com.triton.healthZ.petlover.AddYourPetOldUserActivity;
+import com.triton.healthZ.customer.AddYourPetOldUserActivity;
 
 import com.triton.healthZ.requestpojo.DefaultLocationRequest;
 import com.triton.healthZ.requestpojo.DoctorDetailsByUserIdRequest;

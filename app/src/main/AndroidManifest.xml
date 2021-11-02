@@ -74,56 +74,56 @@
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.ShippingAddressEditActivity"
+            android:name="com.triton.healthZ.customer.ShippingAddressEditActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.MedicalHistoryActivity"
+            android:name="com.triton.healthZ.customer.MedicalHistoryActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.ShippingAddressCreateActivity"
+            android:name="com.triton.healthZ.customer.ShippingAddressCreateActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.ShippingAddressAddActivity"
+            android:name="com.triton.healthZ.customer.ShippingAddressAddActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.ShippingAddressActivity"
+            android:name="com.triton.healthZ.customer.ShippingAddressActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.myaddresses.MyAddressesListActivity"
+            android:name="com.triton.healthZ.customer.myaddresses.MyAddressesListActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.myaddresses.AddNewShippingAddressActivity"
+            android:name="com.triton.healthZ.customer.myaddresses.AddNewShippingAddressActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.myaddresses.MyAddressEditActivity"
+            android:name="com.triton.healthZ.customer.myaddresses.MyAddressEditActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.ProductDetailActivity"
+            android:name="com.triton.healthZ.customer.ProductDetailActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
 
-        <activity android:name="com.triton.healthZ.petlover.PetLoverDoctorChoosePaymentMethodActivity"
+        <activity android:name="com.triton.healthZ.customer.PetLoverDoctorChoosePaymentMethodActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan"/>
-        <activity android:name="com.triton.healthZ.petlover.PetLoverServiceChoosePaymentMethodActivity"
+        <activity android:name="com.triton.healthZ.customer.PetLoverServiceChoosePaymentMethodActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan"/>
@@ -131,7 +131,7 @@
 
 
         <activity
-            android:name="com.triton.healthZ.petlover.DoctorClinicDetailsActivity"
+            android:name="com.triton.healthZ.customer.DoctorClinicDetailsActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
@@ -146,47 +146,47 @@
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.PetOtherInformationsActivity"
+            android:name="com.triton.healthZ.customer.PetOtherInformationsActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.PetEditOtherInformationsActivity"
+            android:name="com.triton.healthZ.customer.PetEditOtherInformationsActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.ChoosePetTypeActivity"
+            android:name="com.triton.healthZ.customer.ChoosePetTypeActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.ChooseBreedTypeActivity"
+            android:name="com.triton.healthZ.customer.ChooseBreedTypeActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.BasicPetDetailsActivity"
+            android:name="com.triton.healthZ.customer.BasicPetDetailsActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.BasicPetDetailsNewActivity"
+            android:name="com.triton.healthZ.customer.BasicPetDetailsNewActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.AddNewPetActivity"
+            android:name="com.triton.healthZ.customer.AddNewPetActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.ConsultationActivity"
+            android:name="com.triton.healthZ.customer.ConsultationActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.ConsultationIssuesActivity"
+            android:name="com.triton.healthZ.customer.ConsultationIssuesActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
@@ -216,142 +216,142 @@
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" /> <!-- Pet Lover -->
         <activity
-            android:name="com.triton.healthZ.petlover.AddYourPetActivity"
+            android:name="com.triton.healthZ.customer.AddYourPetActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.RegisterYourPetActivity"
+            android:name="com.triton.healthZ.customer.RegisterYourPetActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.PetLoverDashboardActivity"
+            android:name="com.triton.healthZ.customer.CustomerDashboardActivity"
             android:screenOrientation="portrait"
             android:theme="@style/NewAppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.BookAppointmentActivity"
+            android:name="com.triton.healthZ.customer.BookAppointmentActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.PetAppointment_Doctor_Date_Time_Activity"
+            android:name="com.triton.healthZ.customer.PetAppointment_Doctor_Date_Time_Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.PetAppointment_SlotNotAvailable_Doctor_Date_Time_Activity"
+            android:name="com.triton.healthZ.customer.PetAppointment_SlotNotAvailable_Doctor_Date_Time_Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.PetMyappointmentsActivity"
+            android:name="com.triton.healthZ.customer.PetMyappointmentsActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.PetWalkinappointmentsActivity"
+            android:name="com.triton.healthZ.customer.PetWalkinappointmentsActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.PetLoverEditProfileActivity"
+            android:name="com.triton.healthZ.customer.PetLoverEditProfileActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.PetLoverProfileScreenActivity"
+            android:name="com.triton.healthZ.customer.PetLoverProfileScreenActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.PetLoverEditProfileImageActivity"
+            android:name="com.triton.healthZ.customer.PetLoverEditProfileImageActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.EditYourPetProfileInfoActivity"
+            android:name="com.triton.healthZ.customer.EditYourPetProfileInfoActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.AddYourPetOldUserActivity"
+            android:name="com.triton.healthZ.customer.AddYourPetOldUserActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.AddYourPetImageOlduserActivity"
+            android:name="com.triton.healthZ.customer.AddYourPetImageOlduserActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.EditYourPetImageActivity"
+            android:name="com.triton.healthZ.customer.EditYourPetImageActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.FiltersActivity"
+            android:name="com.triton.healthZ.customer.FiltersActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.PetMyOrdrersActivity"
+            android:name="com.triton.healthZ.customer.PetMyOrdrersActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.PetMyOrdrersNewActivity"
+            android:name="com.triton.healthZ.customer.PetMyOrdrersNewActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.PetCartActivity"
+            android:name="com.triton.healthZ.customer.PetCartActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.ProductDetailsActivity"
+            android:name="com.triton.healthZ.customer.ProductDetailsActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.ListOfProductsSeeMoreActivity"
+            android:name="com.triton.healthZ.customer.ListOfProductsSeeMoreActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.Service_Details_Activity"
+            android:name="com.triton.healthZ.customer.Service_Details_Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.ServiceBookAppointmentActivity"
+            android:name="com.triton.healthZ.customer.ServiceBookAppointmentActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.SelectedServiceActivity"
+            android:name="com.triton.healthZ.customer.SelectedServiceActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.PetServiceAppointment_Doctor_Date_Time_Activity"
+            android:name="com.triton.healthZ.customer.PetServiceAppointment_Doctor_Date_Time_Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.SelectYourPetActivity"
+            android:name="com.triton.healthZ.customer.SelectYourPetActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.PetVerifyEmailOtpActivity"
+            android:name="com.triton.healthZ.customer.PetVerifyEmailOtpActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.VideoCallPetLoverActivity"
+            android:name="com.triton.healthZ.customer.VideoCallPetLoverActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
@@ -441,44 +441,44 @@
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.PetAppointmentDetailsActivity"
+            android:name="com.triton.healthZ.customer.PetAppointmentDetailsActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.PetWalkinAppointmentDetailsActivity"
+            android:name="com.triton.healthZ.customer.PetWalkinAppointmentDetailsActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity android:name="com.triton.healthZ.activity.SliderActivity" />
         <activity
-            android:name="com.triton.healthZ.petlover.PetCompletedAppointmentDetailsActivity"
+            android:name="com.triton.healthZ.customer.PetCompletedAppointmentDetailsActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.PetMissedAppointmentDetailsActivity"
+            android:name="com.triton.healthZ.customer.PetMissedAppointmentDetailsActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.PetNewAppointmentDetailsActivity"
+            android:name="com.triton.healthZ.customer.PetNewAppointmentDetailsActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.PetSPNewAppointmentDetailsActivity"
+            android:name="com.triton.healthZ.customer.PetSPNewAppointmentDetailsActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.ProductFiltersActivity"
+            android:name="com.triton.healthZ.customer.ProductFiltersActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
 
         <activity
-            android:name="com.triton.healthZ.petlover.MyCouponsActivity"
+            android:name="com.triton.healthZ.customer.MyCouponsActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
@@ -771,7 +771,7 @@
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.PetShopTodayDealsSeeMoreActivity"
+            android:name="com.triton.healthZ.customer.PetShopTodayDealsSeeMoreActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
@@ -816,32 +816,32 @@
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.PetVendorOrderDetailsActivity"
+            android:name="com.triton.healthZ.customer.PetVendorOrderDetailsActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.PetLoverVendorOrderDetailsActivity"
+            android:name="com.triton.healthZ.customer.PetLoverVendorOrderDetailsActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.PetVendorTrackOrderActivity"
+            android:name="com.triton.healthZ.customer.PetVendorTrackOrderActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.TrackOrderActivity"
+            android:name="com.triton.healthZ.customer.TrackOrderActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.PetVendorCancelOrderActivity"
+            android:name="com.triton.healthZ.customer.PetVendorCancelOrderActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.PetReturnOrderActivity"
+            android:name="com.triton.healthZ.customer.PetReturnOrderActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
@@ -866,7 +866,7 @@
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.SearchActivity"
+            android:name="com.triton.healthZ.customer.SearchActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
@@ -916,7 +916,7 @@
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.PetloverFavListActivity"
+            android:name="com.triton.healthZ.customer.PetloverFavListActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
@@ -966,7 +966,7 @@
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.PetloverPaymentDetailsActivity"
+            android:name="com.triton.healthZ.customer.PetloverPaymentDetailsActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
@@ -996,7 +996,7 @@
             android:theme="@style/SplashTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.petlover.PetloverPetDetailsActivity"
+            android:name="com.triton.healthZ.customer.PetloverPetDetailsActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />

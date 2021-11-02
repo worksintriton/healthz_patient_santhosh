@@ -43,7 +43,7 @@ import com.google.gson.Gson;
 
 import com.triton.healthZ.R;
 import com.triton.healthZ.api.API;
-import com.triton.healthZ.petlover.PetLoverDashboardActivity;
+import com.triton.healthZ.customer.CustomerDashboardActivity;
 import com.triton.healthZ.responsepojo.GetAddressResultResponse;
 import com.triton.healthZ.service.GPSTracker;
 import com.wang.avi.AVLoadingIndicatorView;
@@ -606,7 +606,7 @@ public class PickUpLocationAllowActivity extends FragmentActivity implements OnM
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        startActivity(new Intent(PickUpLocationAllowActivity.this, PetLoverDashboardActivity.class));
+        startActivity(new Intent(PickUpLocationAllowActivity.this, CustomerDashboardActivity.class));
         finish();
     }
 

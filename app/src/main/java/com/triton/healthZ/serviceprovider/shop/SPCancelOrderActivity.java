@@ -32,7 +32,7 @@ import com.triton.healthZ.adapter.MyCouponsTextAdapter;
 import com.triton.healthZ.api.APIClient;
 import com.triton.healthZ.api.RestApiInterface;
 import com.triton.healthZ.interfaces.OnAppointmentSuccessfullyCancel;
-import com.triton.healthZ.petlover.PetMyOrdrersActivity;
+import com.triton.healthZ.customer.PetMyOrdrersActivity;
 import com.triton.healthZ.requestpojo.PetLoverCancelOrderRequest;
 import com.triton.healthZ.requestpojo.PetLoverCancelSingleOrderRequest;
 import com.triton.healthZ.requestpojo.RefundCouponCreateRequest;

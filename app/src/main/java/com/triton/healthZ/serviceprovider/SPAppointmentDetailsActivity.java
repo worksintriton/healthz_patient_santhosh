@@ -26,7 +26,7 @@ import com.triton.healthZ.R;
 import com.triton.healthZ.activity.NotificationActivity;
 import com.triton.healthZ.api.APIClient;
 import com.triton.healthZ.api.RestApiInterface;
-import com.triton.healthZ.petlover.VideoCallPetLoverActivity;
+import com.triton.healthZ.customer.VideoCallPetLoverActivity;
 import com.triton.healthZ.requestpojo.AppoinmentCancelledRequest;
 import com.triton.healthZ.requestpojo.AppoinmentCompleteRequest;
 import com.triton.healthZ.requestpojo.AppointmentDetailsRequest;

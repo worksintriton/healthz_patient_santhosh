@@ -1,57 +1,24 @@
 package com.triton.healthZ.activity;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
-import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.crashlytics.FirebaseCrashlytics;
-import com.google.firebase.messaging.FirebaseMessaging;
-import com.google.gson.Gson;
-import com.triton.healthZ.R;
-import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.api.RestApiInterface;
-import com.triton.healthZ.appUtils.ApplicationData;
-import com.triton.healthZ.appUtils.NumericKeyBoardTransformationMethod;
-import com.triton.healthZ.doctor.DoctorBusinessInfoActivity;
-import com.triton.healthZ.doctor.DoctorDashboardActivity;
-import com.triton.healthZ.petlover.BasicPetDetailsNewActivity;
-import com.triton.healthZ.petlover.PetLoverDashboardActivity;
-import com.triton.healthZ.requestpojo.FBTokenUpdateRequest;
-import com.triton.healthZ.requestpojo.ResendOTPRequest;
-import com.triton.healthZ.responsepojo.FBTokenUpdateResponse;
-import com.triton.healthZ.responsepojo.ResendOTPResponse;
-import com.triton.healthZ.serviceprovider.ServiceProviderDashboardActivity;
-import com.triton.healthZ.serviceprovider.ServiceProviderRegisterFormActivity;
-import com.triton.healthZ.sessionmanager.SessionManager;
-import com.triton.healthZ.utils.ConnectionDetector;
-import com.triton.healthZ.utils.RestUtils;
-import com.triton.healthZ.vendor.VendorRegisterFormActivity;
-import com.triton.healthZ.vendor.VendorDashboardActivity;
-import com.wang.avi.AVLoadingIndicatorView;
 
-import java.util.concurrent.TimeUnit;
+import com.triton.healthZ.R;
+import com.triton.healthZ.customer.CustomerDashboardActivity;
+import com.triton.healthZ.sessionmanager.SessionManager;
+import com.wang.avi.AVLoadingIndicatorView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import es.dmoral.toasty.Toasty;
-import in.aabhasjindal.otptextview.OTPListener;
 import in.aabhasjindal.otptextview.OtpTextView;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class VerifyOtpActivity extends AppCompatActivity implements View.OnClickListener {
    /* @SuppressLint("NonConstantResourceId")
@@ -277,7 +244,26 @@ public class VerifyOtpActivity extends AppCompatActivity implements View.OnClick
 
             Toasty.success(getApplicationContext(), "Success", Toast.LENGTH_SHORT, true).show();
 
-            Intent intent = new Intent(VerifyOtpActivity.this, PetLoverDashboardActivity.class);
+            SessionManager sessionManager = new SessionManager(VerifyOtpActivity.this);
+            sessionManager.setIsLogin(true);
+            sessionManager.createLoginSession(
+                    "60b73c4638e95868d79be9c6",
+                    "Santhosh",
+                    "Kumar",
+                    "santhoshvsk94@gmail.com",
+                    "9159207294",
+                    String.valueOf(1),
+                    "complete",
+                    "",
+                    "true",
+                    "PS2Z0G5"
+
+            );
+            sessionManager.createRazorpayDetails(
+                    "rzp_test_zioohqmxDjJJtd",
+                    String.valueOf(false));
+
+            Intent intent = new Intent(VerifyOtpActivity.this, CustomerDashboardActivity.class);
             startActivity(intent);
         }
 
@@ -462,7 +448,7 @@ public class VerifyOtpActivity extends AppCompatActivity implements View.OnClick
                         if(fromactivity != null && fromactivity.equalsIgnoreCase("VerifyPhoneNumberActivity")){
                             if(usertype != 0){
                                 if(usertype == 1){
-                                    startActivity(new Intent(VerifyOtpActivity.this, PetLoverDashboardActivity.class));
+                                    startActivity(new Intent(VerifyOtpActivity.this, CustomerDashboardActivity.class));
 
                                 }else if(usertype == 2 ){
                                     startActivity(new Intent(VerifyOtpActivity.this, ServiceProviderDashboardActivity.class));

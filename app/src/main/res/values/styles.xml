@@ -8,17 +8,19 @@
         <item name="windowNoTitle">true</item>
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:windowBackground">@color/whiteTwo</item>
-        <item name="tabBackground">@drawable/tab_background</item>
+
 
     </style>
-    <style name="NewAppTheme" parent="Theme.AppCompat.Light">
-        <item name="colorPrimary">@color/new_gree_color</item>
-        <item name="colorPrimaryDark">@color/new_gree_color</item>
-        <item name="colorAccent">@color/new_gree_color</item>
+
+    <style name="NewAppTheme" parent="Theme.MaterialComponents.Light">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/white</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <item name="android:windowBackground">@color/new_gree_color</item>
-        <item name="tabBackground">@drawable/tab_background</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowBackground">@color/whiteTwo</item>
+
 
     </style>
 
@@ -112,6 +114,18 @@
     <style name="checkBoxStyle" parent="Theme.AppCompat.Light">
         <item name="colorAccent">@color/lato_grey</item>
         <item name="android:textColorSecondary">@color/lato_grey</item>
+    </style>
+
+    <style name="MyBottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="itemIconTint">@color/selector</item>
+        <item name="itemTextColor">@color/selector</item>
+        <item name="itemTextAppearanceActive">@style/MyBottomNavigationView.TextAppearance</item>
+        <item name="itemTextAppearanceInactive">@style/MyBottomNavigationView.TextAppearance</item>
+    </style>
+
+    <style name="MyBottomNavigationView.TextAppearance" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textSize">11sp</item>
+        <item name="fontFamily">@font/lato_regular</item>
     </style>
 
 </resources>

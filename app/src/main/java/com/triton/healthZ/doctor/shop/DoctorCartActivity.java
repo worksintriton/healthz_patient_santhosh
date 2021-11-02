@@ -35,7 +35,7 @@ import com.triton.healthZ.doctor.DoctorDashboardActivity;
 import com.triton.healthZ.interfaces.AddandRemoveProductListener;
 
 
-import com.triton.healthZ.petlover.ShippingAddressActivity;
+import com.triton.healthZ.customer.ShippingAddressActivity;
 import com.triton.healthZ.requestpojo.CouponCodeCheckRequest;
 import com.triton.healthZ.requestpojo.FetchByIdRequest;
 import com.triton.healthZ.requestpojo.NotificationCartCountRequest;

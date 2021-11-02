@@ -18,9 +18,9 @@ import com.triton.healthZ.R;
 import com.triton.healthZ.api.APIClient;
 import com.triton.healthZ.doctor.shop.DoctorCancelOrderActivity;
 import com.triton.healthZ.doctor.shop.DoctorTrackOrderActivity;
-import com.triton.healthZ.petlover.PetVendorCancelOrderActivity;
+import com.triton.healthZ.customer.PetVendorCancelOrderActivity;
 
-import com.triton.healthZ.petlover.TrackOrderActivity;
+import com.triton.healthZ.customer.TrackOrderActivity;
 import com.triton.healthZ.responsepojo.PetLoverVendorOrderDetailsResponse;
 import com.triton.healthZ.serviceprovider.shop.SPCancelOrderActivity;
 import com.triton.healthZ.serviceprovider.shop.SPTrackOrderActivity;

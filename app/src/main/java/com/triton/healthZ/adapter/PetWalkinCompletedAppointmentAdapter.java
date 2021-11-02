@@ -20,7 +20,7 @@ import com.triton.healthZ.R;
 import com.triton.healthZ.api.APIClient;
 import com.triton.healthZ.doctor.DoctorWalkinPrescriptionDetailsActivity;
 import com.triton.healthZ.interfaces.AddReviewListener;
-import com.triton.healthZ.petlover.PetWalkinAppointmentDetailsActivity;
+import com.triton.healthZ.customer.PetWalkinAppointmentDetailsActivity;
 import com.triton.healthZ.responsepojo.PetAppointmentResponse;
 
 import java.util.List;

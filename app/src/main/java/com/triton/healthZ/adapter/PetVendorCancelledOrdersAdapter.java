@@ -15,8 +15,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.triton.healthZ.R;
 import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.petlover.PetVendorOrderDetailsActivity;
-import com.triton.healthZ.petlover.PetVendorTrackOrderActivity;
+import com.triton.healthZ.customer.PetVendorOrderDetailsActivity;
+import com.triton.healthZ.customer.PetVendorTrackOrderActivity;
 import com.triton.healthZ.responsepojo.PetVendorOrderResponse;
 
 import java.util.List;

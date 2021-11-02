@@ -41,7 +41,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.gson.Gson;
 import com.triton.healthZ.R;
 import com.triton.healthZ.api.API;
-import com.triton.healthZ.petlover.PetLoverDashboardActivity;
+import com.triton.healthZ.customer.CustomerDashboardActivity;
 import com.triton.healthZ.responsepojo.GetAddressResultResponse;
 import com.triton.healthZ.service.GPSTracker;
 import com.wang.avi.AVLoadingIndicatorView;
@@ -635,7 +635,7 @@ public class PickUpLocationDenyActivity extends FragmentActivity implements OnMa
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        startActivity(new Intent(PickUpLocationDenyActivity.this, PetLoverDashboardActivity.class));
+        startActivity(new Intent(PickUpLocationDenyActivity.this, CustomerDashboardActivity.class));
         finish();
     }
 
@@ -779,7 +779,7 @@ public class PickUpLocationDenyActivity extends FragmentActivity implements OnMa
 
 
     public void callDirections(String tag){
-        Intent intent = new Intent(getApplicationContext(),PetLoverDashboardActivity.class);
+        Intent intent = new Intent(getApplicationContext(), CustomerDashboardActivity.class);
         intent.putExtra("tag",tag);
         startActivity(intent);
         finish();

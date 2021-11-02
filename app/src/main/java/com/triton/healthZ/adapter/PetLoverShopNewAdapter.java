@@ -19,7 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.triton.healthZ.R;
 import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.petlover.ProductDetailsActivity;
+import com.triton.healthZ.customer.ProductDetailsActivity;
 import com.triton.healthZ.responsepojo.PetLoverDashboardResponse;
 
 import java.util.List;

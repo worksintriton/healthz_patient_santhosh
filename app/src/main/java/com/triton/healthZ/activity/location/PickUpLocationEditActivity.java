@@ -43,7 +43,7 @@ import com.google.gson.Gson;
 import com.triton.healthZ.R;
 import com.triton.healthZ.activity.NotificationActivity;
 import com.triton.healthZ.api.API;
-import com.triton.healthZ.petlover.PetLoverProfileScreenActivity;
+import com.triton.healthZ.customer.PetLoverProfileScreenActivity;
 import com.triton.healthZ.responsepojo.GetAddressResultResponse;
 import com.triton.healthZ.service.GPSTracker;
 import com.wang.avi.AVLoadingIndicatorView;

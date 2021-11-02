@@ -36,7 +36,7 @@ import com.triton.healthZ.doctor.DoctorOrderDetailsActivity;
 import com.triton.healthZ.doctor.DoctorProfileScreenActivity;
 import com.triton.healthZ.doctor.MyCouponsDoctorActivity;
 import com.triton.healthZ.interfaces.OnAppointmentSuccessfullyCancel;
-import com.triton.healthZ.petlover.PetMyOrdrersActivity;
+import com.triton.healthZ.customer.PetMyOrdrersActivity;
 import com.triton.healthZ.requestpojo.PetLoverCancelOrderRequest;
 import com.triton.healthZ.requestpojo.PetLoverCancelSingleOrderRequest;
 import com.triton.healthZ.requestpojo.RefundCouponCreateRequest;

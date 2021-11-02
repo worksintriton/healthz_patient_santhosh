@@ -22,7 +22,7 @@ import com.triton.healthZ.api.APIClient;
 import com.triton.healthZ.interfaces.OnItemCheckConfirmStatus;
 import com.triton.healthZ.interfaces.OnItemCheckDispatchStatus;
 import com.triton.healthZ.interfaces.OnItemCheckRejectStatus;
-import com.triton.healthZ.petlover.PetVendorCancelOrderActivity;
+import com.triton.healthZ.customer.PetVendorCancelOrderActivity;
 import com.triton.healthZ.responsepojo.PetLoverVendorOrderDetailsResponse;
 import com.triton.healthZ.vendor.VendorTrackOrderActivity;
 

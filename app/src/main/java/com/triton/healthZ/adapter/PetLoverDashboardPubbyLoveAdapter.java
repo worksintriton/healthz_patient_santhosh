@@ -16,7 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.triton.healthZ.R;
 import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.petlover.PetLoverDashboardActivity;
+import com.triton.healthZ.customer.CustomerDashboardActivity;
 import com.triton.healthZ.responsepojo.PetLoverDashboardResponse;
 
 import java.util.List;
@@ -125,7 +125,7 @@ public class PetLoverDashboardPubbyLoveAdapter extends  RecyclerView.Adapter<Rec
     }
 
     private void callDirections(String tag) {
-        Intent i = new Intent(context, PetLoverDashboardActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        Intent i = new Intent(context, CustomerDashboardActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         i.putExtra("tag",tag);
         context.startActivity(i);
     }

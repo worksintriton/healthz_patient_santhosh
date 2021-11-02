@@ -614,6 +614,10 @@
     <string name="create_an_account">Create an account</string>
     <string name="already_a_member">Already a member?</string>
     <string name="type_location">Type Location</string>
+    <string name="dukauwa_du_gmail_com">dukauwa.du@gmail.com</string>
+    <string name="healthz">HealthZ</string>
+    <string name="alfredo_press">Alfredo Press</string>
+    <string name="my_health_record">My Health Record</string>
 
     <string-array name="array_name">
         <item>+91</item>

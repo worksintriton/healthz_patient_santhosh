@@ -22,7 +22,7 @@ import com.triton.healthZ.adapter.NotificationDashboardAdapter;
 import com.triton.healthZ.api.APIClient;
 import com.triton.healthZ.api.RestApiInterface;
 import com.triton.healthZ.doctor.DoctorDashboardActivity;
-import com.triton.healthZ.petlover.PetLoverDashboardActivity;
+import com.triton.healthZ.customer.CustomerDashboardActivity;
 import com.triton.healthZ.requestpojo.NotificationGetlistRequest;
 import com.triton.healthZ.requestpojo.NotificationsMarkRequest;
 import com.triton.healthZ.responsepojo.NotificationGetlistResponse;
@@ -182,8 +182,8 @@ public class NotificationActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        if(fromactivity != null && fromactivity.equalsIgnoreCase("PetLoverNavigationDrawerNew")){
-            startActivity(new Intent(getApplicationContext(), PetLoverDashboardActivity.class));
+        if(fromactivity != null && fromactivity.equalsIgnoreCase("CustomerNavigationDrawer")){
+            startActivity(new Intent(getApplicationContext(), CustomerDashboardActivity.class));
             finish();
         }else if(fromactivity != null && fromactivity.equalsIgnoreCase("DoctorNavigationDrawer")){
             startActivity(new Intent(getApplicationContext(), DoctorDashboardActivity.class));

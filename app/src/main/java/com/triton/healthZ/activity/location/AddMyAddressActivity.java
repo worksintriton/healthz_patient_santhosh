@@ -38,7 +38,7 @@ import com.triton.healthZ.R;
 
 import com.triton.healthZ.api.APIClient;
 import com.triton.healthZ.api.RestApiInterface;
-import com.triton.healthZ.petlover.PetLoverDashboardActivity;
+import com.triton.healthZ.customer.CustomerDashboardActivity;
 import com.triton.healthZ.requestpojo.LocationAddRequest;
 import com.triton.healthZ.responsepojo.LocationAddResponse;
 import com.triton.healthZ.sessionmanager.SessionManager;
@@ -356,7 +356,7 @@ public class AddMyAddressActivity extends FragmentActivity implements OnMapReady
                 if (response.body() != null) {
 
                     if(response.body().getCode() == 200){
-                        Intent i = new Intent(AddMyAddressActivity.this, PetLoverDashboardActivity.class);
+                        Intent i = new Intent(AddMyAddressActivity.this, CustomerDashboardActivity.class);
                         startActivity(i);
 
                     }else{

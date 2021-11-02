@@ -18,8 +18,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.triton.healthZ.R;
 import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.petlover.BookAppointmentActivity;
-import com.triton.healthZ.petlover.DoctorClinicDetailsActivity;
+import com.triton.healthZ.customer.BookAppointmentActivity;
+import com.triton.healthZ.customer.DoctorClinicDetailsActivity;
 import com.triton.healthZ.responsepojo.FilterDoctorResponse;
 
 import java.util.List;

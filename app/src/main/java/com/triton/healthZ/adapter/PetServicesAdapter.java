@@ -20,7 +20,7 @@ import com.bumptech.glide.request.RequestOptions;
 import com.triton.healthZ.R;
 
 import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.petlover.SelectedServiceActivity;
+import com.triton.healthZ.customer.SelectedServiceActivity;
 import com.triton.healthZ.responsepojo.ServiceCatResponse;
 
 import java.util.List;

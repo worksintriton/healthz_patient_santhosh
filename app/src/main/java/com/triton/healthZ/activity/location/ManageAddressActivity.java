@@ -30,10 +30,10 @@ import com.triton.healthZ.activity.NotificationActivity;
 import com.triton.healthZ.adapter.ManageAddressListAdapter;
 import com.triton.healthZ.api.APIClient;
 import com.triton.healthZ.api.RestApiInterface;
+import com.triton.healthZ.customer.CustomerDashboardActivity;
 import com.triton.healthZ.interfaces.LocationDefaultListener;
 import com.triton.healthZ.interfaces.LocationDeleteListener;
-import com.triton.healthZ.petlover.PetLoverDashboardActivity;
-import com.triton.healthZ.petlover.PetLoverProfileScreenActivity;
+import com.triton.healthZ.customer.PetLoverProfileScreenActivity;
 import com.triton.healthZ.requestpojo.LocationDeleteRequest;
 import com.triton.healthZ.requestpojo.LocationListAddressRequest;
 import com.triton.healthZ.requestpojo.LocationStatusChangeRequest;
@@ -266,8 +266,8 @@ public class ManageAddressActivity extends AppCompatActivity implements View.OnC
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        if(fromactivity != null && fromactivity.equalsIgnoreCase("PetLoverNavigationDrawerNew")){
-            startActivity(new Intent(getApplicationContext(), PetLoverDashboardActivity.class));
+        if(fromactivity != null && fromactivity.equalsIgnoreCase("CustomerNavigationDrawer")){
+            startActivity(new Intent(getApplicationContext(), CustomerDashboardActivity.class));
             finish();
         }else {
             startActivity(new Intent(getApplicationContext(), PetLoverProfileScreenActivity.class));
@@ -595,7 +595,7 @@ public class ManageAddressActivity extends AppCompatActivity implements View.OnC
 //        return true;
 //    }
     public void callDirections(String tag){
-        Intent intent = new Intent(getApplicationContext(), PetLoverDashboardActivity.class);
+        Intent intent = new Intent(getApplicationContext(), CustomerDashboardActivity.class);
         intent.putExtra("tag",tag);
         startActivity(intent);
         finish();
