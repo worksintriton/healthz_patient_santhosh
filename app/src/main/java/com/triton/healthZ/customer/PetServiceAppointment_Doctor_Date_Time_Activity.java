@@ -558,7 +558,7 @@ public class PetServiceAppointment_Doctor_Date_Time_Activity extends AppCompatAc
             case R.id.img_cart:
                 break;
             case R.id.img_profile:
-                Intent intent = new Intent(getApplicationContext(),PetLoverProfileScreenActivity.class);
+                Intent intent = new Intent(getApplicationContext(), CustomerProfileScreenActivity.class);
                 intent.putExtra("fromactivity",TAG);
                 intent.putExtra("spid",spid);
                 intent.putExtra("catid",catid);

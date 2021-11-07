@@ -403,7 +403,7 @@ public class PetOtherInformationsActivity extends AppCompatActivity {
        // super.onBackPressed();
         Log.w(TAG,"onBackPressed fromactivity : "+fromactivity);
         if(fromactivity != null && fromactivity.equalsIgnoreCase("BasicPetDetailsActivity")) {
-            startActivity(new Intent(getApplicationContext(), PetLoverProfileScreenActivity.class));
+            startActivity(new Intent(getApplicationContext(), CustomerProfileScreenActivity.class));
             finish();
         }else if(fromactivity != null && fromactivity.equalsIgnoreCase("AddNewPetActivity")) {
             Intent intent = new Intent(PetOtherInformationsActivity.this, ConsultationActivity.class);

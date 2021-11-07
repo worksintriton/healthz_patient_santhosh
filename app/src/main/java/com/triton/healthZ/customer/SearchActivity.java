@@ -25,10 +25,10 @@ import com.triton.healthZ.R;
 import com.triton.healthZ.adapter.ProductsSearchAdapter;
 import com.triton.healthZ.api.APIClient;
 import com.triton.healthZ.api.RestApiInterface;
-import com.triton.healthZ.fragmentcustomer.bottommenu.PetCareFragment;
+import com.triton.healthZ.fragmentcustomer.bottommenu.CustomerCareFragment;
+import com.triton.healthZ.fragmentcustomer.bottommenu.CustomerShopFragment;
 import com.triton.healthZ.fragmentcustomer.bottommenu.PetHomeFragment;
-import com.triton.healthZ.fragmentcustomer.bottommenu.PetServicesFragment;
-import com.triton.healthZ.fragmentcustomer.bottommenu.VendorShopFragment;
+import com.triton.healthZ.fragmentcustomer.bottommenu.CustomerServicesFragment;
 import com.triton.healthZ.requestpojo.ProductSearchRequest;
 import com.triton.healthZ.responsepojo.ProductSearchResponse;
 import com.triton.healthZ.utils.ConnectionDetector;
@@ -78,9 +78,9 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
 
 
     final Fragment petHomeFragment = new PetHomeFragment();
-    final Fragment petCareFragment = new PetCareFragment();
-    final Fragment petServicesFragment = new PetServicesFragment();
-    final Fragment vendorShopFragment = new VendorShopFragment();
+    final Fragment petCareFragment = new CustomerCareFragment();
+    final Fragment petServicesFragment = new CustomerServicesFragment();
+    final Fragment vendorShopFragment = new CustomerShopFragment();
 
     public static String active_tag = "1";
 
@@ -89,50 +89,7 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
     String tag;
     private String fromactivity;
 
-    /* Petlover Bottom Navigation */
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_home)
-    RelativeLayout rl_home;
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_care)
-    RelativeLayout rl_care;
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.title_care)
-    TextView title_care;
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_care)
-    ImageView img_care;
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_service)
-    RelativeLayout rl_service;
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.title_serv)
-    TextView title_serv;
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_serv)
-    ImageView img_serv;
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_shop)
-    RelativeLayout rl_shop;
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.title_shop)
-    TextView title_shop;
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_shop)
-    ImageView img_shop;
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_comn)
-    RelativeLayout rl_comn;
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.title_community)
-    TextView title_community;
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_community)
-    ImageView img_community;
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_homes)
-    RelativeLayout rl_homes;
-
+   /**/
 
 
     @Override
@@ -148,24 +105,6 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
 
 
 
-
-        /*home*/
-        title_care.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-        img_care.setImageResource(R.drawable.grey_care);
-        title_serv.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-        img_serv.setImageResource(R.drawable.grey_servc);
-        title_shop.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-        img_shop.setImageResource(R.drawable.grey_shop);
-        title_community.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-        img_community.setImageResource(R.drawable.grey_community);
-
-
-        rl_home.setOnClickListener(this);
-        rl_care.setOnClickListener(this);
-        rl_service.setOnClickListener(this);
-        rl_shop.setOnClickListener(this);
-        rl_comn.setOnClickListener(this);
-        rl_homes.setOnClickListener(this);
 
         if (new ConnectionDetector(getApplicationContext()).isNetworkAvailable(getApplicationContext())) {
             productSearchResponseCall(searchString);

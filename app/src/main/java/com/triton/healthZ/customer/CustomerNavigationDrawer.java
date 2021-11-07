@@ -19,12 +19,9 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -34,33 +31,19 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
 import com.google.android.material.navigation.NavigationView;
-import com.google.gson.Gson;
 import com.triton.healthZ.R;
-import com.triton.healthZ.activity.VerifyPhoneNumberActivity;
 import com.triton.healthZ.activity.NotificationActivity;
 import com.triton.healthZ.activity.SoSActivity;
 import com.triton.healthZ.activity.location.ManageAddressActivity;
-import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.api.RestApiInterface;
-import com.triton.healthZ.requestpojo.DefaultLocationRequest;
-import com.triton.healthZ.requestpojo.NotificationCartCountRequest;
-import com.triton.healthZ.responsepojo.NotificationCartCountResponse;
 import com.triton.healthZ.responsepojo.PetLoverDashboardResponse;
-import com.triton.healthZ.responsepojo.SuccessResponse;
 import com.triton.healthZ.sessionmanager.SessionManager;
-import com.triton.healthZ.utils.ConnectionDetector;
-import com.triton.healthZ.utils.RestUtils;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
 
 import de.hdodenhof.circleimageview.CircleImageView;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 
 public class CustomerNavigationDrawer extends AppCompatActivity implements View.OnClickListener{
@@ -174,7 +157,7 @@ public class CustomerNavigationDrawer extends AppCompatActivity implements View.
 
         nav_header_ref_code = view.findViewById(R.id.nav_header_ref_code);
 
-        nav_header_ref_code.setText(getResources().getString(R.string.ref_code)+" : "+12345678);
+//        nav_header_ref_code.setText(getResources().getString(R.string.ref_code)+" : "+12345678);
        /* if(refcode != null && !refcode.isEmpty() ){
             nav_header_ref_code.setVisibility(View.VISIBLE);
 
@@ -193,7 +176,7 @@ public class CustomerNavigationDrawer extends AppCompatActivity implements View.
         nav_header_profilename.setText(name)*/;
 
         FrameLayout llheader = header.findViewById(R.id.llheader);
-        llheader.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(),PetLoverProfileScreenActivity.class)));
+        llheader.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(), CustomerProfileScreenActivity.class)));
 
 
         navigationView.setNavigationItemSelectedListener(menuItem -> {
@@ -375,7 +358,7 @@ public class CustomerNavigationDrawer extends AppCompatActivity implements View.
         });
         img_profile.setOnClickListener(v -> {
 
-           Intent intent = new Intent(getApplicationContext(),PetLoverProfileScreenActivity.class);
+           Intent intent = new Intent(getApplicationContext(),CustomerProfileScreenActivity.class);
            intent.putExtra("fromactivity",TAG);
             if(CustomerDashboardActivity.active_tag != null){
                 intent.putExtra("active_tag",CustomerDashboardActivity.active_tag);

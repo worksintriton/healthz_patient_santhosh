@@ -25,9 +25,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -63,10 +62,10 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class PetServicesFragment extends Fragment implements Serializable, View.OnClickListener {
+public class CustomerServicesFragment extends Fragment implements Serializable, View.OnClickListener {
 
 
-    private String TAG = "PetServicesFragment";
+    private String TAG = "CustomerServicesFragment";
 
 
 
@@ -135,7 +134,7 @@ public class PetServicesFragment extends Fragment implements Serializable, View.
     private List<ServiceCatResponse.DataBean> serviceCatList;
 
 
-    public PetServicesFragment() {
+    public CustomerServicesFragment() {
         // Required empty public constructor
     }
 
@@ -151,7 +150,7 @@ public class PetServicesFragment extends Fragment implements Serializable, View.
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         Log.w(TAG,"onCreateView-->");
-        View view = inflater.inflate(R.layout.fragment_pet_services, container, false);
+        View view = inflater.inflate(R.layout.fragment_customer_service, container, false);
         preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
         ButterKnife.bind(this, view);
         mContext = getActivity();
@@ -295,7 +294,7 @@ public class PetServicesFragment extends Fragment implements Serializable, View.
 
     private void setViewPetServices(List<ServiceCatResponse.DataBean> serviceCatList) {
         // Setting the layout as Staggered Grid for vertical orientation
-        StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL);
+        GridLayoutManager staggeredGridLayoutManager = new GridLayoutManager(getContext(), 2);
         rv_popular_services.setLayoutManager(staggeredGridLayoutManager);
 
         PetServicesAdapter petServicesAdapter = new PetServicesAdapter(mContext, serviceCatList);

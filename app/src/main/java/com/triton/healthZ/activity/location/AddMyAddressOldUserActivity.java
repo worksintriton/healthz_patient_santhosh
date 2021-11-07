@@ -38,7 +38,7 @@ import com.triton.healthZ.R;
 import com.triton.healthZ.activity.NotificationActivity;
 import com.triton.healthZ.api.APIClient;
 import com.triton.healthZ.api.RestApiInterface;
-import com.triton.healthZ.customer.PetLoverProfileScreenActivity;
+import com.triton.healthZ.customer.CustomerProfileScreenActivity;
 import com.triton.healthZ.requestpojo.LocationAddRequest;
 import com.triton.healthZ.responsepojo.LocationAddResponse;
 import com.triton.healthZ.sessionmanager.SessionManager;
@@ -222,7 +222,7 @@ public class AddMyAddressOldUserActivity extends FragmentActivity implements OnM
         img_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(new Intent(getApplicationContext(), PetLoverProfileScreenActivity.class));
+                Intent intent = new Intent(new Intent(getApplicationContext(), CustomerProfileScreenActivity.class));
                 intent.putExtra("latlng",latlng);
                 intent.putExtra("CityName",CityName);
                 intent.putExtra("AddressLine",AddressLine);

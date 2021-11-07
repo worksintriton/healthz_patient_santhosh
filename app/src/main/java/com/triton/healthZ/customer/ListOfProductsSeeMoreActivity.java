@@ -99,12 +99,12 @@ public class ListOfProductsSeeMoreActivity extends AppCompatActivity implements 
 
 
 
-    /*@SuppressLint("NonConstantResourceId")
+  /*  *//*@SuppressLint("NonConstantResourceId")
     @BindView(R.id.include_petlover_header)
-    View include_petlover_header;*/
+    View include_petlover_header;*//*
 
 
-    /* Petlover Bottom Navigation */
+    *//* Petlover Bottom Navigation *//*
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.rl_home)
@@ -160,7 +160,7 @@ public class ListOfProductsSeeMoreActivity extends AppCompatActivity implements 
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.rl_homes)
-    RelativeLayout rl_homes;
+    RelativeLayout rl_homes;*/
 
 
 
@@ -331,29 +331,6 @@ public class ListOfProductsSeeMoreActivity extends AppCompatActivity implements 
 //        bottom_navigation_view.setItemIconTintList(null);
 //        bottom_navigation_view.setOnNavigationItemSelectedListener(this);
 //        bottom_navigation_view.getMenu().findItem(R.id.shop).setChecked(true);
-
-
-        title_care.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-        img_care.setImageResource(R.drawable.grey_care);
-        title_serv.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-        img_serv.setImageResource(R.drawable.grey_servc);
-        title_community.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-        img_community.setImageResource(R.drawable.grey_community);
-        title_shop.setTextColor(getResources().getColor(R.color.new_gree_color,getTheme()));
-        img_shop.setImageResource(R.drawable.green_shop);
-
-        rl_home.setOnClickListener(this);
-
-        rl_care.setOnClickListener(this);
-
-        rl_service.setOnClickListener(this);
-
-        rl_shop.setOnClickListener(this);
-
-        rl_comn.setOnClickListener(this);
-
-
-        rl_homes.setOnClickListener(this);
 
 
 
@@ -669,7 +646,7 @@ public class ListOfProductsSeeMoreActivity extends AppCompatActivity implements 
                 startActivity(i);
                 break;
             case R.id.img_profile:
-                Intent intent = new Intent(getApplicationContext(),PetLoverProfileScreenActivity.class);
+                Intent intent = new Intent(getApplicationContext(), CustomerProfileScreenActivity.class);
                 intent.putExtra("fromactivity",TAG);
                 if(CustomerDashboardActivity.active_tag != null){
                     intent.putExtra("active_tag", CustomerDashboardActivity.active_tag);

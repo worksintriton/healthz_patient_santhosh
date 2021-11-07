@@ -224,7 +224,7 @@ public class PetVendorCancelOrderActivity extends AppCompatActivity implements V
         img_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), PetLoverProfileScreenActivity.class));
+                startActivity(new Intent(getApplicationContext(), CustomerProfileScreenActivity.class));
             }
         });
         edt_comment.setVisibility(View.GONE);
@@ -238,7 +238,7 @@ public class PetVendorCancelOrderActivity extends AppCompatActivity implements V
         img_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), PetLoverProfileScreenActivity.class);
+                Intent intent = new Intent(getApplicationContext(), CustomerProfileScreenActivity.class);
                 intent.putExtra("_id",_id);
                 intent.putExtra("orderid",orderid);
                 intent.putExtra("product_id",product_id);

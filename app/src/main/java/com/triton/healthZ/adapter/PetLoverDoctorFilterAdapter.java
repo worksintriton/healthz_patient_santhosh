@@ -177,7 +177,7 @@ public class PetLoverDoctorFilterAdapter extends  RecyclerView.Adapter<RecyclerV
                 intent.putExtra("reviewcount",doctorFilterDetailsResponseList.get(position).getReview_count());
                 intent.putExtra("starcount",doctorFilterDetailsResponseList.get(position).getStar_count());
                 intent.putExtra("distance",doctorFilterDetailsResponseList.get(position).getDistance());
-                intent.putExtra("fromactivity", "PetCareFragment");
+                intent.putExtra("fromactivity", "CustomerCareFragment");
                 Log.w(TAG,"doctorid :"+doctorFilterDetailsResponseList.get(position).getUser_id());
                 context.startActivity(intent);
                 }

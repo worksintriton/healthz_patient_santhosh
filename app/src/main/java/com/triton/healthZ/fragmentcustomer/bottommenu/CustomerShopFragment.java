@@ -55,10 +55,10 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class VendorShopFragment extends Fragment implements Serializable,View.OnClickListener  {
+public class CustomerShopFragment extends Fragment implements Serializable,View.OnClickListener  {
 
 
-    private String TAG = "VendorShopFragment";
+    private String TAG = "CustomerShopFragment";
     int currentPage = 0;
     Timer timer;
     final long DELAY_MS = 500;//delay in milliseconds before task is to be executed
@@ -126,7 +126,7 @@ public class VendorShopFragment extends Fragment implements Serializable,View.On
     private String userid;
 
 
-    public VendorShopFragment() {
+    public CustomerShopFragment() {
         // Required empty public constructor
     }
 
@@ -142,7 +142,7 @@ public class VendorShopFragment extends Fragment implements Serializable,View.On
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         Log.w(TAG,"onCreateView-->");
-        View view = inflater.inflate(R.layout.fragment_shop_vendor, container, false);
+        View view = inflater.inflate(R.layout.fragment_customer_shop, container, false);
         ButterKnife.bind(this, view);
         mContext = getActivity();
         avi_indicator.setVisibility(View.GONE);

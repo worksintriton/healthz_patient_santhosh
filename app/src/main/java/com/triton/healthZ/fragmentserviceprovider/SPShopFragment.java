@@ -137,7 +137,7 @@ public class SPShopFragment extends Fragment implements Serializable,View.OnClic
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         Log.w(TAG,"onCreateView-->");
-        View view = inflater.inflate(R.layout.fragment_shop_vendor, container, false);
+        View view = inflater.inflate(R.layout.fragment_customer_shop, container, false);
         ButterKnife.bind(this, view);
         mContext = getActivity();
         avi_indicator.setVisibility(View.GONE);

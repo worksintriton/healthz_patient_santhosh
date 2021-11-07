@@ -39,7 +39,7 @@ import com.triton.healthZ.api.APIClient;
 import com.triton.healthZ.api.RestApiInterface;
 
 import com.triton.healthZ.doctor.ManageAddressDoctorActivity;
-import com.triton.healthZ.customer.PetLoverProfileScreenActivity;
+import com.triton.healthZ.customer.CustomerProfileScreenActivity;
 import com.triton.healthZ.requestpojo.LocationUpdateRequest;
 import com.triton.healthZ.responsepojo.LocationUpdateResponse;
 import com.triton.healthZ.sessionmanager.SessionManager;
@@ -287,7 +287,7 @@ public class EditMyAddressActivity extends FragmentActivity implements OnMapRead
         img_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                    Intent intent = new Intent(getApplicationContext(),PetLoverProfileScreenActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), CustomerProfileScreenActivity.class);
                     intent.putExtra("id",id);
                     intent.putExtra("userid",userid);
                     intent.putExtra("nickname",nickname);

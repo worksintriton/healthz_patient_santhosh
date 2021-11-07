@@ -165,7 +165,7 @@ public class PetMyOrdrersNewActivity extends AppCompatActivity implements View.O
         img_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), PetLoverProfileScreenActivity.class);
+                Intent intent = new Intent(getApplicationContext(), CustomerProfileScreenActivity.class);
                 intent.putExtra("fromactivity",TAG);
                 startActivity(intent);
             }

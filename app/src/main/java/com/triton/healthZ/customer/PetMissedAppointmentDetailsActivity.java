@@ -36,66 +36,7 @@ import retrofit2.Response;
 public class PetMissedAppointmentDetailsActivity extends AppCompatActivity implements View.OnClickListener{
     private static final String TAG = "PetCmpAppDetailsAct";
 
-    /* Petlover Bottom Navigation */
-    /* Petlover Bottom Navigation */
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_home)
-    RelativeLayout rl_home;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_care)
-    RelativeLayout rl_care;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.title_care)
-    TextView title_care;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_care)
-    ImageView img_care;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_service)
-    RelativeLayout rl_service;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.title_serv)
-    TextView title_serv;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_serv)
-    ImageView img_serv;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_shop)
-    RelativeLayout rl_shop;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.title_shop)
-    TextView title_shop;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_shop)
-    ImageView img_shop;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_comn)
-    RelativeLayout rl_comn;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.title_community)
-    TextView title_community;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_community)
-    ImageView img_community;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_homes)
-    RelativeLayout rl_homes;
-
-
+/**/
 
 
 
@@ -259,7 +200,7 @@ public class PetMissedAppointmentDetailsActivity extends AppCompatActivity imple
 //        bottom_navigation_view.setOnNavigationItemSelectedListener(this);
 //        bottom_navigation_view.getMenu().findItem(R.id.home).setChecked(true);
 
-        /*shop*/
+     /*   *//*shop*//*
         title_care.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
         img_care.setImageResource(R.drawable.grey_care);
         title_serv.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
@@ -280,7 +221,7 @@ public class PetMissedAppointmentDetailsActivity extends AppCompatActivity imple
         rl_comn.setOnClickListener(this);
 
 
-        rl_homes.setOnClickListener(this);
+        rl_homes.setOnClickListener(this);*/
 
 
         Bundle bundle = getIntent().getExtras();

@@ -187,7 +187,7 @@ public class PetAppointment_Doctor_Date_Time_Activity extends AppCompatActivity 
 
         img_notification.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), NotificationActivity.class)));
         img_profile.setOnClickListener(view -> {
-            Intent intent = new Intent(getApplicationContext(), PetLoverProfileScreenActivity.class);
+            Intent intent = new Intent(getApplicationContext(), CustomerProfileScreenActivity.class);
             intent.putExtra("doctorid",doctorid);
             intent.putExtra("fromactivity",TAG);
             startActivity(intent);
@@ -481,7 +481,7 @@ public class PetAppointment_Doctor_Date_Time_Activity extends AppCompatActivity 
 
         if(fromto != null && fromto.equalsIgnoreCase("direct")){
             callDirections("4");
-        } else if(fromactivity != null && fromactivity.equalsIgnoreCase("PetCareFragment")){
+        } else if(fromactivity != null && fromactivity.equalsIgnoreCase("CustomerCareFragment")){
             Intent intent = new Intent(getApplicationContext(),DoctorClinicDetailsActivity.class);
             intent.putExtra("doctorid",doctorid);
             intent.putExtra("fromactivity",fromactivity);

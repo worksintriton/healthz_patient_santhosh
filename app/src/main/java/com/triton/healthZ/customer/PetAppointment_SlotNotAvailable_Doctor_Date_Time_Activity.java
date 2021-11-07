@@ -262,7 +262,7 @@ public class PetAppointment_SlotNotAvailable_Doctor_Date_Time_Activity extends A
 
         img_notification.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), NotificationActivity.class)));
         img_profile.setOnClickListener(view -> {
-            Intent intent = new Intent(getApplicationContext(), PetLoverProfileScreenActivity.class);
+            Intent intent = new Intent(getApplicationContext(), CustomerProfileScreenActivity.class);
             intent.putExtra("doctorid",doctorid);
             intent.putExtra("fromactivity",TAG);
             startActivity(intent);

@@ -276,11 +276,8 @@ public class VerifyPhoneNumberActivity extends AppCompatActivity implements View
 
     @Override
     public void onBackPressed() {
-/*        new android.app.AlertDialog.Builder(LoginActivity.this)
-                .setMessage("Are you sure you want to exit?")
-                .setCancelable(false)
-                .setPositiveButton("Yes", (dialog, id) -> LoginActivity.this.finishAffinity())
-                .setNegativeButton("No", null)
-                .show();*/
+
+        super.onBackPressed();
+
     }
 }

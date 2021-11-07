@@ -192,66 +192,7 @@ public class PetCartActivity extends AppCompatActivity implements AddandRemovePr
     private String active_tag;
     private String cat_id;
 
-    /* Petlover Bottom Navigation */
-    /* Petlover Bottom Navigation */
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_home)
-    RelativeLayout rl_home;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_care)
-    RelativeLayout rl_care;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.title_care)
-    TextView title_care;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_care)
-    ImageView img_care;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_service)
-    RelativeLayout rl_service;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.title_serv)
-    TextView title_serv;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_serv)
-    ImageView img_serv;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_shop)
-    RelativeLayout rl_shop;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.title_shop)
-    TextView title_shop;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_shop)
-    ImageView img_shop;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_comn)
-    RelativeLayout rl_comn;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.title_community)
-    TextView title_community;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_community)
-    ImageView img_community;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_homes)
-    RelativeLayout rl_homes;
-
-    @SuppressLint("NonConstantResourceId")
+/**/    @SuppressLint("NonConstantResourceId")
     @BindView(R.id.edt_coupon)
     EditText edt_coupon;
 
@@ -347,7 +288,7 @@ public class PetCartActivity extends AppCompatActivity implements AddandRemovePr
         img_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),PetLoverProfileScreenActivity.class));
+                startActivity(new Intent(getApplicationContext(), CustomerProfileScreenActivity.class));
             }
         });
 
@@ -397,7 +338,7 @@ public class PetCartActivity extends AppCompatActivity implements AddandRemovePr
             });
 
 
-        /*shop*/
+    /*    *//*shop*//*
         title_care.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
         img_care.setImageResource(R.drawable.grey_care);
         title_serv.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
@@ -418,7 +359,7 @@ public class PetCartActivity extends AppCompatActivity implements AddandRemovePr
         rl_comn.setOnClickListener(this);
 
 
-        rl_homes.setOnClickListener(this);
+        rl_homes.setOnClickListener(this);*/
 
         btn_apply_coupon.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("SetTextI18n")

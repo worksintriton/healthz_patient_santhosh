@@ -369,7 +369,7 @@ public class PetWalkinappointmentsActivity extends AppCompatActivity implements 
             case R.id.img_cart:
                 break;
             case R.id.img_profile:
-                Intent intent = new Intent(getApplicationContext(),PetLoverProfileScreenActivity.class);
+                Intent intent = new Intent(getApplicationContext(), CustomerProfileScreenActivity.class);
                 intent.putExtra("fromactivity",TAG);
                 startActivity(intent);
                 break;

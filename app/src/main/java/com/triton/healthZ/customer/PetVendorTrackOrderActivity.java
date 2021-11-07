@@ -174,7 +174,7 @@ public class PetVendorTrackOrderActivity extends AppCompatActivity implements Vi
     @BindView(R.id.include_petlover_header)
     View include_petlover_header;
 
-    /* Petlover Bottom Navigation */
+ /*   *//* Petlover Bottom Navigation *//*
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.rl_home)
     RelativeLayout rl_home;
@@ -216,7 +216,7 @@ public class PetVendorTrackOrderActivity extends AppCompatActivity implements Vi
     ImageView img_community;
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.rl_homes)
-    RelativeLayout rl_homes;
+    RelativeLayout rl_homes;*/
 
 
     private String _id;
@@ -248,25 +248,6 @@ public class PetVendorTrackOrderActivity extends AppCompatActivity implements Vi
         txt_order_reject_date_reason.setText("");
         txt_order_dispatch_date.setText(" ");
         txt_order_transit_date.setText(" ");
-
-        /*shop*/
-        title_care.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-        img_care.setImageResource(R.drawable.grey_care);
-        title_serv.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-        img_serv.setImageResource(R.drawable.grey_servc);
-        title_community.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-        img_community.setImageResource(R.drawable.grey_community);
-        title_shop.setTextColor(getResources().getColor(R.color.new_gree_color,getTheme()));
-        img_shop.setImageResource(R.drawable.green_shop);
-
-        rl_home.setOnClickListener(this);
-        rl_care.setOnClickListener(this);
-        rl_service.setOnClickListener(this);
-        rl_shop.setOnClickListener(this);
-        rl_comn.setOnClickListener(this);
-        rl_homes.setOnClickListener(this);
-
-
 
 
         Bundle extras = getIntent().getExtras();

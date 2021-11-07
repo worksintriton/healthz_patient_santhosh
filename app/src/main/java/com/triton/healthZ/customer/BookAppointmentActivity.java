@@ -441,7 +441,7 @@ public class BookAppointmentActivity extends AppCompatActivity implements Paymen
         img_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), PetLoverProfileScreenActivity.class);
+                Intent intent = new Intent(getApplicationContext(), CustomerProfileScreenActivity.class);
                 intent.putExtra("doctorid",doctorid);
                 intent.putExtra("fromactivity",TAG);
                 startActivity(intent);

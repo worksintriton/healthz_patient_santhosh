@@ -37,14 +37,14 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class PetCommunityFragment extends Fragment  {
+public class CustomerCommunityFragment extends Fragment  {
 
 
-    private String TAG = "PetCommunityFragment";
+    private String TAG = "CustomerCommunityFragment";
 
     View view;
 
-    public PetCommunityFragment() {
+    public CustomerCommunityFragment() {
         // Required empty public constructor
     }
 
@@ -75,7 +75,7 @@ public class PetCommunityFragment extends Fragment  {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         Log.w(TAG,"onCreateView-->");
 
-        view = inflater.inflate(R.layout.fragment_pet_community, container, false);
+        view = inflater.inflate(R.layout.fragment_customer_community, container, false);
         ButterKnife.bind(this, view);
         mContext = getActivity();
 

@@ -85,9 +85,14 @@ public class PetMyappointmentsActivity extends AppCompatActivity implements Bott
     @BindView(R.id.include_petlover_header)
     View include_petlover_header;
 
-    /* Petlover Bottom Navigation */
+/*
+    */
+/* Petlover Bottom Navigation *//*
 
-    /* Petlover Bottom Navigation */
+
+    */
+/* Petlover Bottom Navigation *//*
+
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.rl_home)
@@ -144,6 +149,7 @@ public class PetMyappointmentsActivity extends AppCompatActivity implements Bott
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.rl_homes)
     RelativeLayout rl_homes;
+*/
 
 
     String appintments;
@@ -199,7 +205,10 @@ public class PetMyappointmentsActivity extends AppCompatActivity implements Bott
 //        bottom_navigation_view.setOnNavigationItemSelectedListener(this);
 //        bottom_navigation_view.getMenu().findItem(R.id.home).setChecked(true);
 
-        /*shop*/
+/*
+        */
+/*shop*//*
+
         title_care.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
         img_care.setImageResource(R.drawable.grey_care);
         title_serv.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
@@ -222,6 +231,7 @@ public class PetMyappointmentsActivity extends AppCompatActivity implements Bott
 
 
         rl_homes.setOnClickListener(this);
+*/
 
 
 
@@ -373,7 +383,7 @@ public class PetMyappointmentsActivity extends AppCompatActivity implements Bott
             case R.id.img_cart:
                 break;
             case R.id.img_profile:
-                Intent intent = new Intent(getApplicationContext(),PetLoverProfileScreenActivity.class);
+                Intent intent = new Intent(getApplicationContext(), CustomerProfileScreenActivity.class);
                 intent.putExtra("fromactivity",TAG);
                 startActivity(intent);
                 break;

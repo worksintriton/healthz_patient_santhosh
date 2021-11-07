@@ -147,50 +147,7 @@ public class SelectedServiceActivity extends AppCompatActivity implements View.O
     int currentPage = 0;
 
 
-     /* Petlover Bottom Navigation */
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_home)
-    RelativeLayout rl_home;
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_care)
-    RelativeLayout rl_care;
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.title_care)
-    TextView title_care;
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_care)
-    ImageView img_care;
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_service)
-    RelativeLayout rl_service;
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.title_serv)
-    TextView title_serv;
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_serv)
-    ImageView img_serv;
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_shop)
-    RelativeLayout rl_shop;
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.title_shop)
-    TextView title_shop;
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_shop)
-    ImageView img_shop;
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_comn)
-    RelativeLayout rl_comn;
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.title_community)
-    TextView title_community;
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_community)
-    ImageView img_community;
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_homes)
-    RelativeLayout rl_homes;
-
+    /**/
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.refresh_layout)
     SwipeRefreshLayout refresh_layout;
@@ -232,22 +189,6 @@ public class SelectedServiceActivity extends AppCompatActivity implements View.O
         img_cart.setVisibility(View.GONE);
         toolbar_title.setText(getResources().getString(R.string.service_details));
 
-        /*serv*/
-        title_care.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-        img_care.setImageResource(R.drawable.grey_care);
-        title_shop.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-        img_shop.setImageResource(R.drawable.grey_shop);
-        title_community.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-        img_community.setImageResource(R.drawable.grey_community);
-        title_serv.setTextColor(getResources().getColor(R.color.new_gree_color,getTheme()));
-        img_serv.setImageResource(R.drawable.green_serv);
-
-        rl_home.setOnClickListener(this);
-        rl_care.setOnClickListener(this);
-        rl_service.setOnClickListener(this);
-        rl_shop.setOnClickListener(this);
-        rl_comn.setOnClickListener(this);
-        rl_homes.setOnClickListener(this);
 
 
 
@@ -634,7 +575,7 @@ public class SelectedServiceActivity extends AppCompatActivity implements View.O
     }
 
     private void goto_Profile() {
-        Intent intent = new Intent(getApplicationContext(),PetLoverProfileScreenActivity.class);
+        Intent intent = new Intent(getApplicationContext(), CustomerProfileScreenActivity.class);
         intent.putExtra("fromactivity",TAG);
         intent.putExtra("catid",catid);
         intent.putExtra("from",from);

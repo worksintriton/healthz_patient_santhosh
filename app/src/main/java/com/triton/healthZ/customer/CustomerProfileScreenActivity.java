@@ -65,70 +65,11 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class PetLoverProfileScreenActivity extends AppCompatActivity implements View.OnClickListener, PetDeleteListener {
-    private  String TAG = "PetLoverProfileScreenActivity";
+public class CustomerProfileScreenActivity extends AppCompatActivity implements View.OnClickListener, PetDeleteListener {
+    private  String TAG = "CustomerProfileScreenActivity";
 
 
-    /* Petlover Bottom Navigation */
-    /* Petlover Bottom Navigation */
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_home)
-    RelativeLayout rl_home;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_care)
-    RelativeLayout rl_care;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.title_care)
-    TextView title_care;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_care)
-    ImageView img_care;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_service)
-    RelativeLayout rl_service;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.title_serv)
-    TextView title_serv;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_serv)
-    ImageView img_serv;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_shop)
-    RelativeLayout rl_shop;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.title_shop)
-    TextView title_shop;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_shop)
-    ImageView img_shop;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_comn)
-    RelativeLayout rl_comn;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.title_community)
-    TextView title_community;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_community)
-    ImageView img_community;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_homes)
-    RelativeLayout rl_homes;
-
-    @SuppressLint("NonConstantResourceId")
+/**/    @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_usrname)
     TextView txt_usrname;
 
@@ -248,7 +189,7 @@ public class PetLoverProfileScreenActivity extends AppCompatActivity implements 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pet_lover_profile_screen);
+        setContentView(R.layout.activity_customer_profile_screen);
         ButterKnife.bind(this);
 
 
@@ -288,11 +229,11 @@ public class PetLoverProfileScreenActivity extends AppCompatActivity implements 
         txt_phn_num.setText(phoneNo);
 
         if(profileimage != null && !profileimage.isEmpty()){
-            Glide.with(PetLoverProfileScreenActivity.this)
+            Glide.with(CustomerProfileScreenActivity.this)
                     .load(profileimage)
                     .into(img_profile1);
         }else{
-            Glide.with(PetLoverProfileScreenActivity.this)
+            Glide.with(CustomerProfileScreenActivity.this)
                     .load(APIClient.PROFILE_IMAGE_URL)
                     .into(img_profile1);
 
@@ -391,7 +332,7 @@ public class PetLoverProfileScreenActivity extends AppCompatActivity implements 
         }
 
 
-        /*home*/
+      /*  *//*home*//*
         title_care.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
         img_care.setImageResource(R.drawable.grey_care);
         title_serv.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
@@ -405,7 +346,7 @@ public class PetLoverProfileScreenActivity extends AppCompatActivity implements 
         if(active_tag != null){
             if(active_tag.equalsIgnoreCase("3")) {
 //                bottom_navigation_view.getMenu().findItem(R.id.services).setChecked(true);
-                /*serv*/
+                *//*serv*//*
                 title_care.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
                 img_care.setImageResource(R.drawable.grey_care);
                 title_shop.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
@@ -418,34 +359,34 @@ public class PetLoverProfileScreenActivity extends AppCompatActivity implements 
 
             }else if(active_tag.equalsIgnoreCase("4")) {
 //                bottom_navigation_view.getMenu().findItem(R.id.care).setChecked(true);
-    /*Care*/
-                title_serv.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-                img_serv.setImageResource(R.drawable.grey_servc);
-                title_shop.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-                img_shop.setImageResource(R.drawable.grey_shop);
-                title_community.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-                img_community.setImageResource(R.drawable.grey_community);
-                title_care.setTextColor(getResources().getColor(R.color.new_gree_color,getTheme()));
-                img_care.setImageResource(R.drawable.green_care);
+    *//*Care*//*
+//                title_serv.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
+//                img_serv.setImageResource(R.drawable.grey_servc);
+//                title_shop.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
+//                img_shop.setImageResource(R.drawable.grey_shop);
+//                title_community.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
+//                img_community.setImageResource(R.drawable.grey_community);
+//                title_care.setTextColor(getResources().getColor(R.color.new_gree_color,getTheme()));
+//                img_care.setImageResource(R.drawable.green_care);
+//
+//            }
+//
+//        }
+//
+//        rl_home.setOnClickListener(this);
+//
+//        rl_care.setOnClickListener(this);
+//
+//        rl_service.setOnClickListener(this);
+//
+//        rl_shop.setOnClickListener(this);
+//
+//        rl_comn.setOnClickListener(this);
+//
+//
+//        rl_homes.setOnClickListener(this);
 
-            }
-
-        }
-
-        rl_home.setOnClickListener(this);
-
-        rl_care.setOnClickListener(this);
-
-        rl_service.setOnClickListener(this);
-
-        rl_shop.setOnClickListener(this);
-
-        rl_comn.setOnClickListener(this);
-
-
-        rl_homes.setOnClickListener(this);
-
-
+*/
 
 
 
@@ -618,7 +559,7 @@ public class PetLoverProfileScreenActivity extends AppCompatActivity implements 
     private void showLogOutAppAlert() {
         try {
 
-            dialog = new Dialog(PetLoverProfileScreenActivity.this);
+            dialog = new Dialog(CustomerProfileScreenActivity.this);
             dialog.setContentView(R.layout.alert_logout_layout);
             Button btn_no = dialog.findViewById(R.id.btn_no);
             Button btn_yes = dialog.findViewById(R.id.btn_yes);
@@ -651,7 +592,7 @@ public class PetLoverProfileScreenActivity extends AppCompatActivity implements 
 
 
     private void gotoMyAddresses() {
-        startActivity(new Intent(PetLoverProfileScreenActivity.this, MyAddressesListActivity.class));
+        startActivity(new Intent(CustomerProfileScreenActivity.this, MyAddressesListActivity.class));
 
     }
 
@@ -662,11 +603,11 @@ public class PetLoverProfileScreenActivity extends AppCompatActivity implements 
     }
 
     private void gotoManageAddress() {
-        startActivity(new Intent(PetLoverProfileScreenActivity.this, ManageAddressActivity.class));
+        startActivity(new Intent(CustomerProfileScreenActivity.this, ManageAddressActivity.class));
     }
 
     private void confirmLogoutDialog(){
-        android.app.AlertDialog.Builder alertDialogBuilder = new android.app.AlertDialog.Builder(PetLoverProfileScreenActivity.this);
+        android.app.AlertDialog.Builder alertDialogBuilder = new android.app.AlertDialog.Builder(CustomerProfileScreenActivity.this);
         alertDialogBuilder.setMessage("Are you sure want to logout?");
         alertDialogBuilder.setPositiveButton("yes",
                 new DialogInterface.OnClickListener() {
@@ -822,7 +763,7 @@ public class PetLoverProfileScreenActivity extends AppCompatActivity implements 
 
         try {
 
-            dialog = new Dialog(PetLoverProfileScreenActivity.this);
+            dialog = new Dialog(CustomerProfileScreenActivity.this);
             dialog.setContentView(R.layout.alert_approve_reject_layout);
             TextView tvheader = (TextView)dialog.findViewById(R.id.tvInternetNotConnected);
             tvheader.setText(R.string.deletepetmsg);

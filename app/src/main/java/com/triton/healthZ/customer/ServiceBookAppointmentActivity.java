@@ -319,7 +319,7 @@ public class ServiceBookAppointmentActivity extends AppCompatActivity implements
         img_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),PetLoverProfileScreenActivity.class);
+                Intent intent = new Intent(getApplicationContext(), CustomerProfileScreenActivity.class);
                 intent.putExtra("spid",spid);
                 intent.putExtra("catid",catid);
                 intent.putExtra("from",from);

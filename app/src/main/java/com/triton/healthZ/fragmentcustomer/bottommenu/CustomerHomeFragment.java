@@ -93,12 +93,12 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class PetHomeNewFragment extends Fragment implements Serializable,
+public class CustomerHomeFragment extends Fragment implements Serializable,
         OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener, LocationListener,
         View.OnClickListener  {
 
-    private String TAG = "PetHomeNewFragment";
+    private String TAG = "CustomerHomeFragment";
     int currentPage = 0;
     Timer timer;
     final long DELAY_MS = 500;//delay in milliseconds before task is to be executed
@@ -214,7 +214,7 @@ public class PetHomeNewFragment extends Fragment implements Serializable,
 
 
 
-    public PetHomeNewFragment() {
+    public CustomerHomeFragment() {
         // Required empty public constructor
     }
 
@@ -230,7 +230,7 @@ public class PetHomeNewFragment extends Fragment implements Serializable,
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         Log.w(TAG,"onCreateView-->");
-        View view = inflater.inflate(R.layout.fragment_home_pet_new, container, false);
+        View view = inflater.inflate(R.layout.fragment_customer_home, container, false);
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
         ButterKnife.bind(this, view);
         mContext = getActivity();

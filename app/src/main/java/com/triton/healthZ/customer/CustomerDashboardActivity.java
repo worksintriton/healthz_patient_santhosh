@@ -24,7 +24,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -52,11 +51,11 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.triton.healthZ.R;
 import com.triton.healthZ.api.API;
 
-import com.triton.healthZ.fragmentcustomer.bottommenu.PetCareFragment;
-import com.triton.healthZ.fragmentcustomer.bottommenu.PetCommunityFragment;
-import com.triton.healthZ.fragmentcustomer.bottommenu.PetHomeNewFragment;
-import com.triton.healthZ.fragmentcustomer.bottommenu.PetServicesFragment;
-import com.triton.healthZ.fragmentcustomer.bottommenu.VendorShopFragment;
+import com.triton.healthZ.fragmentcustomer.bottommenu.CustomerCareFragment;
+import com.triton.healthZ.fragmentcustomer.bottommenu.CustomerCommunityFragment;
+import com.triton.healthZ.fragmentcustomer.bottommenu.CustomerHomeFragment;
+import com.triton.healthZ.fragmentcustomer.bottommenu.CustomerServicesFragment;
+import com.triton.healthZ.fragmentcustomer.bottommenu.CustomerShopFragment;
 
 import com.triton.healthZ.responsepojo.GetAddressResultResponse;
 
@@ -109,11 +108,11 @@ public class CustomerDashboardActivity extends CustomerNavigationDrawer implemen
     @BindView(R.id.bottomNavigation)
     BottomNavigationView bottomNavigation;
 
-    final Fragment petHomeFragment = new PetHomeNewFragment();
-    final Fragment petCareFragment = new PetCareFragment();
-    final Fragment petServicesFragment = new PetServicesFragment();
-    final Fragment vendorShopFragment = new VendorShopFragment();
-    final Fragment petCommunityFragment = new PetCommunityFragment();
+    final Fragment petHomeFragment = new CustomerHomeFragment();
+    final Fragment petCareFragment = new CustomerCareFragment();
+    final Fragment petServicesFragment = new CustomerServicesFragment();
+    final Fragment vendorShopFragment = new CustomerShopFragment();
+    final Fragment petCommunityFragment = new CustomerCommunityFragment();
 
     public static String active_tag = "1";
 
@@ -184,7 +183,7 @@ public class CustomerDashboardActivity extends CustomerNavigationDrawer implemen
 
                 active = petHomeFragment;
                 bottomNavigation.setSelectedItemId(R.id.home);
-                loadFragment(new PetHomeNewFragment());
+                loadFragment(new CustomerHomeFragment());
             }
         });
 
@@ -196,23 +195,23 @@ public class CustomerDashboardActivity extends CustomerNavigationDrawer implemen
             if(tag.equalsIgnoreCase("1")){
                 active = petHomeFragment;
                 bottomNavigation.setSelectedItemId(R.id.home);
-                loadFragment(new PetHomeNewFragment());
+                loadFragment(new CustomerHomeFragment());
             }else if(tag.equalsIgnoreCase("2")){
                 active = vendorShopFragment;
                 bottomNavigation.setSelectedItemId(R.id.shop);
-                loadFragment(new VendorShopFragment());
+                loadFragment(new CustomerShopFragment());
             }else if(tag.equalsIgnoreCase("3")){
                 active = petServicesFragment;
                 bottomNavigation.setSelectedItemId(R.id.services);
-                loadFragment(new PetServicesFragment());
+                loadFragment(new CustomerServicesFragment());
             }else if(tag.equalsIgnoreCase("4")){
                 active = petCareFragment;
                 bottomNavigation.setSelectedItemId(R.id.care);
-                loadFragment(new PetCareFragment());
+                loadFragment(new CustomerCareFragment());
             } else if(tag.equalsIgnoreCase("5")){
                 active = petCommunityFragment;
                 bottomNavigation.setSelectedItemId(R.id.community);
-                loadFragment(new PetCommunityFragment());
+                loadFragment(new CustomerCommunityFragment());
             }
         }
         else{
@@ -292,7 +291,7 @@ public class CustomerDashboardActivity extends CustomerNavigationDrawer implemen
 //                bottom_navigation_view.setSelectedItemId(R.id.home);
 //                // load fragment
 //                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-//                transaction.replace(R.id.frame_schedule,new PetHomeNewFragment());
+//                transaction.replace(R.id.frame_schedule,new CustomerHomeFragment());
 //                transaction.commitNowAllowingStateLoss();
 //            }
 //
@@ -301,7 +300,7 @@ public class CustomerDashboardActivity extends CustomerNavigationDrawer implemen
 //            bottom_navigation_view.setSelectedItemId(R.id.home);
 //            // load fragment
 //            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-//            transaction.replace(R.id.frame_schedule,new PetHomeNewFragment());
+//            transaction.replace(R.id.frame_schedule,new CustomerHomeFragment());
 //            transaction.commitNowAllowingStateLoss();
 //        }
     }
@@ -735,38 +734,38 @@ public class CustomerDashboardActivity extends CustomerNavigationDrawer implemen
             case R.id.rl_homes:
                 active_tag = "1";
 
-                replaceFragment(new PetHomeNewFragment());
+                replaceFragment(new CustomerHomeFragment());
                 break;
 
             case R.id.rl_home:
                 active_tag = "1";
 
-                replaceFragment(new PetHomeNewFragment());
+                replaceFragment(new CustomerHomeFragment());
                 break;
 
             case R.id.rl_shop:
                 active_tag = "2";
 
-                replaceFragment(new VendorShopFragment());
+                replaceFragment(new CustomerShopFragment());
                 break;
 
             case R.id.rl_service:
                 active_tag = "3";
 
-                replaceFragment(new PetServicesFragment());
+                replaceFragment(new CustomerServicesFragment());
                 break;
 
 
             case R.id.rl_care:
                 active_tag = "4";
 
-                replaceFragment(new PetCareFragment());
+                replaceFragment(new CustomerCareFragment());
                 break;
 
             case R.id.rl_comn:
                 active_tag = "5";
 
-                replaceFragment(new PetCommunityFragment());
+                replaceFragment(new CustomerCommunityFragment());
                 break;
         }
 
@@ -847,27 +846,27 @@ public class CustomerDashboardActivity extends CustomerNavigationDrawer implemen
             case R.id.home:
                 active_tag = "1";
                 item.setCheckable(true);
-                replaceFragment(new PetHomeNewFragment());
+                replaceFragment(new CustomerHomeFragment());
                 break;
             case R.id.shop:
                 active_tag = "2";
                 item.setCheckable(true);
-                replaceFragment(new VendorShopFragment());
+                replaceFragment(new CustomerShopFragment());
                 break;
             case R.id.services:
                 active_tag = "3";
                 item.setCheckable(true);
-                replaceFragment(new PetServicesFragment());
+                replaceFragment(new CustomerServicesFragment());
                 break;
             case R.id.care:
                 active_tag = "4";
                 item.setCheckable(true);
-                replaceFragment(new PetServicesFragment());
+                replaceFragment(new CustomerCareFragment());
                 break;
             case R.id.community:
                 active_tag = "5";
                 item.setCheckable(true);
-                replaceFragment(new PetCommunityFragment());
+                replaceFragment(new CustomerCommunityFragment());
                 break;
 
             default:

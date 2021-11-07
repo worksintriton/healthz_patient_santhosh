@@ -153,7 +153,7 @@ public class PetLoverNavigationDrawer extends AppCompatActivity implements View.
         nav_header_profilename.setText(name);
 
         RelativeLayout llheader = header.findViewById(R.id.llheader);
-        llheader.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(),PetLoverProfileScreenActivity.class)));
+        llheader.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(), CustomerProfileScreenActivity.class)));
 
         TextView nav_header_edit = header.findViewById(R.id.nav_header_edit);
         nav_header_edit.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(),PetLoverEditProfileActivity.class)));
@@ -242,7 +242,7 @@ public class PetLoverNavigationDrawer extends AppCompatActivity implements View.
         });
         img_profile.setOnClickListener(v -> {
 
-            Intent intent = new Intent(getApplicationContext(),PetLoverProfileScreenActivity.class);
+            Intent intent = new Intent(getApplicationContext(), CustomerProfileScreenActivity.class);
             intent.putExtra("fromactivity",TAG);
             if(CustomerDashboardActivity.active_tag != null){
                 intent.putExtra("active_tag", CustomerDashboardActivity.active_tag);

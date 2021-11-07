@@ -108,7 +108,7 @@ public class PetShopTodayDealsSeeMoreActivity extends AppCompatActivity implemen
     @BindView(R.id.include_petlover_header)
     View include_petlover_header;*/
 
-    /* Petlover Bottom Navigation */
+  /*  *//* Petlover Bottom Navigation *//*
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.rl_homes)
@@ -164,7 +164,7 @@ public class PetShopTodayDealsSeeMoreActivity extends AppCompatActivity implemen
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.img_community)
-    ImageView img_community;
+    ImageView img_community;*/
 
 
 
@@ -306,7 +306,7 @@ public class PetShopTodayDealsSeeMoreActivity extends AppCompatActivity implemen
         rl_sort.setVisibility(View.INVISIBLE);
         rl_sort.setOnClickListener(this);
         edt_sort.setOnClickListener(this);
-
+/*
         rl_homes.setOnClickListener(this);
 
         rl_care.setOnClickListener(this);
@@ -315,7 +315,7 @@ public class PetShopTodayDealsSeeMoreActivity extends AppCompatActivity implemen
 
         rl_shop.setOnClickListener(this);
 
-        rl_comn.setOnClickListener(this);
+        rl_comn.setOnClickListener(this);*/
 
 //        bottom_navigation_view.getMenu().findItem(R.id.shop).setChecked(true);
 
@@ -661,7 +661,7 @@ public class PetShopTodayDealsSeeMoreActivity extends AppCompatActivity implemen
                 startActivity(i);
                 break;
             case R.id.img_profile:
-                Intent intent = new Intent(getApplicationContext(),PetLoverProfileScreenActivity.class);
+                Intent intent = new Intent(getApplicationContext(), CustomerProfileScreenActivity.class);
                 intent.putExtra("fromactivity",TAG);
                 if(CustomerDashboardActivity.active_tag != null){
                     intent.putExtra("active_tag", CustomerDashboardActivity.active_tag);

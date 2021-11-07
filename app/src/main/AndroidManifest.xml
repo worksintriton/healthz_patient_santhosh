@@ -71,7 +71,7 @@
         <activity
             android:name="com.triton.healthZ.activity.WelcomeScreenActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"
+            android:theme="@style/EntryAppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name="com.triton.healthZ.customer.ShippingAddressEditActivity"
@@ -193,17 +193,17 @@
         <activity
             android:name="com.triton.healthZ.activity.VerifyOtpActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"
+            android:theme="@style/EntryAppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name="com.triton.healthZ.activity.SignUpActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"
+            android:theme="@style/EntryAppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name="com.triton.healthZ.activity.VerifyPhoneNumberActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"
+            android:theme="@style/EntryAppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name="com.triton.healthZ.activity.ChooseUserTypeActivity"
@@ -261,7 +261,7 @@
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.customer.PetLoverProfileScreenActivity"
+            android:name="com.triton.healthZ.customer.CustomerProfileScreenActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />

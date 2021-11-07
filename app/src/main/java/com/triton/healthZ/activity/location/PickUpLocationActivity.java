@@ -48,7 +48,7 @@ import com.triton.healthZ.R;
 import com.triton.healthZ.activity.NotificationActivity;
 import com.triton.healthZ.api.API;
 import com.triton.healthZ.doctor.ManageAddressDoctorActivity;
-import com.triton.healthZ.customer.PetLoverProfileScreenActivity;
+import com.triton.healthZ.customer.CustomerProfileScreenActivity;
 import com.triton.healthZ.responsepojo.GetAddressResultResponse;
 import com.triton.healthZ.service.GPSTracker;
 import com.wang.avi.AVLoadingIndicatorView;
@@ -168,7 +168,7 @@ public class PickUpLocationActivity extends FragmentActivity implements OnMapRea
         img_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(new Intent(getApplicationContext(), PetLoverProfileScreenActivity.class));
+                Intent intent = new Intent(new Intent(getApplicationContext(), CustomerProfileScreenActivity.class));
                 intent.putExtra("fromactivity",TAG);
                 startActivity(intent);
             }

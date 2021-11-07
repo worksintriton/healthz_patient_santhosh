@@ -236,14 +236,14 @@ public class EditYourPetImageActivity extends AppCompatActivity implements View.
     }
 
     private void gotoPetLoverProfileScreenActivity() {
-        Intent intent = new Intent(EditYourPetImageActivity.this,PetLoverProfileScreenActivity.class);
+        Intent intent = new Intent(EditYourPetImageActivity.this, CustomerProfileScreenActivity.class);
         startActivity(intent);
     }
 
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        startActivity(new Intent(EditYourPetImageActivity.this, PetLoverProfileScreenActivity.class));
+        startActivity(new Intent(EditYourPetImageActivity.this, CustomerProfileScreenActivity.class));
         finish();
     }
 

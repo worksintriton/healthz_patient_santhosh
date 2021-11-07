@@ -79,10 +79,10 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class PetCareFragment extends Fragment implements Serializable, View.OnClickListener {
+public class CustomerCareFragment extends Fragment implements Serializable, View.OnClickListener {
 
 
-    private String TAG = "PetCareFragment";
+    private String TAG = "CustomerCareFragment";
     int currentPage = 0;
 
     @SuppressLint("NonConstantResourceId")
@@ -159,7 +159,7 @@ public class PetCareFragment extends Fragment implements Serializable, View.OnCl
     View view;
     private List<FilterDoctorResponse.BannerBean> doctorFilterBannerResponseList;
 
-    public PetCareFragment() {
+    public CustomerCareFragment() {
         // Required empty public constructor
     }
 
@@ -191,7 +191,7 @@ public class PetCareFragment extends Fragment implements Serializable, View.OnCl
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         Log.w(TAG,"onCreateView-->");
 
-        view = inflater.inflate(R.layout.fragment_pet_care, container, false);
+        view = inflater.inflate(R.layout.fragment_customer_care, container, false);
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
         ButterKnife.bind(this, view);
         mContext = getActivity();

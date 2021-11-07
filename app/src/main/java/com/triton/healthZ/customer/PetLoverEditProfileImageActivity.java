@@ -204,7 +204,7 @@ public class PetLoverEditProfileImageActivity extends AppCompatActivity implemen
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-         startActivity(new Intent(PetLoverEditProfileImageActivity.this, PetLoverProfileScreenActivity.class));
+         startActivity(new Intent(PetLoverEditProfileImageActivity.this, CustomerProfileScreenActivity.class));
         finish();
     }
 

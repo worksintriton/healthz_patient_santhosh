@@ -396,7 +396,7 @@ public class PetEditOtherInformationsActivity extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
 
-            startActivity(new Intent(getApplicationContext(), PetLoverProfileScreenActivity.class));
+            startActivity(new Intent(getApplicationContext(), CustomerProfileScreenActivity.class));
             finish();
 
     }

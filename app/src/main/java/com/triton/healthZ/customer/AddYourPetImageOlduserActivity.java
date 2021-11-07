@@ -268,7 +268,7 @@ public class AddYourPetImageOlduserActivity extends AppCompatActivity implements
             intent.putExtra("petId", petId);
             startActivity(intent);
         }else {
-            Intent intent = new Intent(AddYourPetImageOlduserActivity.this, PetLoverProfileScreenActivity.class);
+            Intent intent = new Intent(AddYourPetImageOlduserActivity.this, CustomerProfileScreenActivity.class);
             startActivity(intent);
         }
     }
@@ -288,7 +288,7 @@ public class AddYourPetImageOlduserActivity extends AppCompatActivity implements
             intent.putExtra("petId", petId);
             startActivity(intent);
         }else{
-            startActivity(new Intent(AddYourPetImageOlduserActivity.this, PetLoverProfileScreenActivity.class));
+            startActivity(new Intent(AddYourPetImageOlduserActivity.this, CustomerProfileScreenActivity.class));
             finish();
         }
 

@@ -637,7 +637,7 @@ public class EditYourPetProfileInfoActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        //startActivity(new Intent(EditYourPetProfileInfoActivity.this, PetLoverProfileScreenActivity.class));
+        //startActivity(new Intent(EditYourPetProfileInfoActivity.this, CustomerProfileScreenActivity.class));
         finish();
     }
 

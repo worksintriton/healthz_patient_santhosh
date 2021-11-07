@@ -49,6 +49,13 @@ import retrofit2.Response;
 
 public class SignUpActivity extends AppCompatActivity implements View.OnClickListener {
 
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.btn_createacc)
+    Button btn_createacc;
+
+    private String TAG = "SignUpActivity";
+
+
   /*  @SuppressLint("NonConstantResourceId")
     @BindView(R.id.img_back)
     ImageView img_back;
@@ -85,9 +92,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     @BindView(R.id.edt_ref_code)
     EditText edt_ref_code;
 
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.btn_continue)
-    Button btn_continue;
+
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.btn_verify_email)
@@ -206,6 +211,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         });
 */
 
+        btn_createacc.setOnClickListener(this);
 
 
     }
@@ -214,9 +220,9 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-//            case R.id.btn_continue:
-//                signUpValidator();
-//                break;
+            case R.id.btn_createacc:
+                gotoLoginActivity();
+                break;
 //            case R.id.img_back:
 //                 onBackPressed();
 //                break;
@@ -605,5 +611,12 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     }
 */
 
+    }
+
+    private void gotoLoginActivity() {
+
+        Intent intent = new Intent(SignUpActivity.this, VerifyPhoneNumberActivity.class);
+        intent.putExtra("fromactivity", TAG);
+        startActivity(intent);
     }
 }

@@ -187,7 +187,7 @@ public class PetLoverNearByDoctorAdapter extends  RecyclerView.Adapter<RecyclerV
                 intent.putExtra("reviewcount",doctorDetailsResponseList.get(position).getReview_count());
                 intent.putExtra("starcount",doctorDetailsResponseList.get(position).getStar_count());
                 intent.putExtra("distance",doctorDetailsResponseList.get(position).getDistance());
-                intent.putExtra("fromactivity", "PetCareFragment");
+                intent.putExtra("fromactivity", "CustomerCareFragment");
                 intent.putExtra("communication_type", communication_type);
                 intent.putExtra("searchString", searchString);
                 Log.w(TAG,"doctorid :"+doctorDetailsResponseList.get(position).getUser_id());
@@ -210,7 +210,7 @@ public class PetLoverNearByDoctorAdapter extends  RecyclerView.Adapter<RecyclerV
                 intent.putExtra("distance",doctorDetailsResponseList.get(position).getDistance());
                 intent.putExtra("communicationtype",doctorDetailsResponseList.get(position).getCommunication_type());
                 intent.putExtra("amount",doctorDetailsResponseList.get(position).getAmount());
-                intent.putExtra("fromactivity", "PetCareFragment");
+                intent.putExtra("fromactivity", "CustomerCareFragment");
                 intent.putExtra("fromto", "direct");
                 Log.w(TAG,"doctorid :"+doctorDetailsResponseList.get(position).getUser_id());
                 context.startActivity(intent);

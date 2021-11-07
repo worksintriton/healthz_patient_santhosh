@@ -30,7 +30,7 @@ import com.triton.healthZ.customer.CustomerDashboardActivity;
 import com.triton.healthZ.interfaces.OnDeleteShipAddrListener;
 import com.triton.healthZ.interfaces.OnEditShipAddrListener;
 import com.triton.healthZ.interfaces.OnSelectingShipIdListener;
-import com.triton.healthZ.customer.PetLoverProfileScreenActivity;
+import com.triton.healthZ.customer.CustomerProfileScreenActivity;
 import com.triton.healthZ.requestpojo.ShippingAddrMarkAsLastUsedRequest;
 import com.triton.healthZ.requestpojo.ShippingAddrMarkAsLastUsedResponse;
 import com.triton.healthZ.requestpojo.ShippingAddressDeleteRequest;
@@ -668,7 +668,7 @@ public class MyAddressesListActivity extends AppCompatActivity implements View.O
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        startActivity(new Intent(getApplicationContext(), PetLoverProfileScreenActivity.class));
+        startActivity(new Intent(getApplicationContext(), CustomerProfileScreenActivity.class));
         finish();
     }
 
