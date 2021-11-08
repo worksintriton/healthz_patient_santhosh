@@ -31,7 +31,7 @@ import com.bumptech.glide.Glide;
 import com.google.android.material.navigation.NavigationView;
 import com.google.gson.Gson;
 import com.triton.healthZ.R;
-import com.triton.healthZ.activity.VerifyPhoneNumberActivity;
+import com.triton.healthZ.activity.LoginActivity;
 import com.triton.healthZ.activity.NotificationActivity;
 import com.triton.healthZ.api.APIClient;
 import com.triton.healthZ.api.RestApiInterface;
@@ -435,7 +435,7 @@ public class VendorNavigationDrawer extends AppCompatActivity implements View.On
         logoutResponseCall();
         /*session.logoutUser();
         session.setIsLogin(false);
-        startActivity(new Intent(getApplicationContext(), VerifyPhoneNumberActivity.class));
+        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
         finish();*/
 
     }
@@ -454,7 +454,7 @@ public class VendorNavigationDrawer extends AppCompatActivity implements View.On
                     if (200 == response.body().getCode()) {
                         session.logoutUser();
                         session.setIsLogin(false);
-                        startActivity(new Intent(getApplicationContext(), VerifyPhoneNumberActivity.class));
+                        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                         finish();
 
 

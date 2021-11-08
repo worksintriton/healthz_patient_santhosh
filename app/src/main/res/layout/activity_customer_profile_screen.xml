@@ -168,7 +168,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/futuramediumbt"
-                android:text="@string/pets"
+                android:text="Members"
                 android:textColor="@color/new_txt_color"
                 android:textSize="20sp" />
 
@@ -372,9 +372,9 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:fontFamily="@font/futuramediumbt"
+                    android:fontFamily="@font/poppins_medium"
                     android:text="@string/logout"
-                    android:textColor="@color/new_txt_color"
+                    android:textColor="@color/new_thick_red_bgm_color"
                     android:textSize="18sp" />
 
             </LinearLayout>

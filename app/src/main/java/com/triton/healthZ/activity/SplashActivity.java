@@ -10,8 +10,20 @@ import android.util.Log;
 
 
 import com.triton.healthZ.R;
+import com.triton.healthZ.doctor.DoctorDashboardActivity;
+import com.triton.healthZ.doctor.DoctorMyOrdrersActivity;
+
+import com.triton.healthZ.doctor.DoctorWalkinAppointmentsActivity;
 import com.triton.healthZ.customer.CustomerDashboardActivity;
+import com.triton.healthZ.customer.PetMyOrdrersNewActivity;
+import com.triton.healthZ.customer.PetMyappointmentsActivity;
+import com.triton.healthZ.customer.PetWalkinappointmentsActivity;
+import com.triton.healthZ.serviceprovider.ServiceProviderDashboardActivity;
+import com.triton.healthZ.serviceprovider.shop.SPMyOrdrersActivity;
 import com.triton.healthZ.sessionmanager.SessionManager;
+import com.triton.healthZ.vendor.VendorDashboardActivity;
+
+import java.util.HashMap;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -30,27 +42,8 @@ public class SplashActivity extends AppCompatActivity {
 
         Log.w(TAG,"onCreate-->");
 
+
         session = new SessionManager(getApplicationContext());
-        boolean islogedin = session.isLoggedIn();
-        Log.w(TAG,"islogedin-->"+islogedin);
-
-        new Handler().postDelayed(() -> {
-
-            if(islogedin) {
-
-                Intent i = new Intent(SplashActivity.this, CustomerDashboardActivity.class);
-                startActivity(i);
-                finish();
-            }else {
-
-                Intent i = new Intent(SplashActivity.this, WelcomeScreenActivity.class);
-                startActivity(i);
-                finish();
-            }
-
-        }, SPLASH_TIME_OUT);
-
-   /*     session = new SessionManager(getApplicationContext());
         boolean islogedin = session.isLoggedIn();
         Log.w(TAG,"islogedin-->"+islogedin);
 
@@ -80,9 +73,9 @@ public class SplashActivity extends AppCompatActivity {
             }
 
             if(!islogedin) {
-              *//*  Intent i = new Intent(SplashActivity.this, VerifyPhoneNumberActivity.class);
+                /*Intent i = new Intent(SplashActivity.this, LoginActivity.class);
                 startActivity(i);
-                finish();*//*
+                finish();*/
                 Intent i = new Intent(SplashActivity.this, WelcomeScreenActivity.class);
                 startActivity(i);
                 finish();
@@ -183,9 +176,9 @@ public class SplashActivity extends AppCompatActivity {
 
                 boolean islogedin1 = session.isLoggedIn();
                 if(!islogedin1) {
-                   *//* Intent i = new Intent(SplashActivity.this, VerifyPhoneNumberActivity.class);
+                    /*Intent i = new Intent(SplashActivity.this, LoginActivity.class);
                     startActivity(i);
-                    finish(); *//*
+                    finish();*/
                     Intent i = new Intent(SplashActivity.this, WelcomeScreenActivity.class);
                     startActivity(i);
                     finish();
@@ -227,6 +220,5 @@ public class SplashActivity extends AppCompatActivity {
             }, SPLASH_TIME_OUT);
         }
 
-*/
     }
 }

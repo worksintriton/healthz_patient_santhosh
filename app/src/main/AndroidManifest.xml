@@ -171,7 +171,7 @@
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.customer.BasicPetDetailsNewActivity"
+            android:name="com.triton.healthZ.customer.AddMembersOldActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
@@ -201,7 +201,7 @@
             android:theme="@style/EntryAppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.triton.healthZ.activity.VerifyPhoneNumberActivity"
+            android:name="com.triton.healthZ.activity.LoginActivity"
             android:screenOrientation="portrait"
             android:theme="@style/EntryAppTheme"
             android:windowSoftInputMode="adjustPan" />
@@ -1036,6 +1036,9 @@
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
             android:resource="@drawable/app_logo" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
 
         <provider
             android:name="androidx.core.content.FileProvider"

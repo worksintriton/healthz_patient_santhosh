@@ -25,7 +25,7 @@ import com.bumptech.glide.Glide;
 import com.google.android.material.tabs.TabLayout;
 import com.google.gson.Gson;
 import com.triton.healthZ.R;
-import com.triton.healthZ.activity.VerifyPhoneNumberActivity;
+import com.triton.healthZ.activity.LoginActivity;
 import com.triton.healthZ.activity.NotificationActivity;
 import com.triton.healthZ.adapter.ViewPagerSPGalleryDetailsAdapter;
 import com.triton.healthZ.api.APIClient;
@@ -435,7 +435,7 @@ public class SPProfileScreenActivity extends AppCompatActivity implements View.O
     private void gotoLogout() {
        /* session.logoutUser();
         session.setIsLogin(false);
-        startActivity(new Intent(getApplicationContext(), VerifyPhoneNumberActivity.class));
+        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
         finish();*/
         logoutResponseCall();
 
@@ -457,7 +457,7 @@ public class SPProfileScreenActivity extends AppCompatActivity implements View.O
                     if (200 == response.body().getCode()) {
                         session.logoutUser();
                         session.setIsLogin(false);
-                        startActivity(new Intent(getApplicationContext(), VerifyPhoneNumberActivity.class));
+                        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                         finish();
 
 

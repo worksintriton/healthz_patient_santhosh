@@ -35,44 +35,33 @@ import java.util.concurrent.TimeUnit;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import es.dmoral.toasty.Toasty;
+import in.aabhasjindal.otptextview.OtpTextView;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class VerifyEmailOtpActivity extends AppCompatActivity implements View.OnClickListener {
-   /* @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_back)
-    ImageView img_back;
+
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.avi_indicator)
     AVLoadingIndicatorView avi_indicator;
 
     @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.btn_verify)
-    Button btn_verify;
+    @BindView(R.id.btn_verifyotp)
+    Button btn_verifyotp;
 
     @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.edt_otp)
-    EditText edt_otp;
+    @BindView(R.id.otp_view)
+    OtpTextView otp_view;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_resend)
     TextView txt_resend;
 
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.txt_timer_count)
-    TextView txt_timer_count;
 
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.txt_getotp)
-    TextView txt_getotp;
 
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.llresendotp)
-    LinearLayout llresendotp;
-
-    private final String TAG = "VerifyOtpActivity";
+    private final String TAG = "VerifyEmailOtpActivity";
     private CountDownTimer timer;
 
     private ApplicationData applicationData;
@@ -90,7 +79,7 @@ public class VerifyEmailOtpActivity extends AppCompatActivity implements View.On
     private String token = "";
     private String firstname,lastname,useremail;
     private String UserType;
-    private int UserTypeValue;*/
+    private int UserTypeValue;
 
 
     @SuppressLint("SetTextI18n")
@@ -98,14 +87,11 @@ public class VerifyEmailOtpActivity extends AppCompatActivity implements View.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verify_otp);
-       /* applicationData = (ApplicationData) getApplication();
+        applicationData = (ApplicationData) getApplication();
 
         ButterKnife.bind(this);
-        edt_otp.setTransformationMethod(new NumericKeyBoardTransformationMethod());
 
-        
         avi_indicator.setVisibility(View.GONE);
-        txt_getotp.setText("You will get a OTP via Email");
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -122,52 +108,20 @@ public class VerifyEmailOtpActivity extends AppCompatActivity implements View.On
             Log.w(TAG,"Bundle "+" phonenumber : "+phonenumber+" otp :"+otp+" UserType : "+UserType+" userstatus : "+userstatus+ " userid : "+userid);
         }
 
-        img_back.setOnClickListener(this);
-        btn_verify.setOnClickListener(this);
+
+        btn_verifyotp.setOnClickListener(this);
         txt_resend.setOnClickListener(this);
-        startTimer();*/
 
 
     }
 
-//    private void startTimer() {
-//        isOTPExpired = false;
-//          long timer_milliseconds = 120000;
-//          timer = new CountDownTimer(timer_milliseconds, 1000) {
-//            @SuppressLint({"DefaultLocale", "SetTextI18n"})
-//            @Override
-//            public void onTick(long millisUntilFinished) {
-//                llresendotp.setVisibility(View.GONE);
-//                txt_timer_count.setVisibility(View.VISIBLE);
-//
-//                applicationData.setTimer_milliseconds(millisUntilFinished);
-//                txt_timer_count.setText(getResources().getString(R.string.resendotp)+" " + String.format("%02d : %02d ",
-//                        TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished),
-//                        TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) -
-//                                TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished))));
-//
-//            }
-//
-//            @Override
-//            public void onFinish() {
-//                isOTPExpired = true;
-//                txt_timer_count.setVisibility(View.GONE);
-//                llresendotp.setVisibility(View.VISIBLE);
-//                timer.cancel();
-//            }
-//        };
-//        timer.start();
-//    }
 
     @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-       /*     case R.id.btn_verify:
+            case R.id.btn_verifyotp:
                 verifyValidator();
-                break;
-            case R.id.img_back:
-                onBackPressed();
                 break;
 
                 case R.id.txt_resend:
@@ -177,32 +131,32 @@ public class VerifyEmailOtpActivity extends AppCompatActivity implements View.On
                         }
 
                     }
-                break;*/
+                break;
 
 
         }
 
 
     }
-   /* public void verifyValidator() {
+    public void verifyValidator() {
         boolean can_proceed = true;
-        String enteredotp = edt_otp.getText().toString();
+        String enteredotp = otp_view.getOTP();
         String responseotp = String.valueOf(otp);
-         if (edt_otp.getText().toString().trim().equals("")) {
-             edt_otp.setError("Please enter your OTP");
-             edt_otp.requestFocus();
-            can_proceed = false;
-        }else if(!responseotp.equalsIgnoreCase(enteredotp)){
-             edt_otp.setError("Invalid OTP.");
-             edt_otp.requestFocus();
-            can_proceed = false;
-        }else if(isOTPExpired){
-             edt_otp.setError("Your otp is expired. please regenerate otp. ");
-             edt_otp.requestFocus();
-             can_proceed = false;
-         }
+        if (enteredotp.trim().equals("")) {
 
-         if (can_proceed) {
+            can_proceed = false;
+
+            Toasty.warning(getApplicationContext(), "Please Enter OTP", Toast.LENGTH_SHORT, true).show();
+
+        } else if (!responseotp.equalsIgnoreCase(enteredotp)) {
+
+            can_proceed = false;
+
+            Toasty.warning(getApplicationContext(), "Incorrect OTP", Toast.LENGTH_SHORT, true).show();
+        }
+
+
+        if (can_proceed) {
              Intent intent = new Intent(VerifyEmailOtpActivity.this,SignUpActivity.class);
              intent.putExtra("verified","verified");
              intent.putExtra("useremail",useremail);
@@ -223,18 +177,13 @@ public class VerifyEmailOtpActivity extends AppCompatActivity implements View.On
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
-        if(timer != null){
-            timer.cancel();
-            timer = null;
+        //super.onBackPressed();
 
-        }
-        finish();
     }
 
     @SuppressLint("LogNotTimber")
     private void resendOtpResponseCall() {
-        llresendotp.setVisibility(View.GONE);
+        txt_resend.setVisibility(View.GONE);
         avi_indicator.setVisibility(View.VISIBLE);
         avi_indicator.smoothToShow();
         RestApiInterface apiInterface = APIClient.getClient().create(RestApiInterface.class);
@@ -248,8 +197,7 @@ public class VerifyEmailOtpActivity extends AppCompatActivity implements View.On
                 Log.w(TAG,"ResendOTPResponse" + new Gson().toJson(response.body()));
                 if (response.body() != null) {
                     if (200 == response.body().getCode()) {
-                        edt_otp.setText("");
-                        startTimer();
+                        otp_view.setOTP("");
                         Toasty.success(getApplicationContext(),response.body().getMessage(), Toast.LENGTH_SHORT, true).show();
                         if(response.body().getData().getOtp() !=0){
                             otp = response.body().getData().getOtp();
@@ -275,9 +223,9 @@ public class VerifyEmailOtpActivity extends AppCompatActivity implements View.On
     }
     @SuppressLint("LogNotTimber")
     private EmailOTPRequest emailOTPRequest() {
-        *//*
-         * user_email : mohammedimthi2395@gmail.com
-         *//*
+
+        /* * user_email : mohammedimthi2395@gmail.com*/
+
         EmailOTPRequest emailOTPRequest = new EmailOTPRequest();
         emailOTPRequest.setUser_email(useremail);
         Log.w(TAG,"EmailOTPRequest "+ new Gson().toJson(emailOTPRequest));
@@ -308,7 +256,6 @@ public class VerifyEmailOtpActivity extends AppCompatActivity implements View.On
         super.onPause();
 
     }
-*/
 
 
 }

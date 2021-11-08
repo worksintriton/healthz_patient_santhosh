@@ -17,7 +17,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -39,12 +38,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class VerifyPhoneNumberActivity extends AppCompatActivity implements View.OnClickListener {
-    private final String TAG = "VerifyPhoneNumberActivity";
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
+    private final String TAG = "LoginActivity";
 
-//    @SuppressLint("NonConstantResourceId")
-//    @BindView(R.id.img_loginheader)
-//    ImageView img_loginheader;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.avi_indicator)
@@ -80,7 +76,7 @@ public class VerifyPhoneNumberActivity extends AppCompatActivity implements View
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_verify_phone_number);
+        setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
         Log.w(TAG,"onCreate-->");
 
@@ -117,7 +113,7 @@ public class VerifyPhoneNumberActivity extends AppCompatActivity implements View
     public void onClick(View v) {
         switch (v.getId()){
           case R.id.txt_signup:
-                startActivity(new Intent(VerifyPhoneNumberActivity.this,SignUpActivity.class));
+                startActivity(new Intent(LoginActivity.this,SignUpActivity.class));
                 break;
             case R.id.btn_next:
                 verifyValidator();
@@ -138,14 +134,15 @@ public class VerifyPhoneNumberActivity extends AppCompatActivity implements View
 
 
         if (can_proceed) {
-        //    insertmappermission();
-            startActivity(new Intent(VerifyPhoneNumberActivity.this,VerifyOtpActivity.class));
+
+            insertmappermission();
+
         }
 
     }
 
 
-/*    @SuppressLint("LogNotTimber")
+    @SuppressLint("LogNotTimber")
     private void loginResponseCall() {
         avi_indicator.setVisibility(View.VISIBLE);
         avi_indicator.smoothToShow();
@@ -222,9 +219,9 @@ public class VerifyPhoneNumberActivity extends AppCompatActivity implements View
         }catch (Exception ignored){
 
         }
-    }*/
+    }
 
-   /* private void insertmappermission() {
+    private void insertmappermission() {
 
         int haslocationpermission;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -251,13 +248,13 @@ public class VerifyPhoneNumberActivity extends AppCompatActivity implements View
             }
         }
 
-    }*/
+    }
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        /*if (requestCode == REQUEST_CODE_ASK_PERMISSIONS) {
+        if (requestCode == REQUEST_CODE_ASK_PERMISSIONS) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-               *//* startActivity(new Intent(getApplicationContext(), LoginActivity.class));
-                finish();*//*
+                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                finish();
                 // Permission Granted
                  if (new ConnectionDetector(LoginActivity.this).isNetworkAvailable(LoginActivity.this)) {
 
@@ -270,7 +267,7 @@ public class VerifyPhoneNumberActivity extends AppCompatActivity implements View
             }
         } else {
             super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        }*/
+        }
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 

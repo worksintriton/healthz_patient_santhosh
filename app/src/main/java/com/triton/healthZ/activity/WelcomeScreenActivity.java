@@ -77,7 +77,7 @@ public class WelcomeScreenActivity extends AppCompatActivity implements View.OnC
 
     private void gotoLoginActivity() {
 
-        Intent intent = new Intent(WelcomeScreenActivity.this, VerifyPhoneNumberActivity.class);
+        Intent intent = new Intent(WelcomeScreenActivity.this, LoginActivity.class);
         intent.putExtra("fromactivity", TAG);
         startActivity(intent);
     }

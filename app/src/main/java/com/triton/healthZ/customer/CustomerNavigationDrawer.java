@@ -528,7 +528,7 @@ public class CustomerNavigationDrawer extends AppCompatActivity implements View.
         //logoutResponseCall();
        /* session.logoutUser();
         session.setIsLogin(false);
-        startActivity(new Intent(getApplicationContext(), VerifyPhoneNumberActivity.class));
+        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
         finish();*/
 
 
@@ -679,7 +679,7 @@ public class CustomerNavigationDrawer extends AppCompatActivity implements View.
                     if (200 == response.body().getCode()) {
                         session.logoutUser();
                         session.setIsLogin(false);
-                        startActivity(new Intent(getApplicationContext(), VerifyPhoneNumberActivity.class));
+                        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                         finish();
 
 

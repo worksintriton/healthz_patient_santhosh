@@ -15,7 +15,7 @@ public class APIClient {
 
 
     /*live*/
-  public static String BASE_URL = "https://petfolio.app/api/";
+  public static String BASE_URL = "http://35.164.43.170:3000/api/";
   public static String IMAGE_BASE_URL = "https://petfolio.app/api/";
 
      /*dev*/

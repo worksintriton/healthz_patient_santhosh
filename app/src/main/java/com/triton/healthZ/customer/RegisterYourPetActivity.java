@@ -25,7 +25,7 @@ import android.widget.TextView;
 import com.google.android.gms.common.util.IOUtils;
 import com.google.gson.Gson;
 import com.triton.healthZ.R;
-import com.triton.healthZ.activity.VerifyPhoneNumberActivity;
+import com.triton.healthZ.activity.LoginActivity;
 import com.triton.healthZ.adapter.AddPetImageListAdapter;
 import com.triton.healthZ.api.APIClient;
 import com.triton.healthZ.api.RestApiInterface;
@@ -199,7 +199,7 @@ public class RegisterYourPetActivity extends AppCompatActivity implements View.O
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        startActivity(new Intent(RegisterYourPetActivity.this, VerifyPhoneNumberActivity.class));
+        startActivity(new Intent(RegisterYourPetActivity.this, LoginActivity.class));
         finish();
     }
 

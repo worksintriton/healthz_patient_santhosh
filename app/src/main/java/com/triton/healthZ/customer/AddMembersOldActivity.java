@@ -34,7 +34,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.gson.Gson;
 import com.triton.healthZ.R;
-import com.triton.healthZ.activity.VerifyPhoneNumberActivity;
+import com.triton.healthZ.activity.LoginActivity;
 import com.triton.healthZ.adapter.PetBreedTypesListAdapter;
 import com.triton.healthZ.adapter.PetTypesListAdapter;
 import com.triton.healthZ.api.APIClient;
@@ -67,9 +67,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class BasicPetDetailsNewActivity extends AppCompatActivity implements PetTypeSelectListener, View.OnClickListener, PetBreedTypeSelectListener {
+public class AddMembersOldActivity extends AppCompatActivity implements PetTypeSelectListener, View.OnClickListener, PetBreedTypeSelectListener {
 
-    private  String TAG = "BasicPetDetailsNewActivity";
+    private  String TAG = "AddMembersOldActivity";
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.avi_indicator)
@@ -191,7 +191,7 @@ public class BasicPetDetailsNewActivity extends AppCompatActivity implements Pet
         edt_petweight.setFilters(new InputFilter[] {new DecimalDigitsInputFilter(4,2)});
 
 
-        SessionManager sessionManager = new SessionManager(BasicPetDetailsNewActivity.this);
+        SessionManager sessionManager = new SessionManager(AddMembersOldActivity.this);
         HashMap<String, String> user = sessionManager.getProfileDetails();
         userid = user.get(SessionManager.KEY_ID);
 
@@ -215,7 +215,7 @@ public class BasicPetDetailsNewActivity extends AppCompatActivity implements Pet
 
 
 
-        if (new ConnectionDetector(BasicPetDetailsNewActivity.this).isNetworkAvailable(BasicPetDetailsNewActivity.this)) {
+        if (new ConnectionDetector(AddMembersOldActivity.this).isNetworkAvailable(AddMembersOldActivity.this)) {
             petTypeListResponseCall();
         }
 
@@ -426,7 +426,7 @@ public class BasicPetDetailsNewActivity extends AppCompatActivity implements Pet
 
         try {
 
-            Dialog dialog = new Dialog(BasicPetDetailsNewActivity.this);
+            Dialog dialog = new Dialog(AddMembersOldActivity.this);
             dialog.setContentView(R.layout.alert_pettype_layout);
             dialog.setCanceledOnTouchOutside(false);
 
@@ -526,7 +526,7 @@ public class BasicPetDetailsNewActivity extends AppCompatActivity implements Pet
         petBreedTypesListAdapter.filterList(breedTypedataBeanListFiltered);
     }
     public void showErrorLoading(String errormesage){
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(BasicPetDetailsNewActivity.this);
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(AddMembersOldActivity.this);
         alertDialogBuilder.setMessage(errormesage);
         alertDialogBuilder.setPositiveButton("ok",
                 (arg0, arg1) -> hideLoading());
@@ -543,7 +543,7 @@ public class BasicPetDetailsNewActivity extends AppCompatActivity implements Pet
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        startActivity(new Intent(getApplicationContext(), VerifyPhoneNumberActivity.class));
+        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
         finish();
     }
 
@@ -580,7 +580,7 @@ public class BasicPetDetailsNewActivity extends AppCompatActivity implements Pet
     }
 
     private void gotoPetloverdashboard() {
-        Intent intent = new Intent(BasicPetDetailsNewActivity.this, CustomerDashboardActivity.class);
+        Intent intent = new Intent(AddMembersOldActivity.this, CustomerDashboardActivity.class);
         intent.putExtra("UserType",petType);
         intent.putExtra("petTypeId",petTypeId);
         startActivity(intent);
@@ -638,7 +638,7 @@ public class BasicPetDetailsNewActivity extends AppCompatActivity implements Pet
 
 
         if (can_proceed) {
-            if (new ConnectionDetector(BasicPetDetailsNewActivity.this).isNetworkAvailable(BasicPetDetailsNewActivity.this)) {
+            if (new ConnectionDetector(AddMembersOldActivity.this).isNetworkAvailable(AddMembersOldActivity.this)) {
                 addYourPetResponseCall();
 
             }
@@ -665,7 +665,7 @@ public class BasicPetDetailsNewActivity extends AppCompatActivity implements Pet
                     if (200 == response.body().getCode()) {
                         Toasty.success(getApplicationContext(),response.body().getMessage(), Toast.LENGTH_SHORT, true).show();
                         if(response.body().getData() != null) {
-                            Intent intent = new Intent(BasicPetDetailsNewActivity.this, PetOtherInformationsActivity.class);
+                            Intent intent = new Intent(AddMembersOldActivity.this, PetOtherInformationsActivity.class);
                             intent.putExtra("petid", response.body().getData().get_id());
                             intent.putExtra("fromactivity",TAG);
                             startActivity(intent);
@@ -736,7 +736,7 @@ public class BasicPetDetailsNewActivity extends AppCompatActivity implements Pet
     public boolean vaildSelectGender() {
 
         if(gender.isEmpty()){
-            final AlertDialog alertDialog = new AlertDialog.Builder(BasicPetDetailsNewActivity.this).create();
+            final AlertDialog alertDialog = new AlertDialog.Builder(AddMembersOldActivity.this).create();
             alertDialog.setMessage(getString(R.string.err_msg_type_of_gender));
             alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Ok",
                     (dialog, which) -> alertDialog.cancel());

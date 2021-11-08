@@ -7,9 +7,9 @@
     <string name="change_user_type">Change user type</string>
     <string name="first_name">First Name</string>
     <string name="last_name">Last Name</string>
-    <string name="ref_code">Referral Code : 12345678</string>
+    <string name="ref_code">Referral Code</string>
     <string name="email">Email</string>
-    <string name="phone">Phone</string>
+    <string name="phone">Phone Number</string>
     <string name="characters">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
 
     <string name="usertypes">usertypes</string>

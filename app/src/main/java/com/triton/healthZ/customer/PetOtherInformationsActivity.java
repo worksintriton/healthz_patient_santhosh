@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.triton.healthZ.R;
-import com.triton.healthZ.activity.VerifyPhoneNumberActivity;
+import com.triton.healthZ.activity.LoginActivity;
 import com.triton.healthZ.api.APIClient;
 import com.triton.healthZ.api.RestApiInterface;
 import com.triton.healthZ.requestpojo.PetUpdateOtherInformationRequest;
@@ -165,7 +165,7 @@ public class PetOtherInformationsActivity extends AppCompatActivity {
                 intent.putExtra("petid", petid);
                 intent.putExtra("fromactivity",TAG);
                 startActivity(intent);
-            }else if(fromactivity != null && fromactivity.equalsIgnoreCase("BasicPetDetailsNewActivity")) {
+            }else if(fromactivity != null && fromactivity.equalsIgnoreCase("AddMembersOldActivity")) {
                 Intent intent = new Intent(getApplicationContext(), RegisterYourPetActivity.class);
                 intent.putExtra("petid", petid);
                 intent.putExtra("fromactivity",TAG);
@@ -336,7 +336,7 @@ public class PetOtherInformationsActivity extends AppCompatActivity {
                             intent.putExtra("petid", response.body().getData().get_id());
                             startActivity(intent);
                         }
-                        else if(fromactivity != null && fromactivity.equalsIgnoreCase("BasicPetDetailsNewActivity")) {
+                        else if(fromactivity != null && fromactivity.equalsIgnoreCase("AddMembersOldActivity")) {
                             Intent intent = new Intent(getApplicationContext(), RegisterYourPetActivity.class);
                             intent.putExtra("petid", petid);
                             intent.putExtra("fromactivity",TAG);
@@ -434,7 +434,7 @@ public class PetOtherInformationsActivity extends AppCompatActivity {
             intent.putExtra("petid", petid);
             startActivity(intent);
         }else{
-            startActivity(new Intent(getApplicationContext(), VerifyPhoneNumberActivity.class));
+            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
             finish();
         }
 
