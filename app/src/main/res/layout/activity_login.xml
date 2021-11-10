@@ -71,7 +71,7 @@
                 android:layout_marginTop="30dp"
                 android:background="@drawable/white_corner_background"
                 android:orientation="horizontal"
-                android:padding="5dp">
+                android:padding="15dp">
 
                 <Spinner
                     android:id="@+id/spr_phnnum"
@@ -82,7 +82,8 @@
                     android:backgroundTint="@color/white"
                     android:entries="@array/array_name"
                     android:padding="10dp"
-                    android:spinnerMode="dropdown" />
+                    android:spinnerMode="dropdown"
+                    android:visibility="gone" />
 
                 <EditText
                     android:id="@+id/edt_phoneno"
@@ -92,7 +93,7 @@
                     android:background="@null"
                     android:ellipsize="start"
                     android:ems="10"
-                    android:fontFamily="@font/lato_bold"
+                    android:fontFamily="@font/montserrat"
                     android:hint="@string/phn_num_hint"
                     android:inputType="phone"
                     android:maxLength="10"
@@ -160,7 +161,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        app:indicatorColor="@color/new_green_btn"
+        app:indicatorColor="@color/white"
         app:indicatorName="LineSpinFadeLoaderIndicator" />
 
 

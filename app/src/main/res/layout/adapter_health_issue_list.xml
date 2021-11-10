@@ -65,7 +65,7 @@
                     android:id="@+id/chx_usertypes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:button="@drawable/cb_selector"
+                    android:button="@drawable/cb_selectors"
                     android:layout_marginTop="10dp"
                     android:checked="true"
                     android:layout_alignParentEnd="true"/>

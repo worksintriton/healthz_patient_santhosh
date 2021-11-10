@@ -51,6 +51,24 @@ public interface RestApiInterface {
     @POST("userdetails/mobile/update/fb_token")
     Call<FBTokenUpdateResponse> fBTokenUpdateResponseCall(@Header("Content-Type") String type, @Body FBTokenUpdateRequest fbTokenUpdateRequest);
 
+
+    /*family member relation type get list*/
+    @GET("familymember/dropdown")
+    Call<GetFamilyMemberResponse> getfamilymembersListResponseCall(@Header("Content-Type") String type);
+
+    /*family member create*/
+    @POST("familymember/create")
+    Call<FamilyMemberCreateResponse> familymembercreateResponseCall(@Header("Content-Type") String type, @Body FamilyMemberCreateRequest familyMemberCreateRequest);
+
+    /*family member list show*/
+    @POST("familymember/getlist_by_userid")
+    Call<FamilyMemberListResponse> familymembersListResponseCall(@Header("Content-Type") String type, @Body FamilyMemberListRequest familyMemberListRequest);
+
+    /*family member edit*/
+    @POST("familymember/edit")
+    Call<FamilyMembersEditResponse> familymemberseditResponseCall(@Header("Content-Type") String type, @Body FamilyMembersEditRequest familyMembersEditRequest);
+
+
     /*Pet Lover*/
     /*dropdown list*/
     @GET("petdetails/mobile/dropdownslist")
@@ -141,8 +159,8 @@ public interface RestApiInterface {
     Call<PetAddImageResponse> petUpdateResponseCall(@Header("Content-Type") String type, @Body PetEditRequest petEditRequest);
 
     /*Delete Petdetails Using User id*/
-    @POST("petdetails/delete")
-    Call<PetDeleteResponse> petDeleteResponseCall(@Header("Content-Type") String type, @Body PetDeleteRequest petDeleteRequest);
+    @POST("familymember/mobile_delete")
+    Call<FamilyMemberDeleteResponse> familyDeleteResponseCall(@Header("Content-Type") String type, @Body FamilyMemberDeleteRequest familyMemberDeleteRequest);
 
     /*location list delete*/
     @POST("locationdetails/delete")

@@ -115,7 +115,7 @@
                                 android:id="@+id/txt_services"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:fontFamily="@font/lato_bold"
+                                android:fontFamily="@font/montserrat"
                                 android:text="@string/service_by_category"
                                 android:textColor="@color/new_txt_popcolor"
                                 android:textSize="14sp"
@@ -133,7 +133,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginEnd="10dp"
-                                    android:fontFamily="@font/lato_bold"
+                                    android:fontFamily="@font/montserrat"
                                     android:gravity="center"
                                     android:text="@string/seeall"
                                     android:textColor="@color/new_gree_color"
@@ -179,7 +179,7 @@
                                 android:id="@+id/txt_doctors"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:fontFamily="@font/lato_bold"
+                                android:fontFamily="@font/montserrat"
                                 android:text="Health care"
                                 android:textColor="@color/new_txt_popcolor"
                                 android:textSize="14sp" />
@@ -196,7 +196,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginEnd="10dp"
-                                    android:fontFamily="@font/lato_bold"
+                                    android:fontFamily="@font/montserrat"
                                     android:gravity="center"
                                     android:text="@string/seeall"
                                     android:textColor="@color/new_gree_color"
@@ -323,7 +323,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_marginStart="5dp"
-                                android:fontFamily="@font/lato_bold"
+                                android:fontFamily="@font/montserrat"
                                 android:text="Shop"
                                 android:textColor="@color/white"
                                 android:textSize="14sp" />
@@ -356,7 +356,7 @@
                                             android:layout_centerInParent="false"
                                             android:layout_centerVertical="true"
                                             android:layout_marginStart="5dp"
-                                            android:fontFamily="@font/lato_bold"
+                                            android:fontFamily="@font/montserrat"
                                             android:gravity="center"
                                             android:text="View All"
                                             android:textColor="@color/new_gree_color"
@@ -372,6 +372,7 @@
                                         android:layout_marginTop="2dp"
                                         android:layout_marginEnd="5dp"
                                         android:src="@drawable/ic_right_arrow"
+                                        app:srcCompat="@drawable/ic_right_arrows"
                                         tools:ignore="ContentDescription" />
 
 

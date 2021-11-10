@@ -19,7 +19,8 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginStart="15dp"
-            android:background="@drawable/left_arrow"
+            android:background="@drawable/back_arrow"
+            android:scaleType="center"
             android:visibility="invisible"
             tools:ignore="ContentDescription" />
 
@@ -73,7 +74,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/rectangle_corner"
-                android:fontFamily="@font/futuramediumbt"
+                android:fontFamily="@font/montserrat"
                 android:hint="@string/pet_name"
                 android:inputType="text"
                 android:maxLength="25"
@@ -120,7 +121,8 @@
                     android:id="@+id/sprgender"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@android:color/transparent" />
+                    android:background="@android:color/transparent"
+                    android:entries="@array/array_gender"/>
 
                 <ImageView
                     android:layout_width="30dp"
@@ -140,69 +142,73 @@
                 android:layout_marginTop="10dp"
                 android:orientation="horizontal">
 
-                <TextView
+                <!--    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/futuramediumbt"
+                        android:gravity="center"
+                        android:text="@string/gender"
+                        android:textColor="@color/new_txt_color"
+                        android:textSize="12sp" />
+    -->
+
+                <CheckBox
+                    android:id="@+id/cb_pregnant"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:fontFamily="@font/futuramediumbt"
-                    android:gravity="center"
-                    android:text="@string/gender"
-                    android:textColor="@color/new_txt_color"
-                    android:textSize="12sp" />
-
-                <RadioGroup
-                    android:id="@+id/rggender"
-                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:layout_weight="1"
+                    android:buttonTint="@drawable/cb_selectorrs"
+                    android:fontFamily="@font/montserrat"
+                    android:paddingStart="10dp"
+                    android:text="@string/pregrant"
+                    android:textColor="@color/new_txt_color"
+                    android:textSize="12sp"
+                    tools:ignore="RtlSymmetry"
+                   />
 
-                    <RadioButton
-                        android:id="@+id/radioButton1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:button="@drawable/ic_checkbox"
-                        android:checked="true"
-                        android:fontFamily="@font/futuramediumbt"
-                        android:text="@string/male"
-                        android:textColor="@color/new_txt_color"
-                        android:textSize="12sp" />
-
-                    <RadioButton
-                        android:id="@+id/radioButton2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:button="@drawable/ic_checkbox"
-                        android:fontFamily="@font/futuramediumbt"
-                        android:text="@string/female"
-                        android:textColor="@color/new_txt_color"
-                        android:textSize="12sp" />
+                <CheckBox
+                    android:id="@+id/cb_diabetes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:buttonTint="@drawable/cb_selectorrs"
+                    android:fontFamily="@font/montserrat"
+                    android:paddingStart="10dp"
+                    android:text="@string/diabeties"
+                    android:textColor="@color/new_txt_color"
+                    android:textSize="12sp"
+                    tools:ignore="RtlSymmetry" />
 
 
-                    <RadioButton
-                        android:id="@+id/radioButton3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:button="@drawable/ic_checkbox"
-                        android:fontFamily="@font/futuramediumbt"
-                        android:text="@string/transgender"
-                        android:textColor="@color/new_txt_color"
-                        android:textSize="12sp" />
+                <CheckBox
+                    android:id="@+id/cb_ocd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:buttonTint="@drawable/cb_selectorrs"
+                    android:fontFamily="@font/montserrat"
+                    android:paddingStart="10dp"
+                    android:text="@string/ocd"
+                    android:textColor="@color/new_txt_color"
+                    android:textSize="12sp"
+                    tools:ignore="RtlSymmetry" />
 
-                </RadioGroup>
+
 
             </LinearLayout>
 
             <EditText
-                android:id="@+id/edt_age"
+                android:id="@+id/edt_dob"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/rectangle_corner"
-                android:fontFamily="@font/futuramediumbt"
-                android:hint="@string/age"
-                android:inputType="number"
-                android:maxLength="3"
+                android:focusable="false"
+                android:fontFamily="@font/montserrat"
+                android:hint="@string/dob"
+                android:inputType="none"
                 android:maxLines="1"
                 android:padding="15dp"
                 android:textColor="@color/green"
@@ -212,14 +218,14 @@
 
 
             <EditText
-                android:id="@+id/edtx_any_medical_information"
+                android:id="@+id/edt_bio"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/rectangle_corner"
-                android:fontFamily="@font/futuramediumbt"
+                android:fontFamily="@font/montserrat"
                 android:gravity="start"
-                android:hint="@string/any_medical_information"
+                android:hint="@string/pet_bio"
                 android:inputType="textMultiLine"
                 android:lines="3"
                 android:maxLength="150"
@@ -238,7 +244,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/rectangle_corner"
-                android:fontFamily="@font/futuramediumbt"
+                android:fontFamily="@font/montserrat"
                 android:hint="@string/pet_weight"
                 android:inputType="numberDecimal"
                 android:maxLength="3"
@@ -248,6 +254,48 @@
                 android:textColorHint="@color/dark_gray"
                 android:textSize="14sp"
                 tools:ignore="Autofill,LabelFor,TextFields" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/montserrat"
+                    android:gravity="center"
+                    android:text="@string/covidvacc"
+                    android:textColor="@color/new_txt_color"
+                    android:textSize="12sp" />
+
+
+                    <CheckBox
+                        android:id="@+id/cb_yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@drawable/cb_selectorrs"
+                        android:checked="true"
+                        android:fontFamily="@font/montserrat"
+                        android:text="@string/yes"
+                        android:textColor="@color/new_txt_color"
+                        android:textSize="12sp" />
+
+                    <CheckBox
+                        android:id="@+id/cb_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:buttonTint="@drawable/cb_selectorrs"
+                        android:fontFamily="@font/montserrat"
+                        android:text="@string/no"
+                        android:textColor="@color/new_txt_color"
+                        android:textSize="12sp" />
+
+
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/txt_uploadimage"
@@ -279,7 +327,7 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/rectangle_corner"
                         android:focusable="false"
-                        android:fontFamily="@font/futuramediumbt"
+                        android:fontFamily="@font/montserrat"
                         android:hint="@string/choose"
                         android:inputType="none"
                         android:padding="15dp"
@@ -330,7 +378,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/new_rounded_corner_btn"
-            android:fontFamily="@font/futuramediumbt"
+            android:fontFamily="@font/montserrat"
             android:text="@string/submit"
             android:textAllCaps="false"
             android:textColor="@color/white"

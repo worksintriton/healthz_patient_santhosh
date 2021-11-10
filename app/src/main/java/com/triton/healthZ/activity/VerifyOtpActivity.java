@@ -21,7 +21,7 @@ import com.triton.healthZ.R;
 import com.triton.healthZ.api.APIClient;
 import com.triton.healthZ.api.RestApiInterface;
 import com.triton.healthZ.appUtils.ApplicationData;
-import com.triton.healthZ.customer.AddMembersOldActivity;
+import com.triton.healthZ.customer.AddMembersNewActivity;
 import com.triton.healthZ.customer.CustomerDashboardActivity;
 import com.triton.healthZ.doctor.DoctorBusinessInfoActivity;
 import com.triton.healthZ.doctor.DoctorDashboardActivity;
@@ -377,8 +377,8 @@ public class VerifyOtpActivity extends AppCompatActivity implements View.OnClick
 
                         );
                         sessionManager.createRazorpayDetails(
-                                "",
-                               "");
+                                response.body().getPayment_gateway_detail().getRzpkey(),
+                               String.valueOf(response.body().getPayment_gateway_detail().isIsproduction()));
                         Log.w(TAG,"ref_code : "+response.body().getData().getRef_code()+" fromactivity : "+fromactivity+" usertype : "+usertype);
 
                         if(fromactivity != null && fromactivity.equalsIgnoreCase("LoginActivity")){
@@ -400,7 +400,7 @@ public class VerifyOtpActivity extends AppCompatActivity implements View.OnClick
                         } else{
                             if(usertype != 0){
                                 if(usertype == 1 ){
-                                    startActivity(new Intent(VerifyOtpActivity.this, AddMembersOldActivity.class));
+                                    startActivity(new Intent(VerifyOtpActivity.this, AddMembersNewActivity.class));
 
                                 }else if(usertype == 2 ){
                                     startActivity(new Intent(VerifyOtpActivity.this, ServiceProviderRegisterFormActivity.class));

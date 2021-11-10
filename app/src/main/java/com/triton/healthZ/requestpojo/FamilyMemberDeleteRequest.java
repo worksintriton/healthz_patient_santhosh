@@ -1,6 +1,6 @@
 package com.triton.healthZ.requestpojo;
 
-public class PetDeleteRequest {
+public class FamilyMemberDeleteRequest {
 
 
     /**

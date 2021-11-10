@@ -48,20 +48,27 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.gson.Gson;
 import com.triton.healthZ.R;
 import com.triton.healthZ.api.API;
 
+import com.triton.healthZ.api.APIClient;
+import com.triton.healthZ.api.RestApiInterface;
 import com.triton.healthZ.fragmentcustomer.bottommenu.CustomerCareFragment;
 import com.triton.healthZ.fragmentcustomer.bottommenu.CustomerCommunityFragment;
 import com.triton.healthZ.fragmentcustomer.bottommenu.CustomerHomeFragment;
 import com.triton.healthZ.fragmentcustomer.bottommenu.CustomerServicesFragment;
 import com.triton.healthZ.fragmentcustomer.bottommenu.CustomerShopFragment;
 
+import com.triton.healthZ.requestpojo.DefaultLocationRequest;
+import com.triton.healthZ.responsepojo.DefaultLocationResponse;
 import com.triton.healthZ.responsepojo.GetAddressResultResponse;
 
 import com.triton.healthZ.service.GPSTracker;
 import com.triton.healthZ.sessionmanager.SessionManager;
 
+import com.triton.healthZ.utils.ConnectionDetector;
+import com.triton.healthZ.utils.RestUtils;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import org.jetbrains.annotations.NotNull;
@@ -147,7 +154,7 @@ public class CustomerDashboardActivity extends CustomerNavigationDrawer implemen
         ButterKnife.bind(this);
         Log.w(TAG,"onCreate-->");
 
-        //googleApiConnected();
+        googleApiConnected();
         avi_indicator.setVisibility(View.GONE);
 
 
@@ -222,9 +229,9 @@ public class CustomerDashboardActivity extends CustomerNavigationDrawer implemen
         }
 
         if(userid !=  null){
-            /*if (new ConnectionDetector(getApplicationContext()).isNetworkAvailable(getApplicationContext())) {
+            if (new ConnectionDetector(getApplicationContext()).isNetworkAvailable(getApplicationContext())) {
                 defaultLocationResponseCall();
-            }*/
+            }
         }
 
 
@@ -273,36 +280,36 @@ public class CustomerDashboardActivity extends CustomerNavigationDrawer implemen
     @Override
     public void onBackPressed() {
         Log.w(TAG,"tag : "+tag);
-//        if (bottom_navigation_view.getSelectedItemId() == R.id.home) {
+        if (bottomNavigation.getSelectedItemId() == R.id.home) {
             showExitAppAlert();
-          /*  new android.app.AlertDialog.Builder(CustomerDashboardActivity.this)
+            new android.app.AlertDialog.Builder(CustomerDashboardActivity.this)
                     .setMessage("Are you sure you want to exit?")
                     .setCancelable(false)
                     .setPositiveButton("Yes", (dialog, id) -> CustomerDashboardActivity.this.finishAffinity())
                     .setNegativeButton("No", null)
-                    .show();*/
-//        }
-//        else if(tag != null ){
-//            Log.w(TAG,"Else IF--->"+"fromactivity : "+fromactivity);
-//            if(fromactivity != null){
-//
-//
-//            }else{
-//                bottom_navigation_view.setSelectedItemId(R.id.home);
-//                // load fragment
-//                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-//                transaction.replace(R.id.frame_schedule,new CustomerHomeFragment());
-//                transaction.commitNowAllowingStateLoss();
-//            }
-//
-//
-//        }else{
-//            bottom_navigation_view.setSelectedItemId(R.id.home);
-//            // load fragment
-//            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-//            transaction.replace(R.id.frame_schedule,new CustomerHomeFragment());
-//            transaction.commitNowAllowingStateLoss();
-//        }
+                    .show();
+        }
+        else if(tag != null ){
+            Log.w(TAG,"Else IF--->"+"fromactivity : "+fromactivity);
+            if(fromactivity != null){
+
+
+            }else{
+                bottomNavigation.setSelectedItemId(R.id.home);
+                // load fragment
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.frame_schedule,new CustomerHomeFragment());
+                transaction.commitNowAllowingStateLoss();
+            }
+
+
+        }else{
+            bottomNavigation.setSelectedItemId(R.id.home);
+            // load fragment
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.frame_schedule,new CustomerHomeFragment());
+            transaction.commitNowAllowingStateLoss();
+        }
     }
 
     private void replaceFragment(Fragment fragment){
@@ -558,61 +565,62 @@ public class CustomerDashboardActivity extends CustomerNavigationDrawer implemen
                 //avi_indicator.smoothToHide();
                 Log.w(TAG,"url  :%s"+ call.request().url().toString());
 
+                try{
 
 
 
-                if(response.body() != null) {
-                    String currentplacename = null;
-                    String compundcode = null;
+                    if(response.body() != null) {
+                        String currentplacename = null;
+                        String compundcode = null;
 
-                    if(response.body().getPlus_code().getCompound_code() != null){
-                        compundcode = response.body().getPlus_code().getCompound_code();
-                    }
-                    if(compundcode != null) {
-                        String[] separated = compundcode.split(",");
-                        String placesname = separated[0];
-                        String[] splitData = placesname.split("\\s", 2);
-                        String code = splitData[0];
-                        currentplacename = splitData[1];
-                        Log.w(TAG,"currentplacename : "+currentplacename);
-                    }
-
-
+                        if(response.body().getPlus_code().getCompound_code() != null){
+                            compundcode = response.body().getPlus_code().getCompound_code();
+                        }
+                        if(compundcode != null) {
+                            String[] separated = compundcode.split(",");
+                            String placesname = separated[0];
+                            String[] splitData = placesname.split("\\s", 2);
+                            String code = splitData[0];
+                            currentplacename = splitData[1];
+                            Log.w(TAG,"currentplacename : "+currentplacename);
+                        }
 
 
-                    String localityName = null;
-                    String sublocalityName = null;
-                    String CityName = null;
-                    String postalCode;
 
 
-                    List<GetAddressResultResponse.ResultsBean> getAddressResultResponseList;
-                    getAddressResultResponseList = response.body().getResults();
-                    if (getAddressResultResponseList.size() > 0) {
-                        String AddressLine = getAddressResultResponseList.get(0).getFormatted_address();
-
-                    }
-                    List<GetAddressResultResponse.ResultsBean.AddressComponentsBean> addressComponentsBeanList = response.body().getResults().get(0).getAddress_components();
-                    if(addressComponentsBeanList != null) {
-                        if (addressComponentsBeanList.size() > 0) {
-                            for (int i = 0; i < addressComponentsBeanList.size(); i++) {
-
-                                for (int j = 0; j < addressComponentsBeanList.get(i).getTypes().size(); j++) {
-
-                                    List<String> typesList = addressComponentsBeanList.get(i).getTypes();
-
-                                    if (typesList.contains("postal_code")) {
-                                        postalCode = addressComponentsBeanList.get(i).getShort_name();
-                                        String PostalCode = postalCode;
-
-                                    }
-                                    if (typesList.contains("locality")) {
-                                        CityName = addressComponentsBeanList.get(i).getLong_name();
-                                        localityName = addressComponentsBeanList.get(i).getShort_name();
-                                        Log.w(TAG,"CityName : "+CityName+"localityName : "+localityName);
+                        String localityName = null;
+                        String sublocalityName = null;
+                        String CityName = null;
+                        String postalCode;
 
 
-                                    }
+                        List<GetAddressResultResponse.ResultsBean> getAddressResultResponseList;
+                        getAddressResultResponseList = response.body().getResults();
+                        if (getAddressResultResponseList.size() > 0) {
+                            String AddressLine = getAddressResultResponseList.get(0).getFormatted_address();
+
+                        }
+                        List<GetAddressResultResponse.ResultsBean.AddressComponentsBean> addressComponentsBeanList = response.body().getResults().get(0).getAddress_components();
+                        if(addressComponentsBeanList != null) {
+                            if (addressComponentsBeanList.size() > 0) {
+                                for (int i = 0; i < addressComponentsBeanList.size(); i++) {
+
+                                    for (int j = 0; j < addressComponentsBeanList.get(i).getTypes().size(); j++) {
+
+                                        List<String> typesList = addressComponentsBeanList.get(i).getTypes();
+
+                                        if (typesList.contains("postal_code")) {
+                                            postalCode = addressComponentsBeanList.get(i).getShort_name();
+                                            String PostalCode = postalCode;
+
+                                        }
+                                        if (typesList.contains("locality")) {
+                                            CityName = addressComponentsBeanList.get(i).getLong_name();
+                                            localityName = addressComponentsBeanList.get(i).getShort_name();
+                                            Log.w(TAG,"CityName : "+CityName+"localityName : "+localityName);
+
+
+                                        }
 
                                    /* if(currentplacename != null){
                                         txt_location.setText(currentplacename);
@@ -624,31 +632,40 @@ public class CustomerDashboardActivity extends CustomerNavigationDrawer implemen
                                         txt_location.setText("");
                                     }
 */
-                                    if (typesList.contains("administrative_area_level_2")) {
-                                        cityName = addressComponentsBeanList.get(i).getShort_name();
-                                        //  CityName = cityName;
+                                        if (typesList.contains("administrative_area_level_2")) {
+                                            cityName = addressComponentsBeanList.get(i).getShort_name();
+                                            //  CityName = cityName;
 
 
 
 
-                                    }
-                                    if (typesList.contains("sublocality_level_1")) {
-                                        sublocalityName = addressComponentsBeanList.get(i).getShort_name();
-                                        Log.w(TAG,"sublocalityName : "+sublocalityName);
+                                        }
+                                        if (typesList.contains("sublocality_level_1")) {
+                                            sublocalityName = addressComponentsBeanList.get(i).getShort_name();
+                                            Log.w(TAG,"sublocalityName : "+sublocalityName);
+
+                                        }
 
                                     }
 
                                 }
 
+
+
+
+
                             }
-
-
-
-
-
                         }
                     }
+
                 }
+                catch (Exception e) {
+
+                    e.printStackTrace();
+
+                }
+
+
 
 
             }
@@ -779,7 +796,7 @@ public class CustomerDashboardActivity extends CustomerNavigationDrawer implemen
     }
 
 
-/*    @SuppressLint("LogNotTimber")
+    @SuppressLint("LogNotTimber")
     private void defaultLocationResponseCall() {
         avi_indicator.setVisibility(View.VISIBLE);
         avi_indicator.smoothToShow();
@@ -811,7 +828,7 @@ public class CustomerDashboardActivity extends CustomerNavigationDrawer implemen
             }
 
             @Override
-            public void onFailure(@NonNull Call<DefaultLocationResponse> call,@NonNull Throwable t) {
+            public void onFailure(@NonNull Call<DefaultLocationResponse> call, @NonNull Throwable t) {
                 avi_indicator.smoothToHide();
                 Log.e("DefaultLocationResponse flr", "--->" + t.getMessage());
                 Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
@@ -825,7 +842,7 @@ public class CustomerDashboardActivity extends CustomerNavigationDrawer implemen
 
         Log.w(TAG,"defaultLocationRequest "+ new Gson().toJson(defaultLocationRequest));
         return defaultLocationRequest;
-    }*/
+    }
 
     @Override
     protected void onRestart() {

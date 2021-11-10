@@ -19,9 +19,14 @@ import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.triton.healthZ.R;
 import com.triton.healthZ.api.APIClient;
+import com.triton.healthZ.customer.AddYourFamilyMembersOldActivity;
+import com.triton.healthZ.interfaces.FamilyMembersDeleteListener;
+import com.triton.healthZ.interfaces.GotoAddFamilyMembersOldActivityListener;
 import com.triton.healthZ.interfaces.PetDeleteListener;
-import com.triton.healthZ.customer.BasicPetDetailsActivity;
 import com.triton.healthZ.customer.EditYourPetProfileInfoActivity;
+import com.triton.healthZ.requestpojo.FamilyMemberCreateRequest;
+import com.triton.healthZ.responsepojo.FamilyMemberCreateResponse;
+import com.triton.healthZ.responsepojo.FamilyMemberListResponse;
 import com.triton.healthZ.responsepojo.PetListResponse;
 
 import java.io.Serializable;
@@ -30,23 +35,25 @@ import java.util.List;
 
 public class ManagePetListAdapter extends  RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    private final List<PetListResponse.DataBean> petListResponseList;
+    private final List<FamilyMemberListResponse.DataBean> dataBeanList;
 
     private final Context context;
 
-    PetListResponse.DataBean currentItem;
+    FamilyMemberListResponse.DataBean currentItem;
 
-    PetDeleteListener petDeleteListener;
+    FamilyMembersDeleteListener petDeleteListener;
 
+    GotoAddFamilyMembersOldActivityListener gotoAddFamilyMembersOldActivityListener;
 
     public static String id = "";
-    private List<PetListResponse.DataBean.PetImgBean> petImgBeanList;
 
+    private List<FamilyMemberListResponse.DataBean.PicBean> picBeanList;
 
-    public ManagePetListAdapter(Context context, List<PetListResponse.DataBean> petListResponseList, PetDeleteListener petDeleteListener) {
-        this.petListResponseList = petListResponseList;
+    public ManagePetListAdapter(Context context, List<FamilyMemberListResponse.DataBean> dataBeanList, FamilyMembersDeleteListener petDeleteListener,GotoAddFamilyMembersOldActivityListener gotoAddFamilyMembersOldActivityListener) {
+        this.dataBeanList = dataBeanList;
         this.context = context;
         this.petDeleteListener = petDeleteListener;
+        this.gotoAddFamilyMembersOldActivityListener = gotoAddFamilyMembersOldActivityListener;
 
     }
 
@@ -66,29 +73,32 @@ public class ManagePetListAdapter extends  RecyclerView.Adapter<RecyclerView.Vie
 
     @SuppressLint({"SetTextI18n", "LogNotTimber"})
     private void initLayoutOne(ViewHolderOne holder, final int position) {
-        currentItem = petListResponseList.get(position);
-        if (petListResponseList.get(position).getPet_name() != null) {
-            holder.txt_pet_name.setText(petListResponseList.get(position).getPet_name());
+
+        currentItem = dataBeanList.get(position);
+
+        if (dataBeanList.get(position).getName() != null) {
+            holder.txt_pet_name.setText(dataBeanList.get(position).getName());
         }
 
 
 
-        if (petListResponseList != null && petListResponseList.size() > 0) {
+        if (dataBeanList != null && dataBeanList.size() > 0) {
             String TAG = "ManagePetListAdapter";
-            Log.w(TAG,"petListResponseList : "+new Gson().toJson(petListResponseList));
+            Log.w(TAG,"dataBeanList : "+new Gson().toJson(dataBeanList));
 
 
-            petImgBeanList =   petListResponseList.get(position).getPet_img();
+            picBeanList =   dataBeanList.get(position).getPic();
 
             String petImagePath = null;
 
 
-            Log.w(TAG,"petImgBeanList : "+new Gson().toJson(petImgBeanList));
+            Log.w(TAG,"picBeanList : "+new Gson().toJson(picBeanList));
 
-            if (petImgBeanList != null && petImgBeanList.size() > 0) {
+            if(picBeanList != null && picBeanList.size() > 0) {
 
-                for(int j=0;j<petImgBeanList.size();j++) {
-                    petImagePath = petImgBeanList.get(j).getPet_img();
+                for (int j=0;j<picBeanList.size();j++) {
+
+                    petImagePath= picBeanList.get(j).getImage();
 
                 }
             }
@@ -114,62 +124,20 @@ public class ManagePetListAdapter extends  RecyclerView.Adapter<RecyclerView.Vie
 
 
         holder.ll_add.setOnClickListener(v -> {
-            Intent i = new Intent(context, BasicPetDetailsActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            context.startActivity(i);
+            /*Intent i = new Intent(context, AddYourFamilyMembersOldActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            context.startActivity(i);*/
+            gotoAddFamilyMembersOldActivityListener.gotoAddFamilyMembersOldActivityListener(dataBeanList.get(position).get_id());
         });
 
 
         holder.img_settings.setOnClickListener(v -> {
-            //Creating the instance of PopupMenu
-            PopupMenu popup = new PopupMenu(context, v);
-            //Inflating the Popup using xml file
-            popup.getMenuInflater().inflate(R.menu.popup_menu, popup.getMenu());
 
-            //registering popup with OnMenuItemClickListener
-            popup.setOnMenuItemClickListener(item -> {
-                String titleName = String.valueOf(item.getTitle());
-                if(titleName.equalsIgnoreCase("Edit")){
-                    Intent i = new Intent(context, EditYourPetProfileInfoActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    i.putExtra("id",petListResponseList.get(position).get_id());
-                    i.putExtra("userid",petListResponseList.get(position).getUser_id());
-                    i.putExtra("petimage",petListResponseList.get(position).getPet_img().get(0).getPet_img());
-                    i.putExtra("petname",petListResponseList.get(position).getPet_name());
-                    i.putExtra("pettype",petListResponseList.get(position).getPet_type());
-                    i.putExtra("petbreed",petListResponseList.get(position).getPet_breed());
-                    i.putExtra("petgender",petListResponseList.get(position).getPet_gender());
-                    i.putExtra("petcolor",petListResponseList.get(position).getPet_color());
-                    i.putExtra("petweight",petListResponseList.get(position).getPet_weight());
-                    i.putExtra("petdob",petListResponseList.get(position).getPet_dob());
-                    i.putExtra("vaccinatedstatus",petListResponseList.get(position).isVaccinated());
-                    i.putExtra("vaccinateddate",petListResponseList.get(position).getLast_vaccination_date());
-                    i.putExtra("defaultstatus",petListResponseList.get(position).isDefault_status());
-                    i.putExtra("pet_spayed",petListResponseList.get(position).isPet_spayed());
-                    i.putExtra("pet_purebred",petListResponseList.get(position).isPet_purebred());
-                    i.putExtra("pet_frnd_with_dog",petListResponseList.get(position).isPet_frnd_with_dog());
-                    i.putExtra("pet_frnd_with_cat",petListResponseList.get(position).isPet_frnd_with_cat());
-                    i.putExtra("pet_microchipped",petListResponseList.get(position).isPet_microchipped());
-                    i.putExtra("pet_tick_free",petListResponseList.get(position).isPet_tick_free());
-                    i.putExtra("pet_private_part",petListResponseList.get(position).isPet_private_part());
+            petDeleteListener.familyMemberDeleteListener(dataBeanList.get(position).get_id());
 
-                    Bundle args = new Bundle();
-                    //int list = petListResponseList.get(position).getPet_img().size();
-                    args.putSerializable("PETLIST", (Serializable) petListResponseList.get(position).getPet_img());
-                    i.putExtra("petimage",args);
-
-                    context.startActivity(i);
-
-                } else if(titleName.equalsIgnoreCase("Delete")){
-                    petDeleteListener.petDeleteListener(petListResponseList.get(position).isDefault_status(),petListResponseList.get(position).get_id());
-
-                }
-                return true;
-            });
-
-            popup.show();//showing popup menu
         });
         //closing the setOnClickListener method
 
-        if(position == petListResponseList.size()-1){
+        if(position == dataBeanList.size()-1){
             holder.ll_add.setVisibility(View.VISIBLE);
         }
 
@@ -222,7 +190,7 @@ public class ManagePetListAdapter extends  RecyclerView.Adapter<RecyclerView.Vie
 
     @Override
     public int getItemCount() {
-        return petListResponseList.size();
+        return dataBeanList.size();
     }
 
 

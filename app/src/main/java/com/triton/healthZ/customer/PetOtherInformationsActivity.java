@@ -165,7 +165,7 @@ public class PetOtherInformationsActivity extends AppCompatActivity {
                 intent.putExtra("petid", petid);
                 intent.putExtra("fromactivity",TAG);
                 startActivity(intent);
-            }else if(fromactivity != null && fromactivity.equalsIgnoreCase("AddMembersOldActivity")) {
+            }else if(fromactivity != null && fromactivity.equalsIgnoreCase("AddMembersNewActivity")) {
                 Intent intent = new Intent(getApplicationContext(), RegisterYourPetActivity.class);
                 intent.putExtra("petid", petid);
                 intent.putExtra("fromactivity",TAG);
@@ -336,7 +336,7 @@ public class PetOtherInformationsActivity extends AppCompatActivity {
                             intent.putExtra("petid", response.body().getData().get_id());
                             startActivity(intent);
                         }
-                        else if(fromactivity != null && fromactivity.equalsIgnoreCase("AddMembersOldActivity")) {
+                        else if(fromactivity != null && fromactivity.equalsIgnoreCase("AddMembersNewActivity")) {
                             Intent intent = new Intent(getApplicationContext(), RegisterYourPetActivity.class);
                             intent.putExtra("petid", petid);
                             intent.putExtra("fromactivity",TAG);

@@ -642,5 +642,17 @@
     <string name="patient_name">Patient Name</string>
     <string name="image_upload">Image Upload</string>
     <string name="edit_your_family">Edit Family Members</string>
+    <string name="pregrant">Pregrant</string>
+    <string name="diabeties">Diabeties</string>
+    <string name="ocd">OCD</string>
+    <string name="covidvacc">Co-Vid Vaccinated</string>
+    <string name="members">Members</string>
+    <string name="_126_votes">126 Votes</string>
 
+    <string-array name="array_gender">
+        <item>Select Gender</item>
+        <item>Male</item>
+        <item>Female</item>
+        <item>+Transgender</item>
+    </string-array>
 </resources>

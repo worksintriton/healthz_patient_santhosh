@@ -2,6 +2,8 @@ package com.triton.healthZ.customer;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,6 +16,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -25,6 +28,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.gson.Gson;
 import com.triton.healthZ.R;
 import com.triton.healthZ.activity.LoginActivity;
@@ -38,12 +42,19 @@ import com.triton.healthZ.adapter.ManagePetListAdapter;
 import com.triton.healthZ.api.APIClient;
 import com.triton.healthZ.api.RestApiInterface;
 
-import com.triton.healthZ.interfaces.PetDeleteListener;
+import com.triton.healthZ.fragmentcustomer.bottommenu.CustomerCareFragment;
+import com.triton.healthZ.fragmentcustomer.bottommenu.CustomerCommunityFragment;
+import com.triton.healthZ.fragmentcustomer.bottommenu.CustomerHomeFragment;
+import com.triton.healthZ.fragmentcustomer.bottommenu.CustomerServicesFragment;
+import com.triton.healthZ.fragmentcustomer.bottommenu.CustomerShopFragment;
+import com.triton.healthZ.interfaces.FamilyMembersDeleteListener;
 import com.triton.healthZ.customer.myaddresses.MyAddressesListActivity;
+import com.triton.healthZ.interfaces.GotoAddFamilyMembersOldActivityListener;
 import com.triton.healthZ.requestpojo.DefaultLocationRequest;
-import com.triton.healthZ.requestpojo.PetDeleteRequest;
-import com.triton.healthZ.requestpojo.PetListRequest;
-import com.triton.healthZ.responsepojo.PetDeleteResponse;
+import com.triton.healthZ.requestpojo.FamilyMemberDeleteRequest;
+import com.triton.healthZ.requestpojo.FamilyMemberListRequest;
+import com.triton.healthZ.responsepojo.FamilyMemberDeleteResponse;
+import com.triton.healthZ.responsepojo.FamilyMemberListResponse;
 import com.triton.healthZ.responsepojo.PetListResponse;
 import com.triton.healthZ.responsepojo.SuccessResponse;
 import com.triton.healthZ.sessionmanager.SessionManager;
@@ -65,7 +76,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class CustomerProfileScreenActivity extends AppCompatActivity implements View.OnClickListener, PetDeleteListener {
+public class CustomerProfileScreenActivity extends AppCompatActivity implements View.OnClickListener, FamilyMembersDeleteListener, BottomNavigationView.OnNavigationItemSelectedListener, GotoAddFamilyMembersOldActivityListener {
     private  String TAG = "CustomerProfileScreenActivity";
 
 
@@ -98,8 +109,8 @@ public class CustomerProfileScreenActivity extends AppCompatActivity implements 
     AVLoadingIndicatorView avi_indicator;
 
     @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rv_pet)
-    RecyclerView rv_pet;
+    @BindView(R.id.rv_familylist)
+    RecyclerView rv_family;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_no_records)
@@ -127,14 +138,19 @@ public class CustomerProfileScreenActivity extends AppCompatActivity implements 
     @BindView(R.id.img_profile1)
     ImageView img_profile1;
 
+
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_edit_image)
     TextView txt_edit_image;
 
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_name)
+    TextView txt_name;
 
 
-
-
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_email)
+    TextView txt_email;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.include_petlover_header)
@@ -156,7 +172,6 @@ public class CustomerProfileScreenActivity extends AppCompatActivity implements 
 
     private static final int REQUEST_PHONE_CALL =1 ;
     private String sosPhonenumber;
-    private String active_tag;
 
     private int distance;
     private int reviewcount;
@@ -183,6 +198,20 @@ public class CustomerProfileScreenActivity extends AppCompatActivity implements 
     private String startappointmentstatus;
     private String appointmentfor;
     private String userrate;
+
+    private List<FamilyMemberListResponse.DataBean> dataBeanList;
+
+    /* Petlover Bottom Navigation */
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.fab)
+    FloatingActionButton floatingActionButton;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.bottomNavigation)
+    BottomNavigationView bottomNavigation;
+
+    public static String active_tag = "1";
 
 
 
@@ -225,7 +254,9 @@ public class CustomerProfileScreenActivity extends AppCompatActivity implements 
 
 
         txt_usrname.setText(name);
+        txt_name.setText(name);
         txt_mail.setText(emailid);
+        txt_email.setText(emailid);
         txt_phn_num.setText(phoneNo);
 
         if(profileimage != null && !profileimage.isEmpty()){
@@ -244,7 +275,7 @@ public class CustomerProfileScreenActivity extends AppCompatActivity implements 
 
 
         if (new ConnectionDetector(getApplicationContext()).isNetworkAvailable(getApplicationContext())) {
-            petListResponseCall();
+            familymembersListResponseCall();
         }
 
 
@@ -322,75 +353,40 @@ public class CustomerProfileScreenActivity extends AppCompatActivity implements 
             userrate = extras.getString("userrate");
             from = extras.getString("from");
 
-
-
-
-
-
-
-
         }
 
+        bottomNavigation.getMenu().getItem(0).setCheckable(false);
 
-      /*  *//*home*//*
-        title_care.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-        img_care.setImageResource(R.drawable.grey_care);
-        title_serv.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-        img_serv.setImageResource(R.drawable.grey_servc);
-        title_shop.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-        img_shop.setImageResource(R.drawable.grey_shop);
-        title_community.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-        img_community.setImageResource(R.drawable.grey_community);
+
+        floatingActionButton.setImageResource(R.drawable.ic_hzhome_png);
+
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                callDirections("1");
+            }
+        });
 
 
         if(active_tag != null){
-            if(active_tag.equalsIgnoreCase("3")) {
-//                bottom_navigation_view.getMenu().findItem(R.id.services).setChecked(true);
-                *//*serv*//*
-                title_care.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-                img_care.setImageResource(R.drawable.grey_care);
-                title_shop.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-                img_shop.setImageResource(R.drawable.grey_shop);
-                title_community.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-                img_community.setImageResource(R.drawable.grey_community);
-                title_serv.setTextColor(getResources().getColor(R.color.new_gree_color,getTheme()));
-                img_serv.setImageResource(R.drawable.green_serv);
+            if(active_tag.equalsIgnoreCase("1")){
+                bottomNavigation.setSelectedItemId(R.id.home);
+            }else if(active_tag.equalsIgnoreCase("2")){
+                bottomNavigation.setSelectedItemId(R.id.shop);
+            }else if(active_tag.equalsIgnoreCase("3")){
+                bottomNavigation.setSelectedItemId(R.id.services);
+            }else if(active_tag.equalsIgnoreCase("4")){
+                bottomNavigation.setSelectedItemId(R.id.care);
+            } else if(active_tag.equalsIgnoreCase("5")){
+                bottomNavigation.setSelectedItemId(R.id.community);
+            }
+        }
+        else{
+            bottomNavigation.setSelectedItemId(R.id.home);
+        }
 
-
-            }else if(active_tag.equalsIgnoreCase("4")) {
-//                bottom_navigation_view.getMenu().findItem(R.id.care).setChecked(true);
-    *//*Care*//*
-//                title_serv.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-//                img_serv.setImageResource(R.drawable.grey_servc);
-//                title_shop.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-//                img_shop.setImageResource(R.drawable.grey_shop);
-//                title_community.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-//                img_community.setImageResource(R.drawable.grey_community);
-//                title_care.setTextColor(getResources().getColor(R.color.new_gree_color,getTheme()));
-//                img_care.setImageResource(R.drawable.green_care);
-//
-//            }
-//
-//        }
-//
-//        rl_home.setOnClickListener(this);
-//
-//        rl_care.setOnClickListener(this);
-//
-//        rl_service.setOnClickListener(this);
-//
-//        rl_shop.setOnClickListener(this);
-//
-//        rl_comn.setOnClickListener(this);
-//
-//
-//        rl_homes.setOnClickListener(this);
-
-*/
-
-
-
-
+        bottomNavigation.setOnNavigationItemSelectedListener(this);
 
     }
 
@@ -520,7 +516,7 @@ public class CustomerProfileScreenActivity extends AppCompatActivity implements 
             intent.putExtra("lat",latitude);
             intent.putExtra("lon",longtitude);
             startActivity(intent);
-            finish();
+               finish();
         }else if(fromactivity != null && fromactivity.equalsIgnoreCase("PetloverFavListActivity")){
             Intent intent = new Intent(getApplicationContext(), PetloverFavListActivity.class);
             startActivity(intent);
@@ -601,8 +597,33 @@ public class CustomerProfileScreenActivity extends AppCompatActivity implements 
     }
 
     private void gotoAddYourPet() {
-        Intent i = new Intent(getApplicationContext(), BasicPetDetailsActivity.class);
-        startActivity(i);
+        Intent intent = new Intent(getApplicationContext(), AddYourFamilyMembersOldActivity.class);
+        intent.putExtra("doctorid",doctorid);
+        intent.putExtra("doctorname",doctorname);
+        intent.putExtra("distance",distance);
+        intent.putExtra("catid",catid);
+        intent.putExtra("from",from);
+        intent.putExtra("reviewcount",reviewcount);
+        intent.putExtra("Count_value_start",Count_value_start);
+        intent.putExtra("Count_value_end",Count_value_end);
+        intent.putExtra("spid",spid);
+        intent.putExtra("spuserid",spuserid);
+        intent.putExtra("_id",_id);
+        intent.putExtra("orderid",orderid);
+        intent.putExtra("product_id",product_id);
+        intent.putExtra("cancelorder",cancelorder);
+        intent.putExtra("product_idList",product_idList);
+        intent.putExtra("id",id);
+        intent.putExtra("userid",userid);
+        intent.putExtra("nickname",nickname);
+        intent.putExtra("locationtype",locationtype);
+        intent.putExtra("defaultstatus",defaultstatus);
+        intent.putExtra("lat",latitude);
+        intent.putExtra("lon",longtitude);
+        intent.putExtra("pincode",pincode);
+        intent.putExtra("cityname",cityname);
+        intent.putExtra("address",address);
+        startActivity(intent);
         //startActivity(new Intent(getApplicationContext(),AddYourPetOldUserActivity.class));
     }
 
@@ -686,19 +707,20 @@ public class CustomerProfileScreenActivity extends AppCompatActivity implements 
         Log.w(TAG,"defaultLocationRequest "+ new Gson().toJson(defaultLocationRequest));
         return defaultLocationRequest;
     }
-    private void petListResponseCall() {
+
+    private void familymembersListResponseCall() {
         avi_indicator.setVisibility(View.VISIBLE);
         avi_indicator.smoothToShow();
         RestApiInterface apiInterface = APIClient.getClient().create(RestApiInterface.class);
-        Call<PetListResponse> call = apiInterface.petListResponseCall(RestUtils.getContentType(), petListRequest());
-        Log.w(TAG,"PetListResponse url  :%s"+" "+ call.request().url().toString());
+        Call<FamilyMemberListResponse> call = apiInterface.familymembersListResponseCall(RestUtils.getContentType(),FamilyMemberListRequest());
+        Log.w(TAG,"FamilyMemberListResponse url  :%s"+" "+ call.request().url().toString());
 
-        call.enqueue(new Callback<PetListResponse>() {
+        call.enqueue(new Callback<FamilyMemberListResponse>() {
             @SuppressLint("SetTextI18n")
             @Override
-            public void onResponse(@NonNull Call<PetListResponse> call, @NonNull Response<PetListResponse> response) {
+            public void onResponse(@NonNull Call<FamilyMemberListResponse> call, @NonNull Response<FamilyMemberListResponse> response) {
 
-                Log.w(TAG,"PetListResponse"+ "--->" + new Gson().toJson(response.body()));
+                Log.w(TAG,"FamilyMemberListResponse"+ "--->" + new Gson().toJson(response.body()));
 
                 avi_indicator.smoothToHide();
 
@@ -707,17 +729,17 @@ public class CustomerProfileScreenActivity extends AppCompatActivity implements 
 
                         if(response.body().getData() != null && response.body().getData().size()>0){
                             txt_no_records.setVisibility(View.GONE);
-                            rv_pet.setVisibility(View.VISIBLE);
+                            rv_family.setVisibility(View.VISIBLE);
                             ll_add.setVisibility(View.GONE);
-                            petList = response.body().getData();
+                            dataBeanList = response.body().getData();
                             setView();
 
                         }
                         else{
                             txt_no_records.setVisibility(View.VISIBLE);
-                            txt_no_records.setText(getResources().getString(R.string.no_new_pets));
+                            txt_no_records.setText(getResources().getString(R.string.no_new_fam_memb));
                             ll_add.setVisibility(View.VISIBLE);
-                            rv_pet.setVisibility(View.GONE);
+                            rv_family.setVisibility(View.GONE);
                         }
 
 
@@ -730,40 +752,40 @@ public class CustomerProfileScreenActivity extends AppCompatActivity implements 
             }
 
             @Override
-            public void onFailure(@NonNull Call<PetListResponse> call, @NonNull Throwable t) {
+            public void onFailure(@NonNull Call<FamilyMemberListResponse> call, @NonNull Throwable t) {
 
                 avi_indicator.smoothToHide();
-                Log.w(TAG,"PetListResponse flr"+"--->" + t.getMessage());
+                Log.w(TAG,"FamilyMemberListResponse flr"+"--->" + t.getMessage());
             }
         });
 
     }
-    private PetListRequest petListRequest() {
-        PetListRequest petListRequest = new PetListRequest();
-        petListRequest.setUser_id(userid);
-        Log.w(TAG,"petListRequest"+ "--->" + new Gson().toJson(petListRequest));
-        return petListRequest;
+    private FamilyMemberListRequest FamilyMemberListRequest() {
+        FamilyMemberListRequest FamilyMemberListRequest = new FamilyMemberListRequest();
+        FamilyMemberListRequest.setUser_id(userid);
+        Log.w(TAG,"FamilyMemberListRequest"+ "--->" + new Gson().toJson(FamilyMemberListRequest));
+        return FamilyMemberListRequest;
     }
     private void setView() {
-        rv_pet.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        rv_family.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
-      //  rv_pet.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-        rv_pet.setItemAnimator(new DefaultItemAnimator());
-        ManagePetListAdapter managePetListAdapter = new ManagePetListAdapter(getApplicationContext(), petList, this);
-        rv_pet.setAdapter(managePetListAdapter);
+        //  rv_family.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        rv_family.setItemAnimator(new DefaultItemAnimator());
+        ManagePetListAdapter managePetListAdapter = new ManagePetListAdapter(getApplicationContext(), dataBeanList, this,this);
+        rv_family.setAdapter(managePetListAdapter);
 
     }
 
 
     @Override
-    public void petDeleteListener(boolean status, String petid) {
-        if(petid != null){
-            showStatusAlert(petid);
+    public void familyMemberDeleteListener(String id) {
+        if(id != null){
+            showStatusAlert(id);
         }
 
     }
 
-    private void showStatusAlert(final String petid) {
+    private void showStatusAlert(final String id) {
 
         try {
 
@@ -781,7 +803,7 @@ public class CustomerProfileScreenActivity extends AppCompatActivity implements 
                 public void onClick(View view) {
                     dialog.dismiss();
 
-                    petDeleteResponseCall(petid);
+                    familyDeleteResponseCall(id);
 
 
                 }
@@ -808,25 +830,25 @@ public class CustomerProfileScreenActivity extends AppCompatActivity implements 
 
     }
     @SuppressLint("LogNotTimber")
-    private void petDeleteResponseCall(String petid) {
+    private void familyDeleteResponseCall(String id) {
         avi_indicator.setVisibility(View.VISIBLE);
         avi_indicator.smoothToShow();
 
         RestApiInterface apiInterface = APIClient.getClient().create(RestApiInterface.class);
-        Call<PetDeleteResponse> call = apiInterface.petDeleteResponseCall(RestUtils.getContentType(),petDeleteRequest(petid));
+        Call<FamilyMemberDeleteResponse> call = apiInterface.familyDeleteResponseCall(RestUtils.getContentType(),petDeleteRequest(id));
 
         Log.w(TAG,"url  :%s"+call.request().url().toString());
 
-        call.enqueue(new Callback<PetDeleteResponse>() {
+        call.enqueue(new Callback<FamilyMemberDeleteResponse>() {
             @SuppressLint("LogNotTimber")
             @Override
-            public void onResponse(@NotNull Call<PetDeleteResponse> call, @NotNull Response<PetDeleteResponse> response) {
+            public void onResponse(@NotNull Call<FamilyMemberDeleteResponse> call, @NotNull Response<FamilyMemberDeleteResponse> response) {
                 avi_indicator.smoothToHide();
-                Log.w(TAG,"PetDeleteResponse"+ "--->" + new Gson().toJson(response.body()));
+                Log.w(TAG,"FamilyMemberDeleteResponse"+ "--->" + new Gson().toJson(response.body()));
 
                 if (response.body() != null) {
                     if(response.body().getCode() == 200){
-                        Toasty.success(getApplicationContext(), "Pet Removed Successfully", Toast.LENGTH_SHORT, true).show();
+                        Toasty.success(getApplicationContext(), "Members Removed Successfully", Toast.LENGTH_SHORT, true).show();
                         finish();
                         overridePendingTransition( 0, 0);
                         startActivity(getIntent());
@@ -840,52 +862,53 @@ public class CustomerProfileScreenActivity extends AppCompatActivity implements 
             }
 
             @Override
-            public void onFailure(@NotNull Call<PetDeleteResponse> call, @NotNull Throwable t) {
+            public void onFailure(@NotNull Call<FamilyMemberDeleteResponse> call, @NotNull Throwable t) {
                 avi_indicator.smoothToHide();
 
-                Log.w(TAG,"PetDeleteResponse flr"+"--->" + t.getMessage());
+                Log.w(TAG,"FamilyMemberDeleteResponse flr"+"--->" + t.getMessage());
             }
         });
 
     }
     @SuppressLint("LogNotTimber")
-    private PetDeleteRequest petDeleteRequest(String petid) {
+    private FamilyMemberDeleteRequest petDeleteRequest(String id) {
 
         /*
           _id : 5f05d911f3090625a91f40c7
          */
-        PetDeleteRequest petDeleteRequest = new PetDeleteRequest();
-        petDeleteRequest.set_id(petid);
-        Log.w(TAG,"petDeleteRequest"+ "--->" + new Gson().toJson(petDeleteRequest));
-        return petDeleteRequest;
+        FamilyMemberDeleteRequest familyMemberDeleteRequest = new FamilyMemberDeleteRequest();
+        familyMemberDeleteRequest.set_id(id);
+        Log.w(TAG,"familyMemberDeleteRequest"+ "--->" + new Gson().toJson(familyMemberDeleteRequest));
+        return familyMemberDeleteRequest;
     }
 
-//    @SuppressLint("NonConstantResourceId")
-//    @Override
-//    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-//
-//        switch (item.getItemId()) {
-//            case R.id.home:
-//                callDirections("1");
-//                break;
-//            case R.id.shop:
-//                callDirections("2");
-//                break;
-//            case R.id.services:
-//                callDirections("3");
-//                break;
-//            case R.id.care:
-//                callDirections("4");
-//                break;
-//            case R.id.community:
-//                callDirections("5");
-//                break;
-//
-//            default:
-//                return  false;
-//        }
-//        return true;
-//    }
+    @SuppressLint("NonConstantResourceId")
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.home:
+                callDirections("1");
+                break;
+            case R.id.shop:
+                callDirections("2");
+                break;
+            case R.id.services:
+                callDirections("3");
+                break;
+            case R.id.care:
+                callDirections("4");
+                break;
+            case R.id.community:
+                callDirections("5");
+                break;
+
+            default:
+                return  false;
+        }
+        return true;
+    }
+
     public void callDirections(String tag){
         Intent intent = new Intent(getApplicationContext(), CustomerDashboardActivity.class);
         intent.putExtra("tag",tag);
@@ -965,4 +988,36 @@ public class CustomerProfileScreenActivity extends AppCompatActivity implements 
     }
 
 
+    @Override
+    public void gotoAddFamilyMembersOldActivityListener(String id) {
+
+        Intent intent = new Intent(getApplicationContext(), AddYourFamilyMembersOldActivity.class);
+        intent.putExtra("doctorid",doctorid);
+        intent.putExtra("doctorname",doctorname);
+        intent.putExtra("distance",distance);
+        intent.putExtra("catid",catid);
+        intent.putExtra("from",from);
+        intent.putExtra("reviewcount",reviewcount);
+        intent.putExtra("Count_value_start",Count_value_start);
+        intent.putExtra("Count_value_end",Count_value_end);
+        intent.putExtra("spid",spid);
+        intent.putExtra("spuserid",spuserid);
+        intent.putExtra("_id",_id);
+        intent.putExtra("orderid",orderid);
+        intent.putExtra("product_id",product_id);
+        intent.putExtra("cancelorder",cancelorder);
+        intent.putExtra("product_idList",product_idList);
+        intent.putExtra("id",id);
+        intent.putExtra("userid",userid);
+        intent.putExtra("nickname",nickname);
+        intent.putExtra("locationtype",locationtype);
+        intent.putExtra("defaultstatus",defaultstatus);
+        intent.putExtra("lat",latitude);
+        intent.putExtra("lon",longtitude);
+        intent.putExtra("pincode",pincode);
+        intent.putExtra("cityname",cityname);
+        intent.putExtra("address",address);
+        startActivity(intent);
+
+    }
 }

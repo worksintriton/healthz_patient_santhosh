@@ -75,7 +75,7 @@ public class PetLoverDoctorNewAdapter extends  RecyclerView.Adapter<RecyclerView
 
           Log.w(TAG,"Rating : "+currentItem.getStar_count());
 
-          /*if(currentItem.getStar_count() == 1){
+          if(currentItem.getStar_count() == 1){
               holder.hand_img1.setBackgroundResource(R.drawable.ic_logo_color);
               holder.hand_img2.setBackgroundResource(R.drawable.ic_logo_graycolor);
               holder.hand_img3.setBackgroundResource(R.drawable.ic_logo_graycolor);
@@ -131,12 +131,10 @@ public class PetLoverDoctorNewAdapter extends  RecyclerView.Adapter<RecyclerView
               }
 
           }
-         *//* if(doctorDetailsResponseList.get(position).getStar_count() != 0) {
-              holder.txt_star_rating.setText(doctorDetailsResponseList.get(position).getStar_count() + "");
-          }
+
           if(doctorDetailsResponseList.get(position).getReview_count() != 0) {
-              holder.txt_review_count.setText(doctorDetailsResponseList.get(position).getReview_count() + "");
-          }*//*
+              holder.txt_review_count.setText(doctorDetailsResponseList.get(position).getReview_count() + " Votes");
+          }
         if (currentItem.getThumbnail_image() != null && !currentItem.getThumbnail_image().isEmpty()) {
             Glide.with(context)
                     .load(currentItem.getThumbnail_image())
@@ -148,7 +146,9 @@ public class PetLoverDoctorNewAdapter extends  RecyclerView.Adapter<RecyclerView
                     .load(APIClient.PROFILE_IMAGE_URL)
                     .into(holder.img_doctors_image);
 
-        }*/
+        }
+
+
         holder.ll_root.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -189,7 +189,7 @@ public class PetLoverDoctorNewAdapter extends  RecyclerView.Adapter<RecyclerView
     }
 
     class ViewHolderOne extends RecyclerView.ViewHolder {
-        public TextView txt_doctors_name,txt_clinicname;
+        public TextView txt_doctors_name,txt_clinicname,txt_review_count;
         public ImageView img_doctors_image,img_fav;
         public ImageView hand_img1,hand_img2,hand_img3,hand_img4,hand_img5;
         public LinearLayout ll_root;
@@ -202,17 +202,15 @@ public class PetLoverDoctorNewAdapter extends  RecyclerView.Adapter<RecyclerView
             super(itemView);
             txt_doctors_name = itemView.findViewById(R.id.txt_doctors_name);
             txt_clinicname = itemView.findViewById(R.id.txt_clinicname);
-
+            txt_review_count = itemView.findViewById(R.id.txt_review_count);
             ll_root = itemView.findViewById(R.id.ll_root);
             img_doctors_image = itemView.findViewById(R.id.img_doctors_image);
-        /*    img_fav = itemView.findViewById(R.id.img_fav);
+        /*    img_fav = itemView.findViewById(R.id.img_fav);*/
             hand_img1 = itemView.findViewById(R.id.hand_img1);
             hand_img2 = itemView.findViewById(R.id.hand_img2);
             hand_img3 = itemView.findViewById(R.id.hand_img3);
             hand_img4 = itemView.findViewById(R.id.hand_img4);
             hand_img5 = itemView.findViewById(R.id.hand_img5);
-*/
-
 
         }
 
