@@ -627,5 +627,20 @@
         <item>+123</item>
     </string-array>
 
+    <string name="Profile">Profile</string>
+    <string name="add_your_family">Add your family members</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="transgender">Transgender</string>
+    <string name="height">Height</string>
+    <string name="any_medical_information">Other Medical Information</string>
+    <string name="family_members">Family Members</string>
+    <string name="no_new_fam_memb">Add your Family Member!</string>
+    <string name="select_family_members">Select Family Members</string>
+    <string name="patient_details">Patient Details</string>
+    <string name="relation">Relation</string>
+    <string name="patient_name">Patient Name</string>
+    <string name="image_upload">Image Upload</string>
+    <string name="edit_your_family">Edit Family Members</string>
 
 </resources>

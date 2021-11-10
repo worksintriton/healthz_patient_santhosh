@@ -377,8 +377,8 @@ public class VerifyOtpActivity extends AppCompatActivity implements View.OnClick
 
                         );
                         sessionManager.createRazorpayDetails(
-                                response.body().getPayment_gateway_detail().getRzpkey(),
-                                String.valueOf(response.body().getPayment_gateway_detail().isIsproduction()));
+                                "",
+                               "");
                         Log.w(TAG,"ref_code : "+response.body().getData().getRef_code()+" fromactivity : "+fromactivity+" usertype : "+usertype);
 
                         if(fromactivity != null && fromactivity.equalsIgnoreCase("LoginActivity")){

@@ -21,7 +21,9 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -31,19 +33,30 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.google.android.material.navigation.NavigationView;
+import com.google.gson.Gson;
 import com.triton.healthZ.R;
+import com.triton.healthZ.activity.LoginActivity;
 import com.triton.healthZ.activity.NotificationActivity;
 import com.triton.healthZ.activity.SoSActivity;
 import com.triton.healthZ.activity.location.ManageAddressActivity;
+import com.triton.healthZ.api.APIClient;
+import com.triton.healthZ.api.RestApiInterface;
+import com.triton.healthZ.requestpojo.DefaultLocationRequest;
 import com.triton.healthZ.responsepojo.PetLoverDashboardResponse;
+import com.triton.healthZ.responsepojo.SuccessResponse;
 import com.triton.healthZ.sessionmanager.SessionManager;
+import com.triton.healthZ.utils.RestUtils;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class CustomerNavigationDrawer extends AppCompatActivity implements View.OnClickListener{
@@ -94,6 +107,8 @@ public class CustomerNavigationDrawer extends AppCompatActivity implements View.
     TextView txt_cart_count_badge;
     private String userid;
     private String profileimage;
+
+    TextView nav_header_logout;
 
 
     @SuppressLint({"InflateParams", "LogNotTimber"})
@@ -156,24 +171,26 @@ public class CustomerNavigationDrawer extends AppCompatActivity implements View.
         nav_header_profilename = header.findViewById(R.id.nav_header_profilename);
 
         nav_header_ref_code = view.findViewById(R.id.nav_header_ref_code);
+        nav_header_logout = view.findViewById(R.id.nav_header_logout);
+
+        nav_header_logout.setOnClickListener(this);
 
 //        nav_header_ref_code.setText(getResources().getString(R.string.ref_code)+" : "+12345678);
-       /* if(refcode != null && !refcode.isEmpty() ){
+        if(refcode != null && !refcode.isEmpty() ){
             nav_header_ref_code.setVisibility(View.VISIBLE);
 
         }else{
             nav_header_ref_code.setVisibility(View.GONE);
             nav_header_ref_code.setText("");
         }
-*/
-       /* if(profileimage != null && !profileimage.isEmpty()) {
+        if(profileimage != null && !profileimage.isEmpty()) {
             Glide.with(this).load(profileimage).circleCrop().into(nav_header_imageView);
         }else{
             Glide.with(this).load(APIClient.PROFILE_IMAGE_URL).circleCrop().into(nav_header_imageView);
         }
 
         nav_header_emailid.setText(emailid);
-        nav_header_profilename.setText(name)*/;
+        nav_header_profilename.setText(name);
 
         FrameLayout llheader = header.findViewById(R.id.llheader);
         llheader.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(), CustomerProfileScreenActivity.class)));
@@ -212,10 +229,6 @@ public class CustomerNavigationDrawer extends AppCompatActivity implements View.
                 case R.id.nav_item_seven:
                      gotoNotifications();
                     return true;
-                    case R.id.nav_item_eight:
-                   // confirmLogoutDialog();
-                    showLogOutAppAlert();
-                    return true;
 
                 case R.id.nav_item_nine:
                     gotoSOS();
@@ -224,10 +237,6 @@ public class CustomerNavigationDrawer extends AppCompatActivity implements View.
                 case R.id.nav_item_ten:
                     gotoMyWalkinAppointments();
                     return true;
-
-
-
-
 
                 default:
                     return true;
@@ -483,6 +492,10 @@ public class CustomerNavigationDrawer extends AppCompatActivity implements View.
             case R.id.img_menu:
                 drawerMethod();
                 break;
+
+           case R.id.nav_header_logout:
+                showLogOutAppAlert();
+                break;
         }
     }
 
@@ -525,7 +538,7 @@ public class CustomerNavigationDrawer extends AppCompatActivity implements View.
 
     }
     private void gotoLogout() {
-        //logoutResponseCall();
+        logoutResponseCall();
        /* session.logoutUser();
         session.setIsLogin(false);
         startActivity(new Intent(getApplicationContext(), LoginActivity.class));
@@ -587,12 +600,12 @@ public class CustomerNavigationDrawer extends AppCompatActivity implements View.
 //        notificationandCartCountResponseCall();
     }
 
-/*
-    @SuppressLint("LogNotTimber")
+
+   /* @SuppressLint("LogNotTimber")
     private void notificationandCartCountResponseCall() {
-       */
-/* avi_indicator.setVisibility(View.VISIBLE);
-        avi_indicator.smoothToShow();*//*
+
+      avi_indicator.setVisibility(View.VISIBLE);
+        avi_indicator.smoothToShow();
 
 
         RestApiInterface apiInterface = APIClient.getClient().create(RestApiInterface.class);
@@ -651,10 +664,8 @@ public class CustomerNavigationDrawer extends AppCompatActivity implements View.
     }
     @SuppressLint("LogNotTimber")
     private NotificationCartCountRequest notificationCartCountRequest() {
-        */
-/*
-         * user_id : 6048589d0b3a487571a1c567
-         *//*
+      *//*
+         * user_id : 6048589d0b3a487571a1c567*//*
 
 
         NotificationCartCountRequest notificationCartCountRequest = new NotificationCartCountRequest();
@@ -662,7 +673,7 @@ public class CustomerNavigationDrawer extends AppCompatActivity implements View.
         Log.w(TAG,"notificationCartCountRequest"+ "--->" + new Gson().toJson(notificationCartCountRequest));
         return notificationCartCountRequest;
     }
-
+*/
 
 
     @SuppressLint("LogNotTimber")
@@ -705,12 +716,6 @@ public class CustomerNavigationDrawer extends AppCompatActivity implements View.
         Log.w(TAG,"defaultLocationRequest "+ new Gson().toJson(defaultLocationRequest));
         return defaultLocationRequest;
     }
-
-
-
-
-*/
-
 
 
 }

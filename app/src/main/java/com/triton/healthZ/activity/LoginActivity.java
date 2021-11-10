@@ -253,8 +253,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         if (requestCode == REQUEST_CODE_ASK_PERMISSIONS) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
-                finish();
+               /* startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                finish();*/
                 // Permission Granted
                  if (new ConnectionDetector(LoginActivity.this).isNetworkAvailable(LoginActivity.this)) {
 

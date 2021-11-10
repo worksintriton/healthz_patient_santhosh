@@ -568,7 +568,11 @@ public class CustomerProfileScreenActivity extends AppCompatActivity implements 
                 @Override
                 public void onClick(View view) {
                     dialog.dismiss();
-                    gotoLogout();
+                    //gotoLogout();
+                    session.logoutUser();
+                    session.setIsLogin(false);
+                    startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                    finish();
 
                 }
             });

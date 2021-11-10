@@ -641,7 +641,7 @@ public class PickUpLocationAllowActivity extends FragmentActivity implements OnM
                 Log.w(TAG,"GetAddressResultResponse" + new Gson().toJson(response.body()));
 
 
-                if(response.body() != null) {
+                if(response.body() != null&&!response.body().getStatus().equals("REQUEST_DENIED")) {
                     String currentplacename = null;
                     String compundcode = null;
 

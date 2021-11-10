@@ -143,7 +143,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         if(verified != null && verified.equalsIgnoreCase("verified")){
             if(btn_verify_email != null){
                 btn_verify_email.setText("Verified");
-                btn_verify_email.setBackgroundResource(R.drawable.rounded_color_pr);
+                btn_verify_email.setBackgroundResource(R.drawable.new_rounded_corner_btn);
                 user_email_verification = true;
                 btn_verify_email.setEnabled(false);
             }
@@ -325,6 +325,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                             intent.putExtra("firstname", response.body().getData().getFirst_name());
                             intent.putExtra("lastname", response.body().getData().getLast_name());
                             intent.putExtra("useremail", response.body().getData().getUser_email());
+                            intent.putExtra("fromactivity", TAG);
                             startActivity(intent);
                         }
 
@@ -556,8 +557,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         if (requestCode == REQUEST_CODE_ASK_PERMISSIONS) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
- startActivity(new Intent(getApplicationContext(), LoginActivity.class));
-                finish();
+
 
                 // Permission Granted
                 if (new ConnectionDetector(SignUpActivity.this).isNetworkAvailable(SignUpActivity.this)) {
