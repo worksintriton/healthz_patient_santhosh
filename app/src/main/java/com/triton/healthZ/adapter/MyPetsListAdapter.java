@@ -21,6 +21,8 @@ import com.triton.healthZ.R;
 import com.triton.healthZ.api.APIClient;
 import com.triton.healthZ.interfaces.MyPetsSelectListener;
 
+import com.triton.healthZ.responsepojo.FamilyMemberCreateResponse;
+import com.triton.healthZ.responsepojo.FamilyMemberListResponse;
 import com.triton.healthZ.responsepojo.PetListResponse;
 
 import java.util.List;
@@ -28,22 +30,22 @@ import java.util.List;
 
 public class MyPetsListAdapter extends  RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    private final List<PetListResponse.DataBean> petListResponseList;
+    private final List<FamilyMemberListResponse.DataBean> petListResponseList;
 
     private final Context context;
 
-    PetListResponse.DataBean currentItem;
+    FamilyMemberListResponse.DataBean currentItem;
 
     MyPetsSelectListener myPetsSelectListener;
 
 
     public static String id = "";
-    private List<PetListResponse.DataBean.PetImgBean> petImgBeanList;
+    private List<FamilyMemberListResponse.DataBean.PicBean> petImgBeanList;
     private String TAG = "MyPetsListAdapter";
 
 
 
-    public MyPetsListAdapter(Context context, List<PetListResponse.DataBean> petListResponseList,  MyPetsSelectListener myPetsSelectListener) {
+    public MyPetsListAdapter(Context context, List<FamilyMemberListResponse.DataBean> petListResponseList,  MyPetsSelectListener myPetsSelectListener) {
         this.petListResponseList = petListResponseList;
         this.context = context;
         this.myPetsSelectListener = myPetsSelectListener;
@@ -67,18 +69,18 @@ public class MyPetsListAdapter extends  RecyclerView.Adapter<RecyclerView.ViewHo
     @SuppressLint({"SetTextI18n", "LogNotTimber"})
     private void initLayoutOne(ViewHolderOne holder, final int position) {
         currentItem = petListResponseList.get(position);
-        if (petListResponseList.get(position).getPet_name() != null) {
-            holder.txt_pet_name.setText(petListResponseList.get(position).getPet_name());
+        if (petListResponseList.get(position).getName() != null) {
+                holder.txt_pet_name.setText(petListResponseList.get(position).getName());
         }
 
         if(petListResponseList.size() > 0) {
             Log.w(TAG,"petListResponseList : "+new Gson().toJson(petListResponseList));
-            petImgBeanList =   petListResponseList.get(position).getPet_img();
+            petImgBeanList =   petListResponseList.get(position).getPic();
             String petImagePath = null;
             Log.w(TAG,"petImgBeanList : "+new Gson().toJson(petImgBeanList));
             if (petImgBeanList != null && petImgBeanList.size() > 0) {
                 for(int j=0;j<petImgBeanList.size();j++) {
-                    petImagePath = petImgBeanList.get(j).getPet_img();
+                    petImagePath = petImgBeanList.get(j).getImage();
 
                 }
             }
@@ -105,7 +107,7 @@ public class MyPetsListAdapter extends  RecyclerView.Adapter<RecyclerView.ViewHo
             @Override
             public void onClick(View v) {
 
-                Log.w(TAG,"ll_pet_profile onclick : "+petListResponseList.get(position).getPet_img().get(0).getPet_img());
+                Log.w(TAG,"ll_pet_profile onclick : "+petListResponseList.get(position).getPic().get(0).getImage());
 
 
                 String petImagePath = null;
@@ -119,12 +121,12 @@ public class MyPetsListAdapter extends  RecyclerView.Adapter<RecyclerView.ViewHo
                 if(petListResponseList.get(position).get_id() != null ){
                     if(petListResponseList.size() > 0) {
                         Log.w(TAG,"petListResponseList : "+new Gson().toJson(petListResponseList));
-                        petImgBeanList =   petListResponseList.get(position).getPet_img();
+                        petImgBeanList =   petListResponseList.get(position).getPic();
 
                         Log.w(TAG,"petImgBeanList : "+new Gson().toJson(petImgBeanList));
                         if (petImgBeanList != null && petImgBeanList.size() > 0) {
                             for(int j=0;j<petImgBeanList.size();j++) {
-                                petImagePath = petImgBeanList.get(j).getPet_img();
+                                petImagePath = petImgBeanList.get(j).getImage();
                                 Log.w(TAG,"petImagePath lop : "+petImagePath);
 
 
@@ -138,7 +140,7 @@ public class MyPetsListAdapter extends  RecyclerView.Adapter<RecyclerView.ViewHo
 
 
                     }
-                    myPetsSelectListener.myPetsSelectListener(petListResponseList.get(position).get_id(),petListResponseList.get(position).getPet_name(),petImagePath);
+                    myPetsSelectListener.myPetsSelectListener(petListResponseList.get(position).get_id(),petListResponseList.get(position).getName(),petImagePath);
 
 
                 }

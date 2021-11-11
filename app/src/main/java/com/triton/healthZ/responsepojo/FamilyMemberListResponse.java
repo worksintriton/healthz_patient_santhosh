@@ -153,6 +153,16 @@ public class FamilyMemberListResponse implements Serializable {
             this.anymedicalinfo = anymedicalinfo;
         }
 
+        private boolean isSelected ;
+        public boolean isSelected() {
+            return isSelected;
+        }
+
+        public void setSelected(boolean selected) {
+            isSelected = selected;
+        }
+
+
         public String getCovide_vac() {
             return covide_vac;
         }
