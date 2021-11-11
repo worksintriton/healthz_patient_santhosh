@@ -60,7 +60,7 @@ public class PetLoverShopNewAdapter extends  RecyclerView.Adapter<RecyclerView.V
           currentItem = productDetailsResponseList.get(position);
 
           Log.w(TAG,"rating : "+ currentItem.getProduct_rating());
-      /*  if(currentItem.getProduct_rating() == 1){
+    /*    if(currentItem.getProduct_rating() == 1){
             holder.hand_img1.setBackgroundResource(R.drawable.ic_logo_color);
             holder.hand_img2.setBackgroundResource(R.drawable.ic_logo_graycolor);
             holder.hand_img3.setBackgroundResource(R.drawable.ic_logo_graycolor);
@@ -103,20 +103,33 @@ public class PetLoverShopNewAdapter extends  RecyclerView.Adapter<RecyclerView.V
         if(currentItem.getProduct_title() != null){
               holder.txt_products_title.setText(currentItem.getProduct_title());
           }
-      /*  if(currentItem.getCat_name() != null){
-              holder.txt_category_title.setText(currentItem.getCat_name());
+        if(currentItem.getProduct_rating() != 0){
+              holder.txt_products_rating.setText(""+currentItem.getProduct_rating());
           }
-*/
+        else {
+            holder.txt_products_rating.setText("0");
+        }
+
         Log.w(TAG,"Product_price : "+currentItem.getProduct_price());
           if(currentItem.getProduct_price() != 0){
-              holder.txt_products_price.setVisibility(View.VISIBLE);
               holder.txt_products_price.setText("INR "+currentItem.getProduct_price());
-              holder.txt_products_price.setPaintFlags(holder.txt_products_price.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+          //    holder.txt_products_price.setPaintFlags(holder.txt_products_price.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
           }else{
-              holder.txt_products_price.setVisibility(View.GONE);
               holder.txt_products_price.setText("INR 0");
           }
 
+        if( productDetailsResponseList.get(position).getProduct_discount_price() != 0) {
+            Log.w(TAG, "Product_discount_price if" + productDetailsResponseList.get(position).getProduct_discount_price());
+            holder.txt_product_discount_price.setVisibility(View.VISIBLE);
+            holder.txt_product_discount_price.setText("INR "+productDetailsResponseList.get(position).getProduct_discount_price()+"");
+            holder.txt_product_discount_price.setPaintFlags(holder.txt_product_discount_price.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+        }
+        else{
+            Log.w(TAG,"Product_discount_price else"+ productDetailsResponseList.get(position).getProduct_discount_price());
+            holder.txt_product_discount_price.setText("INR "+" 0");
+            holder.txt_product_discount_price.setPaintFlags(holder.txt_product_discount_price.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+
+        }
 
       /*  holder.txt_products_offer.setVisibility(View.GONE);
         holder.txt_product_discount_price.setVisibility(View.GONE);*/
@@ -130,30 +143,7 @@ public class PetLoverShopNewAdapter extends  RecyclerView.Adapter<RecyclerView.V
         }*/
 
 /*
-        if( productDetailsResponseList.get(position).getProduct_discount_price() != 0) {
-            Log.w(TAG, "Product_discount_price if" + productDetailsResponseList.get(position).getProduct_discount_price());
-            holder.txt_product_discount_price.setVisibility(View.VISIBLE);
-            holder.txt_product_discount_price.setText("INR "+productDetailsResponseList.get(position).getProduct_discount_price()+"");
-            holder.txt_product_discount_price.setPaintFlags(holder.txt_product_discount_price.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-        }
-        else{
-            Log.w(TAG,"Product_discount_price else"+ productDetailsResponseList.get(position).getProduct_discount_price());
-            holder.txt_product_discount_price.setVisibility(View.GONE);
 
-
-        }
-
-
-
-        if(currentItem.isProduct_fav()){
-              Glide.with(context)
-                      .load(R.drawable.ic_fav)
-                      .into(holder.img_fav);
-          }
-        else{
-              Glide.with(context)
-                      .load(R.drawable.heart_gray)
-                      .into(holder.img_fav);
           }*/
         if (currentItem.getThumbnail_image() != null && !currentItem.getThumbnail_image().isEmpty()) {
             Glide.with(context)
@@ -195,7 +185,7 @@ public class PetLoverShopNewAdapter extends  RecyclerView.Adapter<RecyclerView.V
     }
 
     class ViewHolderOne extends RecyclerView.ViewHolder {
-        public TextView txt_products_title,txt_category_title,txt_products_price,txt_products_offer,txt_product_discount_price;
+        public TextView txt_products_title,txt_products_rating,txt_products_price,txt_products_offer,txt_product_discount_price;
         public ImageView img_products_image,img_fav;
         public ImageView hand_img1,hand_img2,hand_img3,hand_img4,hand_img5;
         public LinearLayout ll_root;
@@ -213,9 +203,17 @@ public class PetLoverShopNewAdapter extends  RecyclerView.Adapter<RecyclerView.V
             img_products_image = itemView.findViewById(R.id.img_products_image);
 
             txt_products_price = itemView.findViewById(R.id.txt_products_price);
-            txt_products_offer = itemView.findViewById(R.id.txt_products_offer);
+            txt_product_discount_price = itemView.findViewById(R.id.txt_product_discount_price);
 
+            txt_products_rating = itemView.findViewById(R.id.txt_products_rating);
 
+/*
+            hand_img1 = itemView.findViewById(R.id.hand_img1);
+            hand_img2 = itemView.findViewById(R.id.hand_img2);
+            hand_img3 = itemView.findViewById(R.id.hand_img3);
+            hand_img4 = itemView.findViewById(R.id.hand_img4);
+            hand_img5 = itemView.findViewById(R.id.hand_img5);
+*/
 
 
 

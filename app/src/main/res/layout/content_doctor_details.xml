@@ -26,28 +26,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <LinearLayout
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp">
+
+                </androidx.viewpager.widget.ViewPager>
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tabDots"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:elevation="9dp"
-                    android:orientation="vertical"
-                    tools:ignore="UselessParent">
-
-                    <androidx.viewpager.widget.ViewPager
-                        android:id="@+id/pager"
-                        android:layout_width="match_parent"
-                        android:layout_height="200dp" />
-
-                    <com.google.android.material.tabs.TabLayout
-                        android:id="@+id/tabDots"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        app:tabBackground="@drawable/tab_selector"
-                        app:tabGravity="center"
-                        app:tabIndicatorHeight="0dp" />
-
-                </LinearLayout>
+                    android:layout_gravity="bottom"
+                    android:layout_marginTop="10dp"
+                    app:tabBackground="@drawable/tab_selector"
+                    app:tabGravity="center"
+                    app:tabIndicatorHeight="0dp" />
 
             </FrameLayout>
 

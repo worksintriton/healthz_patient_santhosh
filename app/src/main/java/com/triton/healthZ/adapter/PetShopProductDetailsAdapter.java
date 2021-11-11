@@ -100,6 +100,7 @@ public class PetShopProductDetailsAdapter extends  RecyclerView.Adapter<Recycler
             rv_productdetails = itemView.findViewById(R.id.rv_productdetails);
             txt_seemore_products = itemView.findViewById(R.id.txt_seemore_products);
 
+/*
             txt_seemore_products.setOnClickListener(v -> {
                 if(fromactivity != null && fromactivity.equalsIgnoreCase("DoctorShopFragment")){
                     if(product_details.get(getAdapterPosition()).getProduct_list() != null && product_details.get(getAdapterPosition()).getProduct_list().size()>0) {
@@ -126,6 +127,7 @@ public class PetShopProductDetailsAdapter extends  RecyclerView.Adapter<Recycler
                 }
 
             });
+*/
 
 
 

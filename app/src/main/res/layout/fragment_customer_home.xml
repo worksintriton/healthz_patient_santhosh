@@ -115,7 +115,7 @@
                                 android:id="@+id/txt_services"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:fontFamily="@font/montserrat"
+                                android:fontFamily="@font/montserrat_bold"
                                 android:text="@string/service_by_category"
                                 android:textColor="@color/new_txt_popcolor"
                                 android:textSize="14sp"
@@ -133,7 +133,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginEnd="10dp"
-                                    android:fontFamily="@font/montserrat"
+                                    android:fontFamily="@font/montserrat_bold"
                                     android:gravity="center"
                                     android:text="@string/seeall"
                                     android:textColor="@color/new_gree_color"
@@ -148,7 +148,7 @@
                             android:id="@+id/rvservice"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp" />
+                            android:layout_marginTop="15dp" />
 
                         <TextView
                             android:id="@+id/txt_services_norecord"
@@ -179,7 +179,7 @@
                                 android:id="@+id/txt_doctors"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:fontFamily="@font/montserrat"
+                                android:fontFamily="@font/montserrat_bold"
                                 android:text="Health care"
                                 android:textColor="@color/new_txt_popcolor"
                                 android:textSize="14sp" />
@@ -196,7 +196,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginEnd="10dp"
-                                    android:fontFamily="@font/montserrat"
+                                    android:fontFamily="@font/montserrat_bold"
                                     android:gravity="center"
                                     android:text="@string/seeall"
                                     android:textColor="@color/new_gree_color"
@@ -210,7 +210,7 @@
                             android:id="@+id/rvdoctors"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp" />
+                            android:layout_marginTop="15dp" />
 
                         <TextView
                             android:id="@+id/txt_doctor_norecord"
@@ -270,7 +270,7 @@
                             android:id="@+id/rvpuppy_love"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp" />
+                            android:layout_marginTop="15dp" />
 
                         <TextView
                             android:id="@+id/txt_no_puppy_love"
@@ -299,7 +299,7 @@
                         android:id="@+id/ll_content_shop"
                         android:layout_width="match_parent"
                         android:layout_height="150dp"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="20dp"
                         android:background="@color/new_gree_color"
                         android:orientation="vertical">
 
@@ -323,7 +323,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_marginStart="5dp"
-                                android:fontFamily="@font/montserrat"
+                                android:fontFamily="@font/montserrat_bold"
                                 android:text="Shop"
                                 android:textColor="@color/white"
                                 android:textSize="14sp" />
@@ -335,9 +335,9 @@
                                 <LinearLayout
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal"
                                     android:layout_alignParentEnd="true"
-                                    android:layout_centerVertical="true">
+                                    android:layout_centerVertical="true"
+                                    android:orientation="horizontal">
 
                                     <RelativeLayout
                                         android:id="@+id/rl_viewall"
@@ -356,7 +356,7 @@
                                             android:layout_centerInParent="false"
                                             android:layout_centerVertical="true"
                                             android:layout_marginStart="5dp"
-                                            android:fontFamily="@font/montserrat"
+                                            android:fontFamily="@font/montserrat_bold"
                                             android:gravity="center"
                                             android:text="View All"
                                             android:textColor="@color/new_gree_color"
@@ -371,10 +371,8 @@
                                         android:layout_gravity="center_vertical"
                                         android:layout_marginTop="2dp"
                                         android:layout_marginEnd="5dp"
-                                        android:src="@drawable/ic_right_arrow"
-                                        app:srcCompat="@drawable/ic_right_arrows"
+                                        android:src="@drawable/ic_right_arrows"
                                         tools:ignore="ContentDescription" />
-
 
 
                                 </LinearLayout>

@@ -67,41 +67,28 @@ public class PetShopProductDetailsImageAdapter extends  RecyclerView.Adapter<Rec
         Log.w(TAG,"fromactivity : "+fromactivity);
         holder.txt_products_title.setText(productListBean.getProduct_title());
         if(productListBean.getProduct_price() != 0){
-            holder.txt_products_price.setText("INR "+productListBean.getProduct_price());
+            holder.txt_products_price.setText("\u20B9 "+productListBean.getProduct_price());
         }
         else{
-            holder.txt_products_price.setText("INR "+0);
+            holder.txt_products_price.setText("\u20B9 "+0);
         }
 
         if(productListBean.getProduct_discount_price() != 0){
             holder.txt_product_discount_price.setVisibility(View.VISIBLE);
-            holder.txt_product_discount_price.setText("INR "+productListBean.getProduct_discount_price());
+            holder.txt_product_discount_price.setText("\u20B9 "+productListBean.getProduct_discount_price());
             holder.txt_product_discount_price.setPaintFlags(holder.txt_product_discount_price.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
         }else{
-            holder.txt_product_discount_price.setText("INR "+0);
-            holder.txt_product_discount_price.setVisibility(View.GONE);
+            holder.txt_product_discount_price.setText("\u20B9 "+0);
+            holder.txt_product_discount_price.setPaintFlags(holder.txt_product_discount_price.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
         }
 
-
-        if(productListBean.isProduct_fav()){
-            holder.img_like.setVisibility(View.VISIBLE);
-            holder.img_dislike.setVisibility(View.GONE);
-
-        }
-        else{
-            holder.img_dislike.setVisibility(View.VISIBLE);
-            holder.img_like.setVisibility(View.GONE);
-
-
-
-        }
 
         if(productListBean.getProduct_discount() != 0){
             holder.txt_products_offer.setVisibility(View.VISIBLE);
             holder.txt_products_offer.setText(productListBean.getProduct_discount()+" % off");
         }
         else{
-            holder.txt_products_offer.setVisibility(View.GONE);
+            holder.txt_products_offer.setText("0 % off");
         }
 
         if (productListBean.getThumbnail_image() != null && !productListBean.getThumbnail_image().isEmpty()) {
@@ -123,19 +110,11 @@ public class PetShopProductDetailsImageAdapter extends  RecyclerView.Adapter<Rec
         }else{
             holder.txt_star_rating.setText("0");
         }
-        if(productListBean.getProduct_review() != 0){
-            holder.txt_review_count.setText(productListBean.getProduct_review()+"");
-        }else{
-            holder.txt_review_count.setText("0");
-        }
-
-
-
 
         holder.ll_root.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(fromactivity != null && fromactivity.equalsIgnoreCase("DoctorShopFragment")){
+           /*     if(fromactivity != null && fromactivity.equalsIgnoreCase("DoctorShopFragment")){
                     Intent intent = new Intent(context, DoctorProductDetailsActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     intent.putExtra("productid",productListBean.get_id());
                     context.startActivity(intent);
@@ -150,7 +129,7 @@ public class PetShopProductDetailsImageAdapter extends  RecyclerView.Adapter<Rec
                     intent.putExtra("productid",productListBean.get_id());
                     context.startActivity(intent);
                 }
-
+*/
             }
         });
 
@@ -181,15 +160,11 @@ public class PetShopProductDetailsImageAdapter extends  RecyclerView.Adapter<Rec
             super(itemView);
             txt_products_title = itemView.findViewById(R.id.txt_products_title);
             txt_products_price = itemView.findViewById(R.id.txt_products_price);
-            txt_products_offer = itemView.findViewById(R.id.txt_products_offer);
-            txt_star_rating = itemView.findViewById(R.id.txt_star_rating);
-            txt_review_count = itemView.findViewById(R.id.txt_review_count);
+            txt_products_offer = itemView.findViewById(R.id.txt_offer);
+            txt_star_rating = itemView.findViewById(R.id.txt_products_rating);
             ll_root = itemView.findViewById(R.id.ll_root);
             img_products_image = itemView.findViewById(R.id.img_products_image);
-            img_like = itemView.findViewById(R.id.img_like);
-            img_dislike = itemView.findViewById(R.id.img_dislike);
             txt_product_discount_price = itemView.findViewById(R.id.txt_product_discount_price);
-            txt_review_count.setVisibility(View.GONE);
 
 
 

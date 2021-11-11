@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -19,6 +20,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
@@ -27,6 +29,7 @@ import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.android.material.tabs.TabLayout;
 import com.google.gson.Gson;
 import com.triton.healthZ.R;
+import com.triton.healthZ.adapter.PetLoverCateAdapter;
 import com.triton.healthZ.adapter.PetShopProductDetailsAdapter;
 import com.triton.healthZ.adapter.PetShopTodayDealsAdapter;
 import com.triton.healthZ.adapter.ViewPagerShopDashboardAdapter;
@@ -87,12 +90,19 @@ public class CustomerShopFragment extends Fragment implements Serializable,View.
     @BindView(R.id.txt_lbl_todaydeal)
     TextView txt_lbl_todaydeal;
 
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.img_shop)
+    ImageView img_shop;
+
 
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_no_records)
     TextView txt_no_records;
 
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_no_categ_records)
+    TextView txt_no_categ_records;
 
 
     @SuppressLint("NonConstantResourceId")
@@ -102,6 +112,14 @@ public class CustomerShopFragment extends Fragment implements Serializable,View.
    @SuppressLint("NonConstantResourceId")
     @BindView(R.id.rv_productdetails)
     RecyclerView rv_productdetails;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_lbl_category)
+    TextView txt_lbl_category;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.rv_categ)
+    RecyclerView rv_categ;
 
 
     @SuppressLint("NonConstantResourceId")
@@ -124,7 +142,7 @@ public class CustomerShopFragment extends Fragment implements Serializable,View.
     private List<ShopDashboardResponse.DataBean.BannerDetailsBean> listHomeBannerResponse;
     private List<ShopDashboardResponse.DataBean.ProductDetailsBean.ProductListBean> productList;
     private String userid;
-
+    private List<ShopDashboardResponse.DataBean.ProductCateBean> productCateBeanList;
 
     public CustomerShopFragment() {
         // Required empty public constructor
@@ -175,12 +193,12 @@ public class CustomerShopFragment extends Fragment implements Serializable,View.
         };
         timer.schedule(doAsynchronousTask, 0, 60000);//you can put 30000(30 secs)*/
 
-        txt_seemore_todaydeals.setOnClickListener(v -> {
+        /*txt_seemore_todaydeals.setOnClickListener(v -> {
             Intent intent =new Intent(mContext, PetShopTodayDealsSeeMoreActivity.class);
             intent.putExtra("from","");
             intent.putExtra("tag","2");
             startActivity(intent);
-        });
+        });*/
 
         rl_search.setOnClickListener(v -> startActivity(new Intent(mContext, SearchActivity.class)));
 
@@ -278,10 +296,10 @@ public class CustomerShopFragment extends Fragment implements Serializable,View.
                             if (listHomeBannerResponse != null) {
                                 viewpageData(listHomeBannerResponse);
                             }
-                        }
-                        if(response.body().getData().getToday_Special() != null && response.body().getData().getToday_Special().size()>0){
+                        }if(response.body().getData().getToday_Special() != null && response.body().getData().getToday_Special().size()>0){
                             txt_lbl_todaydeal.setVisibility(View.VISIBLE);
                             txt_seemore_todaydeals.setVisibility(View.VISIBLE);
+                            img_shop.setVisibility(View.VISIBLE);
                             rv_today_deal.setVisibility(View.VISIBLE);
                             setView(response.body().getData().getToday_Special());
 
@@ -290,6 +308,17 @@ public class CustomerShopFragment extends Fragment implements Serializable,View.
                             txt_lbl_todaydeal.setVisibility(View.GONE);
                             txt_seemore_todaydeals.setVisibility(View.GONE);
                             rv_today_deal.setVisibility(View.GONE);
+                            img_shop.setVisibility(View.GONE);
+                        }
+                        if(response.body().getData().getProduct_cate() != null && response.body().getData().getProduct_cate().size()>0){
+                            txt_lbl_category.setVisibility(View.VISIBLE);
+                            rv_categ.setVisibility(View.VISIBLE);
+                            setCategView(response.body().getData().getProduct_cate());
+
+                        }
+                        else{
+                            txt_lbl_category.setVisibility(View.GONE);
+                            rv_categ.setVisibility(View.GONE);
                         }
                         if(response.body().getData().getProduct_details() != null && response.body().getData().getProduct_details().size()>0){
                             for(int i=0;i<response.body().getData().getProduct_details().size();i++){
@@ -322,6 +351,8 @@ public class CustomerShopFragment extends Fragment implements Serializable,View.
         });
 
     }
+
+
     @SuppressLint("LogNotTimber")
     private ShopDashboardRequest shopDashboardRequest() {
         /*
@@ -379,6 +410,14 @@ public class CustomerShopFragment extends Fragment implements Serializable,View.
 
     }
 
+    private void setCategView(List<ShopDashboardResponse.DataBean.ProductCateBean> product_cate) {
+
+        rv_categ.setLayoutManager(new GridLayoutManager(mContext,4));
+        rv_categ.setItemAnimator(new DefaultItemAnimator());
+        PetLoverCateAdapter petShopTodayDealsAdapter = new PetLoverCateAdapter(mContext,product_cate,product_cate.size());
+        rv_categ.setAdapter(petShopTodayDealsAdapter);
+
+    }
 
 
 

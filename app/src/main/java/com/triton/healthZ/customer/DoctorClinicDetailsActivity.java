@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import android.os.Handler;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -29,7 +30,9 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 import com.google.gson.Gson;
 import com.triton.healthZ.R;
@@ -60,8 +63,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class DoctorClinicDetailsActivity extends AppCompatActivity implements View.OnClickListener, OnMapReadyCallback
-{
+public class DoctorClinicDetailsActivity extends AppCompatActivity implements View.OnClickListener, OnMapReadyCallback, BottomNavigationView.OnNavigationItemSelectedListener {
 
     // BottomSheetBehavior variable
     @SuppressWarnings("rawtypes")
@@ -122,6 +124,13 @@ public class DoctorClinicDetailsActivity extends AppCompatActivity implements Vi
     @BindView(R.id.rl_back)
     RelativeLayout rl_back;
 
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_review_count)
+    TextView txt_review_count;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.view11)
+    View view11;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.img_fav)
@@ -132,28 +141,8 @@ public class DoctorClinicDetailsActivity extends AppCompatActivity implements Vi
     RecyclerView rv_speclist;
 
     @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rv_pet_hanldle)
-    RecyclerView rv_pet_hanldle;
-
-    @SuppressLint("NonConstantResourceId")
     @BindView(R.id.toolbar_header)
     Toolbar toolbar_header;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.bottomSheetLayouts)
-    NestedScrollView bottomSheetLayouts;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.ll_root1)
-    LinearLayout ll_root1;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.ll_root2)
-    LinearLayout ll_root2;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.ll_root3)
-    LinearLayout ll_root3;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_about_vet_label)
@@ -163,9 +152,6 @@ public class DoctorClinicDetailsActivity extends AppCompatActivity implements Vi
     @BindView(R.id.txt_spec_label)
     TextView txt_spec_label;
 
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.txt_pet_hanldle)
-    TextView txt_pet_hanldle;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.ll_map)
@@ -175,6 +161,9 @@ public class DoctorClinicDetailsActivity extends AppCompatActivity implements Vi
     @BindView(R.id.txt_location_label)
     TextView txt_location_label;
 
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.ll_root)
+    LinearLayout ll_root;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.footerView)
@@ -233,16 +222,28 @@ public class DoctorClinicDetailsActivity extends AppCompatActivity implements Vi
     @BindView(R.id.txt_seemore_spec)
     TextView txt_seemore_spec;
 
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.txt_seemore_petshandle)
-    TextView txt_seemore_petshandle;
-
-
     private int communication_type;
     private String userid;
 
+    String strdistance, strprice,strkm;
 
-     /**/
+    StringBuilder sb = new StringBuilder();
+
+
+    /* Petlover Bottom Navigation */
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.fab)
+    FloatingActionButton floatingActionButton;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.bottomNavigation)
+    BottomNavigationView bottomNavigation;
+
+    public static String active_tag = "4";
+
+
+    /**/
     @SuppressLint({"LongLogTag", "LogNotTimber"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -257,7 +258,6 @@ public class DoctorClinicDetailsActivity extends AppCompatActivity implements Vi
 
         avi_indicator.setVisibility(View.GONE);
         txt_seemore_spec.setVisibility(View.GONE);
-        txt_seemore_petshandle.setVisibility(View.GONE);
         ll_book_now.setVisibility(View.GONE);
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -300,12 +300,6 @@ public class DoctorClinicDetailsActivity extends AppCompatActivity implements Vi
 
         txt_drname.setVisibility(View.GONE);
 
-        ll_root1.setVisibility(View.GONE);
-
-        ll_root2.setVisibility(View.GONE);
-
-        ll_root3.setVisibility(View.GONE);
-
         txt_about_vet_label.setVisibility(View.GONE);
 
         txt_dr_desc.setVisibility(View.GONE);
@@ -314,19 +308,17 @@ public class DoctorClinicDetailsActivity extends AppCompatActivity implements Vi
 
         rv_speclist.setVisibility(View.GONE);
 
-        txt_pet_hanldle.setVisibility(View.GONE);
-
-        rv_pet_hanldle.setVisibility(View.GONE);
-
         txt_location_label.setVisibility(View.GONE);
 
         txt_place.setVisibility(View.GONE);
 
         ll_map.setVisibility(View.GONE);
 
+        ll_root.setVisibility(View.GONE);
 
+        txt_review_count.setVisibility(View.GONE);
 
-
+        view11.setVisibility(View.GONE);
 //
 //        bottomSheetLayouts.setVisibility(View.GONE);
 
@@ -356,25 +348,6 @@ public class DoctorClinicDetailsActivity extends AppCompatActivity implements Vi
 
             }
         });
-        txt_seemore_petshandle.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("SetTextI18n")
-            @Override
-            public void onClick(View view) {
-                if(txt_seemore_petshandle.getText().toString() != null && txt_seemore_petshandle.getText().toString().equalsIgnoreCase("See more...")){
-                    txt_seemore_petshandle.setText("Hide");
-                    int size =specializationBeanList.size();
-                    setPetHandle(petHandledBeanList,size);
-                }else{
-                    txt_seemore_petshandle.setText("See more...");
-                    int size = 4;
-                    setPetHandle(petHandledBeanList,size);
-
-                }
-
-            }
-        });
-
-
 
 //        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
 //        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -400,7 +373,38 @@ public class DoctorClinicDetailsActivity extends AppCompatActivity implements Vi
         });
 
 
+       //bottomNavigation.getMenu().getItem(0).setCheckable(false);
 
+
+        floatingActionButton.setImageResource(R.drawable.ic_hzhome_png);
+
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                callDirections("1");
+            }
+        });
+
+
+        if(active_tag != null){
+            if(active_tag.equalsIgnoreCase("1")){
+                bottomNavigation.setSelectedItemId(R.id.home);
+            }else if(active_tag.equalsIgnoreCase("2")){
+                bottomNavigation.setSelectedItemId(R.id.shop);
+            }else if(active_tag.equalsIgnoreCase("3")){
+                bottomNavigation.setSelectedItemId(R.id.services);
+            }else if(active_tag.equalsIgnoreCase("4")){
+                bottomNavigation.setSelectedItemId(R.id.care);
+            } else if(active_tag.equalsIgnoreCase("5")){
+                bottomNavigation.setSelectedItemId(R.id.community);
+            }
+        }
+        else{
+            bottomNavigation.setSelectedItemId(R.id.shop);
+        }
+
+        bottomNavigation.setOnNavigationItemSelectedListener(this);
 
 
     }
@@ -469,7 +473,7 @@ public class DoctorClinicDetailsActivity extends AppCompatActivity implements Vi
      */
     private void setBottomSheet() {
 
-        bottomSheetBehavior = BottomSheetBehavior.from(findViewById(R.id.bottomSheetLayouts));
+        /*bottomSheetBehavior = BottomSheetBehavior.from(findViewById(R.id.bottomSheetLayouts));
 
         bottomSheetBehavior.setState(BottomSheetBehavior.STATE_HALF_EXPANDED);
 
@@ -518,7 +522,7 @@ public class DoctorClinicDetailsActivity extends AppCompatActivity implements Vi
             }
 
 
-        });
+        });*/
     }
 
 
@@ -573,12 +577,6 @@ public class DoctorClinicDetailsActivity extends AppCompatActivity implements Vi
 
                             txt_drname.setVisibility(View.VISIBLE);
 
-                            ll_root1.setVisibility(View.VISIBLE);
-
-                            ll_root2.setVisibility(View.VISIBLE);
-
-                            ll_root3.setVisibility(View.VISIBLE);
-
                             txt_about_vet_label.setVisibility(View.VISIBLE);
 
                             txt_dr_desc.setVisibility(View.VISIBLE);
@@ -587,26 +585,30 @@ public class DoctorClinicDetailsActivity extends AppCompatActivity implements Vi
 
                             rv_speclist.setVisibility(View.VISIBLE);
 
-                            txt_pet_hanldle.setVisibility(View.VISIBLE);
-
-                            rv_pet_hanldle.setVisibility(View.VISIBLE);
-
                             txt_location_label.setVisibility(View.VISIBLE);
 
                             txt_place.setVisibility(View.VISIBLE);
 
                             ll_map.setVisibility(View.VISIBLE);
 
+                            ll_root.setVisibility(View.VISIBLE);
 
-                            setBottomSheet();
+                            txt_review_count.setVisibility(View.VISIBLE);
 
+                            view11.setVisibility(View.VISIBLE);
 //                            bottomSheetLayouts.setVisibility(View.VISIBLE);
 
                          //   setBottomSheet();
+                            if(response.body().getData().getReview_count() != 0){
+                                txt_review_count.setText(""+response.body().getData().getAmount()+"Reviews");
+                            }
+                            else {
 
+                                txt_review_count.setText("");
+                            }
 
                             if(response.body().getData().getAmount() != 0){
-                                txt_dr_consultationfees.setText("INR "+response.body().getData().getAmount());
+                                txt_dr_consultationfees.setText("\u20B9 "+response.body().getData().getAmount());
                             }
 
 
@@ -620,15 +622,21 @@ public class DoctorClinicDetailsActivity extends AppCompatActivity implements Vi
 
 
                             if(response.body().getData().isFav()){
-                                img_fav.setBackgroundResource(R.drawable.ic_fav);
+                                img_fav.setBackgroundResource(R.drawable.like);
                             }else{
-                                img_fav.setBackgroundResource(R.drawable.heart_gray);
+                                img_fav.setBackgroundResource(R.drawable.icn_heart_love);
                             }
                         }
 
                         if(Doctor_exp != 0) {
                             Log.w(TAG,"Doctor_exp : "+Doctor_exp);
                             txt_dr_experience.setText(Doctor_exp+" Years");
+                        }
+
+
+
+                        if(response.body().getData().getAmount() != 0){
+                            txt_dr_consultationfees.setText("\u20B9 "+response.body().getData().getAmount());
                         }
 
 
@@ -702,13 +710,53 @@ public class DoctorClinicDetailsActivity extends AppCompatActivity implements Vi
 
 
                         }
-                        if(distance != null && ClinicLocationname != null){
-                            txt_distance.setText(""+distance);
-                        }
-                        else if(APIClient.DISTANCE != null && ClinicLocationname != null){
-                            txt_distance.setText(""+APIClient.DISTANCE);
+
+                        if(response.body().getData().getAmount() != 0){
+
+                            txt_dr_consultationfees.setText("\u20B9 "+response.body().getData().getAmount());
                         }
 
+
+
+
+                        if(Doctor_exp != 0) {
+                            Log.w(TAG,"Doctor_exp : "+Doctor_exp);
+                            //txt_dr_experience.setText(Doctor_exp+" Years");
+
+                            sb.append(Doctor_exp);
+
+                            sb.append(" Years of experience");
+
+                        }
+                        sb.append("| ");
+
+                        if(distance != null && ClinicLocationname != null){
+
+                            /*txt_distance.setText(""+distance);*/
+
+                            sb.append(distance);
+
+                            sb.append("km");
+
+                        }
+                        else if(APIClient.DISTANCE != null && ClinicLocationname != null){
+
+                            //txt_distance.setText(""+APIClient.DISTANCE);
+                            sb.append(distance);
+
+                            sb.append("km");
+                        }
+
+
+                        if(sb!=null){
+                            txt_dr_experience.setText(sb);
+
+                        }
+
+                        else {
+
+                            txt_dr_experience.setText("");
+                        }
 
                         Log.w(TAG,"Size"+doctorclinicdetailsResponseList.size());
                         Log.w(TAG,"doctorclinicdetailsResponseList : "+new Gson().toJson(doctorclinicdetailsResponseList));
@@ -749,19 +797,7 @@ public class DoctorClinicDetailsActivity extends AppCompatActivity implements Vi
 
                         }
 
-                        if(response.body().getData().getPet_handled() != null&&response.body().getData().getPet_handled().size()>0){
 
-                            // specializationBeanList = new ArrayList<>();
-
-                            petHandledBeanList=response.body().getData().getPet_handled();
-
-                            Log.w(TAG,"petHandledBeanList : "+new Gson().toJson(petHandledBeanList));
-
-                            setPetHandle(petHandledBeanList, 4);
-
-
-
-                        }
 
 
                     }
@@ -860,25 +896,6 @@ public class DoctorClinicDetailsActivity extends AppCompatActivity implements Vi
                 onBackPressed();
                 break;
 
-            case R.id.rl_homes:
-                callDirections("1");
-                break;
-            case R.id.rl_home:
-                callDirections("1");
-                break;
-            case R.id.rl_shop:
-                callDirections("2");
-                break;
-            case R.id.rl_service:
-                callDirections("3");
-                break;
-            case R.id.rl_care:
-                callDirections("4");
-                break;
-            case R.id.rl_comn:
-                callDirections("5");
-                break;
-
         }
 
     }
@@ -914,26 +931,6 @@ public class DoctorClinicDetailsActivity extends AppCompatActivity implements Vi
 
 
     }
-
-
-    private void setPetHandle(List<DoctorDetailsResponse.DataBean.PetHandledBean> petHandledBeanList, int size) {
-        int spanCount = 2; // 3 columns
-        int spacing = 0; // 50px
-        boolean includeEdge = true;
-        rv_pet_hanldle.setLayoutManager(new GridLayoutManager(this, 2));
-        rv_speclist.addItemDecoration(new GridSpacingItemDecoration(spanCount, spacing, includeEdge));
-        rv_pet_hanldle.setItemAnimator(new DefaultItemAnimator());
-        doctorClinicPetsHandledListAdapter = new DoctorClinicPetsHandledListAdapter(DoctorClinicDetailsActivity.this, petHandledBeanList,size);
-        rv_pet_hanldle.setAdapter(doctorClinicPetsHandledListAdapter);
-
-        if(petHandledBeanList.size()>4){
-            txt_seemore_petshandle.setVisibility(View.VISIBLE);
-        }else {
-            txt_seemore_petshandle.setVisibility(View.GONE);
-        }
-
-    }
-
 
     /**
      * Manipulates the map once available.
@@ -985,6 +982,33 @@ public class DoctorClinicDetailsActivity extends AppCompatActivity implements Vi
 
         }
 
+    }
+
+    @SuppressLint("NonConstantResourceId")
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.home:
+                callDirections("1");
+                break;
+            case R.id.shop:
+                callDirections("2");
+                break;
+            case R.id.services:
+                callDirections("3");
+                break;
+            case R.id.care:
+                callDirections("4");
+                break;
+            case R.id.community:
+                callDirections("5");
+                break;
+
+            default:
+                return  false;
+        }
+        return true;
     }
 
 }

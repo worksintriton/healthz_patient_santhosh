@@ -60,40 +60,28 @@ public class PetShopTodayDealsAdapter extends  RecyclerView.Adapter<RecyclerView
     private void initLayoutOne(ViewHolderOne holder, final int position) {
 
         currentItem = today_special.get(position);
-        holder.txt_products_title.setText(today_special.get(position).getProduct_title());
+
+        if(today_special.get(position).getProduct_title() != null){
+            holder.txt_products_title.setText(today_special.get(position).getProduct_title());
+        }else{
+            holder.txt_products_title.setText("");
+        }
+
         if(today_special.get(position).getProduct_price() != 0){
             holder.txt_products_price.setText("INR "+today_special.get(position).getProduct_price());
         }else{
             holder.txt_products_price.setText("INR "+0);
         }
         if(today_special.get(position).getProduct_discount_price() != 0){
-            holder.txt_product_discount_price.setVisibility(View.VISIBLE);
             holder.txt_product_discount_price.setText("INR "+today_special.get(position).getProduct_discount_price());
             holder.txt_product_discount_price.setPaintFlags(holder.txt_product_discount_price.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
         }else{
             holder.txt_product_discount_price.setText("INR "+0);
-            holder.txt_product_discount_price.setVisibility(View.GONE);
+            holder.txt_product_discount_price.setPaintFlags(holder.txt_product_discount_price.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+
+
         }
 
-        if(today_special.get(position).isProduct_fav()){
-            holder.img_like.setVisibility(View.VISIBLE);
-            holder.img_dislike.setVisibility(View.GONE);
-        }
-        else{
-            holder.img_dislike.setVisibility(View.VISIBLE);
-            holder.img_like.setVisibility(View.GONE);
-        }
-
-        Log.w(TAG,"discount : "+today_special.get(position).getProduct_discount());
-
-
-        if(today_special.get(position).getProduct_discount() != 0){
-            holder.txt_products_offer.setVisibility(View.VISIBLE);
-            holder.txt_products_offer.setText(today_special.get(position).getProduct_discount()+" % off");
-        }else{
-            holder.txt_products_offer.setVisibility(View.GONE);
-
-        }
 
         if (today_special.get(position).getThumbnail_image() != null && !today_special.get(position).getThumbnail_image().isEmpty()) {
             Glide.with(context)
@@ -113,14 +101,10 @@ public class PetShopTodayDealsAdapter extends  RecyclerView.Adapter<RecyclerView
         }else{
             holder.txt_star_rating.setText("0");
         }
-        if(currentItem.getProduct_review() != 0){
-            holder.txt_review_count.setText(currentItem.getProduct_review()+"");
-        }else{
-            holder.txt_review_count.setText("0");
-        }
+
 
         holder.ll_root.setOnClickListener(v -> {
-            if(fromactivity != null && fromactivity.equalsIgnoreCase("DoctorShopFragment")){
+          /*  if(fromactivity != null && fromactivity.equalsIgnoreCase("DoctorShopFragment")){
                 Intent intent = new Intent(context, DoctorProductDetailsActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.putExtra("productid",today_special.get(position).get_id());
                 context.startActivity(intent);
@@ -133,7 +117,7 @@ public class PetShopTodayDealsAdapter extends  RecyclerView.Adapter<RecyclerView
                 intent.putExtra("productid",today_special.get(position).get_id());
                 context.startActivity(intent);
             }
-
+*/
         });
 
 

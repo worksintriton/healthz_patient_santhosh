@@ -38,7 +38,7 @@
         android:layout_gravity="bottom|center_vertical"
         android:layout_marginTop="5dp"
         android:ellipsize="end"
-        android:fontFamily="@font/montserrat_bold"
+        android:fontFamily="@font/montserrat"
         android:gravity="center|bottom"
         android:maxLines="1"
         android:text="@string/sub_services"

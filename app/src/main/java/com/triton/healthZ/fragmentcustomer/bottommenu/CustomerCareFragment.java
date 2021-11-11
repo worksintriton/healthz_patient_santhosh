@@ -23,6 +23,8 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
+import android.widget.Scroller;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -125,8 +127,8 @@ public class CustomerCareFragment extends Fragment implements Serializable, View
     RelativeLayout rl_search;
 
     @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.bottomSheetLayout)
-    CoordinatorLayout bottomSheetLayout;
+    @BindView(R.id.scrollablContent)
+    ScrollView bottomSheetLayout;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.linear1)
@@ -317,11 +319,11 @@ public class CustomerCareFragment extends Fragment implements Serializable, View
         txt_filter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(mContext, FiltersActivity.class);
+           /*     Intent intent = new Intent(mContext, FiltersActivity.class);
                 intent.putExtra("specialization",specialization);
                 intent.putExtra("reviewcount",reviewcount);
                 intent.putExtra("communication_type",communication_type);
-                startActivity(intent);
+                startActivity(intent);*/
             }
         });
 
@@ -351,7 +353,7 @@ public class CustomerCareFragment extends Fragment implements Serializable, View
      */
     private void setBottomSheet() {
 
-        bottomSheetBehavior = BottomSheetBehavior.from(view.findViewById(R.id.bottomSheetLayout));
+       /* bottomSheetBehavior = BottomSheetBehavior.from(view.findViewById(R.id.bottomSheetLayout));
 
         bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
 
@@ -402,7 +404,7 @@ public class CustomerCareFragment extends Fragment implements Serializable, View
             }
 
 
-        });
+        });*/
     }
 
     private void viewpageData(List<DoctorSearchResponse.BannerBean> banner) {

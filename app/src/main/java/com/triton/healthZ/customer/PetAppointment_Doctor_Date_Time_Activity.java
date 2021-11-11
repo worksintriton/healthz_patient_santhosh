@@ -10,16 +10,21 @@ import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.CalendarView;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.applikeysolutions.cosmocalendar.utils.SelectionType;
 import com.google.gson.Gson;
 import com.triton.healthZ.R;
 import com.triton.healthZ.activity.NotificationActivity;
@@ -45,6 +50,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
 import butterknife.BindView;
@@ -108,9 +114,13 @@ public class PetAppointment_Doctor_Date_Time_Activity extends AppCompatActivity 
     @BindView(R.id.avi_indicator)
     AVLoadingIndicatorView avi_indicator;
 
-    @SuppressLint("NonConstantResourceId")
+/*    @SuppressLint("NonConstantResourceId")
     @BindView(R.id.datePickerTimeline)
-    DatePickerTimeline datePickerTimeline ;
+    DatePickerTimeline datePickerTimeline ;*/
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.calendarView)
+    CalendarView calendarView;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.include_petlover_header)
@@ -263,18 +273,13 @@ public class PetAppointment_Doctor_Date_Time_Activity extends AppCompatActivity 
         int date = calendar.get(Calendar.DATE);
 
         // Set a Start date (Default, 1 Jan 1970)
-        datePickerTimeline.setInitialDate(year, month, date);
 
-        datePickerTimeline.setDateTextColor(getResources().getColor(R.color.new_gree_color));
-        //datePickerTimeline.setDayTextColor(Color.parseColor("#009675"));
-        datePickerTimeline.setDayTextColor(getResources().getColor(R.color.new_gree_color));
-        datePickerTimeline.setMonthTextColor(getResources().getColor(R.color.new_gree_color));
+        calendarView.setDate(calendar.getTimeInMillis(), true, true);
 
-      // Set a date Selected Listener
-        datePickerTimeline.setOnDateSelectedListener(new OnDateSelectedListener() {
-            @SuppressLint("LogNotTimber")
+        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
-            public void onDateSelected(int year, int month, int dayOfMonth, int dayOfWeek) {
+            public void onSelectedDayChange(@NonNull CalendarView calendarView, int year, int month, int dayOfMonth) {
+
                 // Do Something
                 selectedTimeSlot = "";
                 String strdayOfMonth;
@@ -303,12 +308,8 @@ public class PetAppointment_Doctor_Date_Time_Activity extends AppCompatActivity 
 
 
             }
-
-            @Override
-            public void onDisabledDateSelected(int year, int month, int day, int dayOfWeek, boolean isDisabled) {
-                // Do Something
-            }
         });
+
 
       /*// Disable date
         Date[] dates = {Calendar.getInstance().getTime()};

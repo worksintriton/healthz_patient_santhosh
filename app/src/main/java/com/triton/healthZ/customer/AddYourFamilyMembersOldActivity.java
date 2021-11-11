@@ -151,6 +151,10 @@ public class AddYourFamilyMembersOldActivity extends AppCompatActivity implement
     @BindView(R.id.img_uploadimage)
     ImageView img_uploadimage;
 
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.img_back)
+    ImageView img_back;
+
     List<FamilyMemberCreateRequest.PicBean> picBeanList = new ArrayList<>();
 
     List<GetFamilyMemberResponse.DataBean> getfamilymemberslist;
@@ -254,6 +258,8 @@ public class AddYourFamilyMembersOldActivity extends AppCompatActivity implement
         setContentView(R.layout.activity_add_your_family_members_old);
         ButterKnife.bind(this);
         avi_indicator.setVisibility(View.GONE);
+
+        img_back.setOnClickListener(this);
 
         btn_continue.setOnClickListener(this);
 

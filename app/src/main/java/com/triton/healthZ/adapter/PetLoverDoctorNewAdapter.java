@@ -113,7 +113,7 @@ public class PetLoverDoctorNewAdapter extends  RecyclerView.Adapter<RecyclerView
               holder.hand_img5.setBackgroundResource(R.drawable.ic_logo_graycolor);
           }
 
-          if(currentItem.isFav()){
+        /*  if(currentItem.isFav()){
               Glide.with(context)
                       .load(R.drawable.ic_fav)
                       .into(holder.img_fav);
@@ -122,7 +122,7 @@ public class PetLoverDoctorNewAdapter extends  RecyclerView.Adapter<RecyclerView
                       .load(R.drawable.heart_gray)
                       .into(holder.img_fav);
           }
-
+*/
           List<PetLoverDashboardResponse.DataBean.DashboarddataBean.DoctorDetailsBean.SpecializationBean> specializationBeanList = currentItem.getSpecialization();
 
           for(int i=0;i<specializationBeanList.size();i++){
