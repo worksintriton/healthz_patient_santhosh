@@ -199,7 +199,7 @@ public class ConsultationActivity extends AppCompatActivity implements View.OnCl
             @Override
             public void onClick(View view) {
                 if(fromactivity != null && fromactivity.equalsIgnoreCase("PetServiceAppointment_Doctor_Date_Time_Activity")){
-                    Intent intent = new Intent(getApplicationContext(),AddNewPetActivity.class);
+                    Intent intent = new Intent(getApplicationContext(),AddYourFamilyMembersSelectActivity.class);
                     intent.putExtra("spid",spid);
                     intent.putExtra("catid",catid);
                     intent.putExtra("from",from);
@@ -214,7 +214,7 @@ public class ConsultationActivity extends AppCompatActivity implements View.OnCl
                     startActivity(intent);
                 }
                 else {
-                    Intent intent = new Intent(ConsultationActivity.this, AddNewPetActivity.class);
+                    Intent intent = new Intent(ConsultationActivity.this, AddYourFamilyMembersSelectActivity.class);
                     intent.putExtra("doctorid", doctorid);
                     intent.putExtra("fromactivity", TAG);
                     intent.putExtra("Doctor_ava_Date", Doctor_ava_Date);

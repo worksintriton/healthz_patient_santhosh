@@ -180,10 +180,10 @@ public class PetServicesAdapter extends  RecyclerView.Adapter<RecyclerView.ViewH
         holder.img_petservice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-           /*     Intent intent = new Intent(context, SelectedServiceActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                Intent intent = new Intent(context, SelectedServiceActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.putExtra("catid",serviceCatList.get(position).get_id());
                 intent.putExtra("from","PetServices");
-                context.startActivity(intent);*/
+                context.startActivity(intent);
                 }
 
 

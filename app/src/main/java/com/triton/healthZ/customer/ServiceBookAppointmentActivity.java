@@ -1417,7 +1417,7 @@ public class ServiceBookAppointmentActivity extends AppCompatActivity implements
         spCreateAppointmentRequest.setBooking_time(selectedTimeSlot);
         spCreateAppointmentRequest.setBooking_date_time(SP_ava_Date+" "+selectedTimeSlot);
         spCreateAppointmentRequest.setUser_id(userid);
-        spCreateAppointmentRequest.setPet_id(petId);
+        spCreateAppointmentRequest.setFamily_id(petId);
         spCreateAppointmentRequest.setAdditional_info(edt_comment.getText().toString());
         spCreateAppointmentRequest.setSp_attched(sp_attched);
         spCreateAppointmentRequest.setSp_feedback("");

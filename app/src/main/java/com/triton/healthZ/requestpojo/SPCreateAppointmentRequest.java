@@ -41,7 +41,7 @@ public class SPCreateAppointmentRequest {
     private String booking_time;
     private String booking_date_time;
     private String user_id;
-    private String pet_id;
+    private String family_id;
     private String additional_info;
     private String sp_feedback;
     private String sp_rate;
@@ -181,14 +181,15 @@ public class SPCreateAppointmentRequest {
     }
 
 
-    public String getPet_id() {
-        return pet_id;
+    public String getFamily_id() {
+        return family_id;
     }
 
-    public void setPet_id(String pet_id) {
-        this.pet_id = pet_id;
+    public void setFamily_id(String family_id) {
+        this.family_id = family_id;
 
     }
+
 
 
     public String getAdditional_info() {

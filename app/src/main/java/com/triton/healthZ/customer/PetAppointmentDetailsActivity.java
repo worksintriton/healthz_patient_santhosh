@@ -288,9 +288,9 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
 
     private String concatenatedStarNames = "";
 
-    /* Petlover Bottom Navigation */
+  /*  *//* Petlover Bottom Navigation *//*
 
-    /* Petlover Bottom Navigation */
+    *//* Petlover Bottom Navigation *//*
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.rl_home)
@@ -346,7 +346,7 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.rl_homes)
-    RelativeLayout rl_homes;
+    RelativeLayout rl_homes;*/
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.ll_original_price)

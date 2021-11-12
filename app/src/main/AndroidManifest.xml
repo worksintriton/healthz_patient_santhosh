@@ -131,7 +131,7 @@
         <activity
             android:name=".customer.PetLoverDoctorChoosePaymentMethodActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"
+            android:theme="@style/BaseAppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".customer.PetLoverServiceChoosePaymentMethodActivity"
@@ -191,12 +191,12 @@
         <activity
             android:name=".customer.ConsultationActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"
+            android:theme="@style/BaseAppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".customer.ConsultationIssuesActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"
+            android:theme="@style/BaseAppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".activity.VerifyOtpActivity"
@@ -241,7 +241,7 @@
         <activity
             android:name=".customer.BookAppointmentActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"
+            android:theme="@style/BaseAppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".customer.PetAppointment_Doctor_Date_Time_Activity"

@@ -30,9 +30,11 @@ import com.triton.healthZ.adapter.MyPetsListAdapter;
 import com.triton.healthZ.api.APIClient;
 import com.triton.healthZ.api.RestApiInterface;
 import com.triton.healthZ.interfaces.MyPetsSelectListener;
+import com.triton.healthZ.requestpojo.FamilyMemberListRequest;
 import com.triton.healthZ.requestpojo.PetListRequest;
 import com.triton.healthZ.requestpojo.SPCreateAppointmentRequest;
 import com.triton.healthZ.requestpojo.SPNotificationSendRequest;
+import com.triton.healthZ.responsepojo.FamilyMemberListResponse;
 import com.triton.healthZ.responsepojo.NotificationSendResponse;
 import com.triton.healthZ.responsepojo.PetListResponse;
 import com.triton.healthZ.responsepojo.SPCreateAppointmentResponse;
@@ -96,7 +98,7 @@ public class SelectYourPetActivity extends AppCompatActivity implements View.OnC
     LinearLayout ll_add_new_pet;
 
     private String userid;
-    private List<PetListResponse.DataBean> petList;
+    private List<FamilyMemberListResponse.DataBean> petList;
 
 
     private String selectedAppointmentType = "Normal";
@@ -197,7 +199,7 @@ public class SelectYourPetActivity extends AppCompatActivity implements View.OnC
         }
         img_back.setOnClickListener(this);
         if (new ConnectionDetector(getApplicationContext()).isNetworkAvailable(getApplicationContext())) {
-            petListResponseCall();
+            familymembersListResponseCall();
         }
 
         ll_save_continue.setOnClickListener(new View.OnClickListener() {
@@ -339,7 +341,62 @@ public class SelectYourPetActivity extends AppCompatActivity implements View.OnC
         }
     }
 
-    @SuppressLint("LogNotTimber")
+    private void familymembersListResponseCall() {
+        avi_indicator.setVisibility(View.VISIBLE);
+        avi_indicator.smoothToShow();
+        RestApiInterface apiInterface = APIClient.getClient().create(RestApiInterface.class);
+        Call<FamilyMemberListResponse> call = apiInterface.familymembersListResponseCall(RestUtils.getContentType(),FamilyMemberListRequest());
+        Log.w(TAG,"FamilyMemberListResponse url  :%s"+" "+ call.request().url().toString());
+
+        call.enqueue(new Callback<FamilyMemberListResponse>() {
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onResponse(@NonNull Call<FamilyMemberListResponse> call, @NonNull Response<FamilyMemberListResponse> response) {
+
+                Log.w(TAG,"FamilyMemberListResponse"+ "--->" + new Gson().toJson(response.body()));
+
+                avi_indicator.smoothToHide();
+
+                if (response.body() != null) {
+                    if(response.body().getCode() == 200){
+
+                        if(response.body().getData() != null && response.body().getData().size()>0){
+                            txt_no_records.setVisibility(View.GONE);
+                            rv_pet.setVisibility(View.VISIBLE);
+                            petList = response.body().getData();
+                            setView();
+
+                        }
+                        else{
+                            txt_no_records.setVisibility(View.VISIBLE);
+                            txt_no_records.setText(getResources().getString(R.string.no_new_pets));
+                            rv_pet.setVisibility(View.GONE);
+                        }
+
+                    }
+
+                }
+
+
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<FamilyMemberListResponse> call, @NonNull Throwable t) {
+
+                avi_indicator.smoothToHide();
+                Log.w(TAG,"FamilyMemberListResponse flr"+"--->" + t.getMessage());
+            }
+        });
+
+    }
+    private FamilyMemberListRequest FamilyMemberListRequest() {
+        FamilyMemberListRequest FamilyMemberListRequest = new FamilyMemberListRequest();
+        FamilyMemberListRequest.setUser_id(userid);
+        Log.w(TAG,"FamilyMemberListRequest"+ "--->" + new Gson().toJson(FamilyMemberListRequest));
+        return FamilyMemberListRequest;
+    }
+
+/*    @SuppressLint("LogNotTimber")
     private void petListResponseCall() {
         avi_indicator.setVisibility(View.VISIBLE);
         avi_indicator.smoothToShow();
@@ -396,7 +453,7 @@ public class SelectYourPetActivity extends AppCompatActivity implements View.OnC
         petListRequest.setUser_id(userid);
         Log.w(TAG,"petListRequest"+ "--->" + new Gson().toJson(petListRequest));
         return petListRequest;
-    }
+    }*/
     private void setView() {
         rv_pet.setLayoutManager(new GridLayoutManager(this, 2));
         rv_pet.setItemAnimator(new DefaultItemAnimator());
@@ -608,7 +665,7 @@ public class SelectYourPetActivity extends AppCompatActivity implements View.OnC
         spCreateAppointmentRequest.setBooking_time(selectedTimeSlot);
         spCreateAppointmentRequest.setBooking_date_time(SP_ava_Date+" "+selectedTimeSlot);
         spCreateAppointmentRequest.setUser_id(userid);
-        spCreateAppointmentRequest.setPet_id(petId);
+        spCreateAppointmentRequest.setFamily_id(petId);
         spCreateAppointmentRequest.setAdditional_info("");
         spCreateAppointmentRequest.setSp_attched(sp_attched);
         spCreateAppointmentRequest.setSp_feedback("");
@@ -692,7 +749,7 @@ public class SelectYourPetActivity extends AppCompatActivity implements View.OnC
         spCreateAppointmentRequest.setBooking_time(selectedTimeSlot);
         spCreateAppointmentRequest.setBooking_date_time(SP_ava_Date+" "+selectedTimeSlot);
         spCreateAppointmentRequest.setUser_id(userid);
-        spCreateAppointmentRequest.setPet_id(petId);
+        spCreateAppointmentRequest.setFamily_id(petId);
         spCreateAppointmentRequest.setAdditional_info("");
         spCreateAppointmentRequest.setSp_attched(sp_attched);
         spCreateAppointmentRequest.setSp_feedback("");

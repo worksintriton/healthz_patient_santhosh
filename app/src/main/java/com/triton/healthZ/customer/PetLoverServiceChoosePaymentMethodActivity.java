@@ -804,7 +804,7 @@ public class PetLoverServiceChoosePaymentMethodActivity extends AppCompatActivit
         spCreateAppointmentRequest.setBooking_time(selectedTimeSlot);
         spCreateAppointmentRequest.setBooking_date_time(SP_ava_Date+" "+selectedTimeSlot);
         spCreateAppointmentRequest.setUser_id(userid);
-        spCreateAppointmentRequest.setPet_id(petId);
+        spCreateAppointmentRequest.setFamily_id(petId);
         spCreateAppointmentRequest.setAdditional_info("");
         spCreateAppointmentRequest.setSp_attched(sp_attched);
         spCreateAppointmentRequest.setSp_feedback("");

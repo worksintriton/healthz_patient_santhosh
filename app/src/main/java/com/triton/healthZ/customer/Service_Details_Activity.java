@@ -116,14 +116,14 @@ public class Service_Details_Activity extends AppCompatActivity implements View.
     TextView txt_dr_consultationfees;
 
 
-//    @SuppressLint("NonConstantResourceId")
-//    @BindView(R.id.txt_sp_spname)
-//    TextView txt_sp_spname;
-//
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_about_vet_label)
+    TextView txt_aboutsp_label;
+
 //    @SuppressLint("NonConstantResourceId")
 //    @BindView(R.id.txt_serv_name)
 //    TextView txt_serv_name;
-//
+
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_selected_servicesname)
     TextView txt_selected_servicesname;
@@ -193,17 +193,6 @@ public class Service_Details_Activity extends AppCompatActivity implements View.
     @BindView(R.id.ll_root1)
     LinearLayout ll_root1;
 
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.ll_root2)
-    LinearLayout ll_root2;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.ll_root3)
-    LinearLayout ll_root3;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.txt_aboutsp_label)
-    TextView txt_aboutsp_label;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_spec_label)
@@ -226,13 +215,16 @@ public class Service_Details_Activity extends AppCompatActivity implements View.
     TextView txt_location_label;
 
     @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.txt_dr_desc)
+    @BindView(R.id.txt_about_sp_desc)
     TextView txt_dr_desc;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_seemore_spec)
     TextView txt_seemore_spec;
 
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_review_count)
+    TextView txt_review_count;
 
     List<SPDetailsRepsonse.DataBean.BusSpecListBean> specializationBeanList;
 
@@ -331,8 +323,6 @@ public class Service_Details_Activity extends AppCompatActivity implements View.
 
         ll_root1.setVisibility(View.GONE);
 
-        ll_root3.setVisibility(View.GONE);
-
         txt_aboutsp_label.setVisibility(View.GONE);
 
         txt_dr_desc.setVisibility(View.GONE);
@@ -368,56 +358,56 @@ public class Service_Details_Activity extends AppCompatActivity implements View.
      */
     private void setBottomSheet() {
 
-        bottomSheetBehavior = BottomSheetBehavior.from(findViewById(R.id.bottomSheetLayoutsp));
-
-        bottomSheetBehavior.setState(BottomSheetBehavior.STATE_HALF_EXPANDED);
-
-        bottomSheetBehavior.setHideable(false);
-
-        bottomSheetBehavior.setFitToContents(false);
-
-        bottomSheetBehavior.setHalfExpandedRatio(0.8f);
-
-
-        // Capturing the callbacks for bottom sheet
-        bottomSheetBehavior.addBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
-            @SuppressLint("LogNotTimber")
-            @Override
-            public void onStateChanged(@NonNull View bottomSheet, int newState) {
-                switch (newState) {
-                    case BottomSheetBehavior.STATE_COLLAPSED:
-                        Log.w("Bottom Sheet Behaviour", "STATE_COLLAPSED");
-                        bottomSheetBehavior.setState(BottomSheetBehavior.STATE_HALF_EXPANDED);
-                        break;
-                    case BottomSheetBehavior.STATE_DRAGGING:
-                        Log.w("Bottom Sheet Behaviour", "STATE_DRAGGING");
-                        break;
-                    case BottomSheetBehavior.STATE_EXPANDED:
-                        Log.w("Bottom Sheet Behaviour", "STATE_EXPANDED");
-                        //  bottomSheetBehavior.setState(BottomSheetBehavior.STATE_HALF_EXPANDED);
-                        break;
-                    case BottomSheetBehavior.STATE_HIDDEN:
-                        Log.w("Bottom Sheet Behaviour", "STATE_HIDDEN");
-                        break;
-                    case BottomSheetBehavior.STATE_SETTLING:
-                        Log.w("Bottom Sheet Behaviour", "STATE_SETTLING");
-                        break;
-                    case BottomSheetBehavior.STATE_HALF_EXPANDED:
-                        Log.w("Bottom Sheet Behaviour", "STATE_HALF_EXPANDED");
-                        break;
-                }
-
-
-            }
-
-            @Override
-            public void onSlide(@NonNull View bottomSheet, float slideOffset) {
-
-
-            }
-
-
-        });
+//        bottomSheetBehavior = BottomSheetBehavior.from(findViewById(R.id.bottomSheetLayoutsp));
+//
+//        bottomSheetBehavior.setState(BottomSheetBehavior.STATE_HALF_EXPANDED);
+//
+//        bottomSheetBehavior.setHideable(false);
+//
+//        bottomSheetBehavior.setFitToContents(false);
+//
+//        bottomSheetBehavior.setHalfExpandedRatio(0.8f);
+//
+//
+//        // Capturing the callbacks for bottom sheet
+//        bottomSheetBehavior.addBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
+//            @SuppressLint("LogNotTimber")
+//            @Override
+//            public void onStateChanged(@NonNull View bottomSheet, int newState) {
+//                switch (newState) {
+//                    case BottomSheetBehavior.STATE_COLLAPSED:
+//                        Log.w("Bottom Sheet Behaviour", "STATE_COLLAPSED");
+//                        bottomSheetBehavior.setState(BottomSheetBehavior.STATE_HALF_EXPANDED);
+//                        break;
+//                    case BottomSheetBehavior.STATE_DRAGGING:
+//                        Log.w("Bottom Sheet Behaviour", "STATE_DRAGGING");
+//                        break;
+//                    case BottomSheetBehavior.STATE_EXPANDED:
+//                        Log.w("Bottom Sheet Behaviour", "STATE_EXPANDED");
+//                        //  bottomSheetBehavior.setState(BottomSheetBehavior.STATE_HALF_EXPANDED);
+//                        break;
+//                    case BottomSheetBehavior.STATE_HIDDEN:
+//                        Log.w("Bottom Sheet Behaviour", "STATE_HIDDEN");
+//                        break;
+//                    case BottomSheetBehavior.STATE_SETTLING:
+//                        Log.w("Bottom Sheet Behaviour", "STATE_SETTLING");
+//                        break;
+//                    case BottomSheetBehavior.STATE_HALF_EXPANDED:
+//                        Log.w("Bottom Sheet Behaviour", "STATE_HALF_EXPANDED");
+//                        break;
+//                }
+//
+//
+//            }
+//
+//            @Override
+//            public void onSlide(@NonNull View bottomSheet, float slideOffset) {
+//
+//
+//            }
+//
+//
+//        });
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -598,9 +588,6 @@ public class Service_Details_Activity extends AppCompatActivity implements View.
 
                         ll_root1.setVisibility(View.VISIBLE);
 
-                        ll_root3.setVisibility(View.VISIBLE);
-
-
 
                         txt_spec_label.setVisibility(View.VISIBLE);
 
@@ -621,9 +608,9 @@ public class Service_Details_Activity extends AppCompatActivity implements View.
                         img_fav.setOnClickListener(Service_Details_Activity.this);
 
                         if(response.body().getData().isFav()){
-                            img_fav.setBackgroundResource(R.drawable.ic_fav);
+                            img_fav.setBackgroundResource(R.drawable.like);
                         }else{
-                            img_fav.setBackgroundResource(R.drawable.heart_gray);
+                            img_fav.setBackgroundResource(R.drawable.icn_heart_love);
                         }
 
                         if(response.body().getData().getBus_service_gall() != null) {

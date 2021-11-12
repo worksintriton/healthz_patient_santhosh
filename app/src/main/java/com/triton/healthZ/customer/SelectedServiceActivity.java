@@ -17,17 +17,21 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.facebook.shimmer.ShimmerFrameLayout;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 import com.google.gson.Gson;
 import com.triton.healthZ.R;
@@ -55,7 +59,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class SelectedServiceActivity extends AppCompatActivity implements View.OnClickListener {
+public class SelectedServiceActivity extends AppCompatActivity implements View.OnClickListener, BottomNavigationView.OnNavigationItemSelectedListener {
 
 
     private String TAG = "SelectedServiceActivity";
@@ -73,29 +77,12 @@ public class SelectedServiceActivity extends AppCompatActivity implements View.O
     TextView txt_selected_service;
 
     @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.txt_totalproviders)
-    TextView txt_totalproviders;
-
-    @SuppressLint("NonConstantResourceId")
     @BindView(R.id.rv_nearbyservices)
     RecyclerView rv_nearbyservices;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_no_records)
     TextView txt_no_records;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.include_petlover_footer)
-    View include_petlover_footer;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.view6)
-    View view;
-
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.ll_root)
-    LinearLayout ll_root;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.include_petlover_header)
@@ -106,22 +93,12 @@ public class SelectedServiceActivity extends AppCompatActivity implements View.O
     RelativeLayout rl_filters;
 
     @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.edt_filter)
-    EditText edt_filter;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.scrollview)
-    NestedScrollView scrollablContent;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.bottomSheetLayouts)
-    CoordinatorLayout bottomSheetLayouts;
+    @BindView(R.id.scrollablContent)
+    ScrollView scrollablContent;
 
 
     private ShimmerFrameLayout mShimmerViewContainer;
     private View includelayout;
-
-    private String active_tag;
 
     private List<SPSpecificServiceDetailsResponse.DataBean.ServiceProviderBean> serviceProviderList;
     private String userid;
@@ -152,7 +129,22 @@ public class SelectedServiceActivity extends AppCompatActivity implements View.O
     @BindView(R.id.refresh_layout)
     SwipeRefreshLayout refresh_layout;
 
+    /**/
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.headerView)
+    LinearLayout headerView;
 
+    /* Petlover Bottom Navigation */
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.fab)
+    FloatingActionButton floatingActionButton;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.bottomNavigation)
+    BottomNavigationView bottomNavigation;
+
+    public static String active_tag = "3";
 
 
     @SuppressLint("LogNotTimber")
@@ -167,11 +159,9 @@ public class SelectedServiceActivity extends AppCompatActivity implements View.O
 
         avi_indicator.setVisibility(View.GONE);
 
-        txt_selected_service.setVisibility(View.GONE);
-        view.setVisibility(View.GONE);
-        ll_root.setVisibility(View.GONE);
-        bottomSheetLayouts.setVisibility(View.GONE);
-        rl_filters.setVisibility(View.GONE);
+        headerView.setVisibility(View.GONE);
+
+        scrollablContent.setVisibility(View.GONE);
 
 
         includelayout = findViewById(R.id.includelayout);
@@ -252,14 +242,48 @@ public class SelectedServiceActivity extends AppCompatActivity implements View.O
         img_cart.setOnClickListener(this);
         img_profile.setOnClickListener(this);
         rl_filters.setOnClickListener(this);
-        edt_filter.setOnClickListener(this);
+
+
+        bottomNavigation.getMenu().getItem(0).setCheckable(false);
+
+
+        floatingActionButton.setImageResource(R.drawable.ic_hzhome_png);
+
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                callDirections("1");
+            }
+        });
+
+
+        if(active_tag != null){
+            if(active_tag.equalsIgnoreCase("1")){
+                bottomNavigation.setSelectedItemId(R.id.home);
+            }else if(active_tag.equalsIgnoreCase("2")){
+                bottomNavigation.setSelectedItemId(R.id.shop);
+            }else if(active_tag.equalsIgnoreCase("3")){
+                bottomNavigation.setSelectedItemId(R.id.services);
+            }else if(active_tag.equalsIgnoreCase("4")){
+                bottomNavigation.setSelectedItemId(R.id.care);
+            } else if(active_tag.equalsIgnoreCase("5")){
+                bottomNavigation.setSelectedItemId(R.id.community);
+            }
+        }
+        else{
+            bottomNavigation.setSelectedItemId(R.id.home);
+        }
+
+        bottomNavigation.setOnNavigationItemSelectedListener(this);
+
     }
 
     /**
      * method to setup the bottomsheet
      */
     private void setBottomSheet() {
-
+/*
         bottomSheetBehavior = BottomSheetBehavior.from(findViewById(R.id.bottomSheetLayouts));
 
         bottomSheetBehavior.setState(BottomSheetBehavior.STATE_HALF_EXPANDED);
@@ -309,7 +333,7 @@ public class SelectedServiceActivity extends AppCompatActivity implements View.O
             }
 
 
-        });
+        });*/
     }
 
 
@@ -318,11 +342,9 @@ public class SelectedServiceActivity extends AppCompatActivity implements View.O
     private void SPSpecificServiceDetailsResponseCall(int distance, int reviewcount, int count_value_start, int count_value_end) {
        /* avi_indicator.setVisibility(View.VISIBLE);
         avi_indicator.smoothToShow();*/
-        txt_selected_service.setVisibility(View.GONE);
-        view.setVisibility(View.GONE);
-        ll_root.setVisibility(View.GONE);
-        bottomSheetLayouts.setVisibility(View.GONE);
-        rl_filters.setVisibility(View.GONE);
+        headerView.setVisibility(View.GONE);
+
+        scrollablContent.setVisibility(View.GONE);
 
         includelayout.setVisibility(View.VISIBLE);
         mShimmerViewContainer.startShimmerAnimation();
@@ -340,12 +362,14 @@ public class SelectedServiceActivity extends AppCompatActivity implements View.O
                 mShimmerViewContainer.stopShimmerAnimation();
                 includelayout.setVisibility(View.GONE);
 
+                headerView.setVisibility(View.VISIBLE);
+                scrollablContent.setVisibility(View.VISIBLE);
+
                 Log.w(TAG,"SPSpecificServiceDetailsResponse" + new Gson().toJson(response.body()));
                 if (response.body() != null) {
 
                     if (200 == response.body().getCode()) {
                         txt_no_records.setVisibility(View.GONE);
-                        txt_totalproviders.setVisibility(View.GONE);
 
                         if (response.body().getData() != null) {
 
@@ -364,12 +388,9 @@ public class SelectedServiceActivity extends AppCompatActivity implements View.O
 
                             if(serviceProviderList != null && serviceProviderList.size()>0){
                                 //txt_totalproviders.setText(serviceProviderList.size()+" Providers");
-                                view.setVisibility(View.VISIBLE);
-                                bottomSheetLayouts.setVisibility(View.VISIBLE);
                                 txt_selected_service.setVisibility(View.VISIBLE);
-                                ll_root.setVisibility(View.VISIBLE);
                                 rl_filters.setVisibility(View.VISIBLE);
-                                setBottomSheet();
+                                //setBottomSheet();
 
                                 if(response.body().getData().getService_Details().getTitle() != null){
                                     txt_selected_service.setText(response.body().getData().getService_Details().getTitle());
@@ -387,16 +408,11 @@ public class SelectedServiceActivity extends AppCompatActivity implements View.O
                     }
                     else{
 //                        txt_totalproviders.setText(serviceProviderList.size()+" Providers");
-                        view.setVisibility(View.VISIBLE);
-                        bottomSheetLayouts.setVisibility(View.VISIBLE);
+
                         txt_selected_service.setVisibility(View.VISIBLE);
-                        ll_root.setVisibility(View.VISIBLE);
                         rl_filters.setVisibility(View.VISIBLE);
-                        txt_totalproviders.setVisibility(View.GONE);
                         txt_no_records.setVisibility(View.VISIBLE);
                         txt_no_records.setText("No service found");
-                        setBottomSheet();
-                        bottomSheetBehavior.setDraggable(false);
 
                         if(response.body().getData().getService_Details().getTitle() != null){
                             txt_selected_service.setText(response.body().getData().getService_Details().getTitle());
@@ -442,6 +458,7 @@ public class SelectedServiceActivity extends AppCompatActivity implements View.O
     private void setViewListedSP(List<SPSpecificServiceDetailsResponse.DataBean.ServiceProviderBean> serviceProviderList) {
         rv_nearbyservices.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         rv_nearbyservices.setItemAnimator(new DefaultItemAnimator());
+    //    rv_nearbyservices.setNestedScrollingEnabled(true);
         SelectedServiceProviderAdapter doctorNewAppointmentAdapter = new SelectedServiceProviderAdapter(getApplicationContext(), serviceProviderList,catid,from,distance,reviewcount,Count_value_start,Count_value_end);
         rv_nearbyservices.setAdapter(doctorNewAppointmentAdapter);
 
@@ -516,29 +533,10 @@ public class SelectedServiceActivity extends AppCompatActivity implements View.O
                 goto_Profile();
                 break;
                 case R.id.rl_filters:
-                goto_SPFilter();
+              //  goto_SPFilter();
                 break;
                 case R.id.edt_filter:
-                goto_SPFilter();
-                break;
-
-            case R.id.rl_homes:
-                callDirections("1");
-                break;
-            case R.id.rl_home:
-                callDirections("1");
-                break;
-            case R.id.rl_shop:
-                callDirections("2");
-                break;
-            case R.id.rl_service:
-                callDirections("3");
-                break;
-            case R.id.rl_care:
-                callDirections("4");
-                break;
-            case R.id.rl_comn:
-                callDirections("5");
+           //     goto_SPFilter();
                 break;
 
 
@@ -619,4 +617,32 @@ public class SelectedServiceActivity extends AppCompatActivity implements View.O
         params.setMargins(i, i1, i2, i3);
         rl_layout.setLayoutParams(params);
     }
+
+    @SuppressLint("NonConstantResourceId")
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.home:
+                callDirections("1");
+                break;
+            case R.id.shop:
+                callDirections("2");
+                break;
+            case R.id.services:
+                callDirections("3");
+                break;
+            case R.id.care:
+                callDirections("4");
+                break;
+            case R.id.community:
+                callDirections("5");
+                break;
+
+            default:
+                return  false;
+        }
+        return true;
+    }
+
 }

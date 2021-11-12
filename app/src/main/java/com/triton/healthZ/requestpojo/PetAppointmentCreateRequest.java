@@ -43,7 +43,7 @@ public class PetAppointmentCreateRequest implements Serializable {
     private String communication_type;
     private String video_id;
     private String user_id;
-    private String pet_id;
+    private String family_id;
     private String problem_info;
     private String doc_feedback;
     private int doc_rate;
@@ -278,12 +278,12 @@ public class PetAppointmentCreateRequest implements Serializable {
     }
 
 
-    public String getPet_id() {
-        return pet_id;
+    public String getFamily_id() {
+        return family_id;
     }
 
-    public void setPet_id(String pet_id) {
-        this.pet_id = pet_id;
+    public void setFamily_id(String family_id) {
+        this.family_id = family_id;
 
     }
 

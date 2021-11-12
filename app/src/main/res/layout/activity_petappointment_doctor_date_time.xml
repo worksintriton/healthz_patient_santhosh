@@ -47,7 +47,7 @@
             <CalendarView
                 android:id="@+id/calendarView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="300dp"
                 android:dateTextAppearance="@style/CalenderViewDateCustomText"
                 android:theme="@style/CalenderViewCustom"
                 android:weekDayTextAppearance="@style/CalenderViewWeekCustomText" />
@@ -66,7 +66,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:fontFamily="@font/futuramediumbt"
+                android:fontFamily="@font/montserrat_bold"
                 android:text="@string/time"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
@@ -167,18 +167,15 @@
         android:layout_margin="20dp">
 
         <Button
-            android:layout_marginStart="60dp"
-            android:layout_marginEnd="60dp"
             android:id="@+id/btn_bookappointment"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@drawable/new_rounded_corner_btn_red"
-            android:fontFamily="@font/futuramediumbt"
+            android:fontFamily="@font/montserrat_bold"
             android:text="@string/continues"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="@dimen/normal_text_size_for_header"
-            />
+            android:textSize="14sp" />
     </LinearLayout>
     <com.wang.avi.AVLoadingIndicatorView
         android:id="@+id/avi_indicator"

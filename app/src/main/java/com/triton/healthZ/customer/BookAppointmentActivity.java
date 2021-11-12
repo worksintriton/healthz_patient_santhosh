@@ -1,7 +1,5 @@
 package com.triton.healthZ.customer;
 
-
-
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
@@ -386,7 +384,7 @@ public class BookAppointmentActivity extends AppCompatActivity implements Paymen
                     Booking_date_time =  PetAppointmentCreateRequestList.get(i).getBooking_date_time();
                     Communication_type =  PetAppointmentCreateRequestList.get(i).getCommunication_type();
                     User_id =  PetAppointmentCreateRequestList.get(i).getUser_id();
-                    Pet_id =  PetAppointmentCreateRequestList.get(i).getPet_id();
+                    Pet_id =  PetAppointmentCreateRequestList.get(i).getFamily_id();
                     Problem_info =  PetAppointmentCreateRequestList.get(i).getProblem_info();
                     Doc_attched =  PetAppointmentCreateRequestList.get(i).getDoc_attched();
                     Display_date =  PetAppointmentCreateRequestList.get(i).getDisplay_date();
@@ -1583,7 +1581,7 @@ public class BookAppointmentActivity extends AppCompatActivity implements Paymen
         petAppointmentCreateRequest.setCommunication_type(selectedCommunicationtype);
         petAppointmentCreateRequest.setVideo_id("");
         petAppointmentCreateRequest.setUser_id(userid);
-        petAppointmentCreateRequest.setPet_id(petId);
+        petAppointmentCreateRequest.setFamily_id(petId);
         petAppointmentCreateRequest.setProblem_info(Problem_info);
         petAppointmentCreateRequest.setDoc_attched(doc_attched);
         petAppointmentCreateRequest.setDoc_feedback("");
