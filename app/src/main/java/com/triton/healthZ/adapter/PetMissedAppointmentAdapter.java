@@ -58,13 +58,13 @@ public class PetMissedAppointmentAdapter extends  RecyclerView.Adapter<RecyclerV
     @SuppressLint({"SetTextI18n", "LogNotTimber"})
     private void initLayoutOne(ViewHolderOne holder, final int position) {
 
-        Log.w(TAG,"Pet name-->"+missedAppointmentResponseList.get(position).getPet_name());
+        Log.w(TAG,"Pet name-->"+missedAppointmentResponseList.get(position).getName());
 
         currentItem = missedAppointmentResponseList.get(position);
 
 
-        if(missedAppointmentResponseList.get(position).getPet_name() != null) {
-            holder.txt_pettype.setText(missedAppointmentResponseList.get(position).getPet_name());
+        if(missedAppointmentResponseList.get(position).getAppointment_type() != null) {
+            holder.txt_pettype.setText(missedAppointmentResponseList.get(position).getName());
         }
         Log.w(TAG,"Missed At : "+missedAppointmentResponseList.get(position).getMissed_at());
 
@@ -151,6 +151,7 @@ public class PetMissedAppointmentAdapter extends  RecyclerView.Adapter<RecyclerV
             @Override
             public void onClick(View v) {
 
+/*
                 Intent i = new Intent(context, PetAppointmentDetailsActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 i.putExtra("appointment_id",missedAppointmentResponseList.get(position).get_id());
                 i.putExtra("bookedat",missedAppointmentResponseList.get(position).getBooked_at());
@@ -158,6 +159,7 @@ public class PetMissedAppointmentAdapter extends  RecyclerView.Adapter<RecyclerV
                 i.putExtra("appointmentfor",missedAppointmentResponseList.get(position).getAppointment_for());
                 i.putExtra("from",TAG);
                 context.startActivity(i);
+*/
 
                 /*if(missedAppointmentResponseList.get(position).getAppointment_for() != null && missedAppointmentResponseList.get(position).getAppointment_for().equalsIgnoreCase("Doctor") ) {
                     Intent i = new Intent(context, PetMissedAppointmentDetailsActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

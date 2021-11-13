@@ -124,9 +124,9 @@ public class PetLoverServiceChoosePaymentMethodActivity extends AppCompatActivit
     @BindView(R.id.viewapply)
     View viewapply;
 
-    @SuppressLint("NonConstantResourceId")
+/*    @SuppressLint("NonConstantResourceId")
     @BindView(R.id.viewTotalamout)
-    View viewTotalamout;
+    View viewTotalamout;*/
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.ll_cost)
@@ -544,7 +544,7 @@ public class PetLoverServiceChoosePaymentMethodActivity extends AppCompatActivit
                         viewapply.setVisibility(View.VISIBLE);
                         ll_cost.setVisibility(View.VISIBLE);
                         ll_discount.setVisibility(View.VISIBLE);
-                        viewTotalamout.setVisibility(View.VISIBLE);
+//                        viewTotalamout.setVisibility(View.VISIBLE);
                         ll_totalamount.setVisibility(View.VISIBLE);
 
                         if(response.body().getData().getDiscount_price() != 0){

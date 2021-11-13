@@ -59,14 +59,14 @@ public class PetWalkinMissedAppointmentAdapter extends  RecyclerView.Adapter<Rec
     @SuppressLint({"SetTextI18n", "LogNotTimber"})
     private void initLayoutOne(ViewHolderOne holder, final int position) {
 
-        Log.w(TAG,"Pet name-->"+missedAppointmentResponseList.get(position).getPet_name());
+    /*    Log.w(TAG,"Pet name-->"+missedAppointmentResponseList.get(position).getPet_name());
 
         currentItem = missedAppointmentResponseList.get(position);
 
 
         if(missedAppointmentResponseList.get(position).getPet_name() != null) {
             holder.txt_pettype.setText(missedAppointmentResponseList.get(position).getPet_name());
-        }
+        }*/
         if(missedAppointmentResponseList.get(position).getMissed_at() != null) {
             holder.txt_missed_date.setText("Missed on:" + " " + missedAppointmentResponseList.get(position).getMissed_at());
 

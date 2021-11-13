@@ -351,7 +351,7 @@
         <activity
             android:name=".customer.SelectYourPetActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"
+            android:theme="@style/BaseAppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".customer.PetVerifyEmailOtpActivity"

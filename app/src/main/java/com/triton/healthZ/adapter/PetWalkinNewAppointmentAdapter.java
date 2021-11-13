@@ -73,14 +73,14 @@ public class PetWalkinNewAppointmentAdapter extends  RecyclerView.Adapter<Recycl
     @SuppressLint({"SetTextI18n", "LogNotTimber"})
     private void initLayoutOne(ViewHolderOne holder, final int position) {
 
-        Log.w(TAG,"Pet name-->"+newAppointmentResponseList.get(position).getPet_name());
-
+     /*   Log.w(TAG,"Pet name-->"+newAppointmentResponseList.get(position).getPet_name());
+*/
         currentItem = newAppointmentResponseList.get(position);
         communicationtype = newAppointmentResponseList.get(position).getCommunication_type();
        Log.w(TAG,"Communicationtype : "+ newAppointmentResponseList.get(position).getCommunication_type());
-       if(newAppointmentResponseList.get(position).getPet_name() != null) {
+   /*    if(newAppointmentResponseList.get(position).getPet_name() != null) {
            holder.txt_petname.setText(newAppointmentResponseList.get(position).getPet_name());
-       }
+       }*/
         if(communicationtype != null){
             if(communicationtype.equalsIgnoreCase("Online")){
                 holder.img_videocall.setVisibility(View.VISIBLE);
@@ -169,8 +169,8 @@ public class PetWalkinNewAppointmentAdapter extends  RecyclerView.Adapter<Recycl
 
 
             holder.btn_cancel.setOnClickListener(v -> {
-                Log.w(TAG,"paymentmethod : "+newAppointmentResponseList.get(position).getPayment_method());
-                onAppointmentCancel.onAppointmentCancel(newAppointmentResponseList.get(position).get_id(), newAppointmentResponseList.get(position).getAppointment_for(), newAppointmentResponseList.get(position).getUser_id(), newAppointmentResponseList.get(position).getDoctor_id(), newAppointmentResponseList.get(position).getBooking_Id(), newAppointmentResponseList.get(position).getSp_id(),newAppointmentResponseList.get(position).getCost(),newAppointmentResponseList.get(position).getPayment_method());
+            //    Log.w(TAG,"paymentmethod : "+newAppointmentResponseList.get(position).getPayment_method());
+                onAppointmentCancel.onAppointmentCancel(newAppointmentResponseList.get(position).get_id(), newAppointmentResponseList.get(position).getAppointment_for(), newAppointmentResponseList.get(position).getUser_id(), newAppointmentResponseList.get(position).getDoctor_id(), newAppointmentResponseList.get(position).getBooking_Id(), newAppointmentResponseList.get(position).getSp_id(),newAppointmentResponseList.get(position).getCost(),"");
             });
 
         if(newAppointmentResponseList.get(position).getStart_appointment_status() != null && newAppointmentResponseList.get(position).getStart_appointment_status().equalsIgnoreCase("Not Started")){

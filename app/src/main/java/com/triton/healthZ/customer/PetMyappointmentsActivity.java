@@ -28,6 +28,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 import com.triton.healthZ.R;
 
@@ -58,6 +59,8 @@ public class PetMyappointmentsActivity extends AppCompatActivity implements Bott
     View include_petlover_footer;
 
     BottomNavigationView bottom_navigation_view;
+
+    FloatingActionButton fab;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.viewPager)
@@ -200,10 +203,19 @@ public class PetMyappointmentsActivity extends AppCompatActivity implements Bott
         img_cart.setOnClickListener(this);
         img_profile.setOnClickListener(this);
 
-//        bottom_navigation_view = include_petlover_footer.findViewById(R.id.bottom_navigation_view);
-//        bottom_navigation_view.setItemIconTintList(null);
-//        bottom_navigation_view.setOnNavigationItemSelectedListener(this);
-//        bottom_navigation_view.getMenu().findItem(R.id.home).setChecked(true);
+        fab = include_petlover_footer.findViewById(R.id.fab);
+
+        bottom_navigation_view = include_petlover_footer.findViewById(R.id.bottomNavigation);
+        bottom_navigation_view.setItemIconTintList(null);
+        bottom_navigation_view.setOnNavigationItemSelectedListener(this);
+        bottom_navigation_view.getMenu().findItem(R.id.home).setChecked(true);
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                callDirections("11");
+            }
+        });
 
 /*
         */

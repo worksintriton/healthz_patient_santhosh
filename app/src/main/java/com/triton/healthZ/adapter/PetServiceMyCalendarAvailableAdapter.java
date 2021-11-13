@@ -100,10 +100,10 @@ public class PetServiceMyCalendarAvailableAdapter extends  RecyclerView.Adapter<
         });
 
         if(selectedPosition==position){
-            holder.txt_days.setBackgroundResource(R.drawable.button_blue_rounded_corner);
+            holder.txt_days.setBackgroundResource(R.drawable.button_blue_rounded_corner_without_stroke);
             holder.txt_days.setTextColor(ContextCompat.getColor(context, R.color.white));
         } else{
-            holder.txt_days.setBackgroundResource(R.drawable.button_rounded_corner);
+            holder.txt_days.setBackgroundResource(R.drawable.white_corner_background_solid);
             holder.txt_days.setTextColor(ContextCompat.getColor(context, R.color.black));
 
         }

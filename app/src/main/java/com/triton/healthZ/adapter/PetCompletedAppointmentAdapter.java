@@ -62,11 +62,11 @@ public class PetCompletedAppointmentAdapter extends  RecyclerView.Adapter<Recycl
 
     @SuppressLint({"SetTextI18n", "LogNotTimber", "LongLogTag"})
     private void initLayoutOne(ViewHolderOne holder, final int position) {
-        Log.w(TAG,"Pet name-->"+completedAppointmentResponseList.get(position).getPet_name());
+       /* Log.w(TAG,"Pet name-->"+completedAppointmentResponseList.get(position).getPet_name());
         if(completedAppointmentResponseList.get(position).getPet_name() != null){
             holder.txt_pettype.setText(completedAppointmentResponseList.get(position).getPet_name());
 
-        }
+        }*/
         if(completedAppointmentResponseList.get(position).getCompleted_at() != null) {
             holder.txt_completed_date.setText("Completed on:" + " " + completedAppointmentResponseList.get(position).getCompleted_at());
 
@@ -147,7 +147,7 @@ public class PetCompletedAppointmentAdapter extends  RecyclerView.Adapter<Recycl
 
         holder.ll_new.setOnClickListener(v -> {
 
-            Intent i = new Intent(context, PetAppointmentDetailsActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+         /*   Intent i = new Intent(context, PetAppointmentDetailsActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             i.putExtra("appointment_id",completedAppointmentResponseList.get(position).get_id());
             i.putExtra("bookedat",completedAppointmentResponseList.get(position).getBooked_at());
             i.putExtra("startappointmentstatus",completedAppointmentResponseList.get(position).getStart_appointment_status());
@@ -156,7 +156,7 @@ public class PetCompletedAppointmentAdapter extends  RecyclerView.Adapter<Recycl
             i.putExtra("userfeedback", completedAppointmentResponseList.get(position).getUser_feedback());
             i.putExtra("from",TAG);
             context.startActivity(i);
-
+*/
            /* if(completedAppointmentResponseList.get(position).getAppointment_for() != null && completedAppointmentResponseList.get(position).getAppointment_for().equalsIgnoreCase("Doctor") ) {
                 Intent i = new Intent(context, PetCompletedAppointmentDetailsActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 i.putExtra("appointment_id",completedAppointmentResponseList.get(position).get_id());

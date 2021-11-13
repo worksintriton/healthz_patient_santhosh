@@ -925,29 +925,6 @@ public class CustomerProfileScreenActivity extends AppCompatActivity implements 
     public void onClick(View v) {
         switch (v.getId()){
 
-            case R.id.rl_homes:
-                callDirections("1");
-                break;
-
-            case R.id.rl_home:
-                callDirections("1");
-                break;
-
-            case R.id.rl_shop:
-                callDirections("2");
-                break;
-            case R.id.rl_service:
-                callDirections("3");
-                break;
-
-            case R.id.rl_care:
-                callDirections("4");
-                break;
-
-            case R.id.rl_comn:
-                callDirections("5");
-                break;
-
             case R.id.img_back:
                 onBackPressed();
                 break;

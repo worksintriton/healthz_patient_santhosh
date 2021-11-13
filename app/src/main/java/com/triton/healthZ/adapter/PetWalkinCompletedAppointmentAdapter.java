@@ -61,11 +61,11 @@ public class PetWalkinCompletedAppointmentAdapter extends  RecyclerView.Adapter<
 
     @SuppressLint({"SetTextI18n", "LogNotTimber", "LongLogTag"})
     private void initLayoutOne(ViewHolderOne holder, final int position) {
-        Log.w(TAG,"Pet name-->"+completedAppointmentResponseList.get(position).getPet_name());
+/*        Log.w(TAG,"Pet name-->"+completedAppointmentResponseList.get(position).getPet_name());
         if(completedAppointmentResponseList.get(position).getPet_name() != null){
             holder.txt_pettype.setText(completedAppointmentResponseList.get(position).getPet_name());
 
-        }
+        }*/
         if(completedAppointmentResponseList.get(position).getCompleted_at() != null) {
             holder.txt_completed_date.setText("Completed on:" + " " + completedAppointmentResponseList.get(position).getCompleted_at());
 

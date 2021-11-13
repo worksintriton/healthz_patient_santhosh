@@ -83,14 +83,14 @@ public class PetNewAppointmentAdapter extends  RecyclerView.Adapter<RecyclerView
     @SuppressLint({"SetTextI18n", "LogNotTimber"})
     private void initLayoutOne(ViewHolderOne holder, final int position) {
 
-        Log.w(TAG,"Pet name-->"+newAppointmentResponseList.get(position).getPet_name());
+        Log.w(TAG,"Pet name-->"+newAppointmentResponseList.get(position).getName());
 
         currentItem = newAppointmentResponseList.get(position);
         appointment_id = newAppointmentResponseList.get(position).get_id();
         communicationtype = newAppointmentResponseList.get(position).getCommunication_type();
        Log.w(TAG,"Communicationtype : "+ newAppointmentResponseList.get(position).getCommunication_type());
-       if(newAppointmentResponseList.get(position).getPet_name() != null) {
-           holder.txt_petname.setText(newAppointmentResponseList.get(position).getPet_name());
+       if(newAppointmentResponseList.get(position).getName() != null) {
+           holder.txt_petname.setText(newAppointmentResponseList.get(position).getName());
        }
         if(communicationtype != null){
             if(communicationtype.equalsIgnoreCase("Online")){
@@ -180,8 +180,8 @@ public class PetNewAppointmentAdapter extends  RecyclerView.Adapter<RecyclerView
 
 
             holder.btn_cancel.setOnClickListener(v -> {
-                Log.w(TAG,"paymentmethod : "+newAppointmentResponseList.get(position).getPayment_method());
-                onAppointmentCancel.onAppointmentCancel(newAppointmentResponseList.get(position).get_id(), newAppointmentResponseList.get(position).getAppointment_for(), newAppointmentResponseList.get(position).getUser_id(), newAppointmentResponseList.get(position).getDoctor_id(), newAppointmentResponseList.get(position).getBooking_Id(), newAppointmentResponseList.get(position).getSp_id(),newAppointmentResponseList.get(position).getCost(),newAppointmentResponseList.get(position).getPayment_method());
+                //Log.w(TAG,"paymentmethod : "+newAppointmentResponseList.get(position).getPayment_method());
+                onAppointmentCancel.onAppointmentCancel(newAppointmentResponseList.get(position).get_id(), newAppointmentResponseList.get(position).getAppointment_for(), newAppointmentResponseList.get(position).getUser_id(), newAppointmentResponseList.get(position).getDoctor_id(), newAppointmentResponseList.get(position).getBooking_Id(), newAppointmentResponseList.get(position).getSp_id(),newAppointmentResponseList.get(position).getCost(),"");
             });
 
         if(newAppointmentResponseList.get(position).getStart_appointment_status() != null && newAppointmentResponseList.get(position).getStart_appointment_status().equalsIgnoreCase("Not Started")){
@@ -209,13 +209,13 @@ public class PetNewAppointmentAdapter extends  RecyclerView.Adapter<RecyclerView
 
 
         holder.ll_new.setOnClickListener(v -> {
-            Intent i = new Intent(context, PetAppointmentDetailsActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        /*    Intent i = new Intent(context, PetAppointmentDetailsActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             i.putExtra("appointment_id",newAppointmentResponseList.get(position).get_id());
             i.putExtra("bookedat",newAppointmentResponseList.get(position).getBooked_at());
             i.putExtra("startappointmentstatus",newAppointmentResponseList.get(position).getStart_appointment_status());
             i.putExtra("appointmentfor",newAppointmentResponseList.get(position).getAppointment_for());
             i.putExtra("from",TAG);
-            context.startActivity(i);
+            context.startActivity(i);*/
 
             /*if(newAppointmentResponseList.get(position).getAppointment_for() != null && newAppointmentResponseList.get(position).getAppointment_for().equalsIgnoreCase("Doctor") ) {
                 Intent i = new Intent(context, PetNewAppointmentDetailsActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -249,7 +249,7 @@ public class PetNewAppointmentAdapter extends  RecyclerView.Adapter<RecyclerView
     static class ViewHolderOne extends RecyclerView.ViewHolder {
         public TextView txt_clinicname,txt_petname,txt_type,txt_service_cost,txt_bookedon,txt_lbl_doctorname,txt_doctorname;
         public ImageView img_clinic_imge,img_emergency_appointment,img_videocall;
-        public Button btn_cancel;
+        public LinearLayout btn_cancel;
         LinearLayout ll_new;
 
 

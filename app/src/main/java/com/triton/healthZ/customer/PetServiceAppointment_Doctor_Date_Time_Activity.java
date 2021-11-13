@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.CalendarView;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 
@@ -103,12 +104,19 @@ public class PetServiceAppointment_Doctor_Date_Time_Activity extends AppCompatAc
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.avi_indicator)
     AVLoadingIndicatorView avi_indicator;
+/*
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.datePickerTimeline)
     DatePickerTimeline datePickerTimeline ;
 
 
+*/
+
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.calendarView)
+    CalendarView calendarView;
 
     private String spid,catid,from;
     private String spuserid;
@@ -251,20 +259,13 @@ public class PetServiceAppointment_Doctor_Date_Time_Activity extends AppCompatAc
         int month = calendar.get(Calendar.MONTH);
         int date = calendar.get(Calendar.DATE);
 
-        // Set a Start date (Default, 1 Jan 1970)
-        datePickerTimeline.setInitialDate(year, month, date);
+          calendarView.setDate(calendar.getTimeInMillis(), true, true);
 
-        datePickerTimeline.setDateTextColor(getResources().getColor(R.color.new_gree_color));
-        //datePickerTimeline.setDayTextColor(Color.parseColor("#009675"));
-        datePickerTimeline.setDayTextColor(getResources().getColor(R.color.new_gree_color));
-        datePickerTimeline.setMonthTextColor(getResources().getColor(R.color.new_gree_color));
-      // Set a date Selected Listener
-        datePickerTimeline.setOnDateSelectedListener(new OnDateSelectedListener() {
-            @SuppressLint("LogNotTimber")
+        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
-            public void onDateSelected(int year, int month, int dayOfMonth, int dayOfWeek) {
-                // Do Something
+            public void onSelectedDayChange(@NonNull CalendarView calendarView, int year, int month, int dayOfMonth) {
 
+                // Do Something
                 selectedTimeSlot = "";
                 String strdayOfMonth;
                 String strMonth;
@@ -286,18 +287,16 @@ public class PetServiceAppointment_Doctor_Date_Time_Activity extends AppCompatAc
                 String Date = strdayOfMonth + "-" + strMonth + "-" + year;
                 Log.w(TAG,"Selected Date-->"+Date);
 
+
                 if (new ConnectionDetector(PetServiceAppointment_Doctor_Date_Time_Activity.this).isNetworkAvailable(PetServiceAppointment_Doctor_Date_Time_Activity.this)) {
                     spAvailableTimeResponseCall(Date);
                 }
 
 
-            }
 
-            @Override
-            public void onDisabledDateSelected(int year, int month, int day, int dayOfWeek, boolean isDisabled) {
-                // Do Something
             }
         });
+
 
       /*// Disable date
         Date[] dates = {Calendar.getInstance().getTime()};

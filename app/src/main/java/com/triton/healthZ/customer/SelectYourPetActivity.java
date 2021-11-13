@@ -254,7 +254,7 @@ public class SelectYourPetActivity extends AppCompatActivity implements View.OnC
             @Override
             public void onClick(View view) {
                 if(fromactivity != null && fromactivity.equalsIgnoreCase("PetServiceAppointment_Doctor_Date_Time_Activity")){
-                    Intent intent = new Intent(getApplicationContext(),AddNewPetActivity.class);
+                    Intent intent = new Intent(getApplicationContext(),AddYourFamilyMembersSelectActivity.class);
                     intent.putExtra("spid",spid);
                     intent.putExtra("catid",catid);
                     intent.putExtra("from",from);
@@ -270,7 +270,7 @@ public class SelectYourPetActivity extends AppCompatActivity implements View.OnC
                     startActivity(intent);
                 }
                 else {
-                    Intent intent = new Intent(SelectYourPetActivity.this, AddNewPetActivity.class);
+                    Intent intent = new Intent(SelectYourPetActivity.this, AddYourFamilyMembersSelectActivity.class);
                     intent.putExtra("doctorid", doctorid);
                     intent.putExtra("fromactivity", TAG);
                     intent.putExtra("Doctor_ava_Date", Doctor_ava_Date);

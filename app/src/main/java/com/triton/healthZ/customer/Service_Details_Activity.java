@@ -15,6 +15,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 
 import android.widget.ImageView;
@@ -30,7 +31,9 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 import com.google.gson.Gson;
 import com.triton.healthZ.R;
@@ -62,7 +65,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class Service_Details_Activity extends AppCompatActivity implements View.OnClickListener, OnMapReadyCallback {
+public class Service_Details_Activity extends AppCompatActivity implements View.OnClickListener, OnMapReadyCallback, BottomNavigationView.OnNavigationItemSelectedListener {
 
     private String TAG = "Service_Details_Activity";
 
@@ -132,14 +135,19 @@ public class Service_Details_Activity extends AppCompatActivity implements View.
     @BindView(R.id.img_selectedserviceimage)
     ImageView img_selectedserviceimage;
 
-    SPDetails_SpecTypesListAdapter spDetails_specTypesListAdapter;
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_dr_experience)
+    TextView txt_dr_experience;
 
-    private String active_tag;
+    SPDetails_SpecTypesListAdapter spDetails_specTypesListAdapter;
 
     int currentPage = 0;
     Timer timer;
     final long DELAY_MS = 500;//delay in milliseconds before task is to be executed
     final long PERIOD_MS = 3000;
+
+
+    StringBuilder sb = new StringBuilder();
 
 
 
@@ -190,7 +198,7 @@ public class Service_Details_Activity extends AppCompatActivity implements View.
     ImageView img_fav;
 
     @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.ll_root1)
+    @BindView(R.id.ll_root)
     LinearLayout ll_root1;
 
 
@@ -226,6 +234,10 @@ public class Service_Details_Activity extends AppCompatActivity implements View.
     @BindView(R.id.txt_review_count)
     TextView txt_review_count;
 
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.view11)
+    View view11;
+
     List<SPDetailsRepsonse.DataBean.BusSpecListBean> specializationBeanList;
 
     String serv_name,selectedServiceImagepath;
@@ -236,6 +248,17 @@ public class Service_Details_Activity extends AppCompatActivity implements View.
     private int Count_value_start;
     private int Count_value_end;
 
+    /* Petlover Bottom Navigation */
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.fab)
+    FloatingActionButton floatingActionButton;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.bottomNavigation)
+    BottomNavigationView bottomNavigation;
+
+    public static String active_tag = "3";
 
    /**/
     @Override
@@ -302,6 +325,7 @@ public class Service_Details_Activity extends AppCompatActivity implements View.
             }
         });
 
+        view11.setVisibility(View.GONE);
 
         viewPager.setVisibility(View.GONE);
 
@@ -341,6 +365,8 @@ public class Service_Details_Activity extends AppCompatActivity implements View.
 
         ll_map.setVisibility(View.GONE);
 
+        txt_review_count.setVisibility(View.GONE);
+
 //        setBottomSheet();
 //
 //
@@ -350,6 +376,40 @@ public class Service_Details_Activity extends AppCompatActivity implements View.
 //        }
 //
 //        img_fav.setOnClickListener(this);
+
+        bottomNavigation.getMenu().getItem(0).setCheckable(false);
+
+
+        floatingActionButton.setImageResource(R.drawable.ic_hzhome_png);
+
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                callDirections("1");
+            }
+        });
+
+
+        if(active_tag != null){
+            if(active_tag.equalsIgnoreCase("1")){
+                bottomNavigation.setSelectedItemId(R.id.home);
+            }else if(active_tag.equalsIgnoreCase("2")){
+                bottomNavigation.setSelectedItemId(R.id.shop);
+            }else if(active_tag.equalsIgnoreCase("3")){
+                bottomNavigation.setSelectedItemId(R.id.services);
+            }else if(active_tag.equalsIgnoreCase("4")){
+                bottomNavigation.setSelectedItemId(R.id.care);
+            } else if(active_tag.equalsIgnoreCase("5")){
+                bottomNavigation.setSelectedItemId(R.id.community);
+            }
+        }
+        else{
+            bottomNavigation.setSelectedItemId(R.id.home);
+        }
+
+        bottomNavigation.setOnNavigationItemSelectedListener(this);
+
     }
 
 
@@ -588,12 +648,9 @@ public class Service_Details_Activity extends AppCompatActivity implements View.
 
                         ll_root1.setVisibility(View.VISIBLE);
 
-
                         txt_spec_label.setVisibility(View.VISIBLE);
 
                         rv_speclist.setVisibility(View.VISIBLE);
-
-                        txt_pet_hanldle.setVisibility(View.VISIBLE);
 
                         ll_popular_serv.setVisibility(View.VISIBLE);
 
@@ -603,7 +660,15 @@ public class Service_Details_Activity extends AppCompatActivity implements View.
 
                         ll_map.setVisibility(View.VISIBLE);
 
-                        setBottomSheet();
+                        txt_aboutsp_label.setVisibility(View.VISIBLE);
+
+                        txt_dr_desc.setVisibility(View.VISIBLE);
+
+                        txt_review_count.setVisibility(View.VISIBLE);
+
+                        view11.setVisibility(View.VISIBLE);
+
+                        //setBottomSheet();
 
                         img_fav.setOnClickListener(Service_Details_Activity.this);
 
@@ -672,13 +737,6 @@ public class Service_Details_Activity extends AppCompatActivity implements View.
 
                         if(response.body().getDetails().getTitle() != null) {
                             selectedServiceTitle = response.body().getDetails().getTitle();
-                        }
-                        if(response.body().getDetails().getAmount() != 0) {
-                            serviceamount = response.body().getDetails().getAmount();
-
-                            txt_dr_consultationfees.setText("INR "+serviceamount);
-
-
                         }
 
                         if(response.body().getDetails().getTitle() != null) {
@@ -767,18 +825,44 @@ public class Service_Details_Activity extends AppCompatActivity implements View.
                         if(location != null && !location.isEmpty()){
                             txt_place.setText(location);
                         }
+                        if(response.body().getDetails().getAmount() != 0) {
+                            serviceamount = response.body().getDetails().getAmount();
+
+                            txt_dr_consultationfees.setText("\u20B9"+serviceamount);
+                        }
+
+                        sb.append("|");
 
                         if(distance != null&&!distance.isEmpty()){
 
-                            txt_distance.setText(distance+" KM Away");
+                            sb.append(distance);
+
 
                         }
                         else if(APIClient.SP_DISTANCE != null&&!APIClient.SP_DISTANCE.isEmpty()){
 
-                            txt_distance.setText(APIClient.SP_DISTANCE+" KM Away");
+                            //txt_distance.setText(APIClient.SP_DISTANCE+" KM Away");
+
+                            sb.append(APIClient.SP_DISTANCE);
+
+                            sb.append(" KM Away");
 
                         }
 
+                        if(sb!=null){
+
+                            txt_dr_experience.setText(sb);
+                        }
+
+                        if(response.body().getData().getComments() != 0){
+
+                            txt_review_count.setText(""+response.body().getData().getComments());
+
+                        }
+                        else {
+
+                            txt_review_count.setText("");
+                        }
 
                         if(spServiceGalleryResponseList != null && spServiceGalleryResponseList.size()>0){
 
@@ -932,5 +1016,33 @@ public class Service_Details_Activity extends AppCompatActivity implements View.
         rv_speclist.setAdapter(spDetails_specTypesListAdapter);
 
     }
+
+    @SuppressLint("NonConstantResourceId")
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.home:
+                callDirections("1");
+                break;
+            case R.id.shop:
+                callDirections("2");
+                break;
+            case R.id.services:
+                callDirections("3");
+                break;
+            case R.id.care:
+                callDirections("4");
+                break;
+            case R.id.community:
+                callDirections("5");
+                break;
+
+            default:
+                return  false;
+        }
+        return true;
+    }
+
 
 }

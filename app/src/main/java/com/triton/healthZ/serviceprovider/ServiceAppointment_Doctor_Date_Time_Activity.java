@@ -100,9 +100,11 @@ public class ServiceAppointment_Doctor_Date_Time_Activity extends AppCompatActiv
     @BindView(R.id.avi_indicator)
     AVLoadingIndicatorView avi_indicator;
 
+/*
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.datePickerTimeline)
     DatePickerTimeline datePickerTimeline ;
+*/
 
 
 
@@ -257,53 +259,53 @@ public class ServiceAppointment_Doctor_Date_Time_Activity extends AppCompatActiv
         int month = calendar.get(Calendar.MONTH);
         int date = calendar.get(Calendar.DATE);
 
-        // Set a Start date (Default, 1 Jan 1970)
-        datePickerTimeline.setInitialDate(year, month, date);
-
-        datePickerTimeline.setDateTextColor(getResources().getColor(R.color.new_gree_color));
-        //datePickerTimeline.setDayTextColor(Color.parseColor("#009675"));
-        datePickerTimeline.setDayTextColor(getResources().getColor(R.color.new_gree_color));
-        datePickerTimeline.setMonthTextColor(getResources().getColor(R.color.new_gree_color));
-      // Set a date Selected Listener
-        datePickerTimeline.setOnDateSelectedListener(new OnDateSelectedListener() {
-            @SuppressLint("LogNotTimber")
-            @Override
-            public void onDateSelected(int year, int month, int dayOfMonth, int dayOfWeek) {
-                // Do Something
-
-                selectedTimeSlot = "";
-                String strdayOfMonth;
-                String strMonth;
-                int month1 =(month + 1);
-                if(dayOfMonth == 9 || dayOfMonth <9){
-                    strdayOfMonth = "0"+dayOfMonth;
-                    Log.w(TAG,"Selected dayOfMonth-->"+strdayOfMonth);
-                }else{
-                    strdayOfMonth = String.valueOf(dayOfMonth);
-                }
-
-                if(month1 == 9 || month1 <9){
-                    strMonth = "0"+month1;
-                    Log.w(TAG,"Selected month1-->"+strMonth);
-                }else{
-                    strMonth = String.valueOf(month1);
-                }
-
-                String Date = strdayOfMonth + "-" + strMonth + "-" + year;
-                Log.w(TAG,"Selected Date-->"+Date);
-
-                if (new ConnectionDetector(ServiceAppointment_Doctor_Date_Time_Activity.this).isNetworkAvailable(ServiceAppointment_Doctor_Date_Time_Activity.this)) {
-                    spAvailableTimeResponseCall(Date);
-                }
-
-
-            }
-
-            @Override
-            public void onDisabledDateSelected(int year, int month, int day, int dayOfWeek, boolean isDisabled) {
-                // Do Something
-            }
-        });
+//        // Set a Start date (Default, 1 Jan 1970)
+//        datePickerTimeline.setInitialDate(year, month, date);
+//
+//        datePickerTimeline.setDateTextColor(getResources().getColor(R.color.new_gree_color));
+//        //datePickerTimeline.setDayTextColor(Color.parseColor("#009675"));
+//        datePickerTimeline.setDayTextColor(getResources().getColor(R.color.new_gree_color));
+//        datePickerTimeline.setMonthTextColor(getResources().getColor(R.color.new_gree_color));
+//      // Set a date Selected Listener
+//        datePickerTimeline.setOnDateSelectedListener(new OnDateSelectedListener() {
+//            @SuppressLint("LogNotTimber")
+//            @Override
+//            public void onDateSelected(int year, int month, int dayOfMonth, int dayOfWeek) {
+//                // Do Something
+//
+//                selectedTimeSlot = "";
+//                String strdayOfMonth;
+//                String strMonth;
+//                int month1 =(month + 1);
+//                if(dayOfMonth == 9 || dayOfMonth <9){
+//                    strdayOfMonth = "0"+dayOfMonth;
+//                    Log.w(TAG,"Selected dayOfMonth-->"+strdayOfMonth);
+//                }else{
+//                    strdayOfMonth = String.valueOf(dayOfMonth);
+//                }
+//
+//                if(month1 == 9 || month1 <9){
+//                    strMonth = "0"+month1;
+//                    Log.w(TAG,"Selected month1-->"+strMonth);
+//                }else{
+//                    strMonth = String.valueOf(month1);
+//                }
+//
+//                String Date = strdayOfMonth + "-" + strMonth + "-" + year;
+//                Log.w(TAG,"Selected Date-->"+Date);
+//
+//                if (new ConnectionDetector(ServiceAppointment_Doctor_Date_Time_Activity.this).isNetworkAvailable(ServiceAppointment_Doctor_Date_Time_Activity.this)) {
+//                    spAvailableTimeResponseCall(Date);
+//                }
+//
+//
+//            }
+//
+//            @Override
+//            public void onDisabledDateSelected(int year, int month, int day, int dayOfWeek, boolean isDisabled) {
+//                // Do Something
+//            }
+//        });
 
       /*// Disable date
         Date[] dates = {Calendar.getInstance().getTime()};
