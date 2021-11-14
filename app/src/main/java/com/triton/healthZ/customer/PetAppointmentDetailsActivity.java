@@ -283,7 +283,7 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
     private String userrate;
     Dialog alertDialog;
     private String appointmentid;
-    private List<PetNewAppointmentDetailsResponse.DataBean.PetIdBean.PetImgBean> pet_image;
+ //   private List<PetNewAppointmentDetailsResponse.DataBean.PetIdBean.PetImgBean> pet_image;
     private String petAgeandMonth;
 
     private String concatenatedStarNames = "";
@@ -573,7 +573,7 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
         if(appointmentfor != null){
             if(appointmentfor.equalsIgnoreCase("Doctor")){
                 if (new ConnectionDetector(PetAppointmentDetailsActivity.this).isNetworkAvailable(PetAppointmentDetailsActivity.this)) {
-                    petNewAppointmentResponseCall();
+             //       petNewAppointmentResponseCall();
                 }
             }
             else if(appointmentfor.equalsIgnoreCase("SP")){
@@ -584,6 +584,7 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
 
         }
     }
+/*
 
 
     @SuppressLint({"LongLogTag", "LogNotTimber"})
@@ -689,7 +690,8 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
                             Paymentmethod = response.body().getData().getPayment_method();
                             doctorid = response.body().getData().getDoc_business_info().get(0).getUser_id();
 
-                            /*if(pet_dob != null){
+                            */
+/*if(pet_dob != null){
                             String[] separated = pet_dob.split("-");
                             String day = separated[0];
                             String month = separated[1];
@@ -697,7 +699,8 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
                             Log.w(TAG,"day : "+day+" month: "+month+" year : "+year);
 
                             getAge(Integer.parseInt(year),Integer.parseInt(month),Integer.parseInt(day));
-                            }*/
+                            }*//*
+
 
 
                             if(from != null){
@@ -909,6 +912,7 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
         });
 
     }
+*/
 
 
     @SuppressLint({"LongLogTag", "LogNotTimber"})
@@ -948,7 +952,8 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
             txt_serv_name.setVisibility(View.GONE);
         }
 
-        
+/*
+
         if(pet_image != null && pet_image.size()>0){
             String petimage = null;
             for(int i=0;i<pet_image.size();i++){
@@ -963,6 +968,7 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
                     .load(APIClient.PROFILE_IMAGE_URL)
                     .into(img_petimg);
         }
+*/
 
 
         if(pet_name != null && !pet_name.isEmpty()){
@@ -1294,7 +1300,7 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
                             spid = response.body().getData().getSp_id().get_id();
                             appointmentid = response.body().getData().getAppointment_UID();
                             userid = response.body().getData().getUser_id().get_id();
-                            pet_image = response.body().getData().getPet_id().getPet_img();
+                   //         pet_image = response.body().getData().getPet_id().getPet_img();
 
                             if(response.body().getData().getBooking_date_time() != null){
                                 txt_appointment_date.setText(response.body().getData().getBooking_date_time());
