@@ -7,52 +7,70 @@ public class PetNewAppointmentDetailsResponse {
 
     /**
      * Status : Success
-     * Message : New Appointment List
-     * Data : {"sp_attched":[],"sp_business_info":[{"bus_service_list":[{"amount":250,"time_slots":"15 mins","bus_service_list":"Pet Grooming"},{"amount":350,"time_slots":"15 mins","bus_service_list":" Pet Training"},{"amount":200,"time_slots":"15 mins","bus_service_list":"Pet daycare"}],"bus_spec_list":[{"bus_spec_list":"Kennel Cut"},{"bus_spec_list":"Teddy Bear Trim"},{"bus_spec_list":"Full Coat / Show Trims"}],"bus_service_gall":[{"bus_service_gall":"http://54.212.108.156:3000/api/uploads/1625687015621.png"},{"bus_service_gall":"http://54.212.108.156:3000/api/uploads/1625687032584.png"},{"bus_service_gall":"http://54.212.108.156:3000/api/uploads/1625687050185.png"},{"bus_service_gall":"http://54.212.108.156:3000/api/uploads/1625687064021.png"}],"bus_certif":[{"bus_certif":"http://54.212.108.156:3000/api/uploads/60b0b7b267f25056fe286c8f2709161305"}],"_id":"60b0b86d67f25056fe286c90","user_id":"60b0b7b267f25056fe286c8f","bus_user_name":"Sri","bus_user_email":"sriram@gmail.com","bussiness_name":"Sri Pet Spa and Groomers","bus_user_phone":"7417417411","bus_profile":"http://54.212.108.156:3000/api/uploads/60b0b7b267f25056fe286c8f2709161240","bus_proof":"http://54.212.108.156:3000/api/uploads/60b0b7b267f25056fe286c8f2709161255","date_and_time":"27-09-2021 04:13 PM","mobile_type":"IOS","profile_status":true,"profile_verification_status":"Verified","sp_loc":"Thedir nagar, Otteri, Purasaiwakkam, Chennai, Tamil Nadu 600010, India","sp_lat":13.090018359673415,"sp_long":80.25077305734156,"delete_status":false,"calender_status":true,"updatedAt":"2021-09-27T10:43:54.697Z","createdAt":"2021-05-28T09:31:25.998Z","__v":0,"thumbnail_image":"http://54.212.108.156:3000/api/uploads/1625679966323.png","city_name":"Chennai","sp_info":"","comments":0,"rating":5}],"current_img":[],"_id":"618e704a708d4f2a40c3733d","sp_id":{"_id":"60b0b7b267f25056fe286c8f","first_name":"Sri","last_name":"DineshSP","user_email":"sriram@gmail.com","user_phone":"7417417411","date_of_reg":"28-05-2021 02:58 PM","user_type":2,"ref_code":"","my_ref_code":"M60LFAR","user_status":"complete","otp":123456,"profile_img":"http://54.212.108.156:3000/api/uploads/60b0b7b267f25056fe286c8f2709161441","user_email_verification":false,"fb_token":"","device_id":"","device_type":"","mobile_type":"IOS","delete_status":false,"updatedAt":"2021-10-05T05:24:33.281Z","createdAt":"2021-05-28T09:28:18.912Z","__v":0},"appointment_UID":"SP-1636724810108","booking_date":"13-11-2021","booking_time":"04:00 AM","booking_date_time":"13-11-2021 04:00 AM","user_id":{"_id":"60b73c4638e95868d79be9c6","first_name":"Sandy","last_name":"Kumar","user_email":"santhoshvsk94@gmail.com","user_phone":"9159207294","date_of_reg":"02/06/2021 01:37 PM","user_type":1,"ref_code":"","my_ref_code":"PS2Z0G5","user_status":"complete","otp":123456,"profile_img":"https://petfolio.app/api/uploads/1636446897807.jpg","user_email_verification":true,"fb_token":"eSmXofXoThep_SnI-2GAgz:APA91bEM6IUwx5UCZrdK3lLUIeZ8_sD4yWjxNKdWU8scr9P_b4euu5S9_WUwu0FU4tBoDW_ZjfyUeU2rH1bBTlomjkGI-N_LMxyN0yl8BQ9fSNte2S7TBgfDESvEFpVNN921yJ-c58NG","device_id":"","device_type":"","mobile_type":"Android","delete_status":false,"updatedAt":"2021-11-13T14:52:30.422Z","createdAt":"2021-06-02T08:07:34.088Z","__v":0},"family_id":{"pic":[{"image":"http://35.164.43.170:3000/api/uploads/1636723125049.jpg"}],"_id":"618e69ea14caf42412258d80","user_id":"60b73c4638e95868d79be9c6","name":"Sample","gender":"Male","relation_type":"Others","health_issue":"Diabetes","dateofbirth":"11/12/21","anymedicalinfo":"sample","covide_vac":"Yes","weight":"66","delete_status":false,"createdAt":"2021-11-12T13:19:38.893Z","updatedAt":"2021-11-12T13:19:38.893Z","__v":0},"additional_info":"","appoinment_status":"Incomplete","start_appointment_status":"Not Started","end_appointment_status":"Not End","sp_feedback":"","sp_rate":null,"user_feedback":"","user_rate":"0","display_date":"2021-11-13 04:00:00","server_date_time":"","payment_id":"","payment_method":"Online","service_name":"Pet Grooming","service_amount":"250","service_time":"15 mins","completed_at":"","missed_at":"","mobile_type":"Android","delete_status":false,"date_and_time":"12-11-2021 07:16 PM","coupon_status":"Not Applied","coupon_code":"","original_price":0,"discount_price":0,"total_price":250,"updatedAt":"2021-11-12T13:46:50.120Z","createdAt":"2021-11-12T13:46:50.116Z","__v":0}
+     * Message : Appointment details
+     * Data : {"doc_attched":[],"doc_business_info":[{"education_details":[{"year":"2020","education":"mbbs"}],"experience_details":[{"yearsofexperience":"1","to":"2021","company":"bette","from":"2020"}],"specialization":[{"specialization":"Surgery"},{"specialization":"General Consultant"},{"specialization":"Nutrition"},{"specialization":"Dentistry"},{"specialization":"Behavior"},{"specialization":"Emergency and Critical Care"},{"specialization":"Equine Medicine"}],"pet_handled":[{"pet_handled":" Dogs - (Indian & Foreign) "},{"pet_handled":"Cats"},{"pet_handled":"Domestic Birds"},{"pet_handled":"Fishes"},{"pet_handled":"Horses"},{"pet_handled":"Pet Birds"}],"clinic_pic":[{"clinic_pic":"http://54.212.108.156:3000/api/uploads/1625688131493.png"}],"certificate_pic":[{"certificate_pic":"http://54.212.108.156:3000/api/uploads/60b4e3cc541a437c7b9c60f9certificate.pdf"}],"govt_id_pic":[{"govt_id_pic":"http://54.212.108.156:3000/api/uploads/60b4e3cc541a437c7b9c60f9certificate.pdf"}],"photo_id_pic":[{"photo_id_pic":"http://54.212.108.156:3000/api/uploads/60b4e3cc541a437c7b9c60f9certificate.pdf"}],"_id":"60b4e434541a437c7b9c60fa","user_id":"60b4e3cc541a437c7b9c60f9","dr_title":"Dr","dr_name":"Astor","clinic_name":"Thanigai pet care clinic","clinic_loc":"Plot No.4, Sai Balaji Nagar, Melathur Main Road, Melathur, Dharkast Rd, Tharavur, Tamil Nadu 602109, India","clinic_lat":12.960392639243459,"clinic_long":80.04473716020584,"profile_status":false,"profile_verification_status":"Verified","slot_type":"","date_and_time":"Thu Jul 08 2021 01:32:33 GMT+0530 (India Standard Time)","signature":"http://54.212.108.156:3000/api/uploads/60b4e3cc541a437c7b9c60f93105185709","mobile_type":"IOS","communication_type":"Online Or Visit","live_status":"Not Live","live_by":"","delete_status":false,"consultancy_fees":1,"calender_status":true,"comments":0,"rating":5,"doctor_exp":1,"updatedAt":"2021-08-12T09:39:22.918Z","createdAt":"2021-05-31T13:27:16.888Z","__v":0,"thumbnail_image":"http://54.212.108.156:3000/api/uploads/1625688149826.png"}],"current_img":[],"_id":"6192309c5dd0926a7ea93f24","doctor_id":{"_id":"60b4e3cc541a437c7b9c60f9","first_name":"Astor","last_name":"bette","user_email":"","user_phone":"3123456788","date_of_reg":"31-05-2021 06:55 PM","user_type":4,"ref_code":"","my_ref_code":"WA2EL4S","user_status":"complete","otp":123456,"profile_img":"","user_email_verification":false,"fb_token":"","device_id":"","device_type":"","mobile_type":"IOS","delete_status":false,"updatedAt":"2021-09-24T06:25:16.679Z","createdAt":"2021-05-31T13:25:32.693Z","__v":0},"appointment_UID":"PET-1636970652114","booking_date":"15-11-2021","booking_time":"06:15 PM","booking_date_time":"15-11-2021 06:15 PM","communication_type":"Visit","msg_id":"Meeting_id/6192309c5dd0926a7ea93f24","video_id":"https://meet.jit.si/6192309c5dd0926a7ea93f24","user_id":{"_id":"60b73c4638e95868d79be9c6","first_name":"Sandy","last_name":"Kumar","user_email":"santhoshvsk94@gmail.com","user_phone":"9159207294","date_of_reg":"02/06/2021 01:37 PM","user_type":1,"ref_code":"","my_ref_code":"PS2Z0G5","user_status":"complete","otp":123456,"profile_img":"https://petfolio.app/api/uploads/1636446897807.jpg","user_email_verification":true,"fb_token":"eSmXofXoThep_SnI-2GAgz:APA91bHxhEAOqc5iUBPxbBcwKHkrk4om0cI1myD5Bp9uQapERlsYNPATGFqgEcvocDrme6CeW2_5hBg0bRQ3F1878MEAnrWV46cShyLpqiZgkt_KmE1jR3CRoDQpiMERWx-Rx_iD1dD9","device_id":"","device_type":"","mobile_type":"Android","delete_status":false,"updatedAt":"2021-11-15T09:53:59.809Z","createdAt":"2021-06-02T08:07:34.088Z","__v":0},"family_id":{"pic":[{"image":"http://35.164.43.170:3000/api/uploads/1636723125049.jpg"}],"_id":"618e69ea14caf42412258d80","user_id":"60b73c4638e95868d79be9c6","name":"Sample","gender":"Male","relation_type":"Others","health_issue":"Diabetes","dateofbirth":"11/12/21","anymedicalinfo":"sample","covide_vac":"Yes","weight":"66","delete_status":false,"createdAt":"2021-11-12T13:19:38.893Z","updatedAt":"2021-11-12T13:19:38.893Z","__v":0},"problem_info":"","appoinment_status":"Incomplete","start_appointment_status":"Not Started","end_appointment_status":"Not End","doc_feedback":"","doc_rate":"","user_feedback":"","user_rate":0,"display_date":"2021-11-15 18:15:00","server_date_time":"","payment_method":"Cash","prescription_details":"","vaccination_details":"","appointment_types":"Normal","allergies":"","payment_id":"","amount":"1","service_name":"","service_amount":"","completed_at":"","missed_at":"","mobile_type":"Android","delete_status":false,"appoint_patient_st":"","date_and_time":"15-11-2021 03:33 PM","pervious_app_date":"","reshedule_status":"","location_id":"","visit_type":"Clinic Visit","doctor_comment":"","diagnosis":"","sub_diagnosis":"","health_issue_title":"General Checkup","coupon_status":"Not Applied","coupon_code":"","original_price":0,"discount_price":0,"total_price":1,"visibility":"visible","updatedAt":"2021-11-15T10:04:12.125Z","createdAt":"2021-11-15T10:04:12.122Z","__v":0}
+     * Address : {}
      * Code : 200
      */
 
     private String Status;
     private String Message;
     /**
-     * sp_attched : []
-     * sp_business_info : [{"bus_service_list":[{"amount":250,"time_slots":"15 mins","bus_service_list":"Pet Grooming"},{"amount":350,"time_slots":"15 mins","bus_service_list":" Pet Training"},{"amount":200,"time_slots":"15 mins","bus_service_list":"Pet daycare"}],"bus_spec_list":[{"bus_spec_list":"Kennel Cut"},{"bus_spec_list":"Teddy Bear Trim"},{"bus_spec_list":"Full Coat / Show Trims"}],"bus_service_gall":[{"bus_service_gall":"http://54.212.108.156:3000/api/uploads/1625687015621.png"},{"bus_service_gall":"http://54.212.108.156:3000/api/uploads/1625687032584.png"},{"bus_service_gall":"http://54.212.108.156:3000/api/uploads/1625687050185.png"},{"bus_service_gall":"http://54.212.108.156:3000/api/uploads/1625687064021.png"}],"bus_certif":[{"bus_certif":"http://54.212.108.156:3000/api/uploads/60b0b7b267f25056fe286c8f2709161305"}],"_id":"60b0b86d67f25056fe286c90","user_id":"60b0b7b267f25056fe286c8f","bus_user_name":"Sri","bus_user_email":"sriram@gmail.com","bussiness_name":"Sri Pet Spa and Groomers","bus_user_phone":"7417417411","bus_profile":"http://54.212.108.156:3000/api/uploads/60b0b7b267f25056fe286c8f2709161240","bus_proof":"http://54.212.108.156:3000/api/uploads/60b0b7b267f25056fe286c8f2709161255","date_and_time":"27-09-2021 04:13 PM","mobile_type":"IOS","profile_status":true,"profile_verification_status":"Verified","sp_loc":"Thedir nagar, Otteri, Purasaiwakkam, Chennai, Tamil Nadu 600010, India","sp_lat":13.090018359673415,"sp_long":80.25077305734156,"delete_status":false,"calender_status":true,"updatedAt":"2021-09-27T10:43:54.697Z","createdAt":"2021-05-28T09:31:25.998Z","__v":0,"thumbnail_image":"http://54.212.108.156:3000/api/uploads/1625679966323.png","city_name":"Chennai","sp_info":"","comments":0,"rating":5}]
+     * doc_attched : []
+     * doc_business_info : [{"education_details":[{"year":"2020","education":"mbbs"}],"experience_details":[{"yearsofexperience":"1","to":"2021","company":"bette","from":"2020"}],"specialization":[{"specialization":"Surgery"},{"specialization":"General Consultant"},{"specialization":"Nutrition"},{"specialization":"Dentistry"},{"specialization":"Behavior"},{"specialization":"Emergency and Critical Care"},{"specialization":"Equine Medicine"}],"pet_handled":[{"pet_handled":" Dogs - (Indian & Foreign) "},{"pet_handled":"Cats"},{"pet_handled":"Domestic Birds"},{"pet_handled":"Fishes"},{"pet_handled":"Horses"},{"pet_handled":"Pet Birds"}],"clinic_pic":[{"clinic_pic":"http://54.212.108.156:3000/api/uploads/1625688131493.png"}],"certificate_pic":[{"certificate_pic":"http://54.212.108.156:3000/api/uploads/60b4e3cc541a437c7b9c60f9certificate.pdf"}],"govt_id_pic":[{"govt_id_pic":"http://54.212.108.156:3000/api/uploads/60b4e3cc541a437c7b9c60f9certificate.pdf"}],"photo_id_pic":[{"photo_id_pic":"http://54.212.108.156:3000/api/uploads/60b4e3cc541a437c7b9c60f9certificate.pdf"}],"_id":"60b4e434541a437c7b9c60fa","user_id":"60b4e3cc541a437c7b9c60f9","dr_title":"Dr","dr_name":"Astor","clinic_name":"Thanigai pet care clinic","clinic_loc":"Plot No.4, Sai Balaji Nagar, Melathur Main Road, Melathur, Dharkast Rd, Tharavur, Tamil Nadu 602109, India","clinic_lat":12.960392639243459,"clinic_long":80.04473716020584,"profile_status":false,"profile_verification_status":"Verified","slot_type":"","date_and_time":"Thu Jul 08 2021 01:32:33 GMT+0530 (India Standard Time)","signature":"http://54.212.108.156:3000/api/uploads/60b4e3cc541a437c7b9c60f93105185709","mobile_type":"IOS","communication_type":"Online Or Visit","live_status":"Not Live","live_by":"","delete_status":false,"consultancy_fees":1,"calender_status":true,"comments":0,"rating":5,"doctor_exp":1,"updatedAt":"2021-08-12T09:39:22.918Z","createdAt":"2021-05-31T13:27:16.888Z","__v":0,"thumbnail_image":"http://54.212.108.156:3000/api/uploads/1625688149826.png"}]
      * current_img : []
-     * _id : 618e704a708d4f2a40c3733d
-     * sp_id : {"_id":"60b0b7b267f25056fe286c8f","first_name":"Sri","last_name":"DineshSP","user_email":"sriram@gmail.com","user_phone":"7417417411","date_of_reg":"28-05-2021 02:58 PM","user_type":2,"ref_code":"","my_ref_code":"M60LFAR","user_status":"complete","otp":123456,"profile_img":"http://54.212.108.156:3000/api/uploads/60b0b7b267f25056fe286c8f2709161441","user_email_verification":false,"fb_token":"","device_id":"","device_type":"","mobile_type":"IOS","delete_status":false,"updatedAt":"2021-10-05T05:24:33.281Z","createdAt":"2021-05-28T09:28:18.912Z","__v":0}
-     * appointment_UID : SP-1636724810108
-     * booking_date : 13-11-2021
-     * booking_time : 04:00 AM
-     * booking_date_time : 13-11-2021 04:00 AM
-     * user_id : {"_id":"60b73c4638e95868d79be9c6","first_name":"Sandy","last_name":"Kumar","user_email":"santhoshvsk94@gmail.com","user_phone":"9159207294","date_of_reg":"02/06/2021 01:37 PM","user_type":1,"ref_code":"","my_ref_code":"PS2Z0G5","user_status":"complete","otp":123456,"profile_img":"https://petfolio.app/api/uploads/1636446897807.jpg","user_email_verification":true,"fb_token":"eSmXofXoThep_SnI-2GAgz:APA91bEM6IUwx5UCZrdK3lLUIeZ8_sD4yWjxNKdWU8scr9P_b4euu5S9_WUwu0FU4tBoDW_ZjfyUeU2rH1bBTlomjkGI-N_LMxyN0yl8BQ9fSNte2S7TBgfDESvEFpVNN921yJ-c58NG","device_id":"","device_type":"","mobile_type":"Android","delete_status":false,"updatedAt":"2021-11-13T14:52:30.422Z","createdAt":"2021-06-02T08:07:34.088Z","__v":0}
+     * _id : 6192309c5dd0926a7ea93f24
+     * doctor_id : {"_id":"60b4e3cc541a437c7b9c60f9","first_name":"Astor","last_name":"bette","user_email":"","user_phone":"3123456788","date_of_reg":"31-05-2021 06:55 PM","user_type":4,"ref_code":"","my_ref_code":"WA2EL4S","user_status":"complete","otp":123456,"profile_img":"","user_email_verification":false,"fb_token":"","device_id":"","device_type":"","mobile_type":"IOS","delete_status":false,"updatedAt":"2021-09-24T06:25:16.679Z","createdAt":"2021-05-31T13:25:32.693Z","__v":0}
+     * appointment_UID : PET-1636970652114
+     * booking_date : 15-11-2021
+     * booking_time : 06:15 PM
+     * booking_date_time : 15-11-2021 06:15 PM
+     * communication_type : Visit
+     * msg_id : Meeting_id/6192309c5dd0926a7ea93f24
+     * video_id : https://meet.jit.si/6192309c5dd0926a7ea93f24
+     * user_id : {"_id":"60b73c4638e95868d79be9c6","first_name":"Sandy","last_name":"Kumar","user_email":"santhoshvsk94@gmail.com","user_phone":"9159207294","date_of_reg":"02/06/2021 01:37 PM","user_type":1,"ref_code":"","my_ref_code":"PS2Z0G5","user_status":"complete","otp":123456,"profile_img":"https://petfolio.app/api/uploads/1636446897807.jpg","user_email_verification":true,"fb_token":"eSmXofXoThep_SnI-2GAgz:APA91bHxhEAOqc5iUBPxbBcwKHkrk4om0cI1myD5Bp9uQapERlsYNPATGFqgEcvocDrme6CeW2_5hBg0bRQ3F1878MEAnrWV46cShyLpqiZgkt_KmE1jR3CRoDQpiMERWx-Rx_iD1dD9","device_id":"","device_type":"","mobile_type":"Android","delete_status":false,"updatedAt":"2021-11-15T09:53:59.809Z","createdAt":"2021-06-02T08:07:34.088Z","__v":0}
      * family_id : {"pic":[{"image":"http://35.164.43.170:3000/api/uploads/1636723125049.jpg"}],"_id":"618e69ea14caf42412258d80","user_id":"60b73c4638e95868d79be9c6","name":"Sample","gender":"Male","relation_type":"Others","health_issue":"Diabetes","dateofbirth":"11/12/21","anymedicalinfo":"sample","covide_vac":"Yes","weight":"66","delete_status":false,"createdAt":"2021-11-12T13:19:38.893Z","updatedAt":"2021-11-12T13:19:38.893Z","__v":0}
-     * additional_info :
+     * problem_info :
      * appoinment_status : Incomplete
      * start_appointment_status : Not Started
      * end_appointment_status : Not End
-     * sp_feedback :
-     * sp_rate : null
+     * doc_feedback :
+     * doc_rate :
      * user_feedback :
      * user_rate : 0
-     * display_date : 2021-11-13 04:00:00
+     * display_date : 2021-11-15 18:15:00
      * server_date_time :
+     * payment_method : Cash
+     * prescription_details :
+     * vaccination_details :
+     * appointment_types : Normal
+     * allergies :
      * payment_id :
-     * payment_method : Online
-     * service_name : Pet Grooming
-     * service_amount : 250
-     * service_time : 15 mins
+     * amount : 1
+     * service_name :
+     * service_amount :
      * completed_at :
      * missed_at :
      * mobile_type : Android
      * delete_status : false
-     * date_and_time : 12-11-2021 07:16 PM
+     * appoint_patient_st :
+     * date_and_time : 15-11-2021 03:33 PM
+     * pervious_app_date :
+     * reshedule_status :
+     * location_id :
+     * visit_type : Clinic Visit
+     * doctor_comment :
+     * diagnosis :
+     * sub_diagnosis :
+     * health_issue_title : General Checkup
      * coupon_status : Not Applied
      * coupon_code :
      * original_price : 0
      * discount_price : 0
-     * total_price : 250
-     * updatedAt : 2021-11-12T13:46:50.120Z
-     * createdAt : 2021-11-12T13:46:50.116Z
+     * total_price : 1
+     * visibility : visible
+     * updatedAt : 2021-11-15T10:04:12.125Z
+     * createdAt : 2021-11-15T10:04:12.122Z
      * __v : 0
      */
 
@@ -94,34 +112,37 @@ public class PetNewAppointmentDetailsResponse {
     public static class DataBean {
         private String _id;
         /**
-         * _id : 60b0b7b267f25056fe286c8f
-         * first_name : Sri
-         * last_name : DineshSP
-         * user_email : sriram@gmail.com
-         * user_phone : 7417417411
-         * date_of_reg : 28-05-2021 02:58 PM
-         * user_type : 2
+         * _id : 60b4e3cc541a437c7b9c60f9
+         * first_name : Astor
+         * last_name : bette
+         * user_email :
+         * user_phone : 3123456788
+         * date_of_reg : 31-05-2021 06:55 PM
+         * user_type : 4
          * ref_code :
-         * my_ref_code : M60LFAR
+         * my_ref_code : WA2EL4S
          * user_status : complete
          * otp : 123456
-         * profile_img : http://54.212.108.156:3000/api/uploads/60b0b7b267f25056fe286c8f2709161441
+         * profile_img :
          * user_email_verification : false
          * fb_token :
          * device_id :
          * device_type :
          * mobile_type : IOS
          * delete_status : false
-         * updatedAt : 2021-10-05T05:24:33.281Z
-         * createdAt : 2021-05-28T09:28:18.912Z
+         * updatedAt : 2021-09-24T06:25:16.679Z
+         * createdAt : 2021-05-31T13:25:32.693Z
          * __v : 0
          */
 
-        private SpIdBean sp_id;
+        private DoctorIdBean doctor_id;
         private String appointment_UID;
         private String booking_date;
         private String booking_time;
         private String booking_date_time;
+        private String communication_type;
+        private String msg_id;
+        private String video_id;
         /**
          * _id : 60b73c4638e95868d79be9c6
          * first_name : Sandy
@@ -136,12 +157,12 @@ public class PetNewAppointmentDetailsResponse {
          * otp : 123456
          * profile_img : https://petfolio.app/api/uploads/1636446897807.jpg
          * user_email_verification : true
-         * fb_token : eSmXofXoThep_SnI-2GAgz:APA91bEM6IUwx5UCZrdK3lLUIeZ8_sD4yWjxNKdWU8scr9P_b4euu5S9_WUwu0FU4tBoDW_ZjfyUeU2rH1bBTlomjkGI-N_LMxyN0yl8BQ9fSNte2S7TBgfDESvEFpVNN921yJ-c58NG
+         * fb_token : eSmXofXoThep_SnI-2GAgz:APA91bHxhEAOqc5iUBPxbBcwKHkrk4om0cI1myD5Bp9uQapERlsYNPATGFqgEcvocDrme6CeW2_5hBg0bRQ3F1878MEAnrWV46cShyLpqiZgkt_KmE1jR3CRoDQpiMERWx-Rx_iD1dD9
          * device_id :
          * device_type :
          * mobile_type : Android
          * delete_status : false
-         * updatedAt : 2021-11-13T14:52:30.422Z
+         * updatedAt : 2021-11-15T09:53:59.809Z
          * createdAt : 2021-06-02T08:07:34.088Z
          * __v : 0
          */
@@ -166,68 +187,88 @@ public class PetNewAppointmentDetailsResponse {
          */
 
         private FamilyIdBean family_id;
-        private String additional_info;
+        private String problem_info;
         private String appoinment_status;
         private String start_appointment_status;
         private String end_appointment_status;
-        private String sp_feedback;
-        private Object sp_rate;
+        private String doc_feedback;
+        private String doc_rate;
         private String user_feedback;
-        private String user_rate;
+        private int user_rate;
         private String display_date;
         private String server_date_time;
-        private String payment_id;
         private String payment_method;
+        private String prescription_details;
+        private String vaccination_details;
+        private String appointment_types;
+        private String allergies;
+        private String payment_id;
+        private String amount;
         private String service_name;
         private String service_amount;
-        private String service_time;
         private String completed_at;
         private String missed_at;
         private String mobile_type;
         private boolean delete_status;
+        private String appoint_patient_st;
         private String date_and_time;
+        private String pervious_app_date;
+        private String reshedule_status;
+        private String location_id;
+        private String visit_type;
+        private String doctor_comment;
+        private String diagnosis;
+        private String sub_diagnosis;
+        private String health_issue_title;
         private String coupon_status;
         private String coupon_code;
         private int original_price;
         private int discount_price;
         private int total_price;
+        private String visibility;
         private String updatedAt;
         private String createdAt;
         private int __v;
-        private List<?> sp_attched;
+        private List<?> doc_attched;
         /**
-         * bus_service_list : [{"amount":250,"time_slots":"15 mins","bus_service_list":"Pet Grooming"},{"amount":350,"time_slots":"15 mins","bus_service_list":" Pet Training"},{"amount":200,"time_slots":"15 mins","bus_service_list":"Pet daycare"}]
-         * bus_spec_list : [{"bus_spec_list":"Kennel Cut"},{"bus_spec_list":"Teddy Bear Trim"},{"bus_spec_list":"Full Coat / Show Trims"}]
-         * bus_service_gall : [{"bus_service_gall":"http://54.212.108.156:3000/api/uploads/1625687015621.png"},{"bus_service_gall":"http://54.212.108.156:3000/api/uploads/1625687032584.png"},{"bus_service_gall":"http://54.212.108.156:3000/api/uploads/1625687050185.png"},{"bus_service_gall":"http://54.212.108.156:3000/api/uploads/1625687064021.png"}]
-         * bus_certif : [{"bus_certif":"http://54.212.108.156:3000/api/uploads/60b0b7b267f25056fe286c8f2709161305"}]
-         * _id : 60b0b86d67f25056fe286c90
-         * user_id : 60b0b7b267f25056fe286c8f
-         * bus_user_name : Sri
-         * bus_user_email : sriram@gmail.com
-         * bussiness_name : Sri Pet Spa and Groomers
-         * bus_user_phone : 7417417411
-         * bus_profile : http://54.212.108.156:3000/api/uploads/60b0b7b267f25056fe286c8f2709161240
-         * bus_proof : http://54.212.108.156:3000/api/uploads/60b0b7b267f25056fe286c8f2709161255
-         * date_and_time : 27-09-2021 04:13 PM
-         * mobile_type : IOS
-         * profile_status : true
+         * education_details : [{"year":"2020","education":"mbbs"}]
+         * experience_details : [{"yearsofexperience":"1","to":"2021","company":"bette","from":"2020"}]
+         * specialization : [{"specialization":"Surgery"},{"specialization":"General Consultant"},{"specialization":"Nutrition"},{"specialization":"Dentistry"},{"specialization":"Behavior"},{"specialization":"Emergency and Critical Care"},{"specialization":"Equine Medicine"}]
+         * pet_handled : [{"pet_handled":" Dogs - (Indian & Foreign) "},{"pet_handled":"Cats"},{"pet_handled":"Domestic Birds"},{"pet_handled":"Fishes"},{"pet_handled":"Horses"},{"pet_handled":"Pet Birds"}]
+         * clinic_pic : [{"clinic_pic":"http://54.212.108.156:3000/api/uploads/1625688131493.png"}]
+         * certificate_pic : [{"certificate_pic":"http://54.212.108.156:3000/api/uploads/60b4e3cc541a437c7b9c60f9certificate.pdf"}]
+         * govt_id_pic : [{"govt_id_pic":"http://54.212.108.156:3000/api/uploads/60b4e3cc541a437c7b9c60f9certificate.pdf"}]
+         * photo_id_pic : [{"photo_id_pic":"http://54.212.108.156:3000/api/uploads/60b4e3cc541a437c7b9c60f9certificate.pdf"}]
+         * _id : 60b4e434541a437c7b9c60fa
+         * user_id : 60b4e3cc541a437c7b9c60f9
+         * dr_title : Dr
+         * dr_name : Astor
+         * clinic_name : Thanigai pet care clinic
+         * clinic_loc : Plot No.4, Sai Balaji Nagar, Melathur Main Road, Melathur, Dharkast Rd, Tharavur, Tamil Nadu 602109, India
+         * clinic_lat : 12.960392639243459
+         * clinic_long : 80.04473716020584
+         * profile_status : false
          * profile_verification_status : Verified
-         * sp_loc : Thedir nagar, Otteri, Purasaiwakkam, Chennai, Tamil Nadu 600010, India
-         * sp_lat : 13.090018359673415
-         * sp_long : 80.25077305734156
+         * slot_type :
+         * date_and_time : Thu Jul 08 2021 01:32:33 GMT+0530 (India Standard Time)
+         * signature : http://54.212.108.156:3000/api/uploads/60b4e3cc541a437c7b9c60f93105185709
+         * mobile_type : IOS
+         * communication_type : Online Or Visit
+         * live_status : Not Live
+         * live_by :
          * delete_status : false
+         * consultancy_fees : 1
          * calender_status : true
-         * updatedAt : 2021-09-27T10:43:54.697Z
-         * createdAt : 2021-05-28T09:31:25.998Z
-         * __v : 0
-         * thumbnail_image : http://54.212.108.156:3000/api/uploads/1625679966323.png
-         * city_name : Chennai
-         * sp_info :
          * comments : 0
          * rating : 5
+         * doctor_exp : 1
+         * updatedAt : 2021-08-12T09:39:22.918Z
+         * createdAt : 2021-05-31T13:27:16.888Z
+         * __v : 0
+         * thumbnail_image : http://54.212.108.156:3000/api/uploads/1625688149826.png
          */
 
-        private List<SpBusinessInfoBean> sp_business_info;
+        private List<DocBusinessInfoBean> doc_business_info;
         private List<?> current_img;
 
         public String get_id() {
@@ -238,12 +279,12 @@ public class PetNewAppointmentDetailsResponse {
             this._id = _id;
         }
 
-        public SpIdBean getSp_id() {
-            return sp_id;
+        public DoctorIdBean getDoctor_id() {
+            return doctor_id;
         }
 
-        public void setSp_id(SpIdBean sp_id) {
-            this.sp_id = sp_id;
+        public void setDoctor_id(DoctorIdBean doctor_id) {
+            this.doctor_id = doctor_id;
         }
 
         public String getAppointment_UID() {
@@ -278,6 +319,30 @@ public class PetNewAppointmentDetailsResponse {
             this.booking_date_time = booking_date_time;
         }
 
+        public String getCommunication_type() {
+            return communication_type;
+        }
+
+        public void setCommunication_type(String communication_type) {
+            this.communication_type = communication_type;
+        }
+
+        public String getMsg_id() {
+            return msg_id;
+        }
+
+        public void setMsg_id(String msg_id) {
+            this.msg_id = msg_id;
+        }
+
+        public String getVideo_id() {
+            return video_id;
+        }
+
+        public void setVideo_id(String video_id) {
+            this.video_id = video_id;
+        }
+
         public UserIdBean getUser_id() {
             return user_id;
         }
@@ -294,12 +359,12 @@ public class PetNewAppointmentDetailsResponse {
             this.family_id = family_id;
         }
 
-        public String getAdditional_info() {
-            return additional_info;
+        public String getProblem_info() {
+            return problem_info;
         }
 
-        public void setAdditional_info(String additional_info) {
-            this.additional_info = additional_info;
+        public void setProblem_info(String problem_info) {
+            this.problem_info = problem_info;
         }
 
         public String getAppoinment_status() {
@@ -326,20 +391,20 @@ public class PetNewAppointmentDetailsResponse {
             this.end_appointment_status = end_appointment_status;
         }
 
-        public String getSp_feedback() {
-            return sp_feedback;
+        public String getDoc_feedback() {
+            return doc_feedback;
         }
 
-        public void setSp_feedback(String sp_feedback) {
-            this.sp_feedback = sp_feedback;
+        public void setDoc_feedback(String doc_feedback) {
+            this.doc_feedback = doc_feedback;
         }
 
-        public Object getSp_rate() {
-            return sp_rate;
+        public String getDoc_rate() {
+            return doc_rate;
         }
 
-        public void setSp_rate(Object sp_rate) {
-            this.sp_rate = sp_rate;
+        public void setDoc_rate(String doc_rate) {
+            this.doc_rate = doc_rate;
         }
 
         public String getUser_feedback() {
@@ -350,11 +415,11 @@ public class PetNewAppointmentDetailsResponse {
             this.user_feedback = user_feedback;
         }
 
-        public String getUser_rate() {
+        public int getUser_rate() {
             return user_rate;
         }
 
-        public void setUser_rate(String user_rate) {
+        public void setUser_rate(int user_rate) {
             this.user_rate = user_rate;
         }
 
@@ -374,6 +439,46 @@ public class PetNewAppointmentDetailsResponse {
             this.server_date_time = server_date_time;
         }
 
+        public String getPayment_method() {
+            return payment_method;
+        }
+
+        public void setPayment_method(String payment_method) {
+            this.payment_method = payment_method;
+        }
+
+        public String getPrescription_details() {
+            return prescription_details;
+        }
+
+        public void setPrescription_details(String prescription_details) {
+            this.prescription_details = prescription_details;
+        }
+
+        public String getVaccination_details() {
+            return vaccination_details;
+        }
+
+        public void setVaccination_details(String vaccination_details) {
+            this.vaccination_details = vaccination_details;
+        }
+
+        public String getAppointment_types() {
+            return appointment_types;
+        }
+
+        public void setAppointment_types(String appointment_types) {
+            this.appointment_types = appointment_types;
+        }
+
+        public String getAllergies() {
+            return allergies;
+        }
+
+        public void setAllergies(String allergies) {
+            this.allergies = allergies;
+        }
+
         public String getPayment_id() {
             return payment_id;
         }
@@ -382,12 +487,12 @@ public class PetNewAppointmentDetailsResponse {
             this.payment_id = payment_id;
         }
 
-        public String getPayment_method() {
-            return payment_method;
+        public String getAmount() {
+            return amount;
         }
 
-        public void setPayment_method(String payment_method) {
-            this.payment_method = payment_method;
+        public void setAmount(String amount) {
+            this.amount = amount;
         }
 
         public String getService_name() {
@@ -404,14 +509,6 @@ public class PetNewAppointmentDetailsResponse {
 
         public void setService_amount(String service_amount) {
             this.service_amount = service_amount;
-        }
-
-        public String getService_time() {
-            return service_time;
-        }
-
-        public void setService_time(String service_time) {
-            this.service_time = service_time;
         }
 
         public String getCompleted_at() {
@@ -446,12 +543,84 @@ public class PetNewAppointmentDetailsResponse {
             this.delete_status = delete_status;
         }
 
+        public String getAppoint_patient_st() {
+            return appoint_patient_st;
+        }
+
+        public void setAppoint_patient_st(String appoint_patient_st) {
+            this.appoint_patient_st = appoint_patient_st;
+        }
+
         public String getDate_and_time() {
             return date_and_time;
         }
 
         public void setDate_and_time(String date_and_time) {
             this.date_and_time = date_and_time;
+        }
+
+        public String getPervious_app_date() {
+            return pervious_app_date;
+        }
+
+        public void setPervious_app_date(String pervious_app_date) {
+            this.pervious_app_date = pervious_app_date;
+        }
+
+        public String getReshedule_status() {
+            return reshedule_status;
+        }
+
+        public void setReshedule_status(String reshedule_status) {
+            this.reshedule_status = reshedule_status;
+        }
+
+        public String getLocation_id() {
+            return location_id;
+        }
+
+        public void setLocation_id(String location_id) {
+            this.location_id = location_id;
+        }
+
+        public String getVisit_type() {
+            return visit_type;
+        }
+
+        public void setVisit_type(String visit_type) {
+            this.visit_type = visit_type;
+        }
+
+        public String getDoctor_comment() {
+            return doctor_comment;
+        }
+
+        public void setDoctor_comment(String doctor_comment) {
+            this.doctor_comment = doctor_comment;
+        }
+
+        public String getDiagnosis() {
+            return diagnosis;
+        }
+
+        public void setDiagnosis(String diagnosis) {
+            this.diagnosis = diagnosis;
+        }
+
+        public String getSub_diagnosis() {
+            return sub_diagnosis;
+        }
+
+        public void setSub_diagnosis(String sub_diagnosis) {
+            this.sub_diagnosis = sub_diagnosis;
+        }
+
+        public String getHealth_issue_title() {
+            return health_issue_title;
+        }
+
+        public void setHealth_issue_title(String health_issue_title) {
+            this.health_issue_title = health_issue_title;
         }
 
         public String getCoupon_status() {
@@ -494,6 +663,14 @@ public class PetNewAppointmentDetailsResponse {
             this.total_price = total_price;
         }
 
+        public String getVisibility() {
+            return visibility;
+        }
+
+        public void setVisibility(String visibility) {
+            this.visibility = visibility;
+        }
+
         public String getUpdatedAt() {
             return updatedAt;
         }
@@ -518,20 +695,20 @@ public class PetNewAppointmentDetailsResponse {
             this.__v = __v;
         }
 
-        public List<?> getSp_attched() {
-            return sp_attched;
+        public List<?> getDoc_attched() {
+            return doc_attched;
         }
 
-        public void setSp_attched(List<?> sp_attched) {
-            this.sp_attched = sp_attched;
+        public void setDoc_attched(List<?> doc_attched) {
+            this.doc_attched = doc_attched;
         }
 
-        public List<SpBusinessInfoBean> getSp_business_info() {
-            return sp_business_info;
+        public List<DocBusinessInfoBean> getDoc_business_info() {
+            return doc_business_info;
         }
 
-        public void setSp_business_info(List<SpBusinessInfoBean> sp_business_info) {
-            this.sp_business_info = sp_business_info;
+        public void setDoc_business_info(List<DocBusinessInfoBean> doc_business_info) {
+            this.doc_business_info = doc_business_info;
         }
 
         public List<?> getCurrent_img() {
@@ -542,7 +719,7 @@ public class PetNewAppointmentDetailsResponse {
             this.current_img = current_img;
         }
 
-        public static class SpIdBean {
+        public static class DoctorIdBean {
             private String _id;
             private String first_name;
             private String last_name;
@@ -1080,54 +1257,78 @@ public class PetNewAppointmentDetailsResponse {
             }
         }
 
-        public static class SpBusinessInfoBean {
+        public static class DocBusinessInfoBean {
             private String _id;
             private String user_id;
-            private String bus_user_name;
-            private String bus_user_email;
-            private String bussiness_name;
-            private String bus_user_phone;
-            private String bus_profile;
-            private String bus_proof;
-            private String date_and_time;
-            private String mobile_type;
+            private String dr_title;
+            private String dr_name;
+            private String clinic_name;
+            private String clinic_loc;
+            private double clinic_lat;
+            private double clinic_long;
             private boolean profile_status;
             private String profile_verification_status;
-            private String sp_loc;
-            private double sp_lat;
-            private double sp_long;
+            private String slot_type;
+            private String date_and_time;
+            private String signature;
+            private String mobile_type;
+            private String communication_type;
+            private String live_status;
+            private String live_by;
             private boolean delete_status;
+            private int consultancy_fees;
             private boolean calender_status;
+            private int comments;
+            private int rating;
+            private int doctor_exp;
             private String updatedAt;
             private String createdAt;
             private int __v;
             private String thumbnail_image;
-            private String city_name;
-            private String sp_info;
-            private int comments;
-            private int rating;
             /**
-             * amount : 250
-             * time_slots : 15 mins
-             * bus_service_list : Pet Grooming
+             * year : 2020
+             * education : mbbs
              */
 
-            private List<BusServiceListBean> bus_service_list;
+            private List<EducationDetailsBean> education_details;
             /**
-             * bus_spec_list : Kennel Cut
+             * yearsofexperience : 1
+             * to : 2021
+             * company : bette
+             * from : 2020
              */
 
-            private List<BusSpecListBean> bus_spec_list;
+            private List<ExperienceDetailsBean> experience_details;
             /**
-             * bus_service_gall : http://54.212.108.156:3000/api/uploads/1625687015621.png
+             * specialization : Surgery
              */
 
-            private List<BusServiceGallBean> bus_service_gall;
+            private List<SpecializationBean> specialization;
             /**
-             * bus_certif : http://54.212.108.156:3000/api/uploads/60b0b7b267f25056fe286c8f2709161305
+             * pet_handled :  Dogs - (Indian & Foreign)
              */
 
-            private List<BusCertifBean> bus_certif;
+            private List<PetHandledBean> pet_handled;
+            /**
+             * clinic_pic : http://54.212.108.156:3000/api/uploads/1625688131493.png
+             */
+
+            private List<ClinicPicBean> clinic_pic;
+            /**
+             * certificate_pic : http://54.212.108.156:3000/api/uploads/60b4e3cc541a437c7b9c60f9certificate.pdf
+             */
+
+            private List<CertificatePicBean> certificate_pic;
+            /**
+             * govt_id_pic : http://54.212.108.156:3000/api/uploads/60b4e3cc541a437c7b9c60f9certificate.pdf
+             */
+
+            private List<GovtIdPicBean> govt_id_pic;
+            /**
+             * photo_id_pic : http://54.212.108.156:3000/api/uploads/60b4e3cc541a437c7b9c60f9certificate.pdf
+             */
+
+            private List<PhotoIdPicBean> photo_id_pic;
 
             public String get_id() {
                 return _id;
@@ -1145,68 +1346,52 @@ public class PetNewAppointmentDetailsResponse {
                 this.user_id = user_id;
             }
 
-            public String getBus_user_name() {
-                return bus_user_name;
+            public String getDr_title() {
+                return dr_title;
             }
 
-            public void setBus_user_name(String bus_user_name) {
-                this.bus_user_name = bus_user_name;
+            public void setDr_title(String dr_title) {
+                this.dr_title = dr_title;
             }
 
-            public String getBus_user_email() {
-                return bus_user_email;
+            public String getDr_name() {
+                return dr_name;
             }
 
-            public void setBus_user_email(String bus_user_email) {
-                this.bus_user_email = bus_user_email;
+            public void setDr_name(String dr_name) {
+                this.dr_name = dr_name;
             }
 
-            public String getBussiness_name() {
-                return bussiness_name;
+            public String getClinic_name() {
+                return clinic_name;
             }
 
-            public void setBussiness_name(String bussiness_name) {
-                this.bussiness_name = bussiness_name;
+            public void setClinic_name(String clinic_name) {
+                this.clinic_name = clinic_name;
             }
 
-            public String getBus_user_phone() {
-                return bus_user_phone;
+            public String getClinic_loc() {
+                return clinic_loc;
             }
 
-            public void setBus_user_phone(String bus_user_phone) {
-                this.bus_user_phone = bus_user_phone;
+            public void setClinic_loc(String clinic_loc) {
+                this.clinic_loc = clinic_loc;
             }
 
-            public String getBus_profile() {
-                return bus_profile;
+            public double getClinic_lat() {
+                return clinic_lat;
             }
 
-            public void setBus_profile(String bus_profile) {
-                this.bus_profile = bus_profile;
+            public void setClinic_lat(double clinic_lat) {
+                this.clinic_lat = clinic_lat;
             }
 
-            public String getBus_proof() {
-                return bus_proof;
+            public double getClinic_long() {
+                return clinic_long;
             }
 
-            public void setBus_proof(String bus_proof) {
-                this.bus_proof = bus_proof;
-            }
-
-            public String getDate_and_time() {
-                return date_and_time;
-            }
-
-            public void setDate_and_time(String date_and_time) {
-                this.date_and_time = date_and_time;
-            }
-
-            public String getMobile_type() {
-                return mobile_type;
-            }
-
-            public void setMobile_type(String mobile_type) {
-                this.mobile_type = mobile_type;
+            public void setClinic_long(double clinic_long) {
+                this.clinic_long = clinic_long;
             }
 
             public boolean isProfile_status() {
@@ -1225,28 +1410,60 @@ public class PetNewAppointmentDetailsResponse {
                 this.profile_verification_status = profile_verification_status;
             }
 
-            public String getSp_loc() {
-                return sp_loc;
+            public String getSlot_type() {
+                return slot_type;
             }
 
-            public void setSp_loc(String sp_loc) {
-                this.sp_loc = sp_loc;
+            public void setSlot_type(String slot_type) {
+                this.slot_type = slot_type;
             }
 
-            public double getSp_lat() {
-                return sp_lat;
+            public String getDate_and_time() {
+                return date_and_time;
             }
 
-            public void setSp_lat(double sp_lat) {
-                this.sp_lat = sp_lat;
+            public void setDate_and_time(String date_and_time) {
+                this.date_and_time = date_and_time;
             }
 
-            public double getSp_long() {
-                return sp_long;
+            public String getSignature() {
+                return signature;
             }
 
-            public void setSp_long(double sp_long) {
-                this.sp_long = sp_long;
+            public void setSignature(String signature) {
+                this.signature = signature;
+            }
+
+            public String getMobile_type() {
+                return mobile_type;
+            }
+
+            public void setMobile_type(String mobile_type) {
+                this.mobile_type = mobile_type;
+            }
+
+            public String getCommunication_type() {
+                return communication_type;
+            }
+
+            public void setCommunication_type(String communication_type) {
+                this.communication_type = communication_type;
+            }
+
+            public String getLive_status() {
+                return live_status;
+            }
+
+            public void setLive_status(String live_status) {
+                this.live_status = live_status;
+            }
+
+            public String getLive_by() {
+                return live_by;
+            }
+
+            public void setLive_by(String live_by) {
+                this.live_by = live_by;
             }
 
             public boolean isDelete_status() {
@@ -1257,12 +1474,44 @@ public class PetNewAppointmentDetailsResponse {
                 this.delete_status = delete_status;
             }
 
+            public int getConsultancy_fees() {
+                return consultancy_fees;
+            }
+
+            public void setConsultancy_fees(int consultancy_fees) {
+                this.consultancy_fees = consultancy_fees;
+            }
+
             public boolean isCalender_status() {
                 return calender_status;
             }
 
             public void setCalender_status(boolean calender_status) {
                 this.calender_status = calender_status;
+            }
+
+            public int getComments() {
+                return comments;
+            }
+
+            public void setComments(int comments) {
+                this.comments = comments;
+            }
+
+            public int getRating() {
+                return rating;
+            }
+
+            public void setRating(int rating) {
+                this.rating = rating;
+            }
+
+            public int getDoctor_exp() {
+                return doctor_exp;
+            }
+
+            public void setDoctor_exp(int doctor_exp) {
+                this.doctor_exp = doctor_exp;
             }
 
             public String getUpdatedAt() {
@@ -1297,133 +1546,199 @@ public class PetNewAppointmentDetailsResponse {
                 this.thumbnail_image = thumbnail_image;
             }
 
-            public String getCity_name() {
-                return city_name;
+            public List<EducationDetailsBean> getEducation_details() {
+                return education_details;
             }
 
-            public void setCity_name(String city_name) {
-                this.city_name = city_name;
+            public void setEducation_details(List<EducationDetailsBean> education_details) {
+                this.education_details = education_details;
             }
 
-            public String getSp_info() {
-                return sp_info;
+            public List<ExperienceDetailsBean> getExperience_details() {
+                return experience_details;
             }
 
-            public void setSp_info(String sp_info) {
-                this.sp_info = sp_info;
+            public void setExperience_details(List<ExperienceDetailsBean> experience_details) {
+                this.experience_details = experience_details;
             }
 
-            public int getComments() {
-                return comments;
+            public List<SpecializationBean> getSpecialization() {
+                return specialization;
             }
 
-            public void setComments(int comments) {
-                this.comments = comments;
+            public void setSpecialization(List<SpecializationBean> specialization) {
+                this.specialization = specialization;
             }
 
-            public int getRating() {
-                return rating;
+            public List<PetHandledBean> getPet_handled() {
+                return pet_handled;
             }
 
-            public void setRating(int rating) {
-                this.rating = rating;
+            public void setPet_handled(List<PetHandledBean> pet_handled) {
+                this.pet_handled = pet_handled;
             }
 
-            public List<BusServiceListBean> getBus_service_list() {
-                return bus_service_list;
+            public List<ClinicPicBean> getClinic_pic() {
+                return clinic_pic;
             }
 
-            public void setBus_service_list(List<BusServiceListBean> bus_service_list) {
-                this.bus_service_list = bus_service_list;
+            public void setClinic_pic(List<ClinicPicBean> clinic_pic) {
+                this.clinic_pic = clinic_pic;
             }
 
-            public List<BusSpecListBean> getBus_spec_list() {
-                return bus_spec_list;
+            public List<CertificatePicBean> getCertificate_pic() {
+                return certificate_pic;
             }
 
-            public void setBus_spec_list(List<BusSpecListBean> bus_spec_list) {
-                this.bus_spec_list = bus_spec_list;
+            public void setCertificate_pic(List<CertificatePicBean> certificate_pic) {
+                this.certificate_pic = certificate_pic;
             }
 
-            public List<BusServiceGallBean> getBus_service_gall() {
-                return bus_service_gall;
+            public List<GovtIdPicBean> getGovt_id_pic() {
+                return govt_id_pic;
             }
 
-            public void setBus_service_gall(List<BusServiceGallBean> bus_service_gall) {
-                this.bus_service_gall = bus_service_gall;
+            public void setGovt_id_pic(List<GovtIdPicBean> govt_id_pic) {
+                this.govt_id_pic = govt_id_pic;
             }
 
-            public List<BusCertifBean> getBus_certif() {
-                return bus_certif;
+            public List<PhotoIdPicBean> getPhoto_id_pic() {
+                return photo_id_pic;
             }
 
-            public void setBus_certif(List<BusCertifBean> bus_certif) {
-                this.bus_certif = bus_certif;
+            public void setPhoto_id_pic(List<PhotoIdPicBean> photo_id_pic) {
+                this.photo_id_pic = photo_id_pic;
             }
 
-            public static class BusServiceListBean {
-                private int amount;
-                private String time_slots;
-                private String bus_service_list;
+            public static class EducationDetailsBean {
+                private String year;
+                private String education;
 
-                public int getAmount() {
-                    return amount;
+                public String getYear() {
+                    return year;
                 }
 
-                public void setAmount(int amount) {
-                    this.amount = amount;
+                public void setYear(String year) {
+                    this.year = year;
                 }
 
-                public String getTime_slots() {
-                    return time_slots;
+                public String getEducation() {
+                    return education;
                 }
 
-                public void setTime_slots(String time_slots) {
-                    this.time_slots = time_slots;
-                }
-
-                public String getBus_service_list() {
-                    return bus_service_list;
-                }
-
-                public void setBus_service_list(String bus_service_list) {
-                    this.bus_service_list = bus_service_list;
+                public void setEducation(String education) {
+                    this.education = education;
                 }
             }
 
-            public static class BusSpecListBean {
-                private String bus_spec_list;
+            public static class ExperienceDetailsBean {
+                private String yearsofexperience;
+                private String to;
+                private String company;
+                private String from;
 
-                public String getBus_spec_list() {
-                    return bus_spec_list;
+                public String getYearsofexperience() {
+                    return yearsofexperience;
                 }
 
-                public void setBus_spec_list(String bus_spec_list) {
-                    this.bus_spec_list = bus_spec_list;
+                public void setYearsofexperience(String yearsofexperience) {
+                    this.yearsofexperience = yearsofexperience;
+                }
+
+                public String getTo() {
+                    return to;
+                }
+
+                public void setTo(String to) {
+                    this.to = to;
+                }
+
+                public String getCompany() {
+                    return company;
+                }
+
+                public void setCompany(String company) {
+                    this.company = company;
+                }
+
+                public String getFrom() {
+                    return from;
+                }
+
+                public void setFrom(String from) {
+                    this.from = from;
                 }
             }
 
-            public static class BusServiceGallBean {
-                private String bus_service_gall;
+            public static class SpecializationBean {
+                private String specialization;
 
-                public String getBus_service_gall() {
-                    return bus_service_gall;
+                public String getSpecialization() {
+                    return specialization;
                 }
 
-                public void setBus_service_gall(String bus_service_gall) {
-                    this.bus_service_gall = bus_service_gall;
+                public void setSpecialization(String specialization) {
+                    this.specialization = specialization;
                 }
             }
 
-            public static class BusCertifBean {
-                private String bus_certif;
+            public static class PetHandledBean {
+                private String pet_handled;
 
-                public String getBus_certif() {
-                    return bus_certif;
+                public String getPet_handled() {
+                    return pet_handled;
                 }
 
-                public void setBus_certif(String bus_certif) {
-                    this.bus_certif = bus_certif;
+                public void setPet_handled(String pet_handled) {
+                    this.pet_handled = pet_handled;
+                }
+            }
+
+            public static class ClinicPicBean {
+                private String clinic_pic;
+
+                public String getClinic_pic() {
+                    return clinic_pic;
+                }
+
+                public void setClinic_pic(String clinic_pic) {
+                    this.clinic_pic = clinic_pic;
+                }
+            }
+
+            public static class CertificatePicBean {
+                private String certificate_pic;
+
+                public String getCertificate_pic() {
+                    return certificate_pic;
+                }
+
+                public void setCertificate_pic(String certificate_pic) {
+                    this.certificate_pic = certificate_pic;
+                }
+            }
+
+            public static class GovtIdPicBean {
+                private String govt_id_pic;
+
+                public String getGovt_id_pic() {
+                    return govt_id_pic;
+                }
+
+                public void setGovt_id_pic(String govt_id_pic) {
+                    this.govt_id_pic = govt_id_pic;
+                }
+            }
+
+            public static class PhotoIdPicBean {
+                private String photo_id_pic;
+
+                public String getPhoto_id_pic() {
+                    return photo_id_pic;
+                }
+
+                public void setPhoto_id_pic(String photo_id_pic) {
+                    this.photo_id_pic = photo_id_pic;
                 }
             }
         }

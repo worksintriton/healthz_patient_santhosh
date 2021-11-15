@@ -106,6 +106,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
                 app:cardCornerRadius="10dp"
                 app:cardUseCompatPadding="true">
 
@@ -445,7 +446,7 @@
                             android:layout_width="@dimen/width_appoitmentdetails"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/montserrat"
-                            android:text="@string/age"
+                            android:text="@string/date_of_birth"
                             android:textColor="@color/black"
                             android:textSize="14sp" />
 
@@ -460,6 +461,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/ll_vacinateddate"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginTop="5dp"
@@ -863,7 +865,7 @@
                             android:layout_width="@dimen/width_appoitmentdetails"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/montserrat"
-                            android:text="Original Price"
+                            android:text="Cost"
                             android:textColor="@color/black"
                             android:textSize="14sp" />
 
@@ -883,7 +885,8 @@
                         android:layout_height="match_parent"
                         android:layout_marginTop="5dp"
                         android:layout_marginEnd="5dp"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:visibility="gone">
 
                         <TextView
                             android:layout_width="@dimen/width_appoitmentdetails"
@@ -908,7 +911,8 @@
                         android:layout_height="match_parent"
                         android:layout_marginTop="5dp"
                         android:layout_marginEnd="5dp"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:visibility="gone">
 
                         <TextView
                             android:layout_width="@dimen/width_appoitmentdetails"
@@ -1066,13 +1070,13 @@
 
             <Button
                 android:id="@+id/btn_reschedule_appointment"
-                android:layout_width="160dp"
-                android:layout_height="30dp"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/new_rounded_corner_btn"
-                android:fontFamily="@font/futuramediumbt"
+                android:fontFamily="@font/montserrat_bold"
                 android:text="Reschedule Appointment"
                 android:textAllCaps="false"
                 android:textColor="@color/white"

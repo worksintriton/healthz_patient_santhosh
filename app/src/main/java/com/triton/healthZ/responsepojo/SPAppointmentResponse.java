@@ -649,7 +649,7 @@ public class SPAppointmentResponse {
             private String updatedAt;
             private String createdAt;
             private int __v;
-            private List<PetNewAppointmentDetailsResponse.DataBean.PetIdBean.PetImgBean> pet_img;
+            private List<PetNewAppointmentDetailsResponse.DataBean.FamilyIdBean.PicBean> pet_img;
 
             public String get_id() {
                 return _id;
@@ -890,11 +890,11 @@ public class SPAppointmentResponse {
 
 
 
-            public List<PetNewAppointmentDetailsResponse.DataBean.PetIdBean.PetImgBean> getPet_img() {
+            public List<PetNewAppointmentDetailsResponse.DataBean.FamilyIdBean.PicBean> getPet_img() {
                 return pet_img;
             }
 
-            public void setPet_img(List<PetNewAppointmentDetailsResponse.DataBean.PetIdBean.PetImgBean> pet_img) {
+            public void setPet_img(List<PetNewAppointmentDetailsResponse.DataBean.FamilyIdBean.PicBean> pet_img) {
                 this.pet_img = pet_img;
 
             }

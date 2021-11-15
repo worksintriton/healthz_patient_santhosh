@@ -182,7 +182,7 @@ public class PetNewAppointmentDetailsActivity extends AppCompatActivity implemen
 
     TextView txt_appointment_date;
     private String appointmentfor;
-    private List<PetNewAppointmentDetailsResponse.DataBean.PetIdBean.PetImgBean> pet_image;
+    private List<PetNewAppointmentDetailsResponse.DataBean.FamilyIdBean.PicBean> pet_image;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.include_petlover_header)
@@ -378,7 +378,7 @@ public class PetNewAppointmentDetailsActivity extends AppCompatActivity implemen
 
                             String servcost = response.body().getData().getService_amount();
 
-                            String pet_name = response.body().getData().getPet_id().getPet_name();
+                        /*    String pet_name = response.body().getData().getPet_id().getPet_name();
 
                              pet_image = response.body().getData().getPet_id().getPet_img();
 
@@ -408,7 +408,7 @@ public class PetNewAppointmentDetailsActivity extends AppCompatActivity implemen
                             } else {
                                 ll_petlastvacinateddate.setVisibility(View.GONE);
                                 vaccinated = "No";
-                            }
+                            }*/
 
                             String order_date = response.body().getData().getBooking_date();
 
@@ -431,9 +431,9 @@ public class PetNewAppointmentDetailsActivity extends AppCompatActivity implemen
 
                             start_appointment_status = response.body().getData().getStart_appointment_status();
 
-                            setView(usrname, usr_image, servname, servcost, pet_name, pet_image, pet_type, breed
+                       //     setView(usrname, usr_image, servname, servcost, pet_name, pet_image, pet_type, breed
 
-                                    , gender, colour, weight, age, order_date, orderid, payment_method, order_cost, vaccinated, addr);
+                          //          , gender, colour, weight, age, order_date, orderid, payment_method, order_cost, vaccinated, addr);
                         }
                     }
 
@@ -462,7 +462,7 @@ public class PetNewAppointmentDetailsActivity extends AppCompatActivity implemen
     }
 
     @SuppressLint({"SetTextI18n", "LongLogTag", "LogNotTimber"})
-    private void setView(String usrname, String usr_image, String servname, String servcost, String pet_name, List<PetNewAppointmentDetailsResponse.DataBean.PetIdBean.PetImgBean> pet_image, String pet_type, String breed, String gender, String colour, String weight, String age, String order_date, String orderid, String payment_method, String order_cost, String vaccinated, String addr) {
+    private void setView(String usrname, String usr_image, String servname, String servcost, String pet_name, List<PetNewAppointmentDetailsResponse.DataBean.FamilyIdBean.PicBean> pet_image, String pet_type, String breed, String gender, String colour, String weight, String age, String order_date, String orderid, String payment_method, String order_cost, String vaccinated, String addr) {
 
 
         if(usr_image != null && !usr_image.isEmpty()){

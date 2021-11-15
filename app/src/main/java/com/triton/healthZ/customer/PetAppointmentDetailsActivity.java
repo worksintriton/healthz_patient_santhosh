@@ -74,13 +74,9 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
 
     private String TAG = "PetAppointmentDetailsActivity";
 
-
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.avi_indicator)
     AVLoadingIndicatorView avi_indicator;
-
-
-
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.img_user)
@@ -99,32 +95,29 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
     TextView txt_serv_cost;
 
     @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_appointment_date)
+    TextView txt_appointment_date;
+
+    @SuppressLint("NonConstantResourceId")
     @BindView(R.id.btn_cancel)
     Button btn_cancel;
 
     @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_petimg)
-    ImageView img_petimg;
+    @BindView(R.id.btn_add_review)
+    Button btn_add_review;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.btn_prescriptiondetails)
+    Button btn_prescriptiondetails;
+
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_pet_name)
     TextView txt_pet_name;
 
     @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.txt_pet_type)
-    TextView txt_pet_type;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.txt_breed)
-    TextView txt_breed;
-
-    @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_gender)
     TextView txt_gender;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.txt_color)
-    TextView txt_color;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_weight)
@@ -137,6 +130,18 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_vaccinated)
     TextView txt_vaccinated;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_diagnosis)
+    TextView txt_diagnosis;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_allergies)
+    TextView txt_allergies;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_comments)
+    TextView txt_comments;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_order_date)
@@ -155,6 +160,10 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
     TextView txt_order_cost;
 
     @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_visit_type)
+    TextView txt_visit_type;
+
+    @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_address)
     TextView txt_address;
 
@@ -162,30 +171,6 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
     @BindView(R.id.img_videocall)
     ImageView img_videocall;
 
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.btn_add_review)
-    Button btn_add_review;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.btn_prescriptiondetails)
-    Button btn_prescriptiondetails;
-
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.ll_petlastvacinateddate)
-    LinearLayout ll_petlastvacinateddate;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.txt_petlastvaccinatedage)
-    TextView txt_petlastvaccinatedage;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.txt_appointment_date)
-    TextView txt_appointment_date;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.txt_dr_pets_handled)
-    TextView txt_dr_pets_handled;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.btn_reschedule_appointment)
@@ -198,10 +183,6 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_home_address)
     TextView txt_home_address;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.txt_visit_type)
-    TextView txt_visit_type;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.scrollablContent)
@@ -225,32 +206,12 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
     LinearLayout ll_allergies;
 
     @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.txt_allergies)
-    TextView txt_allergies;
-
-    @SuppressLint("NonConstantResourceId")
     @BindView(R.id.ll_comments)
     LinearLayout ll_comments;
 
     @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.txt_comments)
-    TextView txt_comments;
-
-    @SuppressLint("NonConstantResourceId")
     @BindView(R.id.ll_diagnosis)
     LinearLayout ll_diagnosis;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.txt_diagnosis)
-    TextView txt_diagnosis;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.ll_sub_diagnosis)
-    LinearLayout ll_sub_diagnosis;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.txt_sub_diagnosis)
-    TextView txt_sub_diagnosis;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.ll_doctor_comment)
@@ -261,13 +222,16 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
     TextView txt_doctor_comment;
 
     @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.txt_pets_handled_details)
-    TextView txt_pets_handled_details;
+    @BindView(R.id.txt_original_price)
+    TextView txt_original_price;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.ll_visit_type)
     LinearLayout ll_visit_type;
 
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.ll_vacinateddate)
+    LinearLayout ll_vacinateddate;
 
     String appointment_id;
     String appoinment_status;
@@ -348,7 +312,7 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
     @BindView(R.id.rl_homes)
     RelativeLayout rl_homes;*/
 
-    @SuppressLint("NonConstantResourceId")
+/*    @SuppressLint("NonConstantResourceId")
     @BindView(R.id.ll_original_price)
     LinearLayout ll_original_price;
 
@@ -362,16 +326,12 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_discount_price)
-    TextView txt_discount_price;
+    TextView txt_discount_price;*/
 
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.ll_gender)
     LinearLayout ll_gender;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.ll_color)
-    LinearLayout ll_color;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.ll_weight)
@@ -390,7 +350,7 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
     private String Paymentmethod;
     private String doctorid;
     private SessionManager session;
-
+    private List<PetNewAppointmentDetailsResponse.DataBean.FamilyIdBean.PicBean> pet_image;
 
     @SuppressLint({"LogNotTimber", "LongLogTag"})
     @Override
@@ -406,10 +366,9 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
         ll_allergies.setVisibility(View.GONE);
         ll_comments.setVisibility(View.GONE);
         ll_diagnosis.setVisibility(View.GONE);
-        ll_sub_diagnosis.setVisibility(View.GONE);
         ll_doctor_comment.setVisibility(View.GONE);
         txt_diagnosis.setVisibility(View.GONE);
-        txt_sub_diagnosis.setVisibility(View.GONE);
+
         txt_doctor_comment.setVisibility(View.GONE);
 
         session = new SessionManager(getApplicationContext());
@@ -427,10 +386,10 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
             userrate = extras.getString("userrate");
             from = extras.getString("from");
 
-            Log.w(TAG,"appointmentfor : "+appointmentfor+" from : "+from);
+            Log.w(TAG,"appointment_id : "+appointment_id+"appointmentfor : "+appointmentfor+" from : "+from);
 
             if(appointmentfor !=null && appointmentfor.equalsIgnoreCase("SP")){
-                txt_pets_handled_details.setVisibility(View.GONE);
+               // txt_pets_handled_details.setVisibility(View.GONE);
                 ll_visit_type.setVisibility(View.GONE);
             }
 
@@ -573,18 +532,17 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
         if(appointmentfor != null){
             if(appointmentfor.equalsIgnoreCase("Doctor")){
                 if (new ConnectionDetector(PetAppointmentDetailsActivity.this).isNetworkAvailable(PetAppointmentDetailsActivity.this)) {
-             //       petNewAppointmentResponseCall();
+               petNewAppointmentResponseCall();
                 }
             }
             else if(appointmentfor.equalsIgnoreCase("SP")){
                 if (new ConnectionDetector(PetAppointmentDetailsActivity.this).isNetworkAvailable(PetAppointmentDetailsActivity.this)) {
-                    spAppointmentDetailsResponse();
+                   // spAppointmentDetailsResponse();
                 }
             }
 
         }
     }
-/*
 
 
     @SuppressLint({"LongLogTag", "LogNotTimber"})
@@ -612,7 +570,7 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
 
 
                         if(response.body().getData() != null){
-                            if(response.body().getData().getCoupon_status() != null && response.body().getData().getCoupon_status().equalsIgnoreCase("Applied")){
+                           /* if(response.body().getData().getCoupon_status() != null && response.body().getData().getCoupon_status().equalsIgnoreCase("Applied")){
                                 ll_original_price.setVisibility(View.VISIBLE);
                                 ll_discount_price.setVisibility(View.VISIBLE);
                                 if(response.body().getData().getOriginal_price() != 0){
@@ -625,7 +583,7 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
                             }else{
                                 ll_original_price.setVisibility(View.GONE);
                                 ll_discount_price.setVisibility(View.GONE);
-                            }
+                            }*/
                         }
 
 
@@ -644,17 +602,13 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
                                 txt_visit_type.setText(response.body().getData().getCommunication_type());
                             }
 
-                           
+
                             String servname = response.body().getData().getService_name();
-                            String pet_name = response.body().getData().getPet_id().getPet_name();
-                            pet_image = response.body().getData().getPet_id().getPet_img();
-                            String pet_type = response.body().getData().getPet_id().getPet_type();
-                            String breed = response.body().getData().getPet_id().getPet_breed();
-                            String gender = response.body().getData().getPet_id().getPet_gender();
-                            String colour = response.body().getData().getPet_id().getPet_color();
-                            int weight = response.body().getData().getPet_id().getPet_weight();
-                            String pet_dob = response.body().getData().getPet_id().getPet_dob();
-                            String pet_age = response.body().getData().getPet_id().getPet_age();
+                            String pet_name = response.body().getData().getFamily_id().getName();
+                            pet_image = response.body().getData().getFamily_id().getPic();
+                            String gender = response.body().getData().getFamily_id().getGender();
+                            String weight = response.body().getData().getFamily_id().getWeight();
+                            String pet_dob = response.body().getData().getFamily_id().getDateofbirth();
 
                             if(gender != null && !gender.isEmpty()){
                                 ll_gender.setVisibility(View.VISIBLE);
@@ -662,44 +616,41 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
                                 ll_gender.setVisibility(View.GONE);
                             }
 
-                             if(colour != null && !colour.isEmpty()){
-                                ll_color.setVisibility(View.VISIBLE);
-                            }else{
-                                 ll_color.setVisibility(View.GONE);
-                            }
 
-                              if(weight != 0 ){
+                              if(weight != null&&!weight.isEmpty() ){
                                 ll_weight.setVisibility(View.VISIBLE);
                             }else{
                                   ll_weight.setVisibility(View.GONE);
                             }
 
-                            if(pet_age != null && !pet_age.isEmpty()){
-                                ll_age.setVisibility(View.VISIBLE);
+                            if(pet_dob != null && !pet_dob.isEmpty()){
+
+                                txt_age.setText(pet_dob);
+
                             }else{
-                                ll_age.setVisibility(View.GONE);
+
+                                txt_age.setText("");
+
                             }
 
-
-                            if(pet_age != null && !pet_age.isEmpty()){
+                          /*  if(pet_age != null && !pet_age.isEmpty()){
                                 txt_age.setText(pet_age);
                             }else {
                                 txt_age.setText("");
-                            }
+                            }*/
 
                             Paymentmethod = response.body().getData().getPayment_method();
                             doctorid = response.body().getData().getDoc_business_info().get(0).getUser_id();
 
-                            */
-/*if(pet_dob != null){
-                            String[] separated = pet_dob.split("-");
+                            if(pet_dob != null){
+                            String[] separated = pet_dob.split("/");
                             String day = separated[0];
                             String month = separated[1];
                             String year = separated[2];
                             Log.w(TAG,"day : "+day+" month: "+month+" year : "+year);
 
                             getAge(Integer.parseInt(year),Integer.parseInt(month),Integer.parseInt(day));
-                            }*//*
+                            }
 
 
 
@@ -772,16 +723,14 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
                             if(response.body().getData().getBooking_date_time() != null){
                                 txt_appointment_date.setText(response.body().getData().getBooking_date_time());
                             }
-                            if (response.body().getData().getPet_id().isVaccinated()) {
+                            if (response.body().getData().getFamily_id().getCovide_vac()!=null&&!response.body().getData().getFamily_id().getCovide_vac().equals("Yes")) {
                                 vaccinated = "Yes";
-                                ll_petlastvacinateddate.setVisibility(View.VISIBLE);
-                                if (response.body().getData().getPet_id().getLast_vaccination_date() != null && !response.body().getData().getPet_id().getLast_vaccination_date().isEmpty()) {
-                                    txt_petlastvaccinatedage.setText(response.body().getData().getPet_id().getLast_vaccination_date());
-                                }
+                                ll_vacinateddate.setVisibility(View.VISIBLE);
+                                txt_vaccinated.setText(response.body().getData().getFamily_id().getCovide_vac());
 
                             }
                             else {
-                                ll_petlastvacinateddate.setVisibility(View.GONE);
+                                ll_vacinateddate.setVisibility(View.GONE);
                                 vaccinated = "No";
                             }
 
@@ -800,15 +749,15 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
                             }
                             appoinment_status = response.body().getData().getAppoinment_status();
                             start_appointment_status = response.body().getData().getStart_appointment_status();
-                            setView(usrname, usr_image, servname, pet_name, pet_type, breed, gender, colour, weight, order_date, orderid, payment_method, order_cost, vaccinated, addr);
+                            setView(usrname, usr_image, servname, pet_name, "pet_type", "breed", gender, "colour", weight, order_date, orderid, payment_method, order_cost, vaccinated, addr);
 
                             if(response.body().getData().getVisit_type() != null &&response.body().getData().getVisit_type().equalsIgnoreCase("Home")){
                                 ll_home_address.setVisibility(View.VISIBLE);
-                                if(response.body().getAddress() != null){
+                              /*  if(response.body().getAddress() != null){
                                     if(response.body().getAddress().getLocation_address() != null){
                                         txt_home_address.setText(response.body().getAddress().getLocation_address());
                                     }
-                                }
+                                }*/
                             }
                             else{
                                 ll_home_address.setVisibility(View.GONE);
@@ -849,24 +798,28 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
                                 concatenatedStarNames += response.body().getData().getDoc_business_info().get(0).getPet_handled().get(i).getPet_handled();
                                 if (i < response.body().getData().getDoc_business_info().get(0).getPet_handled().size() - 1) concatenatedStarNames += ", ";
                             }
-                            txt_dr_pets_handled.setText(concatenatedStarNames);
+                        //    txt_dr_pets_handled.setText(concatenatedStarNames);
                             Log.w(TAG," concatenatedStarNames : "+concatenatedStarNames);
 
                         }
-
+                        ll_allergies.setVisibility(View.VISIBLE);
                         if(response.body().getData().getAllergies() != null && !response.body().getData().getAllergies().isEmpty() ){
-                            ll_allergies.setVisibility(View.VISIBLE);
+
                             txt_allergies.setText(response.body().getData().getAllergies());
                         }
                         else{
-                            ll_allergies.setVisibility(View.GONE);
+                            txt_allergies.setText("");
                         }
+
+                        ll_comments.setVisibility(View.VISIBLE);
+
                         if(response.body().getData().getProblem_info() != null && !response.body().getData().getProblem_info().isEmpty() ){
-                            ll_comments.setVisibility(View.VISIBLE);
+
                             txt_comments.setText(response.body().getData().getProblem_info());
                         }
                         else{
-                            ll_comments.setVisibility(View.GONE);
+
+                            txt_comments.setText("");
                         }
 
                         if(from != null && from.equalsIgnoreCase("PetCompletedAppointmentAdapter")){
@@ -876,11 +829,11 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
                                 txt_diagnosis.setText(response.body().getData().getDiagnosis());
 
                             }
-                            if(response.body().getData().getSub_diagnosis() != null && !response.body().getData().getSub_diagnosis().isEmpty()){
+                            /*if(response.body().getData().getSub_diagnosis() != null && !response.body().getData().getSub_diagnosis().isEmpty()){
                                 ll_sub_diagnosis.setVisibility(View.VISIBLE);
                                 txt_sub_diagnosis.setVisibility(View.VISIBLE);
                                 txt_sub_diagnosis.setText(response.body().getData().getSub_diagnosis());
-                            }
+                            }*/
                             if(response.body().getData().getDoctor_comment() != null && !response.body().getData().getDoctor_comment().isEmpty()){
                                 ll_doctor_comment.setVisibility(View.VISIBLE);
                                 txt_doctor_comment.setVisibility(View.VISIBLE);
@@ -912,7 +865,6 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
         });
 
     }
-*/
 
 
     @SuppressLint({"LongLogTag", "LogNotTimber"})
@@ -925,7 +877,7 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
     }
 
     @SuppressLint({"SetTextI18n", "LongLogTag", "LogNotTimber"})
-    private void setView(String usrname, String usr_image, String servname, String pet_name, String pet_type, String breed, String gender, String colour, double weight,String order_date, String orderid, String payment_method, String order_cost, String vaccinated, String addr) {
+    private void setView(String usrname, String usr_image, String servname, String pet_name, String pet_type, String breed, String gender, String colour, String weight, String order_date, String orderid, String payment_method, String order_cost, String vaccinated, String addr) {
 
 
         if(usr_image != null && !usr_image.isEmpty()){
@@ -952,58 +904,43 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
             txt_serv_name.setVisibility(View.GONE);
         }
 
-/*
 
         if(pet_image != null && pet_image.size()>0){
             String petimage = null;
             for(int i=0;i<pet_image.size();i++){
-                petimage = pet_image.get(i).getPet_img();
+                petimage = pet_image.get(i).getImage();
             }
         
             Glide.with(PetAppointmentDetailsActivity.this)
                     .load(petimage)
-                    .into(img_petimg);
+                    .into(img_user);
         }else{
             Glide.with(PetAppointmentDetailsActivity.this)
                     .load(APIClient.PROFILE_IMAGE_URL)
-                    .into(img_petimg);
+                    .into(img_user);
         }
-*/
 
 
         if(pet_name != null && !pet_name.isEmpty()){
             txt_pet_name.setText(pet_name);
         }
 
-        if(pet_type != null && !pet_type.isEmpty()){
-
-            txt_pet_type.setText(pet_type);
-        }
-
-        if(breed != null && !breed.isEmpty()){
-
-            txt_breed.setText(breed);
-        }
 
         if(gender != null && !gender.isEmpty()){
 
             txt_gender.setText(gender);
         }
 
-        if(colour != null && !colour.isEmpty()){
 
-            txt_color.setText(colour);
-        }
-
-        if(weight != 0 ){
+        if(weight != null&&!weight.isEmpty()){
 
             txt_weight.setText(weight+"");
         }
-
+/*
         if(petAgeandMonth != null && !petAgeandMonth.isEmpty()){
 
             txt_age.setText(petAgeandMonth);
-        }
+        }*/
         if(vaccinated != null && !vaccinated.isEmpty()) {
             txt_vaccinated.setText(vaccinated);
         }
@@ -1025,8 +962,8 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
         }
 
         if(order_cost != null && !order_cost.isEmpty()){
-            txt_order_cost.setText("INR "+order_cost);
-            txt_serv_cost.setText("INR "+order_cost);
+            txt_original_price.setText("\u20B9 "+order_cost);
+            txt_serv_cost.setText("\u20B9 "+order_cost);
             ServiceCost = order_cost;
         }
 
@@ -1259,7 +1196,7 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
         }
     }
 
-    @SuppressLint({"LongLogTag", "LogNotTimber"})
+   /* @SuppressLint({"LongLogTag", "LogNotTimber"})
     private void spAppointmentDetailsResponse() {
         avi_indicator.setVisibility(View.VISIBLE);
         avi_indicator.smoothToShow();
@@ -1272,7 +1209,7 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
             @Override
             public void onResponse(@NonNull Call<SPAppointmentDetailsResponse> call, @NonNull Response<SPAppointmentDetailsResponse> response) {
                 avi_indicator.smoothToHide();
-                Log.w(TAG, "SPAppointmentDetailsResponse" + "--->" + new Gson().toJson(response.body()));
+        `           Log.w(TAG, "SPAppointmentDetailsResponse" + "--->" + new Gson().toJson(response.body()));
                 if (response.body() != null) {
                     if (200 == response.body().getCode()) {
                         scrollablContent.setVisibility(View.VISIBLE);
@@ -1323,7 +1260,7 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
 
                             Paymentmethod = response.body().getData().getPayment_method();
 
-                           /* if(pet_dob != null){
+                           *//* if(pet_dob != null){
                                 String[] separated = pet_dob.split("-");
                                 String day = separated[0];
                                 String month = separated[1];
@@ -1331,18 +1268,18 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
                                 Log.w(TAG,"day : "+day+" month: "+month+" year : "+year);
 
                                 getAge(Integer.parseInt(year),Integer.parseInt(month),Integer.parseInt(day));
-                            }*/
+                            }*//*
 
                             if (response.body().getData().getPet_id().isVaccinated()) {
                                 vaccinated = "Yes";
-                                ll_petlastvacinateddate.setVisibility(View.VISIBLE);
+                                ll_vacinateddate.setVisibility(View.VISIBLE);
                                 if (response.body().getData().getPet_id().getLast_vaccination_date() != null) {
-                                    txt_petlastvaccinatedage.setText(response.body().getData().getPet_id().getLast_vaccination_date());
+                                    txt_vaccinated.setText(response.body().getData().getPet_id().getLast_vaccination_date());
                                 }
 
                             }
                             else {
-                                ll_petlastvacinateddate.setVisibility(View.GONE);
+                                ll_vacinateddate.setVisibility(View.GONE);
                                 vaccinated = "No";
                             }
                             String order_date = response.body().getData().getDate_and_time();
@@ -1377,7 +1314,7 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
             }
         });
 
-    }
+    }*/
     @SuppressLint({"LongLogTag", "LogNotTimber"})
     private AppointmentDetailsRequest appointmentDetailsRequest() {
 

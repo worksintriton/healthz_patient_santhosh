@@ -75,7 +75,7 @@ public class SPCompletedAppointmentAdapter extends  RecyclerView.Adapter<Recycle
             holder.txt_service_cost.setText("INR "+completedAppointmentResponseList.get(position).getService_amount());
         }
 
-        Log.w(TAG,"PetImage : "+completedAppointmentResponseList.get(position).getPet_id().getPet_img().get(0).getPet_img());
+      /*  Log.w(TAG,"PetImage : "+completedAppointmentResponseList.get(position).getPet_id().getPet_img().get(0).getPet_img());
 
         if (completedAppointmentResponseList.get(position).getPet_id().getPet_img().get(0).getPet_img() != null && !completedAppointmentResponseList.get(position).getPet_id().getPet_img().get(0).getPet_img().isEmpty()) {
             Glide.with(context)
@@ -88,7 +88,7 @@ public class SPCompletedAppointmentAdapter extends  RecyclerView.Adapter<Recycle
                     .load(APIClient.PROFILE_IMAGE_URL)
                     .into(holder.img_pet_imge);
 
-        }
+        }*/
 
         holder.ll_new.setOnClickListener(new View.OnClickListener() {
             @Override

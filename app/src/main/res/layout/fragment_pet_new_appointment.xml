@@ -57,7 +57,7 @@
         <Button
             android:id="@+id/btn_load_more"
             android:layout_width="100dp"
-            android:layout_height="35dp"
+            android:layout_height="40dp"
             android:layout_gravity="center"
             android:background="@drawable/green_bgm_border"
             android:fontFamily="@font/montserrat_bold"

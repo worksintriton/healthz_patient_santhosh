@@ -69,20 +69,20 @@ public class PetLoverServicesAdapter extends  RecyclerView.Adapter<RecyclerView.
           if(currentItem.getService_title() != null) {
               holder.txt_petlover_servicesname.setText(currentItem.getService_title());
           }
-//          if (currentItem.getService_icon() != null && !currentItem.getService_icon().isEmpty()) {
-//
-//            Glide.with(context)
-//                    .load(currentItem.getService_icon())
-//                    //.load(R.drawable.logo)
-//                    .into(holder.cv_serviceimage);
-//
-//           }
-//          else{
-//            Glide.with(context)
-//                    .load(APIClient.PROFILE_IMAGE_URL)
-//                    .into(holder.cv_serviceimage);
-//
-//        }
+          if (currentItem.getService_icon() != null && !currentItem.getService_icon().isEmpty()) {
+
+            Glide.with(context)
+                    .load(currentItem.getService_icon())
+                    //.load(R.drawable.logo)
+                    .into(holder.cv_serviceimage);
+
+           }
+          else{
+            Glide.with(context)
+                    .load(APIClient.PROFILE_IMAGE_URL)
+                    .into(holder.cv_serviceimage);
+
+        }
 
          /* if(currentItem.getBackground_color() != null) {
               int color = Color.parseColor(currentItem.getBackground_color());

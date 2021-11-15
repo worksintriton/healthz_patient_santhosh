@@ -79,7 +79,7 @@ public class SPMissedAppointmentAdapter extends  RecyclerView.Adapter<RecyclerVi
         if(missedAppointmentResponseList.get(position).getService_amount() != null){
             holder.txt_service_cost.setText("INR "+missedAppointmentResponseList.get(position).getService_amount());
         }
-        try{
+/*        try{
             if (missedAppointmentResponseList.get(position).getPet_id().getPet_img().get(0).getPet_img() != null && !missedAppointmentResponseList.get(position).getPet_id().getPet_img().get(0).getPet_img().isEmpty()) {
 
                 Glide.with(context)
@@ -95,7 +95,7 @@ public class SPMissedAppointmentAdapter extends  RecyclerView.Adapter<RecyclerVi
             }
         }catch (Exception e){
 
-        }
+        }*/
 
         holder.ll_new.setOnClickListener(new View.OnClickListener() {
             @Override

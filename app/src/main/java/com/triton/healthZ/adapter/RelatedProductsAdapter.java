@@ -69,7 +69,7 @@ public class RelatedProductsAdapter extends  RecyclerView.Adapter<RecyclerView.V
         currentItem = product_related.get(position);
 
         Log.w(TAG,"rating : "+ currentItem.getProduct_rating());
-        if(currentItem.getProduct_rating() == 1){
+     /*   if(currentItem.getProduct_rating() == 1){
             holder.hand_img1.setBackgroundResource(R.drawable.ic_logo_color);
             holder.hand_img2.setBackgroundResource(R.drawable.ic_logo_graycolor);
             holder.hand_img3.setBackgroundResource(R.drawable.ic_logo_graycolor);
@@ -100,7 +100,7 @@ public class RelatedProductsAdapter extends  RecyclerView.Adapter<RecyclerView.V
             holder.hand_img4.setBackgroundResource(R.drawable.ic_logo_color);
             holder.hand_img5.setBackgroundResource(R.drawable.ic_logo_color);
         }
-
+*/
 
 
         if(currentItem.getProduct_title() != null){
@@ -134,13 +134,13 @@ public class RelatedProductsAdapter extends  RecyclerView.Adapter<RecyclerView.V
             holder.txt_product_discount_price.setVisibility(View.GONE);
         }
 
-        if(currentItem.getProduct_discount() != 0){
+       /* if(currentItem.getProduct_discount() != 0){
             holder.txt_products_offer.setVisibility(View.VISIBLE);
             holder.txt_products_offer.setText(currentItem.getProduct_discount()+" % off");
         }else{
             holder.txt_products_offer.setVisibility(View.INVISIBLE);
 
-        }
+        }*/
 
 
         if(currentItem.isProduct_fav()){
@@ -225,13 +225,13 @@ public class RelatedProductsAdapter extends  RecyclerView.Adapter<RecyclerView.V
             img_products_image = itemView.findViewById(R.id.img_products_image);
             img_fav = itemView.findViewById(R.id.img_fav);
             txt_products_price = itemView.findViewById(R.id.txt_products_price);
-            hand_img1 = itemView.findViewById(R.id.hand_img1);
+       /*     hand_img1 = itemView.findViewById(R.id.hand_img1);
             hand_img2 = itemView.findViewById(R.id.hand_img2);
             hand_img3 = itemView.findViewById(R.id.hand_img3);
             hand_img4 = itemView.findViewById(R.id.hand_img4);
-            hand_img5 = itemView.findViewById(R.id.hand_img5);
+            hand_img5 = itemView.findViewById(R.id.hand_img5);*/
             txt_product_discount_price = itemView.findViewById(R.id.txt_product_discount_price);
-            txt_products_offer = itemView.findViewById(R.id.txt_products_offer);
+        //    txt_products_offer = itemView.findViewById(R.id.txt_products_offer);
 
         }
 

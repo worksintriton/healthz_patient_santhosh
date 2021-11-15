@@ -35,7 +35,7 @@ import retrofit2.Response;
 
 public class DoctorCompletedAppointmentDetailsActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private  String TAG = "DoctorCompletedAppointmentDetailsActivity";
+   /* private  String TAG = "DoctorCompletedAppointmentDetailsActivity";
 
 
     AVLoadingIndicatorView avi_indicator;
@@ -109,7 +109,7 @@ public class DoctorCompletedAppointmentDetailsActivity extends AppCompatActivity
     @BindView(R.id.include_doctor_footer)
     View include_doctor_footer;
 
-    /* Bottom Navigation */
+    *//* Bottom Navigation *//*
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.rl_home)
@@ -148,14 +148,14 @@ public class DoctorCompletedAppointmentDetailsActivity extends AppCompatActivity
     RelativeLayout rl_homes;
 
 
-
+*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor_completed_appointment_details);
         ButterKnife.bind(this);
 
-        avi_indicator=findViewById(R.id.avi_indicator);
+        /*avi_indicator=findViewById(R.id.avi_indicator);
 
 
         img_back=findViewById(R.id.img_back);
@@ -237,7 +237,7 @@ public class DoctorCompletedAppointmentDetailsActivity extends AppCompatActivity
 
 
         //bottom_navigation_view.getMenu().findItem(R.id.home).setChecked(true);
-        /*home*/
+        *//*home*//*
         title_shop.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
         img_shop.setImageResource(R.drawable.grey_shop);
         title_community.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
@@ -464,11 +464,13 @@ public class DoctorCompletedAppointmentDetailsActivity extends AppCompatActivity
         startActivity(intent);
         finish();
     }
-
+*/
+    }
     @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
         switch (v.getId()){
+/*
 
             case R.id.rl_homes:
                 callDirections("1");
@@ -487,6 +489,7 @@ public class DoctorCompletedAppointmentDetailsActivity extends AppCompatActivity
                 break;
 
 
+*/
 
 
 

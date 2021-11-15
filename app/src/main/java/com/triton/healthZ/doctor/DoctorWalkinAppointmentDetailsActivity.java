@@ -50,7 +50,7 @@ import retrofit2.Response;
 
 public class DoctorWalkinAppointmentDetailsActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private String TAG = "DoctorWalkinAppointmentDetailsActivity";
+  /*  private String TAG = "DoctorWalkinAppointmentDetailsActivity";
 
 
     @SuppressLint("NonConstantResourceId")
@@ -254,7 +254,7 @@ public class DoctorWalkinAppointmentDetailsActivity extends AppCompatActivity im
     String breed,gender,colour,weight,pet_dob ;
 
 
-    /* Bottom Navigation */
+    *//* Bottom Navigation *//*
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.rl_home)
@@ -291,7 +291,7 @@ public class DoctorWalkinAppointmentDetailsActivity extends AppCompatActivity im
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.rl_homes)
     RelativeLayout rl_homes;
-    private String petage;
+    private String petage;*/
 
 
     @SuppressLint("LongLogTag")
@@ -300,7 +300,7 @@ public class DoctorWalkinAppointmentDetailsActivity extends AppCompatActivity im
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor_appointment_details);
 
-        ButterKnife.bind(this);
+       /* ButterKnife.bind(this);
         scrollablContent.setVisibility(View.GONE);
         img_emergency_appointment.setVisibility(View.GONE);
 
@@ -344,7 +344,7 @@ public class DoctorWalkinAppointmentDetailsActivity extends AppCompatActivity im
 
         //bottom_navigation_view.getMenu().findItem(R.id.home).setChecked(true);
 
-        /*home*/
+        *//*home*//*
 
         title_shop.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
         img_shop.setImageResource(R.drawable.grey_shop);
@@ -495,13 +495,13 @@ public class DoctorWalkinAppointmentDetailsActivity extends AppCompatActivity im
 
                             if(pet_dob != null){
                                 txt_age.setText(pet_dob);
-                               /* String[] separated = pet_dob.split("-");
+                               *//* String[] separated = pet_dob.split("-");
                                 String day = separated[0];
                                 String month = separated[1];
                                 String year = separated[2];
                                 Log.w(TAG,"day : "+day+" month: "+month+" year : "+year);
 
-                                getAge(Integer.parseInt(year),Integer.parseInt(month),Integer.parseInt(day));*/
+                                getAge(Integer.parseInt(year),Integer.parseInt(month),Integer.parseInt(day));*//*
                             }else{
                                 txt_age.setText("");
                             }
@@ -693,10 +693,10 @@ public class DoctorWalkinAppointmentDetailsActivity extends AppCompatActivity im
             txt_weight.setText(weight);
         }
 
-        /*if(petAgeandMonth != null && !petAgeandMonth.isEmpty()){
+        *//*if(petAgeandMonth != null && !petAgeandMonth.isEmpty()){
 
             txt_age.setText(petAgeandMonth);
-        }*/
+        }*//*
 
         if(vaccinated != null && !vaccinated.isEmpty()){
             txt_vaccinated.setText(vaccinated);
@@ -843,10 +843,10 @@ public class DoctorWalkinAppointmentDetailsActivity extends AppCompatActivity im
 
     @SuppressLint({"LongLogTag", "LogNotTimber"})
     private DoctorStartAppointmentRequest doctorStartAppointmentRequest(String id) {
-        /*
+        *//*
          * _id : 5fc639ea72fc42044bfa1683
          * appoinment_status : In-Progress
-         */
+         *//*
         DoctorStartAppointmentRequest doctorStartAppointmentRequest = new DoctorStartAppointmentRequest();
         doctorStartAppointmentRequest.set_id(id);
         doctorStartAppointmentRequest.setStart_appointment_status("In-Progress");
@@ -895,12 +895,12 @@ public class DoctorWalkinAppointmentDetailsActivity extends AppCompatActivity im
     @SuppressLint({"LongLogTag", "LogNotTimber"})
     private AppoinmentCancelledRequest appoinmentCancelledRequest(String id) {
 
-        /*
+        *//*
          * _id : 5fc639ea72fc42044bfa1683
          * missed_at : 23-10-2000 10 : 00 AM
          * doc_feedback : One Emergenecy work i am cancelling this appointment
          * appoinment_status : Missed
-         */
+         *//*
 
 
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm aa", Locale.getDefault());
@@ -1026,6 +1026,11 @@ public class DoctorWalkinAppointmentDetailsActivity extends AppCompatActivity im
                 break;
 
         }
+*/
+    }
+
+    @Override
+    public void onClick(View v) {
 
     }
 }

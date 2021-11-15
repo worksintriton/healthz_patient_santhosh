@@ -34,118 +34,118 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class DoctorMissedAppointmentDetailsActivity extends AppCompatActivity implements View.OnClickListener {
-
-    private String TAG = "DoctorMissedAppointmentDetailsActivity";
-
-
-    AVLoadingIndicatorView avi_indicator;
-
-
-    ImageView img_back;
-
-
-    ImageView img_user;
-
-
-    TextView txt_usrname;
-
-
-    TextView txt_serv_name;
-
-
-    TextView txt_serv_cost;
-
-
-    Button btn_cancel;
-
-
-    ImageView img_petimg;
-
-
-    TextView txt_pet_name;
-
-
-    TextView txt_pet_type;
-
-
-    TextView txt_breed;
-
-
-    TextView txt_gender;
-
-
-    TextView txt_color;
-
-    TextView txt_weight;
-
-    TextView txt_age;
-
-    TextView txt_vaccinated;
-
-    TextView txt_order_date;
-
-    TextView txt_order_id;
-
-    TextView txt_payment_method;
-
-    TextView txt_order_cost;
-
-    TextView txt_address;
-
-    String appointment_id;
-
-    ImageView img_videocall;
-
-    String appoinment_status;
-
-    String start_appointment_status;
-
-    LinearLayout ll_petlastvacinateddate;
-    TextView txt_petlastvaccinatedage;
-    private List<PetNewAppointmentDetailsResponse.DataBean.PetIdBean.PetImgBean> pet_image;
-
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.include_doctor_footer)
-    View include_doctor_footer;
-
-    /* Bottom Navigation */
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_home)
-    RelativeLayout rl_home;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_service)
-    RelativeLayout rl_service;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_shop)
-    RelativeLayout rl_shop;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.title_shop)
-    TextView title_shop;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_shop)
-    ImageView img_shop;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_comn)
-    RelativeLayout rl_comn;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.title_community)
-    TextView title_community;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_community)
-    ImageView img_community;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_homes)
-    RelativeLayout rl_homes;
+//
+//    private String TAG = "DoctorMissedAppointmentDetailsActivity";
+//
+//
+//    AVLoadingIndicatorView avi_indicator;
+//
+//
+//    ImageView img_back;
+//
+//
+//    ImageView img_user;
+//
+//
+//    TextView txt_usrname;
+//
+//
+//    TextView txt_serv_name;
+//
+//
+//    TextView txt_serv_cost;
+//
+//
+//    Button btn_cancel;
+//
+//
+//    ImageView img_petimg;
+//
+//
+//    TextView txt_pet_name;
+//
+//
+//    TextView txt_pet_type;
+//
+//
+//    TextView txt_breed;
+//
+//
+//    TextView txt_gender;
+//
+//
+//    TextView txt_color;
+//
+//    TextView txt_weight;
+//
+//    TextView txt_age;
+//
+//    TextView txt_vaccinated;
+//
+//    TextView txt_order_date;
+//
+//    TextView txt_order_id;
+//
+//    TextView txt_payment_method;
+//
+//    TextView txt_order_cost;
+//
+//    TextView txt_address;
+//
+//    String appointment_id;
+//
+//    ImageView img_videocall;
+//
+//    String appoinment_status;
+//
+//    String start_appointment_status;
+//
+//    LinearLayout ll_petlastvacinateddate;
+//    TextView txt_petlastvaccinatedage;
+//    private List<PetNewAppointmentDetailsResponse.DataBean.PetIdBean.PetImgBean> pet_image;
+//
+//
+//    @SuppressLint("NonConstantResourceId")
+//    @BindView(R.id.include_doctor_footer)
+//    View include_doctor_footer;
+//
+//    /* Bottom Navigation */
+//
+//    @SuppressLint("NonConstantResourceId")
+//    @BindView(R.id.rl_home)
+//    RelativeLayout rl_home;
+//
+//    @SuppressLint("NonConstantResourceId")
+//    @BindView(R.id.rl_service)
+//    RelativeLayout rl_service;
+//
+//    @SuppressLint("NonConstantResourceId")
+//    @BindView(R.id.rl_shop)
+//    RelativeLayout rl_shop;
+//
+//    @SuppressLint("NonConstantResourceId")
+//    @BindView(R.id.title_shop)
+//    TextView title_shop;
+//
+//    @SuppressLint("NonConstantResourceId")
+//    @BindView(R.id.img_shop)
+//    ImageView img_shop;
+//
+//    @SuppressLint("NonConstantResourceId")
+//    @BindView(R.id.rl_comn)
+//    RelativeLayout rl_comn;
+//
+//    @SuppressLint("NonConstantResourceId")
+//    @BindView(R.id.title_community)
+//    TextView title_community;
+//
+//    @SuppressLint("NonConstantResourceId")
+//    @BindView(R.id.img_community)
+//    ImageView img_community;
+//
+//    @SuppressLint("NonConstantResourceId")
+//    @BindView(R.id.rl_homes)
+//    RelativeLayout rl_homes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -153,7 +153,7 @@ public class DoctorMissedAppointmentDetailsActivity extends AppCompatActivity im
         setContentView(R.layout.activity_doctor_missedx_appointment_details);
         ButterKnife.bind(this);
 
-        avi_indicator=findViewById(R.id.avi_indicator);
+    /*    avi_indicator=findViewById(R.id.avi_indicator);
 
 
         img_back=findViewById(R.id.img_back);
@@ -231,7 +231,7 @@ public class DoctorMissedAppointmentDetailsActivity extends AppCompatActivity im
             petNewAppointmentResponseCall();
         }
         // bottom_navigation_view.getMenu().findItem(R.id.home).setChecked(true);
-        /*home*/
+        *//*home*//*
 
         title_shop.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
         img_shop.setImageResource(R.drawable.grey_shop);
@@ -498,6 +498,12 @@ public class DoctorMissedAppointmentDetailsActivity extends AppCompatActivity im
 
 
         }
+
+    }*/
+    }
+
+    @Override
+    public void onClick(View v) {
 
     }
 }

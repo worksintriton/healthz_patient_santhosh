@@ -97,7 +97,7 @@ public class SPNewAppointmentAdapter extends  RecyclerView.Adapter<RecyclerView.
 
         Log.w(TAG,"Pet_img : "+newAppointmentResponseList.get(position).getPet_id().getPet_img());
 
-         try{
+   /*      try{
              if (newAppointmentResponseList.get(position).getPet_id().getPet_img().get(0).getPet_img() != null && !newAppointmentResponseList.get(position).getPet_id().getPet_img().get(0).getPet_img().isEmpty()) {
 
                  Glide.with(context)
@@ -112,7 +112,7 @@ public class SPNewAppointmentAdapter extends  RecyclerView.Adapter<RecyclerView.
 
              }
 
-         }catch (Exception e){}
+         }catch (Exception e){}*/
         if(newAppointmentResponseList.get(position).getAppointment_types() != null && newAppointmentResponseList.get(position).getAppointment_types().equalsIgnoreCase("Emergency")){
             holder.img_emergency_appointment.setVisibility(View.VISIBLE);
         }else{

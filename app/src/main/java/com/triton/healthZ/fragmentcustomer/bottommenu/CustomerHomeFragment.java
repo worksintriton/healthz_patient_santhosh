@@ -656,7 +656,7 @@ public class CustomerHomeFragment extends Fragment implements Serializable,
                 @Override
                 public void onClick(View view) {
                     dialog.dismiss();
-                    startActivity(new Intent(mContext, PickUpLocationDenyActivity.class));
+            startActivity(new Intent(mContext, PickUpLocationDenyActivity.class));
 
                     // showLocationDenyAlert();
 
@@ -666,7 +666,7 @@ public class CustomerHomeFragment extends Fragment implements Serializable,
             btn_allow.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    startActivity(new Intent(mContext, PickUpLocationAllowActivity.class));
+                  startActivity(new Intent(mContext, PickUpLocationAllowActivity.class));
                     dialog.dismiss();
 
                 }

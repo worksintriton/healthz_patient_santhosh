@@ -158,16 +158,12 @@ public class PetLoverShopNewAdapter extends  RecyclerView.Adapter<RecyclerView.V
 
         }
 
-        holder.ll_root.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context, ProductDetailsActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                intent.putExtra("productid",productDetailsResponseList.get(position).get_id());
-                intent.putExtra("fromactivity",TAG);
-                context.startActivity(intent);
-                }
-
-        });
+        holder.ll_root.setOnClickListener(v -> {
+            Intent intent = new Intent(context, ProductDetailsActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.putExtra("productid",productDetailsResponseList.get(position).get_id());
+            intent.putExtra("fromactivity",TAG);
+            context.startActivity(intent);
+            });
     }
 
     @Override

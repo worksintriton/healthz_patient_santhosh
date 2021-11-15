@@ -209,15 +209,15 @@ public class PetNewAppointmentAdapter extends  RecyclerView.Adapter<RecyclerView
 
 
         holder.ll_new.setOnClickListener(v -> {
-        /*    Intent i = new Intent(context, PetAppointmentDetailsActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            Intent i = new Intent(context, PetAppointmentDetailsActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             i.putExtra("appointment_id",newAppointmentResponseList.get(position).get_id());
             i.putExtra("bookedat",newAppointmentResponseList.get(position).getBooked_at());
             i.putExtra("startappointmentstatus",newAppointmentResponseList.get(position).getStart_appointment_status());
             i.putExtra("appointmentfor",newAppointmentResponseList.get(position).getAppointment_for());
             i.putExtra("from",TAG);
-            context.startActivity(i);*/
+            context.startActivity(i);
 
-            /*if(newAppointmentResponseList.get(position).getAppointment_for() != null && newAppointmentResponseList.get(position).getAppointment_for().equalsIgnoreCase("Doctor") ) {
+          /*  if(newAppointmentResponseList.get(position).getAppointment_for() != null && newAppointmentResponseList.get(position).getAppointment_for().equalsIgnoreCase("Doctor") ) {
                 Intent i = new Intent(context, PetNewAppointmentDetailsActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 i.putExtra("appointment_id",newAppointmentResponseList.get(position).get_id());
                 i.putExtra("bookedat",newAppointmentResponseList.get(position).getBooked_at());

@@ -285,7 +285,7 @@ public class PetWalkinAppointmentDetailsActivity extends AppCompatActivity imple
     private String userrate;
     Dialog alertDialog;
     private String appointmentid;
-    private List<PetNewAppointmentDetailsResponse.DataBean.PetIdBean.PetImgBean> pet_image;
+    private List<PetNewAppointmentDetailsResponse.DataBean.FamilyIdBean.PicBean> pet_image;
     private String petAgeandMonth;
 
     private String concatenatedStarNames = "";
@@ -629,7 +629,7 @@ public class PetWalkinAppointmentDetailsActivity extends AppCompatActivity imple
 
                            
                             String servname = response.body().getData().getService_name();
-                            String pet_name = response.body().getData().getPet_id().getPet_name();
+                           /* String pet_name = response.body().getData().getPet_id().getPet_name();
                             pet_image = response.body().getData().getPet_id().getPet_img();
                             String pet_type = response.body().getData().getPet_id().getPet_type();
                             String breed = response.body().getData().getPet_id().getPet_breed();
@@ -637,12 +637,12 @@ public class PetWalkinAppointmentDetailsActivity extends AppCompatActivity imple
                             String colour = response.body().getData().getPet_id().getPet_color();
                             double weight = response.body().getData().getPet_id().getPet_weight();
                             String pet_dob = response.body().getData().getPet_id().getPet_dob();
-                            String pet_age = response.body().getData().getPet_id().getPet_age();
-                            if(pet_dob != null && !pet_dob.isEmpty()){
+                            String pet_age = response.body().getData().getPet_id().getPet_age();*/
+                           /* if(pet_dob != null && !pet_dob.isEmpty()){
                                 txt_age.setText(pet_dob);
                             }else {
                                 txt_age.setText("");
-                            }
+                            }*/
 
                             Paymentmethod = response.body().getData().getPayment_method();
                             doctorid = response.body().getData().getDoc_business_info().get(0).getUser_id();
@@ -727,7 +727,7 @@ public class PetWalkinAppointmentDetailsActivity extends AppCompatActivity imple
                             if(response.body().getData().getBooking_date_time() != null){
                                 txt_appointment_date.setText(response.body().getData().getBooking_date_time());
                             }
-                            if (response.body().getData().getPet_id().isVaccinated()) {
+                 /*           if (response.body().getData().getPet_id().isVaccinated()) {
                                 vaccinated = "Yes";
                                 ll_petlastvacinateddate.setVisibility(View.VISIBLE);
                                 if (response.body().getData().getPet_id().getLast_vaccination_date() != null && !response.body().getData().getPet_id().getLast_vaccination_date().isEmpty()) {
@@ -738,7 +738,7 @@ public class PetWalkinAppointmentDetailsActivity extends AppCompatActivity imple
                             else {
                                 ll_petlastvacinateddate.setVisibility(View.GONE);
                                 vaccinated = "No";
-                            }
+                            }*/
                             String order_date = response.body().getData().getDate_and_time();
                             String orderid = response.body().getData().getAppointment_UID();
                             String payment_method = response.body().getData().getPayment_method();
@@ -753,14 +753,14 @@ public class PetWalkinAppointmentDetailsActivity extends AppCompatActivity imple
                             }
                             appoinment_status = response.body().getData().getAppoinment_status();
                             start_appointment_status = response.body().getData().getStart_appointment_status();
-                            setView(usrname, usr_image, servname, pet_name, pet_type, breed, gender, colour, weight, order_date, orderid, payment_method, order_cost, vaccinated, addr);
+                     //       setView(usrname, usr_image, servname, pet_name, pet_type, breed, gender, colour, weight, order_date, orderid, payment_method, order_cost, vaccinated, addr);
 
                             if(response.body().getData().getVisit_type() != null &&response.body().getData().getVisit_type().equalsIgnoreCase("Home")){
                                 ll_home_address.setVisibility(View.VISIBLE);
-                                if(response.body().getAddress() != null){
+                               /* if(response.body().getAddress() != null){
                                     if(response.body().getAddress().getLocation_address() != null){
                                         txt_home_address.setText(response.body().getAddress().getLocation_address());
-                                    }
+                                    }*/
                                 }
                             }
                             else{
@@ -853,7 +853,6 @@ public class PetWalkinAppointmentDetailsActivity extends AppCompatActivity imple
 
 
                 }
-            }
 
             @Override
             public void onFailure(@NonNull Call<PetNewAppointmentDetailsResponse> call, @NonNull Throwable t) {
@@ -907,7 +906,7 @@ public class PetWalkinAppointmentDetailsActivity extends AppCompatActivity imple
         if(pet_image != null && pet_image.size()>0){
             String petimage = null;
             for(int i=0;i<pet_image.size();i++){
-                petimage = pet_image.get(i).getPet_img();
+             ///   petimage = pet_image.get(i).getPet_img();
             }
         
             Glide.with(PetWalkinAppointmentDetailsActivity.this)

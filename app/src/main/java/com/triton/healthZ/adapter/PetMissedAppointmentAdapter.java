@@ -151,7 +151,6 @@ public class PetMissedAppointmentAdapter extends  RecyclerView.Adapter<RecyclerV
             @Override
             public void onClick(View v) {
 
-/*
                 Intent i = new Intent(context, PetAppointmentDetailsActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 i.putExtra("appointment_id",missedAppointmentResponseList.get(position).get_id());
                 i.putExtra("bookedat",missedAppointmentResponseList.get(position).getBooked_at());
@@ -159,7 +158,6 @@ public class PetMissedAppointmentAdapter extends  RecyclerView.Adapter<RecyclerV
                 i.putExtra("appointmentfor",missedAppointmentResponseList.get(position).getAppointment_for());
                 i.putExtra("from",TAG);
                 context.startActivity(i);
-*/
 
                 /*if(missedAppointmentResponseList.get(position).getAppointment_for() != null && missedAppointmentResponseList.get(position).getAppointment_for().equalsIgnoreCase("Doctor") ) {
                     Intent i = new Intent(context, PetMissedAppointmentDetailsActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

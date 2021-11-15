@@ -50,7 +50,7 @@ import retrofit2.Response;
 
 public class DoctorAppointmentDetailsActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private String TAG = "DoctorAppointmentDetailsActivity";
+    /*private String TAG = "DoctorAppointmentDetailsActivity";
 
 
     @SuppressLint("NonConstantResourceId")
@@ -254,7 +254,7 @@ public class DoctorAppointmentDetailsActivity extends AppCompatActivity implemen
     String breed,gender,colour,weight,pet_dob ;
 
 
-    /* Bottom Navigation */
+    *//* Bottom Navigation *//*
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.rl_home)
@@ -291,7 +291,7 @@ public class DoctorAppointmentDetailsActivity extends AppCompatActivity implemen
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.rl_homes)
     RelativeLayout rl_homes;
-    private String petage;
+    private String petage;*/
 
 
     @SuppressLint("LongLogTag")
@@ -300,7 +300,7 @@ public class DoctorAppointmentDetailsActivity extends AppCompatActivity implemen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor_appointment_details);
 
-        ButterKnife.bind(this);
+   /*     ButterKnife.bind(this);
         scrollablContent.setVisibility(View.GONE);
         img_emergency_appointment.setVisibility(View.GONE);
 
@@ -344,7 +344,7 @@ public class DoctorAppointmentDetailsActivity extends AppCompatActivity implemen
 
         //bottom_navigation_view.getMenu().findItem(R.id.home).setChecked(true);
 
-        /*home*/
+        *//*home*//*
 
         title_shop.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
         img_shop.setImageResource(R.drawable.grey_shop);
@@ -513,13 +513,13 @@ public class DoctorAppointmentDetailsActivity extends AppCompatActivity implemen
 
                             if(petage != null){
                                 txt_age.setText(petage);
-                               /* String[] separated = pet_dob.split("-");
+                               *//* String[] separated = pet_dob.split("-");
                                 String day = separated[0];
                                 String month = separated[1];
                                 String year = separated[2];
                                 Log.w(TAG,"day : "+day+" month: "+month+" year : "+year);
 
-                                getAge(Integer.parseInt(year),Integer.parseInt(month),Integer.parseInt(day));*/
+                                getAge(Integer.parseInt(year),Integer.parseInt(month),Integer.parseInt(day));*//*
                             }else{
                                 txt_age.setText("");
                             }
@@ -647,7 +647,7 @@ public class DoctorAppointmentDetailsActivity extends AppCompatActivity implemen
 
     @SuppressLint({"SetTextI18n", "LongLogTag", "LogNotTimber"})
     private void setView(String usrname, String usr_image, String pet_name, String pet_type, String breed, String gender, String colour, String weight, String order_date, String orderid, String payment_method, String order_cost, String vaccinated, String addr) {
-        /*if(usr_image != null && !usr_image.isEmpty()){
+        *//*if(usr_image != null && !usr_image.isEmpty()){
             Glide.with(DoctorAppointmentDetailsActivity.this)
                     .load(usr_image)
                     .into(img_user);
@@ -656,12 +656,12 @@ public class DoctorAppointmentDetailsActivity extends AppCompatActivity implemen
             Glide.with(DoctorAppointmentDetailsActivity.this)
                     .load(APIClient.PROFILE_IMAGE_URL)
                     .into(img_user);
-        }*/
+        }*//*
 
 
-        /*if(usrname!= null && !usrname.isEmpty()){
+        *//*if(usrname!= null && !usrname.isEmpty()){
             txt_usrname.setText(usrname);
-        }*/
+        }*//*
 
 
 
@@ -711,10 +711,10 @@ public class DoctorAppointmentDetailsActivity extends AppCompatActivity implemen
             txt_weight.setText(weight);
         }
 
-        /*if(petAgeandMonth != null && !petAgeandMonth.isEmpty()){
+        *//*if(petAgeandMonth != null && !petAgeandMonth.isEmpty()){
 
             txt_age.setText(petAgeandMonth);
-        }*/
+        }*//*
 
         if(vaccinated != null && !vaccinated.isEmpty()){
             txt_vaccinated.setText(vaccinated);
@@ -861,10 +861,10 @@ public class DoctorAppointmentDetailsActivity extends AppCompatActivity implemen
 
     @SuppressLint({"LongLogTag", "LogNotTimber"})
     private DoctorStartAppointmentRequest doctorStartAppointmentRequest(String id) {
-        /*
+        *//*
          * _id : 5fc639ea72fc42044bfa1683
          * appoinment_status : In-Progress
-         */
+         *//*
         DoctorStartAppointmentRequest doctorStartAppointmentRequest = new DoctorStartAppointmentRequest();
         doctorStartAppointmentRequest.set_id(id);
         doctorStartAppointmentRequest.setStart_appointment_status("In-Progress");
@@ -913,12 +913,12 @@ public class DoctorAppointmentDetailsActivity extends AppCompatActivity implemen
     @SuppressLint({"LongLogTag", "LogNotTimber"})
     private AppoinmentCancelledRequest appoinmentCancelledRequest(String id) {
 
-        /*
+        *//*
          * _id : 5fc639ea72fc42044bfa1683
          * missed_at : 23-10-2000 10 : 00 AM
          * doc_feedback : One Emergenecy work i am cancelling this appointment
          * appoinment_status : Missed
-         */
+         *//*
 
 
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm aa", Locale.getDefault());
@@ -1044,6 +1044,11 @@ public class DoctorAppointmentDetailsActivity extends AppCompatActivity implemen
                 break;
 
         }
+*/
+    }
+
+    @Override
+    public void onClick(View v) {
 
     }
 }
