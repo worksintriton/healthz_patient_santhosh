@@ -123,8 +123,8 @@ public class CustomerShopFragment extends Fragment implements Serializable,View.
 
 
     @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.txt_seemore_todaydeals)
-    TextView txt_seemore_todaydeals;
+    @BindView(R.id.rl_viewall)
+    RelativeLayout txt_seemore_todaydeals;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.rl_search)
@@ -193,12 +193,12 @@ public class CustomerShopFragment extends Fragment implements Serializable,View.
         };
         timer.schedule(doAsynchronousTask, 0, 60000);//you can put 30000(30 secs)*/
 
-        /*txt_seemore_todaydeals.setOnClickListener(v -> {
+        txt_seemore_todaydeals.setOnClickListener(v -> {
             Intent intent =new Intent(mContext, PetShopTodayDealsSeeMoreActivity.class);
             intent.putExtra("from","");
             intent.putExtra("tag","2");
             startActivity(intent);
-        });*/
+        });
 
         rl_search.setOnClickListener(v -> startActivity(new Intent(mContext, SearchActivity.class)));
 

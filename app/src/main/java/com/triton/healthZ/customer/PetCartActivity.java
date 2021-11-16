@@ -74,7 +74,6 @@ public class PetCartActivity extends AppCompatActivity implements AddandRemovePr
 
     private String TAG = "PetCartActivity";
 
-
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.avi_indicator)
     AVLoadingIndicatorView avi_indicator;
@@ -155,18 +154,20 @@ public class PetCartActivity extends AppCompatActivity implements AddandRemovePr
     @BindView(R.id.txt_removeall_products)
     TextView txt_removeall_products;
 
-    @SuppressLint("NonConstantResourceId")
+  /*  @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_cart_count_badge)
     TextView txt_cart_count_badge;
-
+*/
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.btn_shopnow)
     Button btn_shopnow;
 
+/*
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.img_profile)
     ImageView img_profile;
 
+*/
 
 
 
@@ -230,7 +231,7 @@ public class PetCartActivity extends AppCompatActivity implements AddandRemovePr
         btn_procced_to_buy.setVisibility(View.GONE);
         ll_content_amount.setVisibility(View.GONE);
         footerView.setVisibility(View.GONE);
-        txt_cart_count_badge.setVisibility(View.GONE);
+      //  txt_cart_count_badge.setVisibility(View.GONE);
 
         ll_coupon_discount_amount.setVisibility(View.GONE);
 
@@ -285,13 +286,6 @@ public class PetCartActivity extends AppCompatActivity implements AddandRemovePr
 
             }
         });
-        img_profile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), CustomerProfileScreenActivity.class));
-            }
-        });
-
 
         btn_procced_to_buy.setOnClickListener(v -> {
             if(grand_total !=0){
@@ -595,10 +589,10 @@ public class PetCartActivity extends AppCompatActivity implements AddandRemovePr
                             int Notification_count = response.body().getData().getNotification_count();
                             int Product_count = response.body().getData().getProduct_count();
                             if(Product_count != 0){
-                                txt_cart_count_badge.setVisibility(View.VISIBLE);
-                                txt_cart_count_badge.setText(""+Product_count);
+                              //  txt_cart_count_badge.setVisibility(View.VISIBLE);
+                              // txt_cart_count_badge.setText(""+Product_count);
                             }else{
-                                txt_cart_count_badge.setVisibility(View.GONE);
+                              //  txt_cart_count_badge.setVisibility(View.GONE);
                             }
 
                         }
