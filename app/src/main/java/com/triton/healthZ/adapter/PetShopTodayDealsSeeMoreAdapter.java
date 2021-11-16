@@ -71,10 +71,11 @@ public class PetShopTodayDealsSeeMoreAdapter extends  RecyclerView.Adapter<Recyc
             holder.txt_products_title.setText(currentItem.getProduct_title());
         }
         if(currentItem.getProduct_price() != 0){
-            holder.txt_products_price.setText("INR "+currentItem.getProduct_price());
+            holder.txt_products_price.setText("\u20B9 "+currentItem.getProduct_price());
         }else{
-            holder.txt_products_price.setText("INR "+0);
+            holder.txt_products_price.setText("\u20B9 "+0);
         }
+/*
 
         if(currentItem.getProduct_discount_price() != 0){
             holder.txt_product_discount_price.setVisibility(View.VISIBLE);
@@ -84,6 +85,7 @@ public class PetShopTodayDealsSeeMoreAdapter extends  RecyclerView.Adapter<Recyc
             holder.txt_product_discount_price.setText("INR "+0);
             holder.txt_product_discount_price.setVisibility(View.GONE);
         }
+*/
 
 
 
@@ -130,12 +132,12 @@ public class PetShopTodayDealsSeeMoreAdapter extends  RecyclerView.Adapter<Recyc
         else{
             holder.txt_star_rating.setText("0");
         }
-        if(currentItem.getProduct_review() != 0){
+     /*   if(currentItem.getProduct_review() != 0){
             holder.txt_review_count.setText(currentItem.getProduct_review()+"");
         }
         else{
             holder.txt_review_count.setText("0");
-        }
+        }*/
         holder.ll_root.setOnClickListener(v -> {
             if(fromactivity != null && fromactivity.equalsIgnoreCase("DoctorShopTodayDealsSeeMoreActivity")){
                 Intent intent = new Intent(context, DoctorProductDetailsActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -188,7 +190,7 @@ public class PetShopTodayDealsSeeMoreAdapter extends  RecyclerView.Adapter<Recyc
             img_like = itemView.findViewById(R.id.img_like);
             img_dislike = itemView.findViewById(R.id.img_dislike);
             txt_product_discount_price = itemView.findViewById(R.id.txt_product_discount_price);
-            txt_review_count.setVisibility(View.GONE);
+//            txt_review_count.setVisibility(View.GONE);
 
         }
 

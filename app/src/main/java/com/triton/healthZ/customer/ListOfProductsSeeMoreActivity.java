@@ -217,9 +217,9 @@ public class ListOfProductsSeeMoreActivity extends AppCompatActivity implements 
     @BindView(R.id.txt_cart_count_badge)
     TextView txt_cart_count_badge;
 
-    @SuppressLint("NonConstantResourceId")
+/*    @SuppressLint("NonConstantResourceId")
     @BindView(R.id.img_profile)
-    ImageView img_profile;
+    ImageView img_profile;*/
 
     private String userid;
 
@@ -337,7 +337,7 @@ public class ListOfProductsSeeMoreActivity extends AppCompatActivity implements 
         img_sos.setOnClickListener(this);
         img_notification.setOnClickListener(this);
         img_cart.setOnClickListener(this);
-        img_profile.setOnClickListener(this);
+  //      img_profile.setOnClickListener(this);
         edt_search.addTextChangedListener(new TextWatcher() {
             @SuppressLint("LogNotTimber")
             @Override

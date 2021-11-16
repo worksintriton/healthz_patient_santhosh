@@ -173,10 +173,19 @@ public class CustomerNavigationDrawer extends AppCompatActivity implements View.
         nav_header_ref_code = view.findViewById(R.id.nav_header_ref_code);
         nav_header_logout = view.findViewById(R.id.nav_header_logout);
 
-        nav_header_logout.setOnClickListener(this);
+        nav_header_logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showLogOutAppAlert();
+            }
+        });
 
-//        nav_header_ref_code.setText(getResources().getString(R.string.ref_code)+" : "+12345678);
+
+
+
+
         if(refcode != null && !refcode.isEmpty() ){
+            nav_header_ref_code.setText(getResources().getString(R.string.ref_code)+" : "+refcode);
             nav_header_ref_code.setVisibility(View.VISIBLE);
 
         }else{
@@ -493,9 +502,7 @@ public class CustomerNavigationDrawer extends AppCompatActivity implements View.
                 drawerMethod();
                 break;
 
-           case R.id.nav_header_logout:
-                showLogOutAppAlert();
-                break;
+
         }
     }
 

@@ -69,7 +69,7 @@ public class PetLoverDashboardPubbyLoveAdapter extends  RecyclerView.Adapter<Rec
           Log.w(TAG,"getImg_path :"+currentItem.getImg_path());
           Log.w(TAG,"Title : "+currentItem.getTitle());
 
-   /*       if (currentItem.getImg_path() != null && !currentItem.getImg_path().isEmpty()) {
+          if (currentItem.getImg_path() != null && !currentItem.getImg_path().isEmpty()) {
 
             Glide.with(context)
                     .load(currentItem.getImg_path())
@@ -82,7 +82,7 @@ public class PetLoverDashboardPubbyLoveAdapter extends  RecyclerView.Adapter<Rec
                     .load(APIClient.PROFILE_IMAGE_URL)
                     .into(holder.img_products_image);
 
-        }*/
+        }
 
         holder.ll_root.setOnClickListener(new View.OnClickListener() {
             @Override

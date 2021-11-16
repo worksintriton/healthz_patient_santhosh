@@ -8,10 +8,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.annotation.FractionRes;
 import androidx.annotation.NonNull;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -140,7 +142,7 @@ public class PetLoverServicesAdapter extends  RecyclerView.Adapter<RecyclerView.
 
     class ViewHolderOne extends RecyclerView.ViewHolder {
         public TextView txt_petlover_servicesname;
-        public RelativeLayout ll_root;
+        public FrameLayout ll_root;
         public ImageView cv_serviceimage;
 
 

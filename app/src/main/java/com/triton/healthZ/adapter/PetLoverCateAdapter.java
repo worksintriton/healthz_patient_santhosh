@@ -16,7 +16,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.triton.healthZ.R;
 import com.triton.healthZ.api.APIClient;
+import com.triton.healthZ.customer.ListOfProductsSeeMoreActivity;
 import com.triton.healthZ.customer.SelectedServiceActivity;
+import com.triton.healthZ.doctor.shop.DoctorListOfProductsSeeMoreActivity;
 import com.triton.healthZ.responsepojo.PetLoverDashboardResponse;
 import com.triton.healthZ.responsepojo.ShopDashboardResponse;
 
@@ -91,12 +93,12 @@ public class PetLoverCateAdapter extends  RecyclerView.Adapter<RecyclerView.View
           }*/
 
 
-       /* holder.ll_root.setOnClickListener(new View.OnClickListener() {
+        holder.ll_root.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(serviceDetailsResponseList.get(position).get_id() != null) {
-                    Intent intent = new Intent(context, SelectedServiceActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    intent.putExtra("catid", serviceDetailsResponseList.get(position).get_id());
+                if(product_cate.get(position).get_id() != null) {
+                    Intent intent = new Intent(context, ListOfProductsSeeMoreActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    intent.putExtra("cat_id", product_cate.get(position).get_id());
                     context.startActivity(intent);
                 }
                 }
@@ -105,7 +107,6 @@ public class PetLoverCateAdapter extends  RecyclerView.Adapter<RecyclerView.View
 
 
         });
-*/
 
     }
 

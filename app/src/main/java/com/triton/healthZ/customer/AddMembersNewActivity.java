@@ -208,6 +208,11 @@ public class AddMembersNewActivity extends AppCompatActivity implements View.OnC
 
     final Calendar myCalendar = Calendar.getInstance();
 
+    String gender = "";
+    private int year, month, day;
+    String SelectedLastVaccinateddate = "";
+    private static final int DATE_PICKER_ID = 0 ;
+    private static final int PET_DATE_PICKER_ID = 1 ;
 
     @SuppressLint("LogNotTimber")
     @Override
@@ -367,38 +372,82 @@ public class AddMembersNewActivity extends AppCompatActivity implements View.OnC
         });
 
 
-        DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
-
-            @Override
-            public void onDateSet(DatePicker view, int year, int monthOfYear,
-                                  int dayOfMonth) {
-                // TODO Auto-generated method stub
-                myCalendar.set(Calendar.YEAR, year);
-                myCalendar.set(Calendar.MONTH, monthOfYear);
-                myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                updateLabel();
-            }
-
-        };
-
         edt_dob.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                new DatePickerDialog(AddMembersNewActivity.this, date, myCalendar
-                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
-                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+                SelectDate();
             }
         });
     }
 
-    private void updateLabel() {
-        String myFormat = "MM/dd/yy"; //In which you need put here
-        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
 
-        edt_dob.setText(sdf.format(myCalendar.getTime()));
+    private void SelectDate() {
+
+        final Calendar c = Calendar.getInstance();
+        year = c.get(Calendar.YEAR);
+        month = c.get(Calendar.MONTH);
+        day = c.get(Calendar.DAY_OF_MONTH);
+
+
+        showDialog(DATE_PICKER_ID);
+
     }
+
+    @SuppressLint("LogNotTimber")
+    @Override
+    protected Dialog onCreateDialog(int id) {
+        Log.w(TAG,"onCreateDialog id : "+id);
+        if (id == DATE_PICKER_ID) {
+            // open datepicker dialog.
+            // set date picker for current date
+            // add pickerListener listner to date picker
+            // return new DatePickerDialog(this, pickerListener, year, month,day);
+            DatePickerDialog dialog = new DatePickerDialog(this, pickerListener, year, month, day);
+            dialog.getDatePicker().setMaxDate(System.currentTimeMillis());
+            return dialog;
+        }
+        return null;
+    }
+    private final DatePickerDialog.OnDateSetListener pickerListener = new DatePickerDialog.OnDateSetListener() {
+
+        // when dialog box is closed, below method will be called.
+        @SuppressLint("LogNotTimber")
+        @Override
+        public void onDateSet(DatePicker view, int selectedYear,
+                              int selectedMonth, int selectedDay) {
+
+            year  = selectedYear;
+            month = selectedMonth;
+            day   = selectedDay;
+
+
+
+            String strdayOfMonth;
+            String strMonth;
+            int month1 =(month + 1);
+            if(day == 9 || day <9){
+                strdayOfMonth = "0"+day;
+                Log.w(TAG,"Selected dayOfMonth-->"+strdayOfMonth);
+            }else{
+                strdayOfMonth = String.valueOf(day);
+            }
+
+            if(month1 == 9 || month1 <9){
+                strMonth = "0"+month1;
+                Log.w(TAG,"Selected month1-->"+strMonth);
+            }else{
+                strMonth = String.valueOf(month1);
+            }
+
+            SelectedLastVaccinateddate = strdayOfMonth + "-" + strMonth + "-" + year;
+
+            // Show selected date
+            edt_dob.setText(SelectedLastVaccinateddate);
+
+        }
+    };
 
     public void addYourfamilyValidator() {
         boolean can_proceed = true;

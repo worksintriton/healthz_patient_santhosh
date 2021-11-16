@@ -643,7 +643,7 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
                             doctorid = response.body().getData().getDoc_business_info().get(0).getUser_id();
 
                             if(pet_dob != null){
-                            String[] separated = pet_dob.split("/");
+                            String[] separated = pet_dob.split("-");
                             String day = separated[0];
                             String month = separated[1];
                             String year = separated[2];
