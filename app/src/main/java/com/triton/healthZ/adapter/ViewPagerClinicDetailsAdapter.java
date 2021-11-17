@@ -2,6 +2,7 @@ package com.triton.healthZ.adapter;
 
 import android.content.Context;
 import android.os.Parcelable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,7 +59,11 @@ public class ViewPagerClinicDetailsAdapter extends PagerAdapter {
 
         try {
             String imageURL = doctorclinicdetailsResponseList.get(position).getClinic_pic();
+
             if(imageURL != null && !imageURL.isEmpty()){
+
+                Log.w(TAG, "imageURL : "+imageURL);
+
                 Glide.with(context)
                         .load(imageURL)
                         .into(imageView);

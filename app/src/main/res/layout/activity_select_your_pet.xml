@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".activity.SignUpActivity">
+    >
 
     <LinearLayout
         android:id="@+id/headerView"
@@ -21,21 +21,31 @@
             android:layout_height="26dp"
             android:layout_marginStart="20dp"
             android:background="@drawable/back_arrow"
+            android:scaleType="center"
             tools:ignore="ContentDescription" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="20dp"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/futuramediumbt"
-                android:text="Select your Member"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/consultation"
                 android:textColor="@color/white"
                 android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/futuramediumbt"
+                android:text="Select pet"
+                android:textColor="@color/dark_gray"
+                android:textSize="18sp"
+                android:visibility="gone" />
 
 
         </LinearLayout>
@@ -79,7 +89,7 @@
                     android:layout_marginTop="5dp"
                     android:fontFamily="@font/montserrat"
                     android:gravity="center"
-                    android:text="Choose/Add your Member"
+                    android:text="@string/choose_or_add_profile"
                     android:textColor="@color/dark_gray"
                     android:textSize="16sp" />
 
@@ -91,15 +101,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
+                android:layout_marginEnd="10dp"
                 android:layout_marginTop="30dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_gravity="center">
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:fontFamily="@font/montserrat_bold"
                     android:gravity="center_vertical"
-                    android:text="Profiles"
+                    android:text="@string/my_profiles"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -108,14 +120,15 @@
                     android:id="@+id/ll_add_new_pet"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="end"
+                    android:gravity="end|center"
                     android:orientation="horizontal"
-                    tools:ignore="UseCompoundDrawables">
+                    tools:ignore="UseCompoundDrawables"
+                    android:layout_marginEnd="@dimen/normal_margin_value10">
 
                     <ImageView
                         android:id="@+id/img_add_new_address"
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
                         android:layout_gravity="center_vertical"
                         android:layout_marginStart="5dp"
                         android:contentDescription="@string/image"
@@ -125,10 +138,11 @@
                         android:id="@+id/txt_address_add"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_marginEnd="5dp"
                         android:fontFamily="@font/montserrat"
                         android:gravity="center_vertical"
-                        android:text="Add Profiles"
+                        android:text="@string/add_profile"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
                         android:textColor="@color/black"
                         android:textSize="14sp" />
 
@@ -192,26 +206,25 @@
         <LinearLayout
             android:id="@+id/ll_save_continue"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="45dp"
             android:layout_gravity="end|center"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="40dp"
             android:layout_marginTop="10dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginEnd="40dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/new_rounded_corner_btn_red"
             android:orientation="horizontal"
-            android:padding="10dp"
             tools:ignore="UselessParent">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginStart="10dp"
+                android:layout_gravity="center"
                 android:fontFamily="@font/montserrat_bold"
                 android:gravity="center"
-                android:text="@string/book_appointment"
+                android:text="Continue"
                 android:textColor="@color/white"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 tools:ignore="Autofill,LabelFor" />
 
             <ImageView
