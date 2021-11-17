@@ -14,7 +14,7 @@
         <include
             android:id="@+id/include_petlover_header"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             layout="@layout/toolbar_layout_petlover_header" />
 
 
@@ -67,7 +67,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/montserrat_bold"
-                android:text="@string/time"
+                android:text="@string/slotsavailable"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
 
@@ -164,12 +164,14 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:orientation="vertical"
-        android:layout_margin="20dp">
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp">
 
         <Button
             android:id="@+id/btn_bookappointment"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:background="@drawable/new_rounded_corner_btn_red"
             android:fontFamily="@font/montserrat_bold"
             android:text="@string/continues"

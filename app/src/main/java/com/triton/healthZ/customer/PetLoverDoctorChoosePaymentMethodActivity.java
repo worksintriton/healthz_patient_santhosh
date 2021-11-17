@@ -314,7 +314,7 @@ public class PetLoverDoctorChoosePaymentMethodActivity extends AppCompatActivity
                 ll_cost.setVisibility(View.GONE);
                 ll_discount.setVisibility(View.GONE);
                 edt_coupon.setText("");
-                txt_total_amount.setText("INR "+Amount);
+                txt_total_amount.setText("Total : INR "+Amount);
                 Total_price = Amount;
                 Coupon_status = "Not Applied";
                 Coupon_code = "";
@@ -329,7 +329,7 @@ public class PetLoverDoctorChoosePaymentMethodActivity extends AppCompatActivity
                 ll_cost.setVisibility(View.GONE);
                 ll_discount.setVisibility(View.GONE);
                 edt_coupon.setText("");
-                txt_total_amount.setText("INR "+Amount);
+                txt_total_amount.setText("Total : INR "+Amount);
                 Total_price = Amount;
                 Coupon_status = "Not Applied";
                 Coupon_code = "";
@@ -386,7 +386,7 @@ public class PetLoverDoctorChoosePaymentMethodActivity extends AppCompatActivity
         }
         if(Amount != 0){
             txt_cost.setText("INR "+Amount);
-            txt_total_amount.setText("INR "+Amount);
+            txt_total_amount.setText("Total : INR "+Amount);
             Total_price = Amount;
         }
         if(Booking_date_time != null){
@@ -406,7 +406,7 @@ public class PetLoverDoctorChoosePaymentMethodActivity extends AppCompatActivity
                     viewapply.setVisibility(View.GONE);
                     ll_cost.setVisibility(View.GONE);
                     ll_discount.setVisibility(View.GONE);
-                    txt_total_amount.setText("INR "+Amount);
+                    txt_total_amount.setText("Total : INR "+Amount);
                     Coupon_status = "Not Applied";
                     Coupon_code = "";
                     Original_price = 0;
@@ -533,11 +533,11 @@ public class PetLoverDoctorChoosePaymentMethodActivity extends AppCompatActivity
 
                         if(response.body().getData().getTotal_price() != 0){
                             Total_price = response.body().getData().getTotal_price();
-                            txt_total_amount.setText("INR "+response.body().getData().getTotal_price());
+                            txt_total_amount.setText("Total : INR "+response.body().getData().getTotal_price());
 
                         }else{
                             Total_price = 0;
-                            txt_total_amount.setText("INR "+0);
+                            txt_total_amount.setText("Total : INR "+0);
                         }
 
 

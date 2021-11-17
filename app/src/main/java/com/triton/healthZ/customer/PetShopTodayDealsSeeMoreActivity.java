@@ -301,11 +301,10 @@ public class PetShopTodayDealsSeeMoreActivity extends AppCompatActivity implemen
         }
         initResultRecylerView();
 
-        rl_filters.setOnClickListener(this);
+/*        rl_filters.setOnClickListener(this);
         edt_filter.setOnClickListener(this);
-        rl_sort.setVisibility(View.INVISIBLE);
         rl_sort.setOnClickListener(this);
-        edt_sort.setOnClickListener(this);
+        edt_sort.setOnClickListener(this);*/
 /*
         rl_homes.setOnClickListener(this);
 

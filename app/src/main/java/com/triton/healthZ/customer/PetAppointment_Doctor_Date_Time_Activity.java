@@ -187,7 +187,7 @@ public class PetAppointment_Doctor_Date_Time_Activity extends AppCompatActivity 
         ImageView img_cart = include_petlover_header.findViewById(R.id.img_cart);
         ImageView img_profile = include_petlover_header.findViewById(R.id.img_profile);
         TextView toolbar_title = include_petlover_header.findViewById(R.id.toolbar_title);
-        toolbar_title.setText(getResources().getString(R.string.appointment));
+        toolbar_title.setText(getResources().getString(R.string.appointment_details));
 
 
         img_sos.setVisibility(View.GONE);
@@ -275,6 +275,7 @@ public class PetAppointment_Doctor_Date_Time_Activity extends AppCompatActivity 
         // Set a Start date (Default, 1 Jan 1970)
 
         calendarView.setDate(calendar.getTimeInMillis(), true, true);
+        calendarView.setMinDate(System.currentTimeMillis() - 1000);
 
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override

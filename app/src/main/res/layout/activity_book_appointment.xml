@@ -13,7 +13,7 @@
         <include
             android:id="@+id/include_petlover_header"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             layout="@layout/toolbar_layout_petlover_header" />
 
 
@@ -193,7 +193,7 @@
                     android:id="@+id/radioButton1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
+                    android:layout_marginStart="40dp"
                     android:buttonTint="@color/new_green_btn"
                     android:fontFamily="@font/montserrat"
                     android:text="@string/emergency"

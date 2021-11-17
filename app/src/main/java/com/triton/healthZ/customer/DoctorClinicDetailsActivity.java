@@ -187,7 +187,7 @@ public class DoctorClinicDetailsActivity extends AppCompatActivity implements Vi
     private String fromactivity;
     private String searchString;
     private int amount;
-    private String communicationtype;
+    private String communicationtype,drtitle;
     private int Doctor_exp;
 
     List<DoctorDetailsResponse.DataBean.SpecializationBean> specializationBeanList;
@@ -551,6 +551,7 @@ public class DoctorClinicDetailsActivity extends AppCompatActivity implements Vi
                         if(response.body().getData() != null) {
                             clinicname = response.body().getData().getClinic_name();
                             doctorname = response.body().getData().getDr_name();
+                            drtitle = response.body().getData().getDr_title();
                             reviewcount = response.body().getData().getReview_count();
                             starcount = response.body().getData().getStar_count();
                             amount = response.body().getData().getAmount();
@@ -600,7 +601,7 @@ public class DoctorClinicDetailsActivity extends AppCompatActivity implements Vi
 
                          //   setBottomSheet();
                             if(response.body().getData().getReview_count() != 0){
-                                txt_review_count.setText(""+response.body().getData().getAmount()+"Reviews");
+                                txt_review_count.setText(""+response.body().getData().getAmount()+" Reviews");
                             }
                             else {
 
@@ -628,11 +629,6 @@ public class DoctorClinicDetailsActivity extends AppCompatActivity implements Vi
                             }
                         }
 
-                        if(Doctor_exp != 0) {
-                            Log.w(TAG,"Doctor_exp : "+Doctor_exp);
-                            txt_dr_experience.setText(Doctor_exp+" Years");
-                        }
-
 
 
                         if(response.body().getData().getAmount() != 0){
@@ -646,8 +642,8 @@ public class DoctorClinicDetailsActivity extends AppCompatActivity implements Vi
                         if(clinicname != null){
                             txt_clinicname.setText(clinicname);
                         }
-                        if(doctorname != null){
-                            txt_drname.setText("DR "+doctorname);
+                        if(doctorname != null&&drtitle!=null){
+                            txt_drname.setText(drtitle+" "+doctorname);
 
                         }
 
@@ -728,7 +724,7 @@ public class DoctorClinicDetailsActivity extends AppCompatActivity implements Vi
                             sb.append(" Years of experience");
 
                         }
-                        sb.append("| ");
+                        sb.append(" | ");
 
                         if(distance != null && ClinicLocationname != null){
 

@@ -502,8 +502,8 @@
     <string name="_10">10</string>
     <string name="years">Years</string>
     <string name="km">KM Away</string>
-    <string name="about_vet">About Vet</string>
-    <string name="make_an_appointment">Make an appointment</string>
+    <string name="about_vet">About Hospital</string>
+    <string name="make_an_appointment">Book an Appointment</string>
     <string name="bathing">Bathing</string>
     <string name="_1a_anna_nagar_main_road_chennai">1A, Anna Nagar Main Road, Chennai</string>
 
@@ -657,4 +657,18 @@
     </string-array>
 
     <string name="logout">Log Out</string>
+
+    <string name="appointment_details">Appointment Details</string>
+    <string name="slotsavailable">Slots Available</string>
+    <string name="title">Title</string>
+
+    <string name="choose_or_add_profile">Choose or Add profile</string>
+    <string name="add_profile">Add profile</string>
+    <string name="my_profiles">My Profiles</string>
+
+    <string name="select_health_issue">Select Health Issue</string>
+
+    <string name="clinicname">Clinic Name</string>
+    <string name="doctorname">Doctor Name</string>
+    <string name="enter_code">Enter Code</string>
 </resources>

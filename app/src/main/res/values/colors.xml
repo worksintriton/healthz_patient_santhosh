@@ -108,6 +108,9 @@
     <color name="lato_black">#1E0702</color>
     <color name="lato_grey">#999999</color>
     <color name="new_txt_popcolor">#474749</color>
+    <color name="greenish">#219C66</color>
+    <color name="neutral_black">#4F4F4F</color>
+    <color name="new_hz_grey">#999999</color>
 
 
 </resources>
