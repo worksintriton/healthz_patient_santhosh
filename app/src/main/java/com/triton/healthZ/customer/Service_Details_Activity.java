@@ -831,7 +831,7 @@ public class Service_Details_Activity extends AppCompatActivity implements View.
                             txt_dr_consultationfees.setText("\u20B9"+serviceamount);
                         }
 
-                        sb.append("|");
+                        sb.append(" |");
 
                         if(distance != null&&!distance.isEmpty()){
 

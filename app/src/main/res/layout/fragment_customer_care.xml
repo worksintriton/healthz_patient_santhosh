@@ -120,6 +120,7 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
                             android:layout_centerVertical="true"
+                            android:padding="3dp"
                             android:background="@drawable/btn_bgnd_filter">
 
                             <TextView
@@ -127,17 +128,16 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentStart="true"
-                                android:drawableStart="@drawable/ic_baseline_filter_alt_24"
+                                android:drawableStart="@drawable/ic_filter"
                                 android:drawablePadding="10dp"
                                 android:fontFamily="@font/montserrat"
-                                android:padding="5dp"
-                                android:paddingStart="20dp"
+                                android:paddingStart="10dp"
                                 android:paddingEnd="10dp"
                                 android:text="@string/filter"
                                 android:textAllCaps="false"
                                 android:textColor="@color/new_txt_color"
                                 android:textSize="14sp"
-                                app:drawableStartCompat="@drawable/ic_baseline_filter_alt_24"
+                                app:drawableStartCompat="@drawable/ic_filter"
                                 tools:ignore="RelativeOverlap,UseCompatTextViewDrawableXml" />
 
                         </RelativeLayout>

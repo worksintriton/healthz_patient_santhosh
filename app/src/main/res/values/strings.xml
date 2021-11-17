@@ -167,7 +167,7 @@
     <string name="product_descriptions_here">Product descriptions here..</string>
     <string name="book_now">Book Now</string>
 
-    <string name="filter">Filters</string>
+    <string name="filter">Filter</string>
     <string name="curent_location">Curent Location</string>
     <string name="book_appointment">Book Appointment</string>
 
@@ -515,7 +515,7 @@
     <string name="pedigree_adult_dry_chicken_treat_500gms">Pedigree Adult Dry Chicken Treat 500gms</string>
     <string name="sunshine_pet_food">Sunshine Pet Food</string>
     <string name="product_description">Product Description</string>
-    <string name="about_service_provider">About Service Provider</string>
+    <string name="about_service_provider">About Service</string>
 
     <string name="view_vendor_details"><u>View Vendor Details</u></string>
     <string name="view_vendor_detail">View Vendor Details</string>

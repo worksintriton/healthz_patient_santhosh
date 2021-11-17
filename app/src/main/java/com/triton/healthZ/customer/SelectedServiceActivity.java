@@ -94,7 +94,7 @@ public class SelectedServiceActivity extends AppCompatActivity implements View.O
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.scrollablContent)
-    ScrollView scrollablContent;
+    NestedScrollView scrollablContent;
 
 
     private ShimmerFrameLayout mShimmerViewContainer;
@@ -123,11 +123,11 @@ public class SelectedServiceActivity extends AppCompatActivity implements View.O
 
     int currentPage = 0;
 
-
-    /**/
+/*
+    *//**//*
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.refresh_layout)
-    SwipeRefreshLayout refresh_layout;
+    SwipeRefreshLayout refresh_layout;*/
 
     /**/
     @SuppressLint("NonConstantResourceId")
@@ -223,7 +223,7 @@ public class SelectedServiceActivity extends AppCompatActivity implements View.O
             }
         }
 
-        refresh_layout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+   /*     refresh_layout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
                 if(catid != null && userid != null) {
@@ -232,7 +232,7 @@ public class SelectedServiceActivity extends AppCompatActivity implements View.O
                     }
                 }
             }
-        });
+        });*/
 
 
 
@@ -357,7 +357,7 @@ public class SelectedServiceActivity extends AppCompatActivity implements View.O
             @Override
             public void onResponse(@NonNull Call<SPSpecificServiceDetailsResponse> call, @NonNull Response<SPSpecificServiceDetailsResponse> response) {
                 //avi_indicator.smoothToHide();
-                refresh_layout.setRefreshing(false);
+        //        refresh_layout.setRefreshing(false);
 
                 mShimmerViewContainer.stopShimmerAnimation();
                 includelayout.setVisibility(View.GONE);
@@ -458,7 +458,7 @@ public class SelectedServiceActivity extends AppCompatActivity implements View.O
     private void setViewListedSP(List<SPSpecificServiceDetailsResponse.DataBean.ServiceProviderBean> serviceProviderList) {
         rv_nearbyservices.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         rv_nearbyservices.setItemAnimator(new DefaultItemAnimator());
-    //    rv_nearbyservices.setNestedScrollingEnabled(true);
+       // rv_nearbyservices.setNestedScrollingEnabled(true);
         SelectedServiceProviderAdapter doctorNewAppointmentAdapter = new SelectedServiceProviderAdapter(getApplicationContext(), serviceProviderList,catid,from,distance,reviewcount,Count_value_start,Count_value_end);
         rv_nearbyservices.setAdapter(doctorNewAppointmentAdapter);
 

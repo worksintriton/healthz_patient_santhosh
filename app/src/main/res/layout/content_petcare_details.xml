@@ -30,7 +30,7 @@
                 <androidx.viewpager.widget.ViewPager
                     android:id="@+id/pager"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="fill_parent" />
 
                 <com.google.android.material.tabs.TabLayout
                     android:id="@+id/tabDots"
@@ -55,15 +55,18 @@
                     android:id="@+id/rl_search"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
                     android:background="@drawable/button_bg"
                     android:orientation="horizontal"
                     tools:ignore="UselessParent">
 
                     <ImageView
                         android:id="@+id/img_search"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
                         android:layout_alignParentEnd="false"
                         android:layout_marginStart="10dp"
                         android:layout_marginLeft="10dp"
@@ -72,7 +75,6 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginBottom="10dp"
                         android:contentDescription="@string/image"
-                        android:padding="8dp"
                         android:src="@drawable/ic_loctn_search" />
 
                     <EditText
@@ -86,10 +88,10 @@
                         android:imeOptions="actionDone"
                         android:inputType="textWebEmailAddress"
                         android:maxLines="1"
-                        android:padding="15dp"
                         android:textColor="@color/green"
                         android:textColorHint="@color/dark_gray"
                         android:textSize="16sp"
+                        android:padding="10dp"
                         tools:ignore="Autofill,LabelFor,TextFields" />
 
 

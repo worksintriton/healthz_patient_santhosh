@@ -42,10 +42,9 @@
                         android:layout_height="120dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="5dp"
+                        android:elevation="10dp"
                         app:cardPreventCornerOverlap="true"
-                        app:cardUseCompatPadding="true"
-                        app:cardCornerRadius="8dp"
-                        android:elevation="10dp">
+                        app:cardUseCompatPadding="true">
 
                         <ImageView
                             android:id="@+id/img_service"
@@ -229,6 +228,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:layout_marginBottom="5dp"
                                 android:ellipsize="end"
                                 android:fontFamily="@font/montserrat"
                                 android:maxLines="3"

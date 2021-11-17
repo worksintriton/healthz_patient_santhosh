@@ -721,7 +721,7 @@ public class DoctorClinicDetailsActivity extends AppCompatActivity implements Vi
 
                             sb.append(Doctor_exp);
 
-                            sb.append(" Years of experience");
+                            sb.append(" Years experience");
 
                         }
                         sb.append(" | ");
@@ -732,7 +732,7 @@ public class DoctorClinicDetailsActivity extends AppCompatActivity implements Vi
 
                             sb.append(distance);
 
-                            sb.append("km");
+                            sb.append("km Away");
 
                         }
                         else if(APIClient.DISTANCE != null && ClinicLocationname != null){
@@ -740,7 +740,7 @@ public class DoctorClinicDetailsActivity extends AppCompatActivity implements Vi
                             //txt_distance.setText(""+APIClient.DISTANCE);
                             sb.append(distance);
 
-                            sb.append("km");
+                            sb.append("km Away");
                         }
 
 

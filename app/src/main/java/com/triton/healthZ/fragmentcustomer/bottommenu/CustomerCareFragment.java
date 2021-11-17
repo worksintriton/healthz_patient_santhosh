@@ -235,7 +235,7 @@ public class CustomerCareFragment extends Fragment implements Serializable, View
             txt_communicationtype.setText("Online");
 
         }else{
-            txt_communicationtype.setText("Clinic vists");
+            txt_communicationtype.setText("Visit Clinic");
 
         }
 
