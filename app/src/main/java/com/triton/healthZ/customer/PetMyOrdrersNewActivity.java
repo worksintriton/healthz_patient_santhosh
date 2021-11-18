@@ -47,9 +47,9 @@ public class PetMyOrdrersNewActivity extends AppCompatActivity implements View.O
     @BindView(R.id.viewPager)
     ViewPager viewPager;
 
-    /* Petlover Bottom Navigation */
+/*    *//* Petlover Bottom Navigation *//*
 
-    /* Petlover Bottom Navigation */
+    *//* Petlover Bottom Navigation *//*
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.rl_home)
@@ -105,7 +105,7 @@ public class PetMyOrdrersNewActivity extends AppCompatActivity implements View.O
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.rl_homes)
-    RelativeLayout rl_homes;
+    RelativeLayout rl_homes;*/
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.include_petlover_footer)
@@ -199,7 +199,7 @@ public class PetMyOrdrersNewActivity extends AppCompatActivity implements View.O
 //        bottom_navigation_view.getMenu().findItem(R.id.home).setChecked(true);
 
 
-        /*home*/
+        /*home*//*
         title_care.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
         img_care.setImageResource(R.drawable.grey_care);
         title_serv.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
@@ -225,7 +225,7 @@ public class PetMyOrdrersNewActivity extends AppCompatActivity implements View.O
 
         rl_homes.setOnClickListener(this);
 
-
+*/
 
 
 

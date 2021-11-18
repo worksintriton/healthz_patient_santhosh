@@ -21,6 +21,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -122,15 +123,15 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.img_remove_product)
-    ImageView img_remove_product;
+    RelativeLayout img_remove_product;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.ll_increment_add_to_cart)
-    LinearLayout ll_increment_add_to_cart;
+    CardView ll_increment_add_to_cart;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.img_add_product)
-    ImageView img_add_product;
+    RelativeLayout img_add_product;
 
 
     @SuppressLint("NonConstantResourceId")

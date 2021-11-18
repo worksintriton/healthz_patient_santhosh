@@ -94,16 +94,16 @@ public class EditMyAddressActivity extends FragmentActivity implements OnMapRead
     EditText edt_pickname;
 
     @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.txt_cityname)
-    TextView txt_cityname;
+    @BindView(R.id.edt_cityname)
+    EditText txt_cityname;
 
     @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.txt_pincode)
-    TextView txt_pincode;
+    @BindView(R.id.edt_pincode)
+    EditText txt_pincode;
 
     @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.txt_location)
-    TextView txt_location;
+    @BindView(R.id.edt_location)
+    EditText txt_location;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.rglocationtype)

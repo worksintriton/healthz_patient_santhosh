@@ -5,7 +5,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.petfolio.infinituss"
+        applicationId "com.triton.healthz"
         minSdkVersion 23
         targetSdkVersion 30
         versionCode 10
@@ -141,7 +141,7 @@ dependencies {
 
 }
 // Add the following line:
-apply plugin: 'com.google.gms.google-services'  // Google Services plugin
+//apply plugin: 'com.google.gms.google-services'  // Google Services plugin
 
 // Apply the Crashlytics Gradle plugin
 apply plugin: 'com.google.firebase.crashlytics'

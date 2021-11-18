@@ -8,15 +8,56 @@ public class SPAppointmentDetailsResponse {
     /**
      * Status : Success
      * Message : New Appointment List
-     * Data : {"sp_attched":[],"sp_business_info":[{"bus_service_list":[{"amount":120,"bus_service_list":"walking","time_slots":"15 mins"}],"bus_spec_list":[{"bus_spec_list":"Specialization - 1"},{"bus_spec_list":"Specialization - 3"}],"bus_service_gall":[{"bus_service_gall":"http://52.25.163.13:3000/api/uploads/601ccbe2a66e453d0df7a44e05-02-2021 10:35 AMPetfolio1.jpg"}],"bus_certif":[{"bus_certif":"http://52.25.163.13:3000/api/uploads/601ccbe2a66e453d0df7a44e05-02-2021 10:35 AM0001019010010862809_12132020_01022021.PDF"}],"_id":"601cd568a66e453d0df7a456","user_id":"601ccbe2a66e453d0df7a44e","bus_user_name":"DineshSP","bus_user_email":"dinesh@gmail.com","bussiness_name":"GROMMING","bus_user_phone":"9842670812","bus_profile":"http://52.25.163.13:3000/api/uploads/601ccbe2a66e453d0df7a44e05-02-2021 10:35 AM0001019010010862809_12132020_01022021.PDF","bus_proof":"http://52.25.163.13:3000/api/uploads/601ccbe2a66e453d0df7a44e05-02-2021 10:35 AM0001019010010862809_12132020_01022021.PDF","date_and_time":"05/02/2021 11:03 AM","mobile_type":"Android","profile_status":true,"profile_verification_status":"Verified","sp_loc":"Unnamed Road, Tamil Nadu 621006, India","sp_lat":11.0560398,"sp_long":78.6327327,"delete_status":false,"calender_status":true,"updatedAt":"2021-02-08T05:20:04.961Z","createdAt":"2021-02-05T05:19:36.674Z","__v":0}],"_id":"6020da50a66e453d0df7a497","sp_id":{"_id":"601ccbe2a66e453d0df7a44e","first_name":"DineshSP","last_name":"Dk","user_email":"dinesh@gmail.com","user_phone":"9842670812","date_of_reg":"05/02/2021 10:08 AM","user_type":2,"user_status":"complete","otp":123456,"profile_img":"","user_email_verification":false,"fb_token":"cELxwqkwQjKYJJSpADJKxC:APA91bHTeYJWuW5ZcRNYS0aObCue_sMQ-8YjFQlmFPwgSpQONjwsEqyEXEE_MmQNfaMnBtpmnRLHHGUGGrO8rES4aJ-kcDR207v5jyqYHimo2iETm5cxHMpBseHPO09q_Pj-AlTQYtEh","device_id":"","device_type":"","mobile_type":"Android","delete_status":false,"updatedAt":"2021-02-08T06:29:51.309Z","createdAt":"2021-02-05T04:38:58.059Z","__v":0},"appointment_UID":"SP-1612765776138","booking_date":"08-02-2021","booking_time":"10:15 PM","booking_date_time":"08-02-2021 10:15 PM","user_id":{"_id":"601b91c0204c595ee52582f9","first_name":"Kumar","last_name":"Dk","user_email":"dinesh@gmail.com","user_phone":"6383791451","date_of_reg":"04/02/2021 11:48 AM","user_type":1,"user_status":"complete","otp":123456,"profile_img":"","user_email_verification":false,"fb_token":"cELxwqkwQjKYJJSpADJKxC:APA91bHTeYJWuW5ZcRNYS0aObCue_sMQ-8YjFQlmFPwgSpQONjwsEqyEXEE_MmQNfaMnBtpmnRLHHGUGGrO8rES4aJ-kcDR207v5jyqYHimo2iETm5cxHMpBseHPO09q_Pj-AlTQYtEh","device_id":"","device_type":"","mobile_type":"Android","delete_status":false,"updatedAt":"2021-02-08T06:50:17.144Z","createdAt":"2021-02-04T06:18:40.524Z","__v":0},"pet_id":{"_id":"601b91e8204c595ee52582fa","user_id":"601b91c0204c595ee52582f9","pet_img":"http://52.25.163.13:3000/api/uploads/601b91c0204c595ee52582f904-02-2021 11:49 AMPetfolio1.jpg","pet_name":"Teenu","pet_type":"Dog","pet_breed":"Indian Pariah","pet_gender":"Male","pet_color":"Gray","pet_weight":5,"pet_age":1,"vaccinated":true,"last_vaccination_date":"03-02-2021","default_status":true,"date_and_time":"04-02-2021 11:49 AM","mobile_type":"Android","delete_status":false,"updatedAt":"2021-02-04T06:19:37.016Z","createdAt":"2021-02-04T06:19:20.459Z","__v":0},"additional_info":"","appoinment_status":"Incomplete","start_appointment_status":"Not Started","end_appointment_status":"Not End","sp_feedback":"","sp_rate":"","user_feedback":"","user_rate":"","display_date":"08-02-2021 11:59 AM","server_date_time":"","payment_id":"pay_GYyt3LJwH859ml","payment_method":"Online","service_name":"walking","service_amount":"200","service_time":"15 mins","completed_at":"","missed_at":"","mobile_type":"Android","delete_status":false,"updatedAt":"2021-02-08T06:29:36.143Z","createdAt":"2021-02-08T06:29:36.141Z","__v":0}
+     * Data : {"sp_attched":[],"sp_business_info":[{"bus_service_list":[{"amount":250,"time_slots":"15 mins","bus_service_list":"Pet Grooming"},{"amount":350,"time_slots":"15 mins","bus_service_list":" Pet Training"},{"amount":200,"time_slots":"15 mins","bus_service_list":"Pet daycare"}],"bus_spec_list":[{"bus_spec_list":"Kennel Cut"},{"bus_spec_list":"Teddy Bear Trim"},{"bus_spec_list":"Full Coat / Show Trims"}],"bus_service_gall":[{"bus_service_gall":"http://54.212.108.156:3000/api/uploads/1625687015621.png"},{"bus_service_gall":"http://54.212.108.156:3000/api/uploads/1625687032584.png"},{"bus_service_gall":"http://54.212.108.156:3000/api/uploads/1625687050185.png"},{"bus_service_gall":"http://54.212.108.156:3000/api/uploads/1625687064021.png"}],"bus_certif":[{"bus_certif":"http://54.212.108.156:3000/api/uploads/60b0b7b267f25056fe286c8f2709161305"}],"_id":"60b0b86d67f25056fe286c90","user_id":"60b0b7b267f25056fe286c8f","bus_user_name":"Sri","bus_user_email":"sriram@gmail.com","bussiness_name":"Sri Pet Spa and Groomers","bus_user_phone":"7417417411","bus_profile":"http://54.212.108.156:3000/api/uploads/60b0b7b267f25056fe286c8f2709161240","bus_proof":"http://54.212.108.156:3000/api/uploads/60b0b7b267f25056fe286c8f2709161255","date_and_time":"27-09-2021 04:13 PM","mobile_type":"IOS","profile_status":true,"profile_verification_status":"Verified","sp_loc":"Thedir nagar, Otteri, Purasaiwakkam, Chennai, Tamil Nadu 600010, India","sp_lat":13.090018359673415,"sp_long":80.25077305734156,"delete_status":false,"calender_status":true,"updatedAt":"2021-09-27T10:43:54.697Z","createdAt":"2021-05-28T09:31:25.998Z","__v":0,"thumbnail_image":"http://54.212.108.156:3000/api/uploads/1625679966323.png","city_name":"Chennai","sp_info":"","comments":0,"rating":5}],"current_img":[],"_id":"6196a871c525c97e848f2b98","sp_id":{"_id":"60b0b7b267f25056fe286c8f","first_name":"Sri","last_name":"DineshSP","user_email":"sriram@gmail.com","user_phone":"7417417411","date_of_reg":"28-05-2021 02:58 PM","user_type":2,"ref_code":"","my_ref_code":"M60LFAR","user_status":"complete","otp":123456,"profile_img":"http://54.212.108.156:3000/api/uploads/60b0b7b267f25056fe286c8f2709161441","user_email_verification":false,"fb_token":"","device_id":"","device_type":"","mobile_type":"IOS","delete_status":false,"updatedAt":"2021-10-05T05:24:33.281Z","createdAt":"2021-05-28T09:28:18.912Z","__v":0},"appointment_UID":"SP-1637263473931","booking_date":"19-11-2021","booking_time":"12:45 PM","booking_date_time":"19-11-2021 12:45 PM","user_id":{"_id":"60b73c4638e95868d79be9c6","first_name":"Sandy","last_name":"Kumar","user_email":"santhoshvsk94@gmail.com","user_phone":"9159207294","date_of_reg":"02/06/2021 01:37 PM","user_type":1,"ref_code":"","my_ref_code":"PS2Z0G5","user_status":"complete","otp":123456,"profile_img":"https://petfolio.app/api/uploads/1636446897807.jpg","user_email_verification":true,"fb_token":"","device_id":"","device_type":"","mobile_type":"Android","delete_status":false,"updatedAt":"2021-11-18T17:46:06.242Z","createdAt":"2021-06-02T08:07:34.088Z","__v":0},"family_id":{"pic":[{"image":"http://35.164.43.170:3000/api/uploads/1637263268119.jpg"}],"_id":"6196a7a7c525c97e848f2b96","user_id":"60b73c4638e95868d79be9c6","name":"Sample","gender":"Male","relation_type":"Others","health_issue":"OCD","dateofbirth":"19-11-2021","anymedicalinfo":"no comments","covide_vac":"Yes","weight":"66","delete_status":false,"createdAt":"2021-11-18T19:21:11.088Z","updatedAt":"2021-11-18T19:21:11.088Z","__v":0},"additional_info":"","appoinment_status":"Incomplete","start_appointment_status":"Not Started","end_appointment_status":"Not End","sp_feedback":"","sp_rate":null,"user_feedback":"","user_rate":"0","display_date":"2021-11-19 12:45:00","server_date_time":"","payment_id":"","payment_method":"Online","service_name":"Pet Grooming","service_amount":"250","service_time":"15 mins","completed_at":"","missed_at":"","mobile_type":"Android","delete_status":false,"date_and_time":"19-11-2021 12:54 AM","coupon_status":"Not Applied","coupon_code":"","original_price":0,"discount_price":0,"total_price":250,"updatedAt":"2021-11-18T19:24:33.939Z","createdAt":"2021-11-18T19:24:33.937Z","__v":0}
      * Code : 200
      */
 
     private String Status;
     private String Message;
+    /**
+     * sp_attched : []
+     * sp_business_info : [{"bus_service_list":[{"amount":250,"time_slots":"15 mins","bus_service_list":"Pet Grooming"},{"amount":350,"time_slots":"15 mins","bus_service_list":" Pet Training"},{"amount":200,"time_slots":"15 mins","bus_service_list":"Pet daycare"}],"bus_spec_list":[{"bus_spec_list":"Kennel Cut"},{"bus_spec_list":"Teddy Bear Trim"},{"bus_spec_list":"Full Coat / Show Trims"}],"bus_service_gall":[{"bus_service_gall":"http://54.212.108.156:3000/api/uploads/1625687015621.png"},{"bus_service_gall":"http://54.212.108.156:3000/api/uploads/1625687032584.png"},{"bus_service_gall":"http://54.212.108.156:3000/api/uploads/1625687050185.png"},{"bus_service_gall":"http://54.212.108.156:3000/api/uploads/1625687064021.png"}],"bus_certif":[{"bus_certif":"http://54.212.108.156:3000/api/uploads/60b0b7b267f25056fe286c8f2709161305"}],"_id":"60b0b86d67f25056fe286c90","user_id":"60b0b7b267f25056fe286c8f","bus_user_name":"Sri","bus_user_email":"sriram@gmail.com","bussiness_name":"Sri Pet Spa and Groomers","bus_user_phone":"7417417411","bus_profile":"http://54.212.108.156:3000/api/uploads/60b0b7b267f25056fe286c8f2709161240","bus_proof":"http://54.212.108.156:3000/api/uploads/60b0b7b267f25056fe286c8f2709161255","date_and_time":"27-09-2021 04:13 PM","mobile_type":"IOS","profile_status":true,"profile_verification_status":"Verified","sp_loc":"Thedir nagar, Otteri, Purasaiwakkam, Chennai, Tamil Nadu 600010, India","sp_lat":13.090018359673415,"sp_long":80.25077305734156,"delete_status":false,"calender_status":true,"updatedAt":"2021-09-27T10:43:54.697Z","createdAt":"2021-05-28T09:31:25.998Z","__v":0,"thumbnail_image":"http://54.212.108.156:3000/api/uploads/1625679966323.png","city_name":"Chennai","sp_info":"","comments":0,"rating":5}]
+     * current_img : []
+     * _id : 6196a871c525c97e848f2b98
+     * sp_id : {"_id":"60b0b7b267f25056fe286c8f","first_name":"Sri","last_name":"DineshSP","user_email":"sriram@gmail.com","user_phone":"7417417411","date_of_reg":"28-05-2021 02:58 PM","user_type":2,"ref_code":"","my_ref_code":"M60LFAR","user_status":"complete","otp":123456,"profile_img":"http://54.212.108.156:3000/api/uploads/60b0b7b267f25056fe286c8f2709161441","user_email_verification":false,"fb_token":"","device_id":"","device_type":"","mobile_type":"IOS","delete_status":false,"updatedAt":"2021-10-05T05:24:33.281Z","createdAt":"2021-05-28T09:28:18.912Z","__v":0}
+     * appointment_UID : SP-1637263473931
+     * booking_date : 19-11-2021
+     * booking_time : 12:45 PM
+     * booking_date_time : 19-11-2021 12:45 PM
+     * user_id : {"_id":"60b73c4638e95868d79be9c6","first_name":"Sandy","last_name":"Kumar","user_email":"santhoshvsk94@gmail.com","user_phone":"9159207294","date_of_reg":"02/06/2021 01:37 PM","user_type":1,"ref_code":"","my_ref_code":"PS2Z0G5","user_status":"complete","otp":123456,"profile_img":"https://petfolio.app/api/uploads/1636446897807.jpg","user_email_verification":true,"fb_token":"","device_id":"","device_type":"","mobile_type":"Android","delete_status":false,"updatedAt":"2021-11-18T17:46:06.242Z","createdAt":"2021-06-02T08:07:34.088Z","__v":0}
+     * family_id : {"pic":[{"image":"http://35.164.43.170:3000/api/uploads/1637263268119.jpg"}],"_id":"6196a7a7c525c97e848f2b96","user_id":"60b73c4638e95868d79be9c6","name":"Sample","gender":"Male","relation_type":"Others","health_issue":"OCD","dateofbirth":"19-11-2021","anymedicalinfo":"no comments","covide_vac":"Yes","weight":"66","delete_status":false,"createdAt":"2021-11-18T19:21:11.088Z","updatedAt":"2021-11-18T19:21:11.088Z","__v":0}
+     * additional_info :
+     * appoinment_status : Incomplete
+     * start_appointment_status : Not Started
+     * end_appointment_status : Not End
+     * sp_feedback :
+     * sp_rate : null
+     * user_feedback :
+     * user_rate : 0
+     * display_date : 2021-11-19 12:45:00
+     * server_date_time :
+     * payment_id :
+     * payment_method : Online
+     * service_name : Pet Grooming
+     * service_amount : 250
+     * service_time : 15 mins
+     * completed_at :
+     * missed_at :
+     * mobile_type : Android
+     * delete_status : false
+     * date_and_time : 19-11-2021 12:54 AM
+     * coupon_status : Not Applied
+     * coupon_code :
+     * original_price : 0
+     * discount_price : 0
+     * total_price : 250
+     * updatedAt : 2021-11-18T19:24:33.939Z
+     * createdAt : 2021-11-18T19:24:33.937Z
+     * __v : 0
+     */
+
     private DataBean Data;
     private int Code;
-
 
     public String getStatus() {
         return Status;
@@ -24,9 +65,7 @@ public class SPAppointmentDetailsResponse {
 
     public void setStatus(String Status) {
         this.Status = Status;
-
     }
-
 
     public String getMessage() {
         return Message;
@@ -34,9 +73,7 @@ public class SPAppointmentDetailsResponse {
 
     public void setMessage(String Message) {
         this.Message = Message;
-
     }
-
 
     public DataBean getData() {
         return Data;
@@ -44,9 +81,7 @@ public class SPAppointmentDetailsResponse {
 
     public void setData(DataBean Data) {
         this.Data = Data;
-
     }
-
 
     public int getCode() {
         return Code;
@@ -54,69 +89,89 @@ public class SPAppointmentDetailsResponse {
 
     public void setCode(int Code) {
         this.Code = Code;
-
     }
 
     public static class DataBean {
+        private String _id;
         /**
-         * sp_attched : []
-         * sp_business_info : [{"bus_service_list":[{"amount":120,"bus_service_list":"walking","time_slots":"15 mins"}],"bus_spec_list":[{"bus_spec_list":"Specialization - 1"},{"bus_spec_list":"Specialization - 3"}],"bus_service_gall":[{"bus_service_gall":"http://52.25.163.13:3000/api/uploads/601ccbe2a66e453d0df7a44e05-02-2021 10:35 AMPetfolio1.jpg"}],"bus_certif":[{"bus_certif":"http://52.25.163.13:3000/api/uploads/601ccbe2a66e453d0df7a44e05-02-2021 10:35 AM0001019010010862809_12132020_01022021.PDF"}],"_id":"601cd568a66e453d0df7a456","user_id":"601ccbe2a66e453d0df7a44e","bus_user_name":"DineshSP","bus_user_email":"dinesh@gmail.com","bussiness_name":"GROMMING","bus_user_phone":"9842670812","bus_profile":"http://52.25.163.13:3000/api/uploads/601ccbe2a66e453d0df7a44e05-02-2021 10:35 AM0001019010010862809_12132020_01022021.PDF","bus_proof":"http://52.25.163.13:3000/api/uploads/601ccbe2a66e453d0df7a44e05-02-2021 10:35 AM0001019010010862809_12132020_01022021.PDF","date_and_time":"05/02/2021 11:03 AM","mobile_type":"Android","profile_status":true,"profile_verification_status":"Verified","sp_loc":"Unnamed Road, Tamil Nadu 621006, India","sp_lat":11.0560398,"sp_long":78.6327327,"delete_status":false,"calender_status":true,"updatedAt":"2021-02-08T05:20:04.961Z","createdAt":"2021-02-05T05:19:36.674Z","__v":0}]
-         * _id : 6020da50a66e453d0df7a497
-         * sp_id : {"_id":"601ccbe2a66e453d0df7a44e","first_name":"DineshSP","last_name":"Dk","user_email":"dinesh@gmail.com","user_phone":"9842670812","date_of_reg":"05/02/2021 10:08 AM","user_type":2,"user_status":"complete","otp":123456,"profile_img":"","user_email_verification":false,"fb_token":"cELxwqkwQjKYJJSpADJKxC:APA91bHTeYJWuW5ZcRNYS0aObCue_sMQ-8YjFQlmFPwgSpQONjwsEqyEXEE_MmQNfaMnBtpmnRLHHGUGGrO8rES4aJ-kcDR207v5jyqYHimo2iETm5cxHMpBseHPO09q_Pj-AlTQYtEh","device_id":"","device_type":"","mobile_type":"Android","delete_status":false,"updatedAt":"2021-02-08T06:29:51.309Z","createdAt":"2021-02-05T04:38:58.059Z","__v":0}
-         * appointment_UID : SP-1612765776138
-         * booking_date : 08-02-2021
-         * booking_time : 10:15 PM
-         * booking_date_time : 08-02-2021 10:15 PM
-         * user_id : {"_id":"601b91c0204c595ee52582f9","first_name":"Kumar","last_name":"Dk","user_email":"dinesh@gmail.com","user_phone":"6383791451","date_of_reg":"04/02/2021 11:48 AM","user_type":1,"user_status":"complete","otp":123456,"profile_img":"","user_email_verification":false,"fb_token":"cELxwqkwQjKYJJSpADJKxC:APA91bHTeYJWuW5ZcRNYS0aObCue_sMQ-8YjFQlmFPwgSpQONjwsEqyEXEE_MmQNfaMnBtpmnRLHHGUGGrO8rES4aJ-kcDR207v5jyqYHimo2iETm5cxHMpBseHPO09q_Pj-AlTQYtEh","device_id":"","device_type":"","mobile_type":"Android","delete_status":false,"updatedAt":"2021-02-08T06:50:17.144Z","createdAt":"2021-02-04T06:18:40.524Z","__v":0}
-         * pet_id : {"_id":"601b91e8204c595ee52582fa","user_id":"601b91c0204c595ee52582f9","pet_img":"http://52.25.163.13:3000/api/uploads/601b91c0204c595ee52582f904-02-2021 11:49 AMPetfolio1.jpg","pet_name":"Teenu","pet_type":"Dog","pet_breed":"Indian Pariah","pet_gender":"Male","pet_color":"Gray","pet_weight":5,"pet_age":1,"vaccinated":true,"last_vaccination_date":"03-02-2021","default_status":true,"date_and_time":"04-02-2021 11:49 AM","mobile_type":"Android","delete_status":false,"updatedAt":"2021-02-04T06:19:37.016Z","createdAt":"2021-02-04T06:19:20.459Z","__v":0}
-         * additional_info :
-         * appoinment_status : Incomplete
-         * start_appointment_status : Not Started
-         * end_appointment_status : Not End
-         * sp_feedback :
-         * sp_rate :
-         * user_feedback :
-         * user_rate :
-         * display_date : 08-02-2021 11:59 AM
-         * server_date_time :
-         * payment_id : pay_GYyt3LJwH859ml
-         * payment_method : Online
-         * service_name : walking
-         * service_amount : 200
-         * service_time : 15 mins
-         * completed_at :
-         * missed_at :
-         * mobile_type : Android
+         * _id : 60b0b7b267f25056fe286c8f
+         * first_name : Sri
+         * last_name : DineshSP
+         * user_email : sriram@gmail.com
+         * user_phone : 7417417411
+         * date_of_reg : 28-05-2021 02:58 PM
+         * user_type : 2
+         * ref_code :
+         * my_ref_code : M60LFAR
+         * user_status : complete
+         * otp : 123456
+         * profile_img : http://54.212.108.156:3000/api/uploads/60b0b7b267f25056fe286c8f2709161441
+         * user_email_verification : false
+         * fb_token :
+         * device_id :
+         * device_type :
+         * mobile_type : IOS
          * delete_status : false
-         * updatedAt : 2021-02-08T06:29:36.143Z
-         * createdAt : 2021-02-08T06:29:36.141Z
+         * updatedAt : 2021-10-05T05:24:33.281Z
+         * createdAt : 2021-05-28T09:28:18.912Z
          * __v : 0
          */
 
-        private String date_and_time;
-
-        public String getDate_and_time() {
-            return date_and_time;
-        }
-
-        public void setDate_and_time(String date_and_time) {
-            this.date_and_time = date_and_time;
-        }
-
-        private String _id;
         private SpIdBean sp_id;
         private String appointment_UID;
         private String booking_date;
         private String booking_time;
         private String booking_date_time;
+        /**
+         * _id : 60b73c4638e95868d79be9c6
+         * first_name : Sandy
+         * last_name : Kumar
+         * user_email : santhoshvsk94@gmail.com
+         * user_phone : 9159207294
+         * date_of_reg : 02/06/2021 01:37 PM
+         * user_type : 1
+         * ref_code :
+         * my_ref_code : PS2Z0G5
+         * user_status : complete
+         * otp : 123456
+         * profile_img : https://petfolio.app/api/uploads/1636446897807.jpg
+         * user_email_verification : true
+         * fb_token :
+         * device_id :
+         * device_type :
+         * mobile_type : Android
+         * delete_status : false
+         * updatedAt : 2021-11-18T17:46:06.242Z
+         * createdAt : 2021-06-02T08:07:34.088Z
+         * __v : 0
+         */
+
         private UserIdBean user_id;
-        private PetIdBean pet_id;
+        /**
+         * pic : [{"image":"http://35.164.43.170:3000/api/uploads/1637263268119.jpg"}]
+         * _id : 6196a7a7c525c97e848f2b96
+         * user_id : 60b73c4638e95868d79be9c6
+         * name : Sample
+         * gender : Male
+         * relation_type : Others
+         * health_issue : OCD
+         * dateofbirth : 19-11-2021
+         * anymedicalinfo : no comments
+         * covide_vac : Yes
+         * weight : 66
+         * delete_status : false
+         * createdAt : 2021-11-18T19:21:11.088Z
+         * updatedAt : 2021-11-18T19:21:11.088Z
+         * __v : 0
+         */
+
+        private FamilyIdBean family_id;
         private String additional_info;
         private String appoinment_status;
         private String start_appointment_status;
         private String end_appointment_status;
         private String sp_feedback;
-        private String sp_rate;
+        private Object sp_rate;
         private String user_feedback;
         private String user_rate;
         private String display_date;
@@ -130,11 +185,274 @@ public class SPAppointmentDetailsResponse {
         private String missed_at;
         private String mobile_type;
         private boolean delete_status;
+        private String date_and_time;
         private String coupon_status;
         private String coupon_code;
         private int original_price;
         private int discount_price;
         private int total_price;
+        private String updatedAt;
+        private String createdAt;
+        private int __v;
+        private List<?> sp_attched;
+        /**
+         * bus_service_list : [{"amount":250,"time_slots":"15 mins","bus_service_list":"Pet Grooming"},{"amount":350,"time_slots":"15 mins","bus_service_list":" Pet Training"},{"amount":200,"time_slots":"15 mins","bus_service_list":"Pet daycare"}]
+         * bus_spec_list : [{"bus_spec_list":"Kennel Cut"},{"bus_spec_list":"Teddy Bear Trim"},{"bus_spec_list":"Full Coat / Show Trims"}]
+         * bus_service_gall : [{"bus_service_gall":"http://54.212.108.156:3000/api/uploads/1625687015621.png"},{"bus_service_gall":"http://54.212.108.156:3000/api/uploads/1625687032584.png"},{"bus_service_gall":"http://54.212.108.156:3000/api/uploads/1625687050185.png"},{"bus_service_gall":"http://54.212.108.156:3000/api/uploads/1625687064021.png"}]
+         * bus_certif : [{"bus_certif":"http://54.212.108.156:3000/api/uploads/60b0b7b267f25056fe286c8f2709161305"}]
+         * _id : 60b0b86d67f25056fe286c90
+         * user_id : 60b0b7b267f25056fe286c8f
+         * bus_user_name : Sri
+         * bus_user_email : sriram@gmail.com
+         * bussiness_name : Sri Pet Spa and Groomers
+         * bus_user_phone : 7417417411
+         * bus_profile : http://54.212.108.156:3000/api/uploads/60b0b7b267f25056fe286c8f2709161240
+         * bus_proof : http://54.212.108.156:3000/api/uploads/60b0b7b267f25056fe286c8f2709161255
+         * date_and_time : 27-09-2021 04:13 PM
+         * mobile_type : IOS
+         * profile_status : true
+         * profile_verification_status : Verified
+         * sp_loc : Thedir nagar, Otteri, Purasaiwakkam, Chennai, Tamil Nadu 600010, India
+         * sp_lat : 13.090018359673415
+         * sp_long : 80.25077305734156
+         * delete_status : false
+         * calender_status : true
+         * updatedAt : 2021-09-27T10:43:54.697Z
+         * createdAt : 2021-05-28T09:31:25.998Z
+         * __v : 0
+         * thumbnail_image : http://54.212.108.156:3000/api/uploads/1625679966323.png
+         * city_name : Chennai
+         * sp_info :
+         * comments : 0
+         * rating : 5
+         */
+
+        private List<SpBusinessInfoBean> sp_business_info;
+        private List<?> current_img;
+
+        public String get_id() {
+            return _id;
+        }
+
+        public void set_id(String _id) {
+            this._id = _id;
+        }
+
+        public SpIdBean getSp_id() {
+            return sp_id;
+        }
+
+        public void setSp_id(SpIdBean sp_id) {
+            this.sp_id = sp_id;
+        }
+
+        public String getAppointment_UID() {
+            return appointment_UID;
+        }
+
+        public void setAppointment_UID(String appointment_UID) {
+            this.appointment_UID = appointment_UID;
+        }
+
+        public String getBooking_date() {
+            return booking_date;
+        }
+
+        public void setBooking_date(String booking_date) {
+            this.booking_date = booking_date;
+        }
+
+        public String getBooking_time() {
+            return booking_time;
+        }
+
+        public void setBooking_time(String booking_time) {
+            this.booking_time = booking_time;
+        }
+
+        public String getBooking_date_time() {
+            return booking_date_time;
+        }
+
+        public void setBooking_date_time(String booking_date_time) {
+            this.booking_date_time = booking_date_time;
+        }
+
+        public UserIdBean getUser_id() {
+            return user_id;
+        }
+
+        public void setUser_id(UserIdBean user_id) {
+            this.user_id = user_id;
+        }
+
+        public FamilyIdBean getFamily_id() {
+            return family_id;
+        }
+
+        public void setFamily_id(FamilyIdBean family_id) {
+            this.family_id = family_id;
+        }
+
+        public String getAdditional_info() {
+            return additional_info;
+        }
+
+        public void setAdditional_info(String additional_info) {
+            this.additional_info = additional_info;
+        }
+
+        public String getAppoinment_status() {
+            return appoinment_status;
+        }
+
+        public void setAppoinment_status(String appoinment_status) {
+            this.appoinment_status = appoinment_status;
+        }
+
+        public String getStart_appointment_status() {
+            return start_appointment_status;
+        }
+
+        public void setStart_appointment_status(String start_appointment_status) {
+            this.start_appointment_status = start_appointment_status;
+        }
+
+        public String getEnd_appointment_status() {
+            return end_appointment_status;
+        }
+
+        public void setEnd_appointment_status(String end_appointment_status) {
+            this.end_appointment_status = end_appointment_status;
+        }
+
+        public String getSp_feedback() {
+            return sp_feedback;
+        }
+
+        public void setSp_feedback(String sp_feedback) {
+            this.sp_feedback = sp_feedback;
+        }
+
+        public Object getSp_rate() {
+            return sp_rate;
+        }
+
+        public void setSp_rate(Object sp_rate) {
+            this.sp_rate = sp_rate;
+        }
+
+        public String getUser_feedback() {
+            return user_feedback;
+        }
+
+        public void setUser_feedback(String user_feedback) {
+            this.user_feedback = user_feedback;
+        }
+
+        public String getUser_rate() {
+            return user_rate;
+        }
+
+        public void setUser_rate(String user_rate) {
+            this.user_rate = user_rate;
+        }
+
+        public String getDisplay_date() {
+            return display_date;
+        }
+
+        public void setDisplay_date(String display_date) {
+            this.display_date = display_date;
+        }
+
+        public String getServer_date_time() {
+            return server_date_time;
+        }
+
+        public void setServer_date_time(String server_date_time) {
+            this.server_date_time = server_date_time;
+        }
+
+        public String getPayment_id() {
+            return payment_id;
+        }
+
+        public void setPayment_id(String payment_id) {
+            this.payment_id = payment_id;
+        }
+
+        public String getPayment_method() {
+            return payment_method;
+        }
+
+        public void setPayment_method(String payment_method) {
+            this.payment_method = payment_method;
+        }
+
+        public String getService_name() {
+            return service_name;
+        }
+
+        public void setService_name(String service_name) {
+            this.service_name = service_name;
+        }
+
+        public String getService_amount() {
+            return service_amount;
+        }
+
+        public void setService_amount(String service_amount) {
+            this.service_amount = service_amount;
+        }
+
+        public String getService_time() {
+            return service_time;
+        }
+
+        public void setService_time(String service_time) {
+            this.service_time = service_time;
+        }
+
+        public String getCompleted_at() {
+            return completed_at;
+        }
+
+        public void setCompleted_at(String completed_at) {
+            this.completed_at = completed_at;
+        }
+
+        public String getMissed_at() {
+            return missed_at;
+        }
+
+        public void setMissed_at(String missed_at) {
+            this.missed_at = missed_at;
+        }
+
+        public String getMobile_type() {
+            return mobile_type;
+        }
+
+        public void setMobile_type(String mobile_type) {
+            this.mobile_type = mobile_type;
+        }
+
+        public boolean isDelete_status() {
+            return delete_status;
+        }
+
+        public void setDelete_status(boolean delete_status) {
+            this.delete_status = delete_status;
+        }
+
+        public String getDate_and_time() {
+            return date_and_time;
+        }
+
+        public void setDate_and_time(String date_and_time) {
+            this.date_and_time = date_and_time;
+        }
 
         public String getCoupon_status() {
             return coupon_status;
@@ -176,287 +494,13 @@ public class SPAppointmentDetailsResponse {
             this.total_price = total_price;
         }
 
-        private String updatedAt;
-        private String createdAt;
-        private int __v;
-        private List<?> sp_attched;
-        private List<SpBusinessInfoBean> sp_business_info;
-
-
-        public String get_id() {
-            return _id;
-        }
-
-        public void set_id(String _id) {
-            this._id = _id;
-
-        }
-
-
-        public SpIdBean getSp_id() {
-            return sp_id;
-        }
-
-        public void setSp_id(SpIdBean sp_id) {
-            this.sp_id = sp_id;
-
-        }
-
-
-        public String getAppointment_UID() {
-            return appointment_UID;
-        }
-
-        public void setAppointment_UID(String appointment_UID) {
-            this.appointment_UID = appointment_UID;
-
-        }
-
-
-        public String getBooking_date() {
-            return booking_date;
-        }
-
-        public void setBooking_date(String booking_date) {
-            this.booking_date = booking_date;
-
-        }
-
-
-        public String getBooking_time() {
-            return booking_time;
-        }
-
-        public void setBooking_time(String booking_time) {
-            this.booking_time = booking_time;
-
-        }
-
-
-        public String getBooking_date_time() {
-            return booking_date_time;
-        }
-
-        public void setBooking_date_time(String booking_date_time) {
-            this.booking_date_time = booking_date_time;
-
-        }
-
-
-        public UserIdBean getUser_id() {
-            return user_id;
-        }
-
-        public void setUser_id(UserIdBean user_id) {
-            this.user_id = user_id;
-
-        }
-
-
-        public PetIdBean getPet_id() {
-            return pet_id;
-        }
-
-        public void setPet_id(PetIdBean pet_id) {
-            this.pet_id = pet_id;
-
-        }
-
-
-        public String getAdditional_info() {
-            return additional_info;
-        }
-
-        public void setAdditional_info(String additional_info) {
-            this.additional_info = additional_info;
-
-        }
-
-
-        public String getAppoinment_status() {
-            return appoinment_status;
-        }
-
-        public void setAppoinment_status(String appoinment_status) {
-            this.appoinment_status = appoinment_status;
-
-        }
-
-
-        public String getStart_appointment_status() {
-            return start_appointment_status;
-        }
-
-        public void setStart_appointment_status(String start_appointment_status) {
-            this.start_appointment_status = start_appointment_status;
-
-        }
-
-        public String getEnd_appointment_status() {
-            return end_appointment_status;
-        }
-
-        public void setEnd_appointment_status(String end_appointment_status) {
-            this.end_appointment_status = end_appointment_status;
-
-        }
-
-        public String getSp_feedback() {
-            return sp_feedback;
-        }
-
-        public void setSp_feedback(String sp_feedback) {
-            this.sp_feedback = sp_feedback;
-
-        }
-
-
-        public String getSp_rate() {
-            return sp_rate;
-        }
-
-        public void setSp_rate(String sp_rate) {
-            this.sp_rate = sp_rate;
-
-        }
-
-
-        public String getUser_feedback() {
-            return user_feedback;
-        }
-
-        public void setUser_feedback(String user_feedback) {
-            this.user_feedback = user_feedback;
-
-        }
-
-
-        public String getUser_rate() {
-            return user_rate;
-        }
-
-        public void setUser_rate(String user_rate) {
-            this.user_rate = user_rate;
-
-        }
-
-
-        public String getDisplay_date() {
-            return display_date;
-        }
-
-        public void setDisplay_date(String display_date) {
-            this.display_date = display_date;
-
-        }
-
-        public String getServer_date_time() {
-            return server_date_time;
-        }
-
-        public void setServer_date_time(String server_date_time) {
-            this.server_date_time = server_date_time;
-
-        }
-
-
-        public String getPayment_id() {
-            return payment_id;
-        }
-
-        public void setPayment_id(String payment_id) {
-            this.payment_id = payment_id;
-
-        }
-
-
-        public String getPayment_method() {
-            return payment_method;
-        }
-
-        public void setPayment_method(String payment_method) {
-            this.payment_method = payment_method;
-
-        }
-
-
-        public String getService_name() {
-            return service_name;
-        }
-
-        public void setService_name(String service_name) {
-            this.service_name = service_name;
-
-        }
-
-
-        public String getService_amount() {
-            return service_amount;
-        }
-
-        public void setService_amount(String service_amount) {
-            this.service_amount = service_amount;
-
-        }
-
-
-        public String getService_time() {
-            return service_time;
-        }
-
-        public void setService_time(String service_time) {
-            this.service_time = service_time;
-
-        }
-
-
-        public String getCompleted_at() {
-            return completed_at;
-        }
-
-        public void setCompleted_at(String completed_at) {
-            this.completed_at = completed_at;
-
-        }
-
-
-        public String getMissed_at() {
-            return missed_at;
-        }
-
-        public void setMissed_at(String missed_at) {
-            this.missed_at = missed_at;
-
-        }
-
-
-        public String getMobile_type() {
-            return mobile_type;
-        }
-
-        public void setMobile_type(String mobile_type) {
-            this.mobile_type = mobile_type;
-
-        }
-
-
-        public boolean isDelete_status() {
-            return delete_status;
-        }
-
-        public void setDelete_status(boolean delete_status) {
-            this.delete_status = delete_status;
-        }
-
         public String getUpdatedAt() {
             return updatedAt;
         }
 
         public void setUpdatedAt(String updatedAt) {
             this.updatedAt = updatedAt;
-
         }
-
 
         public String getCreatedAt() {
             return createdAt;
@@ -464,9 +508,7 @@ public class SPAppointmentDetailsResponse {
 
         public void setCreatedAt(String createdAt) {
             this.createdAt = createdAt;
-
         }
-
 
         public int get__v() {
             return __v;
@@ -474,9 +516,7 @@ public class SPAppointmentDetailsResponse {
 
         public void set__v(int __v) {
             this.__v = __v;
-
         }
-
 
         public List<?> getSp_attched() {
             return sp_attched;
@@ -484,9 +524,7 @@ public class SPAppointmentDetailsResponse {
 
         public void setSp_attched(List<?> sp_attched) {
             this.sp_attched = sp_attched;
-
         }
-
 
         public List<SpBusinessInfoBean> getSp_business_info() {
             return sp_business_info;
@@ -494,32 +532,17 @@ public class SPAppointmentDetailsResponse {
 
         public void setSp_business_info(List<SpBusinessInfoBean> sp_business_info) {
             this.sp_business_info = sp_business_info;
-
         }
 
-        public static class SpIdBean  {
-            /**
-             * _id : 601ccbe2a66e453d0df7a44e
-             * first_name : DineshSP
-             * last_name : Dk
-             * user_email : dinesh@gmail.com
-             * user_phone : 9842670812
-             * date_of_reg : 05/02/2021 10:08 AM
-             * user_type : 2
-             * user_status : complete
-             * otp : 123456
-             * profile_img :
-             * user_email_verification : false
-             * fb_token : cELxwqkwQjKYJJSpADJKxC:APA91bHTeYJWuW5ZcRNYS0aObCue_sMQ-8YjFQlmFPwgSpQONjwsEqyEXEE_MmQNfaMnBtpmnRLHHGUGGrO8rES4aJ-kcDR207v5jyqYHimo2iETm5cxHMpBseHPO09q_Pj-AlTQYtEh
-             * device_id :
-             * device_type :
-             * mobile_type : Android
-             * delete_status : false
-             * updatedAt : 2021-02-08T06:29:51.309Z
-             * createdAt : 2021-02-05T04:38:58.059Z
-             * __v : 0
-             */
+        public List<?> getCurrent_img() {
+            return current_img;
+        }
 
+        public void setCurrent_img(List<?> current_img) {
+            this.current_img = current_img;
+        }
+
+        public static class SpIdBean {
             private String _id;
             private String first_name;
             private String last_name;
@@ -527,6 +550,8 @@ public class SPAppointmentDetailsResponse {
             private String user_phone;
             private String date_of_reg;
             private int user_type;
+            private String ref_code;
+            private String my_ref_code;
             private String user_status;
             private int otp;
             private String profile_img;
@@ -540,16 +565,13 @@ public class SPAppointmentDetailsResponse {
             private String createdAt;
             private int __v;
 
-
             public String get_id() {
                 return _id;
             }
 
             public void set_id(String _id) {
                 this._id = _id;
-
             }
-
 
             public String getFirst_name() {
                 return first_name;
@@ -558,7 +580,6 @@ public class SPAppointmentDetailsResponse {
             public void setFirst_name(String first_name) {
                 this.first_name = first_name;
             }
-
 
             public String getLast_name() {
                 return last_name;
@@ -584,7 +605,6 @@ public class SPAppointmentDetailsResponse {
                 this.user_phone = user_phone;
             }
 
-
             public String getDate_of_reg() {
                 return date_of_reg;
             }
@@ -592,7 +612,6 @@ public class SPAppointmentDetailsResponse {
             public void setDate_of_reg(String date_of_reg) {
                 this.date_of_reg = date_of_reg;
             }
-
 
             public int getUser_type() {
                 return user_type;
@@ -602,6 +621,21 @@ public class SPAppointmentDetailsResponse {
                 this.user_type = user_type;
             }
 
+            public String getRef_code() {
+                return ref_code;
+            }
+
+            public void setRef_code(String ref_code) {
+                this.ref_code = ref_code;
+            }
+
+            public String getMy_ref_code() {
+                return my_ref_code;
+            }
+
+            public void setMy_ref_code(String my_ref_code) {
+                this.my_ref_code = my_ref_code;
+            }
 
             public String getUser_status() {
                 return user_status;
@@ -634,7 +668,6 @@ public class SPAppointmentDetailsResponse {
             public void setUser_email_verification(boolean user_email_verification) {
                 this.user_email_verification = user_email_verification;
             }
-
 
             public String getFb_token() {
                 return fb_token;
@@ -682,9 +715,7 @@ public class SPAppointmentDetailsResponse {
 
             public void setUpdatedAt(String updatedAt) {
                 this.updatedAt = updatedAt;
-
             }
-
 
             public String getCreatedAt() {
                 return createdAt;
@@ -692,9 +723,7 @@ public class SPAppointmentDetailsResponse {
 
             public void setCreatedAt(String createdAt) {
                 this.createdAt = createdAt;
-
             }
-
 
             public int get__v() {
                 return __v;
@@ -706,28 +735,6 @@ public class SPAppointmentDetailsResponse {
         }
 
         public static class UserIdBean {
-            /**
-             * _id : 601b91c0204c595ee52582f9
-             * first_name : Kumar
-             * last_name : Dk
-             * user_email : dinesh@gmail.com
-             * user_phone : 6383791451
-             * date_of_reg : 04/02/2021 11:48 AM
-             * user_type : 1
-             * user_status : complete
-             * otp : 123456
-             * profile_img :
-             * user_email_verification : false
-             * fb_token : cELxwqkwQjKYJJSpADJKxC:APA91bHTeYJWuW5ZcRNYS0aObCue_sMQ-8YjFQlmFPwgSpQONjwsEqyEXEE_MmQNfaMnBtpmnRLHHGUGGrO8rES4aJ-kcDR207v5jyqYHimo2iETm5cxHMpBseHPO09q_Pj-AlTQYtEh
-             * device_id :
-             * device_type :
-             * mobile_type : Android
-             * delete_status : false
-             * updatedAt : 2021-02-08T06:50:17.144Z
-             * createdAt : 2021-02-04T06:18:40.524Z
-             * __v : 0
-             */
-
             private String _id;
             private String first_name;
             private String last_name;
@@ -735,6 +742,8 @@ public class SPAppointmentDetailsResponse {
             private String user_phone;
             private String date_of_reg;
             private int user_type;
+            private String ref_code;
+            private String my_ref_code;
             private String user_status;
             private int otp;
             private String profile_img;
@@ -748,16 +757,13 @@ public class SPAppointmentDetailsResponse {
             private String createdAt;
             private int __v;
 
-
             public String get_id() {
                 return _id;
             }
 
             public void set_id(String _id) {
                 this._id = _id;
-
             }
-
 
             public String getFirst_name() {
                 return first_name;
@@ -765,9 +771,7 @@ public class SPAppointmentDetailsResponse {
 
             public void setFirst_name(String first_name) {
                 this.first_name = first_name;
-
             }
-
 
             public String getLast_name() {
                 return last_name;
@@ -775,9 +779,7 @@ public class SPAppointmentDetailsResponse {
 
             public void setLast_name(String last_name) {
                 this.last_name = last_name;
-
             }
-
 
             public String getUser_email() {
                 return user_email;
@@ -795,7 +797,6 @@ public class SPAppointmentDetailsResponse {
                 this.user_phone = user_phone;
             }
 
-
             public String getDate_of_reg() {
                 return date_of_reg;
             }
@@ -804,16 +805,29 @@ public class SPAppointmentDetailsResponse {
                 this.date_of_reg = date_of_reg;
             }
 
-
             public int getUser_type() {
                 return user_type;
             }
 
             public void setUser_type(int user_type) {
                 this.user_type = user_type;
-
             }
 
+            public String getRef_code() {
+                return ref_code;
+            }
+
+            public void setRef_code(String ref_code) {
+                this.ref_code = ref_code;
+            }
+
+            public String getMy_ref_code() {
+                return my_ref_code;
+            }
+
+            public void setMy_ref_code(String my_ref_code) {
+                this.my_ref_code = my_ref_code;
+            }
 
             public String getUser_status() {
                 return user_status;
@@ -821,7 +835,6 @@ public class SPAppointmentDetailsResponse {
 
             public void setUser_status(String user_status) {
                 this.user_status = user_status;
-
             }
 
             public int getOtp() {
@@ -838,9 +851,7 @@ public class SPAppointmentDetailsResponse {
 
             public void setProfile_img(String profile_img) {
                 this.profile_img = profile_img;
-
             }
-
 
             public boolean isUser_email_verification() {
                 return user_email_verification;
@@ -850,16 +861,13 @@ public class SPAppointmentDetailsResponse {
                 this.user_email_verification = user_email_verification;
             }
 
-
             public String getFb_token() {
                 return fb_token;
             }
 
             public void setFb_token(String fb_token) {
                 this.fb_token = fb_token;
-
             }
-
 
             public String getDevice_id() {
                 return device_id;
@@ -867,9 +875,7 @@ public class SPAppointmentDetailsResponse {
 
             public void setDevice_id(String device_id) {
                 this.device_id = device_id;
-
             }
-
 
             public String getDevice_type() {
                 return device_type;
@@ -877,9 +883,7 @@ public class SPAppointmentDetailsResponse {
 
             public void setDevice_type(String device_type) {
                 this.device_type = device_type;
-
             }
-
 
             public String getMobile_type() {
                 return mobile_type;
@@ -887,9 +891,7 @@ public class SPAppointmentDetailsResponse {
 
             public void setMobile_type(String mobile_type) {
                 this.mobile_type = mobile_type;
-
             }
-
 
             public boolean isDelete_status() {
                 return delete_status;
@@ -897,9 +899,7 @@ public class SPAppointmentDetailsResponse {
 
             public void setDelete_status(boolean delete_status) {
                 this.delete_status = delete_status;
-
             }
-
 
             public String getUpdatedAt() {
                 return updatedAt;
@@ -915,7 +915,6 @@ public class SPAppointmentDetailsResponse {
 
             public void setCreatedAt(String createdAt) {
                 this.createdAt = createdAt;
-
             }
 
             public int get__v() {
@@ -927,66 +926,26 @@ public class SPAppointmentDetailsResponse {
             }
         }
 
-        public static class PetIdBean  {
-            /**
-             * pet_img : [{"pet_img":"http://54.212.108.156:3000/api/uploads/1614686158761.jpeg"}]
-             * _id : 603e27a92c2b43125f8cb803
-             * user_id : 603e27792c2b43125f8cb802
-             * pet_name : DEENU
-             * pet_type : Dog
-             * pet_breed : Irish Setter
-             * pet_gender : Male
-             * pet_color : BLACK
-             * pet_weight : 20.5
-             * pet_age :
-             * pet_dob : 03-03-2015
-             * pet_spayed : true
-             * pet_purebred : true
-             * pet_frnd_with_dog : true
-             * pet_frnd_with_cat : true
-             * pet_frnd_with_kit : true
-             * pet_microchipped : true
-             * pet_tick_free : true
-             * pet_private_part : true
-             * vaccinated : true
-             * last_vaccination_date : 10-02-2021
-             * default_status : true
-             * date_and_time : 03-03-2021 03:38 PM
-             * mobile_type : Android
-             * delete_status : false
-             * updatedAt : 2021-03-03T10:08:39.919Z
-             * createdAt : 2021-03-02T11:55:21.396Z
-             * __v : 0
-             */
-
+        public static class FamilyIdBean {
             private String _id;
             private String user_id;
-            private String pet_name;
-            private String pet_type;
-            private String pet_breed;
-            private String pet_gender;
-            private String pet_color;
-            private double pet_weight;
-            private String pet_age;
-            private String pet_dob;
-            private boolean pet_spayed;
-            private boolean pet_purebred;
-            private boolean pet_frnd_with_dog;
-            private boolean pet_frnd_with_cat;
-            private boolean pet_frnd_with_kit;
-            private boolean pet_microchipped;
-            private boolean pet_tick_free;
-            private boolean pet_private_part;
-            private boolean vaccinated;
-            private String last_vaccination_date;
-            private boolean default_status;
-            private String date_and_time;
-            private String mobile_type;
+            private String name;
+            private String gender;
+            private String relation_type;
+            private String health_issue;
+            private String dateofbirth;
+            private String anymedicalinfo;
+            private String covide_vac;
+            private String weight;
             private boolean delete_status;
-            private String updatedAt;
             private String createdAt;
+            private String updatedAt;
             private int __v;
-            private List<PetNewAppointmentDetailsResponse.DataBean.FamilyIdBean.PicBean> pet_img;
+            /**
+             * image : http://35.164.43.170:3000/api/uploads/1637263268119.jpg
+             */
+
+            private List<PicBean> pic;
 
             public String get_id() {
                 return _id;
@@ -994,7 +953,6 @@ public class SPAppointmentDetailsResponse {
 
             public void set_id(String _id) {
                 this._id = _id;
-
             }
 
             public String getUser_id() {
@@ -1003,218 +961,71 @@ public class SPAppointmentDetailsResponse {
 
             public void setUser_id(String user_id) {
                 this.user_id = user_id;
-
             }
 
-
-            public String getPet_name() {
-                return pet_name;
+            public String getName() {
+                return name;
             }
 
-            public void setPet_name(String pet_name) {
-                this.pet_name = pet_name;
-
+            public void setName(String name) {
+                this.name = name;
             }
 
-
-            public String getPet_type() {
-                return pet_type;
+            public String getGender() {
+                return gender;
             }
 
-            public void setPet_type(String pet_type) {
-                this.pet_type = pet_type;
-
+            public void setGender(String gender) {
+                this.gender = gender;
             }
 
-
-            public String getPet_breed() {
-                return pet_breed;
+            public String getRelation_type() {
+                return relation_type;
             }
 
-            public void setPet_breed(String pet_breed) {
-                this.pet_breed = pet_breed;
-
+            public void setRelation_type(String relation_type) {
+                this.relation_type = relation_type;
             }
 
-
-            public String getPet_gender() {
-                return pet_gender;
+            public String getHealth_issue() {
+                return health_issue;
             }
 
-            public void setPet_gender(String pet_gender) {
-                this.pet_gender = pet_gender;
-
+            public void setHealth_issue(String health_issue) {
+                this.health_issue = health_issue;
             }
 
-
-            public String getPet_color() {
-                return pet_color;
+            public String getDateofbirth() {
+                return dateofbirth;
             }
 
-            public void setPet_color(String pet_color) {
-                this.pet_color = pet_color;
-
+            public void setDateofbirth(String dateofbirth) {
+                this.dateofbirth = dateofbirth;
             }
 
-
-            public double getPet_weight() {
-                return pet_weight;
+            public String getAnymedicalinfo() {
+                return anymedicalinfo;
             }
 
-            public void setPet_weight(double pet_weight) {
-                this.pet_weight = pet_weight;
-
+            public void setAnymedicalinfo(String anymedicalinfo) {
+                this.anymedicalinfo = anymedicalinfo;
             }
 
-
-            public String getPet_age() {
-                return pet_age;
+            public String getCovide_vac() {
+                return covide_vac;
             }
 
-            public void setPet_age(String pet_age) {
-                this.pet_age = pet_age;
-
+            public void setCovide_vac(String covide_vac) {
+                this.covide_vac = covide_vac;
             }
 
-
-            public String getPet_dob() {
-                return pet_dob;
+            public String getWeight() {
+                return weight;
             }
 
-            public void setPet_dob(String pet_dob) {
-                this.pet_dob = pet_dob;
-
+            public void setWeight(String weight) {
+                this.weight = weight;
             }
-
-
-            public boolean isPet_spayed() {
-                return pet_spayed;
-            }
-
-            public void setPet_spayed(boolean pet_spayed) {
-                this.pet_spayed = pet_spayed;
-
-            }
-
-
-            public boolean isPet_purebred() {
-                return pet_purebred;
-            }
-
-            public void setPet_purebred(boolean pet_purebred) {
-                this.pet_purebred = pet_purebred;
-
-            }
-
-
-            public boolean isPet_frnd_with_dog() {
-                return pet_frnd_with_dog;
-            }
-
-            public void setPet_frnd_with_dog(boolean pet_frnd_with_dog) {
-                this.pet_frnd_with_dog = pet_frnd_with_dog;
-
-            }
-
-
-            public boolean isPet_frnd_with_cat() {
-                return pet_frnd_with_cat;
-            }
-
-            public void setPet_frnd_with_cat(boolean pet_frnd_with_cat) {
-                this.pet_frnd_with_cat = pet_frnd_with_cat;
-
-            }
-
-            public boolean isPet_frnd_with_kit() {
-                return pet_frnd_with_kit;
-            }
-
-            public void setPet_frnd_with_kit(boolean pet_frnd_with_kit) {
-                this.pet_frnd_with_kit = pet_frnd_with_kit;
-
-            }
-
-
-            public boolean isPet_microchipped() {
-                return pet_microchipped;
-            }
-
-            public void setPet_microchipped(boolean pet_microchipped) {
-                this.pet_microchipped = pet_microchipped;
-
-            }
-
-
-            public boolean isPet_tick_free() {
-                return pet_tick_free;
-            }
-
-            public void setPet_tick_free(boolean pet_tick_free) {
-                this.pet_tick_free = pet_tick_free;
-
-            }
-
-
-            public boolean isPet_private_part() {
-                return pet_private_part;
-            }
-
-            public void setPet_private_part(boolean pet_private_part) {
-                this.pet_private_part = pet_private_part;
-
-            }
-
-
-            public boolean isVaccinated() {
-                return vaccinated;
-            }
-
-            public void setVaccinated(boolean vaccinated) {
-                this.vaccinated = vaccinated;
-
-            }
-
-
-            public String getLast_vaccination_date() {
-                return last_vaccination_date;
-            }
-
-            public void setLast_vaccination_date(String last_vaccination_date) {
-                this.last_vaccination_date = last_vaccination_date;
-
-            }
-
-
-            public boolean isDefault_status() {
-                return default_status;
-            }
-
-            public void setDefault_status(boolean default_status) {
-                this.default_status = default_status;
-
-            }
-
-
-            public String getDate_and_time() {
-                return date_and_time;
-            }
-
-            public void setDate_and_time(String date_and_time) {
-                this.date_and_time = date_and_time;
-
-            }
-
-
-            public String getMobile_type() {
-                return mobile_type;
-            }
-
-            public void setMobile_type(String mobile_type) {
-                this.mobile_type = mobile_type;
-
-            }
-
 
             public boolean isDelete_status() {
                 return delete_status;
@@ -1222,66 +1033,54 @@ public class SPAppointmentDetailsResponse {
 
             public void setDelete_status(boolean delete_status) {
                 this.delete_status = delete_status;
-
             }
 
-
-
-            public List<PetNewAppointmentDetailsResponse.DataBean.FamilyIdBean.PicBean> getPet_img() {
-                return pet_img;
+            public String getCreatedAt() {
+                return createdAt;
             }
 
-            public void setPet_img(List<PetNewAppointmentDetailsResponse.DataBean.FamilyIdBean.PicBean> pet_img) {
-                this.pet_img = pet_img;
-
+            public void setCreatedAt(String createdAt) {
+                this.createdAt = createdAt;
             }
 
-            public static class PetImgBean {
-                /**
-                 * pet_img : http://54.212.108.156:3000/api/uploads/1614686158761.jpeg
-                 */
+            public String getUpdatedAt() {
+                return updatedAt;
+            }
 
-                private String pet_img;
+            public void setUpdatedAt(String updatedAt) {
+                this.updatedAt = updatedAt;
+            }
 
+            public int get__v() {
+                return __v;
+            }
 
-                public String getPet_img() {
-                    return pet_img;
+            public void set__v(int __v) {
+                this.__v = __v;
+            }
+
+            public List<PicBean> getPic() {
+                return pic;
+            }
+
+            public void setPic(List<PicBean> pic) {
+                this.pic = pic;
+            }
+
+            public static class PicBean {
+                private String image;
+
+                public String getImage() {
+                    return image;
                 }
 
-                public void setPet_img(String pet_img) {
-                    this.pet_img = pet_img;
-
+                public void setImage(String image) {
+                    this.image = image;
                 }
             }
         }
-        public static class SpBusinessInfoBean  {
-            /**
-             * bus_service_list : [{"amount":120,"bus_service_list":"walking","time_slots":"15 mins"}]
-             * bus_spec_list : [{"bus_spec_list":"Specialization - 1"},{"bus_spec_list":"Specialization - 3"}]
-             * bus_service_gall : [{"bus_service_gall":"http://52.25.163.13:3000/api/uploads/601ccbe2a66e453d0df7a44e05-02-2021 10:35 AMPetfolio1.jpg"}]
-             * bus_certif : [{"bus_certif":"http://52.25.163.13:3000/api/uploads/601ccbe2a66e453d0df7a44e05-02-2021 10:35 AM0001019010010862809_12132020_01022021.PDF"}]
-             * _id : 601cd568a66e453d0df7a456
-             * user_id : 601ccbe2a66e453d0df7a44e
-             * bus_user_name : DineshSP
-             * bus_user_email : dinesh@gmail.com
-             * bussiness_name : GROMMING
-             * bus_user_phone : 9842670812
-             * bus_profile : http://52.25.163.13:3000/api/uploads/601ccbe2a66e453d0df7a44e05-02-2021 10:35 AM0001019010010862809_12132020_01022021.PDF
-             * bus_proof : http://52.25.163.13:3000/api/uploads/601ccbe2a66e453d0df7a44e05-02-2021 10:35 AM0001019010010862809_12132020_01022021.PDF
-             * date_and_time : 05/02/2021 11:03 AM
-             * mobile_type : Android
-             * profile_status : true
-             * profile_verification_status : Verified
-             * sp_loc : Unnamed Road, Tamil Nadu 621006, India
-             * sp_lat : 11.0560398
-             * sp_long : 78.6327327
-             * delete_status : false
-             * calender_status : true
-             * updatedAt : 2021-02-08T05:20:04.961Z
-             * createdAt : 2021-02-05T05:19:36.674Z
-             * __v : 0
-             */
 
+        public static class SpBusinessInfoBean {
             private String _id;
             private String user_id;
             private String bus_user_name;
@@ -1304,6 +1103,191 @@ public class SPAppointmentDetailsResponse {
             private int __v;
             private String thumbnail_image;
             private String city_name;
+            private String sp_info;
+            private int comments;
+            private int rating;
+            /**
+             * amount : 250
+             * time_slots : 15 mins
+             * bus_service_list : Pet Grooming
+             */
+
+            private List<BusServiceListBean> bus_service_list;
+            /**
+             * bus_spec_list : Kennel Cut
+             */
+
+            private List<BusSpecListBean> bus_spec_list;
+            /**
+             * bus_service_gall : http://54.212.108.156:3000/api/uploads/1625687015621.png
+             */
+
+            private List<BusServiceGallBean> bus_service_gall;
+            /**
+             * bus_certif : http://54.212.108.156:3000/api/uploads/60b0b7b267f25056fe286c8f2709161305
+             */
+
+            private List<BusCertifBean> bus_certif;
+
+            public String get_id() {
+                return _id;
+            }
+
+            public void set_id(String _id) {
+                this._id = _id;
+            }
+
+            public String getUser_id() {
+                return user_id;
+            }
+
+            public void setUser_id(String user_id) {
+                this.user_id = user_id;
+            }
+
+            public String getBus_user_name() {
+                return bus_user_name;
+            }
+
+            public void setBus_user_name(String bus_user_name) {
+                this.bus_user_name = bus_user_name;
+            }
+
+            public String getBus_user_email() {
+                return bus_user_email;
+            }
+
+            public void setBus_user_email(String bus_user_email) {
+                this.bus_user_email = bus_user_email;
+            }
+
+            public String getBussiness_name() {
+                return bussiness_name;
+            }
+
+            public void setBussiness_name(String bussiness_name) {
+                this.bussiness_name = bussiness_name;
+            }
+
+            public String getBus_user_phone() {
+                return bus_user_phone;
+            }
+
+            public void setBus_user_phone(String bus_user_phone) {
+                this.bus_user_phone = bus_user_phone;
+            }
+
+            public String getBus_profile() {
+                return bus_profile;
+            }
+
+            public void setBus_profile(String bus_profile) {
+                this.bus_profile = bus_profile;
+            }
+
+            public String getBus_proof() {
+                return bus_proof;
+            }
+
+            public void setBus_proof(String bus_proof) {
+                this.bus_proof = bus_proof;
+            }
+
+            public String getDate_and_time() {
+                return date_and_time;
+            }
+
+            public void setDate_and_time(String date_and_time) {
+                this.date_and_time = date_and_time;
+            }
+
+            public String getMobile_type() {
+                return mobile_type;
+            }
+
+            public void setMobile_type(String mobile_type) {
+                this.mobile_type = mobile_type;
+            }
+
+            public boolean isProfile_status() {
+                return profile_status;
+            }
+
+            public void setProfile_status(boolean profile_status) {
+                this.profile_status = profile_status;
+            }
+
+            public String getProfile_verification_status() {
+                return profile_verification_status;
+            }
+
+            public void setProfile_verification_status(String profile_verification_status) {
+                this.profile_verification_status = profile_verification_status;
+            }
+
+            public String getSp_loc() {
+                return sp_loc;
+            }
+
+            public void setSp_loc(String sp_loc) {
+                this.sp_loc = sp_loc;
+            }
+
+            public double getSp_lat() {
+                return sp_lat;
+            }
+
+            public void setSp_lat(double sp_lat) {
+                this.sp_lat = sp_lat;
+            }
+
+            public double getSp_long() {
+                return sp_long;
+            }
+
+            public void setSp_long(double sp_long) {
+                this.sp_long = sp_long;
+            }
+
+            public boolean isDelete_status() {
+                return delete_status;
+            }
+
+            public void setDelete_status(boolean delete_status) {
+                this.delete_status = delete_status;
+            }
+
+            public boolean isCalender_status() {
+                return calender_status;
+            }
+
+            public void setCalender_status(boolean calender_status) {
+                this.calender_status = calender_status;
+            }
+
+            public String getUpdatedAt() {
+                return updatedAt;
+            }
+
+            public void setUpdatedAt(String updatedAt) {
+                this.updatedAt = updatedAt;
+            }
+
+            public String getCreatedAt() {
+                return createdAt;
+            }
+
+            public void setCreatedAt(String createdAt) {
+                this.createdAt = createdAt;
+            }
+
+            public int get__v() {
+                return __v;
+            }
+
+            public void set__v(int __v) {
+                this.__v = __v;
+            }
 
             public String getThumbnail_image() {
                 return thumbnail_image;
@@ -1321,209 +1305,29 @@ public class SPAppointmentDetailsResponse {
                 this.city_name = city_name;
             }
 
-            private List<BusServiceListBean> bus_service_list;
-            private List<BusSpecListBean> bus_spec_list;
-            private List<BusServiceGallBean> bus_service_gall;
-            private List<BusCertifBean> bus_certif;
-
-
-            public String get_id() {
-                return _id;
+            public String getSp_info() {
+                return sp_info;
             }
 
-            public void set_id(String _id) {
-                this._id = _id;
-
+            public void setSp_info(String sp_info) {
+                this.sp_info = sp_info;
             }
 
-            public String getUser_id() {
-                return user_id;
+            public int getComments() {
+                return comments;
             }
 
-            public void setUser_id(String user_id) {
-                this.user_id = user_id;
-
+            public void setComments(int comments) {
+                this.comments = comments;
             }
 
-            public String getBus_user_name() {
-                return bus_user_name;
+            public int getRating() {
+                return rating;
             }
 
-            public void setBus_user_name(String bus_user_name) {
-                this.bus_user_name = bus_user_name;
-
+            public void setRating(int rating) {
+                this.rating = rating;
             }
-
-
-            public String getBus_user_email() {
-                return bus_user_email;
-            }
-
-            public void setBus_user_email(String bus_user_email) {
-                this.bus_user_email = bus_user_email;
-
-            }
-
-
-            public String getBussiness_name() {
-                return bussiness_name;
-            }
-
-            public void setBussiness_name(String bussiness_name) {
-                this.bussiness_name = bussiness_name;
-
-            }
-
-
-            public String getBus_user_phone() {
-                return bus_user_phone;
-            }
-
-            public void setBus_user_phone(String bus_user_phone) {
-                this.bus_user_phone = bus_user_phone;
-
-            }
-
-
-            public String getBus_profile() {
-                return bus_profile;
-            }
-
-            public void setBus_profile(String bus_profile) {
-                this.bus_profile = bus_profile;
-
-            }
-
-
-            public String getBus_proof() {
-                return bus_proof;
-            }
-
-            public void setBus_proof(String bus_proof) {
-                this.bus_proof = bus_proof;
-
-            }
-
-
-            public String getDate_and_time() {
-                return date_and_time;
-            }
-
-            public void setDate_and_time(String date_and_time) {
-                this.date_and_time = date_and_time;
-
-            }
-
-
-            public String getMobile_type() {
-                return mobile_type;
-            }
-
-            public void setMobile_type(String mobile_type) {
-                this.mobile_type = mobile_type;
-
-            }
-
-
-            public boolean isProfile_status() {
-                return profile_status;
-            }
-
-            public void setProfile_status(boolean profile_status) {
-                this.profile_status = profile_status;
-
-            }
-
-
-            public String getProfile_verification_status() {
-                return profile_verification_status;
-            }
-
-            public void setProfile_verification_status(String profile_verification_status) {
-                this.profile_verification_status = profile_verification_status;
-
-            }
-
-
-            public String getSp_loc() {
-                return sp_loc;
-            }
-
-            public void setSp_loc(String sp_loc) {
-                this.sp_loc = sp_loc;
-
-            }
-
-
-            public double getSp_lat() {
-                return sp_lat;
-            }
-
-            public void setSp_lat(double sp_lat) {
-                this.sp_lat = sp_lat;
-
-            }
-
-
-            public double getSp_long() {
-                return sp_long;
-            }
-
-            public void setSp_long(double sp_long) {
-                this.sp_long = sp_long;
-
-            }
-
-
-            public boolean isDelete_status() {
-                return delete_status;
-            }
-
-            public void setDelete_status(boolean delete_status) {
-                this.delete_status = delete_status;
-
-            }
-
-
-            public boolean isCalender_status() {
-                return calender_status;
-            }
-
-            public void setCalender_status(boolean calender_status) {
-                this.calender_status = calender_status;
-
-            }
-
-
-            public String getUpdatedAt() {
-                return updatedAt;
-            }
-
-            public void setUpdatedAt(String updatedAt) {
-                this.updatedAt = updatedAt;
-
-            }
-
-
-            public String getCreatedAt() {
-                return createdAt;
-            }
-
-            public void setCreatedAt(String createdAt) {
-                this.createdAt = createdAt;
-
-            }
-
-
-            public int get__v() {
-                return __v;
-            }
-
-            public void set__v(int __v) {
-                this.__v = __v;
-
-            }
-
 
             public List<BusServiceListBean> getBus_service_list() {
                 return bus_service_list;
@@ -1531,9 +1335,7 @@ public class SPAppointmentDetailsResponse {
 
             public void setBus_service_list(List<BusServiceListBean> bus_service_list) {
                 this.bus_service_list = bus_service_list;
-
             }
-
 
             public List<BusSpecListBean> getBus_spec_list() {
                 return bus_spec_list;
@@ -1541,9 +1343,7 @@ public class SPAppointmentDetailsResponse {
 
             public void setBus_spec_list(List<BusSpecListBean> bus_spec_list) {
                 this.bus_spec_list = bus_spec_list;
-
             }
-
 
             public List<BusServiceGallBean> getBus_service_gall() {
                 return bus_service_gall;
@@ -1551,7 +1351,6 @@ public class SPAppointmentDetailsResponse {
 
             public void setBus_service_gall(List<BusServiceGallBean> bus_service_gall) {
                 this.bus_service_gall = bus_service_gall;
-
             }
 
             public List<BusCertifBean> getBus_certif() {
@@ -1562,17 +1361,10 @@ public class SPAppointmentDetailsResponse {
                 this.bus_certif = bus_certif;
             }
 
-            public static class BusServiceListBean  {
-                /**
-                 * amount : 120
-                 * bus_service_list : walking
-                 * time_slots : 15 mins
-                 */
-
+            public static class BusServiceListBean {
                 private int amount;
-                private String bus_service_list;
                 private String time_slots;
-
+                private String bus_service_list;
 
                 public int getAmount() {
                     return amount;
@@ -1580,19 +1372,7 @@ public class SPAppointmentDetailsResponse {
 
                 public void setAmount(int amount) {
                     this.amount = amount;
-
                 }
-
-
-                public String getBus_service_list() {
-                    return bus_service_list;
-                }
-
-                public void setBus_service_list(String bus_service_list) {
-                    this.bus_service_list = bus_service_list;
-
-                }
-
 
                 public String getTime_slots() {
                     return time_slots;
@@ -1601,13 +1381,17 @@ public class SPAppointmentDetailsResponse {
                 public void setTime_slots(String time_slots) {
                     this.time_slots = time_slots;
                 }
+
+                public String getBus_service_list() {
+                    return bus_service_list;
+                }
+
+                public void setBus_service_list(String bus_service_list) {
+                    this.bus_service_list = bus_service_list;
+                }
             }
 
-            public static class BusSpecListBean  {
-                /**
-                 * bus_spec_list : Specialization - 1
-                 */
-
+            public static class BusSpecListBean {
                 private String bus_spec_list;
 
                 public String getBus_spec_list() {
@@ -1616,17 +1400,11 @@ public class SPAppointmentDetailsResponse {
 
                 public void setBus_spec_list(String bus_spec_list) {
                     this.bus_spec_list = bus_spec_list;
-
                 }
             }
 
             public static class BusServiceGallBean {
-                /**
-                 * bus_service_gall : http://52.25.163.13:3000/api/uploads/601ccbe2a66e453d0df7a44e05-02-2021 10:35 AMPetfolio1.jpg
-                 */
-
                 private String bus_service_gall;
-
 
                 public String getBus_service_gall() {
                     return bus_service_gall;
@@ -1637,13 +1415,8 @@ public class SPAppointmentDetailsResponse {
                 }
             }
 
-            public static class BusCertifBean  {
-                /**
-                 * bus_certif : http://52.25.163.13:3000/api/uploads/601ccbe2a66e453d0df7a44e05-02-2021 10:35 AM0001019010010862809_12132020_01022021.PDF
-                 */
-
+            public static class BusCertifBean {
                 private String bus_certif;
-
 
                 public String getBus_certif() {
                     return bus_certif;
@@ -1651,7 +1424,6 @@ public class SPAppointmentDetailsResponse {
 
                 public void setBus_certif(String bus_certif) {
                     this.bus_certif = bus_certif;
-
                 }
             }
         }

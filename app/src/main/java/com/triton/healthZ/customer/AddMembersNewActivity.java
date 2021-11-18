@@ -838,7 +838,7 @@ public class AddMembersNewActivity extends AppCompatActivity implements View.OnC
             {
                 Bitmap photo = (Bitmap) data.getExtras().get("data");
 
-                File file = new File(getFilesDir(), "Petfolio1" + ".jpg");
+                File file = new File(getFilesDir(), "Healthz1" + ".jpg");
 
                 OutputStream os;
                 try {

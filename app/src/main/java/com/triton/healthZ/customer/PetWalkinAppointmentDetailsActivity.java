@@ -1228,23 +1228,23 @@ public class PetWalkinAppointmentDetailsActivity extends AppCompatActivity imple
                         scrollablContent.setVisibility(View.VISIBLE);
                         String vaccinated, addr, usrname;
                         String usr_image = "";
-                        if(response.body().getData() != null){
-                            if(response.body().getData().getCoupon_status() != null && response.body().getData().getCoupon_status().equalsIgnoreCase("Applied")){
+                        if (response.body().getData() != null) {
+                            if (response.body().getData().getCoupon_status() != null && response.body().getData().getCoupon_status().equalsIgnoreCase("Applied")) {
                                 ll_original_price.setVisibility(View.VISIBLE);
                                 ll_discount_price.setVisibility(View.VISIBLE);
-                                if(response.body().getData().getOriginal_price() != 0){
-                                    txt_original_price.setText("INR "+response.body().getData().getOriginal_price());
+                                if (response.body().getData().getOriginal_price() != 0) {
+                                    txt_original_price.setText("INR " + response.body().getData().getOriginal_price());
                                 }
-                                if(response.body().getData().getDiscount_price() != 0){
-                                    txt_discount_price.setText("INR "+response.body().getData().getDiscount_price());
+                                if (response.body().getData().getDiscount_price() != 0) {
+                                    txt_discount_price.setText("INR " + response.body().getData().getDiscount_price());
                                 }
 
-                            }else{
+                            } else {
                                 ll_original_price.setVisibility(View.GONE);
                                 ll_discount_price.setVisibility(View.GONE);
                             }
                         }
-                        if (response.body().getData() != null) {
+                      /*  if (response.body().getData() != null) {
 
                             spid = response.body().getData().getSp_id().get_id();
                             appointmentid = response.body().getData().getAppointment_UID();
@@ -1270,7 +1270,7 @@ public class PetWalkinAppointmentDetailsActivity extends AppCompatActivity imple
                             }
                             Paymentmethod = response.body().getData().getPayment_method();
 
-                           /* if(pet_dob != null){
+                           *//* if(pet_dob != null){
                                 String[] separated = pet_dob.split("-");
                                 String day = separated[0];
                                 String month = separated[1];
@@ -1278,7 +1278,7 @@ public class PetWalkinAppointmentDetailsActivity extends AppCompatActivity imple
                                 Log.w(TAG,"day : "+day+" month: "+month+" year : "+year);
 
                                 getAge(Integer.parseInt(year),Integer.parseInt(month),Integer.parseInt(day));
-                            }*/
+                            }*//*
 
                             if (response.body().getData().getPet_id().isVaccinated()) {
                                 vaccinated = "Yes";
@@ -1308,8 +1308,8 @@ public class PetWalkinAppointmentDetailsActivity extends AppCompatActivity imple
                             }
                             setView(usrname, usr_image, servname, pet_name, pet_type, breed, gender, colour, weight, order_date, orderid, payment_method, order_cost, vaccinated, addr);
 
+*/
 
-                        }
                     }
 
 

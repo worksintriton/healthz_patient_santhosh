@@ -283,30 +283,35 @@
                         android:id="@+id/txt_product_discount_price"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
                         android:ellipsize="end"
                         android:fontFamily="@font/montserrat"
                         android:maxLines="1"
                         android:text="@string/inr_300_00"
                         android:textAllCaps="true"
                         android:textColor="@color/green"
-                        android:textSize="14sp"
+                        android:textSize="12sp"
                         android:textStyle="bold" />
+
                     <TextView
                         android:id="@+id/txt_products_price"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="5dp"
                         android:ellipsize="end"
                         android:fontFamily="@font/futuramediumbt"
                         android:maxLines="1"
                         android:text="@string/inr_300_00"
                         android:textColor="@color/new_txt_header"
-                        android:textSize="14sp"
-                        android:textStyle="bold"
-                        android:layout_marginStart="5dp"/>
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
                     <TextView
                         android:id="@+id/txt_discount"
                         android:layout_width="80dp"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
                         android:ellipsize="end"
                         android:fontFamily="@font/futuramediumbt"
                         android:gravity="center"
@@ -315,6 +320,76 @@
                         android:text="@string/_20_off"
                         android:textColor="@color/red_back"
                         android:textSize="12sp" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/ll_increment_add_to_cart"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardPreventCornerOverlap="true"
+                        app:cardUseCompatPadding="true">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <RelativeLayout
+                                android:id="@+id/img_remove_product"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.5"
+                                android:background="@drawable/rectangle_corner_white">
+
+                                <TextView
+                                    android:id="@+id/txt_remove_product"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:fontFamily="@font/montserrat_bold"
+                                    android:text="-"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/black"
+                                    android:textSize="20sp" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="@color/colorAccent">
+
+                                <TextView
+                                    android:id="@+id/txt_cart_count"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:fontFamily="@font/montserrat_bold"
+                                    android:text="66"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/white"
+                                    android:textSize="18sp" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/img_add_product"
+                                android:layout_width="0dp"
+                                android:layout_height="35dp"
+                                android:layout_weight="0.5"
+                                android:background="@drawable/rectangle_corner_white">
+
+                                <TextView
+                                    android:id="@+id/txt_add_product"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:fontFamily="@font/montserrat_bold"
+                                    android:text="+"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/black"
+                                    android:textSize="20sp" />
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
 
 
                 </LinearLayout>
@@ -325,55 +400,6 @@
                     android:layout_height="10dp"
                     android:layout_marginTop="10dp"
                     android:background="@color/Lightgray" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_weight="0.5"
-                android:background="@drawable/new_rounded_corner_btn_thick_orange"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:id="@+id/ll_increment_add_to_cart">
-
-                <ImageView
-                    android:id="@+id/img_remove_product"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/new_minus_png"
-                    tools:ignore="ContentDescription" />
-
-                <RelativeLayout
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="10dp"
-                    android:background="@drawable/layout_bg">
-
-                    <TextView
-                        android:id="@+id/txt_cart_count"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:ellipsize="end"
-                        android:fontFamily="@font/futuramediumbt"
-                        android:maxLines="1"
-                        android:text="@string/_1"
-                        android:textColor="@color/new_light_black"
-                        android:textSize="14sp" />
-
-                </RelativeLayout>
-
-                <ImageView
-                    android:id="@+id/img_add_product"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="10dp"
-                    android:src="@drawable/new_plus_png"
-                    tools:ignore="ContentDescription" />
 
             </LinearLayout>
 

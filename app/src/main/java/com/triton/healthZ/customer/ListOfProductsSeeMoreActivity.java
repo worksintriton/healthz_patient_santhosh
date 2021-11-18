@@ -321,11 +321,11 @@ public class ListOfProductsSeeMoreActivity extends AppCompatActivity implements 
 
         initResultRecylerView();
 
-        rl_filters.setOnClickListener(this);
-        edt_filter.setOnClickListener(this);
-        rl_sort.setVisibility(View.INVISIBLE);
+     /*   rl_filters.setOnClickListener(this);
+        edt_filter.setOnClickListener(this);*/
+       /* rl_sort.setVisibility(View.INVISIBLE);
         rl_sort.setOnClickListener(this);
-        edt_sort.setOnClickListener(this);
+        edt_sort.setOnClickListener(this);*/
 
 //        bottom_navigation_view = include_petlover_footer.findViewById(R.id.bottom_navigation_view);
 //        bottom_navigation_view.setItemIconTintList(null);

@@ -79,10 +79,10 @@ public class ShippingAddressAddActivity extends AppCompatActivity implements Vie
     @BindView(R.id.txt_no_records)
     TextView txt_no_records;
 
-    @SuppressLint("NonConstantResourceId")
+  /*  @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_savedaddress)
     TextView txt_savedaddress;
-
+*/
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.rv_shipping_address)
@@ -94,7 +94,7 @@ public class ShippingAddressAddActivity extends AppCompatActivity implements Vie
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.btn_cancel)
-    Button btn_cancel;
+    TextView btn_cancel;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.btn_use_this_addreess)
@@ -884,18 +884,18 @@ public class ShippingAddressAddActivity extends AppCompatActivity implements Vie
                             txt_no_records.setVisibility(View.VISIBLE);
                             txt_no_records.setText("No new address");
                             rv_shipping_address.setVisibility(View.GONE);
-                            txt_savedaddress.setVisibility(View.GONE);
+                         //   txt_savedaddress.setVisibility(View.GONE);
                             footerView.setVisibility(View.GONE);
                         }
                         else{
                             footerView.setVisibility(View.VISIBLE);
                             txt_no_records.setVisibility(View.GONE);
                             rv_shipping_address.setVisibility(View.VISIBLE);
-                            txt_savedaddress.setVisibility(View.VISIBLE);
+                            //txt_savedaddress.setVisibility(View.VISIBLE);
                             if(response.body().getData() != null) {
                                 addressList = response.body().getData();
                             }
-                            txt_savedaddress.setText(addressList.size()+" Saved Address");
+                         //   txt_savedaddress.setText(addressList.size()+" Saved Address");
                             setView();
                         }
 

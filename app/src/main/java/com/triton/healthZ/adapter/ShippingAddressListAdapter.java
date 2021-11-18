@@ -83,6 +83,7 @@ public class ShippingAddressListAdapter extends  RecyclerView.Adapter<RecyclerVi
 
         currentItem = addressList.get(position);
 
+/*
         if(addressList.get(position).getLocation_nickname()!=null&&!addressList.get(position).getLocation_nickname().isEmpty()){
 
             first_name = addressList.get(position).getLocation_nickname();
@@ -94,6 +95,7 @@ public class ShippingAddressListAdapter extends  RecyclerView.Adapter<RecyclerVi
             holder.txt_username.setText(first_name);
         }
 
+*/
 
 
 
@@ -103,7 +105,7 @@ public class ShippingAddressListAdapter extends  RecyclerView.Adapter<RecyclerVi
 
         }
 
-        if(addressList.get(position).getDate_and_time()!=null && !addressList.get(position).getDate_and_time().isEmpty()){
+    /*    if(addressList.get(position).getDate_and_time()!=null && !addressList.get(position).getDate_and_time().isEmpty()){
 
             holder.txt_date.setText(addressList.get(position).getDate_and_time());
 
@@ -119,14 +121,14 @@ public class ShippingAddressListAdapter extends  RecyclerView.Adapter<RecyclerVi
             state = addressList.get(position).getLocation_state();
 
         }
-
+*/
         if(addressList.get(position).getLocation_address()!=null && !addressList.get(position).getLocation_address().isEmpty()){
 
             holder.txt_street.setText(addressList.get(position).getLocation_address());
 
         }
 
-        if(addressList.get(position).getLocation_nickname()!=null && !addressList.get(position).getLocation_nickname().isEmpty()){
+       /* if(addressList.get(position).getLocation_nickname()!=null && !addressList.get(position).getLocation_nickname().isEmpty()){
 
            landmark = addressList.get(position).getLocation_nickname();
 
@@ -137,7 +139,7 @@ public class ShippingAddressListAdapter extends  RecyclerView.Adapter<RecyclerVi
            pincode = addressList.get(position).getLocation_pin();
 
         }
-
+*/
 
         /*if(landmark!=null&&pincode!=null&&state!=null){
 

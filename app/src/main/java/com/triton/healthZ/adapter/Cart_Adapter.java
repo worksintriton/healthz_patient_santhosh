@@ -80,7 +80,7 @@ public class Cart_Adapter extends  RecyclerView.Adapter<RecyclerView.ViewHolder>
             holder.txt_original_amount.setVisibility(View.GONE);
         }*/
         if (data.get(position).getProduct_id().getCost() != 0) {
-            holder.txt_discount_amount.setText("INR " + data.get(position).getProduct_id().getCost());
+            holder.txt_discount_amount.setText("\u20B9 " + data.get(position).getProduct_id().getCost());
         }
      /*   Log.w(TAG,"Discount-->"+data.get(position).getProduct_id().getDiscount());
         if (data.get(position).getProduct_id().getDiscount() != 0) {
@@ -130,7 +130,7 @@ public class Cart_Adapter extends  RecyclerView.Adapter<RecyclerView.ViewHolder>
             }
         });
 
-        if(holder.txt_cart_count.getText().toString() != null && holder.txt_cart_count.getText().toString().equalsIgnoreCase("1")){
+/*        if(holder.txt_cart_count.getText().toString() != null && holder.txt_cart_count.getText().toString().equalsIgnoreCase("1")){
             holder.img_remove_product.setBackgroundResource(R.drawable.ic_baseline_delete_24);
         }else{
             holder.img_remove_product.setBackgroundResource(R.drawable.ic_cart_minus);
@@ -143,7 +143,7 @@ public class Cart_Adapter extends  RecyclerView.Adapter<RecyclerView.ViewHolder>
         }
         else{
             holder.img_remove_product.setBackgroundResource(R.drawable.ic_cart_minus);
-        }
+        }*/
 
         holder.ll_delete.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -193,9 +193,9 @@ public class Cart_Adapter extends  RecyclerView.Adapter<RecyclerView.ViewHolder>
     }
     static class ViewHolderOne extends RecyclerView.ViewHolder {
         public TextView txt_products_title,txt_discount_amount,txt_original_amount,txt_discount,txt_cart_count;
-        public ImageView img_products_image,img_remove_product,img_add_product;
+        public ImageView img_products_image;
         public LinearLayout ll_delete;
-        public RelativeLayout rl_root;
+        public RelativeLayout rl_root,img_remove_product,img_add_product;
 
         public ViewHolderOne(View itemView) {
             super(itemView);

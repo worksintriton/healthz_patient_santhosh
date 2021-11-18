@@ -13,6 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -66,30 +67,37 @@ public class PetLoverVendorOrdersAdapter extends  RecyclerView.Adapter<RecyclerV
     private void initLayoutOne(ViewHolderOne holder, final int position) {
         Log.w(TAG,"fromactivity : "+fromactivity);
         currentItem = orderResponseListAll.get(position);
-        if (orderResponseListAll.get(position).getP_order_id() != null) {
+   /*     if (orderResponseListAll.get(position).getP_order_id() != null) {
             holder.txt_orderid.setText(orderResponseListAll.get(position).getP_order_id());
-        }
+        }*/
         if (orderResponseListAll.get(position).getP_order_text() != null) {
             holder.txt_producttitle.setText(orderResponseListAll.get(position).getP_order_text());
         }
+
+        if (orderResponseListAll.get(position).getP_order_status() != null) {
+            holder.txt_order_status.setText(orderResponseListAll.get(position).getP_order_status());
+        }
         if (orderResponseListAll.get(position).getP_order_price() != 0 && orderResponseListAll.get(position).getP_order_product_count() != 0) {
             if (orderResponseListAll.get(position).getP_order_product_count() == 1) {
-                holder.txt_products_price.setText("INR " + orderResponseListAll.get(position).getP_order_price() + " (" + orderResponseListAll.get(position).getP_order_product_count() + " product )");
+                holder.txt_products_price.setText("\u20B9 " + orderResponseListAll.get(position).getP_order_price());
+                        holder.txt_items.setText(" " + orderResponseListAll.get(position).getP_order_product_count()+" Item"
+                        );
             } else {
-                holder.txt_products_price.setText("INR " + orderResponseListAll.get(position).getP_order_price() + " (" + orderResponseListAll.get(position).getP_order_product_count() + " products )");
-
+                holder.txt_products_price.setText("\u20B9 " + orderResponseListAll.get(position).getP_order_price());
+                holder.txt_items.setText(" " + orderResponseListAll.get(position).getP_order_product_count()+" Items"
+                );
             }
         }
         else { if (orderResponseListAll.get(position).getP_order_product_count() == 1) {
-                holder.txt_products_price.setText("INR " + 0 + " (" + orderResponseListAll.get(position).getP_order_product_count() + " item )");
-            } else { holder.txt_products_price.setText("INR " + 0 + " (" + orderResponseListAll.get(position).getP_order_product_count() + " items )"); } }
+                holder.txt_products_price.setText("\u20B9 " + 0  );
+            } else { holder.txt_products_price.setText("\u20B9 " + 0 ); } }
 
 
 
         if(fromactivity != null){
             if(fromactivity.equalsIgnoreCase("FragmentSPNewOrders") || fromactivity.equalsIgnoreCase("FragmentDoctorNewOrders") || fromactivity.equalsIgnoreCase("FragmentPetLoverNewOrders")){
                 if (orderResponseListAll.get(position).getP_order_booked_on() != null) {
-                    holder.txt_bookedon.setText("Booked for:" + " " + orderResponseListAll.get(position).getP_order_booked_on());
+                    holder.txt_bookedon.setText("Ordered at:" + " " + orderResponseListAll.get(position).getP_order_booked_on());
 
                 }
             }
@@ -117,7 +125,7 @@ public class PetLoverVendorOrdersAdapter extends  RecyclerView.Adapter<RecyclerV
         }
 
 
-        if (orderResponseListAll.get(position).getP_order_image() != null && !orderResponseListAll.get(position).getP_order_image().isEmpty()) {
+       /* if (orderResponseListAll.get(position).getP_order_image() != null && !orderResponseListAll.get(position).getP_order_image().isEmpty()) {
             Glide.with(context)
                     .load(orderResponseListAll.get(position).getP_order_image())
                     .into(holder.img_products_image);
@@ -128,8 +136,8 @@ public class PetLoverVendorOrdersAdapter extends  RecyclerView.Adapter<RecyclerV
                     .load(APIClient.PROFILE_IMAGE_URL)
                     .into(holder.img_products_image);
 
-        }
-        holder.txt_order_details.setOnClickListener(new View.OnClickListener() {
+        }*/
+     /*   holder.txt_order_details.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(fromactivity != null) {
@@ -158,11 +166,11 @@ public class PetLoverVendorOrdersAdapter extends  RecyclerView.Adapter<RecyclerV
 
 
             }
-        });
+        });*/
         holder.ll_root.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(fromactivity != null) {
+            /*    if(fromactivity != null) {
                     if (fromactivity.equalsIgnoreCase("FragmentDoctorNewOrders") || fromactivity.equalsIgnoreCase("FragmentDoctorCompletedOrders") || fromactivity.equalsIgnoreCase("FragmentDoctorCancelledOrders")) {
                         Intent i = new Intent(context, DoctorOrderDetailsActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         i.putExtra("_id", orderResponseListAll.get(position).getP_order_id());
@@ -185,7 +193,7 @@ public class PetLoverVendorOrdersAdapter extends  RecyclerView.Adapter<RecyclerV
                     i.putExtra("fromactivity", fromactivity);
                     context.startActivity(i);
                 }
-
+*/
 
             }
         });
@@ -213,10 +221,10 @@ public class PetLoverVendorOrdersAdapter extends  RecyclerView.Adapter<RecyclerV
     }
 
     static class ViewHolderOne extends RecyclerView.ViewHolder {
-        public TextView txt_orderid, txt_producttitle, txt_products_price, txt_bookedon, txt_order_details;
+        public TextView txt_orderid, txt_producttitle, txt_products_price, txt_bookedon, txt_items,txt_order_status;
         public ImageView img_products_image;
         public Button btn_add_review;
-        public LinearLayout ll_root;
+        public CardView ll_root;
 
 
         public ViewHolderOne(View itemView) {
@@ -226,8 +234,9 @@ public class PetLoverVendorOrdersAdapter extends  RecyclerView.Adapter<RecyclerV
             txt_producttitle = itemView.findViewById(R.id.txt_producttitle);
             txt_products_price = itemView.findViewById(R.id.txt_products_price);
             txt_bookedon = itemView.findViewById(R.id.txt_bookedon);
-            txt_order_details = itemView.findViewById(R.id.txt_order_details);
+            txt_items = itemView.findViewById(R.id.txt_items);
             btn_add_review = itemView.findViewById(R.id.btn_add_review);
+            txt_order_status = itemView.findViewById(R.id.txt_order_status);
             ll_root = itemView.findViewById(R.id.ll_root);
             btn_add_review.setVisibility(View.GONE);
 

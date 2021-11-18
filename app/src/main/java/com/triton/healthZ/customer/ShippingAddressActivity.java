@@ -280,15 +280,16 @@ public class ShippingAddressActivity extends AppCompatActivity implements View.O
 
     private void setView() {
 
-        if(name!=null&&!name.isEmpty()){
+     /*   if(name!=null&&!name.isEmpty()){
 
             txt_username.setText(name);
         }
-
+*/
         if(phonum!=null&&!phonum.isEmpty()){
 
             txt_phnum.setText(phonum);
         }
+/*
 
         if(city!=null&&!city.isEmpty()){
 
@@ -299,17 +300,20 @@ public class ShippingAddressActivity extends AppCompatActivity implements View.O
 
             txt_dist_pincode_state.setText(landmark_pincode);
         }
+*/
 
         if(street!=null&&!street.isEmpty()){
 
             txt_street.setText(street);
 
         }
+/*
 
         if(date!=null&&!date.isEmpty()){
             txt_date.setText(date);
 
         }
+*/
 
         if(address_type!=null&&!address_type.isEmpty()){
 

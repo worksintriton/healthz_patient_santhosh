@@ -935,7 +935,7 @@ public class ServiceBookAppointmentActivity extends AppCompatActivity implements
             if (requestCode == SELECT_CLINIC_CAMERA) {
                 Bitmap photo = (Bitmap) data.getExtras().get("data");
 
-                File file = new File(getFilesDir(), "Petfolio1" + ".jpg");
+          File file = new File(getFilesDir(), "Healthz1" + ".jpg");
 
                 OutputStream os;
                 try {

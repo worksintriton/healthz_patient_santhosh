@@ -165,6 +165,7 @@
 
 
     </LinearLayout>
+
     <ScrollView
         android:id="@+id/scrollablContent"
         android:layout_width="match_parent"
@@ -173,17 +174,18 @@
         android:layout_below="@+id/headerView"
         android:fillViewport="true"
         android:scrollbars="none">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="10dp">
+            android:orientation="vertical">
 
             <LinearLayout
                 android:id="@+id/ll_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -206,13 +208,33 @@
 
             </LinearLayout>
 
+            <View
+                android:id="@+id/view12"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/Lightgray" />
+
             <LinearLayout
                 android:id="@+id/ll_content_amount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp"
                 android:orientation="vertical"
                 android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/textView24"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="Price Details"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:visibility="visible" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -222,13 +244,14 @@
                     android:text="@string/coupon"
                     android:textColor="@color/green"
                     android:textSize="14sp"
-                    android:visibility="visible" />
+                    android:visibility="gone" />
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:visibility="gone">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -301,7 +324,8 @@
                     android:layout_height="10dp"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/vertical_dotted_line"
-                    android:layerType="software" />
+                    android:layerType="software"
+                    android:visibility="gone" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -327,7 +351,6 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="right"
                         android:layout_weight="1"
-                        android:alpha="0.5"
                         android:fontFamily="@font/futuramediumbt"
                         android:gravity="right"
                         android:text="@string/subtotal"
@@ -340,7 +363,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:visibility="gone">
 
                     <TextView
                         android:layout_width="0dp"
@@ -373,7 +397,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:visibility="gone">
 
                     <TextView
                         android:layout_width="0dp"
@@ -413,7 +438,7 @@
                         android:layout_gravity="left"
                         android:layout_weight="1"
                         android:fontFamily="@font/montserrat"
-                        android:text="@string/shippingamount"
+                        android:text="Delivery Fee"
                         android:textColor="@color/black"
                         android:textSize="14sp"
                         tools:ignore="RtlHardcoded" />
@@ -424,53 +449,58 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="right"
                         android:layout_weight="1"
-                        android:alpha="0.5"
                         android:fontFamily="@font/montserrat"
                         android:gravity="right"
-                        android:text="@string/shippingamount"
+                        android:text="Info"
                         android:textColor="@color/black"
                         android:textSize="14sp"
                         tools:ignore="RtlHardcoded" />
                 </LinearLayout>
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp"
-                    android:layout_marginTop="20dp"
-                    android:background="@drawable/vertical_dotted_line"
-                    android:layerType="software" />
+            </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+            <View
+                android:id="@+id/view1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/Lightgray"
+                android:layerType="software"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:id="@+id/ll_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:orientation="horizontal">
+                    android:layout_gravity="left"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="@string/totalamount"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    tools:ignore="RtlHardcoded" />
 
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/montserrat_bold"
-                        android:text="@string/totalamount"
-                        android:textColor="@color/black"
-                        android:textSize="14sp"
-                        tools:ignore="RtlHardcoded" />
-
-                    <TextView
-                        android:id="@+id/txt_total_amount"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="right"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/montserrat_bold"
-                        android:gravity="right"
-                        android:text="@string/totalamount"
-                        android:textColor="@color/green"
-                        android:textSize="14sp"
-                        tools:ignore="RtlHardcoded" />
-                </LinearLayout>
+                <TextView
+                    android:id="@+id/txt_total_amount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:gravity="right"
+                    android:text="@string/totalamount"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    tools:ignore="RtlHardcoded" />
             </LinearLayout>
 
             <LinearLayout
@@ -521,7 +551,6 @@
         </LinearLayout>
 
 
-
     </ScrollView>
     <LinearLayout
         android:id="@+id/footerView"
@@ -532,20 +561,19 @@
         android:background="@color/bg_white">
 
         <Button
-            android:layout_marginStart="60dp"
-            android:layout_marginEnd="60dp"
-            android:layout_marginBottom="20dp"
             android:id="@+id/btn_procced_to_buy"
             android:layout_width="match_parent"
             android:layout_height="40dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginEnd="60dp"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/new_rounded_corner_btn_red"
             android:fontFamily="@font/futuramediumbt"
             android:text="@string/proceedtobuy"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="18sp"
-            android:visibility="gone"
-            />
+            android:visibility="visible" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation_view"

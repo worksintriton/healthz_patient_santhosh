@@ -162,14 +162,17 @@ public class PetCartActivity extends AppCompatActivity implements AddandRemovePr
     @BindView(R.id.btn_shopnow)
     Button btn_shopnow;
 
-/*
     @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_profile)
-    ImageView img_profile;
+    @BindView(R.id.view1)
+    View view1;
 
-*/
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.view12)
+    View view12;
 
-
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.ll_amount)
+    LinearLayout ll_amount;
 
     String tag;
     String fromactivity;
@@ -472,33 +475,33 @@ public class PetCartActivity extends AppCompatActivity implements AddandRemovePr
                                 }
                             }
 
-                            if(response.body().getProdouct_total() != 0){
+                          if(response.body().getProdouct_total() != 0){
                                 Total_price = response.body().getProdouct_total();
-                                txt_sub_total.setText(" INR "+response.body().getProdouct_total());
+                                txt_sub_total.setText("\u20B9 "+response.body().getProdouct_total());
                             }else{
                                 Total_price = 0;
-                                txt_sub_total.setText("INR "+0);
+                                txt_sub_total.setText("\u20B9 "+0);
 
                             }
-                            if(response.body().getDiscount_price() != 0){
+                           /* if(response.body().getDiscount_price() != 0){
                                 Original_Discount_Price = response.body().getDiscount_price();
                                 txt_discount_amount.setText(" INR "+response.body().getDiscount_price());
                             }else{
                                 txt_discount_amount.setText(" INR "+0);
-                            }
-                            if(response.body().getShipping_charge() != 0){
-                                txt_shipping_amount.setText(" INR "+response.body().getShipping_charge());
+                            }*/
+                           /* if(response.body().getShipping_charge() != 0){
+                                txt_shipping_amount.setText("\u20B9 "+response.body().getShipping_charge());
                             }else{
-                                txt_shipping_amount.setText(" INR "+0);
+                                txt_shipping_amount.setText("free");
 
-                            }
+                            }*/
                             if(response.body().getGrand_total() != 0){
                                 Grand_total = response.body().getGrand_total();
                                 grand_total = Grand_total;
-                                txt_total_amount.setText(" INR "+response.body().getGrand_total());
+                                txt_total_amount.setText("\u20B9 "+response.body().getGrand_total());
                             }else{
                                 grand_total = 0;
-                                txt_total_amount.setText(" INR "+0);
+                                txt_total_amount.setText("\u20B9 "+0);
 
                             }
 
@@ -514,6 +517,9 @@ public class PetCartActivity extends AppCompatActivity implements AddandRemovePr
                             ll_cart_is_empty.setVisibility(View.VISIBLE);
                             btn_procced_to_buy.setVisibility(View.GONE);
                             ll_content_amount.setVisibility(View.GONE);
+                            view1.setVisibility(View.GONE);
+                            view12.setVisibility(View.GONE);
+                            ll_amount.setVisibility(View.GONE);
 
                         }
 

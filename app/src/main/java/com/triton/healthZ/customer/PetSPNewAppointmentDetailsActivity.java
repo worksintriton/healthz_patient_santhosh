@@ -388,7 +388,7 @@ public class PetSPNewAppointmentDetailsActivity extends AppCompatActivity implem
 
                             String servcost = response.body().getData().getService_amount();
 
-                            String pet_name = response.body().getData().getPet_id().getPet_name();
+                       /*     String pet_name = response.body().getData().getPet_id().getPet_name();
 
 
                             String pet_type = response.body().getData().getPet_id().getPet_type();
@@ -433,7 +433,7 @@ public class PetSPNewAppointmentDetailsActivity extends AppCompatActivity implem
 
                             setView(usrname, usr_image, servname, servcost, pet_name, pet_type, breed
 
-                                    , gender, colour, weight, age, order_date, orderid, payment_method, order_cost, vaccinated, addr);
+                                    , gender, colour, weight, age, order_date, orderid, payment_method, order_cost, vaccinated, addr);*/
                         }
                     }
 

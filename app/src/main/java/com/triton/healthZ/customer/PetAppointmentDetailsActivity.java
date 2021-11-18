@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -27,6 +28,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.gson.Gson;
 import com.triton.healthZ.R;
 import com.triton.healthZ.activity.NotificationActivity;
@@ -70,7 +73,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class PetAppointmentDetailsActivity extends AppCompatActivity implements View.OnClickListener, OnAppointmentSuccessfullyCancel {
+public class PetAppointmentDetailsActivity extends AppCompatActivity implements View.OnClickListener, OnAppointmentSuccessfullyCancel, BottomNavigationView.OnNavigationItemSelectedListener {
 
     private String TAG = "PetAppointmentDetailsActivity";
 
@@ -247,14 +250,14 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
     private String userrate;
     Dialog alertDialog;
     private String appointmentid;
- //   private List<PetNewAppointmentDetailsResponse.DataBean.PetIdBean.PetImgBean> pet_image;
+    //   private List<PetNewAppointmentDetailsResponse.DataBean.PetIdBean.PetImgBean> pet_image;
     private String petAgeandMonth;
 
     private String concatenatedStarNames = "";
 
-  /*  *//* Petlover Bottom Navigation *//*
+    /*  *//* Petlover Bottom Navigation *//*
 
-    *//* Petlover Bottom Navigation *//*
+     *//* Petlover Bottom Navigation *//*
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.rl_home)
@@ -352,6 +355,12 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
     private SessionManager session;
     private List<PetNewAppointmentDetailsResponse.DataBean.FamilyIdBean.PicBean> pet_image;
 
+
+    BottomNavigationView bottom_navigation_view;
+
+    FloatingActionButton fab;
+
+
     @SuppressLint({"LogNotTimber", "LongLogTag"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -389,7 +398,7 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
             Log.w(TAG,"appointment_id : "+appointment_id+"appointmentfor : "+appointmentfor+" from : "+from);
 
             if(appointmentfor !=null && appointmentfor.equalsIgnoreCase("SP")){
-               // txt_pets_handled_details.setVisibility(View.GONE);
+                // txt_pets_handled_details.setVisibility(View.GONE);
                 ll_visit_type.setVisibility(View.GONE);
             }
 
@@ -448,8 +457,22 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
 //        bottom_navigation_view.setOnNavigationItemSelectedListener(this);
 //        bottom_navigation_view.getMenu().findItem(R.id.home).setChecked(true);
 
-       /**/
+        /**/
 
+
+        fab = include_petlover_footer.findViewById(R.id.fab);
+
+        bottom_navigation_view = include_petlover_footer.findViewById(R.id.bottomNavigation);
+        bottom_navigation_view.setItemIconTintList(null);
+        bottom_navigation_view.setOnNavigationItemSelectedListener(this);
+        bottom_navigation_view.getMenu().findItem(R.id.care).setChecked(true);
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                callDirections("1");
+            }
+        });
 
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy hh:mm aa", Locale.getDefault());
         String currentDateandTime = sdf.format(new Date());
@@ -493,7 +516,7 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
                 }
 
             }
-             else if(from.equalsIgnoreCase("PetMissedAppointmentAdapter")){
+            else if(from.equalsIgnoreCase("PetMissedAppointmentAdapter")){
                 btn_cancel.setVisibility(View.GONE);
                 img_videocall.setVisibility(View.GONE);
                 btn_add_review.setVisibility(View.GONE);
@@ -501,8 +524,8 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
                 img_videocall.setVisibility(View.GONE);
 
             }
-             else if(from.equalsIgnoreCase("PetCompletedAppointmentAdapter")) {
-                 img_videocall.setVisibility(View.GONE);
+            else if(from.equalsIgnoreCase("PetCompletedAppointmentAdapter")) {
+                img_videocall.setVisibility(View.GONE);
 
                 if (userrate != null && userrate.equalsIgnoreCase("0")) {
                     btn_add_review.setVisibility(View.VISIBLE);
@@ -532,12 +555,12 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
         if(appointmentfor != null){
             if(appointmentfor.equalsIgnoreCase("Doctor")){
                 if (new ConnectionDetector(PetAppointmentDetailsActivity.this).isNetworkAvailable(PetAppointmentDetailsActivity.this)) {
-               petNewAppointmentResponseCall();
+                    petNewAppointmentResponseCall();
                 }
             }
             else if(appointmentfor.equalsIgnoreCase("SP")){
                 if (new ConnectionDetector(PetAppointmentDetailsActivity.this).isNetworkAvailable(PetAppointmentDetailsActivity.this)) {
-                   // spAppointmentDetailsResponse();
+                   spAppointmentDetailsResponse();
                 }
             }
 
@@ -617,10 +640,10 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
                             }
 
 
-                              if(weight != null&&!weight.isEmpty() ){
+                            if(weight != null&&!weight.isEmpty() ){
                                 ll_weight.setVisibility(View.VISIBLE);
                             }else{
-                                  ll_weight.setVisibility(View.GONE);
+                                ll_weight.setVisibility(View.GONE);
                             }
 
                             if(pet_dob != null && !pet_dob.isEmpty()){
@@ -643,13 +666,13 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
                             doctorid = response.body().getData().getDoc_business_info().get(0).getUser_id();
 
                             if(pet_dob != null){
-                            String[] separated = pet_dob.split("-");
-                            String day = separated[0];
-                            String month = separated[1];
-                            String year = separated[2];
-                            Log.w(TAG,"day : "+day+" month: "+month+" year : "+year);
+                                String[] separated = pet_dob.split("-");
+                                String day = separated[0];
+                                String month = separated[1];
+                                String year = separated[2];
+                                Log.w(TAG,"day : "+day+" month: "+month+" year : "+year);
 
-                            getAge(Integer.parseInt(year),Integer.parseInt(month),Integer.parseInt(day));
+                                getAge(Integer.parseInt(year),Integer.parseInt(month),Integer.parseInt(day));
                             }
 
 
@@ -798,7 +821,7 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
                                 concatenatedStarNames += response.body().getData().getDoc_business_info().get(0).getPet_handled().get(i).getPet_handled();
                                 if (i < response.body().getData().getDoc_business_info().get(0).getPet_handled().size() - 1) concatenatedStarNames += ", ";
                             }
-                        //    txt_dr_pets_handled.setText(concatenatedStarNames);
+                            //    txt_dr_pets_handled.setText(concatenatedStarNames);
                             Log.w(TAG," concatenatedStarNames : "+concatenatedStarNames);
 
                         }
@@ -897,12 +920,14 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
             txt_usrname.setText(usrname);
         }
 
+/*
         if(servname != null && !servname.isEmpty()){
             txt_serv_name.setVisibility(View.VISIBLE);
             txt_serv_name.setText(servname);
         }else{
             txt_serv_name.setVisibility(View.GONE);
         }
+*/
 
 
         if(pet_image != null && pet_image.size()>0){
@@ -910,7 +935,7 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
             for(int i=0;i<pet_image.size();i++){
                 petimage = pet_image.get(i).getImage();
             }
-        
+
             Glide.with(PetAppointmentDetailsActivity.this)
                     .load(petimage)
                     .into(img_user);
@@ -1196,71 +1221,93 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
         }
     }
 
-   /* @SuppressLint({"LongLogTag", "LogNotTimber"})
-    private void spAppointmentDetailsResponse() {
-        avi_indicator.setVisibility(View.VISIBLE);
-        avi_indicator.smoothToShow();
-        RestApiInterface ApiService = APIClient.getClient().create(RestApiInterface.class);
-        Call<SPAppointmentDetailsResponse> call = ApiService.spAppointmentDetailsResponse(RestUtils.getContentType(), appointmentDetailsRequest());
-        Log.w(TAG, "url  :%s" + call.request().url().toString());
+      @SuppressLint({"LongLogTag", "LogNotTimber"})
+     private void spAppointmentDetailsResponse() {
+         avi_indicator.setVisibility(View.VISIBLE);
+         avi_indicator.smoothToShow();
+         RestApiInterface ApiService = APIClient.getClient().create(RestApiInterface.class);
+         Call<SPAppointmentDetailsResponse> call = ApiService.spAppointmentDetailsResponse(RestUtils.getContentType(), appointmentDetailsRequest());
+         Log.w(TAG, "url  :%s" + call.request().url().toString());
 
-        call.enqueue(new Callback<SPAppointmentDetailsResponse>() {
-            @SuppressLint({"LongLogTag", "LogNotTimber"})
-            @Override
-            public void onResponse(@NonNull Call<SPAppointmentDetailsResponse> call, @NonNull Response<SPAppointmentDetailsResponse> response) {
-                avi_indicator.smoothToHide();
-        `           Log.w(TAG, "SPAppointmentDetailsResponse" + "--->" + new Gson().toJson(response.body()));
-                if (response.body() != null) {
-                    if (200 == response.body().getCode()) {
-                        scrollablContent.setVisibility(View.VISIBLE);
-                        String vaccinated, addr, usrname;
-                        String usr_image = "";
+         call.enqueue(new Callback<SPAppointmentDetailsResponse>() {
+             @SuppressLint({"LongLogTag", "LogNotTimber"})
+             @Override
+             public void onResponse(@NonNull Call<SPAppointmentDetailsResponse> call, @NonNull Response<SPAppointmentDetailsResponse> response) {
+                 avi_indicator.smoothToHide();
+                Log.w(TAG, "SPAppointmentDetailsResponse" + "--->" + new Gson().toJson(response.body()));
+                 if (response.body() != null) {
+                     if (200 == response.body().getCode()) {
+                         scrollablContent.setVisibility(View.VISIBLE);
+                         String vaccinated, addr, usrname;
+                         String usr_image = "";
 
-                        if(response.body().getData() != null){
-                            if(response.body().getData().getCoupon_status() != null && response.body().getData().getCoupon_status().equalsIgnoreCase("Applied")){
-                                ll_original_price.setVisibility(View.VISIBLE);
-                                ll_discount_price.setVisibility(View.VISIBLE);
-                                if(response.body().getData().getOriginal_price() != 0){
-                                    txt_original_price.setText("INR "+response.body().getData().getOriginal_price());
-                                }
-                                if(response.body().getData().getDiscount_price() != 0){
-                                    txt_discount_price.setText("INR "+response.body().getData().getDiscount_price());
-                                }
+                    /*     if(response.body().getData() != null){
+                             if(response.body().getData().getCoupon_status() != null && response.body().getData().getCoupon_status().equalsIgnoreCase("Applied")){
+                                 ll_original_price.setVisibility(View.VISIBLE);
+                                 ll_discount_price.setVisibility(View.VISIBLE);
+                                 if(response.body().getData().getOriginal_price() != 0){
+                                     txt_original_price.setText("INR "+response.body().getData().getOriginal_price());
+                                 }
+                                 if(response.body().getData().getDiscount_price() != 0){
+                                     txt_discount_price.setText("INR "+response.body().getData().getDiscount_price());
+                                 }
 
-                            }else{
-                                ll_original_price.setVisibility(View.GONE);
-                                ll_discount_price.setVisibility(View.GONE);
-                            }
-                        }
-                        if (response.body().getData() != null) {
+                             }else{
+                                 ll_original_price.setVisibility(View.GONE);
+                                 ll_discount_price.setVisibility(View.GONE);
+                             }
+                         }*/
+                         if (response.body().getData() != null) {
 
-                            spid = response.body().getData().getSp_id().get_id();
-                            appointmentid = response.body().getData().getAppointment_UID();
-                            userid = response.body().getData().getUser_id().get_id();
-                   //         pet_image = response.body().getData().getPet_id().getPet_img();
+                             spid = response.body().getData().getSp_id().get_id();
+                             appointmentid = response.body().getData().getAppointment_UID();
+                             userid = response.body().getData().getUser_id().get_id();
+                    //         pet_image = response.body().getData().getPet_id().getPet_img();
 
-                            if(response.body().getData().getBooking_date_time() != null){
-                                txt_appointment_date.setText(response.body().getData().getBooking_date_time());
-                            }
-                            usrname = response.body().getData().getSp_business_info().get(0).getBussiness_name();
-                            String servname = response.body().getData().getService_name();
-                            String pet_name = response.body().getData().getPet_id().getPet_name();
-                            String pet_type = response.body().getData().getPet_id().getPet_type();
-                            String breed = response.body().getData().getPet_id().getPet_breed();
-                            String gender = response.body().getData().getPet_id().getPet_gender();
-                            String colour = response.body().getData().getPet_id().getPet_color();
-                            double weight = response.body().getData().getPet_id().getPet_weight();
-                            String pet_dob = response.body().getData().getPet_id().getPet_dob();
-                            String pet_age = response.body().getData().getPet_id().getPet_age();
-                            if(pet_age != null && !pet_age.isEmpty()){
+                             if(response.body().getData().getBooking_date_time() != null){
+                                 txt_appointment_date.setText(response.body().getData().getBooking_date_time());
+                             }
+                             usrname = response.body().getData().getSp_business_info().get(0).getBussiness_name();
+                             String servname = response.body().getData().getService_name();
+                             String pet_name = response.body().getData().getFamily_id().getName();
+                             String gender = response.body().getData().getFamily_id().getGender();
+                             String weight = response.body().getData().getFamily_id().getWeight();
+                             String pet_dob = response.body().getData().getFamily_id().getDateofbirth();
+
+
+                             if(gender != null && !gender.isEmpty()){
+                                 ll_gender.setVisibility(View.VISIBLE);
+                             }else{
+                                 ll_gender.setVisibility(View.GONE);
+                             }
+
+
+                             if(weight != null&&!weight.isEmpty() ){
+                                 ll_weight.setVisibility(View.VISIBLE);
+                             }else{
+                                 ll_weight.setVisibility(View.GONE);
+                             }
+
+                             if(pet_dob != null && !pet_dob.isEmpty()){
+
+                                 txt_age.setText(pet_dob);
+
+                             }else{
+
+                                 txt_age.setText("");
+
+                             }
+
+                          /*  if(pet_age != null && !pet_age.isEmpty()){
                                 txt_age.setText(pet_age);
                             }else {
                                 txt_age.setText("");
-                            }
+                            }*/
 
-                            Paymentmethod = response.body().getData().getPayment_method();
 
-                           *//* if(pet_dob != null){
+                             Paymentmethod = response.body().getData().getPayment_method();
+
+                          if(pet_dob != null){
                                 String[] separated = pet_dob.split("-");
                                 String day = separated[0];
                                 String month = separated[1];
@@ -1268,21 +1315,24 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
                                 Log.w(TAG,"day : "+day+" month: "+month+" year : "+year);
 
                                 getAge(Integer.parseInt(year),Integer.parseInt(month),Integer.parseInt(day));
-                            }*//*
-
-                            if (response.body().getData().getPet_id().isVaccinated()) {
-                                vaccinated = "Yes";
-                                ll_vacinateddate.setVisibility(View.VISIBLE);
-                                if (response.body().getData().getPet_id().getLast_vaccination_date() != null) {
-                                    txt_vaccinated.setText(response.body().getData().getPet_id().getLast_vaccination_date());
-                                }
-
                             }
-                            else {
-                                ll_vacinateddate.setVisibility(View.GONE);
-                                vaccinated = "No";
-                            }
-                            String order_date = response.body().getData().getDate_and_time();
+
+
+                             if(response.body().getData().getBooking_date_time() != null){
+                                 txt_appointment_date.setText(response.body().getData().getBooking_date_time());
+                             }
+                             if (response.body().getData().getFamily_id().getCovide_vac()!=null&&!response.body().getData().getFamily_id().getCovide_vac().equals("Yes")) {
+                                 vaccinated = "Yes";
+                                 ll_vacinateddate.setVisibility(View.VISIBLE);
+                                 txt_vaccinated.setText(response.body().getData().getFamily_id().getCovide_vac());
+
+                             }
+                             else {
+                                 ll_vacinateddate.setVisibility(View.GONE);
+                                 vaccinated = "No";
+                             }
+
+                             String order_date = response.body().getData().getDate_and_time();
                             Log.w(TAG,"SPAppointmentDetailsResponse order_date : "+order_date);
                             String orderid = response.body().getData().getAppointment_UID();
                             String payment_method = response.body().getData().getPayment_method();
@@ -1296,7 +1346,7 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
                                 usr_image = Address.get(i).getThumbnail_image();
 
                             }
-                            setView(usrname, usr_image, servname, pet_name, pet_type, breed, gender, colour, weight, order_date, orderid, payment_method, order_cost, vaccinated, addr);
+                             setView(usrname, usr_image, servname, pet_name, "pet_type", "breed", gender, "colour", weight, order_date, orderid, payment_method, order_cost, vaccinated, addr);
 
 
                         }
@@ -1314,7 +1364,8 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
             }
         });
 
-    }*/
+    }
+
     @SuppressLint({"LongLogTag", "LogNotTimber"})
     private AppointmentDetailsRequest appointmentDetailsRequest() {
 
@@ -2075,4 +2126,30 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
 
     }
 
+    @SuppressLint("NonConstantResourceId")
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.home:
+                callDirections("1");
+                break;
+            case R.id.shop:
+                callDirections("2");
+                break;
+            case R.id.services:
+                callDirections("3");
+                break;
+            case R.id.care:
+                callDirections("4");
+                break;
+            case R.id.community:
+                callDirections("5");
+                break;
+
+            default:
+                return  false;
+        }
+        return true;
+    }
 }
