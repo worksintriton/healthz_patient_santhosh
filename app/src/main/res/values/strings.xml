@@ -545,8 +545,6 @@
     <string name="save_continue"><![CDATA[Save & Continue]]></string>
     <string name="err_msg_type_of_gender">Select the gender</string>
     <string name="consultation">Consultation</string>
-    <string name="see_more_pets_handled" tools:ignore="TypographyEllipsis">See more...</string>
-    <string name="see_more_pets_specialization" tools:ignore="TypographyEllipsis">See more...</string>
     <string name="dob">Date of birth</string>
     <string name="powered_by">Powered By:</string>
     <string name="owner_s_name">Owner\'s Name</string>
@@ -671,4 +669,8 @@
     <string name="clinicname">Clinic Name</string>
     <string name="doctorname">Doctor Name</string>
     <string name="enter_code">Enter Code</string>
+
+    <string name="see_more_pets_handled" tools:ignore="TypographyEllipsis">See More...</string>
+    <string name="see_more_pets_specialization" tools:ignore="TypographyEllipsis">See More...</string>
 </resources>
+

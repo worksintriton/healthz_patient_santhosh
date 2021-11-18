@@ -732,7 +732,7 @@ public class DoctorClinicDetailsActivity extends AppCompatActivity implements Vi
 
                             sb.append(distance);
 
-                            sb.append("km Away");
+                            sb.append(" km Away");
 
                         }
                         else if(APIClient.DISTANCE != null && ClinicLocationname != null){
@@ -740,7 +740,7 @@ public class DoctorClinicDetailsActivity extends AppCompatActivity implements Vi
                             //txt_distance.setText(""+APIClient.DISTANCE);
                             sb.append(distance);
 
-                            sb.append("km Away");
+                            sb.append(" km Away");
                         }
 
 
@@ -967,7 +967,7 @@ public class DoctorClinicDetailsActivity extends AppCompatActivity implements Vi
                 public void onMapClick(@NonNull LatLng latLng) {
                     Log.w(TAG,"mMap onclick : "+"latitude : "+latitude+" longitude : "+longitude+" ClinicLocationname : "+ClinicLocationname);
                     String strUri = "http://maps.google.com/maps?q=loc:" + latitude + "," + longitude + " (" + ClinicLocationname + ")";
-                    Intent intent = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse(strUri));
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(strUri));
                     intent.setClassName("com.google.android.apps.maps", "com.google.android.maps.MapsActivity");
                     startActivity(intent);
                 }

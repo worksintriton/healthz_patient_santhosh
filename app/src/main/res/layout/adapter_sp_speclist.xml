@@ -19,8 +19,8 @@
 
             <RelativeLayout
                 android:id="@+id/rl_close"
-                android:layout_width="16dp"
-                android:layout_height="16dp"
+                android:layout_width="6dp"
+                android:layout_height="6dp"
                 android:layout_gravity="end|center"
                 android:layout_marginEnd="5dp"
                 android:background="@drawable/layout_bg_service_greenyish"
