@@ -137,9 +137,7 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
     @BindView(R.id.ll_add_to_cart)
     LinearLayout ll_add_to_cart;
 
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_discount)
-    RelativeLayout rl_discount;
+
 
 //    @SuppressLint("NonConstantResourceId")
 //    @BindView(R.id.txt_view_details)
@@ -161,8 +159,6 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
     private int productqty;
     private String tag;
 
-    // BottomSheetBehavior variable
-    private BottomSheetBehavior bottomSheetBehavior;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_cart_label)
@@ -196,13 +192,11 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
     @BindView(R.id.img_cart)
     ImageView img_cart;
 
-    @SuppressLint("NonConstantResourceId")
+   /* @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_cart_count_badge)
-    TextView txt_cart_count_badge;
+    TextView txt_cart_count_badge;*/
 
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.txt_prod_desc_label)
-    TextView txt_prod_desc_label;
+
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.rl_relat_prod)
@@ -227,7 +221,7 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
 
         ButterKnife.bind(this);
         avi_indicator.setVisibility(View.GONE);
-        txt_cart_count_badge.setVisibility(View.GONE);
+        //txt_cart_count_badge.setVisibility(View.GONE);
 
 
         rl_back.setOnClickListener(v -> onBackPressed());
@@ -368,11 +362,9 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
         txt_products_price.setVisibility(View.GONE);
         txt_product_discount_price.setVisibility(View.GONE);
 
-        rl_discount.setVisibility(View.GONE);
 
         txt_products_quantity.setVisibility(View.GONE);
 
-        txt_prod_desc_label.setVisibility(View.GONE);
 
         //      txt_view_details.setVisibility(View.GONE);
 
@@ -485,7 +477,7 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
                 txt_bussiness_reg.setText(bussiness_reg);
             }
 
-            if(bottomSheetBehavior != null && !business_location.isEmpty() ){
+            if(business_location !=  null && !business_location.isEmpty() ){
 
                 txt_business_location.setText(business_location);
             }
@@ -511,63 +503,6 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
 
     }
 
-
-    /**
-     * method to setup the bottomsheet
-     */
-    private void setBottomSheet() {
-
-        bottomSheetBehavior = BottomSheetBehavior.from(findViewById(R.id.bottomSheetLayout));
-
-        bottomSheetBehavior.setState(BottomSheetBehavior.STATE_HALF_EXPANDED);
-
-        bottomSheetBehavior.setHideable(false);
-
-        bottomSheetBehavior.setFitToContents(false);
-
-        bottomSheetBehavior.setHalfExpandedRatio(0.75f);
-
-
-        // Capturing the callbacks for bottom sheet
-        bottomSheetBehavior.addBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
-            @SuppressLint("LogNotTimber")
-            @Override
-            public void onStateChanged(@NonNull View bottomSheet, int newState) {
-                switch (newState) {
-                    case BottomSheetBehavior.STATE_COLLAPSED:
-                        Log.w("Bottom Sheet Behaviour", "STATE_COLLAPSED");
-                        bottomSheetBehavior.setState(BottomSheetBehavior.STATE_HALF_EXPANDED);
-                        break;
-                    case BottomSheetBehavior.STATE_DRAGGING:
-                        Log.w("Bottom Sheet Behaviour", "STATE_DRAGGING");
-                        break;
-                    case BottomSheetBehavior.STATE_EXPANDED:
-                        Log.w("Bottom Sheet Behaviour", "STATE_EXPANDED");
-                        //  bottomSheetBehavior.setState(BottomSheetBehavior.STATE_HALF_EXPANDED);
-                        break;
-                    case BottomSheetBehavior.STATE_HIDDEN:
-                        Log.w("Bottom Sheet Behaviour", "STATE_HIDDEN");
-                        break;
-                    case BottomSheetBehavior.STATE_SETTLING:
-                        Log.w("Bottom Sheet Behaviour", "STATE_SETTLING");
-                        break;
-                    case BottomSheetBehavior.STATE_HALF_EXPANDED:
-                        Log.w("Bottom Sheet Behaviour", "STATE_HALF_EXPANDED");
-                        break;
-                }
-
-
-            }
-
-            @Override
-            public void onSlide(@NonNull View bottomSheet, float slideOffset) {
-
-
-            }
-
-
-        });
-    }
 
     @Override
     public void onBackPressed() {
@@ -694,9 +629,7 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
 
                             txt_products_price.setVisibility(View.VISIBLE);
 
-                            rl_discount.setVisibility(View.VISIBLE);
 
-                            txt_prod_desc_label.setVisibility(View.VISIBLE);
 
                             //     txt_view_details.setVisibility(View.VISIBLE);
 
@@ -704,7 +637,6 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
 
                             rl_relat_prod.setVisibility(View.VISIBLE);
 
-                            setBottomSheet();
 
                             img_fav.setOnClickListener(ProductDetailsActivity.this);
                             img_cart.setOnClickListener(view -> {
@@ -838,10 +770,9 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
             txt_products_price.setText("INR "+0);
         }
         if(product_discount != 0 ){
-            rl_discount.setVisibility(View.VISIBLE);
             txt_discount.setText(product_discount+" % off");
         }else{
-            rl_discount.setVisibility(View.GONE);
+            txt_discount.setText(""+" % off");
         }
         if(threshould != null && !threshould.isEmpty() ){
             int mythreshould = 0;
@@ -1120,12 +1051,12 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
                         }
                         if(response.body().getData()!=null){
                             int Product_count = response.body().getData().getProduct_count();
-                            if(Product_count != 0){
+                           /* if(Product_count != 0){
                                 txt_cart_count_badge.setVisibility(View.VISIBLE);
                                 txt_cart_count_badge.setText(""+Product_count);
                             }else{
                                 txt_cart_count_badge.setVisibility(View.GONE);
-                            }
+                            }*/
                         }
                     }
                 }

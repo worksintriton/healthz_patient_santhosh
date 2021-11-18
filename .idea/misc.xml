@@ -82,6 +82,7 @@
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/activity_pick_up_location_deny.xml" value="0.19947916666666668" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/activity_prescription.xml" value="0.275" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/activity_prescription_details.xml" value="0.275" />
+        <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/activity_product_details.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/activity_search.xml" value="0.14427083333333332" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/activity_select_your_pet.xml" value="0.2" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/activity_selected_service.xml" value="0.2" />
@@ -96,7 +97,7 @@
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/activity_welcome_screen.xml" value="0.2" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/adapter_breedtype_cardview.xml" value="0.275" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/adapter_cart.xml" value="0.275" />
-        <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/adapter_category_services.xml" value="0.21197916666666666" />
+        <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/adapter_category_services.xml" value="0.4" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/adapter_health_issue_list.xml" value="0.2" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/adapter_my_pets_list.xml" value="0.2" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/adapter_nearby_doctors.xml" value="0.2" />

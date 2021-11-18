@@ -112,6 +112,8 @@
     <color name="neutral_black">#4F4F4F</color>
     <color name="new_hz_grey">#999999</color>
     <color name="greenishh">#145B3C</color>
+    <color name="solid_bgnd">#474749</color>
+    <color name="dark_greenish">#004829</color>
 
 
 </resources>

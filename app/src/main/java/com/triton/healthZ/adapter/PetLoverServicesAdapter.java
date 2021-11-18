@@ -97,7 +97,7 @@ public class PetLoverServicesAdapter extends  RecyclerView.Adapter<RecyclerView.
           }*/
 
 
-        holder.ll_root.setOnClickListener(new View.OnClickListener() {
+        holder.rl_root.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(serviceDetailsResponseList.get(position).get_id() != null) {
@@ -142,7 +142,7 @@ public class PetLoverServicesAdapter extends  RecyclerView.Adapter<RecyclerView.
 
     class ViewHolderOne extends RecyclerView.ViewHolder {
         public TextView txt_petlover_servicesname;
-        public FrameLayout ll_root;
+        public RelativeLayout rl_root;
         public ImageView cv_serviceimage;
 
 
@@ -152,7 +152,7 @@ public class PetLoverServicesAdapter extends  RecyclerView.Adapter<RecyclerView.
             super(itemView);
             txt_petlover_servicesname = itemView.findViewById(R.id.txt_petlover_servicesname);
             cv_serviceimage = itemView.findViewById(R.id.cv_serviceimage);
-            ll_root = itemView.findViewById(R.id.ll_root);
+            rl_root = itemView.findViewById(R.id.rl_root);
 
 
 

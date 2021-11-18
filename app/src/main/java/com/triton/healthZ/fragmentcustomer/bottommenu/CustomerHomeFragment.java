@@ -236,14 +236,14 @@ public class CustomerHomeFragment extends Fragment implements Serializable,
         mContext = getActivity();
 
 
-       /* if (mapFragment == null) {
+        if (mapFragment == null) {
             mapFragment = SupportMapFragment.newInstance();
             mapFragment.getMapAsync(this);
         }
         // R.id.map is a FrameLayout, not a Fragment
         getChildFragmentManager().beginTransaction().replace(R.id.map, mapFragment).commit();
 
-        googleApiConnected();*/
+        googleApiConnected();
 
 
         avi_indicator.setVisibility(View.GONE);
@@ -405,6 +405,7 @@ public class CustomerHomeFragment extends Fragment implements Serializable,
                                 txt_doctor_norecord.setVisibility(View.GONE);
                                 txt_doctors.setVisibility(View.VISIBLE);
                                 txt_seemore_vets.setVisibility(View.VISIBLE);
+                                txt_seemore_vets.setText("See All ( "+doctorDetailsResponseList.size()+" )");
                                 setViewDoctors(doctorDetailsResponseList);
 
 
@@ -438,6 +439,7 @@ public class CustomerHomeFragment extends Fragment implements Serializable,
                                 txt_seemore_services.setVisibility(View.VISIBLE);
                                 rvservice.setVisibility(View.VISIBLE);
                                 txt_services.setVisibility(View.VISIBLE);
+                                txt_seemore_services.setText("See All ( "+serviceDetailsResponseList.size()+" )");
                                 setViewServices(serviceDetailsResponseList);
                             } else {
                                 rvservice.setVisibility(View.GONE);
@@ -526,10 +528,10 @@ public class CustomerHomeFragment extends Fragment implements Serializable,
 
         PetLoverDashboardRequest petLoverDashboardRequest = new PetLoverDashboardRequest();
         petLoverDashboardRequest.setUser_id(userid);
-        petLoverDashboardRequest.setLat(11.055715);
-        petLoverDashboardRequest.setLongX(78.632249);
+        petLoverDashboardRequest.setLat(latitude);
+        petLoverDashboardRequest.setLongX(longitude);
         petLoverDashboardRequest.setUser_type(1);
-        petLoverDashboardRequest.setAddress("Unnamed Road, Tamil Nadu 621006, India");
+        petLoverDashboardRequest.setAddress(AddressLine);
         petLoverDashboardRequest.setDoctor(doctor);
         petLoverDashboardRequest.setProduct(product);
         petLoverDashboardRequest.setService(service);
@@ -646,7 +648,7 @@ public class CustomerHomeFragment extends Fragment implements Serializable,
             dialog.setCanceledOnTouchOutside(false);
             TextView txt_lbl1 = dialog.findViewById(R.id.txt_lbl1);
             TextView txt_lbl2 = dialog.findViewById(R.id.txt_lbl2);
-            txt_lbl1.setText("Petfolio would like to");
+            txt_lbl1.setText("HealthZ would like to");
             txt_lbl2.setText("access your location");
             Button btn_allow = dialog.findViewById(R.id.btn_allow);
             btn_allow.setText("Continue");

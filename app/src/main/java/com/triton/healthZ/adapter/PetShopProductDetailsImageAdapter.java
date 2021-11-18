@@ -114,7 +114,7 @@ public class PetShopProductDetailsImageAdapter extends  RecyclerView.Adapter<Rec
         holder.ll_root.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-           /*     if(fromactivity != null && fromactivity.equalsIgnoreCase("DoctorShopFragment")){
+                if(fromactivity != null && fromactivity.equalsIgnoreCase("DoctorShopFragment")){
                     Intent intent = new Intent(context, DoctorProductDetailsActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     intent.putExtra("productid",productListBean.get_id());
                     context.startActivity(intent);
@@ -129,7 +129,6 @@ public class PetShopProductDetailsImageAdapter extends  RecyclerView.Adapter<Rec
                     intent.putExtra("productid",productListBean.get_id());
                     context.startActivity(intent);
                 }
-*/
             }
         });
 
