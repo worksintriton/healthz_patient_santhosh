@@ -314,7 +314,7 @@ public class PetLoverDoctorChoosePaymentMethodActivity extends AppCompatActivity
                 ll_cost.setVisibility(View.GONE);
                 ll_discount.setVisibility(View.GONE);
                 edt_coupon.setText("");
-                txt_total_amount.setText("Total : INR "+Amount);
+                txt_total_amount.setText("Total : \u20B9  "+Amount);
                 Total_price = Amount;
                 Coupon_status = "Not Applied";
                 Coupon_code = "";
@@ -329,7 +329,7 @@ public class PetLoverDoctorChoosePaymentMethodActivity extends AppCompatActivity
                 ll_cost.setVisibility(View.GONE);
                 ll_discount.setVisibility(View.GONE);
                 edt_coupon.setText("");
-                txt_total_amount.setText("Total : INR "+Amount);
+                txt_total_amount.setText("Total : \u20B9  "+Amount);
                 Total_price = Amount;
                 Coupon_status = "Not Applied";
                 Coupon_code = "";
@@ -385,8 +385,8 @@ public class PetLoverDoctorChoosePaymentMethodActivity extends AppCompatActivity
             txt_pet_name.setText(petname);
         }
         if(Amount != 0){
-            txt_cost.setText("INR "+Amount);
-            txt_total_amount.setText("Total : INR "+Amount);
+            txt_cost.setText("\u20B9  "+Amount);
+            txt_total_amount.setText("Total : \u20B9  "+Amount);
             Total_price = Amount;
         }
         if(Booking_date_time != null){
@@ -406,7 +406,7 @@ public class PetLoverDoctorChoosePaymentMethodActivity extends AppCompatActivity
                     viewapply.setVisibility(View.GONE);
                     ll_cost.setVisibility(View.GONE);
                     ll_discount.setVisibility(View.GONE);
-                    txt_total_amount.setText("Total : INR "+Amount);
+                    txt_total_amount.setText("Total : \u20B9  "+Amount);
                     Coupon_status = "Not Applied";
                     Coupon_code = "";
                     Original_price = 0;
@@ -518,26 +518,26 @@ public class PetLoverDoctorChoosePaymentMethodActivity extends AppCompatActivity
 
                         if(response.body().getData().getDiscount_price() != 0){
                             Discount_price = response.body().getData().getDiscount_price();
-                            txt_discount_amount.setText("INR "+response.body().getData().getDiscount_price());
+                            txt_discount_amount.setText("\u20B9  "+response.body().getData().getDiscount_price());
                         }else{
-                            txt_discount_amount.setText("INR "+0);
+                            txt_discount_amount.setText("\u20B9  "+0);
                         }
                         if(response.body().getData().getOriginal_price() != 0){
                             Original_price = response.body().getData().getOriginal_price();
-                            txt_serv_cost.setText("INR "+response.body().getData().getOriginal_price());
+                            txt_serv_cost.setText("\u20B9  "+response.body().getData().getOriginal_price());
 
                         }else{
-                            txt_serv_cost.setText("INR "+0);
+                            txt_serv_cost.setText("\u20B9  "+0);
 
                         }
 
                         if(response.body().getData().getTotal_price() != 0){
                             Total_price = response.body().getData().getTotal_price();
-                            txt_total_amount.setText("Total : INR "+response.body().getData().getTotal_price());
+                            txt_total_amount.setText("Total : \u20B9  "+response.body().getData().getTotal_price());
 
                         }else{
                             Total_price = 0;
-                            txt_total_amount.setText("Total : INR "+0);
+                            txt_total_amount.setText("Total : \u20B9  "+0);
                         }
 
 
@@ -605,7 +605,7 @@ public class PetLoverDoctorChoosePaymentMethodActivity extends AppCompatActivity
 
         try {
             JSONObject options = new JSONObject();
-            options.put("name", "PetFolio");
+            options.put("name", "Healthz");
             options.put("description", userid);
             //You can omit the image option to fetch the image from dashboard
             options.put("image", "https://s3.amazonaws.com/rzp-mobile/images/rzp.png");
@@ -651,6 +651,7 @@ public class PetLoverDoctorChoosePaymentMethodActivity extends AppCompatActivity
             }
             Log.w(TAG,  "Payment failed: " + code + " " + response);
             Toasty.error(getApplicationContext(), "Payment failed. Please try again with another payment method..", Toast.LENGTH_SHORT, true).show();
+            avi_indicator.setVisibility(View.GONE);
 
         } catch (Exception e) {
             Log.w(TAG, "Exception in onPaymentError", e);

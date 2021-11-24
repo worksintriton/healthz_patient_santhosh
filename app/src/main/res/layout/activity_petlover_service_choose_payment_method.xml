@@ -448,7 +448,7 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:visibility="visible"
-        app:indicatorColor="@color/new_light_green"
+        app:indicatorColor="@color/new_gree_color"
         app:indicatorName="LineSpinFadeLoaderIndicator" />
 
     <TextView

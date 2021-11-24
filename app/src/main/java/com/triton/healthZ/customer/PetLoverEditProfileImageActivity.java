@@ -66,8 +66,6 @@ public class PetLoverEditProfileImageActivity extends AppCompatActivity implemen
     ImageView img_back;
 
 
-
-
     @BindView(R.id.img_pet_imge)
     ImageView img_pet_imge;
 

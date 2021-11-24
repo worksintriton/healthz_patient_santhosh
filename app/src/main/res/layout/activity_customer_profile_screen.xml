@@ -11,11 +11,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true">
 
-       <include
-            android:id="@+id/include_petlover_header"
+        <include
+             android:id="@+id/include_petlover_header"
+               layout="@layout/toolbar_layout_petlover_header"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            layout="@layout/toolbar_layout_petlover_header" />
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 
@@ -129,7 +129,7 @@
                             android:drawableLeft="@drawable/ic_editt"
                             android:drawablePadding="5dp"
                             android:ellipsize="end"
-                            android:fontFamily="@font/futuramediumbt"
+                            android:fontFamily="@font/montserrat"
                             android:gravity="end"
                             android:maxLines="1"
                             android:text="@string/edit"
@@ -551,7 +551,7 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/montserrat_bold"
                     android:text="@string/logout"
-                    android:textColor="@color/new_thick_red_bgm_color"
+                    android:textColor="#FF0000"
                     android:textSize="18sp" />
 
             </LinearLayout>

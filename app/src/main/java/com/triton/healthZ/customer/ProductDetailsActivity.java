@@ -193,9 +193,9 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
     @BindView(R.id.img_cart)
     ImageView img_cart;
 
-   /* @SuppressLint("NonConstantResourceId")
+    @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_cart_count_badge)
-    TextView txt_cart_count_badge;*/
+    TextView txt_cart_count_badge;
 
 
 
@@ -1052,12 +1052,12 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
                         }
                         if(response.body().getData()!=null){
                             int Product_count = response.body().getData().getProduct_count();
-                           /* if(Product_count != 0){
+                            if(Product_count != 0){
                                 txt_cart_count_badge.setVisibility(View.VISIBLE);
                                 txt_cart_count_badge.setText(""+Product_count);
                             }else{
                                 txt_cart_count_badge.setVisibility(View.GONE);
-                            }*/
+                            }
                         }
                     }
                 }

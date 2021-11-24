@@ -71,87 +71,75 @@
                             android:layout_marginStart="10dp"
                             android:gravity="end">
 
-
                             <ImageView
+                                android:id="@+id/img_sos"
                                 android:layout_width="24dp"
                                 android:layout_height="24dp"
                                 android:layout_marginStart="20dp"
+                                android:layout_marginTop="10dp"
                                 android:src="@drawable/ic_sos"
-                                android:visibility="invisible"
+                                android:visibility="gone"
                                 tools:ignore="ContentDescription" />
 
                             <ImageView
+                                android:id="@+id/img_notification"
                                 android:layout_width="24dp"
                                 android:layout_height="24dp"
                                 android:layout_marginStart="20dp"
+                                android:layout_marginTop="10dp"
                                 android:src="@drawable/ic_notification_new"
-                                android:visibility="invisible"
+                                android:visibility="gone"
                                 tools:ignore="ContentDescription" />
 
+
                             <ImageView
+                                android:id="@+id/img_fav"
                                 android:layout_width="24dp"
                                 android:layout_height="24dp"
                                 android:layout_marginStart="20dp"
-                                android:src="@drawable/ic_bag"
-                                android:visibility="invisible"
+                                android:layout_marginTop="10dp"
+                                android:src="@drawable/ic_fav_heart"
                                 tools:ignore="ContentDescription" />
 
-                            <RelativeLayout
-                                android:id="@+id/rl_share"
-                                android:layout_width="36dp"
-                                android:layout_height="36dp"
+                            <ImageView
+                                android:id="@+id/img_cart"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
                                 android:layout_marginStart="20dp"
-                                android:layout_marginTop="5dp"
-                                android:background="@drawable/icn_ellipse_bgnd">
+                                android:layout_marginTop="10dp"
+                                android:src="@drawable/ic_bag"
+                                tools:ignore="ContentDescription" />
 
-                                <ImageView
-                                    android:id="@+id/img_share"
-                                    android:layout_width="24dp"
-                                    android:layout_height="24dp"
-                                    android:layout_centerInParent="true"
-                                    android:background="@drawable/icn_share"
-                                    tools:ignore="ContentDescription" />
+                            <TextView
+                                android:id="@+id/txt_cart_count_badge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="-16dp"
+                                android:layout_marginEnd="10dp"
+                                android:background="@drawable/badge_background"
+                                android:ellipsize="marquee"
+                                android:fontFamily="@font/montserrat"
+                                android:gravity="center"
+                                android:marqueeRepeatLimit="marquee_forever"
+                                android:minWidth="20dp"
+                                android:minHeight="20dp"
+                                android:padding="3dp"
+                                android:paddingLeft="3dp"
+                                android:paddingRight="3dp"
+                                android:paddingBottom="5dp"
+                                android:singleLine="true"
+                                android:text="0"
+                                android:textColor="@color/black"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
 
-                            </RelativeLayout>
-
-                            <RelativeLayout
-                                android:id="@+id/rl_heart"
-                                android:layout_width="36dp"
-                                android:layout_height="36dp"
-                                android:layout_marginStart="20dp"
-                                android:layout_marginTop="5dp"
-                                android:background="@drawable/icn_ellipse_bgnd">
-
-                                <ImageView
-                                    android:id="@+id/img_fav"
-                                    android:layout_width="24dp"
-                                    android:layout_height="24dp"
-                                    android:layout_centerInParent="true"
-                                    android:background="@drawable/icn_heart_love"
-                                    tools:ignore="ContentDescription" />
-
-                            </RelativeLayout>
-                            <RelativeLayout
-                                android:id="@+id/rl_cart"
-                                android:layout_width="36dp"
-                                android:layout_height="36dp"
-                                android:layout_marginStart="20dp"
-                                android:layout_marginTop="5dp"
-                                android:background="@drawable/icn_ellipse_bgnd">
-
-                                <ImageView
-                                    android:id="@+id/img_cart"
-                                    android:layout_width="24dp"
-                                    android:layout_height="24dp"
-                                    android:layout_centerInParent="true"
-                                    android:background="@drawable/ic_hzmenu_shop"
-                                    tools:ignore="ContentDescription" />
-
-                            </RelativeLayout>
                         </LinearLayout>
 
 
                     </androidx.appcompat.widget.Toolbar>
+
+
 
                 </FrameLayout>
 

@@ -256,7 +256,7 @@ public class VerifyOtpActivity extends AppCompatActivity implements View.OnClick
     }
 
     private void resendOtpResponseCall() {
-        txt_resend.setVisibility(View.GONE);
+   /*     txt_resend.setVisibility(View.GONE);*/
         avi_indicator.setVisibility(View.VISIBLE);
         avi_indicator.smoothToShow();
         RestApiInterface apiInterface = APIClient.getClient().create(RestApiInterface.class);
@@ -271,7 +271,7 @@ public class VerifyOtpActivity extends AppCompatActivity implements View.OnClick
                 if (response.body() != null) {
                     if (200 == response.body().getCode()) {
                         otp_view.setOTP("");
-                        Toasty.success(getApplicationContext(),response.body().getMessage(), Toast.LENGTH_SHORT, true).show();
+                        Toasty.success(getApplicationContext(),"OTP Resent Successfully", Toast.LENGTH_SHORT, true).show();
                         if(response.body().getData().getUser_Details() != null) {
                             otp = response.body().getData().getUser_Details().getOtp();
                         }

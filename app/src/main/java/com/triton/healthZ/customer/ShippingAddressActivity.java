@@ -249,7 +249,7 @@ public class ShippingAddressActivity extends AppCompatActivity implements View.O
 
             if (grand_total!=0){
 
-                txt_grand_total.setText("INR "+ grand_total);
+                txt_grand_total.setText("\u20B9 "+ grand_total);
             }
 
             prodcut_count = extras.getInt("prodcut_count");
@@ -862,7 +862,7 @@ public class ShippingAddressActivity extends AppCompatActivity implements View.O
 
         try {
             JSONObject options = new JSONObject();
-            options.put("name", "PetFolio");
+            options.put("name", "Healthz");
             options.put("description", userid);
             //You can omit the image option to fetch the image from dashboard
             options.put("image", "https://s3.amazonaws.com/rzp-mobile/images/rzp.png");

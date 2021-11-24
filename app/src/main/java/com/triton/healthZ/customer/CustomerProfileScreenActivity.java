@@ -237,6 +237,7 @@ public class CustomerProfileScreenActivity extends AppCompatActivity implements 
         Log.w(TAG,"onCreate : ");
         avi_indicator.setVisibility(View.GONE);
         ll_add.setVisibility(View.GONE);
+        img_notification.setVisibility(View.VISIBLE);
 
 
         session = new SessionManager(getApplicationContext());

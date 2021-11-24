@@ -371,7 +371,7 @@
 
     <string name="profile_name">profile name</string>
 
-    <string name="edit"><u>Edit</u></string>
+    <string name="edit">Edit</string>
 
     <string name="businessname">Business Name</string>
     <string name="businessemail">Business email</string>

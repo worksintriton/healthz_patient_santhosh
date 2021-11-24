@@ -267,7 +267,7 @@
         <activity
             android:name=".customer.PetLoverEditProfileActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"
+            android:theme="@style/BaseAppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".customer.CustomerProfileScreenActivity"
@@ -277,7 +277,7 @@
         <activity
             android:name=".customer.PetLoverEditProfileImageActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"
+            android:theme="@style/BaseAppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".customer.EditYourPetProfileInfoActivity"

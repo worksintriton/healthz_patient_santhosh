@@ -183,7 +183,7 @@ public class VerifyEmailOtpActivity extends AppCompatActivity implements View.On
 
     @SuppressLint("LogNotTimber")
     private void resendOtpResponseCall() {
-        txt_resend.setVisibility(View.GONE);
+       /* txt_resend.setVisibility(View.GONE);*/
         avi_indicator.setVisibility(View.VISIBLE);
         avi_indicator.smoothToShow();
         RestApiInterface apiInterface = APIClient.getClient().create(RestApiInterface.class);
@@ -198,7 +198,7 @@ public class VerifyEmailOtpActivity extends AppCompatActivity implements View.On
                 if (response.body() != null) {
                     if (200 == response.body().getCode()) {
                         otp_view.setOTP("");
-                        Toasty.success(getApplicationContext(),response.body().getMessage(), Toast.LENGTH_SHORT, true).show();
+                        Toasty.success(getApplicationContext(),"OTP Resent Successfully", Toast.LENGTH_SHORT, true).show();
                         if(response.body().getData().getOtp() !=0){
                             otp = response.body().getData().getOtp();
                         }
