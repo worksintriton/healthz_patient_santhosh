@@ -1258,7 +1258,7 @@ public class ServiceBookAppointmentActivity extends AppCompatActivity implements
             options.put("description", userid);
             //You can omit the image option to fetch the image from dashboard
             options.put("image", "https://s3.amazonaws.com/rzp-mobile/images/rzp.png");
-            options.put("currency", "INR");
+              options.put("currency","INR");
             options.put("amount", amount);
 
 

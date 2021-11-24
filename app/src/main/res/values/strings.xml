@@ -672,5 +672,14 @@
 
     <string name="see_more_pets_handled" tools:ignore="TypographyEllipsis">See More...</string>
     <string name="see_more_pets_specialization" tools:ignore="TypographyEllipsis">See More...</string>
+    <string name="healthz_in">Healthz.in</string>
+
+    <string name="intake">Intake</string>
+    <string name="medicine_name">Medicine Name</string>
+    <string name="after_food">After Food</string>
+    <string name="before_food">Before Food</string>
+    <string name="doctor_diagnosis">Doctor Diagnosis</string>
+    <string name="doctor_sub_diagnosis">Doctor Sub Diagnosis</string>
+    <string name="service_charge_amount">Service Charge Amount</string>
 </resources>
 

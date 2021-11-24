@@ -360,7 +360,7 @@ public class DoctorWalkinPrescriptionDetailsActivity extends AppCompatActivity {
                             }else{
                                 txt_owners_name.setText("");
                             }
-                            if(response.body().getData().getPet_name() != null && !response.body().getData().getPet_name().isEmpty()){
+                           /* if(response.body().getData().getPet_name() != null && !response.body().getData().getPet_name().isEmpty()){
                                 txt_pet_name.setText(response.body().getData().getPet_name());
                             }else{
                                 txt_pet_name.setText("");
@@ -386,7 +386,7 @@ public class DoctorWalkinPrescriptionDetailsActivity extends AppCompatActivity {
                                 txt_age.setText(response.body().getData().getAge());
                             }else{
                                 txt_age.setText("");
-                            }
+                            }*/
                              if(response.body().getData().getDiagnosis() != null && !response.body().getData().getDiagnosis().isEmpty()){
                                 txt_diagnosis.setText(response.body().getData().getDiagnosis());
                             }else{

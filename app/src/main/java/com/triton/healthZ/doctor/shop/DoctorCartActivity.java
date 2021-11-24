@@ -388,7 +388,7 @@ public class DoctorCartActivity extends AppCompatActivity implements AddandRemov
                     edt_coupon.setText("");
                     btn_apply_coupon.setText("Apply");
                     ll_coupon_discount_amount.setVisibility(View.GONE);
-                    txt_total_amount.setText("INR "+Grand_total);
+                    txt_total_amount.setText("\u20B9 "+Grand_total);
                     Coupon_status = "Not Applied";
                     Coupon_code = "";
                     Original_price = 0;
@@ -510,7 +510,7 @@ public class DoctorCartActivity extends AppCompatActivity implements AddandRemov
                                 Total_price = response.body().getProdouct_total();
                             }else{
                                 Total_price = 0;
-                                txt_sub_total.setText("INR "+0);
+                                txt_sub_total.setText("\u20B9 "+0);
 
                             }
                             if(response.body().getDiscount_price() != 0){
@@ -611,7 +611,7 @@ public class DoctorCartActivity extends AppCompatActivity implements AddandRemov
                 edt_coupon.setText("");
                 btn_apply_coupon.setText("Apply");
                 ll_coupon_discount_amount.setVisibility(View.GONE);
-                txt_total_amount.setText("INR "+Grand_total);
+                txt_total_amount.setText("\u20B9 "+Grand_total);
                 Coupon_status = "Not Applied";
                 Coupon_code = "";
                 Original_price = 0;
@@ -631,7 +631,7 @@ public class DoctorCartActivity extends AppCompatActivity implements AddandRemov
                 edt_coupon.setText("");
                 btn_apply_coupon.setText("Apply");
                 ll_coupon_discount_amount.setVisibility(View.GONE);
-                txt_total_amount.setText("INR "+Grand_total);
+                txt_total_amount.setText("\u20B9 "+Grand_total);
                 Coupon_status = "Not Applied";
                 Coupon_code = "";
                 Original_price = 0;
@@ -644,7 +644,7 @@ public class DoctorCartActivity extends AppCompatActivity implements AddandRemov
                     edt_coupon.setText("");
                     btn_apply_coupon.setText("Apply");
                     ll_coupon_discount_amount.setVisibility(View.GONE);
-                    txt_total_amount.setText("INR "+Grand_total);
+                    txt_total_amount.setText("\u20B9 "+Grand_total);
                     Coupon_status = "Not Applied";
                     Coupon_code = "";
                     Original_price = 0;
@@ -927,7 +927,7 @@ public class DoctorCartActivity extends AppCompatActivity implements AddandRemov
             options.put("description", userid);
             //You can omit the image option to fetch the image from dashboard
             options.put("image", "https://s3.amazonaws.com/rzp-mobile/images/rzp.png");
-            options.put("currency", "INR");
+              options.put("currency","INR");
             options.put("amount", amount);
 
 
@@ -1099,26 +1099,26 @@ public class DoctorCartActivity extends AppCompatActivity implements AddandRemov
 
                         if(response.body().getData().getDiscount_price() != 0){
                             Coupon_discount_price = response.body().getData().getDiscount_price();
-                            txt_coupon_discount_amount.setText("INR "+response.body().getData().getDiscount_price());
+                            txt_coupon_discount_amount.setText("\u20B9 "+response.body().getData().getDiscount_price());
                         }else{
-                            txt_coupon_discount_amount.setText("INR "+0);
+                            txt_coupon_discount_amount.setText("\u20B9 "+0);
                         }
                         if(response.body().getData().getOriginal_price() != 0){
                             Original_price = response.body().getData().getOriginal_price();
-                            // txt_serv_cost.setText("INR "+response.body().getData().getOriginal_price());
+                            // txt_serv_cost.setText("\u20B9 "+response.body().getData().getOriginal_price());
 
                         }else{
-                            // txt_serv_cost.setText("INR "+0);
+                            // txt_serv_cost.setText("\u20B9 "+0);
 
                         }
 
                         if(response.body().getData().getTotal_price() != 0){
                             grand_total = response.body().getData().getTotal_price();
-                            txt_total_amount.setText("INR "+response.body().getData().getTotal_price());
+                            txt_total_amount.setText("\u20B9 "+response.body().getData().getTotal_price());
 
                         }else{
                             grand_total = 0;
-                            txt_total_amount.setText("INR "+0);
+                            txt_total_amount.setText("\u20B9 "+0);
                         }
 
 

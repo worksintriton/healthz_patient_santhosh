@@ -152,7 +152,7 @@ public class PetLoverNearByDoctorAdapter extends  RecyclerView.Adapter<RecyclerV
               holder.txt_doctors_clinicname.setVisibility(View.GONE);
           }
           /*if(doctorDetailsResponseList.get(position).getAmount() != 0) {
-              holder.txt_review_count.setText("INR"+doctorDetailsResponseList.get(position).getAmount());
+              holder.txt_review_count.setText("\u20B9"+doctorDetailsResponseList.get(position).getAmount());
           }else{
               holder.txt_review_count.setText("0");
           }*/

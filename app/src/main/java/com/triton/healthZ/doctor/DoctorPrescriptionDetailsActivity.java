@@ -1,6 +1,5 @@
 package com.triton.healthZ.doctor;
 
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
@@ -149,9 +148,7 @@ public class DoctorPrescriptionDetailsActivity extends AppCompatActivity {
     @BindView(R.id.rv_prescriptiondetails)
     RecyclerView rv_prescriptiondetails;
 
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.txt_no_records)
-    TextView txt_no_records;
+
 
 
     @SuppressLint("NonConstantResourceId")
@@ -271,7 +268,7 @@ public class DoctorPrescriptionDetailsActivity extends AppCompatActivity {
         img_sos.setVisibility(View.GONE);
         img_notification.setVisibility(View.GONE);
         img_cart.setVisibility(View.GONE);
-       // img_profile.setVisibility(View.GONE);
+        // img_profile.setVisibility(View.GONE);
 
         img_profile.setImageResource(R.drawable.share);
 
@@ -298,8 +295,8 @@ public class DoctorPrescriptionDetailsActivity extends AppCompatActivity {
 
 
     private void prescriptionDetailsResponseCall() {
-      avi_indicator.setVisibility(View.VISIBLE);
-      avi_indicator.smoothToShow();
+        avi_indicator.setVisibility(View.VISIBLE);
+        avi_indicator.smoothToShow();
         RestApiInterface ApiService = APIClient.getClient().create(RestApiInterface.class);
         Call<PrescriptionFetchResponse> call = ApiService.prescriptionDetailsResponseCall(RestUtils.getContentType(),prescriptionDetailsRequest());
         Log.w(TAG,"url  :%s"+" "+ call.request().url().toString());
@@ -360,13 +357,13 @@ public class DoctorPrescriptionDetailsActivity extends AppCompatActivity {
                                 txt_dr_specialization.setText(concatenatedSpcNames);
 
                             }
-                            if (response.body().getData().getWeb_name() != null && !response.body().getData().getWeb_name().isEmpty()) {
+                           /* if (response.body().getData().getWeb_name() != null && !response.body().getData().getWeb_name().isEmpty()) {
                                 txt_webname.setText(response.body().getData().getWeb_name());
                             }
                             else {
                                 txt_webname.setText("");
                             }
-
+*/
                             if (response.body().getData().getPhone_number() != null && !response.body().getData().getPhone_number().isEmpty()) {
                                 txt_phone.setText("Phone: " + response.body().getData().getPhone_number());
                             }
@@ -401,34 +398,36 @@ public class DoctorPrescriptionDetailsActivity extends AppCompatActivity {
                             }else{
                                 txt_owners_name.setText("");
                             }
-                            if(response.body().getData().getPet_name() != null && !response.body().getData().getPet_name().isEmpty()){
-                                txt_pet_name.setText(response.body().getData().getPet_name());
+                            if(response.body().getData().getName() != null && !response.body().getData().getName().isEmpty()){
+                                txt_pet_name.setText(response.body().getData().getName());
                             }else{
                                 txt_pet_name.setText("");
                             }
-                            if(response.body().getData().getPet_type() != null && !response.body().getData().getPet_type().isEmpty()){
-                                txt_pet_type.setText(response.body().getData().getPet_type());
+                            if(response.body().getData().getRelation_type() != null && !response.body().getData().getRelation_type().isEmpty()){
+                                txt_pet_type.setText(response.body().getData().getRelation_type());
                             }else{
                                 txt_pet_type.setText("");
-                            }if(response.body().getData().getPet_breed() != null && !response.body().getData().getPet_breed().isEmpty()){
+                            }
+                            /*if(response.body().getData().getPet_breed() != null && !response.body().getData().getPet_breed().isEmpty()){
                                 txt_breed.setText(response.body().getData().getPet_breed());
                             }else{
                                 txt_breed.setText("");
-                            }if(response.body().getData().getGender() != null && !response.body().getData().getGender().isEmpty()){
+                            }*/
+                            if(response.body().getData().getGender() != null && !response.body().getData().getGender().isEmpty()){
                                 txt_gender.setText(response.body().getData().getGender());
                             }else{
                                 txt_gender.setText("");
-                            }if(response.body().getData().getWeight() != 0 ){
+                            }if(response.body().getData().getWeight() != null){
                                 txt_weight.setText(response.body().getData().getWeight()+"");
                             }else{
                                 txt_weight.setText("");
                             }
-                            if(response.body().getData().getAge() != null && !response.body().getData().getAge().isEmpty()){
-                                txt_age.setText(response.body().getData().getAge());
+                            if(response.body().getData().getDateofbirth() != null && !response.body().getData().getDateofbirth().isEmpty()){
+                                txt_age.setText(response.body().getData().getDateofbirth());
                             }else{
                                 txt_age.setText("");
                             }
-                             if(response.body().getData().getDiagnosis() != null && !response.body().getData().getDiagnosis().isEmpty()){
+                            if(response.body().getData().getDiagnosis() != null && !response.body().getData().getDiagnosis().isEmpty()){
                                 txt_diagnosis.setText(response.body().getData().getDiagnosis());
                             }else{
                                 txt_diagnosis.setText("");
@@ -468,7 +467,7 @@ public class DoctorPrescriptionDetailsActivity extends AppCompatActivity {
                             }
 
 
-                           if(response.body().getData().getClinic_name() != null && !response.body().getData().getClinic_name().isEmpty() ){
+                            if(response.body().getData().getClinic_name() != null && !response.body().getData().getClinic_name().isEmpty() ){
 
                                 txt_clinic_name.setText(response.body().getData().getClinic_name());
                             }
@@ -521,11 +520,9 @@ public class DoctorPrescriptionDetailsActivity extends AppCompatActivity {
 
                                         if(prescriptionDataList.size()>0){
                                             rv_prescriptiondetails.setVisibility(View.VISIBLE);
-                                            txt_no_records.setVisibility(View.GONE);
                                             setView();
                                         }else{
                                             rv_prescriptiondetails.setVisibility(View.GONE);
-                                            txt_no_records.setVisibility(View.VISIBLE);
 
                                         }
 
@@ -582,7 +579,7 @@ public class DoctorPrescriptionDetailsActivity extends AppCompatActivity {
             @SuppressLint("LogNotTimber")
             @Override
             public void onFailure(@NonNull Call<PrescriptionFetchResponse> call, @NonNull Throwable t) {
-               avi_indicator.smoothToHide();
+                avi_indicator.smoothToHide();
 
                 Log.w(TAG,"PrescriptionCreateResponseflr"+"--->" + t.getMessage());
             }
@@ -592,7 +589,7 @@ public class DoctorPrescriptionDetailsActivity extends AppCompatActivity {
 
     private PrescriptionDetailsRequest prescriptionDetailsRequest() {
         /*
-          * Appointment_ID
+         * Appointment_ID
          */
 
 

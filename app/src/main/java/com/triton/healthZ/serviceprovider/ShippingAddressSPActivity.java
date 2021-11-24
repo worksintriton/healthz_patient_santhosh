@@ -237,7 +237,7 @@ public class ShippingAddressSPActivity extends AppCompatActivity implements View
 
             if (grand_total!=0){
 
-                txt_grand_total.setText("INR "+ grand_total);
+                txt_grand_total.setText("\u20B9 "+ grand_total);
             }
 
             prodcut_count = extras.getInt("prodcut_count");
@@ -851,7 +851,7 @@ public class ShippingAddressSPActivity extends AppCompatActivity implements View
             options.put("description", userid);
             //You can omit the image option to fetch the image from dashboard
             options.put("image", "https://s3.amazonaws.com/rzp-mobile/images/rzp.png");
-            options.put("currency", "INR");
+              options.put("currency","INR");
             options.put("amount", totalamout);
 
 
