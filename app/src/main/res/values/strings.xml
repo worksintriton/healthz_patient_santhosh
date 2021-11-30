@@ -279,7 +279,7 @@
     <string name="location_services">location services</string>
     <string name="deny">Deny</string>
     <string name="allow">Allow</string>
-    <string name="colon1">.</string>
+    <string name="colon1">:</string>
     <string name="colon">:</string>
     <string name="sub_services">Sub Services</string>
     <string name="producttitle">producttitle</string>
@@ -480,7 +480,7 @@
     <string name="discount20">20% or more </string>
     <string name="discount10">10% or more </string>
     <string name="discount10below">10% and below </string>
-    <string name="category">Categories</string>
+    <string name="category">Category</string>
     <string name="view_more">More</string>
 
     <string name="digitalsignature">Digital Signature</string>
@@ -587,7 +587,7 @@
     <string name="shop_name">Shop Name</string>
     <string name="successfullycancelled">Successfully Cancelled</string>
     <string name="turn_off">Turn off</string>
-    <string name="version">Version V.1.0</string>
+    <string name="version">Version 30.11.2021 1st Build</string>
     <string name="tablet_name">Tablet Name</string>
     <string name="consumption">Consumption</string>
     <string name="seems_there_is_a_connectivity_issue_please_check_your_internet_connection_and_try_again">Seems there is a connectivity issue. Please check your internet connection and try again</string>
@@ -612,7 +612,7 @@
     <string name="dukauwa_du_gmail_com">dukauwa.du@gmail.com</string>
     <string name="healthz">HealthZ</string>
     <string name="alfredo_press">Alfredo Press</string>
-    <string name="my_health_record">My Health Record</string>
+    <string name="my_health_record">My Health Report</string>
     <string name="service_by_category">Service by Category</string>
     <string name="seeall">See All (10)</string>
 
@@ -681,5 +681,6 @@
     <string name="doctor_diagnosis">Doctor Diagnosis</string>
     <string name="doctor_sub_diagnosis">Doctor Sub Diagnosis</string>
     <string name="service_charge_amount">Service Charge Amount</string>
+    <string name="price_label">Price</string>
 </resources>
 

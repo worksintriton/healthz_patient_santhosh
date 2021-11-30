@@ -199,6 +199,8 @@ public class PetMyappointmentsActivity extends AppCompatActivity implements Bott
 
         img_sos.setVisibility(View.GONE);
         img_cart.setVisibility(View.GONE);
+        img_notification.setVisibility(View.VISIBLE);
+        img_profile.setVisibility(View.VISIBLE);
         img_notification.setOnClickListener(this);
         img_cart.setOnClickListener(this);
         img_profile.setOnClickListener(this);

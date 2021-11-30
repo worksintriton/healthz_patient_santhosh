@@ -80,11 +80,11 @@ public class PetLoverVendorOrdersAdapter extends  RecyclerView.Adapter<RecyclerV
         if (orderResponseListAll.get(position).getP_order_price() != 0 && orderResponseListAll.get(position).getP_order_product_count() != 0) {
             if (orderResponseListAll.get(position).getP_order_product_count() == 1) {
                 holder.txt_products_price.setText("\u20B9 " + orderResponseListAll.get(position).getP_order_price());
-                        holder.txt_items.setText(" " + orderResponseListAll.get(position).getP_order_product_count()+" Item"
+                        holder.txt_items.setText(" " + orderResponseListAll.get(position).getP_order_product_count()+" Item Purchased"
                         );
             } else {
                 holder.txt_products_price.setText("\u20B9 " + orderResponseListAll.get(position).getP_order_price());
-                holder.txt_items.setText(" " + orderResponseListAll.get(position).getP_order_product_count()+" Items"
+                holder.txt_items.setText(" " + orderResponseListAll.get(position).getP_order_product_count()+" Items Purchased"
                 );
             }
         }

@@ -337,7 +337,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:ellipsize="end"
-                android:fontFamily="@font/futuramediumbt"
+                android:fontFamily="@font/montserrat_bold"
                 android:maxLines="1"
                 android:text="@string/missed_on_date"
                 android:textColor="@color/missed_red_color"

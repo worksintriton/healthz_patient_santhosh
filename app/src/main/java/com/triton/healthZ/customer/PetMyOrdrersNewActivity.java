@@ -156,12 +156,16 @@ public class PetMyOrdrersNewActivity extends AppCompatActivity implements View.O
 
         img_sos.setVisibility(View.GONE);
         img_cart.setVisibility(View.GONE);
+        img_notification.setVisibility(View.VISIBLE);
+        img_profile.setVisibility(View.VISIBLE);
+
         img_notification.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), NotificationActivity.class));
             }
         });
+
         img_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

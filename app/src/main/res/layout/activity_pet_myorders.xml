@@ -13,13 +13,12 @@
         android:layout_alignParentTop="true"
         android:orientation="vertical">
 
+
         <include
             android:id="@+id/include_petlover_header"
+            layout="@layout/toolbar_layout_petlover_header"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            layout="@layout/toolbar_layout_petlover_header" />
-
-
+            android:layout_height="wrap_content" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -53,8 +52,8 @@
             style="@style/TabLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:tabSelectedTextColor="@color/green"
-            app:tabTextColor="@color/black"
+            app:tabSelectedTextColor="@color/green_colour"
+            app:tabTextColor="@color/new_hz_coolgreyish"
             app:tabIndicatorHeight="0dp"
             app:tabPaddingStart="0dp"
             app:tabPaddingEnd="0dp"

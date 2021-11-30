@@ -210,7 +210,7 @@
                 android:layout_marginTop="10dp"
                 android:background="@drawable/rectangle_corner"
                 android:ellipsize="end"
-                android:fontFamily="@font/futuramediumbt"
+                android:fontFamily="@font/montserrat"
                 android:hint="@string/category"
                 android:inputType="text"
                 android:maxLength="25"

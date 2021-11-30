@@ -232,6 +232,9 @@ public class CustomerProfileScreenActivity extends AppCompatActivity implements 
         img_sos.setVisibility(View.GONE);
         img_cart.setVisibility(View.GONE);
 
+        img_notification.setVisibility(View.VISIBLE);
+        img_profile.setVisibility(View.VISIBLE);
+
 
 
         Log.w(TAG,"onCreate : ");

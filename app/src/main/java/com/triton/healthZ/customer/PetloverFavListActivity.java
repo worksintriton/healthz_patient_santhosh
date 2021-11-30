@@ -87,6 +87,8 @@ public class PetloverFavListActivity extends AppCompatActivity  implements View.
 
         img_sos.setVisibility(View.GONE);
         img_cart.setVisibility(View.GONE);
+        img_notification.setVisibility(View.VISIBLE);
+        img_profile.setVisibility(View.VISIBLE);
 
         setupViewPager(viewPager);
         tabLayout.setupWithViewPager(viewPager);

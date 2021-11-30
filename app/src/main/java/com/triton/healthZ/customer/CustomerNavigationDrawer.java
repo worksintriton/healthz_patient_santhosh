@@ -202,7 +202,7 @@ public class CustomerNavigationDrawer extends AppCompatActivity implements View.
         nav_header_profilename.setText(name);
 
         FrameLayout llheader = header.findViewById(R.id.llheader);
-        llheader.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(), CustomerProfileScreenActivity.class)));
+        llheader.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(), CustomerDashboardActivity.class)));
 
 
         navigationView.setNavigationItemSelectedListener(menuItem -> {

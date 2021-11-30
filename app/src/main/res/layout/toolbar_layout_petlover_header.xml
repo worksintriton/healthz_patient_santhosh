@@ -47,15 +47,6 @@
             tools:ignore="ContentDescription" />
 
         <ImageView
-            android:id="@+id/img_notification"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginStart="20dp"
-            android:src="@drawable/ic_hzmenu_notification"
-            android:visibility="gone"
-            tools:ignore="ContentDescription" />
-
-        <ImageView
             android:id="@+id/img_cart"
             android:layout_width="24dp"
             android:layout_height="24dp"
@@ -65,12 +56,21 @@
             tools:ignore="ContentDescription" />
 
         <ImageView
+            android:id="@+id/img_notification"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/icn_notificationhz"
+            android:visibility="gone"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
             android:id="@+id/img_profile"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="10dp"
-            android:src="@drawable/new_user"
+            android:src="@drawable/icn_userpersonhz"
             android:visibility="gone"
             tools:ignore="ContentDescription" />
     </LinearLayout>

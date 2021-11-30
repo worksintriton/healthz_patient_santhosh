@@ -315,7 +315,7 @@
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="10dp"
                     android:ellipsize="end"
-                    android:fontFamily="@font/montserrat"
+                    android:fontFamily="@font/montserrat_bold"
                     android:maxLines="1"
                     android:text="@string/completed_on_date"
                     android:textColor="@color/new_green_btn"
@@ -323,15 +323,15 @@
 
                 <LinearLayout
                     android:id="@+id/btn_cancel"
-                    android:layout_width="match_parent"
+                    android:layout_width="200dp"
                     android:layout_height="35dp"
                     android:layout_below="@id/txt_bookedon"
+                    android:layout_centerInParent="true"
                     android:layout_centerHorizontal="false"
                     android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
                     android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
                     android:background="@drawable/orange_background_button"
-                    android:layout_toEndOf="@id/cv_pet"
                     android:orientation="horizontal">
 
                     <TextView

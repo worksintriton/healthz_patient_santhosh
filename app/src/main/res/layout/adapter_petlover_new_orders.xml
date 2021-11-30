@@ -6,11 +6,13 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:clipToPadding="false"
+    android:layout_margin="5dp"
     app:cardPreventCornerOverlap="true">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/edt_rectangle_corner_border_light"
         tools:ignore="UselessParent">
 
         <androidx.cardview.widget.CardView
@@ -68,7 +70,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
-                android:fontFamily="@font/futuramediumbt"
+                android:fontFamily="@font/montserrat"
                 android:maxLines="1"
                 android:text="@string/order_details"
                 android:textColor="@color/blue"
@@ -165,7 +167,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
-                    android:fontFamily="@font/futuramediumbt"
+                    android:fontFamily="@font/montserrat"
                     android:gravity="end"
                     android:maxLines="1"
                     android:text="@string/product_title"
@@ -186,9 +188,9 @@
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
-                    android:fontFamily="@font/futuramediumbt"
+                    android:fontFamily="@font/montserrat"
                     android:maxLines="1"
-                    android:text="@string/service_cost"
+                    android:text="@string/price_label"
                     android:textColor="@color/new_tri_txt_color"
                     android:textSize="12sp"
                     android:visibility="visible" />
@@ -241,7 +243,7 @@
                     android:layout_gravity="end"
                     android:layout_marginEnd="5dp"
                     android:background="@drawable/new_rounded_corner_btn"
-                    android:fontFamily="@font/futuramediumbt"
+                    android:fontFamily="@font/montserrat"
                     android:text="@string/add_review"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
