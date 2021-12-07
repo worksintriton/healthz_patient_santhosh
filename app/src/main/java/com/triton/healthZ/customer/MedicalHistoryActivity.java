@@ -1,4 +1,4 @@
-package com.triton.healthZ.customer;
+package com.triton.healthz.customer;
 
 
 import android.annotation.SuppressLint;
@@ -24,25 +24,25 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.gson.Gson;
-import com.triton.healthZ.R;
+import com.triton.healthz.R;
 
-import com.triton.healthZ.activity.NotificationActivity;
-import com.triton.healthZ.adapter.ManagePetListMedicalHistoryAdapter;
-import com.triton.healthZ.adapter.MedicalHistoryListAdapter;
-import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.api.RestApiInterface;
-import com.triton.healthZ.interfaces.PetDeleteListener;
+import com.triton.healthz.activity.NotificationActivity;
+import com.triton.healthz.adapter.ManagePetListMedicalHistoryAdapter;
+import com.triton.healthz.adapter.MedicalHistoryListAdapter;
+import com.triton.healthz.api.APIClient;
+import com.triton.healthz.api.RestApiInterface;
+import com.triton.healthz.interfaces.PetDeleteListener;
 
-import com.triton.healthZ.interfaces.PrescriptionListener;
-import com.triton.healthZ.requestpojo.MedicalHistoryRequest;
-import com.triton.healthZ.requestpojo.PetListRequest;
-import com.triton.healthZ.requestpojo.PrescriptionDetailsRequest;
-import com.triton.healthZ.responsepojo.MedicalHistoryResponse;
-import com.triton.healthZ.responsepojo.PetListResponse;
-import com.triton.healthZ.responsepojo.PrescriptionFetchResponse;
-import com.triton.healthZ.sessionmanager.SessionManager;
-import com.triton.healthZ.utils.ConnectionDetector;
-import com.triton.healthZ.utils.RestUtils;
+import com.triton.healthz.interfaces.PrescriptionListener;
+import com.triton.healthz.requestpojo.MedicalHistoryRequest;
+import com.triton.healthz.requestpojo.PetListRequest;
+import com.triton.healthz.requestpojo.PrescriptionDetailsRequest;
+import com.triton.healthz.responsepojo.MedicalHistoryResponse;
+import com.triton.healthz.responsepojo.PetListResponse;
+import com.triton.healthz.responsepojo.PrescriptionFetchResponse;
+import com.triton.healthz.sessionmanager.SessionManager;
+import com.triton.healthz.utils.ConnectionDetector;
+import com.triton.healthz.utils.RestUtils;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import org.jetbrains.annotations.NotNull;

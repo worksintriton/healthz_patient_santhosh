@@ -1,4 +1,4 @@
-package com.triton.healthZ.service;
+package com.triton.healthz.service;
 
 
 import android.annotation.SuppressLint;

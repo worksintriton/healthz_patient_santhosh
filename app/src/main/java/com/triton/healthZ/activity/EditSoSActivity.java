@@ -1,4 +1,4 @@
-package com.triton.healthZ.activity;
+package com.triton.healthz.activity;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -16,15 +17,15 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.gson.Gson;
-import com.triton.healthZ.R;
-import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.api.RestApiInterface;
-import com.triton.healthZ.appUtils.NumericKeyBoardTransformationMethod;
-import com.triton.healthZ.requestpojo.SOSUpdateRequest;
-import com.triton.healthZ.responsepojo.SuccessResponse;
-import com.triton.healthZ.sessionmanager.SessionManager;
-import com.triton.healthZ.utils.ConnectionDetector;
-import com.triton.healthZ.utils.RestUtils;
+import com.triton.healthz.R;
+import com.triton.healthz.api.APIClient;
+import com.triton.healthz.api.RestApiInterface;
+import com.triton.healthz.appUtils.NumericKeyBoardTransformationMethod;
+import com.triton.healthz.requestpojo.SOSUpdateRequest;
+import com.triton.healthz.responsepojo.SuccessResponse;
+import com.triton.healthz.sessionmanager.SessionManager;
+import com.triton.healthz.utils.ConnectionDetector;
+import com.triton.healthz.utils.RestUtils;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import java.util.HashMap;
@@ -40,9 +41,7 @@ public class EditSoSActivity extends AppCompatActivity {
 
     private String TAG = "EditSoSActivity";
 
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_back)
-    ImageView img_back;
+
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.avi_indicator)
@@ -66,6 +65,10 @@ public class EditSoSActivity extends AppCompatActivity {
 
     private Dialog alertDialog;
     private String userid;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.include_petlover_header)
+    View include_petlover_header;
 
 
     @SuppressLint("SetTextI18n")
@@ -102,13 +105,23 @@ public class EditSoSActivity extends AppCompatActivity {
                 }
             });
 
+            ImageView img_back = include_petlover_header.findViewById(R.id.img_back);
+            ImageView img_sos = include_petlover_header.findViewById(R.id.img_sos);
+            ImageView img_notification = include_petlover_header.findViewById(R.id.img_notification);
+            ImageView img_cart = include_petlover_header.findViewById(R.id.img_cart);
+            ImageView img_profile = include_petlover_header.findViewById(R.id.img_profile);
+            TextView toolbar_title = include_petlover_header.findViewById(R.id.toolbar_title);
+            toolbar_title.setText(getResources().getString(R.string.sos));
+
+
+            img_sos.setVisibility(View.GONE);
+            img_cart.setVisibility(View.GONE);
             img_back.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     onBackPressed();
                 }
             });
-
 
 
         }

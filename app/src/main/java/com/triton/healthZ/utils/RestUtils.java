@@ -1,4 +1,4 @@
-package com.triton.healthZ.utils;
+package com.triton.healthz.utils;
 
 import android.util.Base64;
 import android.util.Log;

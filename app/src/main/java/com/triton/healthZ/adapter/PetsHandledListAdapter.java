@@ -1,4 +1,4 @@
-package com.triton.healthZ.adapter;
+package com.triton.healthz.adapter;
 
 import android.content.Context;
 import android.util.Log;
@@ -13,10 +13,10 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.gson.Gson;
-import com.triton.healthZ.R;
-import com.triton.healthZ.interfaces.PetHandledTypeCheckedListener;
-import com.triton.healthZ.requestpojo.DocBusInfoUploadRequest;
-import com.triton.healthZ.responsepojo.DropDownListResponse;
+import com.triton.healthz.R;
+import com.triton.healthz.interfaces.PetHandledTypeCheckedListener;
+import com.triton.healthz.requestpojo.DocBusInfoUploadRequest;
+import com.triton.healthz.responsepojo.DropDownListResponse;
 
 import java.util.List;
 

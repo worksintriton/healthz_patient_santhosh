@@ -9,7 +9,7 @@
     <LinearLayout
         android:id="@+id/headerView"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:layout_alignParentTop="true"
         android:background="@color/new_header_bg"
         android:gravity="center_vertical"
@@ -17,10 +17,10 @@
         android:visibility="visible"
         tools:ignore="UseCompoundDrawables">
 
-       <include
+    <include
             android:id="@+id/include_petlover_header"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             layout="@layout/toolbar_layout_petlover_header" />
         <ImageView
             android:id="@+id/img_back"

@@ -1,4 +1,4 @@
-package com.triton.healthZ.customer;
+package com.triton.healthz.customer;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -29,17 +29,17 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.common.util.IOUtils;
 import com.google.gson.Gson;
-import com.triton.healthZ.R;
-import com.triton.healthZ.adapter.AddPetImageListAdapter;
-import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.api.RestApiInterface;
-import com.triton.healthZ.appUtils.FileUtil;
-import com.triton.healthZ.requestpojo.PetAddImageRequest;
-import com.triton.healthZ.responsepojo.FileUploadResponse;
-import com.triton.healthZ.responsepojo.PetAddImageResponse;
-import com.triton.healthZ.responsepojo.PetListResponse;
-import com.triton.healthZ.sessionmanager.SessionManager;
-import com.triton.healthZ.utils.RestUtils;
+import com.triton.healthz.R;
+import com.triton.healthz.adapter.AddPetImageListAdapter;
+import com.triton.healthz.api.APIClient;
+import com.triton.healthz.api.RestApiInterface;
+import com.triton.healthz.appUtils.FileUtil;
+import com.triton.healthz.requestpojo.PetAddImageRequest;
+import com.triton.healthz.responsepojo.FileUploadResponse;
+import com.triton.healthz.responsepojo.PetAddImageResponse;
+import com.triton.healthz.responsepojo.PetListResponse;
+import com.triton.healthz.sessionmanager.SessionManager;
+import com.triton.healthz.utils.RestUtils;
 import com.canhub.cropper.CropImage;
 import com.wang.avi.AVLoadingIndicatorView;
 

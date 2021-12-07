@@ -1,4 +1,4 @@
-package com.triton.healthZ.adapter;
+package com.triton.healthz.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -13,8 +13,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.gson.Gson;
-import com.triton.healthZ.R;
-import com.triton.healthZ.requestpojo.PrescriptionCreateRequest;
+import com.triton.healthz.R;
+import com.triton.healthz.requestpojo.PrescriptionCreateRequest;
 
 import java.util.List;
 

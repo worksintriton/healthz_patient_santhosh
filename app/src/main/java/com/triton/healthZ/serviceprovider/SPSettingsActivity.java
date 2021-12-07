@@ -1,10 +1,10 @@
-package com.triton.healthZ.serviceprovider;
+package com.triton.healthz.serviceprovider;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import com.triton.healthZ.R;
+import com.triton.healthz.R;
 
 public class SPSettingsActivity extends AppCompatActivity {
 

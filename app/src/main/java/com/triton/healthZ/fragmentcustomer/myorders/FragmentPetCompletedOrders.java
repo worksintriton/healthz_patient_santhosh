@@ -1,4 +1,4 @@
-package com.triton.healthZ.fragmentcustomer.myorders;
+package com.triton.healthz.fragmentcustomer.myorders;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
@@ -30,20 +30,20 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.gson.Gson;
-import com.triton.healthZ.R;
-import com.triton.healthZ.adapter.PetVendorCompletedOrdersAdapter;
-import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.api.RestApiInterface;
+import com.triton.healthz.R;
+import com.triton.healthz.adapter.PetVendorCompletedOrdersAdapter;
+import com.triton.healthz.api.APIClient;
+import com.triton.healthz.api.RestApiInterface;
 
-import com.triton.healthZ.interfaces.AddReviewListener;
-import com.triton.healthZ.requestpojo.AddShopReviewRequest;
-import com.triton.healthZ.requestpojo.PetVendorOrderRequest;
+import com.triton.healthz.interfaces.AddReviewListener;
+import com.triton.healthz.requestpojo.AddShopReviewRequest;
+import com.triton.healthz.requestpojo.PetVendorOrderRequest;
 
-import com.triton.healthZ.responsepojo.AddReviewResponse;
-import com.triton.healthZ.responsepojo.PetVendorOrderResponse;
-import com.triton.healthZ.sessionmanager.SessionManager;
-import com.triton.healthZ.utils.ConnectionDetector;
-import com.triton.healthZ.utils.RestUtils;
+import com.triton.healthz.responsepojo.AddReviewResponse;
+import com.triton.healthz.responsepojo.PetVendorOrderResponse;
+import com.triton.healthz.sessionmanager.SessionManager;
+import com.triton.healthz.utils.ConnectionDetector;
+import com.triton.healthz.utils.RestUtils;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import java.util.HashMap;

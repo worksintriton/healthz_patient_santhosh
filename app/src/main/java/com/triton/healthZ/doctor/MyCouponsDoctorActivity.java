@@ -1,4 +1,4 @@
-package com.triton.healthZ.doctor;
+package com.triton.healthz.doctor;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -16,15 +16,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.google.gson.Gson;
-import com.triton.healthZ.R;
-import com.triton.healthZ.adapter.MyCouponsAdapter;
-import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.api.RestApiInterface;
-import com.triton.healthZ.requestpojo.CouponCodeListRequest;
-import com.triton.healthZ.responsepojo.CouponCodeListResponse;
-import com.triton.healthZ.sessionmanager.SessionManager;
-import com.triton.healthZ.utils.ConnectionDetector;
-import com.triton.healthZ.utils.RestUtils;
+import com.triton.healthz.R;
+import com.triton.healthz.adapter.MyCouponsAdapter;
+import com.triton.healthz.api.APIClient;
+import com.triton.healthz.api.RestApiInterface;
+import com.triton.healthz.requestpojo.CouponCodeListRequest;
+import com.triton.healthz.responsepojo.CouponCodeListResponse;
+import com.triton.healthz.sessionmanager.SessionManager;
+import com.triton.healthz.utils.ConnectionDetector;
+import com.triton.healthz.utils.RestUtils;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import java.util.HashMap;

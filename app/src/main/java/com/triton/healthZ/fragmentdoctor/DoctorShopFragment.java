@@ -1,4 +1,4 @@
-package com.triton.healthZ.fragmentdoctor;
+package com.triton.healthz.fragmentdoctor;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
@@ -25,20 +25,20 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.gson.Gson;
-import com.triton.healthZ.R;
-import com.triton.healthZ.adapter.PetShopProductDetailsAdapter;
-import com.triton.healthZ.adapter.PetShopTodayDealsAdapter;
-import com.triton.healthZ.adapter.ViewPagerShopDashboardAdapter;
-import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.api.RestApiInterface;
-import com.triton.healthZ.doctor.DoctorDashboardActivity;
-import com.triton.healthZ.doctor.shop.SearchDoctorActivity;
-import com.triton.healthZ.requestpojo.ShopDashboardRequest;
-import com.triton.healthZ.responsepojo.ShopDashboardResponse;
-import com.triton.healthZ.sessionmanager.SessionManager;
-import com.triton.healthZ.utils.ConnectionDetector;
-import com.triton.healthZ.utils.RestUtils;
-import com.triton.healthZ.doctor.shop.DoctorShopTodayDealsSeeMoreActivity;
+import com.triton.healthz.R;
+import com.triton.healthz.adapter.PetShopProductDetailsAdapter;
+import com.triton.healthz.adapter.PetShopTodayDealsAdapter;
+import com.triton.healthz.adapter.ViewPagerShopDashboardAdapter;
+import com.triton.healthz.api.APIClient;
+import com.triton.healthz.api.RestApiInterface;
+import com.triton.healthz.doctor.DoctorDashboardActivity;
+import com.triton.healthz.doctor.shop.SearchDoctorActivity;
+import com.triton.healthz.requestpojo.ShopDashboardRequest;
+import com.triton.healthz.responsepojo.ShopDashboardResponse;
+import com.triton.healthz.sessionmanager.SessionManager;
+import com.triton.healthz.utils.ConnectionDetector;
+import com.triton.healthz.utils.RestUtils;
+import com.triton.healthz.doctor.shop.DoctorShopTodayDealsSeeMoreActivity;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import java.io.Serializable;

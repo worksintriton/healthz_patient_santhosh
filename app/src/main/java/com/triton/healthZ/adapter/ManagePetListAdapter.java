@@ -1,35 +1,25 @@
-package com.triton.healthZ.adapter;
+package com.triton.healthz.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.PopupMenu;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
-import com.triton.healthZ.R;
-import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.customer.AddYourFamilyMembersOldActivity;
-import com.triton.healthZ.interfaces.FamilyMembersDeleteListener;
-import com.triton.healthZ.interfaces.GotoAddFamilyMembersOldActivityListener;
-import com.triton.healthZ.interfaces.PetDeleteListener;
-import com.triton.healthZ.customer.EditYourPetProfileInfoActivity;
-import com.triton.healthZ.requestpojo.FamilyMemberCreateRequest;
-import com.triton.healthZ.responsepojo.FamilyMemberCreateResponse;
-import com.triton.healthZ.responsepojo.FamilyMemberListResponse;
-import com.triton.healthZ.responsepojo.PetListResponse;
+import com.triton.healthz.R;
+import com.triton.healthz.api.APIClient;
+import com.triton.healthz.interfaces.FamilyMembersDeleteListener;
+import com.triton.healthz.interfaces.GotoAddFamilyMembersOldActivityListener;
+import com.triton.healthz.responsepojo.FamilyMemberListResponse;
 
-import java.io.Serializable;
 import java.util.List;
 
 

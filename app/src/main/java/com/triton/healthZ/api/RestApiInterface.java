@@ -1,7 +1,7 @@
-package com.triton.healthZ.api;
+package com.triton.healthz.api;
 
-import com.triton.healthZ.requestpojo.*;
-import com.triton.healthZ.responsepojo.*;
+import com.triton.healthz.requestpojo.*;
+import com.triton.healthz.responsepojo.*;
 
 import okhttp3.MultipartBody;
 import retrofit2.Call;

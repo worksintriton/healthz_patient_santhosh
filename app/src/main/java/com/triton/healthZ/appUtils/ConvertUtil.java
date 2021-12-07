@@ -1,4 +1,4 @@
-package com.triton.healthZ.appUtils;
+package com.triton.healthz.appUtils;
 
 import android.util.Log;
 

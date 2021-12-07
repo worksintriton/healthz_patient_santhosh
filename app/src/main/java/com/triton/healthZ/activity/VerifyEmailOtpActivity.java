@@ -1,4 +1,4 @@
-package com.triton.healthZ.activity;
+package com.triton.healthz.activity;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
@@ -8,9 +8,6 @@ import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,18 +16,15 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.gson.Gson;
-import com.triton.healthZ.R;
-import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.api.RestApiInterface;
-import com.triton.healthZ.appUtils.ApplicationData;
-import com.triton.healthZ.appUtils.NumericKeyBoardTransformationMethod;
-import com.triton.healthZ.requestpojo.EmailOTPRequest;
-import com.triton.healthZ.responsepojo.EmailOTPResponse;
-import com.triton.healthZ.utils.ConnectionDetector;
-import com.triton.healthZ.utils.RestUtils;
+import com.triton.healthz.R;
+import com.triton.healthz.api.APIClient;
+import com.triton.healthz.api.RestApiInterface;
+import com.triton.healthz.appUtils.ApplicationData;
+import com.triton.healthz.requestpojo.EmailOTPRequest;
+import com.triton.healthz.responsepojo.EmailOTPResponse;
+import com.triton.healthz.utils.ConnectionDetector;
+import com.triton.healthz.utils.RestUtils;
 import com.wang.avi.AVLoadingIndicatorView;
-
-import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

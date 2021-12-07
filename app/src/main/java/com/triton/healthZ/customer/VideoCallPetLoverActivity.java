@@ -1,4 +1,4 @@
-package com.triton.healthZ.customer;
+package com.triton.healthz.customer;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -11,9 +11,9 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.facebook.react.modules.core.PermissionListener;
-import com.triton.healthZ.R;
-import com.triton.healthZ.activity.LoginActivity;
-import com.triton.healthZ.sessionmanager.SessionManager;
+import com.triton.healthz.R;
+import com.triton.healthz.activity.LoginActivity;
+import com.triton.healthz.sessionmanager.SessionManager;
 
 
 import org.jitsi.meet.sdk.JitsiMeet;

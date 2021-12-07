@@ -1,4 +1,4 @@
-package com.triton.healthZ.vendor;
+package com.triton.healthz.vendor;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -22,17 +22,17 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.gson.Gson;
-import com.triton.healthZ.R;
-import com.triton.healthZ.activity.NotificationActivity;
-import com.triton.healthZ.adapter.VendorAddProductsAdapter;
-import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.api.RestApiInterface;
-import com.triton.healthZ.requestpojo.FetctProductByCatRequest;
-import com.triton.healthZ.responsepojo.CatgoryGetListResponse;
-import com.triton.healthZ.responsepojo.FetctProductByCatDetailsResponse;
-import com.triton.healthZ.sessionmanager.SessionManager;
-import com.triton.healthZ.utils.ConnectionDetector;
-import com.triton.healthZ.utils.RestUtils;
+import com.triton.healthz.R;
+import com.triton.healthz.activity.NotificationActivity;
+import com.triton.healthz.adapter.VendorAddProductsAdapter;
+import com.triton.healthz.api.APIClient;
+import com.triton.healthz.api.RestApiInterface;
+import com.triton.healthz.requestpojo.FetctProductByCatRequest;
+import com.triton.healthz.responsepojo.CatgoryGetListResponse;
+import com.triton.healthz.responsepojo.FetctProductByCatDetailsResponse;
+import com.triton.healthz.sessionmanager.SessionManager;
+import com.triton.healthz.utils.ConnectionDetector;
+import com.triton.healthz.utils.RestUtils;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import java.util.ArrayList;

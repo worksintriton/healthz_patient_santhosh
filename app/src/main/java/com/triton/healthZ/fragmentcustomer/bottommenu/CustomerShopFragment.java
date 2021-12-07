@@ -1,4 +1,4 @@
-package com.triton.healthZ.fragmentcustomer.bottommenu;
+package com.triton.healthz.fragmentcustomer.bottommenu;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
@@ -28,21 +28,21 @@ import androidx.viewpager.widget.ViewPager;
 import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.android.material.tabs.TabLayout;
 import com.google.gson.Gson;
-import com.triton.healthZ.R;
-import com.triton.healthZ.adapter.PetLoverCateAdapter;
-import com.triton.healthZ.adapter.PetShopProductDetailsAdapter;
-import com.triton.healthZ.adapter.PetShopTodayDealsAdapter;
-import com.triton.healthZ.adapter.ViewPagerShopDashboardAdapter;
-import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.api.RestApiInterface;
-import com.triton.healthZ.customer.CustomerDashboardActivity;
-import com.triton.healthZ.customer.PetShopTodayDealsSeeMoreActivity;
-import com.triton.healthZ.customer.SearchActivity;
-import com.triton.healthZ.requestpojo.ShopDashboardRequest;
-import com.triton.healthZ.responsepojo.ShopDashboardResponse;
-import com.triton.healthZ.sessionmanager.SessionManager;
-import com.triton.healthZ.utils.ConnectionDetector;
-import com.triton.healthZ.utils.RestUtils;
+import com.triton.healthz.R;
+import com.triton.healthz.adapter.PetLoverCateAdapter;
+import com.triton.healthz.adapter.PetShopProductDetailsAdapter;
+import com.triton.healthz.adapter.PetShopTodayDealsAdapter;
+import com.triton.healthz.adapter.ViewPagerShopDashboardAdapter;
+import com.triton.healthz.api.APIClient;
+import com.triton.healthz.api.RestApiInterface;
+import com.triton.healthz.customer.CustomerDashboardActivity;
+import com.triton.healthz.customer.PetShopTodayDealsSeeMoreActivity;
+import com.triton.healthz.customer.SearchActivity;
+import com.triton.healthz.requestpojo.ShopDashboardRequest;
+import com.triton.healthz.responsepojo.ShopDashboardResponse;
+import com.triton.healthz.sessionmanager.SessionManager;
+import com.triton.healthz.utils.ConnectionDetector;
+import com.triton.healthz.utils.RestUtils;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import java.io.Serializable;
@@ -116,6 +116,10 @@ public class CustomerShopFragment extends Fragment implements Serializable,View.
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_lbl_category)
     TextView txt_lbl_category;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_seemore_categories)
+    TextView txt_seemore_categories;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.rv_categ)
@@ -312,12 +316,20 @@ public class CustomerShopFragment extends Fragment implements Serializable,View.
                         }
                         if(response.body().getData().getProduct_cate() != null && response.body().getData().getProduct_cate().size()>0){
                             txt_lbl_category.setVisibility(View.VISIBLE);
+                            txt_seemore_categories.setVisibility(View.VISIBLE);
                             rv_categ.setVisibility(View.VISIBLE);
                             setCategView(response.body().getData().getProduct_cate());
+                            txt_seemore_categories.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    setCategViewMore(response.body().getData().getProduct_cate());
+                                }
+                            });
 
                         }
                         else{
                             txt_lbl_category.setVisibility(View.GONE);
+                            txt_seemore_categories.setVisibility(View.GONE);
                             rv_categ.setVisibility(View.GONE);
                         }
                         if(response.body().getData().getProduct_details() != null && response.body().getData().getProduct_details().size()>0){
@@ -411,10 +423,18 @@ public class CustomerShopFragment extends Fragment implements Serializable,View.
     }
 
     private void setCategView(List<ShopDashboardResponse.DataBean.ProductCateBean> product_cate) {
-
+        int size = 8;
         rv_categ.setLayoutManager(new GridLayoutManager(mContext,4));
         rv_categ.setItemAnimator(new DefaultItemAnimator());
-        PetLoverCateAdapter petShopTodayDealsAdapter = new PetLoverCateAdapter(mContext,product_cate,product_cate.size());
+        PetLoverCateAdapter petShopTodayDealsAdapter = new PetLoverCateAdapter(mContext,product_cate,size);
+        rv_categ.setAdapter(petShopTodayDealsAdapter);
+
+    }
+    private void setCategViewMore(List<ShopDashboardResponse.DataBean.ProductCateBean> product_cate) {
+        int size =product_cate.size();
+        rv_categ.setLayoutManager(new GridLayoutManager(mContext,4));
+        rv_categ.setItemAnimator(new DefaultItemAnimator());
+        PetLoverCateAdapter petShopTodayDealsAdapter = new PetLoverCateAdapter(mContext,product_cate,size);
         rv_categ.setAdapter(petShopTodayDealsAdapter);
 
     }

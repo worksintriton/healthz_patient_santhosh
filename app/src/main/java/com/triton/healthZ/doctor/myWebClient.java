@@ -1,4 +1,4 @@
-package com.triton.healthZ.doctor;
+package com.triton.healthz.doctor;
 
 import android.graphics.Bitmap;
 import android.webkit.WebView;

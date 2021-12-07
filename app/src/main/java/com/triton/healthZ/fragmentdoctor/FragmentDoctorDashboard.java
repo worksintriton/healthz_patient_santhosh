@@ -1,4 +1,4 @@
-package com.triton.healthZ.fragmentdoctor;
+package com.triton.healthz.fragmentdoctor;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
@@ -27,20 +27,20 @@ import android.widget.TextView;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.gson.Gson;
-import com.triton.healthZ.R;
-import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.api.RestApiInterface;
-import com.triton.healthZ.doctor.DoctorBusinessInfoActivity;
-import com.triton.healthZ.doctor.DoctorDashboardActivity;
-import com.triton.healthZ.doctor.DoctorMyCalendarNewUserActivity;
-import com.triton.healthZ.fragmentdoctor.myappointments.FragmentDoctorCompletedAppointment;
-import com.triton.healthZ.fragmentdoctor.myappointments.FragmentDoctorMissedAppointment;
-import com.triton.healthZ.fragmentdoctor.myappointments.FragmentDoctorNewAppointment;
-import com.triton.healthZ.requestpojo.DoctorCheckStatusRequest;
-import com.triton.healthZ.responsepojo.DoctorCheckStatusResponse;
-import com.triton.healthZ.sessionmanager.SessionManager;
-import com.triton.healthZ.utils.ConnectionDetector;
-import com.triton.healthZ.utils.RestUtils;
+import com.triton.healthz.R;
+import com.triton.healthz.api.APIClient;
+import com.triton.healthz.api.RestApiInterface;
+import com.triton.healthz.doctor.DoctorBusinessInfoActivity;
+import com.triton.healthz.doctor.DoctorDashboardActivity;
+import com.triton.healthz.doctor.DoctorMyCalendarNewUserActivity;
+import com.triton.healthz.fragmentdoctor.myappointments.FragmentDoctorCompletedAppointment;
+import com.triton.healthz.fragmentdoctor.myappointments.FragmentDoctorMissedAppointment;
+import com.triton.healthz.fragmentdoctor.myappointments.FragmentDoctorNewAppointment;
+import com.triton.healthz.requestpojo.DoctorCheckStatusRequest;
+import com.triton.healthz.responsepojo.DoctorCheckStatusResponse;
+import com.triton.healthz.sessionmanager.SessionManager;
+import com.triton.healthz.utils.ConnectionDetector;
+import com.triton.healthz.utils.RestUtils;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import org.jetbrains.annotations.NotNull;

@@ -1,4 +1,4 @@
-package com.triton.healthZ.adapter;
+package com.triton.healthz.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -13,10 +13,10 @@ import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 
 import com.bumptech.glide.Glide;
-import com.triton.healthZ.R;
-import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.responsepojo.DoctorDetailsResponse;
-import com.triton.healthZ.responsepojo.PetDetailsResponse;
+import com.triton.healthz.R;
+import com.triton.healthz.api.APIClient;
+import com.triton.healthz.responsepojo.DoctorDetailsResponse;
+import com.triton.healthz.responsepojo.PetDetailsResponse;
 
 import org.jetbrains.annotations.NotNull;
 

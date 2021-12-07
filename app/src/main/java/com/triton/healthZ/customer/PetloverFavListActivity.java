@@ -1,4 +1,4 @@
-package com.triton.healthZ.customer;
+package com.triton.healthz.customer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,11 +20,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.tabs.TabLayout;
-import com.triton.healthZ.R;
-import com.triton.healthZ.activity.NotificationActivity;
-import com.triton.healthZ.fragmentcustomer.favourites.DoctorFavFragment;
-import com.triton.healthZ.fragmentcustomer.favourites.SPFavFragment;
-import com.triton.healthZ.fragmentcustomer.favourites.ShopFavFragment;
+import com.triton.healthz.R;
+import com.triton.healthz.activity.NotificationActivity;
+import com.triton.healthz.fragmentcustomer.favourites.DoctorFavFragment;
+import com.triton.healthz.fragmentcustomer.favourites.SPFavFragment;
+import com.triton.healthz.fragmentcustomer.favourites.ShopFavFragment;
 
 
 import java.util.ArrayList;
@@ -90,7 +90,7 @@ public class PetloverFavListActivity extends AppCompatActivity  implements View.
         img_notification.setVisibility(View.VISIBLE);
         img_profile.setVisibility(View.VISIBLE);
 
-        setupViewPager(viewPager);
+       // setupViewPager(viewPager);
         tabLayout.setupWithViewPager(viewPager);
         img_back.setOnClickListener(v -> onBackPressed());
 
@@ -101,7 +101,7 @@ public class PetloverFavListActivity extends AppCompatActivity  implements View.
 
 
 
-       /**/
+
 
 
     }

@@ -1,4 +1,4 @@
-package com.triton.healthZ.fragmentvendor;
+package com.triton.healthz.fragmentvendor;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
@@ -24,17 +24,17 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.gson.Gson;
-import com.triton.healthZ.R;
-import com.triton.healthZ.adapter.VendorCompletedOrdersAdapter;
-import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.api.RestApiInterface;
-import com.triton.healthZ.requestpojo.VendorGetsOrderIdRequest;
-import com.triton.healthZ.requestpojo.VendorNewOrderRequest;
-import com.triton.healthZ.responsepojo.VendorGetsOrderIDResponse;
-import com.triton.healthZ.responsepojo.VendorNewOrderResponse;
-import com.triton.healthZ.sessionmanager.SessionManager;
-import com.triton.healthZ.utils.ConnectionDetector;
-import com.triton.healthZ.utils.RestUtils;
+import com.triton.healthz.R;
+import com.triton.healthz.adapter.VendorCompletedOrdersAdapter;
+import com.triton.healthz.api.APIClient;
+import com.triton.healthz.api.RestApiInterface;
+import com.triton.healthz.requestpojo.VendorGetsOrderIdRequest;
+import com.triton.healthz.requestpojo.VendorNewOrderRequest;
+import com.triton.healthz.responsepojo.VendorGetsOrderIDResponse;
+import com.triton.healthz.responsepojo.VendorNewOrderResponse;
+import com.triton.healthz.sessionmanager.SessionManager;
+import com.triton.healthz.utils.ConnectionDetector;
+import com.triton.healthz.utils.RestUtils;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import java.util.HashMap;

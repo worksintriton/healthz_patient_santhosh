@@ -1,4 +1,4 @@
-package com.triton.healthZ.serviceprovider;
+package com.triton.healthz.serviceprovider;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -20,23 +20,23 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.gson.Gson;
-import com.triton.healthZ.R;
-import com.triton.healthZ.activity.location.PickUpLocationAddNewAddressSPActivity;
-import com.triton.healthZ.activity.location.ShippingAddressAddSPActivity;
-import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.api.RestApiInterface;
+import com.triton.healthz.R;
+import com.triton.healthz.activity.location.PickUpLocationAddNewAddressSPActivity;
+import com.triton.healthz.activity.location.ShippingAddressAddSPActivity;
+import com.triton.healthz.api.APIClient;
+import com.triton.healthz.api.RestApiInterface;
 
-import com.triton.healthZ.customer.ShippingAddressEditActivity;
-import com.triton.healthZ.requestpojo.ShippingAddressDeleteRequest;
-import com.triton.healthZ.requestpojo.ShippingAddressFetchByUserIDRequest;
-import com.triton.healthZ.responsepojo.CartDetailsResponse;
-import com.triton.healthZ.responsepojo.CartSuccessResponse;
-import com.triton.healthZ.responsepojo.ShippingAddressDeleteResponse;
-import com.triton.healthZ.responsepojo.ShippingAddressFetchByUserIDResponse;
-import com.triton.healthZ.serviceprovider.shop.SPCartActivity;
-import com.triton.healthZ.sessionmanager.SessionManager;
-import com.triton.healthZ.utils.ConnectionDetector;
-import com.triton.healthZ.utils.RestUtils;
+import com.triton.healthz.customer.ShippingAddressEditActivity;
+import com.triton.healthz.requestpojo.ShippingAddressDeleteRequest;
+import com.triton.healthz.requestpojo.ShippingAddressFetchByUserIDRequest;
+import com.triton.healthz.responsepojo.CartDetailsResponse;
+import com.triton.healthz.responsepojo.CartSuccessResponse;
+import com.triton.healthz.responsepojo.ShippingAddressDeleteResponse;
+import com.triton.healthz.responsepojo.ShippingAddressFetchByUserIDResponse;
+import com.triton.healthz.serviceprovider.shop.SPCartActivity;
+import com.triton.healthz.sessionmanager.SessionManager;
+import com.triton.healthz.utils.ConnectionDetector;
+import com.triton.healthz.utils.RestUtils;
 import com.razorpay.Checkout;
 import com.razorpay.PaymentResultListener;
 import com.wang.avi.AVLoadingIndicatorView;

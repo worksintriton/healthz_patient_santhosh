@@ -1,4 +1,4 @@
-package com.triton.healthZ.adapter;
+package com.triton.healthz.adapter;
 
 
 import android.content.Context;
@@ -11,9 +11,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.triton.healthZ.R;
-import com.triton.healthZ.requestpojo.DoctorBusinessInfoUpdateRequest;
-import com.triton.healthZ.responsepojo.DoctorDetailsByUserIdResponse;
+import com.triton.healthz.R;
+import com.triton.healthz.requestpojo.DoctorBusinessInfoUpdateRequest;
+import com.triton.healthz.responsepojo.DoctorDetailsByUserIdResponse;
 
 import java.util.List;
 

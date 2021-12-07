@@ -1,10 +1,9 @@
-package com.triton.healthZ.fragmentcustomer.bottommenu;
+package com.triton.healthz.fragmentcustomer.bottommenu;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 
@@ -24,14 +23,12 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
-import android.widget.Scroller;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.SwitchCompat;
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
@@ -46,23 +43,22 @@ import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.tabs.TabLayout;
 import com.google.gson.Gson;
-import com.triton.healthZ.R;
+import com.triton.healthz.R;
 
-import com.triton.healthZ.adapter.PetLoverDoctorFilterAdapter;
-import com.triton.healthZ.adapter.PetLoverNearByDoctorAdapter;
+import com.triton.healthz.adapter.PetLoverDoctorFilterAdapter;
+import com.triton.healthz.adapter.PetLoverNearByDoctorAdapter;
 
-import com.triton.healthZ.adapter.ViewPagerPetCareAdapter;
-import com.triton.healthZ.adapter.ViewPagerPetCareFilterAdapter;
-import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.api.RestApiInterface;
-import com.triton.healthZ.customer.FiltersActivity;
-import com.triton.healthZ.requestpojo.DoctorSearchRequest;
-import com.triton.healthZ.requestpojo.FilterDoctorRequest;
-import com.triton.healthZ.responsepojo.DoctorSearchResponse;
-import com.triton.healthZ.responsepojo.FilterDoctorResponse;
-import com.triton.healthZ.sessionmanager.SessionManager;
-import com.triton.healthZ.utils.ConnectionDetector;
-import com.triton.healthZ.utils.RestUtils;
+import com.triton.healthz.adapter.ViewPagerPetCareAdapter;
+import com.triton.healthz.adapter.ViewPagerPetCareFilterAdapter;
+import com.triton.healthz.api.APIClient;
+import com.triton.healthz.api.RestApiInterface;
+import com.triton.healthz.requestpojo.DoctorSearchRequest;
+import com.triton.healthz.requestpojo.FilterDoctorRequest;
+import com.triton.healthz.responsepojo.DoctorSearchResponse;
+import com.triton.healthz.responsepojo.FilterDoctorResponse;
+import com.triton.healthz.sessionmanager.SessionManager;
+import com.triton.healthz.utils.ConnectionDetector;
+import com.triton.healthz.utils.RestUtils;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import org.jetbrains.annotations.NotNull;

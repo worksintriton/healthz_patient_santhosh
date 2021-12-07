@@ -1,37 +1,13 @@
-package com.triton.healthZ.doctor;
+package com.triton.healthz.doctor;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-import com.google.gson.Gson;
-import com.triton.healthZ.R;
-import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.api.RestApiInterface;
-import com.triton.healthZ.requestpojo.PetNewAppointmentDetailsRequest;
-import com.triton.healthZ.responsepojo.PetNewAppointmentDetailsResponse;
-import com.triton.healthZ.utils.ConnectionDetector;
-import com.triton.healthZ.utils.RestUtils;
-import com.wang.avi.AVLoadingIndicatorView;
+import com.triton.healthz.R;
 
-import java.util.List;
-
-import butterknife.BindView;
 import butterknife.ButterKnife;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class DoctorMissedAppointmentDetailsActivity extends AppCompatActivity implements View.OnClickListener {
 //

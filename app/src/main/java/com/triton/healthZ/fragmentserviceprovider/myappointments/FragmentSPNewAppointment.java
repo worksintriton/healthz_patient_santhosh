@@ -1,4 +1,4 @@
-package com.triton.healthZ.fragmentserviceprovider.myappointments;
+package com.triton.healthz.fragmentserviceprovider.myappointments;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
@@ -25,25 +25,25 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.gson.Gson;
-import com.triton.healthZ.R;
-import com.triton.healthZ.adapter.SPNewAppointmentAdapter;
-import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.api.RestApiInterface;
+import com.triton.healthz.R;
+import com.triton.healthz.adapter.SPNewAppointmentAdapter;
+import com.triton.healthz.api.APIClient;
+import com.triton.healthz.api.RestApiInterface;
 
-import com.triton.healthZ.interfaces.OnAppointmentCancel;
-import com.triton.healthZ.interfaces.OnAppointmentComplete;
-import com.triton.healthZ.requestpojo.AppoinmentCancelledRequest;
-import com.triton.healthZ.requestpojo.AppoinmentCompleteRequest;
-import com.triton.healthZ.requestpojo.SPAppointmentRequest;
-import com.triton.healthZ.requestpojo.SPNotificationSendRequest;
-import com.triton.healthZ.responsepojo.AppoinmentCancelledResponse;
-import com.triton.healthZ.responsepojo.AppoinmentCompleteResponse;
-import com.triton.healthZ.responsepojo.NotificationSendResponse;
-import com.triton.healthZ.responsepojo.SPAppointmentResponse;
-import com.triton.healthZ.serviceprovider.ServiceProviderDashboardActivity;
-import com.triton.healthZ.sessionmanager.SessionManager;
-import com.triton.healthZ.utils.ConnectionDetector;
-import com.triton.healthZ.utils.RestUtils;
+import com.triton.healthz.interfaces.OnAppointmentCancel;
+import com.triton.healthz.interfaces.OnAppointmentComplete;
+import com.triton.healthz.requestpojo.AppoinmentCancelledRequest;
+import com.triton.healthz.requestpojo.AppoinmentCompleteRequest;
+import com.triton.healthz.requestpojo.SPAppointmentRequest;
+import com.triton.healthz.requestpojo.SPNotificationSendRequest;
+import com.triton.healthz.responsepojo.AppoinmentCancelledResponse;
+import com.triton.healthz.responsepojo.AppoinmentCompleteResponse;
+import com.triton.healthz.responsepojo.NotificationSendResponse;
+import com.triton.healthz.responsepojo.SPAppointmentResponse;
+import com.triton.healthz.serviceprovider.ServiceProviderDashboardActivity;
+import com.triton.healthz.sessionmanager.SessionManager;
+import com.triton.healthz.utils.ConnectionDetector;
+import com.triton.healthz.utils.RestUtils;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import java.text.SimpleDateFormat;

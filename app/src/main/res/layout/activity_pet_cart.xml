@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:orientation="vertical"
-        android:background="@color/green">
+        android:background="@color/green_colour">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar_header"

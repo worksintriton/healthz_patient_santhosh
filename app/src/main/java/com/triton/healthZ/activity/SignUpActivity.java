@@ -1,4 +1,4 @@
-package com.triton.healthZ.activity;
+package com.triton.healthz.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -22,18 +22,18 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
-import com.triton.healthZ.R;
-import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.api.RestApiInterface;
-import com.triton.healthZ.appUtils.NumericKeyBoardTransformationMethod;
-import com.triton.healthZ.requestpojo.EmailOTPRequest;
-import com.triton.healthZ.requestpojo.SignupRequest;
-import com.triton.healthZ.requestpojo.UserStatusUpdateRequest;
-import com.triton.healthZ.responsepojo.EmailOTPResponse;
-import com.triton.healthZ.responsepojo.SignupResponse;
-import com.triton.healthZ.responsepojo.UserStatusUpdateResponse;
-import com.triton.healthZ.utils.ConnectionDetector;
-import com.triton.healthZ.utils.RestUtils;
+import com.triton.healthz.R;
+import com.triton.healthz.api.APIClient;
+import com.triton.healthz.api.RestApiInterface;
+import com.triton.healthz.appUtils.NumericKeyBoardTransformationMethod;
+import com.triton.healthz.requestpojo.EmailOTPRequest;
+import com.triton.healthz.requestpojo.SignupRequest;
+import com.triton.healthz.requestpojo.UserStatusUpdateRequest;
+import com.triton.healthz.responsepojo.EmailOTPResponse;
+import com.triton.healthz.responsepojo.SignupResponse;
+import com.triton.healthz.responsepojo.UserStatusUpdateResponse;
+import com.triton.healthz.utils.ConnectionDetector;
+import com.triton.healthz.utils.RestUtils;
 import com.wang.avi.AVLoadingIndicatorView;
 import java.text.SimpleDateFormat;
 import java.util.Date;

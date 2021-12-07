@@ -1,4 +1,4 @@
-package com.triton.healthZ.doctor;
+package com.triton.healthz.doctor;
 
 
 import android.annotation.SuppressLint;
@@ -20,15 +20,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
-import com.triton.healthZ.R;
-import com.triton.healthZ.adapter.DoctorWalkinPrescriptionsDetailsAdapter;
-import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.api.RestApiInterface;
-import com.triton.healthZ.requestpojo.PrescriptionCreateRequest;
-import com.triton.healthZ.requestpojo.PrescriptionDetailsRequest;
-import com.triton.healthZ.responsepojo.PrescriptionFetchResponse;
-import com.triton.healthZ.sessionmanager.SessionManager;
-import com.triton.healthZ.utils.RestUtils;
+import com.triton.healthz.R;
+import com.triton.healthz.adapter.DoctorWalkinPrescriptionsDetailsAdapter;
+import com.triton.healthz.api.APIClient;
+import com.triton.healthz.api.RestApiInterface;
+import com.triton.healthz.requestpojo.PrescriptionCreateRequest;
+import com.triton.healthz.requestpojo.PrescriptionDetailsRequest;
+import com.triton.healthz.responsepojo.PrescriptionFetchResponse;
+import com.triton.healthz.sessionmanager.SessionManager;
+import com.triton.healthz.utils.RestUtils;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import java.util.HashMap;

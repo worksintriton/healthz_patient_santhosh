@@ -1,4 +1,4 @@
-package com.triton.healthZ.adapter;
+package com.triton.healthz.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -14,16 +14,16 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.triton.healthZ.R;
-import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.doctor.shop.DoctorCancelOrderActivity;
-import com.triton.healthZ.doctor.shop.DoctorTrackOrderActivity;
-import com.triton.healthZ.customer.PetVendorCancelOrderActivity;
+import com.triton.healthz.R;
+import com.triton.healthz.api.APIClient;
+import com.triton.healthz.doctor.shop.DoctorCancelOrderActivity;
+import com.triton.healthz.doctor.shop.DoctorTrackOrderActivity;
+import com.triton.healthz.customer.PetVendorCancelOrderActivity;
 
-import com.triton.healthZ.customer.TrackOrderActivity;
-import com.triton.healthZ.responsepojo.PetLoverVendorOrderDetailsResponse;
-import com.triton.healthZ.serviceprovider.shop.SPCancelOrderActivity;
-import com.triton.healthZ.serviceprovider.shop.SPTrackOrderActivity;
+import com.triton.healthz.customer.TrackOrderActivity;
+import com.triton.healthz.responsepojo.PetLoverVendorOrderDetailsResponse;
+import com.triton.healthz.serviceprovider.shop.SPCancelOrderActivity;
+import com.triton.healthz.serviceprovider.shop.SPTrackOrderActivity;
 
 import java.util.List;
 

@@ -1,29 +1,22 @@
-package com.triton.healthZ.adapter;
+package com.triton.healthz.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
-import com.triton.healthZ.R;
-import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.doctor.DoctorOrderDetailsActivity;
-import com.triton.healthZ.interfaces.AddandReviewListener;
-import com.triton.healthZ.customer.PetLoverVendorOrderDetailsActivity;
-import com.triton.healthZ.responsepojo.PetLoverVendorOrderListResponse;
-import com.triton.healthZ.serviceprovider.shop.SPOrderDetailsActivity;
+import com.triton.healthz.R;
+import com.triton.healthz.interfaces.AddandReviewListener;
+import com.triton.healthz.responsepojo.PetLoverVendorOrderListResponse;
 
 import java.util.List;
 

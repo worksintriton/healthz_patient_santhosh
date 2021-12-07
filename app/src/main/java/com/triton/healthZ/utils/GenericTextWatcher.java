@@ -1,4 +1,4 @@
-package com.triton.healthZ.utils;
+package com.triton.healthz.utils;
 
 import android.text.Editable;
 import android.text.TextWatcher;

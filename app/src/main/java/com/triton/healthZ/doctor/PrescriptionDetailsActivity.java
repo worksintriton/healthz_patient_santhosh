@@ -1,4 +1,4 @@
-package com.triton.healthZ.doctor;
+package com.triton.healthz.doctor;
 
 
 import android.annotation.SuppressLint;
@@ -24,21 +24,21 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
-import com.triton.healthZ.R;
+import com.triton.healthz.R;
 
-import com.triton.healthZ.adapter.PrescriptionsDetailsAdapter;
-import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.api.RestApiInterface;
-import com.triton.healthZ.requestpojo.AppoinmentCompleteRequest;
-import com.triton.healthZ.requestpojo.AppointmentCashRequest;
-import com.triton.healthZ.requestpojo.PrescriptionCreateRequest;
-import com.triton.healthZ.responsepojo.AppoinmentCompleteResponse;
-import com.triton.healthZ.responsepojo.PrescriptionCreateResponse;
-import com.triton.healthZ.responsepojo.SuccessResponse;
-import com.triton.healthZ.sessionmanager.SessionManager;
+import com.triton.healthz.adapter.PrescriptionsDetailsAdapter;
+import com.triton.healthz.api.APIClient;
+import com.triton.healthz.api.RestApiInterface;
+import com.triton.healthz.requestpojo.AppoinmentCompleteRequest;
+import com.triton.healthz.requestpojo.AppointmentCashRequest;
+import com.triton.healthz.requestpojo.PrescriptionCreateRequest;
+import com.triton.healthz.responsepojo.AppoinmentCompleteResponse;
+import com.triton.healthz.responsepojo.PrescriptionCreateResponse;
+import com.triton.healthz.responsepojo.SuccessResponse;
+import com.triton.healthz.sessionmanager.SessionManager;
 
-import com.triton.healthZ.utils.ConnectionDetector;
-import com.triton.healthZ.utils.RestUtils;
+import com.triton.healthz.utils.ConnectionDetector;
+import com.triton.healthz.utils.RestUtils;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import java.text.SimpleDateFormat;

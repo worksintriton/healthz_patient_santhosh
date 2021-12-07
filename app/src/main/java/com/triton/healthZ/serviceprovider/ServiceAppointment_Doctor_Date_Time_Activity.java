@@ -1,4 +1,4 @@
-package com.triton.healthZ.serviceprovider;
+package com.triton.healthz.serviceprovider;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
@@ -22,21 +22,19 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.gson.Gson;
-import com.triton.healthZ.R;
-import com.triton.healthZ.adapter.ServiceMyCalendarAvailableAdapter;
-import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.api.RestApiInterface;
-import com.triton.healthZ.interfaces.OnItemSelectedTime;
-import com.triton.healthZ.requestpojo.PetDoctorAvailableTimeRequest;
-import com.triton.healthZ.requestpojo.SPUpdateTurnoffRequest;
-import com.triton.healthZ.responsepojo.SPAvailableTimeResponse;
-import com.triton.healthZ.responsepojo.SuccessResponse;
-import com.triton.healthZ.sessionmanager.SessionManager;
-import com.triton.healthZ.utils.ConnectionDetector;
-import com.triton.healthZ.utils.RestUtils;
+import com.triton.healthz.R;
+import com.triton.healthz.adapter.ServiceMyCalendarAvailableAdapter;
+import com.triton.healthz.api.APIClient;
+import com.triton.healthz.api.RestApiInterface;
+import com.triton.healthz.interfaces.OnItemSelectedTime;
+import com.triton.healthz.requestpojo.PetDoctorAvailableTimeRequest;
+import com.triton.healthz.requestpojo.SPUpdateTurnoffRequest;
+import com.triton.healthz.responsepojo.SPAvailableTimeResponse;
+import com.triton.healthz.responsepojo.SuccessResponse;
+import com.triton.healthz.sessionmanager.SessionManager;
+import com.triton.healthz.utils.ConnectionDetector;
+import com.triton.healthz.utils.RestUtils;
 import com.razorpay.Checkout;
-import com.vivekkaushik.datepicker.DatePickerTimeline;
-import com.vivekkaushik.datepicker.OnDateSelectedListener;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import java.text.SimpleDateFormat;

@@ -1,4 +1,4 @@
-package com.triton.healthZ.adapter;
+package com.triton.healthz.adapter;
 
 
 import android.annotation.SuppressLint;
@@ -15,10 +15,10 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.triton.healthZ.R;
-import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.interfaces.OnAppointmentSuccessfullyCancel;
-import com.triton.healthZ.responsepojo.CouponCodeTextResponse;
+import com.triton.healthz.R;
+import com.triton.healthz.api.APIClient;
+import com.triton.healthz.interfaces.OnAppointmentSuccessfullyCancel;
+import com.triton.healthz.responsepojo.CouponCodeTextResponse;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

@@ -1,4 +1,4 @@
-package com.triton.healthZ.doctor;
+package com.triton.healthz.doctor;
 
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
@@ -15,15 +15,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.facebook.react.modules.core.PermissionListener;
 import com.google.gson.Gson;
-import com.triton.healthZ.R;
-import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.api.RestApiInterface;
-import com.triton.healthZ.requestpojo.AppoinmentCloseRequest;
-import com.triton.healthZ.requestpojo.PetNoShowRequest;
-import com.triton.healthZ.responsepojo.AppointmentsUpdateResponse;
-import com.triton.healthZ.sessionmanager.SessionManager;
-import com.triton.healthZ.utils.ConnectionDetector;
-import com.triton.healthZ.utils.RestUtils;
+import com.triton.healthz.R;
+import com.triton.healthz.api.APIClient;
+import com.triton.healthz.api.RestApiInterface;
+import com.triton.healthz.requestpojo.AppoinmentCloseRequest;
+import com.triton.healthz.requestpojo.PetNoShowRequest;
+import com.triton.healthz.responsepojo.AppointmentsUpdateResponse;
+import com.triton.healthz.sessionmanager.SessionManager;
+import com.triton.healthz.utils.ConnectionDetector;
+import com.triton.healthz.utils.RestUtils;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import org.jitsi.meet.sdk.JitsiMeet;

@@ -1,4 +1,4 @@
-package com.triton.healthZ.vendor;
+package com.triton.healthz.vendor;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
@@ -19,18 +19,18 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
-import com.triton.healthZ.R;
-import com.triton.healthZ.activity.NotificationActivity;
-import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.api.RestApiInterface;
-import com.triton.healthZ.appUtils.NumericKeyBoardTransformationMethod;
-import com.triton.healthZ.requestpojo.ProductVendorCreateRequest;
-import com.triton.healthZ.responsepojo.CatgoryGetListResponse;
-import com.triton.healthZ.responsepojo.FetctProductByCatDetailsResponse;
-import com.triton.healthZ.responsepojo.SuccessResponse;
-import com.triton.healthZ.sessionmanager.SessionManager;
-import com.triton.healthZ.utils.ConnectionDetector;
-import com.triton.healthZ.utils.RestUtils;
+import com.triton.healthz.R;
+import com.triton.healthz.activity.NotificationActivity;
+import com.triton.healthz.api.APIClient;
+import com.triton.healthz.api.RestApiInterface;
+import com.triton.healthz.appUtils.NumericKeyBoardTransformationMethod;
+import com.triton.healthz.requestpojo.ProductVendorCreateRequest;
+import com.triton.healthz.responsepojo.CatgoryGetListResponse;
+import com.triton.healthz.responsepojo.FetctProductByCatDetailsResponse;
+import com.triton.healthz.responsepojo.SuccessResponse;
+import com.triton.healthz.sessionmanager.SessionManager;
+import com.triton.healthz.utils.ConnectionDetector;
+import com.triton.healthz.utils.RestUtils;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import java.text.SimpleDateFormat;

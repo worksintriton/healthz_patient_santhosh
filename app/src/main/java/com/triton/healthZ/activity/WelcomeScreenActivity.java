@@ -1,4 +1,4 @@
-package com.triton.healthZ.activity;
+package com.triton.healthz.activity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.triton.healthZ.R;
+import com.triton.healthz.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

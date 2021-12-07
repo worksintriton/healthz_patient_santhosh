@@ -1,4 +1,4 @@
-package com.triton.healthZ.customer;
+package com.triton.healthz.customer;
 
 import android.os.Bundle;
 
@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
-import com.triton.healthZ.R;
+import com.triton.healthz.R;
 
 public class ProductDetailActivity extends AppCompatActivity {
 

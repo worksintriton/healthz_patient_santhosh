@@ -1,4 +1,4 @@
-package com.triton.healthZ.activity;
+package com.triton.healthz.activity;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -26,20 +26,20 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import com.google.gson.Gson;
-import com.triton.healthZ.R;
+import com.triton.healthz.R;
 
-import com.triton.healthZ.adapter.PetLoverSOSAdapter;
-import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.api.RestApiInterface;
-import com.triton.healthZ.customer.CustomerDashboardActivity;
-import com.triton.healthZ.interfaces.SoSCallListener;
+import com.triton.healthz.adapter.PetLoverSOSAdapter;
+import com.triton.healthz.api.APIClient;
+import com.triton.healthz.api.RestApiInterface;
+import com.triton.healthz.customer.CustomerDashboardActivity;
+import com.triton.healthz.interfaces.SoSCallListener;
 
-import com.triton.healthZ.requestpojo.SOSListRequest;
-import com.triton.healthZ.responsepojo.SOSListResponse;
-import com.triton.healthZ.sessionmanager.SessionManager;
+import com.triton.healthz.requestpojo.SOSListRequest;
+import com.triton.healthz.responsepojo.SOSListResponse;
+import com.triton.healthz.sessionmanager.SessionManager;
 
-import com.triton.healthZ.utils.ConnectionDetector;
-import com.triton.healthZ.utils.RestUtils;
+import com.triton.healthz.utils.ConnectionDetector;
+import com.triton.healthz.utils.RestUtils;
 
 import com.wang.avi.AVLoadingIndicatorView;
 
@@ -71,9 +71,6 @@ public class SoSActivity extends AppCompatActivity implements SoSCallListener {
     @BindView(R.id.avi_indicator)
     AVLoadingIndicatorView avi_indicator;
 
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_back)
-    ImageView img_back;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.btn_call)
@@ -92,6 +89,10 @@ public class SoSActivity extends AppCompatActivity implements SoSCallListener {
     private Dialog alertDialog;
 
     List<SOSListResponse.DataBean> sosList;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.include_petlover_header)
+    View include_petlover_header;
 
 
     @SuppressLint("LogNotTimber")
@@ -121,7 +122,24 @@ public class SoSActivity extends AppCompatActivity implements SoSCallListener {
         name = user.get(SessionManager.KEY_FIRST_NAME);
         userid = user.get(SessionManager.KEY_ID);
         Log.w(TAG,"session--->"+"type :"+type+" "+"name :"+" "+name);
-        img_back.setOnClickListener(v -> onBackPressed());
+
+        ImageView img_back = include_petlover_header.findViewById(R.id.img_back);
+        ImageView img_sos = include_petlover_header.findViewById(R.id.img_sos);
+        ImageView img_notification = include_petlover_header.findViewById(R.id.img_notification);
+        ImageView img_cart = include_petlover_header.findViewById(R.id.img_cart);
+        ImageView img_profile = include_petlover_header.findViewById(R.id.img_profile);
+        TextView toolbar_title = include_petlover_header.findViewById(R.id.toolbar_title);
+        toolbar_title.setText(getResources().getString(R.string.sos));
+
+
+        img_sos.setVisibility(View.GONE);
+        img_cart.setVisibility(View.GONE);
+        img_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
 
         if(userid != null) {
             if (new ConnectionDetector(SoSActivity.this).isNetworkAvailable(SoSActivity.this)) {

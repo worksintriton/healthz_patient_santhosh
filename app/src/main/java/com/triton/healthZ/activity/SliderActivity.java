@@ -1,10 +1,10 @@
-package com.triton.healthZ.activity;
+package com.triton.healthz.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import com.triton.healthZ.R;
+import com.triton.healthz.R;
 
 public class SliderActivity extends AppCompatActivity {
 

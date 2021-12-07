@@ -1,4 +1,4 @@
-package com.triton.healthZ.activity.location;
+package com.triton.healthz.activity.location;
 
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,15 +21,15 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 
-import com.triton.healthZ.R;
-import com.triton.healthZ.adapter.PlacesResultsAdapter;
-import com.triton.healthZ.api.API;
-import com.triton.healthZ.interfaces.PlacesNameListener;
-import com.triton.healthZ.requestpojo.DocBusInfoUploadRequest;
-import com.triton.healthZ.responsepojo.AddressResultsResponse;
-import com.triton.healthZ.responsepojo.CartDetailsResponse;
-import com.triton.healthZ.responsepojo.PlacesResultsResponse;
-import com.triton.healthZ.serviceprovider.PickUpLocationSPActivity;
+import com.triton.healthz.R;
+import com.triton.healthz.adapter.PlacesResultsAdapter;
+import com.triton.healthz.api.API;
+import com.triton.healthz.interfaces.PlacesNameListener;
+import com.triton.healthz.requestpojo.DocBusInfoUploadRequest;
+import com.triton.healthz.responsepojo.AddressResultsResponse;
+import com.triton.healthz.responsepojo.CartDetailsResponse;
+import com.triton.healthz.responsepojo.PlacesResultsResponse;
+import com.triton.healthz.serviceprovider.PickUpLocationSPActivity;
 import com.wang.avi.AVLoadingIndicatorView;
 
 

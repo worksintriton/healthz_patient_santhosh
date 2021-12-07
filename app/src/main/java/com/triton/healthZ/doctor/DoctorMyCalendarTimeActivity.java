@@ -1,4 +1,4 @@
-package com.triton.healthZ.doctor;
+package com.triton.healthz.doctor;
 
 import android.annotation.SuppressLint;
 
@@ -19,18 +19,18 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.gson.Gson;
-import com.triton.healthZ.R;
-import com.triton.healthZ.adapter.DoctorMyCalendarTimeAvailableAdapter;
-import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.api.RestApiInterface;
-import com.triton.healthZ.interfaces.OnItemClickSpecialization;
-import com.triton.healthZ.requestpojo.DoctorMyCalendarAvlTimesRequest;
-import com.triton.healthZ.requestpojo.DoctorMyCalendarUpdateDocDateRequest;
-import com.triton.healthZ.responsepojo.DoctorMyCalendarAvlTimesResponse;
-import com.triton.healthZ.responsepojo.DoctorMyCalendarUpdateDocDateResponse;
-import com.triton.healthZ.sessionmanager.SessionManager;
-import com.triton.healthZ.utils.ConnectionDetector;
-import com.triton.healthZ.utils.RestUtils;
+import com.triton.healthz.R;
+import com.triton.healthz.adapter.DoctorMyCalendarTimeAvailableAdapter;
+import com.triton.healthz.api.APIClient;
+import com.triton.healthz.api.RestApiInterface;
+import com.triton.healthz.interfaces.OnItemClickSpecialization;
+import com.triton.healthz.requestpojo.DoctorMyCalendarAvlTimesRequest;
+import com.triton.healthz.requestpojo.DoctorMyCalendarUpdateDocDateRequest;
+import com.triton.healthz.responsepojo.DoctorMyCalendarAvlTimesResponse;
+import com.triton.healthz.responsepojo.DoctorMyCalendarUpdateDocDateResponse;
+import com.triton.healthz.sessionmanager.SessionManager;
+import com.triton.healthz.utils.ConnectionDetector;
+import com.triton.healthz.utils.RestUtils;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import java.util.ArrayList;

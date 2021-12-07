@@ -1,4 +1,4 @@
-package com.triton.healthZ.activity;
+package com.triton.healthz.activity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -16,22 +16,22 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.google.gson.Gson;
-import com.triton.healthZ.R;
-import com.triton.healthZ.adapter.NotificationDashboardAdapter;
+import com.triton.healthz.R;
+import com.triton.healthz.adapter.NotificationDashboardAdapter;
 
-import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.api.RestApiInterface;
-import com.triton.healthZ.doctor.DoctorDashboardActivity;
-import com.triton.healthZ.customer.CustomerDashboardActivity;
-import com.triton.healthZ.requestpojo.NotificationGetlistRequest;
-import com.triton.healthZ.requestpojo.NotificationsMarkRequest;
-import com.triton.healthZ.responsepojo.NotificationGetlistResponse;
-import com.triton.healthZ.responsepojo.SuccessResponse;
-import com.triton.healthZ.serviceprovider.ServiceProviderDashboardActivity;
-import com.triton.healthZ.sessionmanager.SessionManager;
-import com.triton.healthZ.utils.ConnectionDetector;
-import com.triton.healthZ.utils.RestUtils;
-import com.triton.healthZ.vendor.VendorDashboardActivity;
+import com.triton.healthz.api.APIClient;
+import com.triton.healthz.api.RestApiInterface;
+import com.triton.healthz.doctor.DoctorDashboardActivity;
+import com.triton.healthz.customer.CustomerDashboardActivity;
+import com.triton.healthz.requestpojo.NotificationGetlistRequest;
+import com.triton.healthz.requestpojo.NotificationsMarkRequest;
+import com.triton.healthz.responsepojo.NotificationGetlistResponse;
+import com.triton.healthz.responsepojo.SuccessResponse;
+import com.triton.healthz.serviceprovider.ServiceProviderDashboardActivity;
+import com.triton.healthz.sessionmanager.SessionManager;
+import com.triton.healthz.utils.ConnectionDetector;
+import com.triton.healthz.utils.RestUtils;
+import com.triton.healthz.vendor.VendorDashboardActivity;
 import com.wang.avi.AVLoadingIndicatorView;
 
 
@@ -60,9 +60,6 @@ public class NotificationActivity extends AppCompatActivity {
     @BindView(R.id.avi_indicator)
     AVLoadingIndicatorView avi_indicator;
 
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_back)
-    ImageView img_back;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.refresh_layout)
@@ -78,6 +75,10 @@ public class NotificationActivity extends AppCompatActivity {
     String type = "",name = "",userid = "";
     private List<NotificationGetlistResponse.DataBean> notificationGetlistResponseList;
     private String fromactivity;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.include_petlover_header)
+    View include_petlover_header;
 
 
     @SuppressLint("LogNotTimber")
@@ -110,18 +111,31 @@ public class NotificationActivity extends AppCompatActivity {
         Log.w(TAG,"session--->"+"type :"+type+" "+"name :"+" "+name);
 
 
-        img_back.setOnClickListener(v -> onBackPressed());
 
+        ImageView img_back = include_petlover_header.findViewById(R.id.img_back);
+        ImageView img_sos = include_petlover_header.findViewById(R.id.img_sos);
+        ImageView img_notification = include_petlover_header.findViewById(R.id.img_notification);
+        ImageView img_cart = include_petlover_header.findViewById(R.id.img_cart);
+        ImageView img_profile = include_petlover_header.findViewById(R.id.img_profile);
+        TextView toolbar_title = include_petlover_header.findViewById(R.id.toolbar_title);
+        toolbar_title.setText(getResources().getString(R.string.notification));
+
+        img_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
 
         if (new ConnectionDetector(NotificationActivity.this).isNetworkAvailable(NotificationActivity.this)) {
-            notificationGetlistResponseCall();
+           // notificationGetlistResponseCall();
         }
 
         refresh_layout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
                 if (new ConnectionDetector(NotificationActivity.this).isNetworkAvailable(NotificationActivity.this)) {
-                    notificationGetlistResponseCall();
+                    //notificationGetlistResponseCall();
                 }
             }
         });

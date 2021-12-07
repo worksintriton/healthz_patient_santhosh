@@ -1,4 +1,4 @@
-package com.triton.healthZ.vendor;
+package com.triton.healthz.vendor;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -16,13 +16,13 @@ import androidx.core.content.ContextCompat;
 
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
-import com.triton.healthZ.R;
-import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.api.RestApiInterface;
-import com.triton.healthZ.requestpojo.VendorTrackOrderDetailsRequest;
-import com.triton.healthZ.responsepojo.TrackOrderDetailsResponse;
-import com.triton.healthZ.utils.ConnectionDetector;
-import com.triton.healthZ.utils.RestUtils;
+import com.triton.healthz.R;
+import com.triton.healthz.api.APIClient;
+import com.triton.healthz.api.RestApiInterface;
+import com.triton.healthz.requestpojo.VendorTrackOrderDetailsRequest;
+import com.triton.healthz.responsepojo.TrackOrderDetailsResponse;
+import com.triton.healthz.utils.ConnectionDetector;
+import com.triton.healthz.utils.RestUtils;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import java.util.List;

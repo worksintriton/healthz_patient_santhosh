@@ -1,4 +1,4 @@
-package com.triton.healthZ.customer;
+package com.triton.healthz.customer;
 
 import static android.Manifest.permission.CAMERA;
 import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
@@ -29,8 +29,6 @@ import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -46,18 +44,18 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.gson.Gson;
-import com.triton.healthZ.R;
-import com.triton.healthZ.adapter.AddFamilyImageListAdapter;
-import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.api.RestApiInterface;
-import com.triton.healthZ.appUtils.FileUtil;
-import com.triton.healthZ.requestpojo.FamilyMemberCreateRequest;
-import com.triton.healthZ.responsepojo.FamilyMemberCreateResponse;
-import com.triton.healthZ.responsepojo.FileUploadResponse;
-import com.triton.healthZ.responsepojo.GetFamilyMemberResponse;
-import com.triton.healthZ.sessionmanager.SessionManager;
-import com.triton.healthZ.utils.ConnectionDetector;
-import com.triton.healthZ.utils.RestUtils;
+import com.triton.healthz.R;
+import com.triton.healthz.adapter.AddFamilyImageListAdapter;
+import com.triton.healthz.api.APIClient;
+import com.triton.healthz.api.RestApiInterface;
+import com.triton.healthz.appUtils.FileUtil;
+import com.triton.healthz.requestpojo.FamilyMemberCreateRequest;
+import com.triton.healthz.responsepojo.FamilyMemberCreateResponse;
+import com.triton.healthz.responsepojo.FileUploadResponse;
+import com.triton.healthz.responsepojo.GetFamilyMemberResponse;
+import com.triton.healthz.sessionmanager.SessionManager;
+import com.triton.healthz.utils.ConnectionDetector;
+import com.triton.healthz.utils.RestUtils;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import java.io.File;
@@ -210,6 +208,10 @@ public class AddYourFamilyMembersSelectActivity extends AppCompatActivity implem
 
     final Calendar myCalendar = Calendar.getInstance();
 
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.include_petlover_header)
+    View include_petlover_header;
+
 
     @SuppressLint("LogNotTimber")
     @Override
@@ -267,6 +269,22 @@ public class AddYourFamilyMembersSelectActivity extends AppCompatActivity implem
             Log.w(TAG,"fromactivity : "+fromactivity+" from : "+from);
 
         }
+
+
+        ImageView img_back = include_petlover_header.findViewById(R.id.img_back);
+        ImageView img_sos = include_petlover_header.findViewById(R.id.img_sos);
+        ImageView img_notification = include_petlover_header.findViewById(R.id.img_notification);
+        ImageView img_cart = include_petlover_header.findViewById(R.id.img_cart);
+        ImageView img_profile = include_petlover_header.findViewById(R.id.img_profile);
+        TextView toolbar_title = include_petlover_header.findViewById(R.id.toolbar_title);
+        toolbar_title.setText(getResources().getString(R.string.add_your_family));
+
+        img_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
 
         if (new ConnectionDetector(AddYourFamilyMembersSelectActivity.this).isNetworkAvailable(AddYourFamilyMembersSelectActivity.this)) {
             getfamilymembersListResponseCall();
@@ -604,10 +622,24 @@ public class AddYourFamilyMembersSelectActivity extends AppCompatActivity implem
 
                     if (200 == response.body().getCode()) {
                         if(response.body().getData().get_id() != null){
-
                             Toasty.success(AddYourFamilyMembersSelectActivity.this," "+response.body().getMessage(), Toasty.LENGTH_LONG).show();
-
-                            callDirections();
+                            if(fromactivity != null && fromactivity.equalsIgnoreCase("ConsultationActivity")){
+                                Intent intent = new Intent(getApplicationContext(), ConsultationActivity.class);
+                                intent.putExtra("doctorid", doctorid);
+                                intent.putExtra("fromactivity", TAG);
+                                intent.putExtra("Doctor_ava_Date", Doctor_ava_Date);
+                                intent.putExtra("selectedTimeSlot", selectedTimeSlot);
+                                intent.putExtra("amount", amount);
+                                intent.putExtra("communicationtype", communicationtype);
+                                intent.putExtra("fromto", TAG);
+                                intent.putExtra("doctorname", doctorname);
+                                intent.putExtra("clinicname", clinicname);
+                                intent.putExtra("petname", petname);
+                                intent.putExtra("petId", petId);
+                                startActivity(intent);
+                            }else{
+                                callDirections();
+                            }
                         }
 
                     } else {
@@ -745,9 +777,6 @@ public class AddYourFamilyMembersSelectActivity extends AppCompatActivity implem
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.img_back:
-                onBackPressed();
-                break;
             case R.id.txt_skip:
                 callDirections();
                 break;

@@ -1,4 +1,4 @@
-package com.triton.healthZ.fragmentserviceprovider;
+package com.triton.healthz.fragmentserviceprovider;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
@@ -26,22 +26,22 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.gson.Gson;
-import com.triton.healthZ.R;
-import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.api.RestApiInterface;
+import com.triton.healthz.R;
+import com.triton.healthz.api.APIClient;
+import com.triton.healthz.api.RestApiInterface;
 
 
-import com.triton.healthZ.fragmentserviceprovider.myappointments.FragmentSPCompletedAppointment;
-import com.triton.healthZ.fragmentserviceprovider.myappointments.FragmentSPMissedAppointment;
-import com.triton.healthZ.fragmentserviceprovider.myappointments.FragmentSPNewAppointment;
-import com.triton.healthZ.requestpojo.SPCheckStatusRequest;
-import com.triton.healthZ.responsepojo.SPCheckStatusResponse;
-import com.triton.healthZ.serviceprovider.SPMyCalendarNewUserActivity;
-import com.triton.healthZ.serviceprovider.ServiceProviderDashboardActivity;
-import com.triton.healthZ.serviceprovider.ServiceProviderRegisterFormActivity;
-import com.triton.healthZ.sessionmanager.SessionManager;
-import com.triton.healthZ.utils.ConnectionDetector;
-import com.triton.healthZ.utils.RestUtils;
+import com.triton.healthz.fragmentserviceprovider.myappointments.FragmentSPCompletedAppointment;
+import com.triton.healthz.fragmentserviceprovider.myappointments.FragmentSPMissedAppointment;
+import com.triton.healthz.fragmentserviceprovider.myappointments.FragmentSPNewAppointment;
+import com.triton.healthz.requestpojo.SPCheckStatusRequest;
+import com.triton.healthz.responsepojo.SPCheckStatusResponse;
+import com.triton.healthz.serviceprovider.SPMyCalendarNewUserActivity;
+import com.triton.healthz.serviceprovider.ServiceProviderDashboardActivity;
+import com.triton.healthz.serviceprovider.ServiceProviderRegisterFormActivity;
+import com.triton.healthz.sessionmanager.SessionManager;
+import com.triton.healthz.utils.ConnectionDetector;
+import com.triton.healthz.utils.RestUtils;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import org.jetbrains.annotations.NotNull;

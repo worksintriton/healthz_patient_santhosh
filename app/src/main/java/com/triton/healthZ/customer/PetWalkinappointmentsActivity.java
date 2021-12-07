@@ -1,4 +1,4 @@
-package com.triton.healthZ.customer;
+package com.triton.healthz.customer;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -31,13 +31,13 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
-import com.triton.healthZ.R;
-import com.triton.healthZ.activity.NotificationActivity;
+import com.triton.healthz.R;
+import com.triton.healthz.activity.NotificationActivity;
 
-import com.triton.healthZ.fragmentcustomer.walkinappointments.FragmentPetWalkinNewAppointment;
-import com.triton.healthZ.fragmentcustomer.walkinappointments.FragmentPetWalkinCompletedAppointment;
-import com.triton.healthZ.fragmentcustomer.walkinappointments.FragmentPetWalkinMissedAppointment;
-import com.triton.healthZ.responsepojo.PetLoverDashboardResponse;
+import com.triton.healthz.fragmentcustomer.walkinappointments.FragmentPetWalkinNewAppointment;
+import com.triton.healthz.fragmentcustomer.walkinappointments.FragmentPetWalkinCompletedAppointment;
+import com.triton.healthz.fragmentcustomer.walkinappointments.FragmentPetWalkinMissedAppointment;
+import com.triton.healthz.responsepojo.PetLoverDashboardResponse;
 
 import java.util.ArrayList;
 import java.util.List;

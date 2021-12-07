@@ -1,4 +1,4 @@
-package com.triton.healthZ.customer;
+package com.triton.healthz.customer;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -30,14 +30,14 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
-import com.triton.healthZ.R;
+import com.triton.healthz.R;
 
 
-import com.triton.healthZ.activity.NotificationActivity;
-import com.triton.healthZ.fragmentcustomer.myappointments.FragmentPetMissedAppointment;
-import com.triton.healthZ.fragmentcustomer.myappointments.FragmentPetCompletedAppointment;
-import com.triton.healthZ.fragmentcustomer.myappointments.FragmentPetNewAppointment;
-import com.triton.healthZ.responsepojo.PetLoverDashboardResponse;
+import com.triton.healthz.activity.NotificationActivity;
+import com.triton.healthz.fragmentcustomer.myappointments.FragmentPetMissedAppointment;
+import com.triton.healthz.fragmentcustomer.myappointments.FragmentPetCompletedAppointment;
+import com.triton.healthz.fragmentcustomer.myappointments.FragmentPetNewAppointment;
+import com.triton.healthz.responsepojo.PetLoverDashboardResponse;
 
 
 import butterknife.BindView;

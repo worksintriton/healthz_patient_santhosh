@@ -1,4 +1,4 @@
-package com.triton.healthZ.customer;
+package com.triton.healthz.customer;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -16,18 +16,18 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.gson.Gson;
-import com.triton.healthZ.R;
-import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.api.RestApiInterface;
-import com.triton.healthZ.doctor.shop.DoctorListOfProductsSeeMoreActivity;
-import com.triton.healthZ.doctor.shop.DoctorShopTodayDealsSeeMoreActivity;
-import com.triton.healthZ.requestpojo.BreedTypeRequest;
-import com.triton.healthZ.responsepojo.BreedTypeResponse;
-import com.triton.healthZ.responsepojo.PetTypeListResponse;
-import com.triton.healthZ.serviceprovider.shop.SPListOfProductsSeeMoreActivity;
-import com.triton.healthZ.serviceprovider.shop.SPShopTodayDealsSeeMoreActivity;
-import com.triton.healthZ.utils.ConnectionDetector;
-import com.triton.healthZ.utils.RestUtils;
+import com.triton.healthz.R;
+import com.triton.healthz.api.APIClient;
+import com.triton.healthz.api.RestApiInterface;
+import com.triton.healthz.doctor.shop.DoctorListOfProductsSeeMoreActivity;
+import com.triton.healthz.doctor.shop.DoctorShopTodayDealsSeeMoreActivity;
+import com.triton.healthz.requestpojo.BreedTypeRequest;
+import com.triton.healthz.responsepojo.BreedTypeResponse;
+import com.triton.healthz.responsepojo.PetTypeListResponse;
+import com.triton.healthz.serviceprovider.shop.SPListOfProductsSeeMoreActivity;
+import com.triton.healthz.serviceprovider.shop.SPShopTodayDealsSeeMoreActivity;
+import com.triton.healthz.utils.ConnectionDetector;
+import com.triton.healthz.utils.RestUtils;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import java.util.HashMap;

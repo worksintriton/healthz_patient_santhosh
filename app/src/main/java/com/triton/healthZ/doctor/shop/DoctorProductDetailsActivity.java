@@ -1,4 +1,4 @@
-package com.triton.healthZ.doctor.shop;
+package com.triton.healthz.doctor.shop;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
@@ -29,26 +29,26 @@ import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.tabs.TabLayout;
 import com.google.gson.Gson;
-import com.triton.healthZ.R;
-import com.triton.healthZ.adapter.RelatedProductsAdapter;
-import com.triton.healthZ.adapter.VendorBusinessGalleryListAdapter;
-import com.triton.healthZ.adapter.ViewPagerProductDetailsAdapter;
-import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.api.RestApiInterface;
-import com.triton.healthZ.doctor.DoctorDashboardActivity;
+import com.triton.healthz.R;
+import com.triton.healthz.adapter.RelatedProductsAdapter;
+import com.triton.healthz.adapter.VendorBusinessGalleryListAdapter;
+import com.triton.healthz.adapter.ViewPagerProductDetailsAdapter;
+import com.triton.healthz.api.APIClient;
+import com.triton.healthz.api.RestApiInterface;
+import com.triton.healthz.doctor.DoctorDashboardActivity;
 
-import com.triton.healthZ.doctor.DoctorProfileScreenActivity;
+import com.triton.healthz.doctor.DoctorProfileScreenActivity;
 
-import com.triton.healthZ.requestpojo.CartAddProductRequest;
-import com.triton.healthZ.requestpojo.DoctorProductFavListCreateRequest;
-import com.triton.healthZ.requestpojo.FetchByIdRequest;
-import com.triton.healthZ.requestpojo.NotificationCartCountRequest;
-import com.triton.healthZ.responsepojo.FetchProductByIdResponse;
-import com.triton.healthZ.responsepojo.NotificationCartCountResponse;
-import com.triton.healthZ.responsepojo.SuccessResponse;
-import com.triton.healthZ.sessionmanager.SessionManager;
-import com.triton.healthZ.utils.ConnectionDetector;
-import com.triton.healthZ.utils.RestUtils;
+import com.triton.healthz.requestpojo.CartAddProductRequest;
+import com.triton.healthz.requestpojo.DoctorProductFavListCreateRequest;
+import com.triton.healthz.requestpojo.FetchByIdRequest;
+import com.triton.healthz.requestpojo.NotificationCartCountRequest;
+import com.triton.healthz.responsepojo.FetchProductByIdResponse;
+import com.triton.healthz.responsepojo.NotificationCartCountResponse;
+import com.triton.healthz.responsepojo.SuccessResponse;
+import com.triton.healthz.sessionmanager.SessionManager;
+import com.triton.healthz.utils.ConnectionDetector;
+import com.triton.healthz.utils.RestUtils;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import org.jetbrains.annotations.NotNull;

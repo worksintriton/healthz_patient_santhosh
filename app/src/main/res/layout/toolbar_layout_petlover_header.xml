@@ -3,10 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/green"
+    android:background="@color/green_colour"
     android:gravity="center"
-    android:orientation="horizontal"
-    android:padding="20dp">
+    android:orientation="horizontal">
 
 
     <ImageView
@@ -14,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scaleType="fitXY"
-        android:layout_marginStart="5dp"
+        android:layout_marginStart="15dp"
         android:background="@drawable/left_arrow"
         tools:ignore="ContentDescription" />
 

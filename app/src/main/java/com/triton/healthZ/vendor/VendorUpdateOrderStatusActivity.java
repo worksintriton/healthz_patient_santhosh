@@ -1,4 +1,4 @@
-package com.triton.healthZ.vendor;
+package com.triton.healthz.vendor;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
@@ -29,19 +29,19 @@ import androidx.core.content.ContextCompat;
 import com.bumptech.glide.Glide;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.gson.Gson;
-import com.triton.healthZ.R;
-import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.api.RestApiInterface;
-import com.triton.healthZ.requestpojo.VendorCancelsOrderRequest;
-import com.triton.healthZ.requestpojo.VendorConfirmsOrderRequest;
-import com.triton.healthZ.requestpojo.VendorDispatchesOrderRequest;
-import com.triton.healthZ.requestpojo.VendorFetchOrderDetailsIdRequest;
-import com.triton.healthZ.responsepojo.VendorCancelsOrderResponse;
-import com.triton.healthZ.responsepojo.VendorConfirmsOrderResponse;
-import com.triton.healthZ.responsepojo.VendorDispatchesOrderResponse;
-import com.triton.healthZ.responsepojo.VendorFetchOrderDetailsResponse;
-import com.triton.healthZ.utils.ConnectionDetector;
-import com.triton.healthZ.utils.RestUtils;
+import com.triton.healthz.R;
+import com.triton.healthz.api.APIClient;
+import com.triton.healthz.api.RestApiInterface;
+import com.triton.healthz.requestpojo.VendorCancelsOrderRequest;
+import com.triton.healthz.requestpojo.VendorConfirmsOrderRequest;
+import com.triton.healthz.requestpojo.VendorDispatchesOrderRequest;
+import com.triton.healthz.requestpojo.VendorFetchOrderDetailsIdRequest;
+import com.triton.healthz.responsepojo.VendorCancelsOrderResponse;
+import com.triton.healthz.responsepojo.VendorConfirmsOrderResponse;
+import com.triton.healthz.responsepojo.VendorDispatchesOrderResponse;
+import com.triton.healthz.responsepojo.VendorFetchOrderDetailsResponse;
+import com.triton.healthz.utils.ConnectionDetector;
+import com.triton.healthz.utils.RestUtils;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import java.text.SimpleDateFormat;

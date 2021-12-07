@@ -1,4 +1,4 @@
-package com.triton.healthZ.adapter;
+package com.triton.healthz.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -16,12 +16,12 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.triton.healthZ.R;
+import com.triton.healthz.R;
 
-import com.triton.healthZ.interfaces.OnDeleteShipAddrListener;
-import com.triton.healthZ.interfaces.OnEditShipAddrListener;
-import com.triton.healthZ.interfaces.OnSelectingShipIdListener;
-import com.triton.healthZ.responsepojo.LocationListAddressResponse;
+import com.triton.healthz.interfaces.OnDeleteShipAddrListener;
+import com.triton.healthz.interfaces.OnEditShipAddrListener;
+import com.triton.healthz.interfaces.OnSelectingShipIdListener;
+import com.triton.healthz.responsepojo.LocationListAddressResponse;
 
 
 import java.util.List;

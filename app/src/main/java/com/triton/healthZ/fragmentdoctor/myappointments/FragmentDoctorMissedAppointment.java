@@ -1,4 +1,4 @@
-package com.triton.healthZ.fragmentdoctor.myappointments;
+package com.triton.healthz.fragmentdoctor.myappointments;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -20,15 +20,15 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.gson.Gson;
-import com.triton.healthZ.R;
-import com.triton.healthZ.adapter.DoctorMissedAppointmentAdapter;
-import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.api.RestApiInterface;
-import com.triton.healthZ.requestpojo.DoctorNewAppointmentRequest;
-import com.triton.healthZ.responsepojo.DoctorAppointmentsResponse;
-import com.triton.healthZ.sessionmanager.SessionManager;
-import com.triton.healthZ.utils.ConnectionDetector;
-import com.triton.healthZ.utils.RestUtils;
+import com.triton.healthz.R;
+import com.triton.healthz.adapter.DoctorMissedAppointmentAdapter;
+import com.triton.healthz.api.APIClient;
+import com.triton.healthz.api.RestApiInterface;
+import com.triton.healthz.requestpojo.DoctorNewAppointmentRequest;
+import com.triton.healthz.responsepojo.DoctorAppointmentsResponse;
+import com.triton.healthz.sessionmanager.SessionManager;
+import com.triton.healthz.utils.ConnectionDetector;
+import com.triton.healthz.utils.RestUtils;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import java.text.SimpleDateFormat;

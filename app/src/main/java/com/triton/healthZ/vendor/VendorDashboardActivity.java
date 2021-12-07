@@ -1,4 +1,4 @@
-package com.triton.healthZ.vendor;
+package com.triton.healthz.vendor;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
@@ -20,15 +20,15 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.gson.Gson;
-import com.triton.healthZ.R;
-import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.api.RestApiInterface;
-import com.triton.healthZ.fragmentvendor.FragmentVendorDashboard;
-import com.triton.healthZ.fragmentvendor.VendorCommunityFragment;
-import com.triton.healthZ.requestpojo.ShippingAddressFetchByUserIDRequest;
-import com.triton.healthZ.responsepojo.ShippingAddressFetchByUserIDResponse;
-import com.triton.healthZ.sessionmanager.SessionManager;
-import com.triton.healthZ.utils.RestUtils;
+import com.triton.healthz.R;
+import com.triton.healthz.api.APIClient;
+import com.triton.healthz.api.RestApiInterface;
+import com.triton.healthz.fragmentvendor.FragmentVendorDashboard;
+import com.triton.healthz.fragmentvendor.VendorCommunityFragment;
+import com.triton.healthz.requestpojo.ShippingAddressFetchByUserIDRequest;
+import com.triton.healthz.responsepojo.ShippingAddressFetchByUserIDResponse;
+import com.triton.healthz.sessionmanager.SessionManager;
+import com.triton.healthz.utils.RestUtils;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import java.io.Serializable;

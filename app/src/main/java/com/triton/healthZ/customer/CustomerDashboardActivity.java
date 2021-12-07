@@ -1,4 +1,4 @@
-package com.triton.healthZ.customer;
+package com.triton.healthz.customer;
 
 
 import android.Manifest;
@@ -49,26 +49,26 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.gson.Gson;
-import com.triton.healthZ.R;
-import com.triton.healthZ.api.API;
+import com.triton.healthz.R;
+import com.triton.healthz.api.API;
 
-import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.api.RestApiInterface;
-import com.triton.healthZ.fragmentcustomer.bottommenu.CustomerCareFragment;
-import com.triton.healthZ.fragmentcustomer.bottommenu.CustomerCommunityFragment;
-import com.triton.healthZ.fragmentcustomer.bottommenu.CustomerHomeFragment;
-import com.triton.healthZ.fragmentcustomer.bottommenu.CustomerServicesFragment;
-import com.triton.healthZ.fragmentcustomer.bottommenu.CustomerShopFragment;
+import com.triton.healthz.api.APIClient;
+import com.triton.healthz.api.RestApiInterface;
+import com.triton.healthz.fragmentcustomer.bottommenu.CustomerCareFragment;
+import com.triton.healthz.fragmentcustomer.bottommenu.CustomerCommunityFragment;
+import com.triton.healthz.fragmentcustomer.bottommenu.CustomerHomeFragment;
+import com.triton.healthz.fragmentcustomer.bottommenu.CustomerServicesFragment;
+import com.triton.healthz.fragmentcustomer.bottommenu.CustomerShopFragment;
 
-import com.triton.healthZ.requestpojo.DefaultLocationRequest;
-import com.triton.healthZ.responsepojo.DefaultLocationResponse;
-import com.triton.healthZ.responsepojo.GetAddressResultResponse;
+import com.triton.healthz.requestpojo.DefaultLocationRequest;
+import com.triton.healthz.responsepojo.DefaultLocationResponse;
+import com.triton.healthz.responsepojo.GetAddressResultResponse;
 
-import com.triton.healthZ.service.GPSTracker;
-import com.triton.healthZ.sessionmanager.SessionManager;
+import com.triton.healthz.service.GPSTracker;
+import com.triton.healthz.sessionmanager.SessionManager;
 
-import com.triton.healthZ.utils.ConnectionDetector;
-import com.triton.healthZ.utils.RestUtils;
+import com.triton.healthz.utils.ConnectionDetector;
+import com.triton.healthz.utils.RestUtils;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import org.jetbrains.annotations.NotNull;

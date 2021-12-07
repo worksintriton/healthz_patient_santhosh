@@ -1,4 +1,4 @@
-package com.triton.healthZ.interfaces;
+package com.triton.healthz.interfaces;
 
 public interface OnItemClickSpecialization {
     void onItemCheckSpecialization(String item);

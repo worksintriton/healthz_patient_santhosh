@@ -1,4 +1,4 @@
-package com.triton.healthZ.adapter;
+package com.triton.healthz.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -14,11 +14,11 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.triton.healthZ.R;
-import com.triton.healthZ.customer.ListOfProductsSeeMoreActivity;
-import com.triton.healthZ.responsepojo.ShopDashboardResponse;
-import com.triton.healthZ.doctor.shop.DoctorListOfProductsSeeMoreActivity;
-import com.triton.healthZ.serviceprovider.shop.SPListOfProductsSeeMoreActivity;
+import com.triton.healthz.R;
+import com.triton.healthz.customer.ListOfProductsSeeMoreActivity;
+import com.triton.healthz.responsepojo.ShopDashboardResponse;
+import com.triton.healthz.doctor.shop.DoctorListOfProductsSeeMoreActivity;
+import com.triton.healthz.serviceprovider.shop.SPListOfProductsSeeMoreActivity;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.triton.healthZ.requestpojo;
+package com.triton.healthz.requestpojo;
 
 public class ProductSearchRequest {
     private String search_string;

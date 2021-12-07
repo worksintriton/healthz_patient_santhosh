@@ -1,4 +1,4 @@
-package com.triton.healthZ.customer.myaddresses;
+package com.triton.healthz.customer.myaddresses;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -18,18 +18,18 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.gson.Gson;
-import com.triton.healthZ.R;
-import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.api.RestApiInterface;
-import com.triton.healthZ.appUtils.NumericKeyBoardTransformationMethod;
-import com.triton.healthZ.customer.ShippingAddressActivity;
-import com.triton.healthZ.customer.ShippingAddressAddActivity;
-import com.triton.healthZ.requestpojo.ShippingAddressEditRequest;
-import com.triton.healthZ.responsepojo.CartDetailsResponse;
-import com.triton.healthZ.responsepojo.ShippingAddressEditResponse;
-import com.triton.healthZ.sessionmanager.SessionManager;
-import com.triton.healthZ.utils.ConnectionDetector;
-import com.triton.healthZ.utils.RestUtils;
+import com.triton.healthz.R;
+import com.triton.healthz.api.APIClient;
+import com.triton.healthz.api.RestApiInterface;
+import com.triton.healthz.appUtils.NumericKeyBoardTransformationMethod;
+import com.triton.healthz.customer.ShippingAddressActivity;
+import com.triton.healthz.customer.ShippingAddressAddActivity;
+import com.triton.healthz.requestpojo.ShippingAddressEditRequest;
+import com.triton.healthz.responsepojo.CartDetailsResponse;
+import com.triton.healthz.responsepojo.ShippingAddressEditResponse;
+import com.triton.healthz.sessionmanager.SessionManager;
+import com.triton.healthz.utils.ConnectionDetector;
+import com.triton.healthz.utils.RestUtils;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import java.io.Serializable;

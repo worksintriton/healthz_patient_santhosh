@@ -1,4 +1,4 @@
-package com.triton.healthZ.customer;
+package com.triton.healthz.customer;
 
 
 import android.annotation.SuppressLint;
@@ -18,7 +18,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -35,20 +34,20 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 import com.google.gson.Gson;
-import com.triton.healthZ.R;
-import com.triton.healthZ.adapter.DoctorClinicPetsHandledListAdapter;
-import com.triton.healthZ.adapter.DoctorClinicSpecTypesListAdapter;
-import com.triton.healthZ.adapter.ViewPagerClinicDetailsAdapter;
-import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.api.RestApiInterface;
-import com.triton.healthZ.requestpojo.DoctorDetailsRequest;
-import com.triton.healthZ.requestpojo.DoctorFavCreateRequest;
-import com.triton.healthZ.responsepojo.DoctorDetailsResponse;
-import com.triton.healthZ.responsepojo.SuccessResponse;
-import com.triton.healthZ.sessionmanager.SessionManager;
-import com.triton.healthZ.utils.ConnectionDetector;
-import com.triton.healthZ.utils.GridSpacingItemDecoration;
-import com.triton.healthZ.utils.RestUtils;
+import com.triton.healthz.R;
+import com.triton.healthz.adapter.DoctorClinicPetsHandledListAdapter;
+import com.triton.healthz.adapter.DoctorClinicSpecTypesListAdapter;
+import com.triton.healthz.adapter.ViewPagerClinicDetailsAdapter;
+import com.triton.healthz.api.APIClient;
+import com.triton.healthz.api.RestApiInterface;
+import com.triton.healthz.requestpojo.DoctorDetailsRequest;
+import com.triton.healthz.requestpojo.DoctorFavCreateRequest;
+import com.triton.healthz.responsepojo.DoctorDetailsResponse;
+import com.triton.healthz.responsepojo.SuccessResponse;
+import com.triton.healthz.sessionmanager.SessionManager;
+import com.triton.healthz.utils.ConnectionDetector;
+import com.triton.healthz.utils.GridSpacingItemDecoration;
+import com.triton.healthz.utils.RestUtils;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import java.util.HashMap;

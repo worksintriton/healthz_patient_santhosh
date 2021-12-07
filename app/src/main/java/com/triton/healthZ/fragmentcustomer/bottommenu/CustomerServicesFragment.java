@@ -1,4 +1,4 @@
-package com.triton.healthZ.fragmentcustomer.bottommenu;
+package com.triton.healthz.fragmentcustomer.bottommenu;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -33,19 +33,19 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.gson.Gson;
-import com.triton.healthZ.R;
+import com.triton.healthz.R;
 
-import com.triton.healthZ.adapter.PetServicesAdapter;
-import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.api.RestApiInterface;
+import com.triton.healthz.adapter.PetServicesAdapter;
+import com.triton.healthz.api.APIClient;
+import com.triton.healthz.api.RestApiInterface;
 
-import com.triton.healthZ.requestpojo.ServiceCatRequest;
-import com.triton.healthZ.responsepojo.DoctorSearchResponse;
-import com.triton.healthZ.responsepojo.ServiceCatResponse;
-import com.triton.healthZ.service.GPSTracker;
-import com.triton.healthZ.sessionmanager.SessionManager;
-import com.triton.healthZ.utils.ConnectionDetector;
-import com.triton.healthZ.utils.RestUtils;
+import com.triton.healthz.requestpojo.ServiceCatRequest;
+import com.triton.healthz.responsepojo.DoctorSearchResponse;
+import com.triton.healthz.responsepojo.ServiceCatResponse;
+import com.triton.healthz.service.GPSTracker;
+import com.triton.healthz.sessionmanager.SessionManager;
+import com.triton.healthz.utils.ConnectionDetector;
+import com.triton.healthz.utils.RestUtils;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import org.jetbrains.annotations.NotNull;

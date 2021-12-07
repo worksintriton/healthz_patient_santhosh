@@ -1,4 +1,4 @@
-package com.triton.healthZ.adapter;
+package com.triton.healthz.adapter;
 
 import android.annotation.SuppressLint;
 
@@ -21,13 +21,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.triton.healthZ.R;
-import com.triton.healthZ.activity.location.EditMyAddressActivity;
-import com.triton.healthZ.activity.location.EditMyAddressDoctorActivity;
-import com.triton.healthZ.interfaces.LocationDefaultListener;
-import com.triton.healthZ.interfaces.LocationDeleteListener;
-import com.triton.healthZ.responsepojo.LocationListAddressResponse;
-import com.triton.healthZ.serviceprovider.EditMyAddressSPActivity;
+import com.triton.healthz.R;
+import com.triton.healthz.activity.location.EditMyAddressActivity;
+import com.triton.healthz.activity.location.EditMyAddressDoctorActivity;
+import com.triton.healthz.interfaces.LocationDefaultListener;
+import com.triton.healthz.interfaces.LocationDeleteListener;
+import com.triton.healthz.responsepojo.LocationListAddressResponse;
+import com.triton.healthz.serviceprovider.EditMyAddressSPActivity;
 
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.triton.healthZ.fragmentdoctor;
+package com.triton.healthz.fragmentdoctor;
 
 import android.os.Bundle;
 
@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.triton.healthZ.R;
+import com.triton.healthz.R;
 
 /**
  * A simple {@link Fragment} subclass.

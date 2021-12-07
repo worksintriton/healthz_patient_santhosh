@@ -1,4 +1,4 @@
-package com.triton.healthZ.adapter;
+package com.triton.healthz.adapter;
 
 import android.content.Context;
 import android.util.Log;
@@ -12,10 +12,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.triton.healthZ.R;
-import com.triton.healthZ.interfaces.SPSpecialzationChckedListener;
-import com.triton.healthZ.requestpojo.ServiceProviderRegisterFormCreateRequest;
-import com.triton.healthZ.responsepojo.SPServiceListResponse;
+import com.triton.healthz.R;
+import com.triton.healthz.interfaces.SPSpecialzationChckedListener;
+import com.triton.healthz.requestpojo.ServiceProviderRegisterFormCreateRequest;
+import com.triton.healthz.responsepojo.SPServiceListResponse;
 
 import java.util.List;
 

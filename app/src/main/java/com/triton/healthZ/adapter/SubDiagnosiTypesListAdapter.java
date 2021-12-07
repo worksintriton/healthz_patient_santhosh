@@ -1,4 +1,4 @@
-package com.triton.healthZ.adapter;
+package com.triton.healthz.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -14,9 +14,9 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.gson.Gson;
-import com.triton.healthZ.R;
-import com.triton.healthZ.interfaces.SubDiagnosisTypeListener;
-import com.triton.healthZ.responsepojo.SubDiagnosisListResponse;
+import com.triton.healthz.R;
+import com.triton.healthz.interfaces.SubDiagnosisTypeListener;
+import com.triton.healthz.responsepojo.SubDiagnosisListResponse;
 
 import java.util.List;
 

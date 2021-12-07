@@ -1,4 +1,4 @@
-package com.triton.healthZ.adapter;
+package com.triton.healthz.adapter;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -16,11 +16,11 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-import com.triton.healthZ.R;
-import com.triton.healthZ.doctor.DoctorMyCalendarActivity;
-import com.triton.healthZ.doctor.DoctorMyCalendarTimeActivity;
-import com.triton.healthZ.interfaces.OnItemClickSpecialization;
-import com.triton.healthZ.responsepojo.DoctorMyCalendarAvlDaysResponse;
+import com.triton.healthz.R;
+import com.triton.healthz.doctor.DoctorMyCalendarActivity;
+import com.triton.healthz.doctor.DoctorMyCalendarTimeActivity;
+import com.triton.healthz.interfaces.OnItemClickSpecialization;
+import com.triton.healthz.responsepojo.DoctorMyCalendarAvlDaysResponse;
 
 import java.util.ArrayList;
 import java.util.List;

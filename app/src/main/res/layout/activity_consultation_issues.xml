@@ -2,43 +2,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-  >
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
         android:id="@+id/headerView"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_alignParentTop="true"
-        android:background="@color/green"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        tools:ignore="UseCompoundDrawables">
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true">
 
-        <ImageView
-            android:id="@+id/img_back"
-            android:layout_width="26dp"
-            android:layout_height="26dp"
-            android:layout_marginStart="20dp"
-            android:background="@drawable/back_arrow"
-            tools:ignore="ContentDescription" />
-
-        <LinearLayout
+        <include
+            android:id="@+id/include_petlover_header"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat_bold"
-                android:text="@string/select_health_issue"
-                android:textColor="@color/white"
-                android:textSize="18sp" />
-
-
-        </LinearLayout>
+            android:layout_height="60dp"
+            layout="@layout/toolbar_layout_petlover_header" />
 
 
     </LinearLayout>
@@ -71,7 +47,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/futuramediumbt"
-                    android:text="Select health issue"
+                    android:text="@string/select_health_issue"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />

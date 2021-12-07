@@ -1,4 +1,4 @@
-package com.triton.healthZ.fragmentvendor;
+package com.triton.healthz.fragmentvendor;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
@@ -26,19 +26,19 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.gson.Gson;
-import com.triton.healthZ.R;
-import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.api.RestApiInterface;
-import com.triton.healthZ.fragmentvendor.myorders.FragementNewOrders;
-import com.triton.healthZ.fragmentvendor.myorders.FragmentCancelledOrders;
-import com.triton.healthZ.fragmentvendor.myorders.FragmentCompletedOrders;
-import com.triton.healthZ.requestpojo.SPCheckStatusRequest;
-import com.triton.healthZ.responsepojo.SPCheckStatusResponse;
-import com.triton.healthZ.sessionmanager.SessionManager;
-import com.triton.healthZ.utils.ConnectionDetector;
-import com.triton.healthZ.utils.RestUtils;
-import com.triton.healthZ.vendor.VendorDashboardActivity;
-import com.triton.healthZ.vendor.VendorRegisterFormActivity;
+import com.triton.healthz.R;
+import com.triton.healthz.api.APIClient;
+import com.triton.healthz.api.RestApiInterface;
+import com.triton.healthz.fragmentvendor.myorders.FragementNewOrders;
+import com.triton.healthz.fragmentvendor.myorders.FragmentCancelledOrders;
+import com.triton.healthz.fragmentvendor.myorders.FragmentCompletedOrders;
+import com.triton.healthz.requestpojo.SPCheckStatusRequest;
+import com.triton.healthz.responsepojo.SPCheckStatusResponse;
+import com.triton.healthz.sessionmanager.SessionManager;
+import com.triton.healthz.utils.ConnectionDetector;
+import com.triton.healthz.utils.RestUtils;
+import com.triton.healthz.vendor.VendorDashboardActivity;
+import com.triton.healthz.vendor.VendorRegisterFormActivity;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import org.jetbrains.annotations.NotNull;

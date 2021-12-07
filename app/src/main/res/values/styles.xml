@@ -1,8 +1,8 @@
 <resources>
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.MaterialComponents.Light">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">@color/green</item>
+        <item name="colorPrimaryDark">@color/green</item>
         <item name="colorAccent">@color/green</item>
     <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -13,8 +13,8 @@
     </style>
     <!-- Base application theme. -->
     <style name="BaseAppTheme" parent="Theme.AppCompat.Light">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">@color/green</item>
+        <item name="colorPrimaryDark">@color/green</item>
         <item name="colorAccent">@color/green</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -26,8 +26,8 @@
 
     <!-- Base application theme. -->
     <style name="EntryAppTheme" parent="Theme.AppCompat.Light">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">@color/green</item>
+        <item name="colorPrimaryDark">@color/green</item>
         <item name="colorAccent">@color/white</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -39,8 +39,8 @@
 
 
     <style name="NewAppTheme" parent="Theme.MaterialComponents.Light">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">@color/green</item>
+        <item name="colorPrimaryDark">@color/green</item>
         <item name="colorAccent">@color/green</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -97,7 +97,7 @@
     </style>
 
     <style name="TabLayout" parent="Widget.Design.TabLayout">
-        <item name="tabTextColor">@color/green_color</item>
+        <item name="tabTextColor">@color/green</item>
         <item name="tabTextAppearance">@style/TabLayoutTextAppearance</item>
     </style>
 

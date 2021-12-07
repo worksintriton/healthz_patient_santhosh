@@ -1,4 +1,4 @@
-package com.triton.healthZ;
+package com.triton.healthz;
 
 import org.junit.Test;
 

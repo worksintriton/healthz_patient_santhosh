@@ -1,4 +1,4 @@
-package com.triton.healthZ.adapter;
+package com.triton.healthz.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -12,10 +12,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.triton.healthZ.R;
-import com.triton.healthZ.activity.location.PlacesSearchActivity;
-import com.triton.healthZ.interfaces.PlacesNameListener;
-import com.triton.healthZ.responsepojo.PlacesResultsResponse;
+import com.triton.healthz.R;
+import com.triton.healthz.activity.location.PlacesSearchActivity;
+import com.triton.healthz.interfaces.PlacesNameListener;
+import com.triton.healthz.responsepojo.PlacesResultsResponse;
 
 import java.util.List;
 

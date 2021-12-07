@@ -1,4 +1,4 @@
-package com.triton.healthZ.adapter;
+package com.triton.healthz.adapter;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
@@ -13,10 +13,10 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-import com.triton.healthZ.R;
-import com.triton.healthZ.doctor.Doctor_Holiday_Activity;
-import com.triton.healthZ.interfaces.OnItemDeleteHoliday;
-import com.triton.healthZ.responsepojo.HolidayListResponse;
+import com.triton.healthz.R;
+import com.triton.healthz.doctor.Doctor_Holiday_Activity;
+import com.triton.healthz.interfaces.OnItemDeleteHoliday;
+import com.triton.healthz.responsepojo.HolidayListResponse;
 
 import java.util.List;
 

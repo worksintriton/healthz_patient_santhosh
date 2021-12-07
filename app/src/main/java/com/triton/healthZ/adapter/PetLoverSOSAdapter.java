@@ -1,4 +1,4 @@
-package com.triton.healthZ.adapter;
+package com.triton.healthz.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -19,11 +19,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.triton.healthZ.R;
-import com.triton.healthZ.activity.EditSoSActivity;
-import com.triton.healthZ.interfaces.SoSCallListener;
-import com.triton.healthZ.responsepojo.PetLoverDashboardResponse;
-import com.triton.healthZ.responsepojo.SOSListResponse;
+import com.triton.healthz.R;
+import com.triton.healthz.activity.EditSoSActivity;
+import com.triton.healthz.interfaces.SoSCallListener;
+import com.triton.healthz.responsepojo.PetLoverDashboardResponse;
+import com.triton.healthz.responsepojo.SOSListResponse;
 
 import java.util.List;
 

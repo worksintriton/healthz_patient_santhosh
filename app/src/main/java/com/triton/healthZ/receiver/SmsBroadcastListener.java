@@ -1,4 +1,4 @@
-package com.triton.healthZ.receiver;
+package com.triton.healthz.receiver;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

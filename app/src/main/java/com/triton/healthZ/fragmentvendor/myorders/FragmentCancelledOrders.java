@@ -1,4 +1,4 @@
-package com.triton.healthZ.fragmentvendor.myorders;
+package com.triton.healthz.fragmentvendor.myorders;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
@@ -22,21 +22,21 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.gson.Gson;
-import com.triton.healthZ.R;
-import com.triton.healthZ.adapter.VendorOrdersAdapter;
-import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.api.RestApiInterface;
-import com.triton.healthZ.interfaces.OnAcceptsReturnOrder;
-import com.triton.healthZ.requestpojo.VendorAcceptReturnOrderRequest;
-import com.triton.healthZ.requestpojo.VendorGetsOrderIdRequest;
-import com.triton.healthZ.requestpojo.VendorOrderListRequest;
-import com.triton.healthZ.responsepojo.VendorAcceptsReturnOrderResponse;
-import com.triton.healthZ.responsepojo.VendorGetsOrderIDResponse;
-import com.triton.healthZ.responsepojo.VendorOrderListResponse;
-import com.triton.healthZ.sessionmanager.SessionManager;
-import com.triton.healthZ.utils.ConnectionDetector;
-import com.triton.healthZ.utils.RestUtils;
-import com.triton.healthZ.vendor.VendorDashboardActivity;
+import com.triton.healthz.R;
+import com.triton.healthz.adapter.VendorOrdersAdapter;
+import com.triton.healthz.api.APIClient;
+import com.triton.healthz.api.RestApiInterface;
+import com.triton.healthz.interfaces.OnAcceptsReturnOrder;
+import com.triton.healthz.requestpojo.VendorAcceptReturnOrderRequest;
+import com.triton.healthz.requestpojo.VendorGetsOrderIdRequest;
+import com.triton.healthz.requestpojo.VendorOrderListRequest;
+import com.triton.healthz.responsepojo.VendorAcceptsReturnOrderResponse;
+import com.triton.healthz.responsepojo.VendorGetsOrderIDResponse;
+import com.triton.healthz.responsepojo.VendorOrderListResponse;
+import com.triton.healthz.sessionmanager.SessionManager;
+import com.triton.healthz.utils.ConnectionDetector;
+import com.triton.healthz.utils.RestUtils;
+import com.triton.healthz.vendor.VendorDashboardActivity;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import java.text.SimpleDateFormat;

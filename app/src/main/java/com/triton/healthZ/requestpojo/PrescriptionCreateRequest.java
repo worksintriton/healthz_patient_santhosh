@@ -1,4 +1,4 @@
-package com.triton.healthZ.requestpojo;
+package com.triton.healthz.requestpojo;
 
 import java.io.Serializable;
 import java.util.List;

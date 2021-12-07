@@ -1,5 +1,5 @@
 
-package com.triton.healthZ.fcm;
+package com.triton.healthz.fcm;
 
 import android.annotation.SuppressLint;
 import android.app.NotificationChannel;
@@ -15,18 +15,18 @@ import androidx.core.app.NotificationManagerCompat;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
-import com.triton.healthZ.R;
-import com.triton.healthZ.doctor.DoctorDashboardActivity;
-import com.triton.healthZ.doctor.DoctorMyOrdrersActivity;
-import com.triton.healthZ.doctor.DoctorWalkinAppointmentsActivity;
-import com.triton.healthZ.customer.CustomerDashboardActivity;
-import com.triton.healthZ.customer.PetMyOrdrersNewActivity;
-import com.triton.healthZ.customer.PetMyappointmentsActivity;
-import com.triton.healthZ.customer.PetWalkinappointmentsActivity;
-import com.triton.healthZ.serviceprovider.ServiceProviderDashboardActivity;
-import com.triton.healthZ.serviceprovider.shop.SPMyOrdrersActivity;
-import com.triton.healthZ.sessionmanager.SessionManager;
-import com.triton.healthZ.vendor.VendorDashboardActivity;
+import com.triton.healthz.R;
+import com.triton.healthz.doctor.DoctorDashboardActivity;
+import com.triton.healthz.doctor.DoctorMyOrdrersActivity;
+import com.triton.healthz.doctor.DoctorWalkinAppointmentsActivity;
+import com.triton.healthz.customer.CustomerDashboardActivity;
+import com.triton.healthz.customer.PetMyOrdrersNewActivity;
+import com.triton.healthz.customer.PetMyappointmentsActivity;
+import com.triton.healthz.customer.PetWalkinappointmentsActivity;
+import com.triton.healthz.serviceprovider.ServiceProviderDashboardActivity;
+import com.triton.healthz.serviceprovider.shop.SPMyOrdrersActivity;
+import com.triton.healthz.sessionmanager.SessionManager;
+import com.triton.healthz.vendor.VendorDashboardActivity;
 
 import org.jetbrains.annotations.NotNull;
 

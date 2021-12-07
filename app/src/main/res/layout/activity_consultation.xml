@@ -8,47 +8,14 @@
     <LinearLayout
         android:id="@+id/headerView"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_alignParentTop="true"
-        android:background="@color/green"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        tools:ignore="UseCompoundDrawables">
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true">
 
-        <ImageView
-            android:id="@+id/img_back"
-            android:layout_width="26dp"
-            android:layout_height="26dp"
-            android:layout_marginStart="20dp"
-            android:background="@drawable/back_arrow"
-            android:scaleType="center"
-            tools:ignore="ContentDescription" />
-
-        <LinearLayout
+        <include
+            android:id="@+id/include_petlover_header"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat_bold"
-                android:text="@string/consultation"
-                android:textColor="@color/white"
-                android:textSize="18sp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/futuramediumbt"
-                android:text="Select pet"
-                android:textColor="@color/dark_gray"
-                android:textSize="18sp"
-                android:visibility="gone" />
-
-
-        </LinearLayout>
+            android:layout_height="60dp"
+            layout="@layout/toolbar_layout_petlover_header" />
 
 
     </LinearLayout>

@@ -64,24 +64,27 @@
                 <Button
                     android:id="@+id/btn_no"
                     android:layout_width="110dp"
-                    android:layout_height="30dp"
+                    android:layout_height="40dp"
                     android:layout_gravity="center"
                     android:background="@drawable/new_rounded_corner_btn"
                     android:text="No"
                     android:textColor="@color/white"
                     tools:ignore="HardcodedText"
-                    android:textAllCaps="false"/>
+                    android:textAllCaps="false"
+                    android:textSize="12sp"
+                    />
                 <Button
                     android:id="@+id/btn_yes"
                     android:layout_width="110dp"
-                    android:layout_height="30dp"
+                    android:layout_height="40dp"
                     android:layout_gravity="center"
                     android:layout_marginStart="20dp"
                     android:background="@drawable/orange_background_button"
                     android:text="Yes"
                     android:textColor="@color/white"
                     tools:ignore="ButtonStyle,HardcodedText"
-                    android:textAllCaps="false"/>
+                    android:textAllCaps="false"
+                    android:textSize="12sp"/>
             </LinearLayout>
 
 

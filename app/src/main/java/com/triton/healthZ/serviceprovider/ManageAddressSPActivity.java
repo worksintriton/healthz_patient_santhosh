@@ -1,4 +1,4 @@
-package com.triton.healthZ.serviceprovider;
+package com.triton.healthz.serviceprovider;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -24,22 +24,22 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
-import com.triton.healthZ.R;
-import com.triton.healthZ.activity.NotificationActivity;
-import com.triton.healthZ.adapter.ManageAddressListAdapter;
-import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.api.RestApiInterface;
-import com.triton.healthZ.interfaces.LocationDefaultListener;
-import com.triton.healthZ.interfaces.LocationDeleteListener;
-import com.triton.healthZ.requestpojo.LocationDeleteRequest;
-import com.triton.healthZ.requestpojo.LocationListAddressRequest;
-import com.triton.healthZ.requestpojo.LocationStatusChangeRequest;
-import com.triton.healthZ.responsepojo.LocationDeleteResponse;
-import com.triton.healthZ.responsepojo.LocationListAddressResponse;
-import com.triton.healthZ.responsepojo.LocationStatusChangeResponse;
-import com.triton.healthZ.sessionmanager.SessionManager;
-import com.triton.healthZ.utils.ConnectionDetector;
-import com.triton.healthZ.utils.RestUtils;
+import com.triton.healthz.R;
+import com.triton.healthz.activity.NotificationActivity;
+import com.triton.healthz.adapter.ManageAddressListAdapter;
+import com.triton.healthz.api.APIClient;
+import com.triton.healthz.api.RestApiInterface;
+import com.triton.healthz.interfaces.LocationDefaultListener;
+import com.triton.healthz.interfaces.LocationDeleteListener;
+import com.triton.healthz.requestpojo.LocationDeleteRequest;
+import com.triton.healthz.requestpojo.LocationListAddressRequest;
+import com.triton.healthz.requestpojo.LocationStatusChangeRequest;
+import com.triton.healthz.responsepojo.LocationDeleteResponse;
+import com.triton.healthz.responsepojo.LocationListAddressResponse;
+import com.triton.healthz.responsepojo.LocationStatusChangeResponse;
+import com.triton.healthz.sessionmanager.SessionManager;
+import com.triton.healthz.utils.ConnectionDetector;
+import com.triton.healthz.utils.RestUtils;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import org.jetbrains.annotations.NotNull;

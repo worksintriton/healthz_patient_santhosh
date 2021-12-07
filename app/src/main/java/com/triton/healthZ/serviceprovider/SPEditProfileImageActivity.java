@@ -1,4 +1,4 @@
-package com.triton.healthZ.serviceprovider;
+package com.triton.healthz.serviceprovider;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -25,14 +25,14 @@ import androidx.core.app.ActivityCompat;
 import com.bumptech.glide.Glide;
 import com.google.android.gms.common.util.IOUtils;
 import com.google.gson.Gson;
-import com.triton.healthZ.R;
-import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.api.RestApiInterface;
-import com.triton.healthZ.requestpojo.DoctorUpdateProfileImageRequest;
-import com.triton.healthZ.responsepojo.DoctorUpdateProfileImageResponse;
-import com.triton.healthZ.responsepojo.FileUploadResponse;
-import com.triton.healthZ.sessionmanager.SessionManager;
-import com.triton.healthZ.utils.RestUtils;
+import com.triton.healthz.R;
+import com.triton.healthz.api.APIClient;
+import com.triton.healthz.api.RestApiInterface;
+import com.triton.healthz.requestpojo.DoctorUpdateProfileImageRequest;
+import com.triton.healthz.responsepojo.DoctorUpdateProfileImageResponse;
+import com.triton.healthz.responsepojo.FileUploadResponse;
+import com.triton.healthz.sessionmanager.SessionManager;
+import com.triton.healthz.utils.RestUtils;
 import com.canhub.cropper.CropImage;
 import com.wang.avi.AVLoadingIndicatorView;
 

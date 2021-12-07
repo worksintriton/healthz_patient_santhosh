@@ -1,4 +1,4 @@
-package com.triton.healthZ.customer.myaddresses;
+package com.triton.healthz.customer.myaddresses;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
@@ -22,24 +22,24 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.gson.Gson;
-import com.triton.healthZ.R;
+import com.triton.healthz.R;
 
-import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.api.RestApiInterface;
-import com.triton.healthZ.customer.CustomerDashboardActivity;
-import com.triton.healthZ.interfaces.OnDeleteShipAddrListener;
-import com.triton.healthZ.interfaces.OnEditShipAddrListener;
-import com.triton.healthZ.interfaces.OnSelectingShipIdListener;
-import com.triton.healthZ.customer.CustomerProfileScreenActivity;
-import com.triton.healthZ.requestpojo.ShippingAddrMarkAsLastUsedRequest;
-import com.triton.healthZ.requestpojo.ShippingAddrMarkAsLastUsedResponse;
-import com.triton.healthZ.requestpojo.ShippingAddressDeleteRequest;
-import com.triton.healthZ.requestpojo.ShippingAddressListingByUserIDRequest;
-import com.triton.healthZ.responsepojo.ShippingAddressDeleteResponse;
-import com.triton.healthZ.responsepojo.ShippingAddressListingByUserIDResponse;
-import com.triton.healthZ.sessionmanager.SessionManager;
-import com.triton.healthZ.utils.ConnectionDetector;
-import com.triton.healthZ.utils.RestUtils;
+import com.triton.healthz.api.APIClient;
+import com.triton.healthz.api.RestApiInterface;
+import com.triton.healthz.customer.CustomerDashboardActivity;
+import com.triton.healthz.interfaces.OnDeleteShipAddrListener;
+import com.triton.healthz.interfaces.OnEditShipAddrListener;
+import com.triton.healthz.interfaces.OnSelectingShipIdListener;
+import com.triton.healthz.customer.CustomerProfileScreenActivity;
+import com.triton.healthz.requestpojo.ShippingAddrMarkAsLastUsedRequest;
+import com.triton.healthz.requestpojo.ShippingAddrMarkAsLastUsedResponse;
+import com.triton.healthz.requestpojo.ShippingAddressDeleteRequest;
+import com.triton.healthz.requestpojo.ShippingAddressListingByUserIDRequest;
+import com.triton.healthz.responsepojo.ShippingAddressDeleteResponse;
+import com.triton.healthz.responsepojo.ShippingAddressListingByUserIDResponse;
+import com.triton.healthz.sessionmanager.SessionManager;
+import com.triton.healthz.utils.ConnectionDetector;
+import com.triton.healthz.utils.RestUtils;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import java.text.SimpleDateFormat;

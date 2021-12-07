@@ -1,4 +1,4 @@
-package com.triton.healthZ.doctor;
+package com.triton.healthz.doctor;
 
 
 
@@ -35,22 +35,22 @@ import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.gson.Gson;
-import com.triton.healthZ.R;
+import com.triton.healthz.R;
 
-import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.api.RestApiInterface;
-import com.triton.healthZ.fragmentdoctor.DoctorCommunityFragment;
-import com.triton.healthZ.fragmentdoctor.DoctorShopFragment;
-import com.triton.healthZ.fragmentdoctor.FragmentDoctorDashboard;
+import com.triton.healthz.api.APIClient;
+import com.triton.healthz.api.RestApiInterface;
+import com.triton.healthz.fragmentdoctor.DoctorCommunityFragment;
+import com.triton.healthz.fragmentdoctor.DoctorShopFragment;
+import com.triton.healthz.fragmentdoctor.FragmentDoctorDashboard;
 
-import com.triton.healthZ.requestpojo.DefaultLocationRequest;
-import com.triton.healthZ.requestpojo.ShippingAddressFetchByUserIDRequest;
-import com.triton.healthZ.responsepojo.DefaultLocationResponse;
-import com.triton.healthZ.responsepojo.ShippingAddressFetchByUserIDResponse;
-import com.triton.healthZ.sessionmanager.SessionManager;
+import com.triton.healthz.requestpojo.DefaultLocationRequest;
+import com.triton.healthz.requestpojo.ShippingAddressFetchByUserIDRequest;
+import com.triton.healthz.responsepojo.DefaultLocationResponse;
+import com.triton.healthz.responsepojo.ShippingAddressFetchByUserIDResponse;
+import com.triton.healthz.sessionmanager.SessionManager;
 
-import com.triton.healthZ.utils.ConnectionDetector;
-import com.triton.healthZ.utils.RestUtils;
+import com.triton.healthz.utils.ConnectionDetector;
+import com.triton.healthz.utils.RestUtils;
 import com.wang.avi.AVLoadingIndicatorView;
 
 
@@ -91,12 +91,12 @@ import com.google.android.gms.location.LocationSettingsResult;
 import com.google.android.gms.location.LocationSettingsStatusCodes;
 
 import com.google.android.gms.maps.model.LatLng;
-import com.triton.healthZ.api.API;
+import com.triton.healthz.api.API;
 
 
-import com.triton.healthZ.responsepojo.GetAddressResultResponse;
+import com.triton.healthz.responsepojo.GetAddressResultResponse;
 
-import com.triton.healthZ.service.GPSTracker;
+import com.triton.healthz.service.GPSTracker;
 
 
 import org.jetbrains.annotations.NotNull;

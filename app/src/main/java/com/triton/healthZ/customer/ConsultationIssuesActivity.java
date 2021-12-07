@@ -1,4 +1,4 @@
-package com.triton.healthZ.customer;
+package com.triton.healthz.customer;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -16,16 +16,16 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.gson.Gson;
-import com.triton.healthZ.R;
-import com.triton.healthZ.adapter.HealthIssueListAdapter;
-import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.api.RestApiInterface;
-import com.triton.healthZ.interfaces.MyPetsSelectListener;
-import com.triton.healthZ.requestpojo.PetListRequest;
-import com.triton.healthZ.responsepojo.HealthIssuesListResponse;
-import com.triton.healthZ.sessionmanager.SessionManager;
-import com.triton.healthZ.utils.ConnectionDetector;
-import com.triton.healthZ.utils.RestUtils;
+import com.triton.healthz.R;
+import com.triton.healthz.adapter.HealthIssueListAdapter;
+import com.triton.healthz.api.APIClient;
+import com.triton.healthz.api.RestApiInterface;
+import com.triton.healthz.interfaces.MyPetsSelectListener;
+import com.triton.healthz.requestpojo.PetListRequest;
+import com.triton.healthz.responsepojo.HealthIssuesListResponse;
+import com.triton.healthz.sessionmanager.SessionManager;
+import com.triton.healthz.utils.ConnectionDetector;
+import com.triton.healthz.utils.RestUtils;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import java.util.HashMap;
@@ -37,7 +37,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ConsultationIssuesActivity extends AppCompatActivity implements View.OnClickListener, MyPetsSelectListener {
+public class ConsultationIssuesActivity extends AppCompatActivity implements MyPetsSelectListener {
 
     private String TAG = "ConsultationIssuesActivity";
 
@@ -45,10 +45,6 @@ public class ConsultationIssuesActivity extends AppCompatActivity implements Vie
     @BindView(R.id.avi_indicator)
     AVLoadingIndicatorView avi_indicator;
 
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_back)
-    ImageView img_back;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.rv_pet)
@@ -98,6 +94,11 @@ public class ConsultationIssuesActivity extends AppCompatActivity implements Vie
     private String petname;
     private String petimage;
     private String strpetimage;
+
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.include_petlover_header)
+    View include_petlover_header;
 
 
     @SuppressLint({"LogNotTimber", "SetTextI18n", "LongLogTag"})
@@ -152,7 +153,23 @@ public class ConsultationIssuesActivity extends AppCompatActivity implements Vie
             strpetimage = extras.getString("petimage");
 
         }
-        img_back.setOnClickListener(this);
+
+
+        ImageView img_back = include_petlover_header.findViewById(R.id.img_back);
+        ImageView img_sos = include_petlover_header.findViewById(R.id.img_sos);
+        ImageView img_notification = include_petlover_header.findViewById(R.id.img_notification);
+        ImageView img_cart = include_petlover_header.findViewById(R.id.img_cart);
+        ImageView img_profile = include_petlover_header.findViewById(R.id.img_profile);
+        TextView toolbar_title = include_petlover_header.findViewById(R.id.toolbar_title);
+        toolbar_title.setText(getResources().getString(R.string.select_health_issue));
+
+        img_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
+
         if (new ConnectionDetector(getApplicationContext()).isNetworkAvailable(getApplicationContext())) {
             healthissueListResponseCall();
         }
@@ -247,17 +264,7 @@ public class ConsultationIssuesActivity extends AppCompatActivity implements Vie
         }
     }
 
-    @SuppressLint("NonConstantResourceId")
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.img_back:
-                onBackPressed();
-                break;
 
-
-        }
-    }
 
     @SuppressLint({"LogNotTimber", "LongLogTag"})
     public void healthissueListResponseCall(){

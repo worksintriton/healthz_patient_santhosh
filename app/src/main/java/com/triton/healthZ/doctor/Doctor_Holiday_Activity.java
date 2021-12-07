@@ -1,4 +1,4 @@
-package com.triton.healthZ.doctor;
+package com.triton.healthz.doctor;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
@@ -28,20 +28,20 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.gson.Gson;
-import com.triton.healthZ.R;
-import com.triton.healthZ.adapter.DoctorHolidayListAdapter;
-import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.api.RestApiInterface;
-import com.triton.healthZ.interfaces.OnItemDeleteHoliday;
-import com.triton.healthZ.requestpojo.CreateHolidayRequest;
-import com.triton.healthZ.requestpojo.HolidayDeleteRequest;
-import com.triton.healthZ.requestpojo.HolidayListRequest;
-import com.triton.healthZ.responsepojo.CreateHolidayResponse;
-import com.triton.healthZ.responsepojo.HolidayDeleteResponse;
-import com.triton.healthZ.responsepojo.HolidayListResponse;
-import com.triton.healthZ.sessionmanager.SessionManager;
-import com.triton.healthZ.utils.ConnectionDetector;
-import com.triton.healthZ.utils.RestUtils;
+import com.triton.healthz.R;
+import com.triton.healthz.adapter.DoctorHolidayListAdapter;
+import com.triton.healthz.api.APIClient;
+import com.triton.healthz.api.RestApiInterface;
+import com.triton.healthz.interfaces.OnItemDeleteHoliday;
+import com.triton.healthz.requestpojo.CreateHolidayRequest;
+import com.triton.healthz.requestpojo.HolidayDeleteRequest;
+import com.triton.healthz.requestpojo.HolidayListRequest;
+import com.triton.healthz.responsepojo.CreateHolidayResponse;
+import com.triton.healthz.responsepojo.HolidayDeleteResponse;
+import com.triton.healthz.responsepojo.HolidayListResponse;
+import com.triton.healthz.sessionmanager.SessionManager;
+import com.triton.healthz.utils.ConnectionDetector;
+import com.triton.healthz.utils.RestUtils;
 import com.wang.avi.AVLoadingIndicatorView;
 
 

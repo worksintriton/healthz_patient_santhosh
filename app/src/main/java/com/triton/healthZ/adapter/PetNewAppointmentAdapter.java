@@ -1,4 +1,4 @@
-package com.triton.healthZ.adapter;
+package com.triton.healthz.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -8,7 +8,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -19,16 +18,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
-import com.triton.healthZ.R;
-import com.triton.healthZ.api.APIClient;
-import com.triton.healthZ.api.RestApiInterface;
-import com.triton.healthZ.interfaces.OnAppointmentCancel;
-import com.triton.healthZ.customer.PetAppointmentDetailsActivity;
-import com.triton.healthZ.customer.VideoCallPetLoverActivity;
-import com.triton.healthZ.requestpojo.PetNewAppointmentDetailsRequest;
-import com.triton.healthZ.responsepojo.PetAppointmentResponse;
-import com.triton.healthZ.responsepojo.PetNewAppointmentDetailsResponse;
-import com.triton.healthZ.utils.RestUtils;
+import com.triton.healthz.R;
+import com.triton.healthz.api.APIClient;
+import com.triton.healthz.api.RestApiInterface;
+import com.triton.healthz.interfaces.OnAppointmentCancel;
+import com.triton.healthz.customer.PetAppointmentDetailsActivity;
+import com.triton.healthz.customer.VideoCallPetLoverActivity;
+import com.triton.healthz.requestpojo.PetNewAppointmentDetailsRequest;
+import com.triton.healthz.responsepojo.PetAppointmentResponse;
+import com.triton.healthz.responsepojo.PetNewAppointmentDetailsResponse;
+import com.triton.healthz.utils.RestUtils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

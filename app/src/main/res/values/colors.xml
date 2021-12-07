@@ -37,6 +37,7 @@
     <color name="greyishBrownFour">#4d4c47</color>
     <color name="warmGreyFour">#707070</color>
     <color name="whiteFive">#f1f1f1</color>
+    <color name="whiteFiveC">#F1F1F1</color>
     <color name="mediumPinkTwo">#f05b78</color>
     <color name="greyishBrownSeven">#3f3f3f</color>
     <color name="macaroniAndCheeseThree">#e5a939</color>
@@ -118,6 +119,10 @@
     <color name="new_hz_coolgrey">#3E3E3E</color>
     <color name="new_hz_coolgreyish">#949494</color>
     <color name="border_line_opaqe">#999999</color>
+    <color name="related_products_bg">#CEE9DD</color>
+    <color name="callbtn_bg">#40BFFF</color>
+
+
 
 
 </resources>
