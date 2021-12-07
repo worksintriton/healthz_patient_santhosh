@@ -18,18 +18,19 @@
            android:layout_height="wrap_content"
            android:orientation="horizontal"
            android:layout_marginTop="5dp">
+
            <TextView
                android:id="@+id/txt_contact"
                android:layout_width="200dp"
                android:layout_height="wrap_content"
+               android:layout_marginStart="10dp"
+               android:layout_marginEnd="10dp"
                android:ellipsize="end"
-               android:fontFamily="@font/futuramediumbt"
+               android:fontFamily="@font/montserrat"
                android:maxLines="1"
                android:text="@string/contact"
                android:textColor="@color/new_tri_txt_color"
-               android:textSize="14sp"
-               android:layout_marginStart="10dp"
-               android:layout_marginEnd="10dp"/>
+               android:textSize="14sp" />
            <RelativeLayout
                android:layout_width="match_parent"
                android:layout_height="match_parent"
@@ -52,15 +53,15 @@
             android:id="@+id/txt_phn_num"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
             android:ellipsize="end"
-            android:fontFamily="@font/futuramediumbt"
+            android:fontFamily="@font/montserrat"
             android:maxLines="1"
             android:text="@string/phn_nu"
             android:textColor="@color/new_tri_txt_color"
-            android:textSize="14sp"
-            android:layout_marginTop="5dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"/>
+            android:textSize="14sp" />
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -74,6 +75,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_gravity="end"
                 android:background="@drawable/ic_baseline_check_24"
+                android:visibility="gone"
                 tools:ignore="ContentDescription" />
         </RelativeLayout>
 

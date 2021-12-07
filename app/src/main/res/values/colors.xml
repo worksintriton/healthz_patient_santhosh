@@ -66,7 +66,7 @@
     <color name="new_orange_bgm_color">#FCDD68</color>
     <color name="new_four_txt_color">#999999</color>
     <color name="new_tri_txt_color">#555555</color>
-    <color name="missed_red_color">#ED3558</color>
+    <color name="missed_red_color">#ED3557</color>
     <color name="blue">#34B2DC</color>
 
     <color name="placeholder_bg">#dddddd</color>
@@ -121,8 +121,9 @@
     <color name="border_line_opaqe">#999999</color>
     <color name="related_products_bg">#CEE9DD</color>
     <color name="callbtn_bg">#40BFFF</color>
-
-
+    <color name="neutralgray">#9098B1</color>
+    <color name="hz_orders_black">#424242</color>
+    <color name="hzlineborder">#EBF0FF</color>
 
 
 </resources>

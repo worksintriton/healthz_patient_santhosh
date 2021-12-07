@@ -71,7 +71,7 @@ public class NotificationDashboardAdapter extends  RecyclerView.Adapter<Recycler
         if(currentItem.getDate_and_time() != null) {
             holder.txt_date.setText(currentItem.getDate_and_time());
         }
-        if (currentItem.getNotify_img() != null && !currentItem.getNotify_img().isEmpty()) {
+       /* if (currentItem.getNotify_img() != null && !currentItem.getNotify_img().isEmpty()) {
 
             Glide.with(context)
                     .load(currentItem.getNotify_img())
@@ -84,7 +84,7 @@ public class NotificationDashboardAdapter extends  RecyclerView.Adapter<Recycler
                     .load(APIClient.PROFILE_IMAGE_URL)
                     .into(holder.img_notify_imge);
 
-        }
+        }*/
         holder.ll_root.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

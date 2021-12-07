@@ -291,60 +291,79 @@ public class CustomerShopFragment extends Fragment implements Serializable,View.
                         scrollablContent.setVisibility(View.VISIBLE);
                         Log.w(TAG,"ShopDashboardResponse" + new Gson().toJson(response.body()));
 
-                        if(response.body().getData().getBanner_details() != null && response.body().getData().getBanner_details().size()>0) {
-                            listHomeBannerResponse = response.body().getData().getBanner_details();
-                            for (int i = 0; i < listHomeBannerResponse.size(); i++) {
-                                listHomeBannerResponse.get(i).getBanner_img();
-                            }
+                        if(response.body().getData() != null){
 
-                            if (listHomeBannerResponse != null) {
-                                viewpageData(listHomeBannerResponse);
-                            }
-                        }if(response.body().getData().getToday_Special() != null && response.body().getData().getToday_Special().size()>0){
-                            txt_lbl_todaydeal.setVisibility(View.VISIBLE);
-                            txt_seemore_todaydeals.setVisibility(View.VISIBLE);
-                            img_shop.setVisibility(View.VISIBLE);
-                            rv_today_deal.setVisibility(View.VISIBLE);
-                            setView(response.body().getData().getToday_Special());
-
-                        }
-                        else{
-                            txt_lbl_todaydeal.setVisibility(View.GONE);
-                            txt_seemore_todaydeals.setVisibility(View.GONE);
-                            rv_today_deal.setVisibility(View.GONE);
-                            img_shop.setVisibility(View.GONE);
-                        }
-                        if(response.body().getData().getProduct_cate() != null && response.body().getData().getProduct_cate().size()>0){
-                            txt_lbl_category.setVisibility(View.VISIBLE);
-                            txt_seemore_categories.setVisibility(View.VISIBLE);
-                            rv_categ.setVisibility(View.VISIBLE);
-                            setCategView(response.body().getData().getProduct_cate());
-                            txt_seemore_categories.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View view) {
-                                    setCategViewMore(response.body().getData().getProduct_cate());
-                                }
-                            });
-
-                        }
-                        else{
-                            txt_lbl_category.setVisibility(View.GONE);
-                            txt_seemore_categories.setVisibility(View.GONE);
-                            rv_categ.setVisibility(View.GONE);
-                        }
-                        if(response.body().getData().getProduct_details() != null && response.body().getData().getProduct_details().size()>0){
-                            for(int i=0;i<response.body().getData().getProduct_details().size();i++){
-                                productList = response.body().getData().getProduct_details().get(i).getProduct_list();
-                                if(response.body().getData().getProduct_details().get(i).getProduct_list() != null && response.body().getData().getProduct_details().get(i).getProduct_list().size()>0){
-                                    rv_productdetails.setVisibility(View.VISIBLE);
-                                }else{
-                                    rv_productdetails.setVisibility(View.GONE);
+                            if(response.body().getData().getBanner_details() != null && response.body().getData().getBanner_details().size()>0) {
+                                listHomeBannerResponse = response.body().getData().getBanner_details();
+                                for (int i = 0; i < listHomeBannerResponse.size(); i++) {
+                                    listHomeBannerResponse.get(i).getBanner_img();
                                 }
 
+                                if (listHomeBannerResponse != null) {
+                                    viewpageData(listHomeBannerResponse);
+                                }
+                            }if(response.body().getData().getToday_Special() != null && response.body().getData().getToday_Special().size()>0){
+                                txt_lbl_todaydeal.setVisibility(View.VISIBLE);
+                                txt_seemore_todaydeals.setVisibility(View.VISIBLE);
+                                img_shop.setVisibility(View.VISIBLE);
+                                rv_today_deal.setVisibility(View.VISIBLE);
+                                setView(response.body().getData().getToday_Special());
+
                             }
-                            setViewProductDetails(response.body().getData().getProduct_details(),productList);
+                            else{
+                                txt_lbl_todaydeal.setVisibility(View.GONE);
+                                txt_seemore_todaydeals.setVisibility(View.GONE);
+                                rv_today_deal.setVisibility(View.GONE);
+                                img_shop.setVisibility(View.GONE);
+                            }
+                            if(response.body().getData().getProduct_cate() != null && response.body().getData().getProduct_cate().size()>0){
+                                txt_lbl_category.setVisibility(View.VISIBLE);
+                                txt_seemore_categories.setVisibility(View.VISIBLE);
+                                rv_categ.setVisibility(View.VISIBLE);
+                                setCategView(response.body().getData().getProduct_cate());
+                                txt_seemore_categories.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        setCategViewMore(response.body().getData().getProduct_cate());
+                                    }
+                                });
+
+                            }
+                            else{
+                                txt_lbl_category.setVisibility(View.GONE);
+                                txt_seemore_categories.setVisibility(View.GONE);
+                                rv_categ.setVisibility(View.GONE);
+                            }
+                            if(response.body() != null){
+
+                                if(response.body().getData()!= null){
+
+                                    if(response.body().getData().getProduct_details() != null && response.body().getData().getProduct_details().size()>0){
+                                        Log.w(TAG,"ShopDashboardResponse productList" + new Gson().toJson(response.body().getData().getProduct_details()));
+
+                                        for(int i=0;i<response.body().getData().getProduct_details().size();i++){
+
+                                            if(response.body().getData().getProduct_details().get(i).getProduct_list() != null && response.body().getData().getProduct_details().get(i).getProduct_list().size()>0){
+                                                productList = response.body().getData().getProduct_details().get(i).getProduct_list();
+                                               // rv_productdetails.setVisibility(View.VISIBLE);
+                                            }else{
+                                 //               rv_productdetails.setVisibility(View.GONE);
+                                            }
+
+                                        }
+                                        Log.w(TAG,"ShopDashboardResponse productList" + new Gson().toJson(productList));
+
+                                        setViewProductDetails(response.body().getData().getProduct_details(),productList);
+
+                                    }
+
+                                }
+
+                            }
+
 
                         }
+
 
                     }
                 }

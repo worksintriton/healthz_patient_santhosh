@@ -95,6 +95,7 @@ public class PetShopProductDetailsImageAdapter extends  RecyclerView.Adapter<Rec
 
                 Glide.with(context)
                         .load(productListBean.getThumbnail_image())
+                        .error(R.drawable.picempty)
                         .into(holder.img_products_image);
 
             }

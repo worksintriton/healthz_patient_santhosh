@@ -230,6 +230,7 @@ public class PetLoverVendorOrderDetailsActivity extends AppCompatActivity implem
         toolbar_title.setText(getResources().getString(R.string.order_details));
         img_sos.setVisibility(View.GONE);
         img_cart.setVisibility(View.GONE);
+        img_notification.setVisibility(View.VISIBLE);
 
 
 

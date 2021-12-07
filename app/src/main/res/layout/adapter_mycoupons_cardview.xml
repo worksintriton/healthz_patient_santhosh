@@ -31,8 +31,8 @@
                 <ImageView
                     android:layout_margin="10dp"
                     android:id="@+id/img_notify_imge"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
                     android:contentDescription="@string/image"
                     android:scaleType="fitXY"
                     android:background="@drawable/ic_coupon"
@@ -41,32 +41,34 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
+
                     <TextView
                         android:id="@+id/txt_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/futuramediumbt"
-                        android:text="message "
-                        android:textColor="@color/black"
-                        android:textSize="14sp"
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="10dp"
-                        android:maxLines="2"
                         android:ellipsize="end"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:maxLines="2"
+                        android:text="message "
+                        android:textColor="@color/green_colour"
+                        android:textSize="14sp"
 
                         />
+
                     <TextView
                         android:id="@+id/txt_desc"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/futuramediumbt"
-                        android:text="message message message message messagemessage  message message message"
-                        android:textColor="@color/black"
-                        android:textSize="12sp"
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="10dp"
-                        android:maxLines="4"
                         android:ellipsize="end"
+                        android:fontFamily="@font/futuramediumbt"
+                        android:maxLines="4"
+                        android:text="message message message message messagemessage  message message message"
+                        android:textColor="@color/neutralgray"
+                        android:textSize="12sp"
 
                         />
                     <LinearLayout
@@ -82,21 +84,23 @@
                             android:text="refund"
                             android:textColor="@color/new_sec_txt_color"
                             android:textSize="12sp"
-                            android:layout_marginTop="5dp"
+                            android:layout_marginTop="10dp"
                             android:layout_marginEnd="10dp"
                             android:maxLines="1"
                             android:background="@drawable/dashed_border"
-                            android:padding="10dp"
+                            android:padding="5dp"
                             android:gravity="center"
                             android:textStyle="bold"
                             />
+
                         <ImageView
                             android:id="@+id/img_copy"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginStart="20dp"
                             android:layout_width="24dp"
                             android:layout_height="24dp"
-                            android:background="@drawable/copy"/>
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/copy" />
                     </LinearLayout>
 
 
@@ -104,14 +108,13 @@
                         android:id="@+id/txt_expired"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/futuramediumbt"
-                        android:text="expired"
-                        android:textColor="@color/red_back"
-                        android:textSize="12sp"
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="10dp"
-                        />
+                        android:fontFamily="@font/montserrat"
+                        android:text="expired"
+                        android:textColor="@color/red_back"
+                        android:textSize="12sp" />
                 </LinearLayout>
 
 

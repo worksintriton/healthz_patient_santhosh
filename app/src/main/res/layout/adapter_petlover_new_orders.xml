@@ -7,13 +7,14 @@
     android:layout_height="wrap_content"
     android:clipToPadding="false"
     android:layout_margin="5dp"
+    app:cardCornerRadius="5dp"
     app:cardPreventCornerOverlap="true">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/edt_rectangle_corner_border_light"
-        tools:ignore="UselessParent">
+        tools:ignore="UselessParent"
+        android:background="@drawable/icnhzlightblue">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cv_pet"
@@ -62,7 +63,7 @@
                 android:fontFamily="@font/montserrat_bold"
                 android:maxLines="1"
                 android:text="@string/product_title"
-                android:textColor="@color/black"
+                android:textColor="@color/hz_orders_black"
                 android:textSize="14sp" />
 
             <TextView
@@ -87,8 +88,15 @@
                 android:fontFamily="@font/montserrat"
                 android:maxLines="1"
                 android:text="date"
-                android:textColor="@color/text_colors"
+                android:textColor="@color/hz_orders_black"
                 android:textSize="12sp" />
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                app:srcCompat="@drawable/icnlinehz" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -100,11 +108,12 @@
                     android:id="@+id/txtlbl_orderid"
                     android:layout_width="100dp"
                     android:layout_height="19dp"
+                    android:alpha="0.5"
                     android:ellipsize="end"
                     android:fontFamily="@font/montserrat"
                     android:maxLines="1"
                     android:text="Order Status"
-                    android:textColor="@color/text_colors"
+                    android:textColor="@color/hz_orders_black"
                     android:textSize="12sp"
                     android:textStyle="normal"
                     android:visibility="visible" />
@@ -117,16 +126,15 @@
                     android:textColor="@color/new_txt_color"
                     android:textSize="14sp"
                     android:textStyle="normal"
-                    android:visibility="visible" />
+                    android:visibility="gone" />
 
                 <TextView
                     android:id="@+id/txt_order_status"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
-                    android:alpha="0.5"
                     android:ellipsize="end"
-                    android:fontFamily="@font/montserrat_bold"
+                    android:fontFamily="@font/montserrat"
                     android:gravity="end"
                     android:maxLines="1"
                     android:text="@string/orderid"
@@ -145,11 +153,12 @@
                     android:id="@+id/txtlbl_producttitle"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
+                    android:alpha="0.5"
                     android:ellipsize="end"
                     android:fontFamily="@font/montserrat"
                     android:maxLines="1"
                     android:text="Items"
-                    android:textColor="@color/text_colors"
+                    android:textColor="@color/hz_orders_black"
                     android:textSize="12sp"
                     android:visibility="visible" />
 
@@ -171,7 +180,7 @@
                     android:gravity="end"
                     android:maxLines="1"
                     android:text="@string/product_title"
-                    android:textColor="@color/new_sec_txt_color"
+                    android:textColor="@color/hz_orders_black"
                     android:textSize="12sp"
                     android:visibility="visible" />
 
@@ -187,11 +196,12 @@
                     android:id="@+id/txt_service_costlabel"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
+                    android:alpha="0.5"
                     android:ellipsize="end"
                     android:fontFamily="@font/montserrat"
                     android:maxLines="1"
                     android:text="@string/price_label"
-                    android:textColor="@color/new_tri_txt_color"
+                    android:textColor="@color/hz_orders_black"
                     android:textSize="12sp"
                     android:visibility="visible" />
 

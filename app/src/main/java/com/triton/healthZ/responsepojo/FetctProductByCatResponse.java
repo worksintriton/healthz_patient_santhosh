@@ -4,11 +4,12 @@ import java.util.List;
 
 public class FetctProductByCatResponse {
 
+
     /**
      * Status : Success
      * Message : product list
-     * Data : [{"_id":"60e5aabd5af36c5c3605bab4","product_img":"http://54.212.108.156:3000/api/uploads/1625748054901.png","product_title":"HUL Natural Shampoo for Puppy","product_price":180,"thumbnail_image":"http://54.212.108.156:3000/api/uploads/1625748027413.png","product_discount":10,"product_discount_price":0,"product_fav":false,"product_rating":5,"product_review":0},{"_id":"60e5aad15af36c5c3605bab5","product_img":"http://54.212.108.156:3000/api/uploads/1625747945821.png","product_title":"Organic Anti-Tick and Flea Spray for Dogs","product_price":500,"thumbnail_image":"http://54.212.108.156:3000/api/uploads/1625747987678.png","product_discount":0,"product_discount_price":0,"product_fav":false,"product_rating":5,"product_review":0}]
-     * product_list_count : 2
+     * Data : [{"_id":"61af3d669e6f552291dbfa6e","product_img":{"product_img":"http://35.164.43.170:3000/api/uploads/1638874408182.jpg"},"product_title":"Sample","product_price":192,"thumbnail_image":"http://35.164.43.170:3000/api/uploads/1638874408182.jpg","product_discount":1,"product_discount_price":194,"product_fav":false,"product_rating":5,"product_review":0}]
+     * product_list_count : 1
      * Code : 200
      */
 
@@ -17,13 +18,13 @@ public class FetctProductByCatResponse {
     private int product_list_count;
     private int Code;
     /**
-     * _id : 60e5aabd5af36c5c3605bab4
-     * product_img : http://54.212.108.156:3000/api/uploads/1625748054901.png
-     * product_title : HUL Natural Shampoo for Puppy
-     * product_price : 180
-     * thumbnail_image : http://54.212.108.156:3000/api/uploads/1625748027413.png
-     * product_discount : 10
-     * product_discount_price : 0
+     * _id : 61af3d669e6f552291dbfa6e
+     * product_img : {"product_img":"http://35.164.43.170:3000/api/uploads/1638874408182.jpg"}
+     * product_title : Sample
+     * product_price : 192
+     * thumbnail_image : http://35.164.43.170:3000/api/uploads/1638874408182.jpg
+     * product_discount : 1
+     * product_discount_price : 194
      * product_fav : false
      * product_rating : 5
      * product_review : 0
@@ -73,7 +74,11 @@ public class FetctProductByCatResponse {
 
     public static class DataBean {
         private String _id;
-        private String product_img;
+        /**
+         * product_img : http://35.164.43.170:3000/api/uploads/1638874408182.jpg
+         */
+
+        private ProductImgBean product_img;
         private String product_title;
         private int product_price;
         private String thumbnail_image;
@@ -91,11 +96,11 @@ public class FetctProductByCatResponse {
             this._id = _id;
         }
 
-        public String getProduct_img() {
+        public ProductImgBean getProduct_img() {
             return product_img;
         }
 
-        public void setProduct_img(String product_img) {
+        public void setProduct_img(ProductImgBean product_img) {
             this.product_img = product_img;
         }
 
@@ -161,6 +166,18 @@ public class FetctProductByCatResponse {
 
         public void setProduct_review(int product_review) {
             this.product_review = product_review;
+        }
+
+        public static class ProductImgBean {
+            private String product_img;
+
+            public String getProduct_img() {
+                return product_img;
+            }
+
+            public void setProduct_img(String product_img) {
+                this.product_img = product_img;
+            }
         }
     }
 }

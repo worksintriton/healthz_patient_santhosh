@@ -95,8 +95,8 @@ public class PetLoverSOSAdapter extends  RecyclerView.Adapter<RecyclerView.ViewH
         }
         else {
             holder.ll_root.setBackgroundResource(R.drawable.user_bgm_trans);
-            holder.txt_phn_num.setTextColor(Color.parseColor("#555555"));
-            holder.txt_contact.setTextColor(Color.parseColor("#555555"));//for both textviews
+            holder.txt_phn_num.setTextColor(Color.parseColor("#474749"));
+            holder.txt_contact.setTextColor(Color.parseColor("#474749"));//for both textviews
         }
 
         if(sosList.get(position).isEdit_status()){

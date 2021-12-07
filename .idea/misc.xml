@@ -52,6 +52,7 @@
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/drawable-v24/layout_bg_service_greenish.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/drawable-v24/layout_bg_service_greenyish.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/drawable-v24/layout_bg_service_red.xml" value="0.21614583333333334" />
+        <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/drawable-v24/new_call_rounded_corner_btn.xml" value="0.290625" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/drawable-v24/rectangle_corner.xml" value="0.2911458333333333" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/drawable-v24/selected_dot.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/drawable-v24/tab_background.xml" value="0.21614583333333334" />
@@ -62,16 +63,19 @@
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/drawable/btn_bgnd_filter.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/drawable/button_blue_rounded_corner.xml" value="0.290625" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/drawable/button_blue_rounded_corner_without_stroke.xml" value="0.21614583333333334" />
+        <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/drawable/button_grey_circle.xml" value="0.290625" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/drawable/cb_selector.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/drawable/cb_selectorrs.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/drawable/cb_selectors.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/drawable/custom_item_layout.xml" value="0.21614583333333334" />
+        <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/drawable/dashed_border.xml" value="0.290625" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/drawable/default_dot.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/drawable/edt_rectangle_corner_border.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/drawable/edt_rectangle_corner_border_light.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/drawable/footer_navigation_menu.xml" value="0.290625" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/drawable/ic_baseline_add_green.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.290625" />
+        <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/drawable/icnhzlightblue.xml" value="0.290625" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/drawable/layout_bg.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/drawable/layout_bg_service_green.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/drawable/layout_bg_service_greenyish.xml" value="0.21614583333333334" />
@@ -83,6 +87,7 @@
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/drawable/rectangle_corner.xml" value="0.290625" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/drawable/rectangle_corner_border.xml" value="0.290625" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/drawable/rectangle_solid_grey.xml" value="0.215625" />
+        <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/drawable/rounded_sos_bgm.xml" value="0.290625" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/drawable/selected_dot.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/drawable/tab_selector.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/drawable/user_bgm_trans.xml" value="0.290625" />
@@ -113,6 +118,7 @@
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/activity_edit_my_address.xml" value="0.1712962962962963" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/activity_list_of_products.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/activity_login.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/activity_notificaton.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/activity_pet_cart.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/activity_pet_lover_dashboard.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/activity_pet_lover_edit_profile.xml" value="0.2" />
@@ -127,6 +133,7 @@
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/activity_petlover_fav_list.xml" value="0.275" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/activity_petlover_payment_details.xml" value="0.1171875" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/activity_petlover_service_choose_payment_method.xml" value="0.2" />
+        <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/activity_petlover_vendor_order_details.xml" value="0.264" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/activity_pick_up_location_allow.xml" value="0.19947916666666668" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/activity_pick_up_location_deny.xml" value="0.19947916666666668" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/activity_prescription.xml" value="0.275" />
@@ -152,25 +159,29 @@
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/adapter_category_services.xml" value="0.4" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/adapter_health_issue_list.xml" value="0.2" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/adapter_my_pets_list.xml" value="0.2" />
+        <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/adapter_mycoupons_cardview.xml" value="0.4" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/adapter_nearby_doctors.xml" value="0.2" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/adapter_nearby_service_providers.xml" value="0.2" />
+        <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/adapter_notifications_cardview.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/adapter_pet_missed_appointment.xml" value="0.2" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/adapter_pet_mycalendar_available_cardview.xml" value="0.2" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/adapter_pet_new_appointment.xml" value="0.2" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/adapter_petcompleted_appointment.xml" value="0.4" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/adapter_petlist.xml" value="0.2" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/adapter_petlover_dashboardproducts.xml" value="0.275" />
-        <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/adapter_petlover_new_orders.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/adapter_petlover_new_orders.xml" value="0.6631578947368421" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/adapter_petlover_services.xml" value="0.2" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/adapter_petloverdoctor.xml" value="0.275" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/adapter_petloverproducts.xml" value="0.275" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/adapter_petloversplist.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/adapter_product_details.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/adapter_shipping_address.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/adapter_shop_card.xml" value="0.275" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/adapter_shop_productdetails.xml" value="0.2" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/adapter_shop_productdetails_image.xml" value="0.2" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/adapter_shop_todaysdeal.xml" value="0.2" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/adapter_shop_todaysdeal_seemore.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/adapter_sos_no_list.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/adapter_sp_speclist.xml" value="0.19947916666666668" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/adapter_vets_card.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/alert_approve_reject_layout.xml" value="0.2" />
@@ -231,7 +242,7 @@
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>

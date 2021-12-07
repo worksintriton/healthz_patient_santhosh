@@ -119,6 +119,9 @@ public class NotificationActivity extends AppCompatActivity {
         ImageView img_profile = include_petlover_header.findViewById(R.id.img_profile);
         TextView toolbar_title = include_petlover_header.findViewById(R.id.toolbar_title);
         toolbar_title.setText(getResources().getString(R.string.notification));
+        img_profile.setVisibility(View.VISIBLE);
+
+
 
         img_back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -128,14 +131,14 @@ public class NotificationActivity extends AppCompatActivity {
         });
 
         if (new ConnectionDetector(NotificationActivity.this).isNetworkAvailable(NotificationActivity.this)) {
-           // notificationGetlistResponseCall();
+             notificationGetlistResponseCall();
         }
 
         refresh_layout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
                 if (new ConnectionDetector(NotificationActivity.this).isNetworkAvailable(NotificationActivity.this)) {
-                    //notificationGetlistResponseCall();
+                   notificationGetlistResponseCall();
                 }
             }
         });

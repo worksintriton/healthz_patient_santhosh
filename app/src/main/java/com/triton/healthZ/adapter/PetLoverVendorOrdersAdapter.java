@@ -2,6 +2,7 @@ package com.triton.healthz.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,8 +16,11 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.triton.healthz.R;
+import com.triton.healthz.customer.PetLoverVendorOrderDetailsActivity;
+import com.triton.healthz.doctor.DoctorOrderDetailsActivity;
 import com.triton.healthz.interfaces.AddandReviewListener;
 import com.triton.healthz.responsepojo.PetLoverVendorOrderListResponse;
+import com.triton.healthz.serviceprovider.shop.SPOrderDetailsActivity;
 
 import java.util.List;
 
@@ -130,7 +134,7 @@ public class PetLoverVendorOrdersAdapter extends  RecyclerView.Adapter<RecyclerV
                     .into(holder.img_products_image);
 
         }*/
-     /*   holder.txt_order_details.setOnClickListener(new View.OnClickListener() {
+        holder.ll_root.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(fromactivity != null) {
@@ -159,37 +163,8 @@ public class PetLoverVendorOrdersAdapter extends  RecyclerView.Adapter<RecyclerV
 
 
             }
-        });*/
-        holder.ll_root.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            /*    if(fromactivity != null) {
-                    if (fromactivity.equalsIgnoreCase("FragmentDoctorNewOrders") || fromactivity.equalsIgnoreCase("FragmentDoctorCompletedOrders") || fromactivity.equalsIgnoreCase("FragmentDoctorCancelledOrders")) {
-                        Intent i = new Intent(context, DoctorOrderDetailsActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        i.putExtra("_id", orderResponseListAll.get(position).getP_order_id());
-                        i.putExtra("fromactivity", fromactivity);
-                        context.startActivity(i);
-                    }else if (fromactivity.equalsIgnoreCase("FragmentSPNewOrders") || fromactivity.equalsIgnoreCase("FragmentSPCompletedOrders") || fromactivity.equalsIgnoreCase("FragmentSPCancelledOrders")) {
-                        Intent i = new Intent(context, SPOrderDetailsActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        i.putExtra("_id", orderResponseListAll.get(position).getP_order_id());
-                        i.putExtra("fromactivity", fromactivity);
-                        context.startActivity(i);
-                    } else{
-                        Intent i = new Intent(context, PetLoverVendorOrderDetailsActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        i.putExtra("_id", orderResponseListAll.get(position).getP_order_id());
-                        i.putExtra("fromactivity", fromactivity);
-                        context.startActivity(i);
-                    }
-                }else{
-                    Intent i = new Intent(context, PetLoverVendorOrderDetailsActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    i.putExtra("_id", orderResponseListAll.get(position).getP_order_id());
-                    i.putExtra("fromactivity", fromactivity);
-                    context.startActivity(i);
-                }
-*/
-
-            }
         });
+
        /* holder.txt_cancell_order.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

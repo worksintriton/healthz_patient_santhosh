@@ -25,6 +25,7 @@ import com.triton.healthz.customer.ProductDetailsActivity;
 import com.triton.healthz.responsepojo.CartDetailsResponse;
 import com.triton.healthz.serviceprovider.shop.SPProductDetailsActivity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -35,7 +36,7 @@ public class Cart_Adapter extends  RecyclerView.Adapter<RecyclerView.ViewHolder>
     List<CartDetailsResponse.DataBean> data;
     private Context context;
     private String petImagePath;
-    private List<String> petImgBeanList;
+    private List<String> petImgBeanList= new ArrayList<>();
     private AddandRemoveProductListener addandRemoveProductListener;
     private String fromactivity;
 
@@ -64,7 +65,15 @@ public class Cart_Adapter extends  RecyclerView.Adapter<RecyclerView.ViewHolder>
 
     @SuppressLint("SetTextI18n")
     private void initLayoutOne(ViewHolderOne holder, final int position) {
-        petImgBeanList = data.get(position).getProduct_id().getProduct_img();
+
+        List<CartDetailsResponse.DataBean.ProductIdBean.ProductImgBean> productImgBeanList = new ArrayList<>();
+
+        productImgBeanList = data.get(position).getProduct_id().getProduct_img();
+
+        for(int i=0;i<productImgBeanList.size();i++){
+
+            petImgBeanList.add(productImgBeanList.get(i).getProduct_img());
+        }
 
         if (data.get(position).getProduct_id().getProduct_name() != null) {
             holder.txt_products_title.setText(data.get(position).getProduct_id().getProduct_name());

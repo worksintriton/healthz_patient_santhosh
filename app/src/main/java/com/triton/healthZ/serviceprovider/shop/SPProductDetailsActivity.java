@@ -51,6 +51,7 @@ import com.wang.avi.AVLoadingIndicatorView;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Timer;
@@ -688,7 +689,19 @@ public class SPProductDetailsActivity extends AppCompatActivity implements View.
 
 
                             if(response.body().getProduct_details().getProduct_img() != null && response.body().getProduct_details().getProduct_img().size()>0){
-                                viewpageData(response.body().getProduct_details().getProduct_img());
+
+                                List<FetchProductByIdResponse.ProductDetailsBean.ProductImgBean> productImgBeanList=new ArrayList<>();
+
+                                productImgBeanList = response.body().getProduct_details().getProduct_img();
+
+                                List<String> stringList = new ArrayList<>();
+
+                                for(int i=0;i<productImgBeanList.size();i++){
+
+                                    stringList.add(productImgBeanList.get(i).getProduct_img());
+                                }
+
+                                viewpageData(stringList);
                             }
                             if(response.body().getProduct_details().getProduct_related() != null && response.body().getProduct_details().getProduct_related().size()>0){
                                 setView(response.body().getProduct_details().getProduct_related());

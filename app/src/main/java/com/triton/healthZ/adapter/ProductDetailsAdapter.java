@@ -100,22 +100,22 @@ public class ProductDetailsAdapter extends  RecyclerView.Adapter<RecyclerView.Vi
         }
         if (product_details.get(position).getProduct_price() != 0 && product_details.get(position).getProduct_count() != 0) {
             if (product_details.get(position).getProduct_count() == 1) {
-                holder.txt_products_price.setText("\u20B9 " + product_details.get(position).getProduct_price() + " (" + product_details.get(position).getProduct_count() + " item )");
+                holder.txt_products_price.setText("\u20B9 " + product_details.get(position).getProduct_price());
             } else {
-                holder.txt_products_price.setText("\u20B9 " + product_details.get(position).getProduct_price() + " (" + product_details.get(position).getProduct_count() + " items )");
+                holder.txt_products_price.setText("\u20B9 " + product_details.get(position).getProduct_price());
 
             }
         }
         else { if (product_details.get(position).getProduct_count() == 1) {
-                holder.txt_products_price.setText("\u20B9 " + 0 + " (" + product_details.get(position).getProduct_count() + " item )");
+                holder.txt_products_price.setText("\u20B9 " + 0);
             }
             else {
-                holder.txt_products_price.setText("\u20B9 " + 0 + " (" + product_details.get(position).getProduct_count() + " items )");
+                holder.txt_products_price.setText("\u20B9 " + 0);
 
             }
 
         }
-        if (product_details.get(position).getProduct_booked() != null) {
+      /*  if (product_details.get(position).getProduct_booked() != null) {
             holder.txt_bookedon.setText("Booked for:" + " " + product_details.get(position).getProduct_booked());
 
         }
@@ -231,7 +231,7 @@ public class ProductDetailsAdapter extends  RecyclerView.Adapter<RecyclerView.Vi
 
 
         }
-
+*/
 
 
 

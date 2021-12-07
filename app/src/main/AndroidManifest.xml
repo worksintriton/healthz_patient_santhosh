@@ -222,7 +222,7 @@
         <activity
             android:name="com.triton.healthz.activity.VerifyEmailOtpActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"
+            android:theme="@style/EntryAppTheme"
             android:windowSoftInputMode="adjustPan" /> <!-- Pet Lover -->
         <activity
             android:name="com.triton.healthz.customer.AddYourPetActivity"
@@ -763,7 +763,7 @@
         <activity
             android:name="com.triton.healthz.activity.SoSActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"
+            android:theme="@style/EntryAppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name="com.triton.healthz.activity.EditSoSActivity"

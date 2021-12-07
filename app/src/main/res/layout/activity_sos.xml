@@ -62,7 +62,7 @@
                 android:id="@+id/txt_emergency"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/futuramediumbt"
+                android:fontFamily="@font/montserrat_bold"
                 android:gravity="center_horizontal"
                 android:text="@string/emergency_new"
                 android:textColor="@color/new_txt_color"
@@ -77,7 +77,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    />
+                    android:layout_marginBottom="40dp"/>
 
                 <TextView
                     android:id="@+id/txt_no_records"
@@ -99,6 +99,7 @@
 
 
     </ScrollView>
+
     <LinearLayout
         android:id="@+id/footerView"
         android:layout_width="match_parent"
@@ -109,14 +110,15 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/new_call_rounded_corner_btn"
             android:orientation="horizontal">
+
             <Button
                 android:id="@+id/btn_call"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
-                android:fontFamily="@font/futuramediumbt"
+                android:fontFamily="@font/montserrat"
+                android:background="@drawable/new_call_rounded_corner_btn"
                 android:text="@string/call"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
@@ -125,23 +127,21 @@
         </LinearLayout>
 
 
-
-
-    <!--    <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottom_navigation_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:elevation="8dp"
-            app:itemIconSize="20dp"
-            app:menu="@menu/bottom_navigation"
-            android:background="@drawable/rounded_curve"
-            android:layout_marginBottom="20dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            app:itemBackground="@drawable/selected_state"
-            app:itemIconTint="@color/selector"
-            app:itemTextColor="@color/selector"
-            app:labelVisibilityMode="labeled" />-->
+        <!--    <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottom_navigation_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:elevation="8dp"
+                app:itemIconSize="20dp"
+                app:menu="@menu/bottom_navigation"
+                android:background="@drawable/rounded_curve"
+                android:layout_marginBottom="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                app:itemBackground="@drawable/selected_state"
+                app:itemIconTint="@color/selector"
+                app:itemTextColor="@color/selector"
+                app:labelVisibilityMode="labeled" />-->
 
 
     </LinearLayout>
