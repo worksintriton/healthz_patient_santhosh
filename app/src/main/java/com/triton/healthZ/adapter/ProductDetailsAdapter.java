@@ -115,10 +115,6 @@ public class ProductDetailsAdapter extends  RecyclerView.Adapter<RecyclerView.Vi
             }
 
         }
-      /*  if (product_details.get(position).getProduct_booked() != null) {
-            holder.txt_bookedon.setText("Booked for:" + " " + product_details.get(position).getProduct_booked());
-
-        }
         if (product_details.get(position).getProduct_image() != null && !product_details.get(position).getProduct_image().isEmpty()) {
             Glide.with(context)
                     .load(product_details.get(position).getProduct_image())
@@ -131,6 +127,11 @@ public class ProductDetailsAdapter extends  RecyclerView.Adapter<RecyclerView.Vi
                     .into(holder.img_products_image);
 
         }
+      /*  if (product_details.get(position).getProduct_booked() != null) {
+            holder.txt_bookedon.setText("Booked for:" + " " + product_details.get(position).getProduct_booked());
+
+        }
+
 
         holder.txt_track_order.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -233,6 +234,105 @@ public class ProductDetailsAdapter extends  RecyclerView.Adapter<RecyclerView.Vi
         }
 */
 
+        holder.txt_track_order.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(fromactivity != null) {
+                    if (fromactivity.equalsIgnoreCase("FragmentDoctorNewOrders") || fromactivity.equalsIgnoreCase("FragmentDoctorCompletedOrders") || fromactivity.equalsIgnoreCase("FragmentDoctorCancelledOrders")) {
+                        Intent i = new Intent(context, DoctorTrackOrderActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        i.putExtra("_id", product_details.get(position).getProduct_id());
+                        i.putExtra("orderid", orderid);
+                        i.putExtra("fromactivity", TAG);
+                        context.startActivity(i);
+                    }
+                    else if (fromactivity.equalsIgnoreCase("FragmentSPNewOrders") || fromactivity.equalsIgnoreCase("FragmentSPCompletedOrders") || fromactivity.equalsIgnoreCase("FragmentSPCancelledOrders")) {
+                        Intent i = new Intent(context, SPTrackOrderActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        i.putExtra("_id", product_details.get(position).getProduct_id());
+                        i.putExtra("orderid", orderid);
+                        i.putExtra("fromactivity", TAG);
+                        context.startActivity(i);
+                    }
+                    else {
+                        Intent i = new Intent(context, TrackOrderActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        i.putExtra("_id", product_details.get(position).getProduct_id());
+                        i.putExtra("orderid", orderid);
+                        i.putExtra("fromactivity", TAG);
+                        context.startActivity(i);
+                    }
+                }else{
+                    Intent i = new Intent(context, TrackOrderActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    i.putExtra("_id", product_details.get(position).getProduct_id());
+                    i.putExtra("orderid", orderid);
+                    i.putExtra("fromactivity", TAG);
+                    context.startActivity(i);
+                }
+
+
+
+            }
+        });
+        holder.txt_cancell_order.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(fromactivity != null) {
+                    if (fromactivity.equalsIgnoreCase("FragmentDoctorNewOrders")) {
+                        Intent i = new Intent(context, DoctorCancelOrderActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        i.putExtra("product_id", product_details.get(position).getProduct_id());
+                        i.putExtra("orderid", orderid);
+                        i.putExtra("fromactivity", fromactivity);
+                        context.startActivity(i);
+                    }else if (fromactivity.equalsIgnoreCase("FragmentSPNewOrders")) {
+                        Intent i = new Intent(context, SPCancelOrderActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        i.putExtra("product_id", product_details.get(position).getProduct_id());
+                        i.putExtra("orderid", orderid);
+                        i.putExtra("fromactivity", fromactivity);
+                        context.startActivity(i);
+                    }else{
+                        Intent i = new Intent(context, PetVendorCancelOrderActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        i.putExtra("product_id", product_details.get(position).getProduct_id());
+                        i.putExtra("orderid", orderid);
+                        i.putExtra("fromactivity", TAG);
+                        context.startActivity(i);
+                    }
+                }else{
+                    Intent i = new Intent(context, PetVendorCancelOrderActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    i.putExtra("product_id", product_details.get(position).getProduct_id());
+                    i.putExtra("orderid", orderid);
+                    i.putExtra("fromactivity", TAG);
+                    context.startActivity(i);
+                }
+
+
+            }
+        });
+        if(product_details.get(position).getProduct_stauts() != null ){
+            Log.w(TAG,"Product_stauts : "+product_details.get(position).getProduct_stauts());
+
+            if( product_details.get(position).getProduct_stauts().equalsIgnoreCase("Order Booked")){
+                holder.txt_cancell_order.setVisibility(View.GONE);
+                holder.txt_product_status.setVisibility(View.GONE);
+            } else if(product_details.get(position).getProduct_stauts().equalsIgnoreCase("Order Accept")){
+                holder.txt_cancell_order.setVisibility(View.GONE);
+                holder.txt_product_status.setVisibility(View.VISIBLE);
+                holder.txt_product_status.setTextColor(context.getResources().getColor(R.color.new_green_btn));
+                holder.txt_product_status.setText(product_details.get(position).getProduct_stauts());
+            } else if(product_details.get(position).getProduct_stauts().equalsIgnoreCase("Vendor cancelled")){
+                holder.txt_cancell_order.setVisibility(View.GONE);
+                holder.txt_product_status.setVisibility(View.VISIBLE);
+                holder.txt_product_status.setText(product_details.get(position).getProduct_stauts());
+            }else if(product_details.get(position).getProduct_stauts().equalsIgnoreCase("Order Dispatch")){
+                holder.txt_cancell_order.setVisibility(View.GONE);
+                holder.txt_product_status.setVisibility(View.VISIBLE);
+                holder.txt_product_status.setTextColor(context.getResources().getColor(R.color.new_green_btn));
+                holder.txt_product_status.setText(product_details.get(position).getProduct_stauts());
+            }else if(product_details.get(position).getProduct_stauts().equalsIgnoreCase("Order Cancelled")){
+                holder.txt_cancell_order.setVisibility(View.GONE);
+                holder.txt_product_status.setVisibility(View.VISIBLE);
+                holder.txt_product_status.setText(product_details.get(position).getProduct_stauts());
+            }
+
+
+        }
 
 
 

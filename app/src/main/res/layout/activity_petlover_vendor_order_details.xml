@@ -50,7 +50,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:visibility="visible">
 
                 <TextView
                     android:layout_width="200dp"
@@ -85,14 +86,15 @@
                 android:id="@+id/ll_productdetails"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:visibility="visible">
 
                 <TextView
                     android:id="@+id/txt_cancell_order"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:fontFamily="@font/futuramediumbt"
+                    android:fontFamily="@font/montserrat"
                     android:gravity="end"
                     android:text="@string/cancel_order"
                     android:textColor="@color/red"
@@ -121,8 +123,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:orientation="horizontal">
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:visibility="visible">
 
                 <TextView
                     android:layout_width="200dp"
@@ -144,7 +147,7 @@
                         android:id="@+id/img_expand_arrow"
                         android:layout_width="18dp"
                         android:layout_height="18dp"
-                        android:src="@drawable/icnhzdwnarw"
+                        android:src="@drawable/ic_up"
                         tools:ignore="ContentDescription" />
 
                 </RelativeLayout>
@@ -156,9 +159,10 @@
                 android:id="@+id/ll_orderdetails"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/icnhzlightblue">
+                android:background="@drawable/icnhzlightblue"
+                android:orientation="vertical"
+                android:visibility="visible">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -197,7 +201,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginStart="10dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginEnd="10dp"
                     android:orientation="horizontal">
 
@@ -230,18 +234,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginStart="10dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginEnd="10dp"
                     android:orientation="horizontal">
 
                     <TextView
+                        android:id="@+id/txt_no_of_prodslabel"
                         android:layout_width="@dimen/width_appoitmentdetails"
                         android:layout_height="wrap_content"
                         android:alpha="0.5"
                         android:ellipsize="end"
                         android:fontFamily="@font/futuramediumbt"
                         android:maxLines="1"
-                        android:text="@string/quantity"
+                        android:text="Number of Products"
                         android:textColor="@color/hz_orders_black"
                         android:textSize="14sp" />
 
@@ -274,7 +279,7 @@
                         android:ellipsize="end"
                         android:fontFamily="@font/futuramediumbt"
                         android:maxLines="1"
-                        android:text="Order Date"
+                        android:text="Address"
                         android:textColor="@color/hz_orders_black"
                         android:textSize="14sp" />
 
@@ -296,7 +301,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginStart="10dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="5dp"
                     android:orientation="horizontal">
@@ -416,71 +421,48 @@
                         android:id="@+id/img_expand_arrow_shipping"
                         android:layout_width="18dp"
                         android:layout_height="18dp"
-                        android:src="@drawable/icnhzdwnarw"
+                        android:src="@drawable/ic_up"
                         tools:ignore="ContentDescription" />
 
                 </RelativeLayout>
 
 
             </LinearLayout>
+
             <LinearLayout
+                android:id="@+id/ll_shippingaddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:id="@+id/ll_shippingaddress">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="5dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="@dimen/width_appoitmentdetails"
-                        android:layout_height="match_parent"
-                        android:ellipsize="end"
-                        android:fontFamily="@font/futuramediumbt"
-                        android:maxLines="1"
-                        android:text="Order Total"
-                        android:textColor="@color/black"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:id="@+id/txt_total_order_cost"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:ellipsize="end"
-                        android:fontFamily="@font/futuramediumbt"
-                        android:maxLines="1"
-                        android:text="INR  0"
-                        android:textColor="@color/new_sec_txt_color"
-                        android:textSize="14sp" />
-
-                </LinearLayout>
+                android:layout_marginTop="10dp"
+                android:background="@drawable/icnhzlightblue"
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:id="@+id/ll_original_price"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="5dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
                     android:orientation="horizontal">
 
                     <TextView
+                        android:id="@+id/txt_no_of_items"
                         android:layout_width="@dimen/width_appoitmentdetails"
                         android:layout_height="wrap_content"
+                        android:alpha="0.5"
                         android:fontFamily="@font/futuramediumbt"
-                        android:text="Original Price"
-                        android:textColor="@color/black"
+                        android:text="Items(3)"
+                        android:textColor="@color/hz_orders_black"
                         android:textSize="14sp" />
 
                     <TextView
                         android:id="@+id/txt_original_price"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/futuramediumbt"
-                        android:textColor="@color/new_sec_txt_color"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/hz_orders_black"
                         android:textSize="14sp" />
 
                 </LinearLayout>
@@ -489,24 +471,60 @@
                     android:id="@+id/ll_discount_price"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="5dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
                     android:orientation="horizontal">
 
                     <TextView
                         android:layout_width="@dimen/width_appoitmentdetails"
                         android:layout_height="wrap_content"
+                        android:alpha="0.5"
                         android:fontFamily="@font/futuramediumbt"
-                        android:text="Coupon Price"
-                        android:textColor="@color/black"
+                        android:text="Shipping Price"
+                        android:textColor="@color/hz_orders_black"
                         android:textSize="14sp" />
 
                     <TextView
                         android:id="@+id/txt_discount_price"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/futuramediumbt"
-                        android:textColor="@color/new_sec_txt_color"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/hz_orders_black"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="@dimen/width_appoitmentdetails"
+                        android:layout_height="match_parent"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:maxLines="1"
+                        android:text="Total Price"
+                        android:textColor="@color/hz_orders_black"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/txt_total_order_cost"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:maxLines="1"
+                        android:text="INR  0"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/green_colour"
                         android:textSize="14sp" />
 
                 </LinearLayout>
@@ -520,7 +538,8 @@
                     android:fontFamily="@font/futuramediumbt"
                     android:maxLines="1"
                     android:textColor="@color/new_sec_txt_color"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    android:visibility="gone" />
 
                 <TextView
                     android:id="@+id/txt_shipping_address_city"
@@ -531,7 +550,9 @@
                     android:fontFamily="@font/futuramediumbt"
                     android:maxLines="2"
                     android:textColor="@color/new_sec_txt_color"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    android:visibility="gone" />
+
                 <TextView
                     android:id="@+id/txt_shipping_address_state_pincode"
                     android:layout_width="wrap_content"
@@ -541,7 +562,9 @@
                     android:fontFamily="@font/futuramediumbt"
                     android:maxLines="1"
                     android:textColor="@color/new_sec_txt_color"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    android:visibility="gone" />
+
                 <TextView
                     android:id="@+id/txt_shipping_address_phone"
                     android:layout_width="wrap_content"
@@ -551,7 +574,8 @@
                     android:fontFamily="@font/futuramediumbt"
                     android:maxLines="1"
                     android:textColor="@color/new_sec_txt_color"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    android:visibility="gone" />
 
                 <TextView
                     android:id="@+id/txt_shipping_address_landmark"
@@ -562,9 +586,8 @@
                     android:fontFamily="@font/futuramediumbt"
                     android:maxLines="1"
                     android:textColor="@color/new_sec_txt_color"
-                    android:textSize="14sp" />
-
-
+                    android:textSize="14sp"
+                    android:visibility="gone" />
 
 
             </LinearLayout>
@@ -596,10 +619,10 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:ellipsize="end"
-                        android:fontFamily="@font/futuramediumbt"
+                        android:fontFamily="@font/montserrat"
                         android:maxLines="1"
                         android:text="Delivered"
-                        android:textColor="@color/black"
+                        android:textColor="@color/hz_orders_black"
                         android:textSize="16sp"
                         tools:ignore="UseCompatTextViewDrawableXml" />
 
@@ -610,10 +633,10 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="5dp"
                         android:ellipsize="end"
-                        android:fontFamily="@font/futuramediumbt"
+                        android:fontFamily="@font/montserrat"
                         android:maxLines="1"
                         android:text="@string/date"
-                        android:textColor="@color/new_sec_txt_color"
+                        android:textColor="@color/hz_orders_black"
                         android:textSize="14sp" />
                 </LinearLayout>
 

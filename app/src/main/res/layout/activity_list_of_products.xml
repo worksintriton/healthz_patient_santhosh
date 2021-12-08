@@ -127,6 +127,7 @@
             </androidx.appcompat.widget.Toolbar>
 
             <RelativeLayout
+                android:id="@+id/rl_search"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="20dp"
@@ -152,13 +153,13 @@
                     android:id="@+id/edt_search"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
                     android:layout_toEndOf="@id/img_search"
                     android:background="@null"
                     android:fontFamily="@font/montserrat"
                     android:hint="@string/search"
                     android:imeOptions="actionDone"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
                     android:inputType="textWebEmailAddress"
                     android:maxLines="1"
                     android:padding="15dp"
@@ -344,23 +345,29 @@
             </LinearLayout>
 
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_today_deal"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="40dp" />
+                android:layout_height="match_parent">
 
+                <TextView
+                    android:id="@+id/txt_no_records"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:text="@string/no_data_found"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:visibility="gone" />
 
-            <TextView
-                android:id="@+id/txt_no_records"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:gravity="center"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:visibility="gone" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_today_deal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="40dp" />
+            </RelativeLayout>
 
 
         </LinearLayout>

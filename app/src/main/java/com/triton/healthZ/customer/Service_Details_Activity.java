@@ -149,7 +149,9 @@ public class Service_Details_Activity extends AppCompatActivity implements View.
 
     StringBuilder sb = new StringBuilder();
 
-
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.rl_share)
+    RelativeLayout rl_share;
 
 
     private String userid;
@@ -660,9 +662,9 @@ public class Service_Details_Activity extends AppCompatActivity implements View.
 
                         ll_map.setVisibility(View.VISIBLE);
 
-                        txt_aboutsp_label.setVisibility(View.VISIBLE);
+                        //txt_aboutsp_label.setVisibility(View.VISIBLE);
 
-                        txt_dr_desc.setVisibility(View.VISIBLE);
+                        //txt_dr_desc.setVisibility(View.VISIBLE);
 
                         txt_review_count.setVisibility(View.VISIBLE);
 
@@ -891,6 +893,39 @@ public class Service_Details_Activity extends AppCompatActivity implements View.
 
 
                         }
+
+
+                        rl_share.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                String shareBody;
+                                /*Create an ACTION_SEND Intent*/
+                                Intent intent = new Intent(android.content.Intent.ACTION_SEND);
+                                /*This will be the actual content you wish you share.*/
+                                if(spprovidername!=null&&serviceprovidingcompanyname!=null&&location!=null){
+
+                                    shareBody = "Service Name : "+spprovidername+"\n"+" Business Name : "+serviceprovidingcompanyname+
+
+                                            "Location : "+location;
+
+                                }
+                                else {
+
+                                    shareBody =  "Service Name : "+"\n"+" Business Name : "+
+
+                                            "Location : ";
+
+
+                                }
+                                /*The type of the content is text, obviously.*/
+                                intent.setType("text/plain");
+                                /*Applying information Subject and Body.*/
+                                intent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Sharing Doctor Details via Healthz");
+                                intent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
+                                /*Fire!*/
+                                startActivity(Intent.createChooser(intent, "Sharing via Healthz"));
+                            }
+                        });
 
 
 

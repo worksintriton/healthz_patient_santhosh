@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -138,6 +139,9 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
     @BindView(R.id.ll_add_to_cart)
     LinearLayout ll_add_to_cart;
 
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.scrollablContent)
+    ScrollView scrollablContent;
 
 
 //    @SuppressLint("NonConstantResourceId")
@@ -197,11 +201,30 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
     @BindView(R.id.txt_cart_count_badge)
     TextView txt_cart_count_badge;
 
-
-
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.rl_relat_prod)
     RelativeLayout rl_relat_prod;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.ll_cond)
+    LinearLayout ll_cond;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.ll_price)
+    LinearLayout ll_price;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_about_vet_label)
+    TextView txt_about_vet_label;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_details_lbl)
+    TextView txt_details_lbl;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_review_count)
+    TextView txt_review_count;
+
 
     String prod_type;
 
@@ -342,6 +365,8 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
             }
         });*/
 
+        scrollablContent.setVisibility(View.GONE);
+
         viewPager.setVisibility(View.GONE);
 
         tabLayout.setVisibility(View.GONE);
@@ -372,6 +397,18 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
         txt_product_desc.setVisibility(View.GONE);
 
         rl_relat_prod.setVisibility(View.GONE);
+
+        ll_cond.setVisibility(View.GONE);
+
+        ll_price.setVisibility(View.GONE);
+
+        txt_details_lbl.setVisibility(View.GONE);
+
+        txt_about_vet_label.setVisibility(View.GONE);
+
+        txt_review_count.setVisibility(View.GONE);
+
+
 
     }
 
@@ -609,6 +646,7 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
                                 }
                             }
 
+                            scrollablContent.setVisibility(View.VISIBLE);
 
                             viewPager.setVisibility(View.VISIBLE);
 
@@ -637,6 +675,18 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
                             txt_product_desc.setVisibility(View.VISIBLE);
 
                             rl_relat_prod.setVisibility(View.VISIBLE);
+
+                            ll_cond.setVisibility(View.VISIBLE);
+
+                            ll_price.setVisibility(View.VISIBLE);
+
+                            txt_details_lbl.setVisibility(View.VISIBLE);
+
+                            txt_about_vet_label.setVisibility(View.VISIBLE);
+
+                            txt_review_count.setVisibility(View.VISIBLE);
+
+
 
 
                             img_fav.setOnClickListener(ProductDetailsActivity.this);
@@ -826,9 +876,13 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
             txt_prod_type.setText(prod_type);
         }
 
-       /* if(product_cart_count != 0){
-            txt_cart_count.setText(product_cart_count+"");
-        }*/
+        if(product_review != 0){
+            txt_review_count.setText(""+product_cart_count+" Reviews");
+        }
+        else {
+
+            txt_review_count.setVisibility(View.GONE);
+        }
 
     }
 

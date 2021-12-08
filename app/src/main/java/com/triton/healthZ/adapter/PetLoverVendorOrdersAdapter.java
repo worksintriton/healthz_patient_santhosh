@@ -15,7 +15,9 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.triton.healthz.R;
+import com.triton.healthz.api.APIClient;
 import com.triton.healthz.customer.PetLoverVendorOrderDetailsActivity;
 import com.triton.healthz.doctor.DoctorOrderDetailsActivity;
 import com.triton.healthz.interfaces.AddandReviewListener;
@@ -94,12 +96,14 @@ public class PetLoverVendorOrdersAdapter extends  RecyclerView.Adapter<RecyclerV
         if(fromactivity != null){
             if(fromactivity.equalsIgnoreCase("FragmentSPNewOrders") || fromactivity.equalsIgnoreCase("FragmentDoctorNewOrders") || fromactivity.equalsIgnoreCase("FragmentPetLoverNewOrders")){
                 if (orderResponseListAll.get(position).getP_order_booked_on() != null) {
+                    holder.txt_bookedon.setTextColor(context.getColor(R.color.orange_color));
                     holder.txt_bookedon.setText("Ordered at:" + " " + orderResponseListAll.get(position).getP_order_booked_on());
 
                 }
             }
             else if(fromactivity.equalsIgnoreCase("FragmentSPCompletedOrders") || fromactivity.equalsIgnoreCase("FragmentDoctorCompletedOrders") || fromactivity.equalsIgnoreCase("FragmentPetLoverCompletedOrders")){
                 if (orderResponseListAll.get(position).getP_completed_date() != null) {
+                    holder.txt_bookedon.setTextColor(context.getColor(R.color.green_colour));
                     holder.txt_bookedon.setText("Delivered on:" + " " + orderResponseListAll.get(position).getP_completed_date());
 
                 }
@@ -114,6 +118,7 @@ public class PetLoverVendorOrdersAdapter extends  RecyclerView.Adapter<RecyclerV
             }
             else if(fromactivity.equalsIgnoreCase("FragmentSPCancelledOrders") || fromactivity.equalsIgnoreCase("FragmentDoctorCancelledOrders") || fromactivity.equalsIgnoreCase("FragmentPetLoverCancelledOrders")){
                 if (orderResponseListAll.get(position).getP_cancelled_date() != null) {
+                    holder.txt_bookedon.setTextColor(context.getColor(R.color.missed_red_color));
                     holder.txt_bookedon.setText("Cancelled on:" + " " + orderResponseListAll.get(position).getP_cancelled_date());
 
                 }
@@ -122,7 +127,7 @@ public class PetLoverVendorOrdersAdapter extends  RecyclerView.Adapter<RecyclerV
         }
 
 
-       /* if (orderResponseListAll.get(position).getP_order_image() != null && !orderResponseListAll.get(position).getP_order_image().isEmpty()) {
+        if (orderResponseListAll.get(position).getP_order_image() != null && !orderResponseListAll.get(position).getP_order_image().isEmpty()) {
             Glide.with(context)
                     .load(orderResponseListAll.get(position).getP_order_image())
                     .into(holder.img_products_image);
@@ -133,8 +138,8 @@ public class PetLoverVendorOrdersAdapter extends  RecyclerView.Adapter<RecyclerV
                     .load(APIClient.PROFILE_IMAGE_URL)
                     .into(holder.img_products_image);
 
-        }*/
-        holder.ll_root.setOnClickListener(new View.OnClickListener() {
+        }
+        holder.btn_order_details.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(fromactivity != null) {
@@ -191,7 +196,7 @@ public class PetLoverVendorOrdersAdapter extends  RecyclerView.Adapter<RecyclerV
     static class ViewHolderOne extends RecyclerView.ViewHolder {
         public TextView txt_orderid, txt_producttitle, txt_products_price, txt_bookedon, txt_items,txt_order_status;
         public ImageView img_products_image;
-        public Button btn_add_review;
+        public Button btn_add_review,btn_order_details;
         public CardView ll_root;
 
 
@@ -204,6 +209,7 @@ public class PetLoverVendorOrdersAdapter extends  RecyclerView.Adapter<RecyclerV
             txt_bookedon = itemView.findViewById(R.id.txt_bookedon);
             txt_items = itemView.findViewById(R.id.txt_items);
             btn_add_review = itemView.findViewById(R.id.btn_add_review);
+            btn_order_details = itemView.findViewById(R.id.btn_order_details);
             txt_order_status = itemView.findViewById(R.id.txt_order_status);
             ll_root = itemView.findViewById(R.id.ll_root);
             btn_add_review.setVisibility(View.GONE);

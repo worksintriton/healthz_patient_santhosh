@@ -45,7 +45,7 @@ public class PetLoverShopNewFavAdapter extends  RecyclerView.Adapter<RecyclerVie
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_shop_card, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_shop_card_fav, parent, false);
         return new ViewHolderOne(view);
     }
 
@@ -60,7 +60,7 @@ public class PetLoverShopNewFavAdapter extends  RecyclerView.Adapter<RecyclerVie
           currentItem = dataBeanList.get(position);
 
           Log.w(TAG,"rating : "+ currentItem.getProduct_rating());
-        if(currentItem.getProduct_rating() == 1){
+       /* if(currentItem.getProduct_rating() == 1){
             holder.hand_img1.setBackgroundResource(R.drawable.ic_logo_color);
             holder.hand_img2.setBackgroundResource(R.drawable.ic_logo_graycolor);
             holder.hand_img3.setBackgroundResource(R.drawable.ic_logo_graycolor);
@@ -90,6 +90,10 @@ public class PetLoverShopNewFavAdapter extends  RecyclerView.Adapter<RecyclerVie
             holder.hand_img3.setBackgroundResource(R.drawable.ic_logo_color);
             holder.hand_img4.setBackgroundResource(R.drawable.ic_logo_color);
             holder.hand_img5.setBackgroundResource(R.drawable.ic_logo_color);
+        }*/
+
+        if(currentItem.getProduct_rating() != 0){
+            holder.txt_star_rating.setText(""+currentItem.getProduct_rating());
         }
 
 
@@ -112,7 +116,6 @@ public class PetLoverShopNewFavAdapter extends  RecyclerView.Adapter<RecyclerVie
 
 
         holder.txt_products_offer.setVisibility(View.GONE);
-        holder.txt_product_discount_price.setVisibility(View.GONE);
 
         if(dataBeanList.get(position).getProduct_discount() != 0){
             holder.txt_products_offer.setVisibility(View.VISIBLE);
@@ -123,26 +126,13 @@ public class PetLoverShopNewFavAdapter extends  RecyclerView.Adapter<RecyclerVie
         }
 
 
-        if( dataBeanList.get(position).getProduct_discount_price() != 0) {
-            Log.w(TAG, "Product_discount_price if" + dataBeanList.get(position).getProduct_discount_price());
-            holder.txt_product_discount_price.setVisibility(View.VISIBLE);
-            holder.txt_product_discount_price.setText("\u20B9 "+dataBeanList.get(position).getProduct_discount_price()+"");
-            holder.txt_product_discount_price.setPaintFlags(holder.txt_product_discount_price.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-        }
-        else{
-            Log.w(TAG,"Product_discount_price else"+ dataBeanList.get(position).getProduct_discount_price());
-            holder.txt_product_discount_price.setVisibility(View.GONE);
-
-
-        }
-
         if(currentItem.isProduct_fav()){
               Glide.with(context)
-                      .load(R.drawable.ic_fav)
+                      .load(R.drawable.like)
                       .into(holder.img_fav);
           }else{
               Glide.with(context)
-                      .load(R.drawable.heart_gray)
+                      .load(R.drawable.dislike)
                       .into(holder.img_fav);
           }
 
@@ -186,9 +176,8 @@ public class PetLoverShopNewFavAdapter extends  RecyclerView.Adapter<RecyclerVie
     }
 
     class ViewHolderOne extends RecyclerView.ViewHolder {
-        public TextView txt_products_title,txt_category_title,txt_products_price,txt_product_discount_price,txt_products_offer;
+        public TextView txt_products_title,txt_star_rating,txt_products_price,txt_product_discount_price,txt_products_offer;
         public ImageView img_products_image,img_fav;
-        public ImageView hand_img1,hand_img2,hand_img3,hand_img4,hand_img5;
         public LinearLayout ll_root;
         public RelativeLayout rl_shop;
 
@@ -198,23 +187,13 @@ public class PetLoverShopNewFavAdapter extends  RecyclerView.Adapter<RecyclerVie
         public ViewHolderOne(View itemView) {
             super(itemView);
             txt_products_title = itemView.findViewById(R.id.txt_products_title);
-            txt_category_title = itemView.findViewById(R.id.txt_category_title);
+            txt_star_rating = itemView.findViewById(R.id.txt_star_rating);
             rl_shop = itemView.findViewById(R.id.rl_shop);
             ll_root = itemView.findViewById(R.id.ll_root);
             img_products_image = itemView.findViewById(R.id.img_products_image);
             img_fav = itemView.findViewById(R.id.img_fav);
             txt_products_price = itemView.findViewById(R.id.txt_products_price);
-            txt_product_discount_price = itemView.findViewById(R.id.txt_product_discount_price);
             txt_products_offer = itemView.findViewById(R.id.txt_products_offer);
-            hand_img1 = itemView.findViewById(R.id.hand_img1);
-            hand_img2 = itemView.findViewById(R.id.hand_img2);
-            hand_img3 = itemView.findViewById(R.id.hand_img3);
-            hand_img4 = itemView.findViewById(R.id.hand_img4);
-            hand_img5 = itemView.findViewById(R.id.hand_img5);
-
-            txt_category_title.setVisibility(View.GONE);
-
-
 
         }
 

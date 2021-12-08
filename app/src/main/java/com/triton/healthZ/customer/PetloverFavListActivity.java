@@ -65,8 +65,10 @@ public class PetloverFavListActivity extends AppCompatActivity  implements View.
     @BindView(R.id.include_petlover_header)
     View include_petlover_header;
 
+    private int someIndex = 0;
 
-/**/
+
+    /**/
 
 
     @Override
@@ -90,8 +92,11 @@ public class PetloverFavListActivity extends AppCompatActivity  implements View.
         img_notification.setVisibility(View.VISIBLE);
         img_profile.setVisibility(View.VISIBLE);
 
-       // setupViewPager(viewPager);
         tabLayout.setupWithViewPager(viewPager);
+        TabLayout.Tab tab = tabLayout.getTabAt(someIndex);
+        tab.select();
+        setupViewPager(viewPager);
+        //tabLayout.setupWithViewPager(viewPager);
         img_back.setOnClickListener(v -> onBackPressed());
 
         img_sos.setOnClickListener(this);

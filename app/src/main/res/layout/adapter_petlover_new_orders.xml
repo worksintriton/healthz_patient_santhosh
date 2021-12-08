@@ -12,17 +12,16 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:ignore="UselessParent"
-        android:background="@drawable/icnhzlightblue">
+        android:layout_height="wrap_content">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cv_pet"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginTop="20dp"
+            android:layout_width="70dp"
+            android:layout_height="60dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
-            android:visibility="gone"
+            android:visibility="visible"
             app:cardCornerRadius="10dp"
             app:cardPreventCornerOverlap="false"
             app:cardUseCompatPadding="false">
@@ -43,6 +42,13 @@
 
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent"
+        android:background="@drawable/icnhzlightblue">
 
         <LinearLayout
             android:id="@+id/ly_petname"
@@ -51,12 +57,11 @@
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="15dp"
-            android:layout_toEndOf="@id/cv_pet"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/txt_producttitle"
-                android:layout_width="wrap_content"
+                android:layout_width="220dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:ellipsize="end"
@@ -80,12 +85,11 @@
 
             <TextView
                 android:id="@+id/txt_bookedon"
-                android:layout_width="match_parent"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:alpha="0.5"
                 android:ellipsize="end"
-                android:fontFamily="@font/montserrat"
+                android:fontFamily="@font/montserrat_bold"
                 android:maxLines="1"
                 android:text="date"
                 android:textColor="@color/hz_orders_black"
@@ -233,33 +237,41 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="8dp"
                 android:orientation="horizontal">
 
-
-            </LinearLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:gravity="end">
+                <Button
+                    android:id="@+id/btn_order_details"
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="@dimen/normal_margin_value10"
+                    android:layout_weight="1"
+                    android:background="@drawable/new_rounded_corner_btn"
+                    android:fontFamily="@font/montserrat"
+                    android:text="@string/order_details"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    tools:ignore="ButtonStyle" />
 
                 <Button
                     android:id="@+id/btn_add_review"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="35dp"
-                    android:layout_gravity="end"
-                    android:layout_marginEnd="5dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
                     android:background="@drawable/new_rounded_corner_btn"
                     android:fontFamily="@font/montserrat"
                     android:text="@string/add_review"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
-                    android:textSize="12sp" />
+                    android:textSize="12sp"
+                    android:visibility="visible" />
 
-            </RelativeLayout>
+            </LinearLayout>
 
 
         </LinearLayout>

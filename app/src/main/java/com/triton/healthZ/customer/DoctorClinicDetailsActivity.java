@@ -168,7 +168,9 @@ public class DoctorClinicDetailsActivity extends AppCompatActivity implements Vi
     @BindView(R.id.footerView)
     LinearLayout footerView;
 
-
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.rl_share)
+    RelativeLayout rl_share;
 
     int currentPage = 0;
     Timer timer;
@@ -790,9 +792,41 @@ public class DoctorClinicDetailsActivity extends AppCompatActivity implements Vi
 
 
 
+
                         }
 
 
+                        rl_share.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                String shareBody;
+                                /*Create an ACTION_SEND Intent*/
+                                Intent intent = new Intent(android.content.Intent.ACTION_SEND);
+                                /*This will be the actual content you wish you share.*/
+                                if(doctorname!=null&&clinicname!=null&&ClinicLocationname!=null){
+
+                                    shareBody = "Doctor Name : "+doctorname+"\n"+" Clinic Name : "+clinicname+
+
+                                            "Location : "+ClinicLocationname;
+
+                                }
+                                else {
+
+                                    shareBody = "Doctor Name : "+""+"\n"+" Clinic Name : "+""+
+
+                                            "Location : "+"";
+
+
+                                }
+                                /*The type of the content is text, obviously.*/
+                                intent.setType("text/plain");
+                                /*Applying information Subject and Body.*/
+                                intent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Sharing Doctor Details via Healthz");
+                                intent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
+                                /*Fire!*/
+                                startActivity(Intent.createChooser(intent, "Sharing via Healthz"));
+                            }
+                        });
 
 
                     }

@@ -334,6 +334,7 @@
                 android:layout_below="@id/ly_petname"
                 android:layout_alignStart="@id/cv_pet"
                 android:layout_alignLeft="@id/cv_pet"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:ellipsize="end"

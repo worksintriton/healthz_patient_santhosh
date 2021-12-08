@@ -84,13 +84,6 @@
 
         </com.google.android.material.tabs.TabLayout>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="10dp"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/vertical_dotted_line"
-            android:layerType="software" />
-
     </LinearLayout>
     <ScrollView
         android:id="@+id/scrollablContent"

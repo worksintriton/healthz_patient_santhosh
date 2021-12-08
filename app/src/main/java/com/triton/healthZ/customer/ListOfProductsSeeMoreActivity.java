@@ -223,7 +223,14 @@ public class ListOfProductsSeeMoreActivity extends AppCompatActivity implements 
 
     private String userid;
 
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.rl_loctn)
+    RelativeLayout rl_loctn;
 
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.rl_search)
+    RelativeLayout rl_search;
+    
     @SuppressLint("LogNotTimber")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -471,41 +478,46 @@ public class ListOfProductsSeeMoreActivity extends AppCompatActivity implements 
                         if(response.body().getData()!= null && response.body().getData().size()>0){
                             catListSeeMore = response.body().getData();
 
+                            if(catListSeeMore!=null&&catListSeeMore.size()!=0){
 
-                            for(int i=0;i<catListSeeMore.size();i++) {
-                                /*
-                                 * _id : 60e5aabd5af36c5c3605bab4
-                                 * product_img : http://54.212.108.156:3000/api/uploads/1625748054901.png
-                                 * product_title : HUL Natural Shampoo for Puppy
-                                 * product_price : 180
-                                 * thumbnail_image : http://54.212.108.156:3000/api/uploads/1625748027413.png
-                                 * product_discount : 10
-                                 * product_discount_price : 0
-                                 * product_fav : false
-                                 * product_rating : 5
-                                 * product_review : 0
-                                 */
-                                FetctProductByCatResponse.DataBean  dataBean = new FetctProductByCatResponse.DataBean();
-                                dataBean.set_id(catListSeeMore.get(i).get_id());
-                                dataBean.setProduct_img(catListSeeMore.get(i).getProduct_img());
-                                dataBean.setProduct_title(catListSeeMore.get(i).getProduct_title());
-                                dataBean.setProduct_price(catListSeeMore.get(i).getProduct_price());
-                                dataBean.setThumbnail_image(catListSeeMore.get(i).getThumbnail_image());
-                                dataBean.setProduct_discount(catListSeeMore.get(i).getProduct_discount());
-                                dataBean.setProduct_discount_price(catListSeeMore.get(i).getProduct_discount_price());
-                                dataBean.setProduct_fav(catListSeeMore.get(i).isProduct_fav());
-                                dataBean.setProduct_rating(catListSeeMore.get(i).getProduct_rating());
-                                dataBean.setProduct_review(catListSeeMore.get(i).getProduct_review());
-                                catListSeeMoreAll.add(dataBean);
+                                for(int i=0;i<catListSeeMore.size();i++) {
+                                    /*
+                                     * _id : 60e5aabd5af36c5c3605bab4
+                                     * product_img : http://54.212.108.156:3000/api/uploads/1625748054901.png
+                                     * product_title : HUL Natural Shampoo for Puppy
+                                     * product_price : 180
+                                     * thumbnail_image : http://54.212.108.156:3000/api/uploads/1625748027413.png
+                                     * product_discount : 10
+                                     * product_discount_price : 0
+                                     * product_fav : false
+                                     * product_rating : 5
+                                     * product_review : 0
+                                     */
+                                    FetctProductByCatResponse.DataBean  dataBean = new FetctProductByCatResponse.DataBean();
+                                    dataBean.set_id(catListSeeMore.get(i).get_id());
+                                    dataBean.setProduct_img(catListSeeMore.get(i).getProduct_img());
+                                    dataBean.setProduct_title(catListSeeMore.get(i).getProduct_title());
+                                    dataBean.setProduct_price(catListSeeMore.get(i).getProduct_price());
+                                    dataBean.setThumbnail_image(catListSeeMore.get(i).getThumbnail_image());
+                                    dataBean.setProduct_discount(catListSeeMore.get(i).getProduct_discount());
+                                    dataBean.setProduct_discount_price(catListSeeMore.get(i).getProduct_discount_price());
+                                    dataBean.setProduct_fav(catListSeeMore.get(i).isProduct_fav());
+                                    dataBean.setProduct_rating(catListSeeMore.get(i).getProduct_rating());
+                                    dataBean.setProduct_review(catListSeeMore.get(i).getProduct_review());
+                                    catListSeeMoreAll.add(dataBean);
 
+
+                                }
+                                Log.w(TAG,"catListSeeMoreAll : "+new Gson().toJson(catListSeeMoreAll));
+                                Log.w(TAG,"catListSeeMoreAll size : "+catListSeeMoreAll.size());
+
+
+
+                                setView(catListSeeMoreAll);
 
                             }
-                            Log.w(TAG,"catListSeeMoreAll : "+new Gson().toJson(catListSeeMoreAll));
-                            Log.w(TAG,"catListSeeMoreAll size : "+catListSeeMoreAll.size());
 
 
-
-                            setView(catListSeeMoreAll);
 
                         }
 

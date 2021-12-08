@@ -49,19 +49,6 @@ public class PetLoverVendorOrderDetailsActivity extends AppCompatActivity implem
     TextView txt_no_records;
 
 
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_products_image)
-    ImageView img_products_image;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.txt_product_title)
-    TextView txt_product_title;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.txt_products_price)
-    TextView txt_products_price;
-
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_order_status)
     TextView txt_order_status;
@@ -91,12 +78,12 @@ public class PetLoverVendorOrderDetailsActivity extends AppCompatActivity implem
     TextView txt_quantity;
 
     @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.txt_shipping_address_name)
-    TextView txt_shipping_address_name;
-
-    @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_shipping_address_street)
     TextView txt_shipping_address_street;
+
+/*    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_shipping_address_name)
+    TextView txt_shipping_address_name;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_shipping_address_city)
@@ -112,7 +99,7 @@ public class PetLoverVendorOrderDetailsActivity extends AppCompatActivity implem
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_shipping_address_landmark)
-    TextView txt_shipping_address_landmark;
+    TextView txt_shipping_address_landmark;*/
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.img_order_status)
@@ -158,6 +145,10 @@ public class PetLoverVendorOrderDetailsActivity extends AppCompatActivity implem
     TextView txt_no_products;
 
     @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_no_of_items)
+    TextView txt_no_of_items;
+
+    @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_cancell_order)
     TextView txt_cancell_order;
 
@@ -174,13 +165,16 @@ public class PetLoverVendorOrderDetailsActivity extends AppCompatActivity implem
     @BindView(R.id.include_petlover_header)
     View include_petlover_header;
 
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_no_of_prodslabel)
+    TextView txt_no_of_prodslabel;
 
     private String _id;
     private String fromactivity;
 
-    private  boolean button1IsVisible = true;
-    private  boolean ShippingIsVisible = true;
-    private  boolean productsIsVisible = true;
+    private  boolean button1IsVisible = false;
+    private  boolean ShippingIsVisible = false;
+    private  boolean productsIsVisible = false;
     private String orderid;
     private List<PetLoverVendorOrderDetailsResponse.DataBean.ProductDetailsBean> productdetailslist;
     private List<Integer> product_id = new ArrayList<>();
@@ -190,17 +184,17 @@ public class PetLoverVendorOrderDetailsActivity extends AppCompatActivity implem
     @BindView(R.id.ll_original_price)
     LinearLayout ll_original_price;
 
-    @SuppressLint("NonConstantResourceId")
+/*    @SuppressLint("NonConstantResourceId")
     @BindView(R.id.ll_discount_price)
-    LinearLayout ll_discount_price;
+    LinearLayout ll_discount_price;*/
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_original_price)
     TextView txt_original_price;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.txt_discount_price)
-    TextView txt_discount_price;
+//
+//    @SuppressLint("NonConstantResourceId")
+//    @BindView(R.id.txt_discount_price)
+//    TextView txt_discount_price;
 
     private int Order_price;
 
@@ -228,8 +222,9 @@ public class PetLoverVendorOrderDetailsActivity extends AppCompatActivity implem
         ImageView img_profile = include_petlover_header.findViewById(R.id.img_profile);
         TextView toolbar_title = include_petlover_header.findViewById(R.id.toolbar_title);
         toolbar_title.setText(getResources().getString(R.string.order_details));
-        img_sos.setVisibility(View.GONE);
-        img_cart.setVisibility(View.GONE);
+        img_sos.setVisibility(View.INVISIBLE);
+        img_cart.setVisibility(View.INVISIBLE);
+        img_profile.setVisibility(View.INVISIBLE);
         img_notification.setVisibility(View.VISIBLE);
 
 
@@ -264,10 +259,6 @@ public class PetLoverVendorOrderDetailsActivity extends AppCompatActivity implem
 
         }
 
-        ll_orderdetails.setVisibility(View.GONE);
-        ll_shippingaddress.setVisibility(View.GONE);
-
-
         img_expand_arrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -281,7 +272,7 @@ public class PetLoverVendorOrderDetailsActivity extends AppCompatActivity implem
                 }
                 else {
                     ll_orderdetails.setVisibility(View.GONE);
-                    img_expand_arrow.setImageResource(R.drawable.ic_down);
+                    img_expand_arrow.setImageResource(R.drawable.icnhzdwnarw);
                     button1IsVisible = true;
 
                 }
@@ -301,7 +292,7 @@ public class PetLoverVendorOrderDetailsActivity extends AppCompatActivity implem
                     ShippingIsVisible = false;
                 } else {
                     ll_shippingaddress.setVisibility(View.GONE);
-                    img_expand_arrow_shipping.setImageResource(R.drawable.ic_down);
+                    img_expand_arrow_shipping.setImageResource(R.drawable.icnhzdwnarw);
                     ShippingIsVisible = true;
 
                 }
@@ -317,11 +308,11 @@ public class PetLoverVendorOrderDetailsActivity extends AppCompatActivity implem
 
                 if(productsIsVisible) {
                     ll_productdetails.setVisibility(View.GONE);
-                    img_expand_arrow_productdetails.setImageResource(R.drawable.ic_down);
+                    img_expand_arrow_productdetails.setImageResource(R.drawable.ic_up);
                     productsIsVisible = false;
                 } else {
                     ll_productdetails.setVisibility(View.VISIBLE);
-                    img_expand_arrow_productdetails.setImageResource(R.drawable.ic_up);
+                    img_expand_arrow_productdetails.setImageResource(R.drawable.icnhzdwnarw);
                     productsIsVisible = true;
 
                 }
@@ -416,25 +407,29 @@ public class PetLoverVendorOrderDetailsActivity extends AppCompatActivity implem
                         if(response.body().getData()!=null){
 
                             if(response.body().getData().getOrder_details() != null){
-                                if(response.body().getData().getOrder_details().getCoupon_status() != null && response.body().getData().getOrder_details().getCoupon_status().equalsIgnoreCase("Applied")){
-                                    ll_original_price.setVisibility(View.VISIBLE);
-                                    ll_discount_price.setVisibility(View.VISIBLE);
-                                    if(response.body().getData().getOrder_details().getOriginal_price() != 0){
-                                        txt_original_price.setText("\u20B9 "+response.body().getData().getOrder_details().getOriginal_price());
-                                    }
+                                ll_original_price.setVisibility(View.VISIBLE);
+
+                               /* if(response.body().getData().getOrder_details().getCoupon_status() != null && response.body().getData().getOrder_details().getCoupon_status().equalsIgnoreCase("Applied")){
+
+                              //      ll_discount_price.setVisibility(View.VISIBLE);
+
                                     if(response.body().getData().getOrder_details().getCoupon_discount_price() != 0){
-                                        txt_discount_price.setText("\u20B9 "+response.body().getData().getOrder_details().getCoupon_discount_price());
+                                    //    txt_discount_price.setText("\u20B9 "+response.body().getData().getOrder_details().getCoupon_discount_price());
                                     }
 
                                 }
                                 else{
                                     ll_original_price.setVisibility(View.GONE);
-                                    ll_discount_price.setVisibility(View.GONE);
+                              //      ll_discount_price.setVisibility(View.GONE);
+                                }*/
+
+                                if(response.body().getData().getOrder_details().getOrder_price() != 0){
+                                    txt_original_price.setText("\u20B9 "+response.body().getData().getOrder_details().getOriginal_price());
                                 }
                             }
 
 
-                            if(response.body().getData().getOrder_details().getOrder_text() !=null && !response.body().getData().getOrder_details().getOrder_text().isEmpty()){
+                          /*  if(response.body().getData().getOrder_details().getOrder_text() !=null && !response.body().getData().getOrder_details().getOrder_text().isEmpty()){
                                 txt_product_title.setText(response.body().getData().getOrder_details().getOrder_text());
                             }
                             if(response.body().getData().getOrder_details().getOrder_price()!=0){
@@ -461,7 +456,7 @@ public class PetLoverVendorOrderDetailsActivity extends AppCompatActivity implem
                                     txt_products_price.setText("\u20B9 " + 0 + " (" + response.body().getData().getOrder_details().getOrder_product() + " products )");
                                 }
                             }
-
+*/
 
 
 
@@ -478,34 +473,50 @@ public class PetLoverVendorOrderDetailsActivity extends AppCompatActivity implem
                                 txt_total_order_cost.setText("\u20B9 "+response.body().getData().getOrder_details().getOrder_price());
                             }
                             if(response.body().getData().getOrder_details().getOrder_product() !=0){
-                                txt_quantity.setText(""+response.body().getData().getOrder_details().getOrder_product());
+
+                                if(response.body().getData().getOrder_details().getOrder_product()==1){
+
+                                    txt_no_of_prodslabel.setText("Number of Product");
+
+                                    txt_no_of_items.setText("Item ( "+response.body().getData().getOrder_details().getOrder_product()+" )");
+
+                                }
+                                else {
+
+                                    txt_no_of_prodslabel.setText("Number of Products");
+
+                                    txt_no_of_items.setText("Items ( "+response.body().getData().getOrder_details().getOrder_product()+" )");
+
+                                }
+                                txt_quantity.setText(""+response.body().getData().getOrder_details().getOrder_product()+" Product");
+
                             }
 
                             if(response.body().getData().getShipping_address() !=null){
-                                txt_shipping_address_name.setText(response.body().getData().getShipping_address().getUser_name());
-                                txt_shipping_address_city.setText(response.body().getData().getShipping_address().getShipping_location());
+                           //     txt_shipping_address_name.setText(response.body().getData().getShipping_address().getUser_name());
+                            //    txt_shipping_address_city.setText(response.body().getData().getShipping_address().getShipping_location());
                                 txt_shipping_address_street.setText(response.body().getData().getShipping_address().getLocation_title());
-                                txt_shipping_address_state_pincode.setVisibility(View.GONE);
-                               if(response.body().getData().getShipping_address().getUser_phone() != null && !response.body().getData().getShipping_address().getUser_phone().isEmpty()) {
+                         //       txt_shipping_address_state_pincode.setVisibility(View.GONE);
+                          /*     if(response.body().getData().getShipping_address().getUser_phone() != null && !response.body().getData().getShipping_address().getUser_phone().isEmpty()) {
                                    txt_shipping_address_landmark.setText("Phone : " + response.body().getData().getShipping_address().getUser_phone());
                                }
                                 if(response.body().getData().getShipping_address().getLand_mark() != null && !response.body().getData().getShipping_address().getLand_mark().isEmpty()) {
                                     txt_shipping_address_phone.setText("Landmark : " + response.body().getData().getShipping_address().getLand_mark());
                                 }
-
+*/
                             }
 
-                            if (response.body().getData().getOrder_details().getOrder_image() != null && !response.body().getData().getOrder_details().getOrder_image().isEmpty()) {
-                                Glide.with(getApplicationContext())
-                                        .load(response.body().getData().getOrder_details().getOrder_image())
-                                        .into(img_products_image);
-                            }
-                            else{
-                                Glide.with(getApplicationContext())
-                                        .load(APIClient.PROFILE_IMAGE_URL)
-                                        .into(img_products_image);
-
-                            }
+//                            if (response.body().getData().getOrder_details().getOrder_image() != null && !response.body().getData().getOrder_details().getOrder_image().isEmpty()) {
+//                                Glide.with(getApplicationContext())
+//                                        .load(response.body().getData().getOrder_details().getOrder_image())
+//                                        .into(img_products_image);
+//                            }
+//                            else{
+//                                Glide.with(getApplicationContext())
+//                                        .load(APIClient.PROFILE_IMAGE_URL)
+//                                        .into(img_products_image);
+//
+//                            }
 
                             if(fromactivity != null && fromactivity.equalsIgnoreCase("FragmentPetLoverNewOrders")){
                                 txt_order_status.setText("Booked for");

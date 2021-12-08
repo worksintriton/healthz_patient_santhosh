@@ -197,13 +197,20 @@ public class CustomerNavigationDrawer extends AppCompatActivity implements View.
         }else{
             Glide.with(this).load(APIClient.PROFILE_IMAGE_URL).circleCrop().into(nav_header_imageView);
         }
+        nav_header_imageView.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(), CustomerProfileScreenActivity.class)));
 
         nav_header_emailid.setText(emailid);
         nav_header_profilename.setText(name);
 
-        FrameLayout llheader = header.findViewById(R.id.llheader);
-        llheader.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(), CustomerDashboardActivity.class)));
+        ImageView img_arrow = header.findViewById(R.id.img_arrow);
+        img_arrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                startActivity(new Intent(getApplicationContext(), CustomerDashboardActivity.class));
+
+            }
+        });
 
         navigationView.setNavigationItemSelectedListener(menuItem -> {
             //Closing drawer on item click

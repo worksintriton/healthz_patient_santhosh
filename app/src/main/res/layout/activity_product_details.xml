@@ -402,7 +402,8 @@
                 android:text="@string/product_description"
                 android:textColor="@color/new_light_black"
                 android:textSize="14sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:visibility="gone"/>
 
 
             <TextView
@@ -436,6 +437,7 @@
 
 
             <TextView
+                android:id="@+id/txt_details_lbl"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -450,7 +452,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:id="@+id/ll_cond">
                 <TextView
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
@@ -480,7 +483,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:id="@+id/ll_price">
                 <TextView
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
@@ -542,12 +546,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
-                android:layout_marginBottom="20dp">
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/new_solid_bgm">
                 <RelativeLayout
                     android:id="@+id/rl_relat_prod"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/new_solid_bgm">
+                    android:background="@drawable/icnpattern">
 
                     <TextView
                         android:id="@+id/txt_prod_related"
@@ -570,7 +575,7 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="10dp" />
+                        android:layout_marginBottom="60dp" />
 
                 </RelativeLayout>
 
