@@ -17,13 +17,11 @@ import com.bumptech.glide.Glide;
 import com.triton.healthz.R;
 import com.triton.healthz.api.APIClient;
 import com.triton.healthz.doctor.shop.DoctorCancelOrderActivity;
-import com.triton.healthz.doctor.shop.DoctorTrackOrderActivity;
 import com.triton.healthz.customer.PetVendorCancelOrderActivity;
 
-import com.triton.healthz.customer.TrackOrderActivity;
+import com.triton.healthz.interfaces.TrackProductListener;
 import com.triton.healthz.responsepojo.PetLoverVendorOrderDetailsResponse;
 import com.triton.healthz.serviceprovider.shop.SPCancelOrderActivity;
-import com.triton.healthz.serviceprovider.shop.SPTrackOrderActivity;
 
 import java.util.List;
 
@@ -37,15 +35,15 @@ public class ProductDetailsAdapter extends  RecyclerView.Adapter<RecyclerView.Vi
     PetLoverVendorOrderDetailsResponse.DataBean.ProductDetailsBean currentItem;
     String orderid;
     String fromactivity;
-
-
-
-    public ProductDetailsAdapter(Context context,  List<PetLoverVendorOrderDetailsResponse.DataBean.ProductDetailsBean> product_details,String orderid, String fromactivity) {
+    TrackProductListener TrackProductListener;
+    boolean b;
+    public ProductDetailsAdapter(Context context, List<PetLoverVendorOrderDetailsResponse.DataBean.ProductDetailsBean> product_details, String orderid, String fromactivity, TrackProductListener TrackProductListener, boolean b) {
         this.context = context;
         this.product_details = product_details;
         this.orderid = orderid;
         this.fromactivity = fromactivity;
-
+        this.TrackProductListener=TrackProductListener;
+        this.b = b;
 
     }
 
@@ -234,43 +232,24 @@ public class ProductDetailsAdapter extends  RecyclerView.Adapter<RecyclerView.Vi
         }
 */
 
-        holder.txt_track_order.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(fromactivity != null) {
-                    if (fromactivity.equalsIgnoreCase("FragmentDoctorNewOrders") || fromactivity.equalsIgnoreCase("FragmentDoctorCompletedOrders") || fromactivity.equalsIgnoreCase("FragmentDoctorCancelledOrders")) {
-                        Intent i = new Intent(context, DoctorTrackOrderActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        i.putExtra("_id", product_details.get(position).getProduct_id());
-                        i.putExtra("orderid", orderid);
-                        i.putExtra("fromactivity", TAG);
-                        context.startActivity(i);
-                    }
-                    else if (fromactivity.equalsIgnoreCase("FragmentSPNewOrders") || fromactivity.equalsIgnoreCase("FragmentSPCompletedOrders") || fromactivity.equalsIgnoreCase("FragmentSPCancelledOrders")) {
-                        Intent i = new Intent(context, SPTrackOrderActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        i.putExtra("_id", product_details.get(position).getProduct_id());
-                        i.putExtra("orderid", orderid);
-                        i.putExtra("fromactivity", TAG);
-                        context.startActivity(i);
-                    }
-                    else {
-                        Intent i = new Intent(context, TrackOrderActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        i.putExtra("_id", product_details.get(position).getProduct_id());
-                        i.putExtra("orderid", orderid);
-                        i.putExtra("fromactivity", TAG);
-                        context.startActivity(i);
-                    }
-                }else{
-                    Intent i = new Intent(context, TrackOrderActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    i.putExtra("_id", product_details.get(position).getProduct_id());
-                    i.putExtra("orderid", orderid);
-                    i.putExtra("fromactivity", TAG);
-                    context.startActivity(i);
+        if(b){
+
+            holder.txt_track_order.setVisibility(View.VISIBLE);
+            holder.txt_track_order.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    TrackProductListener.trackProductListener(fromactivity,product_details.get(position).getProduct_id(),orderid,TAG,product_details);
+
                 }
+            });
+        }
 
+        else {
 
+            holder.txt_track_order.setVisibility(View.GONE);
+        }
 
-            }
-        });
         holder.txt_cancell_order.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

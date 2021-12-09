@@ -25,6 +25,7 @@ import com.triton.healthz.adapter.ProductDetailsAdapter;
 import com.triton.healthz.api.APIClient;
 import com.triton.healthz.api.RestApiInterface;
 
+import com.triton.healthz.interfaces.TrackProductListener;
 import com.triton.healthz.requestpojo.PetLoverVendorOrderDetailsRequest;
 import com.triton.healthz.responsepojo.PetLoverVendorOrderDetailsResponse;
 import com.triton.healthz.serviceprovider.SPProfileScreenActivity;
@@ -42,7 +43,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class SPOrderDetailsActivity extends AppCompatActivity implements View.OnClickListener {
+public class SPOrderDetailsActivity extends AppCompatActivity implements View.OnClickListener, TrackProductListener {
 
     private static final String TAG = "SPOrderDetailsActivity" ;
 
@@ -626,7 +627,7 @@ public class SPOrderDetailsActivity extends AppCompatActivity implements View.On
     private void setView(List<PetLoverVendorOrderDetailsResponse.DataBean.ProductDetailsBean> product_details) {
         rv_productdetails.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         rv_productdetails.setItemAnimator(new DefaultItemAnimator());
-        ProductDetailsAdapter productDetailsAdapter = new ProductDetailsAdapter(getApplicationContext(),product_details,orderid,fromactivity);
+        ProductDetailsAdapter productDetailsAdapter = new ProductDetailsAdapter(getApplicationContext(),product_details,orderid,fromactivity,this,true);
         rv_productdetails.setAdapter(productDetailsAdapter);
 
     }
@@ -639,5 +640,10 @@ public class SPOrderDetailsActivity extends AppCompatActivity implements View.On
         intent.putExtra("tag",tag);
         startActivity(intent);
         finish();
+    }
+
+    @Override
+    public void trackProductListener(String fromactivity, int product_id, String orderid, String TAG, List<PetLoverVendorOrderDetailsResponse.DataBean.ProductDetailsBean> product_details) {
+
     }
 }

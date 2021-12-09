@@ -10,6 +10,7 @@ import android.os.Bundle;
 
 import android.util.Log;
 
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -30,6 +31,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.gson.Gson;
 import com.triton.healthz.R;
 import com.triton.healthz.adapter.Cart_Adapter;
@@ -70,7 +72,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class PetCartActivity extends AppCompatActivity implements AddandRemoveProductListener, PaymentResultListener, View.OnClickListener {
+public class PetCartActivity extends AppCompatActivity implements AddandRemoveProductListener, PaymentResultListener, View.OnClickListener, BottomNavigationView.OnNavigationItemSelectedListener {
 
     private String TAG = "PetCartActivity";
 
@@ -204,6 +206,7 @@ public class PetCartActivity extends AppCompatActivity implements AddandRemovePr
     @BindView(R.id.btn_apply_coupon)
     Button btn_apply_coupon;
 
+    FloatingActionButton floatingActionButton;
 
     private String fromto;
 
@@ -335,6 +338,22 @@ public class PetCartActivity extends AppCompatActivity implements AddandRemovePr
             });
 
 
+        bottom_navigation_view = include_petlover_footer.findViewById(R.id.bottomNavigation);
+        floatingActionButton = include_petlover_footer.findViewById(R.id.fab);
+        //    bottom_navigation_view.setItemIconTintList(null);
+        bottom_navigation_view.setOnNavigationItemSelectedListener(this);
+        bottom_navigation_view.getMenu().findItem(R.id.shop).setChecked(true);
+
+        floatingActionButton.setImageResource(R.drawable.ic_hzhome_png);
+
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                callDirections("1");
+            }
+        });
+
     /*    *//*shop*//*
         title_care.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
         img_care.setImageResource(R.drawable.grey_care);
@@ -402,6 +421,32 @@ public class PetCartActivity extends AppCompatActivity implements AddandRemovePr
         }
     }
 
+
+    @SuppressLint("NonConstantResourceId")
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.home:
+                callDirections("1");
+                break;
+            case R.id.shop:
+                callDirections("2");
+                break;
+            case R.id.services:
+                callDirections("3");
+                break;
+            case R.id.care:
+                callDirections("4");
+                break;
+            case R.id.community:
+                callDirections("5");
+                break;
+
+            default:
+                return  false;
+        }
+        return true;
+    }
 
     @Override
     public void onBackPressed() {

@@ -224,6 +224,12 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_review_count)
     TextView txt_review_count;
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_condition)
+    TextView txt_condition;
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_pricetype)
+    TextView txt_pricetype;
 
 
     String prod_type;
@@ -686,10 +692,21 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
 
                             txt_review_count.setVisibility(View.VISIBLE);
 
+                            if(response.body().getProduct_details().getCondition() != null && !response.body().getProduct_details().getCondition().isEmpty()){
+
+                                txt_condition.setText(""+response.body().getProduct_details().getCondition());
 
 
+                            }
+                            if(response.body().getProduct_details().getPrice_type() != null && !response.body().getProduct_details().getPrice_type().isEmpty()){
 
-                            img_fav.setOnClickListener(ProductDetailsActivity.this);
+                                txt_pricetype.setText(""+response.body().getProduct_details().getPrice_type());
+
+
+                            }
+
+
+                                img_fav.setOnClickListener(ProductDetailsActivity.this);
                             img_cart.setOnClickListener(view -> {
                                 Intent intent = new Intent(getApplicationContext(),PetCartActivity.class);
                                 intent.putExtra("productid",productid);
@@ -835,7 +852,8 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
         if(product_discount != 0 ){
             txt_discount.setText(product_discount+" % off");
         }else{
-            txt_discount.setText(""+" % off");
+            txt_discount.setVisibility(View.INVISIBLE);
+
         }
         if(threshould != null && !threshould.isEmpty() ){
             int mythreshould = 0;

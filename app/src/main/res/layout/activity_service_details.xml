@@ -608,6 +608,7 @@
                     android:ellipsize="end"
                     android:fontFamily="@font/montserrat"
                     android:maxLines="1"
+                    android:padding="5dp"
                     android:text="@string/sub_services"
                     android:textColor="@color/black"
                     android:textSize="14sp" />
@@ -701,11 +702,10 @@
 
             </LinearLayout>
 
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/green"
+                android:background="@drawable/new_green_bgm"
                 android:orientation="vertical">
 
                 <TextView
@@ -717,8 +717,9 @@
                     android:layout_marginEnd="10dp"
                     android:fontFamily="@font/montserrat_bold"
                     android:text="@string/location"
-                    android:textColor="@color/greenish"
-                    android:textSize="14sp" />
+                    android:textColor="@color/greenishh"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/txt_place"
@@ -739,17 +740,24 @@
                     android:layout_height="match_parent"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
-                    android:layout_marginBottom="30dp"
+                    android:layout_marginBottom="60dp"
                     android:orientation="vertical">
 
-                    <fragment
-                        android:id="@+id/map"
-                        android:name="com.google.android.gms.maps.SupportMapFragment"
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="200dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="20dp"
-                        tools:ignore="FragmentTagUsage" />
+                        android:background="@drawable/new_white_cornerradius_bg">
+
+                        <fragment
+                            android:id="@+id/map"
+                            android:name="com.google.android.gms.maps.SupportMapFragment"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            tools:ignore="FragmentTagUsage" />
+
+                    </RelativeLayout>
+
+
                 </LinearLayout>
             </LinearLayout>
 

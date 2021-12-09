@@ -5,12 +5,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -18,6 +20,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 import com.triton.healthz.R;
 import com.triton.healthz.fragmentcustomer.myorders.FragmentPetCancelledOrders;
@@ -33,7 +36,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class PetMyOrdrersActivity extends AppCompatActivity implements View.OnClickListener {
+public class PetMyOrdrersActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
     private final String TAG = "PetMyOrdrersActivity";
 
 
@@ -51,64 +54,19 @@ public class PetMyOrdrersActivity extends AppCompatActivity implements View.OnCl
     @BindView(R.id.include_petlover_header)
     View include_petlover_header;
 
+
+
     /* Petlover Bottom Navigation */
 
     @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_home)
-    RelativeLayout rl_home;
+    @BindView(R.id.fab)
+    FloatingActionButton floatingActionButton;
 
     @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_care)
-    RelativeLayout rl_care;
+    @BindView(R.id.bottomNavigation)
+    BottomNavigationView bottomNavigation;
 
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.title_care)
-    TextView title_care;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_care)
-    ImageView img_care;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_service)
-    RelativeLayout rl_service;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.title_serv)
-    TextView title_serv;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_serv)
-    ImageView img_serv;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_shop)
-    RelativeLayout rl_shop;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.title_shop)
-    TextView title_shop;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_shop)
-    ImageView img_shop;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_comn)
-    RelativeLayout rl_comn;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.title_community)
-    TextView title_community;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_community)
-    ImageView img_community;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_homes)
-    RelativeLayout rl_homes;
-
+    public static String active_tag = "4";
 
 
     @SuppressLint({"LogNotTimber", "NonConstantResourceId"})
@@ -142,29 +100,37 @@ public class PetMyOrdrersActivity extends AppCompatActivity implements View.OnCl
 //        bottom_navigation_view.setItemIconTintList(null);
 //        bottom_navigation_view.setOnNavigationItemSelectedListener(this);
 
-        /*shop*/
-        title_care.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-        img_care.setImageResource(R.drawable.grey_care);
-        title_serv.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-        img_serv.setImageResource(R.drawable.grey_servc);
-        title_community.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-        img_community.setImageResource(R.drawable.grey_community);
-        title_shop.setTextColor(getResources().getColor(R.color.new_gree_color,getTheme()));
-        img_shop.setImageResource(R.drawable.green_shop);
+        floatingActionButton.setImageResource(R.drawable.ic_hzhome_png);
+
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                callDirections("1");
+            }
+        });
 
 
-        rl_home.setOnClickListener(this);
+        if(active_tag != null){
+            if(active_tag.equalsIgnoreCase("1")){
+                bottomNavigation.setSelectedItemId(R.id.home);
+            }else if(active_tag.equalsIgnoreCase("2")){
+                bottomNavigation.setSelectedItemId(R.id.shop);
+            }else if(active_tag.equalsIgnoreCase("3")){
+                bottomNavigation.setSelectedItemId(R.id.services);
+            }else if(active_tag.equalsIgnoreCase("4")){
+                bottomNavigation.setSelectedItemId(R.id.care);
+            } else if(active_tag.equalsIgnoreCase("5")){
+                bottomNavigation.setSelectedItemId(R.id.community);
+            }
+        }
+        else{
+            bottomNavigation.setSelectedItemId(R.id.shop);
+        }
 
-        rl_care.setOnClickListener(this);
-
-        rl_service.setOnClickListener(this);
-
-        rl_shop.setOnClickListener(this);
-
-        rl_comn.setOnClickListener(this);
+        bottomNavigation.setOnNavigationItemSelectedListener(this);
 
 
-        rl_homes.setOnClickListener(this);
 
 
     }
@@ -247,36 +213,39 @@ public class PetMyOrdrersActivity extends AppCompatActivity implements View.OnCl
         }
     }
 
+
+
+
+
+
     @SuppressLint("NonConstantResourceId")
     @Override
-    public void onClick(View v) {
-        switch (v.getId()){
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-            case R.id.rl_homes:
+        switch (item.getItemId()) {
+            case R.id.home:
                 callDirections("1");
                 break;
-
-            case R.id.rl_home:
-                callDirections("1");
-                break;
-
-            case R.id.rl_shop:
+            case R.id.shop:
                 callDirections("2");
                 break;
-
-            case R.id.rl_service:
+            case R.id.services:
                 callDirections("3");
                 break;
-
-            case R.id.rl_care:
+            case R.id.care:
                 callDirections("4");
                 break;
-
-            case R.id.rl_comn:
+            case R.id.community:
                 callDirections("5");
                 break;
+
+            default:
+                return  false;
         }
+        return true;
     }
+
+
 
 
     private void setMargins(RelativeLayout rl_layout, int i, int i1, int i2, int i3) {

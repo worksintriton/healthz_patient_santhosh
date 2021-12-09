@@ -127,9 +127,9 @@ public class PetLoverDoctorChoosePaymentMethodActivity extends AppCompatActivity
     @BindView(R.id.viewapply)
     View viewapply;
 
-    @SuppressLint("NonConstantResourceId")
+/*    @SuppressLint("NonConstantResourceId")
     @BindView(R.id.viewTotalamout)
-    View viewTotalamout;
+    View viewTotalamout;*/
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.ll_cost)
@@ -139,9 +139,11 @@ public class PetLoverDoctorChoosePaymentMethodActivity extends AppCompatActivity
     @BindView(R.id.ll_discount)
     LinearLayout ll_discount;
 
+/*
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.ll_totalamount)
     LinearLayout ll_totalamount;
+*/
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.btn_bookappointment)
@@ -513,8 +515,8 @@ public class PetLoverDoctorChoosePaymentMethodActivity extends AppCompatActivity
                         viewapply.setVisibility(View.VISIBLE);
                         ll_cost.setVisibility(View.VISIBLE);
                         ll_discount.setVisibility(View.VISIBLE);
-                        viewTotalamout.setVisibility(View.VISIBLE);
-                        ll_totalamount.setVisibility(View.VISIBLE);
+                   //     viewTotalamout.setVisibility(View.VISIBLE);
+                   //     ll_totalamount.setVisibility(View.VISIBLE);
 
                         if(response.body().getData().getDiscount_price() != 0){
                             Discount_price = response.body().getData().getDiscount_price();

@@ -16,8 +16,8 @@
 
         <LinearLayout
             android:id="@+id/ll_root"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:orientation="vertical"
             tools:ignore="UselessParent">
 
@@ -30,8 +30,8 @@
 
                 <ImageView
                     android:id="@+id/img_doctors_image"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="115dp"
+                    android:layout_height="150dp"
                     android:scaleType="fitXY"
                     android:src="@drawable/ic_hzdoctor"
                     tools:ignore="ContentDescription" />
@@ -59,7 +59,7 @@
                         android:ellipsize="end"
                         android:fontFamily="@font/montserrat"
                         android:maxLines="1"
-                        android:text="dddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+                        android:text="durga s"
                         android:textColor="@color/lato_black"
                         android:textSize="10sp" />
 
@@ -73,7 +73,7 @@
                         android:ellipsize="end"
                         android:fontFamily="@font/montserrat"
                         android:maxLines="1"
-                        android:text="@string/_126_votes"
+                        android:text="1 Votes"
                         android:textAlignment="textEnd"
                         android:textColor="@color/lato_black"
                         android:textSize="10sp" />
@@ -91,9 +91,9 @@
 
                     <ImageView
                         android:id="@+id/hand_img1"
-                        android:layout_width="8dp"
+                        android:layout_width="6dp"
                         android:layout_height="8dp"
-                        android:background="@drawable/ic_star_filled"
+                        android:background="@drawable/ic_logo_color"
                         tools:ignore="ContentDescription" />
 
                     <ImageView
@@ -101,7 +101,7 @@
                         android:layout_width="8dp"
                         android:layout_height="8dp"
                         android:layout_marginStart="5dp"
-                        android:background="@drawable/ic_star_filled"
+                        android:background="@drawable/ic_logo_color"
                         tools:ignore="ContentDescription" />
 
                     <ImageView
@@ -109,7 +109,7 @@
                         android:layout_width="8dp"
                         android:layout_height="8dp"
                         android:layout_marginStart="5dp"
-                        android:background="@drawable/ic_star_filled"
+                        android:background="@drawable/ic_logo_color"
                         tools:ignore="ContentDescription" />
 
                     <ImageView
@@ -117,7 +117,7 @@
                         android:layout_width="8dp"
                         android:layout_height="8dp"
                         android:layout_marginStart="5dp"
-                        android:background="@drawable/ic_star_filled"
+                        android:background="@drawable/ic_logo_graycolor"
                         tools:ignore="ContentDescription" />
 
                     <ImageView
@@ -125,7 +125,7 @@
                         android:layout_width="8dp"
                         android:layout_height="8dp"
                         android:layout_marginStart="5dp"
-                        android:background="@drawable/ic_star_filled"
+                        android:background="@drawable/ic_logo_graycolor"
                         tools:ignore="ContentDescription" />
 
                 </LinearLayout>
@@ -140,7 +140,7 @@
                     android:ellipsize="end"
                     android:fontFamily="@font/montserrat"
                     android:maxLines="1"
-                    android:text="@string/clinic_name"
+                    android:text="dura clinic"
                     android:textColor="@color/new_secondtxt"
                     android:textSize="10sp" />
 

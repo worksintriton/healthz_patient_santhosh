@@ -4,28 +4,38 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.gson.Gson;
 import com.triton.healthz.R;
 import com.triton.healthz.activity.NotificationActivity;
+import com.triton.healthz.adapter.ProductDetailsAdapter;
 import com.triton.healthz.api.APIClient;
 import com.triton.healthz.api.RestApiInterface;
+import com.triton.healthz.interfaces.TrackProductListener;
 import com.triton.healthz.requestpojo.TrackOrderDetailsRequest;
+import com.triton.healthz.responsepojo.PetLoverVendorOrderDetailsResponse;
 import com.triton.healthz.responsepojo.TrackOrderDetailsResponse;
 import com.triton.healthz.utils.ConnectionDetector;
 import com.triton.healthz.utils.RestUtils;
 import com.wang.avi.AVLoadingIndicatorView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -34,7 +44,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class TrackOrderActivity extends AppCompatActivity implements View.OnClickListener {
+public class TrackOrderActivity extends AppCompatActivity implements View.OnClickListener, TrackProductListener, BottomNavigationView.OnNavigationItemSelectedListener {
 
     private static final String TAG = "TrackOrderActivity" ;
 
@@ -45,18 +55,6 @@ public class TrackOrderActivity extends AppCompatActivity implements View.OnClic
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.img_back)
     ImageView img_back;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_products_image)
-    ImageView img_products_image;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.txt_product_title)
-    TextView txt_product_title;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.txt_products_price)
-    TextView txt_products_price;
 
 
 
@@ -76,9 +74,6 @@ public class TrackOrderActivity extends AppCompatActivity implements View.OnClic
     @BindView(R.id.txt_total_order_cost)
     TextView txt_total_order_cost;
 
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.txt_quantity)
-    TextView txt_quantity;
 
 
 
@@ -180,11 +175,112 @@ public class TrackOrderActivity extends AppCompatActivity implements View.OnClic
 
     private int _id;
     private String orderid;
-    private String fromactivity;
+    private String fromactivity,payment_method;
     private List<TrackOrderDetailsResponse.DataBean.ProdcutTrackDetailsBean> prodcutTrackDetailsBeanList;
 
+    List<PetLoverVendorOrderDetailsResponse.DataBean.ProductDetailsBean> product_details;
 
    /**/
+
+      @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_order_status)
+    TextView txt_order_status;
+
+
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_shipping_address_street)
+    TextView txt_shipping_address_street;
+
+/*    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_shipping_address_name)
+    TextView txt_shipping_address_name;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_shipping_address_city)
+    TextView txt_shipping_address_city;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_shipping_address_state_pincode)
+    TextView txt_shipping_address_state_pincode;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_shipping_address_phone)
+    TextView txt_shipping_address_phone;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_shipping_address_landmark)
+    TextView txt_shipping_address_landmark;*/
+
+   /* @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.img_order_status)
+    ImageView img_order_status;*/
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.img_expand_arrow)
+    ImageView img_expand_arrow;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.ll_orderdetails)
+    LinearLayout ll_orderdetails;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.img_expand_arrow_shipping)
+    ImageView img_expand_arrow_shipping;
+
+
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.ll_shippingaddress)
+    LinearLayout ll_shippingaddress;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.rv_productdetails)
+    RecyclerView rv_productdetails;
+
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.img_expand_arrow_productdetails)
+    ImageView img_expand_arrow_productdetails;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.ll_productdetails)
+    LinearLayout ll_productdetails;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_no_products)
+    TextView txt_no_products;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_no_of_items)
+    TextView txt_no_of_items;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_cancell_order)
+    TextView txt_cancell_order;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.scrollablContent)
+    ScrollView scrollablContent;
+
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_no_of_prodslabel)
+    TextView txt_no_of_prodslabel;
+
+    private  boolean button1IsVisible = false;
+    private  boolean ShippingIsVisible = false;
+    private  boolean productsIsVisible = false;
+
+    private List<PetLoverVendorOrderDetailsResponse.DataBean.ProductDetailsBean> productdetailslist;
+    private List<Integer> product_id = new ArrayList<>();
+
+    /* Petlover Bottom Navigation */
+
+    BottomNavigationView bottom_navigation_view;
+    FloatingActionButton floatingActionButton;
+
+    public static String active_tag = "4";
 
 
     @SuppressLint({"LogNotTimber", "LongLogTag"})
@@ -199,10 +295,14 @@ public class TrackOrderActivity extends AppCompatActivity implements View.OnClic
             _id = extras.getInt("_id");
             orderid = extras.getString("orderid");
             fromactivity = extras.getString("fromactivity");
+            product_details = (List<PetLoverVendorOrderDetailsResponse.DataBean.ProductDetailsBean>) extras.getSerializable("product_details");
+           payment_method = extras.getString("payment_method");
             Log.w(TAG,"_id : "+_id);
         }
+        if(product_details!=null&&product_details.size()>0){
 
-
+            setView(product_details);
+        }
         ImageView img_back = include_petlover_header.findViewById(R.id.img_back);
         ImageView img_sos = include_petlover_header.findViewById(R.id.img_sos);
         ImageView img_notification = include_petlover_header.findViewById(R.id.img_notification);
@@ -241,7 +341,7 @@ public class TrackOrderActivity extends AppCompatActivity implements View.OnClic
         txt_order_transit_date.setText(" ");
 
 
-       // bottom_navigation_view.getMenu().findItem(R.id.shop).setChecked(true);
+        //bottom_navigation_view.getMenu().findItem(R.id.shop).setChecked(true);
 
 
         if (new ConnectionDetector(TrackOrderActivity.this).isNetworkAvailable(TrackOrderActivity.this)) {
@@ -249,9 +349,59 @@ public class TrackOrderActivity extends AppCompatActivity implements View.OnClic
         }
 
 
+        bottom_navigation_view = include_petlover_footer.findViewById(R.id.bottomNavigation);
+        floatingActionButton = include_petlover_footer.findViewById(R.id.fab);
+      //  bottom_navigation_view.setItemIconTintList(null);
+        bottom_navigation_view.setOnNavigationItemSelectedListener(this);
+        bottom_navigation_view.getMenu().findItem(R.id.shop).setChecked(true);
+
+        floatingActionButton.setImageResource(R.drawable.ic_hzhome_png);
+
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                callDirections("1");
+            }
+        });
+
+
 
     }
 
+    private void setView(List<PetLoverVendorOrderDetailsResponse.DataBean.ProductDetailsBean> product_details) {
+        rv_productdetails.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        rv_productdetails.setItemAnimator(new DefaultItemAnimator());
+        ProductDetailsAdapter productDetailsAdapter = new ProductDetailsAdapter(getApplicationContext(),product_details,orderid,fromactivity,this, false);
+        rv_productdetails.setAdapter(productDetailsAdapter);
+
+    }
+
+    @SuppressLint("NonConstantResourceId")
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.home:
+                callDirections("1");
+                break;
+            case R.id.shop:
+                callDirections("2");
+                break;
+            case R.id.services:
+                callDirections("3");
+                break;
+            case R.id.care:
+                callDirections("4");
+                break;
+            case R.id.community:
+                callDirections("5");
+                break;
+
+            default:
+                return  false;
+        }
+        return true;
+    }
 
 
     @Override
@@ -312,29 +462,28 @@ public class TrackOrderActivity extends AppCompatActivity implements View.OnClic
 
                         if(response.body().getData()!=null){
 
-                            if(response.body().getData().getProduct_name()!=null&&!(response.body().getData().getProduct_name().isEmpty())){
-                                txt_product_title.setText(response.body().getData().getProduct_name());
-                            }
-                            if(response.body().getData().getProduct_price()!=0){
-                                txt_products_price.setText("\u20B9 "+response.body().getData().getProduct_price());
-                            }
                             if(response.body().getData().getProduct_booked()!=null){
                                 txt_order_date.setText(response.body().getData().getProduct_booked());
                             }
                             if(orderid !=null){
                                 txt_booking_id.setText(orderid);
                             }
+
+                            if(txt_payment_method!=null){
+                                txt_payment_method.setText(""+txt_payment_method);
+                            }
+
                             if(response.body().getData().getProduct_price() !=0){
-                                txt_total_order_cost.setText("\u20B9 "+response.body().getData().getProduct_price());
+                                txt_total_order_cost.setText("\u20B9 "+response.body().getData().getProduct_total_price());
                             }
                             if(response.body().getData().getProduct_count() !=0){
-                                txt_quantity.setText(""+response.body().getData().getProduct_count());
+                                txt_no_of_items.setText("Item ("+response.body().getData().getProduct_count()+" )");
                             }
-                           
+
                            /* if(response.body().getData().getVendor_complete_info() !=null) {
                                 txt_order_dispatch_packdetails.setText(response.body().getData().getVendor_complete_info());
                             }*/
-                            if (response.body().getData().getProduct_image() != null && !response.body().getData().getProduct_image().isEmpty()) {
+                        /*    if (response.body().getData().getProduct_image() != null && !response.body().getData().getProduct_image().isEmpty()) {
                                 Glide.with(getApplicationContext())
                                         .load(response.body().getData().getProduct_image())
                                         .into(img_products_image);
@@ -345,7 +494,7 @@ public class TrackOrderActivity extends AppCompatActivity implements View.OnClic
                                         .into(img_products_image);
 
                             }
-
+*/
                             if(response.body().getData().getProdcut_track_details() != null && response.body().getData().getProdcut_track_details().size()>0){
                                 prodcutTrackDetailsBeanList = response.body().getData().getProdcut_track_details();
 
@@ -489,5 +638,10 @@ public class TrackOrderActivity extends AppCompatActivity implements View.OnClic
         LinearLayout.LayoutParams params = (LinearLayout.LayoutParams)rl_layout.getLayoutParams();
         params.setMargins(i, i1, i2, i3);
         rl_layout.setLayoutParams(params);
+    }
+
+    @Override
+    public void trackProductListener(String fromactivity, int product_id, String orderid, String TAG, List<PetLoverVendorOrderDetailsResponse.DataBean.ProductDetailsBean> product_details) {
+
     }
 }

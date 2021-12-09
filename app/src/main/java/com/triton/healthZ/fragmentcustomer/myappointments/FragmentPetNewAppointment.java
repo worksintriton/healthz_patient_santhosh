@@ -300,6 +300,7 @@ public class FragmentPetNewAppointment extends Fragment implements OnAppointment
 
     @Override
     public void onAppointmentCancel(String id,String appointmenttype,String userid, String doctorid,String appointmentid,String spid,String cost,String paymentmethod) {
+        Log.w(TAG,"Paymentmethod"+"--->" +paymentmethod);
         Paymentmethod =paymentmethod;
         Appointmetnt_id =id;
         if(id != null){
@@ -522,13 +523,18 @@ public class FragmentPetNewAppointment extends Fragment implements OnAppointment
 
                 if (response.body() != null) {
                     if(response.body().getCode() == 200){
+
+                        Log.w(TAG,"Paymentmethod"+ "--->" + Paymentmethod);
+
                         if(Paymentmethod != null && Paymentmethod.equalsIgnoreCase("Online")){
+                            Log.w(TAG,"Paymentmethod"+ "--->" + new Gson().toJson(response.body()));
                             if(ServiceCost != null && !ServiceCost.equalsIgnoreCase("0")) {
                                 showSuccessfullyCancelled(type);
                             }else{
                                 startActivity(new Intent(mContext, PetMyappointmentsActivity.class));
                             }
-                        }else{
+                        }else{Log.w(TAG,"Paymentmethod"+ "--->" + new Gson().toJson(response.body()));
+
                             startActivity(new Intent(mContext, PetMyappointmentsActivity.class));
                         }
 

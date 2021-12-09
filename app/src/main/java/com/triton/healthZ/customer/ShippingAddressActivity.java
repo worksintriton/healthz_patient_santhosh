@@ -251,6 +251,11 @@ public class ShippingAddressActivity extends AppCompatActivity implements View.O
 
                 txt_grand_total.setText("Total: "+" \u20B9 "+ grand_total);
             }
+            else {
+
+
+                txt_grand_total.setText("Total: "+" \u20B9 "+ 0);
+            }
 
             prodcut_count = extras.getInt("prodcut_count");
 

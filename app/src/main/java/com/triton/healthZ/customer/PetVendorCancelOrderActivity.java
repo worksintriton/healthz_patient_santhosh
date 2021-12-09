@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
@@ -27,6 +28,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.gson.Gson;
 import com.triton.healthz.R;
 import com.triton.healthz.activity.NotificationActivity;
@@ -62,15 +64,13 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class PetVendorCancelOrderActivity extends AppCompatActivity implements View.OnClickListener, OnAppointmentSuccessfullyCancel {
+public class PetVendorCancelOrderActivity extends AppCompatActivity implements View.OnClickListener, OnAppointmentSuccessfullyCancel, BottomNavigationView.OnNavigationItemSelectedListener {
 
     private static final String TAG = "PetVendorCancelOrderActivity" ;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.spr_reason)
     Spinner spr_reason;
-
-
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.btn_cancel_order)
@@ -111,67 +111,15 @@ public class PetVendorCancelOrderActivity extends AppCompatActivity implements V
 
     /* Petlover Bottom Navigation */
 
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_home)
-    RelativeLayout rl_home;
 
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_care)
-    RelativeLayout rl_care;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.title_care)
-    TextView title_care;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_care)
-    ImageView img_care;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_service)
-    RelativeLayout rl_service;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.title_serv)
-    TextView title_serv;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_serv)
-    ImageView img_serv;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_shop)
-    RelativeLayout rl_shop;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.title_shop)
-    TextView title_shop;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_shop)
-    ImageView img_shop;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_comn)
-    RelativeLayout rl_comn;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.title_community)
-    TextView title_community;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_community)
-    ImageView img_community;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_homes)
-    RelativeLayout rl_homes;
 
     TextView txt_no_records_coupon;
     RecyclerView rv_successfully_cancelled;
     private List<CouponCodeTextResponse.DataBean> myCouponsTextList;
     private String userid;
     private int Order_price = 0;
+
+    FloatingActionButton floatingActionButton;
 
 
     @SuppressLint({"LogNotTimber", "LongLogTag"})
@@ -254,29 +202,22 @@ public class PetVendorCancelOrderActivity extends AppCompatActivity implements V
 //        bottom_navigation_view.setOnNavigationItemSelectedListener(this);
 //        bottom_navigation_view.getMenu().findItem(R.id.shop).setChecked(true);
 
-        /*shop*/
-        title_care.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-        img_care.setImageResource(R.drawable.grey_care);
-        title_serv.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-        img_serv.setImageResource(R.drawable.grey_servc);
-        title_community.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-        img_community.setImageResource(R.drawable.grey_community);
-        title_shop.setTextColor(getResources().getColor(R.color.new_gree_color,getTheme()));
-        img_shop.setImageResource(R.drawable.green_shop);
 
+                bottom_navigation_view = include_petlover_footer.findViewById(R.id.bottomNavigation);
+        floatingActionButton = include_petlover_footer.findViewById(R.id.fab);
+        //    bottom_navigation_view.setItemIconTintList(null);
+        bottom_navigation_view.setOnNavigationItemSelectedListener(this);
+        bottom_navigation_view.getMenu().findItem(R.id.shop).setChecked(true);
 
-        rl_home.setOnClickListener(this);
+        floatingActionButton.setImageResource(R.drawable.ic_hzhome_png);
 
-        rl_care.setOnClickListener(this);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-        rl_service.setOnClickListener(this);
-
-        rl_shop.setOnClickListener(this);
-
-        rl_comn.setOnClickListener(this);
-
-
-        rl_homes.setOnClickListener(this);
+                callDirections("1");
+            }
+        });
 
 
 
@@ -1011,6 +952,32 @@ public class PetVendorCancelOrderActivity extends AppCompatActivity implements V
             return false;
         }
 
+        return true;
+    }
+
+    @SuppressLint("NonConstantResourceId")
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.home:
+                callDirections("1");
+                break;
+            case R.id.shop:
+                callDirections("2");
+                break;
+            case R.id.services:
+                callDirections("3");
+                break;
+            case R.id.care:
+                callDirections("4");
+                break;
+            case R.id.community:
+                callDirections("5");
+                break;
+
+            default:
+                return  false;
+        }
         return true;
     }
 }

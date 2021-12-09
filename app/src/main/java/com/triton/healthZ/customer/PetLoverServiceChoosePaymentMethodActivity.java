@@ -315,7 +315,7 @@ public class PetLoverServiceChoosePaymentMethodActivity extends AppCompatActivit
                 ll_cost.setVisibility(View.GONE);
                 ll_discount.setVisibility(View.GONE);
                 edt_coupon.setText("");
-                txt_total_amount.setText("\u20B9 "+serviceamount);
+                txt_total_amount.setText("Total : \u20B9 "+serviceamount);
                 Total_price = serviceamount;
                 Coupon_status = "Not Applied";
                 Coupon_code = "";
@@ -330,7 +330,7 @@ public class PetLoverServiceChoosePaymentMethodActivity extends AppCompatActivit
                 ll_cost.setVisibility(View.GONE);
                 ll_discount.setVisibility(View.GONE);
                 edt_coupon.setText("");
-                txt_total_amount.setText("\u20B9 "+serviceamount);
+                txt_total_amount.setText("Total : \u20B9 "+serviceamount);
                 Total_price = serviceamount;
                 Coupon_status = "Not Applied";
                 Coupon_code = "";
@@ -419,7 +419,7 @@ public class PetLoverServiceChoosePaymentMethodActivity extends AppCompatActivit
         }
         if(serviceamount != 0){
             txt_cost.setText("\u20B9 "+serviceamount);
-            txt_total_amount.setText("\u20B9 "+serviceamount);
+            txt_total_amount.setText("Total : \u20B9 "+serviceamount);
             Total_price = serviceamount;
         }
         if(SP_ava_Date != null){
@@ -564,11 +564,11 @@ public class PetLoverServiceChoosePaymentMethodActivity extends AppCompatActivit
 
                         if(response.body().getData().getTotal_price() != 0){
                             Total_price = response.body().getData().getTotal_price();
-                            txt_total_amount.setText("\u20B9 "+response.body().getData().getTotal_price());
+                            txt_total_amount.setText("Total : \u20B9 "+response.body().getData().getTotal_price());
 
                         }else{
                             Total_price = 0;
-                            txt_total_amount.setText("\u20B9 "+0);
+                            txt_total_amount.setText("Total : \u20B9 "+0);
                         }
 
 

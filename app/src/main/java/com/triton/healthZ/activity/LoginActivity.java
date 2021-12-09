@@ -178,7 +178,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                     }
                     else {
-                        showErrorLoading(response.body().getMessage());
+                        Toasty.warning(getApplicationContext(),""+response.body().getMessage(),Toasty.LENGTH_LONG).show();
                     }
                 }
 

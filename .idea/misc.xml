@@ -126,6 +126,7 @@
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/activity_pet_lover_profile_screen.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/activity_pet_myappointments.xml" value="0.2" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/activity_pet_myorders.xml" value="0.2" />
+        <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/activity_pet_vendor_cancel_order.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/activity_petappointment_details.xml" value="0.4" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/activity_petappointment_doctor_date_time.xml" value="0.2" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/activity_petappointment_sp_date_time.xml" value="0.2" />
@@ -151,7 +152,7 @@
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/activity_slider_after_splash.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/activity_sos.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/activity_splash.xml" value="0.2" />
-        <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/activity_track_order_status.xml" value="0.2" />
+        <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/activity_track_order_status.xml" value="0.264" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/activity_verify_otp.xml" value="0.2" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/activity_verify_phone_number.xml" value="0.25" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/activity_welcome_screen.xml" value="0.2" />
@@ -192,6 +193,7 @@
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/alert_approve_reject_layout.xml" value="0.2" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/alert_exit_layout.xml" value="0.2" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/alert_logout_layout.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/alert_payment_success_layout.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/alert_pettype_layout.xml" value="0.2" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/content_doctor_details.xml" value="0.2" />
         <entry key="..\:/Users/santh/Documents/GitHub/healthz_patient_santhosh/app/src/main/res/layout/content_home.xml" value="0.2" />

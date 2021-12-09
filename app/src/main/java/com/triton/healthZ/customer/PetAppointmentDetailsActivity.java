@@ -463,7 +463,7 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
         fab = include_petlover_footer.findViewById(R.id.fab);
 
         bottom_navigation_view = include_petlover_footer.findViewById(R.id.bottomNavigation);
-        bottom_navigation_view.setItemIconTintList(null);
+      //  bottom_navigation_view.setItemIconTintList(null);
         bottom_navigation_view.setOnNavigationItemSelectedListener(this);
         bottom_navigation_view.getMenu().findItem(R.id.care).setChecked(true);
 

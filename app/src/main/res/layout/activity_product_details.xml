@@ -468,6 +468,7 @@
                     android:textSize="14sp" />
 
                 <TextView
+                    android:id="@+id/txt_condition"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
@@ -499,6 +500,7 @@
                     android:textSize="14sp" />
 
                 <TextView
+                    android:id="@+id/txt_pricetype"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"

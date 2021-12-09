@@ -194,13 +194,14 @@ public class CustomerDashboardActivity extends CustomerNavigationDrawer implemen
             }
         });
 
-        bottomNavigation.getMenu().getItem(0).setCheckable(false);
+
 
         tag = getIntent().getStringExtra("tag");
         Log.w(TAG," tag : "+tag);
         if(tag != null){
             if(tag.equalsIgnoreCase("1")){
                 active = petHomeFragment;
+                bottomNavigation.getMenu().getItem(0).setCheckable(false);
                 bottomNavigation.setSelectedItemId(R.id.home);
                 loadFragment(new CustomerHomeFragment());
             }else if(tag.equalsIgnoreCase("2")){
@@ -209,14 +210,17 @@ public class CustomerDashboardActivity extends CustomerNavigationDrawer implemen
                 loadFragment(new CustomerShopFragment());
             }else if(tag.equalsIgnoreCase("3")){
                 active = petServicesFragment;
+                bottomNavigation.getMenu().getItem(0).setCheckable(false);
                 bottomNavigation.setSelectedItemId(R.id.services);
                 loadFragment(new CustomerServicesFragment());
             }else if(tag.equalsIgnoreCase("4")){
                 active = petCareFragment;
+                bottomNavigation.getMenu().getItem(0).setCheckable(false);
                 bottomNavigation.setSelectedItemId(R.id.care);
                 loadFragment(new CustomerCareFragment());
             } else if(tag.equalsIgnoreCase("5")){
                 active = petCommunityFragment;
+                bottomNavigation.getMenu().getItem(0).setCheckable(false);
                 bottomNavigation.setSelectedItemId(R.id.community);
                 loadFragment(new CustomerCommunityFragment());
             }

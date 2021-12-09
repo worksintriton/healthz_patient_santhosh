@@ -134,6 +134,7 @@ public class MyCouponsAdapter extends  RecyclerView.Adapter<RecyclerView.ViewHol
 
 
 
+/*
 
       if (currentItem.getCoupon_img() != null && !currentItem.getCoupon_img().isEmpty()) {
           Glide.with(context)
@@ -147,6 +148,7 @@ public class MyCouponsAdapter extends  RecyclerView.Adapter<RecyclerView.ViewHol
                   .into(holder.img_notify_imge);
 
       }
+*/
 
 
 

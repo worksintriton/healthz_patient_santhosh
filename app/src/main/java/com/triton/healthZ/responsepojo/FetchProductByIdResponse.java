@@ -8,7 +8,7 @@ public class FetchProductByIdResponse {
     /**
      * Status : Success
      * Message : product list
-     * Product_details : {"_id":"61af3d669e6f552291dbfa6e","product_img":[{"product_img":"http://35.164.43.170:3000/api/uploads/1638874408182.jpg"}],"product_title":"Sample","product_price":192,"product_discount":1,"product_discount_price":194,"thumbnail_image":"http://35.164.43.170:3000/api/uploads/1638874408182.jpg","cat_id":{"_id":"6198b594518ad4520ab14792","img_path":"http://35.164.43.170:3000/api/uploads/1638787048263.jpg","product_cate":"Organic Products","img_index":0,"show_status":true,"date_and_time":"Mon Dec 06 2021 16:41:39 GMT+0530 (India Standard Time)","delete_status":false,"updatedAt":"2021-12-06T11:11:40.266Z","createdAt":"2021-11-20T08:45:08.260Z","__v":0},"threshould":"66","product_discription":"sample","product_fav":false,"product_rating":5,"product_review":0,"product_related":[{"_id":"61af3d669e6f552291dbfa6e","product_img":{"product_img":"http://35.164.43.170:3000/api/uploads/1638874408182.jpg"},"product_title":"Sample","product_price":192,"thumbnail_image":"http://35.164.43.170:3000/api/uploads/1638874408182.jpg","product_discount":1,"product_discount_price":194,"product_fav":false,"product_rating":5,"product_review":0}],"product_cart_count":0}
+     * Product_details : {"_id":"61af46069e6f552291dbfa6f","product_img":[{"product_img":"http://35.164.43.170:3000/api/uploads/1638876621297.jpg"}],"product_title":"price food","product_price":200,"product_discount":0,"product_discount_price":0,"thumbnail_image":"http://35.164.43.170:3000/api/uploads/1638876621297.jpg","cat_id":{"_id":"6198b5a2518ad4520ab14793","img_path":"http://35.164.43.170:3000/api/uploads/1639030679281.png","product_cate":"Men Care","img_index":0,"show_status":true,"date_and_time":"Thu Dec 09 2021 11:46:43 GMT+0530 (India Standard Time)","delete_status":false,"updatedAt":"2021-12-09T06:18:01.379Z","createdAt":"2021-11-20T08:45:22.893Z","__v":0},"threshould":"66","product_discription":"product description","product_fav":false,"product_rating":5,"product_review":0,"product_related":[{"_id":"61af46069e6f552291dbfa6f","product_img":{"product_img":"http://35.164.43.170:3000/api/uploads/1638876621297.jpg"},"product_title":"price food","product_price":200,"thumbnail_image":"http://35.164.43.170:3000/api/uploads/1638876621297.jpg","product_discount":0,"product_discount_price":0,"product_fav":false,"product_rating":5,"product_review":0,"condition":"organic","price_type":"unit price","addition_detail":["additional details"]}],"product_cart_count":0,"condition":"organic","price_type":"unit price","addition_detail":["additional details"]}
      * vendor_details : {"bussiness_gallery":[{"bussiness_gallery":"http://35.164.43.170:3000/api/uploads/1638874330799.jpg"}],"certifi":[{"certifi":"http://35.164.43.170:3000/api/uploads/1638874337520.pdf"}],"_id":"61af3cea7a64122107fc8e49","user_id":"61af3c907a64122107fc8e48","user_name":"Maddy","user_email":"maddykrishh4h@gmail.com","bussiness_name":"Maddy Sam","bussiness_email":"maddysan66@gmail.com","bussiness":"Maddy","bussiness_phone":"9876543210","business_reg":"12345678","photo_id_proof":"http://35.164.43.170:3000/api/uploads/1638874321232.pdf","govt_id_proof":"http://35.164.43.170:3000/api/uploads/1638874344157.pdf","date_and_time":"07/12/2021 04:22 PM","mobile_type":"Android","profile_status":true,"profile_verification_status":"Verified","bussiness_loc":"Salem 125J, Vmr Theatre Back Side Rd, Swaminathapuram, Salem, Tamil Nadu 636002, India","bussiness_lat":11.661722999999999,"bussiness_long":78.13756059999999,"delete_status":false,"updatedAt":"2021-12-07T10:52:49.539Z","createdAt":"2021-12-07T10:52:26.855Z","__v":0}
      * Code : 200
      */
@@ -16,21 +16,24 @@ public class FetchProductByIdResponse {
     private String Status;
     private String Message;
     /**
-     * _id : 61af3d669e6f552291dbfa6e
-     * product_img : [{"product_img":"http://35.164.43.170:3000/api/uploads/1638874408182.jpg"}]
-     * product_title : Sample
-     * product_price : 192
-     * product_discount : 1
-     * product_discount_price : 194
-     * thumbnail_image : http://35.164.43.170:3000/api/uploads/1638874408182.jpg
-     * cat_id : {"_id":"6198b594518ad4520ab14792","img_path":"http://35.164.43.170:3000/api/uploads/1638787048263.jpg","product_cate":"Organic Products","img_index":0,"show_status":true,"date_and_time":"Mon Dec 06 2021 16:41:39 GMT+0530 (India Standard Time)","delete_status":false,"updatedAt":"2021-12-06T11:11:40.266Z","createdAt":"2021-11-20T08:45:08.260Z","__v":0}
+     * _id : 61af46069e6f552291dbfa6f
+     * product_img : [{"product_img":"http://35.164.43.170:3000/api/uploads/1638876621297.jpg"}]
+     * product_title : price food
+     * product_price : 200
+     * product_discount : 0
+     * product_discount_price : 0
+     * thumbnail_image : http://35.164.43.170:3000/api/uploads/1638876621297.jpg
+     * cat_id : {"_id":"6198b5a2518ad4520ab14793","img_path":"http://35.164.43.170:3000/api/uploads/1639030679281.png","product_cate":"Men Care","img_index":0,"show_status":true,"date_and_time":"Thu Dec 09 2021 11:46:43 GMT+0530 (India Standard Time)","delete_status":false,"updatedAt":"2021-12-09T06:18:01.379Z","createdAt":"2021-11-20T08:45:22.893Z","__v":0}
      * threshould : 66
-     * product_discription : sample
+     * product_discription : product description
      * product_fav : false
      * product_rating : 5
      * product_review : 0
-     * product_related : [{"_id":"61af3d669e6f552291dbfa6e","product_img":{"product_img":"http://35.164.43.170:3000/api/uploads/1638874408182.jpg"},"product_title":"Sample","product_price":192,"thumbnail_image":"http://35.164.43.170:3000/api/uploads/1638874408182.jpg","product_discount":1,"product_discount_price":194,"product_fav":false,"product_rating":5,"product_review":0}]
+     * product_related : [{"_id":"61af46069e6f552291dbfa6f","product_img":{"product_img":"http://35.164.43.170:3000/api/uploads/1638876621297.jpg"},"product_title":"price food","product_price":200,"thumbnail_image":"http://35.164.43.170:3000/api/uploads/1638876621297.jpg","product_discount":0,"product_discount_price":0,"product_fav":false,"product_rating":5,"product_review":0,"condition":"organic","price_type":"unit price","addition_detail":["additional details"]}]
      * product_cart_count : 0
+     * condition : organic
+     * price_type : unit price
+     * addition_detail : ["additional details"]
      */
 
     private ProductDetailsBean Product_details;
@@ -112,15 +115,15 @@ public class FetchProductByIdResponse {
         private int product_discount_price;
         private String thumbnail_image;
         /**
-         * _id : 6198b594518ad4520ab14792
-         * img_path : http://35.164.43.170:3000/api/uploads/1638787048263.jpg
-         * product_cate : Organic Products
+         * _id : 6198b5a2518ad4520ab14793
+         * img_path : http://35.164.43.170:3000/api/uploads/1639030679281.png
+         * product_cate : Men Care
          * img_index : 0
          * show_status : true
-         * date_and_time : Mon Dec 06 2021 16:41:39 GMT+0530 (India Standard Time)
+         * date_and_time : Thu Dec 09 2021 11:46:43 GMT+0530 (India Standard Time)
          * delete_status : false
-         * updatedAt : 2021-12-06T11:11:40.266Z
-         * createdAt : 2021-11-20T08:45:08.260Z
+         * updatedAt : 2021-12-09T06:18:01.379Z
+         * createdAt : 2021-11-20T08:45:22.893Z
          * __v : 0
          */
 
@@ -131,25 +134,31 @@ public class FetchProductByIdResponse {
         private int product_rating;
         private int product_review;
         private int product_cart_count;
+        private String condition;
+        private String price_type;
         /**
-         * product_img : http://35.164.43.170:3000/api/uploads/1638874408182.jpg
+         * product_img : http://35.164.43.170:3000/api/uploads/1638876621297.jpg
          */
 
         private List<ProductImgBean> product_img;
         /**
-         * _id : 61af3d669e6f552291dbfa6e
-         * product_img : {"product_img":"http://35.164.43.170:3000/api/uploads/1638874408182.jpg"}
-         * product_title : Sample
-         * product_price : 192
-         * thumbnail_image : http://35.164.43.170:3000/api/uploads/1638874408182.jpg
-         * product_discount : 1
-         * product_discount_price : 194
+         * _id : 61af46069e6f552291dbfa6f
+         * product_img : {"product_img":"http://35.164.43.170:3000/api/uploads/1638876621297.jpg"}
+         * product_title : price food
+         * product_price : 200
+         * thumbnail_image : http://35.164.43.170:3000/api/uploads/1638876621297.jpg
+         * product_discount : 0
+         * product_discount_price : 0
          * product_fav : false
          * product_rating : 5
          * product_review : 0
+         * condition : organic
+         * price_type : unit price
+         * addition_detail : ["additional details"]
          */
 
         private List<ProductRelatedBean> product_related;
+        private List<String> addition_detail;
 
         public String get_id() {
             return _id;
@@ -255,6 +264,22 @@ public class FetchProductByIdResponse {
             this.product_cart_count = product_cart_count;
         }
 
+        public String getCondition() {
+            return condition;
+        }
+
+        public void setCondition(String condition) {
+            this.condition = condition;
+        }
+
+        public String getPrice_type() {
+            return price_type;
+        }
+
+        public void setPrice_type(String price_type) {
+            this.price_type = price_type;
+        }
+
         public List<ProductImgBean> getProduct_img() {
             return product_img;
         }
@@ -269,6 +294,14 @@ public class FetchProductByIdResponse {
 
         public void setProduct_related(List<ProductRelatedBean> product_related) {
             this.product_related = product_related;
+        }
+
+        public List<String> getAddition_detail() {
+            return addition_detail;
+        }
+
+        public void setAddition_detail(List<String> addition_detail) {
+            this.addition_detail = addition_detail;
         }
 
         public static class CatIdBean {
@@ -379,7 +412,7 @@ public class FetchProductByIdResponse {
         public static class ProductRelatedBean {
             private String _id;
             /**
-             * product_img : http://35.164.43.170:3000/api/uploads/1638874408182.jpg
+             * product_img : http://35.164.43.170:3000/api/uploads/1638876621297.jpg
              */
 
             private ProductImgBean product_img;
@@ -391,6 +424,9 @@ public class FetchProductByIdResponse {
             private boolean product_fav;
             private int product_rating;
             private int product_review;
+            private String condition;
+            private String price_type;
+            private List<String> addition_detail;
 
             public String get_id() {
                 return _id;
@@ -470,6 +506,30 @@ public class FetchProductByIdResponse {
 
             public void setProduct_review(int product_review) {
                 this.product_review = product_review;
+            }
+
+            public String getCondition() {
+                return condition;
+            }
+
+            public void setCondition(String condition) {
+                this.condition = condition;
+            }
+
+            public String getPrice_type() {
+                return price_type;
+            }
+
+            public void setPrice_type(String price_type) {
+                this.price_type = price_type;
+            }
+
+            public List<String> getAddition_detail() {
+                return addition_detail;
+            }
+
+            public void setAddition_detail(List<String> addition_detail) {
+                this.addition_detail = addition_detail;
             }
 
             public static class ProductImgBean {

@@ -4,12 +4,14 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -17,6 +19,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 import com.triton.healthz.R;
 import com.triton.healthz.activity.NotificationActivity;
@@ -33,7 +36,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class PetMyOrdrersNewActivity extends AppCompatActivity implements View.OnClickListener {
+public class PetMyOrdrersNewActivity extends AppCompatActivity implements View.OnClickListener, BottomNavigationView.OnNavigationItemSelectedListener {
     private final String TAG = "PetMyOrdrersNewActivity";
 
 
@@ -112,7 +115,7 @@ public class PetMyOrdrersNewActivity extends AppCompatActivity implements View.O
     View include_petlover_footer;
 
     BottomNavigationView bottom_navigation_view;
-
+    FloatingActionButton floatingActionButton;
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.include_petlover_header)
     View include_petlover_header;
@@ -197,10 +200,21 @@ public class PetMyOrdrersNewActivity extends AppCompatActivity implements View.O
 
         img_back.setOnClickListener(v -> onBackPressed());
 
-//        bottom_navigation_view = include_petlover_footer.findViewById(R.id.bottom_navigation_view);
-//        bottom_navigation_view.setItemIconTintList(null);
-//        bottom_navigation_view.setOnNavigationItemSelectedListener(this);
-//        bottom_navigation_view.getMenu().findItem(R.id.home).setChecked(true);
+        bottom_navigation_view = include_petlover_footer.findViewById(R.id.bottomNavigation);
+        floatingActionButton = include_petlover_footer.findViewById(R.id.fab);
+    //    bottom_navigation_view.setItemIconTintList(null);
+        bottom_navigation_view.setOnNavigationItemSelectedListener(this);
+        bottom_navigation_view.getMenu().findItem(R.id.shop).setChecked(true);
+
+        floatingActionButton.setImageResource(R.drawable.ic_hzhome_png);
+
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                callDirections("1");
+            }
+        });
 
 
         /*home*//*
@@ -259,31 +273,31 @@ public class PetMyOrdrersNewActivity extends AppCompatActivity implements View.O
         finish();
     }
 
-//    @SuppressLint("NonConstantResourceId")
-//    @Override
-//    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-//        switch (item.getItemId()) {
-//            case R.id.home:
-//                callDirections("1");
-//                break;
-//            case R.id.shop:
-//                callDirections("2");
-//                break;
-//            case R.id.services:
-//                callDirections("3");
-//                break;
-//            case R.id.care:
-//                callDirections("4");
-//                break;
-//            case R.id.community:
-//                callDirections("5");
-//                break;
-//
-//            default:
-//                return  false;
-//        }
-//        return true;
-//    }
+    @SuppressLint("NonConstantResourceId")
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.home:
+                callDirections("1");
+                break;
+            case R.id.shop:
+                callDirections("2");
+                break;
+            case R.id.services:
+                callDirections("3");
+                break;
+            case R.id.care:
+                callDirections("4");
+                break;
+            case R.id.community:
+                callDirections("5");
+                break;
+
+            default:
+                return  false;
+        }
+        return true;
+    }
 
     static class ViewPagerAdapter extends FragmentPagerAdapter {
         private final List<Fragment> mFragmentList = new ArrayList<>();

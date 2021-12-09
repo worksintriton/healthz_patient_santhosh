@@ -7,8 +7,8 @@ public class PetAppointmentResponse {
 
     /**
      * Status : Success
-     * Message : Missed Appointment List
-     * Data : [{"_id":"618f9c59708d4f2a40c37340","Booking_Id":"SP-1636801625234","appointment_for":"SP","photo":"http://54.212.108.156:3000/api/uploads/1625679966323.png","clinic_name":"","name":"Sample","appointment_type":"","cost":"250","appointment_time":"14-11-2021 01:00 PM","createdAt":"2021-11-13T11:07:05.244Z","updatedAt":"2021-11-13T13:27:40.461Z","relation_type":"Others","type":"","service_provider_name":"Sri Pet Spa and Groomers","Service_name":"Pet Grooming","service_cost":"250","Booked_at":"14-11-2021 01:00 PM","missed_at":"13-11-2021 06:57 PM","completed_at":"","user_rate":0,"user_feedback":"","status":"Missed","appoint_patient_st":"","communication_type":"","doctor_name":"","start_appointment_status":"","user_id":"60b73c4638e95868d79be9c6","sp_id":"60b0b7b267f25056fe286c8f","doctor_id":""},{"_id":"618e4eff8c6c0c1c32b8c415","Booking_Id":"PET-1636716287844","appointment_for":"Doctor","doctor_name":"Sri Dinesh jack","photo":"http://54.212.108.156:3000/api/uploads/1625688429773.png","clinic_name":"Chennai Pet Clinic.","name":"Mohammed","appointment_type":"Normal","communication_type":"Visit","cost":"500","appointment_time":"13-11-2021 12:45 PM","createdAt":"2021-11-12T11:24:47.852Z","updatedAt":"2021-11-13T11:07:08.058Z","relation_type":"Son","start_appointment_status":"Not Started","appoint_patient_st":"Doctor missed appointment","type":"","service_provider_name":"","Service_name":"","service_cost":"","Booked_at":"13-11-2021 12:45 PM","missed_at":"13-11-2021 12:45 PM","completed_at":"","user_rate":0,"user_feedback":"","status":"Missed","user_id":"60b73c4638e95868d79be9c6","doctor_id":"60acb15868492a4567b3f508","location_id":"","visit_type":"Clinic Visit","sp_id":""},{"_id":"618e7c55708d4f2a40c3733e","Booking_Id":"PET-1636727893736","appointment_for":"Doctor","doctor_name":"Astor bette","photo":"http://54.212.108.156:3000/api/uploads/1625688149826.png","clinic_name":"Thanigai pet care clinic","name":"Sample","appointment_type":"Normal","communication_type":"Visit","cost":"1","appointment_time":"13-11-2021 09:45 AM","createdAt":"2021-11-12T14:38:13.743Z","updatedAt":"2021-11-13T11:07:08.058Z","relation_type":"Others","start_appointment_status":"Not Started","appoint_patient_st":"Doctor missed appointment","type":"","service_provider_name":"","Service_name":"","service_cost":"","Booked_at":"13-11-2021 09:45 AM","missed_at":"13-11-2021 09:45 AM","completed_at":"","user_rate":0,"user_feedback":"","status":"Missed","user_id":"60b73c4638e95868d79be9c6","doctor_id":"60b4e3cc541a437c7b9c60f9","location_id":"","visit_type":"Clinic Visit","sp_id":""},{"_id":"618e818c708d4f2a40c3733f","Booking_Id":"PET-1636729228324","appointment_for":"Doctor","doctor_name":"Astor bette","photo":"http://54.212.108.156:3000/api/uploads/1625688149826.png","clinic_name":"Thanigai pet care clinic","name":"Sample","appointment_type":"Normal","communication_type":"Visit","cost":"1","appointment_time":"13-11-2021 09:30 AM","createdAt":"2021-11-12T15:00:28.338Z","updatedAt":"2021-11-13T11:07:08.058Z","relation_type":"Others","start_appointment_status":"Not Started","appoint_patient_st":"Doctor missed appointment","type":"","service_provider_name":"","Service_name":"","service_cost":"","Booked_at":"13-11-2021 09:30 AM","missed_at":"13-11-2021 09:30 AM","completed_at":"","user_rate":0,"user_feedback":"","status":"Missed","user_id":"60b73c4638e95868d79be9c6","doctor_id":"60b4e3cc541a437c7b9c60f9","location_id":"","visit_type":"Clinic Visit","sp_id":""},{"_id":"618e4a98929508128b55e5ec","Booking_Id":"PET-1636715160069","appointment_for":"Doctor","doctor_name":"Sri Dinesh jack","photo":"http://54.212.108.156:3000/api/uploads/1625688429773.png","clinic_name":"Chennai Pet Clinic.","name":"Mohammed","appointment_type":"Normal","communication_type":"Visit","cost":"500","appointment_time":"12-11-2021 06:00 PM","createdAt":"2021-11-12T11:06:00.085Z","updatedAt":"2021-11-12T11:21:17.663Z","relation_type":"Son","start_appointment_status":"Not Started","appoint_patient_st":"Doctor missed appointment","type":"","service_provider_name":"","Service_name":"","service_cost":"","Booked_at":"12-11-2021 06:00 PM","missed_at":"12-11-2021 06:00 PM","completed_at":"","user_rate":0,"user_feedback":"","status":"Missed","user_id":"60b73c4638e95868d79be9c6","doctor_id":"60acb15868492a4567b3f508","location_id":"","visit_type":"Clinic Visit","sp_id":""},{"_id":"618e4b825196ce18780a9729","Booking_Id":"PET-1636715394633","appointment_for":"Doctor","doctor_name":"Sri Dinesh jack","photo":"http://54.212.108.156:3000/api/uploads/1625688429773.png","clinic_name":"Chennai Pet Clinic.","name":"Mohammed","appointment_type":"Normal","communication_type":"Visit","cost":"500","appointment_time":"12-11-2021 05:30 PM","createdAt":"2021-11-12T11:09:54.648Z","updatedAt":"2021-11-12T11:21:17.663Z","relation_type":"Son","start_appointment_status":"Not Started","appoint_patient_st":"Doctor missed appointment","type":"","service_provider_name":"","Service_name":"","service_cost":"","Booked_at":"12-11-2021 05:30 PM","missed_at":"12-11-2021 05:30 PM","completed_at":"","user_rate":0,"user_feedback":"","status":"Missed","user_id":"60b73c4638e95868d79be9c6","doctor_id":"60acb15868492a4567b3f508","location_id":"","visit_type":"Clinic Visit","sp_id":""},{"_id":"618e4c225196ce18780a972a","Booking_Id":"PET-1636715554671","appointment_for":"Doctor","doctor_name":"Audrey Ava","photo":"http://54.212.108.156:3000/api/uploads/1625897133430.png","clinic_name":"Ballo Multispeciality Pet Clinic","name":"Mohammed","appointment_type":"Normal","communication_type":"Visit","cost":"1","appointment_time":"13-11-2021 05:30 PM","createdAt":"2021-11-12T11:12:34.679Z","updatedAt":"2021-11-12T11:21:17.663Z","relation_type":"Son","start_appointment_status":"Not Started","appoint_patient_st":"Doctor missed appointment","type":"","service_provider_name":"","Service_name":"","service_cost":"","Booked_at":"13-11-2021 05:30 PM","missed_at":"13-11-2021 05:30 PM","completed_at":"","user_rate":0,"user_feedback":"","status":"Missed","user_id":"60b73c4638e95868d79be9c6","doctor_id":"60b4dc30541a437c7b9c60f4","location_id":"","visit_type":"Clinic Visit","sp_id":""},{"_id":"618e4cfb3eb6091a72360c65","Booking_Id":"PET-1636715771782","appointment_for":"Doctor","doctor_name":"Sri Dinesh jack","photo":"http://54.212.108.156:3000/api/uploads/1625688429773.png","clinic_name":"Chennai Pet Clinic.","name":"Mohammed","appointment_type":"Normal","communication_type":"Visit","cost":"500","appointment_time":"12-11-2021 06:15 PM","createdAt":"2021-11-12T11:16:11.801Z","updatedAt":"2021-11-12T11:21:17.663Z","relation_type":"Son","start_appointment_status":"Not Started","appoint_patient_st":"Doctor missed appointment","type":"","service_provider_name":"","Service_name":"","service_cost":"","Booked_at":"12-11-2021 06:15 PM","missed_at":"12-11-2021 06:15 PM","completed_at":"","user_rate":0,"user_feedback":"","status":"Missed","user_id":"60b73c4638e95868d79be9c6","doctor_id":"60acb15868492a4567b3f508","location_id":"","visit_type":"Clinic Visit","sp_id":""},{"_id":"618e4de28c6c0c1c32b8c414","Booking_Id":"PET-1636716002426","appointment_for":"Doctor","doctor_name":"Sri Dinesh jack","photo":"http://54.212.108.156:3000/api/uploads/1625688429773.png","clinic_name":"Chennai Pet Clinic.","name":"Mohammed","appointment_type":"Normal","communication_type":"Visit","cost":"500","appointment_time":"13-11-2021 12:30 PM","createdAt":"2021-11-12T11:20:02.442Z","updatedAt":"2021-11-12T11:21:17.663Z","relation_type":"Son","start_appointment_status":"Not Started","appoint_patient_st":"Doctor missed appointment","type":"","service_provider_name":"","Service_name":"","service_cost":"","Booked_at":"13-11-2021 12:30 PM","missed_at":"13-11-2021 12:30 PM","completed_at":"","user_rate":0,"user_feedback":"","status":"Missed","user_id":"60b73c4638e95868d79be9c6","doctor_id":"60acb15868492a4567b3f508","location_id":"","visit_type":"Clinic Visit","sp_id":""}]
+     * Message : New Appointment List
+     * Data : [{"_id":"61b1b31d6aefa963177a6c00","Booking_Id":"SP-1639035677015","appointment_for":"SP","photo":"","clinic_name":"","name":"Sample","appointment_type":"","cost":"500","appointment_time":"10-12-2021 02:00 AM","createdAt":"2021-12-09T07:41:17.031Z","updatedAt":"2021-12-09T07:41:17.039Z","relation_type":"Others","type":"","service_provider_name":"Sri so","Service_name":"Yoga","service_cost":"500","Booked_at":"10-12-2021 02:00 AM","missed_at":"","completed_at":"","user_rate":0,"user_feedback":"","status":"Incomplete","payment_method":"Online","appoint_patient_st":"","communication_type":"","doctor_name":"","start_appointment_status":"","user_id":"61aef2c658c631738117edf9","sp_id":"61af0c0958c631738117ee08","doctor_id":""},{"_id":"61b1b28e07b7cf610dfa9580","Booking_Id":"SP-1639035534401","appointment_for":"SP","photo":"","clinic_name":"","name":"Sample","appointment_type":"","cost":"500","appointment_time":"10-12-2021 02:15 AM","createdAt":"2021-12-09T07:38:54.413Z","updatedAt":"2021-12-09T07:38:54.417Z","relation_type":"Others","type":"","service_provider_name":"Sri so","Service_name":"Yoga","service_cost":"500","Booked_at":"10-12-2021 02:15 AM","missed_at":"","completed_at":"","user_rate":0,"user_feedback":"","status":"Incomplete","payment_method":"Online","appoint_patient_st":"","communication_type":"","doctor_name":"","start_appointment_status":"","user_id":"61aef2c658c631738117edf9","sp_id":"61af0c0958c631738117ee08","doctor_id":""},{"_id":"61b1b12707b7cf610dfa9579","Booking_Id":"HEL-1639035175184","appointment_for":"Doctor","photo":"","clinic_name":"Maddy Sam Clinic","name":"Sample","appointment_type":"Normal","communication_type":"Online","cost":"200","appointment_time":"10-12-2021 12:00 AM","createdAt":"2021-12-09T07:32:55.200Z","updatedAt":"2021-12-09T07:32:55.202Z","relation_type":"Others","payment_method":"Online","start_appointment_status":"Not Started","type":"","doctor_name":"Maddy Sam","service_provider_name":"","Service_name":"","service_cost":"","Booked_at":"10-12-2021 12:00 AM","missed_at":"","completed_at":"","user_rate":0,"user_feedback":"","status":"Incomplete","appoint_patient_st":"","user_id":"61aef2c658c631738117edf9","doctor_id":"61af0ec058c631738117ee0b","location_id":"","visit_type":"Clinic Visit","sp_id":""}]
      * Code : 200
      */
 
@@ -16,34 +16,35 @@ public class PetAppointmentResponse {
     private String Message;
     private int Code;
     /**
-     * _id : 618f9c59708d4f2a40c37340
-     * Booking_Id : SP-1636801625234
+     * _id : 61b1b31d6aefa963177a6c00
+     * Booking_Id : SP-1639035677015
      * appointment_for : SP
-     * photo : http://54.212.108.156:3000/api/uploads/1625679966323.png
+     * photo :
      * clinic_name :
      * name : Sample
      * appointment_type :
-     * cost : 250
-     * appointment_time : 14-11-2021 01:00 PM
-     * createdAt : 2021-11-13T11:07:05.244Z
-     * updatedAt : 2021-11-13T13:27:40.461Z
+     * cost : 500
+     * appointment_time : 10-12-2021 02:00 AM
+     * createdAt : 2021-12-09T07:41:17.031Z
+     * updatedAt : 2021-12-09T07:41:17.039Z
      * relation_type : Others
      * type :
-     * service_provider_name : Sri Pet Spa and Groomers
-     * Service_name : Pet Grooming
-     * service_cost : 250
-     * Booked_at : 14-11-2021 01:00 PM
-     * missed_at : 13-11-2021 06:57 PM
+     * service_provider_name : Sri so
+     * Service_name : Yoga
+     * service_cost : 500
+     * Booked_at : 10-12-2021 02:00 AM
+     * missed_at :
      * completed_at :
      * user_rate : 0
      * user_feedback :
-     * status : Missed
+     * status : Incomplete
+     * payment_method : Online
      * appoint_patient_st :
      * communication_type :
      * doctor_name :
      * start_appointment_status :
-     * user_id : 60b73c4638e95868d79be9c6
-     * sp_id : 60b0b7b267f25056fe286c8f
+     * user_id : 61aef2c658c631738117edf9
+     * sp_id : 61af0c0958c631738117ee08
      * doctor_id :
      */
 
@@ -104,6 +105,7 @@ public class PetAppointmentResponse {
         private int user_rate;
         private String user_feedback;
         private String status;
+        private String payment_method;
         private String appoint_patient_st;
         private String communication_type;
         private String doctor_name;
@@ -286,6 +288,14 @@ public class PetAppointmentResponse {
 
         public void setStatus(String status) {
             this.status = status;
+        }
+
+        public String getPayment_method() {
+            return payment_method;
+        }
+
+        public void setPayment_method(String payment_method) {
+            this.payment_method = payment_method;
         }
 
         public String getAppoint_patient_st() {

@@ -139,13 +139,13 @@ public class PetLoverDoctorNewAdapter extends  RecyclerView.Adapter<RecyclerView
             Glide.with(context)
                     .load(currentItem.getThumbnail_image())
                     .into(holder.img_doctors_image);
-
+            Log.w(TAG,"doctorimage :"+currentItem.getThumbnail_image());
         }
         else{
             Glide.with(context)
                     .load(APIClient.PROFILE_IMAGE_URL)
                     .into(holder.img_doctors_image);
-
+            Log.w(TAG,"doctorimage :"+APIClient.PROFILE_IMAGE_URL);
         }
 
 

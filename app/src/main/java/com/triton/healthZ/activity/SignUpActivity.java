@@ -248,7 +248,9 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
 
                     } else {
-                        showErrorLoading(response.body().getMessage());
+
+                        Toasty.warning(getApplicationContext(),""+response.body().getMessage(),Toasty.LENGTH_LONG).show();
+
                     }
                 }
 
@@ -331,7 +333,9 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
 
                     } else {
-                        showErrorLoading(response.body().getMessage());
+
+                        Toasty.warning(getApplicationContext(),""+response.body().getMessage(),Toasty.LENGTH_LONG).show();
+
                     }
                 }
 
@@ -392,7 +396,9 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
 
                     } else {
-                        showErrorLoading(response.body().getMessage());
+
+                        Toasty.warning(getApplicationContext(),""+response.body().getMessage(),Toasty.LENGTH_LONG).show();
+
                     }
                 }
 

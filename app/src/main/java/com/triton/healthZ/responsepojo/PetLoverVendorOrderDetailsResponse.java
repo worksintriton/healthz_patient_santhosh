@@ -1,5 +1,6 @@
 package com.triton.healthz.responsepojo;
 
+import java.io.Serializable;
 import java.util.List;
 
 public class PetLoverVendorOrderDetailsResponse {
@@ -329,7 +330,7 @@ public class PetLoverVendorOrderDetailsResponse {
             }
         }
 
-        public static class ProductDetailsBean {
+        public static class ProductDetailsBean implements Serializable {
             private int product_id;
             private String product_image;
             private String product_name;

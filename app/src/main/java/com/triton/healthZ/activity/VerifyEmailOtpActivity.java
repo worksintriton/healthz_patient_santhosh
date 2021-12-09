@@ -54,6 +54,9 @@ public class VerifyEmailOtpActivity extends AppCompatActivity implements View.On
     TextView txt_resend;
 
 
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_lbl_verifyphnno)
+    TextView txt_lbl_verifyphnno;
 
     private final String TAG = "VerifyEmailOtpActivity";
     private CountDownTimer timer;
@@ -102,7 +105,7 @@ public class VerifyEmailOtpActivity extends AppCompatActivity implements View.On
             Log.w(TAG,"Bundle "+" phonenumber : "+phonenumber+" otp :"+otp+" UserType : "+UserType+" userstatus : "+userstatus+ " userid : "+userid);
         }
 
-
+        txt_lbl_verifyphnno.setText("Email Verification");
         btn_verifyotp.setOnClickListener(this);
         txt_resend.setOnClickListener(this);
 

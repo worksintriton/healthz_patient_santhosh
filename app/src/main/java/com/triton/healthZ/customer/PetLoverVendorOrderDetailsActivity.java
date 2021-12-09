@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -17,20 +18,25 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.gson.Gson;
 import com.triton.healthz.R;
 import com.triton.healthz.activity.NotificationActivity;
 import com.triton.healthz.adapter.ProductDetailsAdapter;
 import com.triton.healthz.api.APIClient;
 import com.triton.healthz.api.RestApiInterface;
+import com.triton.healthz.doctor.shop.DoctorTrackOrderActivity;
+import com.triton.healthz.interfaces.TrackProductListener;
 import com.triton.healthz.requestpojo.PetLoverVendorOrderDetailsRequest;
 import com.triton.healthz.responsepojo.PetLoverVendorOrderDetailsResponse;
+import com.triton.healthz.serviceprovider.shop.SPTrackOrderActivity;
 import com.triton.healthz.utils.ConnectionDetector;
 import com.triton.healthz.utils.RestUtils;
 
 import com.wang.avi.AVLoadingIndicatorView;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,7 +46,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class PetLoverVendorOrderDetailsActivity extends AppCompatActivity implements View.OnClickListener {
+public class PetLoverVendorOrderDetailsActivity extends AppCompatActivity implements View.OnClickListener, TrackProductListener, BottomNavigationView.OnNavigationItemSelectedListener {
 
     private static final String TAG = "PetLoverVendorOrderDetailsActivity" ;
 
@@ -198,6 +204,11 @@ public class PetLoverVendorOrderDetailsActivity extends AppCompatActivity implem
 
     private int Order_price;
 
+    /* Petlover Bottom Navigation */
+
+    BottomNavigationView bottom_navigation_view;
+    FloatingActionButton floatingActionButton;
+
 
     @SuppressLint({"LogNotTimber", "LongLogTag", "SetTextI18n"})
     @Override
@@ -335,6 +346,22 @@ public class PetLoverVendorOrderDetailsActivity extends AppCompatActivity implem
             }
         });
 
+        bottom_navigation_view = include_petlover_footer.findViewById(R.id.bottomNavigation);
+        floatingActionButton = include_petlover_footer.findViewById(R.id.fab);
+     //   bottom_navigation_view.setItemIconTintList(null);
+        bottom_navigation_view.setOnNavigationItemSelectedListener(this);
+        bottom_navigation_view.getMenu().findItem(R.id.shop).setChecked(true);
+
+        floatingActionButton.setImageResource(R.drawable.ic_hzhome_png);
+
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                callDirections("1");
+            }
+        });
+
     }
 
     @Override
@@ -343,6 +370,33 @@ public class PetLoverVendorOrderDetailsActivity extends AppCompatActivity implem
         startActivity(new Intent(getApplicationContext(),PetMyOrdrersNewActivity.class));
         finish();
     }
+
+    @SuppressLint("NonConstantResourceId")
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.home:
+                callDirections("1");
+                break;
+            case R.id.shop:
+                callDirections("2");
+                break;
+            case R.id.services:
+                callDirections("3");
+                break;
+            case R.id.care:
+                callDirections("4");
+                break;
+            case R.id.community:
+                callDirections("5");
+                break;
+
+            default:
+                return  false;
+        }
+        return true;
+    }
+
 
     @SuppressLint("NonConstantResourceId")
     @Override
@@ -422,41 +476,41 @@ public class PetLoverVendorOrderDetailsActivity extends AppCompatActivity implem
                                     ll_original_price.setVisibility(View.GONE);
                               //      ll_discount_price.setVisibility(View.GONE);
                                 }*/
+                                Log.w(TAG,"original_price"+ "--->" +  response.body().getData().getOrder_details().getOrder_price());
 
                                 if(response.body().getData().getOrder_details().getOrder_price() != 0){
-                                    txt_original_price.setText("\u20B9 "+response.body().getData().getOrder_details().getOriginal_price());
+                                    txt_original_price.setText("\u20B9 "+response.body().getData().getOrder_details().getOrder_price());
                                 }
                             }
 
 
-                          /*  if(response.body().getData().getOrder_details().getOrder_text() !=null && !response.body().getData().getOrder_details().getOrder_text().isEmpty()){
-                                txt_product_title.setText(response.body().getData().getOrder_details().getOrder_text());
+                            if(response.body().getData().getOrder_details().getOrder_text() !=null && !response.body().getData().getOrder_details().getOrder_text().isEmpty()){
+                              //  txt_product_title.setText(response.body().getData().getOrder_details().getOrder_text());
                             }
                             if(response.body().getData().getOrder_details().getOrder_price()!=0){
                                 Order_price = response.body().getData().getOrder_details().getOrder_price();
-                                txt_products_price.setText("\u20B9 "+response.body().getData().getOrder_details().getOrder_price());
+                               // txt_products_price.setText("\u20B9 "+response.body().getData().getOrder_details().getOrder_price());
                             }
 
                             if (response.body().getData().getOrder_details().getOrder_price() != 0 && response.body().getData().getOrder_details().getOrder_product() != 0) {
                                 if (response.body().getData().getOrder_details().getOrder_product() == 1) {
                                     Order_price = response.body().getData().getOrder_details().getOrder_price();
-                                    txt_products_price.setText("\u20B9 " + response.body().getData().getOrder_details().getOrder_price() + " (" + response.body().getData().getOrder_details().getOrder_product() + " product )");
+                                 //   txt_products_price.setText("\u20B9 " + response.body().getData().getOrder_details().getOrder_price() + " (" + response.body().getData().getOrder_details().getOrder_product() + " product )");
                                 } else {
                                     Order_price = response.body().getData().getOrder_details().getOrder_price();
-                                    txt_products_price.setText("\u20B9 " + response.body().getData().getOrder_details().getOrder_price() + " (" + response.body().getData().getOrder_details().getOrder_product() + " products )");
+                                   // txt_products_price.setText("\u20B9 " + response.body().getData().getOrder_details().getOrder_price() + " (" + response.body().getData().getOrder_details().getOrder_product() + " products )");
 
                                 }
                             }
                             else {
                                 if (response.body().getData().getOrder_details().getOrder_product() == 1) {
                                     Order_price = 0;
-                                    txt_products_price.setText("\u20B9 " + 0 + " (" + response.body().getData().getOrder_details().getOrder_product() + " product )");
+                                    //txt_products_price.setText("\u20B9 " + 0 + " (" + response.body().getData().getOrder_details().getOrder_product() + " product )");
                                 } else {
                                     Order_price = 0;
-                                    txt_products_price.setText("\u20B9 " + 0 + " (" + response.body().getData().getOrder_details().getOrder_product() + " products )");
+                                    //txt_products_price.setText("\u20B9 " + 0 + " (" + response.body().getData().getOrder_details().getOrder_product() + " products )");
                                 }
                             }
-*/
 
 
 
@@ -614,7 +668,7 @@ public class PetLoverVendorOrderDetailsActivity extends AppCompatActivity implem
     private void setView(List<PetLoverVendorOrderDetailsResponse.DataBean.ProductDetailsBean> product_details) {
         rv_productdetails.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         rv_productdetails.setItemAnimator(new DefaultItemAnimator());
-        ProductDetailsAdapter productDetailsAdapter = new ProductDetailsAdapter(getApplicationContext(),product_details,orderid,fromactivity);
+        ProductDetailsAdapter productDetailsAdapter = new ProductDetailsAdapter(getApplicationContext(),product_details,orderid,fromactivity,this,true);
         rv_productdetails.setAdapter(productDetailsAdapter);
 
     }
@@ -634,4 +688,46 @@ public class PetLoverVendorOrderDetailsActivity extends AppCompatActivity implem
         params.setMargins(i, i1, i2, i3);
         rl_layout.setLayoutParams(params);
     }
+
+    @Override
+    public void trackProductListener(String fromactivity, int product_id, String orderid, String TAG, List<PetLoverVendorOrderDetailsResponse.DataBean.ProductDetailsBean> product_details) {
+
+        if(fromactivity != null) {
+            if (fromactivity.equalsIgnoreCase("FragmentDoctorNewOrders") || fromactivity.equalsIgnoreCase("FragmentDoctorCompletedOrders") || fromactivity.equalsIgnoreCase("FragmentDoctorCancelledOrders")) {
+                Intent i = new Intent(PetLoverVendorOrderDetailsActivity.this, DoctorTrackOrderActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                i.putExtra("_id", product_id);
+                i.putExtra("orderid", orderid);
+                i.putExtra("fromactivity", TAG);
+               startActivity(i);
+            }
+            else if (fromactivity.equalsIgnoreCase("FragmentSPNewOrders") || fromactivity.equalsIgnoreCase("FragmentSPCompletedOrders") || fromactivity.equalsIgnoreCase("FragmentSPCancelledOrders")) {
+                Intent i = new Intent(PetLoverVendorOrderDetailsActivity.this, SPTrackOrderActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                i.putExtra("_id", product_id);
+                i.putExtra("orderid", orderid);
+                i.putExtra("fromactivity", TAG);
+           startActivity(i);
+            }
+            else {
+                Intent i = new Intent(PetLoverVendorOrderDetailsActivity.this, TrackOrderActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                i.putExtra("_id", product_id);
+                i.putExtra("product_details",(Serializable) product_details);
+                i.putExtra("payment_method",txt_payment_method.getText().toString());
+                i.putExtra("orderid", orderid);
+                i.putExtra("fromactivity", TAG);
+              startActivity(i);
+            }
+        }else{
+            Intent i = new Intent(PetLoverVendorOrderDetailsActivity.this, TrackOrderActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            i.putExtra("_id", product_id);
+            i.putExtra("product_details",(Serializable) product_details);
+            i.putExtra("payment_method",txt_payment_method.getText().toString());
+            i.putExtra("orderid", orderid);
+            i.putExtra("fromactivity", TAG);
+         startActivity(i);
+        }
+
+
+
+    }
+
 }

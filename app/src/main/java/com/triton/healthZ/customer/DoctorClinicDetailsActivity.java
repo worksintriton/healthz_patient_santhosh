@@ -908,7 +908,6 @@ public class DoctorClinicDetailsActivity extends AppCompatActivity implements Vi
         intent.putExtra("communication_type",communication_type);
         intent.putExtra("searchString",searchString);
         intent.putExtra("doctorid",doctorid);
-        intent.putExtra("tag",tag);
         startActivity(intent);
         finish();
 

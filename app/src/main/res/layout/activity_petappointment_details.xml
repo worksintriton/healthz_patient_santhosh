@@ -1020,6 +1020,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:drawablePadding="10dp"
+                android:lineSpacingExtra="8dp"
+                android:layout_marginBottom="10dp"
                 android:ellipsize="end"
                 android:fontFamily="@font/montserrat"
                 android:maxLines="2"
@@ -1062,6 +1064,7 @@
                     android:ellipsize="end"
                     android:fontFamily="@font/montserrat"
                     android:maxLines="3"
+                    android:lineSpacingExtra="8dp"
                     android:text="@string/desc_dummy"
                     android:textColor="@color/new_sec_txt_color"
                     android:textSize="14sp" />
