@@ -219,6 +219,7 @@
                 android:textColor="@color/new_light_green"
                 android:textColorHint="@color/dark_gray"
                 android:textSize="14sp"
+                android:visibility="gone"
                 tools:ignore="Autofill,LabelFor" />
 
             <TextView

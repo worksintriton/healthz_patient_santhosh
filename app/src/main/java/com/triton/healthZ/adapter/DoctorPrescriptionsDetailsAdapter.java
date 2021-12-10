@@ -59,8 +59,21 @@ public class DoctorPrescriptionsDetailsAdapter extends  RecyclerView.Adapter<Rec
         holder.tv_tabletname.setText(prescriptionDataList.get(position).getTablet_name());
         holder.tv_quanity.setText(prescriptionDataList.get(position).getQuantity());
         holder.tv_consumption.setText(prescriptionDataList.get(position).getConsumption());
+        /*if(prescriptionDataList.get(position).getConsumption()!=null&&!prescriptionDataList.get(position).getConsumption().isEmpty()){
+
+            String[] namesList = prescriptionDataList.get(position).getConsumption().split(",");
+
+            StringBuilder sb = new StringBuilder();
+
+            for(String name : namesList){
+
+                sb.append(name).append("\n");
+
+            }
 
 
+        }
+*/
         if(currentItem.getIntakeBean().isAfterfood()){
             holder.chx_afterfood.setChecked(true);
         }

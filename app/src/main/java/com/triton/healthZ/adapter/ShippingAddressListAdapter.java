@@ -142,6 +142,7 @@ public class ShippingAddressListAdapter extends  RecyclerView.Adapter<RecyclerVi
 */
 
         /*if(landmark!=null&&pincode!=null&&state!=null){
+]
 
             holder.txt_dist_pincode_state.setText(landmark + " " + " "+ state +" "+ pincode);
         }*/

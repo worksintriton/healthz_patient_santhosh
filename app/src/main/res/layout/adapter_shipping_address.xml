@@ -39,8 +39,8 @@
                 android:fontFamily="@font/montserrat_bold"
                 android:maxLines="1"
                 android:text="Home"
-                android:textSize="14sp"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black"
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/txt_phnum"
@@ -52,8 +52,9 @@
                 android:fontFamily="@font/montserrat_bold"
                 android:maxLines="1"
                 android:text="+91 - 9003237255"
+                android:textColor="@color/new_hz_coolgreyish"
                 android:textSize="14sp"
-                android:textColor="@color/new_hz_coolgreyish" />
+                android:visibility="gone" />
 
             <LinearLayout
                 android:layout_width="match_parent"

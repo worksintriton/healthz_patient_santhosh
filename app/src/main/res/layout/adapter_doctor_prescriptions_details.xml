@@ -12,8 +12,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
-        android:layout_weight="1"
-        android:maxLength="25"
+        android:layout_weight="0.5"
+        android:text="Dolo"
+        android:ellipsize="end"
+        android:maxLines="1"
         tools:ignore="Autofill,LabelFor,TextFields" />
 
     <TextView
@@ -21,17 +23,22 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
-        android:layout_weight="1"
-        android:maxLength="2"
+        android:layout_weight="0.5"
+        android:text="2"
+        android:textAlignment="center"
+        android:ellipsize="end"
+        android:maxLines="1"
         tools:ignore="Autofill,LabelFor,TextFields" />
 
     <TextView
         android:id="@+id/tv_consumption"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:layout_weight="1"
-        android:maxLength="2"
+        android:ellipsize="end"
+        android:maxLines="3"
+        android:text="Morning - 1, Afternoon - 0, Night - 0"
         tools:ignore="Autofill,LabelFor,TextFields" />
 
     <LinearLayout
