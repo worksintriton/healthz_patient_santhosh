@@ -226,7 +226,7 @@ public class CustomerProfileScreenActivity extends AppCompatActivity implements 
         img_cart.setVisibility(View.GONE);
 
         img_notification.setVisibility(View.VISIBLE);
-        img_profile.setVisibility(View.VISIBLE);
+        img_profile.setVisibility(View.INVISIBLE);
 
 
 
@@ -441,6 +441,10 @@ public class CustomerProfileScreenActivity extends AppCompatActivity implements 
             finish();
         }else if(fromactivity != null && fromactivity.equalsIgnoreCase("PetMyOrdrersNewActivity")){
             Intent intent = new Intent(getApplicationContext(),PetMyOrdrersNewActivity.class);
+            startActivity(intent);
+            finish();
+        }else if(fromactivity != null && fromactivity.equalsIgnoreCase("MyCouponsActivity")){
+            Intent intent = new Intent(getApplicationContext(),MyCouponsActivity.class);
             startActivity(intent);
             finish();
         }else if(fromactivity != null && fromactivity.equalsIgnoreCase("ServiceBookAppointmentActivity")){

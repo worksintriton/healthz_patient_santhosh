@@ -17,6 +17,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.google.gson.Gson;
 import com.triton.healthz.R;
+import com.triton.healthz.activity.NotificationActivity;
 import com.triton.healthz.adapter.MyCouponsAdapter;
 import com.triton.healthz.api.APIClient;
 import com.triton.healthz.api.RestApiInterface;
@@ -124,6 +125,22 @@ public class MyCouponsActivity extends AppCompatActivity {
             }
         });
 
+
+        img_notification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), NotificationActivity.class));
+            }
+        });
+
+        img_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), CustomerProfileScreenActivity.class);
+                intent.putExtra("fromactivity",TAG);
+                startActivity(intent);
+            }
+        });
 
         if (new ConnectionDetector(MyCouponsActivity.this).isNetworkAvailable(MyCouponsActivity.this)) {
            CouponCodeListResponseCall();

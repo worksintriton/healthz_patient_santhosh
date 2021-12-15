@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -25,6 +26,8 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.gson.Gson;
 import com.triton.healthz.R;
 import com.triton.healthz.activity.NotificationActivity;
@@ -55,7 +58,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class ListOfProductsSeeMoreActivity extends AppCompatActivity implements View.OnClickListener{
+public class ListOfProductsSeeMoreActivity extends AppCompatActivity implements View.OnClickListener, BottomNavigationView.OnNavigationItemSelectedListener {
 
     private String TAG = "ListOfProductsSeeMoreActivity";
 
@@ -230,7 +233,11 @@ public class ListOfProductsSeeMoreActivity extends AppCompatActivity implements 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.rl_search)
     RelativeLayout rl_search;
-    
+
+    BottomNavigationView bottom_navigation_view;
+
+    FloatingActionButton fab;
+
     @SuppressLint("LogNotTimber")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -323,6 +330,19 @@ public class ListOfProductsSeeMoreActivity extends AppCompatActivity implements 
             }
         });
 
+        fab = include_petlover_footer.findViewById(R.id.fab);
+
+        bottom_navigation_view = include_petlover_footer.findViewById(R.id.bottomNavigation);
+        bottom_navigation_view.setItemIconTintList(null);
+        bottom_navigation_view.setOnNavigationItemSelectedListener(this);
+        bottom_navigation_view.getMenu().findItem(R.id.home).setChecked(true);
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                callDirections("1");
+            }
+        });
 
 
 
@@ -973,6 +993,33 @@ public class ListOfProductsSeeMoreActivity extends AppCompatActivity implements 
             Log.w(TAG,"productFiltersRequest"+ new Gson().toJson(productFiltersRequest));
             return productFiltersRequest;
         }
+    @SuppressLint("NonConstantResourceId")
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.home:
+                callDirections("1");
+                break;
+            case R.id.shop:
+                callDirections("2");
+                break;
+            case R.id.services:
+                callDirections("3");
+                break;
+            case R.id.care:
+                callDirections("4");
+                break;
+            case R.id.community:
+                callDirections("5");
+                break;
+
+            default:
+                return  false;
+        }
+        return true;
+    }
+
 //
 //    @SuppressLint("NonConstantResourceId")
 //    @Override

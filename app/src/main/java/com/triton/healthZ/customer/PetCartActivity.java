@@ -565,6 +565,7 @@ public class PetCartActivity extends AppCompatActivity implements AddandRemovePr
                             view1.setVisibility(View.GONE);
                             view12.setVisibility(View.GONE);
                             ll_amount.setVisibility(View.GONE);
+                            txt_removeall_products.setVisibility(View.GONE);
 
                         }
 

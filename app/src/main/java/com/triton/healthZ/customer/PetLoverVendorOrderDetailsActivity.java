@@ -236,7 +236,7 @@ public class PetLoverVendorOrderDetailsActivity extends AppCompatActivity implem
         img_sos.setVisibility(View.INVISIBLE);
         img_cart.setVisibility(View.INVISIBLE);
         img_profile.setVisibility(View.INVISIBLE);
-        img_notification.setVisibility(View.VISIBLE);
+        img_notification.setVisibility(View.INVISIBLE);
 
 
 

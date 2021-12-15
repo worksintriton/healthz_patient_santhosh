@@ -340,8 +340,8 @@ public class PetVendorCancelOrderActivity extends AppCompatActivity implements V
             dialog = new Dialog(PetVendorCancelOrderActivity.this);
             dialog.setContentView(R.layout.alert_cancel_layout);
             dialog.setCanceledOnTouchOutside(false);
-            Button btn_ok = dialog.findViewById(R.id.btn_ok);
-            Button btn_cancel = dialog.findViewById(R.id.btn_cancel);
+            LinearLayout btn_ok = dialog.findViewById(R.id.ll_ok);
+            LinearLayout btn_cancel = dialog.findViewById(R.id.ll_cancel);
             btn_ok.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

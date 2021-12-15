@@ -243,7 +243,7 @@ public class ProductDetailsAdapter extends  RecyclerView.Adapter<RecyclerView.Vi
 
                 }
             });
-        }
+         }
 
         else {
 

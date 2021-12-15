@@ -181,9 +181,10 @@
                         android:id="@+id/txt_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="5dp"
                         android:fontFamily="@font/montserrat"
                         android:text="@string/user_name"
-                        android:layout_centerVertical="true"
                         android:textSize="12sp" />
 
                     <ImageView
@@ -195,7 +196,7 @@
                         android:layout_toEndOf="@id/txt_name"
                         android:scaleType="center"
                         android:src="@drawable/ic_right_arrow"
-                        android:visibility="visible"
+                        android:visibility="gone"
                         tools:ignore="ContentDescription" />
 
 
@@ -241,10 +242,11 @@
                         android:id="@+id/txt_email"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="5dp"
                         android:ellipsize="end"
                         android:fontFamily="@font/montserrat"
                         android:maxLines="1"
-                        android:layout_centerVertical="true"
                         android:text="@string/dummy_gmail_com"
                         android:textSize="12sp" />
 
@@ -257,7 +259,7 @@
                         android:layout_toEndOf="@+id/txt_email"
                         android:scaleType="center"
                         android:src="@drawable/ic_right_arrow"
-                        android:visibility="visible"
+                        android:visibility="gone"
                         tools:ignore="ContentDescription" />
 
 
@@ -304,12 +306,13 @@
                         android:id="@+id/txt_phn_num"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="5dp"
                         android:ellipsize="end"
                         android:fontFamily="@font/montserrat"
                         android:maxLines="1"
                         android:text="@string/phn_num"
-                        android:textSize="12sp"
-                        android:layout_centerVertical="true"/>
+                        android:textSize="12sp" />
 
                     <ImageView
                         android:id="@+id/img_phonenoarrow"
@@ -320,7 +323,7 @@
                         android:layout_toEndOf="@+id/txt_phn_num"
                         android:scaleType="center"
                         android:src="@drawable/ic_right_arrow"
-                        android:visibility="visible"
+                        android:visibility="gone"
                         tools:ignore="ContentDescription" />
 
 

@@ -258,6 +258,7 @@ public class PetServiceAppointment_Doctor_Date_Time_Activity extends AppCompatAc
         int date = calendar.get(Calendar.DATE);
 
           calendarView.setDate(calendar.getTimeInMillis(), true, true);
+        calendarView.setMinDate(System.currentTimeMillis() - 1000);
 
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override

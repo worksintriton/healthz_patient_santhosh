@@ -108,7 +108,7 @@ public class PetMyCalendarAvailableAdapter extends  RecyclerView.Adapter<Recycle
 
 
         if(!timesBeanList.get(position).isBook_status()){
-            holder.txt_days.setBackgroundResource(R.drawable.button_gray_rounded_corner);
+            holder.txt_days.setBackgroundResource(R.drawable.button_gray_rounded_corner_new);
 
         }
 
