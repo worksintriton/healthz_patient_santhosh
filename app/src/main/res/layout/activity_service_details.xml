@@ -52,9 +52,9 @@
                             android:id="@+id/rl_back"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
-                            android:background="@drawable/icn_ellipse_bgnd">
+                            android:background="@drawable/layout_bgm">
 
-                            <ImageView
+                        <ImageView
                                 android:id="@+id/img_back"
                                 android:layout_width="20dp"
                                 android:layout_height="20dp"
@@ -92,7 +92,7 @@
                                 android:layout_width="24dp"
                                 android:layout_height="24dp"
                                 android:layout_marginStart="20dp"
-                                android:src="@drawable/ic_bag"
+                                android:src="@drawable/new_hz_share"
                                 android:visibility="invisible"
                                 tools:ignore="ContentDescription" />
 
@@ -102,14 +102,14 @@
                                 android:layout_height="36dp"
                                 android:layout_marginStart="20dp"
                                 android:layout_marginTop="5dp"
-                                android:background="@drawable/icn_ellipse_bgnd">
+                                android:background="@drawable/layout_bgm_opaque">
 
                                 <ImageView
                                     android:id="@+id/img_share"
                                     android:layout_width="24dp"
                                     android:layout_height="24dp"
                                     android:layout_centerInParent="true"
-                                    android:background="@drawable/icn_share"
+                                    android:background="@drawable/new_hz_share"
                                     tools:ignore="ContentDescription" />
 
                             </RelativeLayout>
@@ -120,7 +120,7 @@
                                 android:layout_height="36dp"
                                 android:layout_marginStart="20dp"
                                 android:layout_marginTop="5dp"
-                                android:background="@drawable/icn_ellipse_bgnd">
+                                android:background="@drawable/layout_bgm_opaque">
 
                                 <ImageView
                                     android:id="@+id/img_fav"
@@ -608,7 +608,7 @@
                     android:ellipsize="end"
                     android:fontFamily="@font/montserrat"
                     android:maxLines="1"
-                    android:padding="5dp"
+                    android:padding="3dp"
                     android:text="@string/sub_services"
                     android:textColor="@color/black"
                     android:textSize="14sp" />

@@ -606,7 +606,7 @@ public class DoctorClinicDetailsActivity extends AppCompatActivity implements Vi
                             }
                             else {
 
-                                txt_review_count.setText("");
+                                txt_review_count.setText("0 Review");
                             }
 
                             if(response.body().getData().getAmount() != 0){
@@ -624,9 +624,9 @@ public class DoctorClinicDetailsActivity extends AppCompatActivity implements Vi
 
 
                             if(response.body().getData().isFav()){
-                                img_fav.setBackgroundResource(R.drawable.like);
+                                img_fav.setBackgroundResource(R.drawable.ic_baseline_favorite_24);
                             }else{
-                                img_fav.setBackgroundResource(R.drawable.icn_heart_love);
+                                img_fav.setBackgroundResource(R.drawable.new_hz_like);
                             }
                         }
 

@@ -74,7 +74,9 @@ public class Cart_Adapter extends  RecyclerView.Adapter<RecyclerView.ViewHolder>
 
             petImgBeanList.add(productImgBeanList.get(i).getProduct_img());
         }
-
+        if (data.get(position).getCat_id().getProduct_cate() != null) {
+            holder.txt_products_categ.setText(data.get(position).getCat_id().getProduct_cate());
+        }
         if (data.get(position).getProduct_id().getProduct_name() != null) {
             holder.txt_products_title.setText(data.get(position).getProduct_id().getProduct_name());
         }
@@ -199,7 +201,7 @@ public class Cart_Adapter extends  RecyclerView.Adapter<RecyclerView.ViewHolder>
         return position;
     }
     static class ViewHolderOne extends RecyclerView.ViewHolder {
-        public TextView txt_products_title,txt_discount_amount,txt_original_amount,txt_discount,txt_cart_count;
+        public TextView txt_products_title,txt_discount_amount,txt_original_amount,txt_discount,txt_cart_count,txt_products_categ;
         public ImageView img_products_image;
         public LinearLayout ll_delete;
         public RelativeLayout rl_root,img_remove_product,img_add_product;
@@ -216,7 +218,7 @@ public class Cart_Adapter extends  RecyclerView.Adapter<RecyclerView.ViewHolder>
             img_add_product = itemView.findViewById(R.id.img_add_product);
             ll_delete = itemView.findViewById(R.id.ll_delete);
             rl_root = itemView.findViewById(R.id.rl_root);
-
+            txt_products_categ = itemView.findViewById(R.id.txt_products_categ);
 
 
 

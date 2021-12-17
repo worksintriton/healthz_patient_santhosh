@@ -219,17 +219,18 @@ public class ConsultationActivity extends AppCompatActivity implements View.OnCl
             public void onClick(View view) {
                 if(fromactivity != null && fromactivity.equalsIgnoreCase("PetServiceAppointment_Doctor_Date_Time_Activity")){
                     Intent intent = new Intent(getApplicationContext(),AddYourFamilyMembersSelectActivity.class);
-                    intent.putExtra("spid",spid);
-                    intent.putExtra("catid",catid);
-                    intent.putExtra("from",from);
-                    intent.putExtra("spuserid",spuserid);
-                    intent.putExtra("selectedServiceTitle",selectedServiceTitle);
-                    intent.putExtra("serviceamount",serviceamount);
-                    intent.putExtra("servicetime",servicetime);
-                    intent.putExtra("SP_ava_Date",SP_ava_Date);
-                    intent.putExtra("selectedTimeSlot",selectedTimeSlot);
-                    intent.putExtra("distance",distance);
-                    intent.putExtra("fromactivity",fromactivity);
+                    intent.putExtra("doctorid", doctorid);
+                    intent.putExtra("fromactivity", TAG);
+                    intent.putExtra("Doctor_ava_Date", Doctor_ava_Date);
+                    intent.putExtra("selectedTimeSlot", selectedTimeSlot);
+                    intent.putExtra("amount", amount);
+                    intent.putExtra("communicationtype", communicationtype);
+                    intent.putExtra("fromto", fromto);
+                    intent.putExtra("petId", petId);
+                    intent.putExtra("doctorname", doctorname);
+                    intent.putExtra("clinicname", clinicname);
+                    intent.putExtra("petname", petname);
+                    intent.putExtra("petimage", petimage);
                     startActivity(intent);
                 }
                 else {
@@ -240,8 +241,12 @@ public class ConsultationActivity extends AppCompatActivity implements View.OnCl
                     intent.putExtra("selectedTimeSlot", selectedTimeSlot);
                     intent.putExtra("amount", amount);
                     intent.putExtra("communicationtype", communicationtype);
-                    intent.putExtra("fromto", TAG);
+                    intent.putExtra("fromto", fromto);
                     intent.putExtra("petId", petId);
+                    intent.putExtra("doctorname", doctorname);
+                    intent.putExtra("clinicname", clinicname);
+                    intent.putExtra("petname", petname);
+                    intent.putExtra("petimage", petimage);
                     startActivity(intent);
                     Log.w(TAG, "communicationtype : " + communicationtype);
                 }

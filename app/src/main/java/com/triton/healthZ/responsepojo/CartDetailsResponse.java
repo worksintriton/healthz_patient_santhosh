@@ -158,6 +158,8 @@ public class CartDetailsResponse {
     private int prodcut_count;
     private int prodcut_item_count;
     private int Code;
+
+
     /**
      * _id : 61af540b9e6f552291dbfa70
      * user_id : 61aef2c658c631738117edf9
@@ -289,6 +291,7 @@ public class CartDetailsResponse {
          */
 
         private ProductIdBean product_id;
+        private CatIdBean cat_id;
         private int product_count;
         private String updatedAt;
         private String createdAt;
@@ -348,6 +351,108 @@ public class CartDetailsResponse {
 
         public void set__v(int __v) {
             this.__v = __v;
+        }
+
+
+        public CatIdBean getCat_id() {
+            return cat_id;
+        }
+
+        public void setCat_id(CatIdBean cat_id) {
+            this.cat_id = cat_id;
+        }
+
+        public static class CatIdBean {
+            private String _id;
+            private String img_path;
+            private String product_cate;
+            private int img_index;
+            private boolean show_status;
+            private String date_and_time;
+            private boolean delete_status;
+            private String updatedAt;
+            private String createdAt;
+            private int __v;
+
+            public String get_id() {
+                return _id;
+            }
+
+            public void set_id(String _id) {
+                this._id = _id;
+            }
+
+            public String getImg_path() {
+                return img_path;
+            }
+
+            public void setImg_path(String img_path) {
+                this.img_path = img_path;
+            }
+
+            public String getProduct_cate() {
+                return product_cate;
+            }
+
+            public void setProduct_cate(String product_cate) {
+                this.product_cate = product_cate;
+            }
+
+            public int getImg_index() {
+                return img_index;
+            }
+
+            public void setImg_index(int img_index) {
+                this.img_index = img_index;
+            }
+
+            public boolean isShow_status() {
+                return show_status;
+            }
+
+            public void setShow_status(boolean show_status) {
+                this.show_status = show_status;
+            }
+
+            public String getDate_and_time() {
+                return date_and_time;
+            }
+
+            public void setDate_and_time(String date_and_time) {
+                this.date_and_time = date_and_time;
+            }
+
+            public boolean isDelete_status() {
+                return delete_status;
+            }
+
+            public void setDelete_status(boolean delete_status) {
+                this.delete_status = delete_status;
+            }
+
+            public String getUpdatedAt() {
+                return updatedAt;
+            }
+
+            public void setUpdatedAt(String updatedAt) {
+                this.updatedAt = updatedAt;
+            }
+
+            public String getCreatedAt() {
+                return createdAt;
+            }
+
+            public void setCreatedAt(String createdAt) {
+                this.createdAt = createdAt;
+            }
+
+            public int get__v() {
+                return __v;
+            }
+
+            public void set__v(int __v) {
+                this.__v = __v;
+            }
         }
 
         public static class ProductIdBean implements Serializable{

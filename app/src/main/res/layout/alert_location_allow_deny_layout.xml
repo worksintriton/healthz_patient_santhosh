@@ -78,42 +78,51 @@
                 android:orientation="horizontal"
                 android:layout_margin="20dp">
 
-                <Button
+                <RelativeLayout
                     android:id="@+id/btn_deny"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="45dp"
-                    android:layout_gravity="center"
+                    android:layout_weight="1"
                     android:layout_marginStart="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="20dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/new_rounded_corner_btn_orange"
-                    android:fontFamily="@font/futuramediumbt"
-                    android:text="@string/deny"
-                    android:textAllCaps="false"
-                    android:textColor="@color/new_txt_color"
-                    android:textSize="18sp"
-                    android:textStyle="normal" />
+                    android:background="@drawable/new_rounded_corner_btn_orange">
 
-                <Button
+                    <TextView
+                        android:id="@+id/txt_deny"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/futuramediumbt"
+                        android:text="@string/deny"
+                        android:textAllCaps="false"
+                        android:textColor="@color/new_txt_color"
+                        android:textSize="18sp"
+                        android:textStyle="normal" />
+                </RelativeLayout>
+
+                <RelativeLayout
                     android:id="@+id/btn_allow"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="45dp"
-                    android:layout_gravity="center"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginBottom="20dp"
                     android:layout_weight="1"
-                    android:background="@drawable/new_rounded_corner_btn"
-                    android:fontFamily="@font/futuramediumbt"
-                    android:text="@string/allow"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white"
-                    android:textSize="18sp"
-                    android:textStyle="normal" />
+                    android:background="@drawable/new_rounded_corner_btn_green">
+
+                    <TextView
+                        android:id="@+id/txt_allow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/montserrat"
+                        android:text="@string/allow"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="normal" />
+                </RelativeLayout>
 
             </LinearLayout>
 

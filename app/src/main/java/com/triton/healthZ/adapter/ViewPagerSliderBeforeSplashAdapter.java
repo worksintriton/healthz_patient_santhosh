@@ -2,6 +2,7 @@ package com.triton.healthz.adapter;
 
 import android.content.Context;
 import android.os.Parcelable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -61,11 +62,12 @@ public class ViewPagerSliderBeforeSplashAdapter extends PagerAdapter {
                 Glide.with(context)
                         .load(imageURL)
                         .into(imageView);
+                Log.w(TAG,"SplashScreenResponse imageURL"+ imageURL);
             }else{
                 Glide.with(context)
                         .load(APIClient.BANNER_IMAGE_URL)
                         .into(imageView);
-
+                Log.w(TAG,"SplashScreenResponse imageURL"+ APIClient.BANNER_IMAGE_URL);
             }
 
 

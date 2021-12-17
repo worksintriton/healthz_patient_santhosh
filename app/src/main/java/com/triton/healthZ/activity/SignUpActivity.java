@@ -329,6 +329,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                             intent.putExtra("useremail", response.body().getData().getUser_email());
                             intent.putExtra("fromactivity", TAG);
                             startActivity(intent);
+                            finish();
                         }
 
 

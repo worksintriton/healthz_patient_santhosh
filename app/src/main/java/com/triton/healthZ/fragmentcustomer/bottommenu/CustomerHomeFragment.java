@@ -27,6 +27,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -650,9 +651,10 @@ public class CustomerHomeFragment extends Fragment implements Serializable,
             TextView txt_lbl2 = dialog.findViewById(R.id.txt_lbl2);
             txt_lbl1.setText("HealthZ would like to");
             txt_lbl2.setText("access your location");
-            Button btn_allow = dialog.findViewById(R.id.btn_allow);
-            btn_allow.setText("Continue");
-            Button btn_deny = dialog.findViewById(R.id.btn_deny);
+            RelativeLayout btn_allow = dialog.findViewById(R.id.btn_allow);
+            TextView txt_allow = dialog.findViewById(R.id.txt_allow);
+            txt_allow.setText("Continue");
+            RelativeLayout btn_deny = dialog.findViewById(R.id.btn_deny);
             btn_deny.setVisibility(View.GONE);
             btn_deny.setOnClickListener(new View.OnClickListener() {
                 @Override

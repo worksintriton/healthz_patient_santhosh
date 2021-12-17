@@ -2,12 +2,15 @@ package com.triton.healthz.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -16,10 +19,12 @@ import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.triton.healthz.R;
 import com.triton.healthz.api.APIClient;
+import com.triton.healthz.customer.EditFamilyMemberActivity;
 import com.triton.healthz.interfaces.FamilyMembersDeleteListener;
 import com.triton.healthz.interfaces.GotoAddFamilyMembersOldActivityListener;
 import com.triton.healthz.responsepojo.FamilyMemberListResponse;
 
+import java.io.Serializable;
 import java.util.List;
 
 
@@ -125,6 +130,44 @@ public class ManagePetListAdapter extends  RecyclerView.Adapter<RecyclerView.Vie
             petDeleteListener.familyMemberDeleteListener(dataBeanList.get(position).get_id());
 
         });
+
+        holder.img_settings.setOnClickListener(v -> {
+            //Creating the instance of PopupMenu
+            PopupMenu popup = new PopupMenu(context, v);
+            //Inflating the Popup using xml file
+            popup.getMenuInflater().inflate(R.menu.popup_menu, popup.getMenu());
+
+            //registering popup with OnMenuItemClickListener
+            popup.setOnMenuItemClickListener(item -> {
+                String titleName = String.valueOf(item.getTitle());
+                if(titleName.equalsIgnoreCase("Edit")){
+                    Intent i = new Intent(context, EditFamilyMemberActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    i.putExtra("family_id",dataBeanList.get(position).get_id());
+                    i.putExtra("userid",dataBeanList.get(position).getUser_id());
+                    i.putExtra("member_name",dataBeanList.get(position).getName());
+                    i.putExtra("gender",dataBeanList.get(position).getGender());
+                    i.putExtra("relation_type",dataBeanList.get(position).getRelation_type());
+                    i.putExtra("health_issue",dataBeanList.get(position).getHealth_issue());
+                    i.putExtra("dateofbirth",dataBeanList.get(position).getDateofbirth());
+                    i.putExtra("anymedicalinfo",dataBeanList.get(position).getAnymedicalinfo());
+                    i.putExtra("covide_vac",dataBeanList.get(position).getCovide_vac());
+                    i.putExtra("weight",dataBeanList.get(position).getWeight());
+                    Bundle args = new Bundle();
+                    //int list = dataBeanList.get(position).getPet_img().size();
+                    args.putSerializable("PETLIST", (Serializable) dataBeanList.get(position).getPic());
+                    i.putExtra("petimage",args);
+
+                    context.startActivity(i);
+
+                } else if(titleName.equalsIgnoreCase("Delete")){
+                    petDeleteListener.familyMemberDeleteListener(dataBeanList.get(position).get_id());
+
+                }
+                return true;
+            });
+
+            popup.show();//showing popup menu
+        });
         //closing the setOnClickListener method
 
         if(position == dataBeanList.size()-1){
@@ -136,32 +179,32 @@ public class ManagePetListAdapter extends  RecyclerView.Adapter<RecyclerView.Vie
             public void onClick(View v) {
 
                 Intent i = new Intent(context, PetloverPetDetailsActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                i.putExtra("id",petListResponseList.get(position).get_id());
-                i.putExtra("userid",petListResponseList.get(position).getUser_id());
-                i.putExtra("petimage",petListResponseList.get(position).getPet_img().get(0).getPet_img());
-                i.putExtra("petname",petListResponseList.get(position).getPet_name());
-                i.putExtra("pettype",petListResponseList.get(position).getPet_type());
-                i.putExtra("petbreed",petListResponseList.get(position).getPet_breed());
-                i.putExtra("petgender",petListResponseList.get(position).getPet_gender());
-                i.putExtra("petcolor",petListResponseList.get(position).getPet_color());
-                i.putExtra("petweight",petListResponseList.get(position).getPet_weight());
-                i.putExtra("petage",petListResponseList.get(position).getPet_age());
-                i.putExtra("petdob",petListResponseList.get(position).getPet_dob());
-                i.putExtra("vaccinatedstatus",petListResponseList.get(position).isVaccinated());
-                i.putExtra("vaccinateddate",petListResponseList.get(position).getLast_vaccination_date());
-                i.putExtra("defaultstatus",petListResponseList.get(position).isDefault_status());
-                i.putExtra("pet_spayed",petListResponseList.get(position).isPet_spayed());
-                i.putExtra("pet_purebred",petListResponseList.get(position).isPet_purebred());
-                i.putExtra("pet_frnd_with_dog",petListResponseList.get(position).isPet_frnd_with_dog());
-                i.putExtra("pet_frnd_with_cat",petListResponseList.get(position).isPet_frnd_with_cat());
-                i.putExtra("pet_microchipped",petListResponseList.get(position).isPet_microchipped());
-                i.putExtra("pet_tick_free",petListResponseList.get(position).isPet_tick_free());
-                i.putExtra("pet_private_part",petListResponseList.get(position).isPet_private_part());
-                i.putExtra("petbio",petListResponseList.get(position).getPetbio());
+                i.putExtra("id",dataBeanList.get(position).get_id());
+                i.putExtra("userid",dataBeanList.get(position).getUser_id());
+                i.putExtra("petimage",dataBeanList.get(position).getPet_img().get(0).getPet_img());
+                i.putExtra("petname",dataBeanList.get(position).getPet_name());
+                i.putExtra("pettype",dataBeanList.get(position).getPet_type());
+                i.putExtra("petbreed",dataBeanList.get(position).getPet_breed());
+                i.putExtra("petgender",dataBeanList.get(position).getPet_gender());
+                i.putExtra("petcolor",dataBeanList.get(position).getPet_color());
+                i.putExtra("petweight",dataBeanList.get(position).getPet_weight());
+                i.putExtra("petage",dataBeanList.get(position).getPet_age());
+                i.putExtra("petdob",dataBeanList.get(position).getPet_dob());
+                i.putExtra("vaccinatedstatus",dataBeanList.get(position).isVaccinated());
+                i.putExtra("vaccinateddate",dataBeanList.get(position).getLast_vaccination_date());
+                i.putExtra("defaultstatus",dataBeanList.get(position).isDefault_status());
+                i.putExtra("pet_spayed",dataBeanList.get(position).isPet_spayed());
+                i.putExtra("pet_purebred",dataBeanList.get(position).isPet_purebred());
+                i.putExtra("pet_frnd_with_dog",dataBeanList.get(position).isPet_frnd_with_dog());
+                i.putExtra("pet_frnd_with_cat",dataBeanList.get(position).isPet_frnd_with_cat());
+                i.putExtra("pet_microchipped",dataBeanList.get(position).isPet_microchipped());
+                i.putExtra("pet_tick_free",dataBeanList.get(position).isPet_tick_free());
+                i.putExtra("pet_private_part",dataBeanList.get(position).isPet_private_part());
+                i.putExtra("petbio",dataBeanList.get(position).getPetbio());
 
                 Bundle args = new Bundle();
-                //int list = petListResponseList.get(position).getPet_img().size();
-                args.putSerializable("PETLIST", (Serializable) petListResponseList.get(position).getPet_img());
+                //int list = dataBeanList.get(position).getPet_img().size();
+                args.putSerializable("PETLIST", (Serializable) dataBeanList.get(position).getPet_img());
                 i.putExtra("petimage",args);
 
                 context.startActivity(i);

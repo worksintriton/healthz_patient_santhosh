@@ -9,6 +9,16 @@ public class CartAddProductRequest {
      */
 
     private String user_id;
+
+    public String getCat_id() {
+        return cat_id;
+    }
+
+    public void setCat_id(String cat_id) {
+        this.cat_id = cat_id;
+    }
+
+    private String cat_id;
     private String product_id;
     private int count;
 

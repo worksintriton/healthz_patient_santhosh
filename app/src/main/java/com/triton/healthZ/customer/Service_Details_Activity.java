@@ -675,9 +675,9 @@ public class Service_Details_Activity extends AppCompatActivity implements View.
                         img_fav.setOnClickListener(Service_Details_Activity.this);
 
                         if(response.body().getData().isFav()){
-                            img_fav.setBackgroundResource(R.drawable.like);
+                            img_fav.setBackgroundResource(R.drawable.ic_baseline_favorite_24);
                         }else{
-                            img_fav.setBackgroundResource(R.drawable.icn_heart_love);
+                            img_fav.setBackgroundResource(R.drawable.new_hz_like);
                         }
 
                         if(response.body().getData().getBus_service_gall() != null) {
@@ -864,7 +864,7 @@ public class Service_Details_Activity extends AppCompatActivity implements View.
                         }
                         else {
 
-                            txt_review_count.setText("");
+                            txt_review_count.setText("0 Review");
                         }
 
                         if(spServiceGalleryResponseList != null && spServiceGalleryResponseList.size()>0){

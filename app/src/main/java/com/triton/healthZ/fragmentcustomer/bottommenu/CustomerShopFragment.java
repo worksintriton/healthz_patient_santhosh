@@ -320,11 +320,12 @@ public class CustomerShopFragment extends Fragment implements Serializable,View.
                                 txt_lbl_category.setVisibility(View.VISIBLE);
                                 txt_seemore_categories.setVisibility(View.VISIBLE);
                                 rv_categ.setVisibility(View.VISIBLE);
-                                setCategView(response.body().getData().getProduct_cate());
+                                int size =8;
+                                setCategView(response.body().getData().getProduct_cate(),size);
                                 txt_seemore_categories.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View view) {
-                                        setCategViewMore(response.body().getData().getProduct_cate());
+                                        setCategViewMore(response.body().getData().getProduct_cate(),response.body().getData().getProduct_cate().size());
                                     }
                                 });
 
@@ -441,16 +442,16 @@ public class CustomerShopFragment extends Fragment implements Serializable,View.
 
     }
 
-    private void setCategView(List<ShopDashboardResponse.DataBean.ProductCateBean> product_cate) {
-        int size = 8;
+    private void setCategView(List<ShopDashboardResponse.DataBean.ProductCateBean> product_cate, int size) {
+        size = 8;
         rv_categ.setLayoutManager(new GridLayoutManager(mContext,4));
         rv_categ.setItemAnimator(new DefaultItemAnimator());
         PetLoverCateAdapter petShopTodayDealsAdapter = new PetLoverCateAdapter(mContext,product_cate,size);
         rv_categ.setAdapter(petShopTodayDealsAdapter);
 
     }
-    private void setCategViewMore(List<ShopDashboardResponse.DataBean.ProductCateBean> product_cate) {
-        int size =product_cate.size();
+    private void setCategViewMore(List<ShopDashboardResponse.DataBean.ProductCateBean> product_cate, int size) {
+        size =product_cate.size();
         rv_categ.setLayoutManager(new GridLayoutManager(mContext,4));
         rv_categ.setItemAnimator(new DefaultItemAnimator());
         PetLoverCateAdapter petShopTodayDealsAdapter = new PetLoverCateAdapter(mContext,product_cate,size);

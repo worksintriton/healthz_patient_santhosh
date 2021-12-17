@@ -262,9 +262,9 @@ public class SelectYourPetActivity extends AppCompatActivity implements View.OnC
                     intent.putExtra("serviceamount",serviceamount);
                     intent.putExtra("servicetime",servicetime);
                     intent.putExtra("SP_ava_Date",SP_ava_Date);
+                    intent.putExtra("fromactivity", TAG);
                     intent.putExtra("selectedTimeSlot",selectedTimeSlot);
                     intent.putExtra("distance",distance);
-                    intent.putExtra("fromactivity",fromactivity);
                     startActivity(intent);
                 }
                 else {
@@ -272,6 +272,7 @@ public class SelectYourPetActivity extends AppCompatActivity implements View.OnC
                     intent.putExtra("doctorid", doctorid);
                     intent.putExtra("fromactivity", TAG);
                     intent.putExtra("Doctor_ava_Date", Doctor_ava_Date);
+                    intent.putExtra("SP_ava_Date",SP_ava_Date);
                     intent.putExtra("selectedTimeSlot", selectedTimeSlot);
                     intent.putExtra("amount", amount);
                     intent.putExtra("communicationtype", communicationtype);

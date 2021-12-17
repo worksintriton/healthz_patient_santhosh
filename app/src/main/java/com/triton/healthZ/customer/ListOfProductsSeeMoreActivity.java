@@ -541,6 +541,7 @@ public class ListOfProductsSeeMoreActivity extends AppCompatActivity implements 
 
                         }
 
+
                     }
                 }
 

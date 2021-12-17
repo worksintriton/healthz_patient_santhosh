@@ -188,7 +188,7 @@
                             android:ellipsize="end"
                             android:fontFamily="@font/montserrat"
                             android:maxLines="1"
-                            android:text="Patient Name"
+                            android:text="Member Name"
                             android:textColor="@color/new_sec_txt_color"
                             android:textSize="12sp"
                             android:textStyle="normal" />

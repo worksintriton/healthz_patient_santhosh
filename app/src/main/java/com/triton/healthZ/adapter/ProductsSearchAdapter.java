@@ -67,6 +67,7 @@ public class ProductsSearchAdapter extends  RecyclerView.Adapter<RecyclerView.Vi
             holder.txt_products_price.setText("\u20B9 "+productSearchResponseCall.get(position).getProduct_price());
         }
 
+/*
         if(currentItem.getProduct_discount_price() != 0){
             holder.txt_product_discount_price.setVisibility(View.VISIBLE);
             holder.txt_product_discount_price.setText("\u20B9 "+currentItem.getProduct_discount_price());
@@ -76,6 +77,7 @@ public class ProductsSearchAdapter extends  RecyclerView.Adapter<RecyclerView.Vi
             holder.txt_product_discount_price.setVisibility(View.GONE);
         }
 
+*/
 
         if(productSearchResponseCall.get(position).isProduct_fav()){
             holder.img_like.setVisibility(View.VISIBLE);
@@ -120,11 +122,11 @@ public class ProductsSearchAdapter extends  RecyclerView.Adapter<RecyclerView.Vi
         }else{
             holder.txt_star_rating.setText("0");
         }
-        if(currentItem.getProduct_review() != 0){
+        /*if(currentItem.getProduct_review() != 0){
             holder.txt_review_count.setText(currentItem.getProduct_review()+"");
         }else{
             holder.txt_review_count.setText("0");
-        }
+        }*/
 
 
 
@@ -187,7 +189,7 @@ public class ProductsSearchAdapter extends  RecyclerView.Adapter<RecyclerView.Vi
             img_products_image = itemView.findViewById(R.id.img_products_image);
             img_like = itemView.findViewById(R.id.img_like);
             img_dislike = itemView.findViewById(R.id.img_dislike);
-            txt_review_count.setVisibility(View.GONE);
+//            txt_review_count.setVisibility(View.GONE);
 
 
         }

@@ -1,5 +1,6 @@
 package com.triton.healthz.customer;
 
+
 import static android.Manifest.permission.CAMERA;
 import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
@@ -46,13 +47,18 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.gson.Gson;
 import com.triton.healthz.R;
 import com.triton.healthz.adapter.AddFamilyImageListAdapter;
+import com.triton.healthz.adapter.EditFamilyImageListAdapter;
 import com.triton.healthz.api.APIClient;
 import com.triton.healthz.api.RestApiInterface;
 import com.triton.healthz.appUtils.FileUtil;
 import com.triton.healthz.requestpojo.FamilyMemberCreateRequest;
+import com.triton.healthz.requestpojo.FamilyMembersEditRequest;
 import com.triton.healthz.responsepojo.FamilyMemberCreateResponse;
+import com.triton.healthz.responsepojo.FamilyMemberListResponse;
+import com.triton.healthz.responsepojo.FamilyMembersEditResponse;
 import com.triton.healthz.responsepojo.FileUploadResponse;
 import com.triton.healthz.responsepojo.GetFamilyMemberResponse;
+import com.triton.healthz.responsepojo.PetListResponse;
 import com.triton.healthz.sessionmanager.SessionManager;
 import com.triton.healthz.utils.ConnectionDetector;
 import com.triton.healthz.utils.RestUtils;
@@ -80,8 +86,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class AddYourFamilyMembersSelectActivity extends AppCompatActivity implements View.OnClickListener {
-    private static final String TAG = "AddYourFamilyMembersSelectActivity";
+public class EditFamilyMemberActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private static final String TAG = "EditFamilyMemberActivity";
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.avi_indicator)
@@ -147,7 +154,11 @@ public class AddYourFamilyMembersSelectActivity extends AppCompatActivity implem
     @BindView(R.id.img_uploadimage)
     ImageView img_uploadimage;
 
-    List<FamilyMemberCreateRequest.PicBean> picBeanList = new ArrayList<>();
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.img_back)
+    ImageView img_back;
+
+    List<FamilyMembersEditRequest.PicBean> picBeanList = new ArrayList<>();
 
     List<GetFamilyMemberResponse.DataBean> getfamilymemberslist;
 
@@ -164,10 +175,7 @@ public class AddYourFamilyMembersSelectActivity extends AppCompatActivity implem
     private static final String READ_EXTERNAL_STORAGE_PERMISSION = READ_EXTERNAL_STORAGE;
     private static final String WRITE_EXTERNAL_STORAGE_PERMISSION = WRITE_EXTERNAL_STORAGE;
 
-    private int year, month, day;
-    String SelectedLastVaccinateddate = "";
-    private static final int DATE_PICKER_ID = 0 ;
-    private static final int PET_DATE_PICKER_ID = 1 ;
+
 
 
 
@@ -208,88 +216,142 @@ public class AddYourFamilyMembersSelectActivity extends AppCompatActivity implem
 
     final Calendar myCalendar = Calendar.getInstance();
 
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.include_petlover_header)
-    View include_petlover_header;
+
+    private SessionManager session;
+    String name,emailid,phoneNo,active_tag,strdistance;
+    private List<PetListResponse.DataBean> petList;
+    private Dialog dialog;
+    private String profileimage;
 
 
-    @SuppressLint("LogNotTimber")
+    private static final int REQUEST_PHONE_CALL =1 ;
+    private String sosPhonenumber;
+
+
+    private int reviewcount;
+    private int Count_value_start;
+    private int Count_value_end;
+    private String _id;
+
+    ArrayList<Integer> product_idList;
+    private int product_id;
+    private String orderid;
+    private String cancelorder;
+    private String latlng,CityName,AddressLine,PostalCode,nickname;
+
+    String locationtype;
+    private String pincode,cityname,address;
+    private boolean defaultstatus;
+    private String id;
+    double latitude, longtitude;
+
+    String appointment_id;
+    String appoinment_status;
+    private String bookedat;
+    private String startappointmentstatus;
+    private String appointmentfor;
+    private String userrate;
+
+    private int year, month, day;
+    String SelectedLastVaccinateddate = "";
+    private static final int DATE_PICKER_ID = 0 ;
+    private static final int PET_DATE_PICKER_ID = 1 ;
+
+    String family_id;
+    String user_id;
+    String member_name;
+    String gender;
+    String relation_type;
+    String health_issue;
+    String dateofbirth;
+    String anymedicalinfo;
+    String covide_vac;
+    String weight;
+
+    List<FamilyMemberListResponse.DataBean.PicBean> petImgBeanList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_your_family_members_select);
+        setContentView(R.layout.activity_edit_family_member);
+
         ButterKnife.bind(this);
         avi_indicator.setVisibility(View.GONE);
+
+        img_back.setOnClickListener(this);
 
         btn_continue.setOnClickListener(this);
 
         img_uploadimage.setOnClickListener(this);
 
-        SessionManager sessionManager = new SessionManager(AddYourFamilyMembersSelectActivity.this);
+        SessionManager sessionManager = new SessionManager(EditFamilyMemberActivity.this);
         HashMap<String, String> user = sessionManager.getProfileDetails();
         userid = user.get(SessionManager.KEY_ID);
 
-        Bundle extras = getIntent().getExtras();
-        if (extras != null) {
-            doctorid = extras.getString("doctorid");
-            fromactivity = extras.getString("fromactivity");
-            fromto = extras.getString("fromto");
-            Doctor_ava_Date = extras.getString("Doctor_ava_Date");
-            selectedTimeSlot = extras.getString("selectedTimeSlot");
-            amount = extras.getInt("amount");
-            Log.w(TAG,"amount : "+amount);
-            communicationtype = extras.getString("communicationtype");
-            petId = extras.getString("petId");
-            Log.w(TAG,"Bundle "+" doctorid : "+doctorid+" selectedTimeSlot : "+selectedTimeSlot+"communicationtype : "+communicationtype+" amount : "+amount+" fromactivity : "+fromactivity+" fromto : "+fromto);
+        Intent intent = getIntent();
 
-            Log.w(TAG,"fromactivity : "+fromactivity);
+        Bundle args = intent.getBundleExtra("petimage");
 
-            /*PetServiceAppointment_Doctor_Date_Time_Activity*/
-            fromactivity = extras.getString("fromactivity");
-            spid = extras.getString("spid");
-            catid = extras.getString("catid");
-            from = extras.getString("from");
-            spuserid = extras.getString("spuserid");
-            selectedServiceTitle = extras.getString("selectedServiceTitle");
-            serviceprovidingcompanyname = extras.getString("serviceprovidingcompanyname");
-            serviceamount = extras.getInt("serviceamount");
-            servicetime = extras.getString("servicetime");
-            SP_ava_Date = extras.getString("SP_ava_Date");
-            selectedTimeSlot = extras.getString("selectedTimeSlot");
+        if(args!=null&&!args.isEmpty()){
 
-            doctorname = extras.getString("doctorname");
-
-            clinicname = extras.getString("clinicname");
-
-            tagg = extras.getString("TAGG");
-
-            distance = extras.getInt("distance");
-            Log.w(TAG,"spid : "+spid +" catid : "+catid+" from : "+from+" serviceamount : "+serviceamount+" servicetime : "+servicetime+" SP_ava_Date : "+SP_ava_Date+" selectedTimeSlot : "+selectedTimeSlot);
-
-            Log.w(TAG,"fromactivity : "+fromactivity+" from : "+from);
-
+            petImgBeanList = (ArrayList<FamilyMemberListResponse.DataBean.PicBean>) args.getSerializable("PETLIST");
         }
 
+        if(petImgBeanList!=null&&petImgBeanList.size()>0){
 
-        ImageView img_back = include_petlover_header.findViewById(R.id.img_back);
-        ImageView img_sos = include_petlover_header.findViewById(R.id.img_sos);
-        ImageView img_notification = include_petlover_header.findViewById(R.id.img_notification);
-        ImageView img_cart = include_petlover_header.findViewById(R.id.img_cart);
-        ImageView img_profile = include_petlover_header.findViewById(R.id.img_profile);
-        TextView toolbar_title = include_petlover_header.findViewById(R.id.toolbar_title);
-        toolbar_title.setText(getResources().getString(R.string.add_your_family));
+            for(int i=0;i<petImgBeanList.size();i++){
 
-        img_back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onBackPressed();
+                picBeanList.add(new FamilyMembersEditRequest.PicBean(petImgBeanList.get(i).getImage()));
             }
-        });
 
-        if (new ConnectionDetector(AddYourFamilyMembersSelectActivity.this).isNetworkAvailable(AddYourFamilyMembersSelectActivity.this)) {
+            if(picBeanList!=null&&picBeanList.size()>0){
+
+                setView(picBeanList);
+            }
+        }
+
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+
+            family_id = extras.getString("family_id");
+            fromactivity = extras.getString("fromactivity");
+            userid = extras.getString("userid");
+            member_name = extras.getString("member_name");
+            gender = extras.getString("gender");
+            relation_type = extras.getString("relation_type");
+            health_issue = extras.getString("health_issue");
+            dateofbirth = extras.getString("dateofbirth");
+            anymedicalinfo = extras.getString("anymedicalinfo");
+            covide_vac = extras.getString("covide_vac");
+            weight = extras.getString("weight");
+        }
+
+        if (new ConnectionDetector(EditFamilyMemberActivity.this).isNetworkAvailable(EditFamilyMemberActivity.this)) {
             getfamilymembersListResponseCall();
 
         }
+
+        if(member_name!=null){
+
+            edt_name.setText(member_name);
+        }
+
+        if(dateofbirth!=null){
+
+            edt_dob.setText(dateofbirth);
+        }
+
+
+        if(anymedicalinfo!=null){
+
+            edt_bio.setText(anymedicalinfo);
+        }
+
+        if(weight!=null){
+
+            edt_weight.setText(weight);
+        }
+
 
         ArrayList<String> familymemberstypeArrayList = new ArrayList<>();
 
@@ -301,11 +363,12 @@ public class AddYourFamilyMembersSelectActivity extends AppCompatActivity implem
 
         familymemberstypeArrayList.add("Transgender");
 
-        ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<>(AddYourFamilyMembersSelectActivity.this, R.layout.spinner_item, familymemberstypeArrayList);
+        ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<>(EditFamilyMemberActivity.this, R.layout.spinner_item, familymemberstypeArrayList);
 
         spinnerArrayAdapter.setDropDownViewResource(R.layout.spinner_item); // The drop down view
 
         sprgender.setAdapter(spinnerArrayAdapter);
+
 
         sprrelationtype.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @SuppressLint("LogNotTimber")
@@ -394,6 +457,7 @@ public class AddYourFamilyMembersSelectActivity extends AppCompatActivity implem
         });
 
 
+
         edt_dob.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -404,8 +468,7 @@ public class AddYourFamilyMembersSelectActivity extends AppCompatActivity implem
         });
     }
 
-
-    private void SelectDate() {
+      private void SelectDate() {
 
         final Calendar c = Calendar.getInstance();
         year = c.get(Calendar.YEAR);
@@ -521,9 +584,9 @@ public class AddYourFamilyMembersSelectActivity extends AppCompatActivity implem
         }
 
         if (can_proceed) {
-            if (new ConnectionDetector(AddYourFamilyMembersSelectActivity.this).isNetworkAvailable(AddYourFamilyMembersSelectActivity.this)) {
+            if (new ConnectionDetector(EditFamilyMemberActivity.this).isNetworkAvailable(EditFamilyMemberActivity.this)) {
 
-                familymemberxreateResponseCall();
+                familymemberseditResponseCall();
             }
 
         }
@@ -558,7 +621,7 @@ public class AddYourFamilyMembersSelectActivity extends AppCompatActivity implem
 
 
                         if(getfamilymemberslist != null && getfamilymemberslist.size()>0){
-                            setView(getfamilymemberslist);
+                            setFView(getfamilymemberslist);
                         }
                     }
 
@@ -586,7 +649,7 @@ public class AddYourFamilyMembersSelectActivity extends AppCompatActivity implem
     }
 
     @SuppressLint("LogNotTimber")
-    private void setView(List<GetFamilyMemberResponse.DataBean> getfamilymemberslist) {
+    private void setFView(List<GetFamilyMemberResponse.DataBean> getfamilymemberslist) {
 
         ArrayList<String> familymemberstypeArrayList = new ArrayList<>();
         familymemberstypeArrayList.add("Select Relation Type");
@@ -596,7 +659,7 @@ public class AddYourFamilyMembersSelectActivity extends AppCompatActivity implem
             Log.w(TAG, "relationType-->" + relationType);
             familymemberstypeArrayList.add(relationType);
 
-            ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<>(AddYourFamilyMembersSelectActivity.this, R.layout.spinner_item, familymemberstypeArrayList);
+            ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<>(EditFamilyMemberActivity.this, R.layout.spinner_item, familymemberstypeArrayList);
             spinnerArrayAdapter.setDropDownViewResource(R.layout.spinner_item); // The drop down view
             sprrelationtype.setAdapter(spinnerArrayAdapter);
 
@@ -605,59 +668,27 @@ public class AddYourFamilyMembersSelectActivity extends AppCompatActivity implem
     }
 
     @SuppressLint("LogNotTimber")
-    private void familymemberxreateResponseCall() {
+    private void familymemberseditResponseCall() {
         avi_indicator.setVisibility(View.VISIBLE);
         avi_indicator.smoothToShow();
         RestApiInterface apiInterface = APIClient.getClient().create(RestApiInterface.class);
-        Call<FamilyMemberCreateResponse> call = apiInterface.familymembercreateResponseCall(RestUtils.getContentType(),FamilyMemberCreateRequest());
-        Log.w(TAG,"FamilyMemberCreateResponse url  :%s"+" "+ call.request().url().toString());
+        Call<FamilyMembersEditResponse> call = apiInterface.familymemberseditResponseCall(RestUtils.getContentType(),FamilyMembersEditRequest());
+        Log.w(TAG,"FamilyMembersEditResponse url  :%s"+" "+ call.request().url().toString());
 
-        call.enqueue(new Callback<FamilyMemberCreateResponse>() {
+        call.enqueue(new Callback<FamilyMembersEditResponse>() {
             @SuppressLint("LogNotTimber")
             @Override
-            public void onResponse(@NonNull Call<FamilyMemberCreateResponse> call, @NonNull Response<FamilyMemberCreateResponse> response) {
+            public void onResponse(@NonNull Call<FamilyMembersEditResponse> call, @NonNull Response<FamilyMembersEditResponse> response) {
                 avi_indicator.smoothToHide();
-                Log.w(TAG,"FamilyMemberCreateResponse" + new Gson().toJson(response.body()));
+                Log.w(TAG,"FamilyMembersEditResponse" + new Gson().toJson(response.body()));
                 if (response.body() != null) {
 
                     if (200 == response.body().getCode()) {
-                        if(response.body().getData().get_id() != null){
-                            Toasty.success(AddYourFamilyMembersSelectActivity.this," "+response.body().getMessage(), Toasty.LENGTH_LONG).show();
-                            if(fromactivity != null && fromactivity.equalsIgnoreCase("ConsultationActivity")){
-                                Intent intent = new Intent(getApplicationContext(), ConsultationActivity.class);
-                                intent.putExtra("doctorid", doctorid);
-                                intent.putExtra("fromactivity", TAG);
-                                intent.putExtra("Doctor_ava_Date", Doctor_ava_Date);
-                                intent.putExtra("selectedTimeSlot", selectedTimeSlot);
-                                intent.putExtra("amount", amount);
-                                intent.putExtra("communicationtype", communicationtype);
-                                intent.putExtra("fromto", TAG);
-                                intent.putExtra("doctorname", doctorname);
-                                intent.putExtra("clinicname", clinicname);
-                                intent.putExtra("petname", petname);
-                                intent.putExtra("petId", petId);
-                                startActivity(intent);
-                            }else if(fromactivity != null && fromactivity.equalsIgnoreCase("SelectYourPetActivity")){
-                                {
-                                    Intent intent = new Intent(getApplicationContext(), SelectYourPetActivity.class);
-                                    intent.putExtra("spid",spid);
-                                    intent.putExtra("catid",catid);
-                                    intent.putExtra("from",from);
-                                    intent.putExtra("spuserid",spuserid);
-                                    intent.putExtra("selectedServiceTitle",selectedServiceTitle);
-                                    intent.putExtra("serviceprovidingcompanyname",serviceprovidingcompanyname);
-                                    intent.putExtra("serviceamount",serviceamount);
-                                    intent.putExtra("servicetime",servicetime);
-                                    intent.putExtra("SP_ava_Date",SP_ava_Date);
-                                    intent.putExtra("fromactivity", TAG);
-                                    intent.putExtra("selectedTimeSlot",selectedTimeSlot);
-                                    intent.putExtra("distance",distance);
-                                    startActivity(intent);
 
-                                }
-                            }
-                        }
 
+                            Toasty.success(EditFamilyMemberActivity.this," "+response.body().getMessage(), Toasty.LENGTH_LONG).show();
+
+                            callDirections();
                     } else {
                         showErrorLoading(response.body().getMessage());
                     }
@@ -667,7 +698,7 @@ public class AddYourFamilyMembersSelectActivity extends AppCompatActivity implem
             }
 
             @Override
-            public void onFailure(@NonNull Call<FamilyMemberCreateResponse> call, @NonNull Throwable t) {
+            public void onFailure(@NonNull Call<FamilyMembersEditResponse> call, @NonNull Throwable t) {
                 avi_indicator.smoothToHide();
                 Log.e("OTP", "--->" + t.getMessage());
                 Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
@@ -675,7 +706,7 @@ public class AddYourFamilyMembersSelectActivity extends AppCompatActivity implem
         });
 
     }
-    private FamilyMemberCreateRequest FamilyMemberCreateRequest() {
+    private FamilyMembersEditRequest FamilyMembersEditRequest() {
 
         /*
          * user_id : 618230269dcc2a290e5bae9a
@@ -695,19 +726,20 @@ public class AddYourFamilyMembersSelectActivity extends AppCompatActivity implem
         String currentDateandTime = sdf.format(new Date());
 
 
-        FamilyMemberCreateRequest FamilyMemberCreateRequest = new FamilyMemberCreateRequest();
-        FamilyMemberCreateRequest.setUser_id(userid);
-        FamilyMemberCreateRequest.setName(edt_name.getText().toString().trim());
-        FamilyMemberCreateRequest.setGender(strgendertype);
-        FamilyMemberCreateRequest.setRelation_type(strrelationtype);
-        FamilyMemberCreateRequest.setHealth_issue(strhealthissue);
-        FamilyMemberCreateRequest.setDateofbirth(edt_dob.getText().toString().trim());
-        FamilyMemberCreateRequest.setAnymedicalinfo(edt_bio.getText().toString().trim());
-        FamilyMemberCreateRequest.setCovide_vac(selectedRadioButton);
-        FamilyMemberCreateRequest.setWeight(edt_weight.getText().toString().trim());
-        FamilyMemberCreateRequest.setPic(picBeanList);
-        Log.w(TAG,"FamilyMemberCreateRequest "+ new Gson().toJson(FamilyMemberCreateRequest));
-        return FamilyMemberCreateRequest;
+        FamilyMembersEditRequest FamilyMembersEditRequest = new FamilyMembersEditRequest();
+        FamilyMembersEditRequest.set_id(family_id);
+        FamilyMembersEditRequest.setUser_id(userid);
+        FamilyMembersEditRequest.setName(edt_name.getText().toString().trim());
+        FamilyMembersEditRequest.setGender(strgendertype);
+        FamilyMembersEditRequest.setRelation_type(strrelationtype);
+        FamilyMembersEditRequest.setHealth_issue(strhealthissue);
+        FamilyMembersEditRequest.setDateofbirth(edt_dob.getText().toString().trim());
+        FamilyMembersEditRequest.setAnymedicalinfo(edt_bio.getText().toString().trim());
+        FamilyMembersEditRequest.setCovide_vac(selectedRadioButton);
+        FamilyMembersEditRequest.setWeight(edt_weight.getText().toString().trim());
+        FamilyMembersEditRequest.setPic(picBeanList);
+        Log.w(TAG,"FamilyMembersEditRequest "+ new Gson().toJson(FamilyMembersEditRequest));
+        return FamilyMembersEditRequest;
     }
 
 
@@ -733,7 +765,7 @@ public class AddYourFamilyMembersSelectActivity extends AppCompatActivity implem
     }
 
     private void gotoPetloverDashboard() {
-        Intent intent = new Intent(AddYourFamilyMembersSelectActivity.this,CustomerDashboardActivity.class);
+        Intent intent = new Intent(EditFamilyMemberActivity.this,CustomerDashboardActivity.class);
         startActivity(intent);
     }
 
@@ -745,47 +777,10 @@ public class AddYourFamilyMembersSelectActivity extends AppCompatActivity implem
 
     public void callDirections(){
 
-        if(tagg!=null){
 
-            if(tagg.equals("SelectYourPetActivity")){
+        Intent intent = new Intent(getApplicationContext(), CustomerProfileScreenActivity.class);
 
-                Intent intent = new Intent(getApplicationContext(),SelectYourPetActivity.class);
-                //  intent.putExtra("SPCreateAppointmentRequestList",SPCreateAppointmentRequestList);
-                intent.putExtra("spid",spid);
-                intent.putExtra("catid",catid);
-                intent.putExtra("from",from);
-                intent.putExtra("spuserid",spuserid);
-                intent.putExtra("selectedServiceTitle",selectedServiceTitle);
-                intent.putExtra("serviceprovidingcompanyname",serviceprovidingcompanyname);
-                intent.putExtra("serviceamount",serviceamount);
-                intent.putExtra("servicetime",servicetime);
-                intent.putExtra("SP_ava_Date",SP_ava_Date);
-                intent.putExtra("selectedTimeSlot",selectedTimeSlot);
-                intent.putExtra("distance",distance);
-                intent.putExtra("fromactivity",fromactivity);
-                intent.putExtra("petId", petId);
-                intent.putExtra("petname",petname);
-                startActivity(intent);
-            }
-
-            else {
-
-                Intent intent = new Intent(getApplicationContext(), ConsultationActivity.class);
-                intent.putExtra("doctorid", doctorid);
-                intent.putExtra("fromactivity", TAG);
-                intent.putExtra("Doctor_ava_Date", Doctor_ava_Date);
-                intent.putExtra("selectedTimeSlot", selectedTimeSlot);
-                intent.putExtra("amount", amount);
-                intent.putExtra("communicationtype", communicationtype);
-                intent.putExtra("fromto", TAG);
-                intent.putExtra("doctorname", doctorname);
-                intent.putExtra("clinicname", clinicname);
-                intent.putExtra("petname", petname);
-                intent.putExtra("petId", petId);
-                startActivity(intent);
-            }
-        }
-
+        startActivity(intent);
 
     }
 
@@ -793,6 +788,9 @@ public class AddYourFamilyMembersSelectActivity extends AppCompatActivity implem
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.img_back:
+                onBackPressed();
+                break;
             case R.id.txt_skip:
                 callDirections();
                 break;
@@ -801,7 +799,7 @@ public class AddYourFamilyMembersSelectActivity extends AppCompatActivity implem
                 break;
             case R.id.img_uploadimage:
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    checkMultiplePermissions(REQUEST_CODE_ASK_MULTIPLE_PERMISSIONS, AddYourFamilyMembersSelectActivity.this);
+                    checkMultiplePermissions(REQUEST_CODE_ASK_MULTIPLE_PERMISSIONS, EditFamilyMemberActivity.this);
                 }else{
                     choosePetImage();
 
@@ -817,12 +815,12 @@ public class AddYourFamilyMembersSelectActivity extends AppCompatActivity implem
 
         final CharSequence[] items = {"Take Photo", "Choose from Library", "Cancel"};
         //AlertDialog.Builder alert=new AlertDialog.Builder(this);
-        AlertDialog.Builder builder = new AlertDialog.Builder(AddYourFamilyMembersSelectActivity.this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(EditFamilyMemberActivity.this);
         builder.setTitle("Choose option");
         builder.setItems(items, (dialog, item) -> {
             if (items[item].equals("Take Photo"))
             {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && ContextCompat.checkSelfPermission(AddYourFamilyMembersSelectActivity.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED)
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && ContextCompat.checkSelfPermission(EditFamilyMemberActivity.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED)
                 {
                     requestPermissions(new String[]{Manifest.permission.CAMERA}, REQUEST_CLINIC_CAMERA_PERMISSION_CODE);
                 }
@@ -840,7 +838,7 @@ public class AddYourFamilyMembersSelectActivity extends AppCompatActivity implem
             else if (items[item].equals("Choose from Library"))
             {
 
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && ContextCompat.checkSelfPermission(AddYourFamilyMembersSelectActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED)
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && ContextCompat.checkSelfPermission(EditFamilyMemberActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED)
                 {
                     requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, REQUEST_READ_CLINIC_PIC_PERMISSION);
                 }
@@ -880,7 +878,7 @@ public class AddYourFamilyMembersSelectActivity extends AppCompatActivity implem
             {
                 Bitmap photo = (Bitmap) data.getExtras().get("data");
 
-                File file = new File(getFilesDir(), "Healthz1" + ".jpg");
+          File file = new File(getFilesDir(), "Healthz1" + ".jpg");
 
                 OutputStream os;
                 try {
@@ -918,7 +916,7 @@ public class AddYourFamilyMembersSelectActivity extends AppCompatActivity implem
 
                         Log.w("filename", " " + filename);
 
-                        String filePath = FileUtil.getPath(AddYourFamilyMembersSelectActivity.this,selectedImageUri);
+                        String filePath = FileUtil.getPath(EditFamilyMemberActivity.this,selectedImageUri);
 
                         assert filePath != null;
 
@@ -1004,7 +1002,7 @@ public class AddYourFamilyMembersSelectActivity extends AppCompatActivity implem
 
                             if(picBeanList.size()>=1){
 
-                                Toasty.warning(AddYourFamilyMembersSelectActivity.this,"Sorry You can't Upload more than 1", Toasty.LENGTH_LONG).show();
+                                Toasty.warning(EditFamilyMemberActivity.this,"Sorry You can't Upload more than 1", Toasty.LENGTH_LONG).show();
 
                             }
 
@@ -1012,16 +1010,16 @@ public class AddYourFamilyMembersSelectActivity extends AppCompatActivity implem
                             {
                                 if(ServerUrlImagePath != null&&!ServerUrlImagePath.isEmpty())
                                 {
-                                    picBeanList.add(new FamilyMemberCreateRequest.PicBean(ServerUrlImagePath));
+                                    picBeanList.add(new FamilyMembersEditRequest.PicBean(ServerUrlImagePath));
 
                                 }
                                 else
                                 {
-                                    picBeanList.add(new FamilyMemberCreateRequest.PicBean(APIClient.IMAGE_BASE_URL));
+                                    picBeanList.add(new FamilyMembersEditRequest.PicBean(APIClient.IMAGE_BASE_URL));
 
                                 }
 
-                                setView();
+                                setView(picBeanList);
 
                             }
 
@@ -1031,7 +1029,7 @@ public class AddYourFamilyMembersSelectActivity extends AppCompatActivity implem
 
                         else
                         {
-                            Toasty.warning(AddYourFamilyMembersSelectActivity.this,"Failed to Upload", Toasty.LENGTH_LONG).show();
+                            Toasty.warning(EditFamilyMemberActivity.this,"Failed to Upload", Toasty.LENGTH_LONG).show();
 
                         }
 
@@ -1055,17 +1053,17 @@ public class AddYourFamilyMembersSelectActivity extends AppCompatActivity implem
 
     }
 
-    private void setView() {
+    private void setView(List<FamilyMembersEditRequest.PicBean> picBeanList) {
 
         rv_uploaded_images.setHasFixedSize(true);
 
         rv_uploaded_images.setNestedScrollingEnabled(false);
 
-        LinearLayoutManager layoutManager = new LinearLayoutManager(AddYourFamilyMembersSelectActivity.this, LinearLayoutManager.HORIZONTAL, false);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(EditFamilyMemberActivity.this, LinearLayoutManager.HORIZONTAL, false);
 
         rv_uploaded_images.setLayoutManager(layoutManager);
 
-        AddFamilyImageListAdapter addFamilyImageListAdapter = new AddFamilyImageListAdapter(this, picBeanList);
+        EditFamilyImageListAdapter addFamilyImageListAdapter = new EditFamilyImageListAdapter(this, picBeanList);
 
         rv_uploaded_images.setAdapter(addFamilyImageListAdapter);
 
@@ -1187,5 +1185,4 @@ public class AddYourFamilyMembersSelectActivity extends AppCompatActivity implem
                 .setCancelButton("Cancel", SweetAlertDialog::dismissWithAnimation)
                 .show();
     }
-
 }

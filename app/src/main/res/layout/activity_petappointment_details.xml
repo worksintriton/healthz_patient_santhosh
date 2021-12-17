@@ -292,6 +292,7 @@
                                 android:textAllCaps="false"
                                 android:textColor="@color/white"
                                 android:textSize="12sp"
+                                android:visibility="gone"
                                 tools:ignore="ButtonStyle" />
 
                             <Button
@@ -319,12 +320,13 @@
                                 android:textAllCaps="false"
                                 android:textColor="@color/white"
                                 android:textSize="12sp"
+                                android:visibility="gone"
                                 tools:ignore="ButtonStyle" />
 
                             <Button
                                 android:id="@+id/btn_prescriptiondetails"
                                 android:layout_width="140dp"
-                                android:layout_height="35dp"
+                                android:layout_height="40dp"
                                 android:layout_marginEnd="5dp"
                                 android:layout_marginBottom="5dp"
                                 android:background="@drawable/new_rounded_corner_btn"
@@ -350,7 +352,7 @@
                         android:ellipsize="end"
                         android:fontFamily="@font/montserrat_bold"
                         android:maxLines="1"
-                        android:text="Patient Details"
+                        android:text="Member Details"
                         android:textColor="@color/black"
                         android:textSize="16sp" />
 
@@ -364,7 +366,7 @@
                             android:layout_width="@dimen/width_appoitmentdetails"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/montserrat"
-                            android:text="@string/pet_name_details"
+                            android:text="Member Name"
                             android:textColor="@color/black"
                             android:textSize="14sp" />
 

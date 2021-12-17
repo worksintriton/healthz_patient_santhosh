@@ -53,14 +53,14 @@
                             android:id="@+id/rl_back"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
-                            android:background="@drawable/icn_ellipse_bgnd">
+                            android:background="@drawable/layout_bgm">
 
                             <ImageView
                                 android:id="@+id/img_back"
                                 android:layout_width="20dp"
                                 android:layout_height="20dp"
                                 android:layout_centerInParent="true"
-                                android:src="@drawable/new_arrow"
+                                android:src="@drawable/new_hz_arrow"
                                 tools:ignore="ContentDescription" />
 
                         </RelativeLayout>
@@ -92,30 +92,47 @@
                                 android:visibility="gone"
                                 tools:ignore="ContentDescription" />
 
-
-                            <ImageView
-                                android:id="@+id/img_fav"
-                                android:layout_width="24dp"
-                                android:layout_height="24dp"
+                            <RelativeLayout
+                                android:id="@+id/rl_fav"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
                                 android:layout_marginStart="20dp"
                                 android:layout_marginTop="10dp"
-                                android:src="@drawable/ic_fav_heart"
-                                tools:ignore="ContentDescription" />
+                                android:background="@drawable/layout_bgm_opaque">
 
-                            <ImageView
-                                android:id="@+id/img_cart"
-                                android:layout_width="24dp"
-                                android:layout_height="24dp"
+                                <ImageView
+                                    android:id="@+id/img_fav"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_centerInParent="true"
+                                    android:src="@drawable/new_hz_like"
+                                    tools:ignore="ContentDescription" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/rl_cart"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
                                 android:layout_marginStart="20dp"
                                 android:layout_marginTop="10dp"
-                                android:src="@drawable/ic_bag"
-                                tools:ignore="ContentDescription" />
+                                android:background="@drawable/layout_bgm_opaque">
+
+                                <ImageView
+                                    android:id="@+id/img_cart"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_centerInParent="true"
+                                    android:src="@drawable/ic_hz_cart"
+                                    tools:ignore="ContentDescription" />
+
+                            </RelativeLayout>
 
                             <TextView
                                 android:id="@+id/txt_cart_count_badge"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center"
+                                android:layout_gravity="top|right"
                                 android:layout_marginStart="-16dp"
                                 android:layout_marginEnd="10dp"
                                 android:background="@drawable/badge_background"
@@ -132,8 +149,9 @@
                                 android:singleLine="true"
                                 android:text="0"
                                 android:textColor="@color/black"
-                                android:textSize="12sp"
+                                android:textSize="10dp"
                                 android:textStyle="bold" />
+
 
                         </LinearLayout>
 

@@ -10,6 +10,7 @@ import android.os.Bundle;
 
 import android.os.Handler;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -29,6 +30,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 import com.google.gson.Gson;
 import com.triton.healthz.R;
@@ -64,7 +67,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ProductDetailsActivity extends AppCompatActivity implements View.OnClickListener{
+public class ProductDetailsActivity extends AppCompatActivity implements View.OnClickListener, BottomNavigationView.OnNavigationItemSelectedListener {
 
     private final String TAG = "ProductDetailsActivity";
 
@@ -242,6 +245,13 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
 
 
    /**/
+   @SuppressLint("NonConstantResourceId")
+   @BindView(R.id.include_petlover_footer)
+   View include_petlover_footer;
+
+    BottomNavigationView bottom_navigation_view;
+
+    FloatingActionButton fab;
 
     @SuppressLint({"LogNotTimber", "SetTextI18n"})
     @Override
@@ -264,6 +274,7 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
             cat_id = extras.getString("cat_id");
             fromactivity = extras.getString("fromactivity");
             tag = extras.getString("tag");
+            Log.w(TAG,"cat_id "+cat_id);
         }
 
 //        txt_view_details.setOnClickListener(new View.OnClickListener() {
@@ -275,6 +286,19 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
 //            }
 //        });
 
+        fab = include_petlover_footer.findViewById(R.id.fab);
+
+        bottom_navigation_view = include_petlover_footer.findViewById(R.id.bottomNavigation);
+        bottom_navigation_view.setItemIconTintList(null);
+        bottom_navigation_view.setOnNavigationItemSelectedListener(this);
+        bottom_navigation_view.getMenu().findItem(R.id.home).setChecked(true);
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                callDirections("1");
+            }
+        });
 
         ll_increment_add_to_cart.setVisibility(View.GONE);
         if(userid != null && productid != null){
@@ -604,11 +628,14 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
                             Log.w(TAG,"Product_fav : "+response.body().getProduct_details().isProduct_fav());
 
                             if(response.body().getProduct_details().isProduct_fav()){
-                                img_fav.setBackgroundResource(R.drawable.ic_fav);
+                                img_fav.setBackgroundResource(R.drawable.ic_baseline_favorite_24);
                             }else{
-                                img_fav.setBackgroundResource(R.drawable.heart_gray);
+                                img_fav.setBackgroundResource(R.drawable.new_hz_like);
                             }
+                            if(response.body().getProduct_details().getCat_id().get_id()!=null){
 
+                                cat_id = response.body().getProduct_details().getCat_id().get_id();
+                            }
                             String product_title = response.body().getProduct_details().getProduct_title();
                             int product_review = response.body().getProduct_details().getProduct_review();
                             double product_rating = response.body().getProduct_details().getProduct_rating();
@@ -927,6 +954,7 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
         cartAddProductRequest.setUser_id(userid);
         cartAddProductRequest.setProduct_id(productid);
         cartAddProductRequest.setCount(Integer.parseInt(txt_cart_count.getText().toString()));
+        cartAddProductRequest.setCat_id(cat_id);
         Log.w(TAG,"cartAddProductRequest"+ "--->" + new Gson().toJson(cartAddProductRequest));
         return cartAddProductRequest;
     }
@@ -1172,5 +1200,31 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
         return notificationCartCountRequest;
     }
 
+    @SuppressLint("NonConstantResourceId")
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.home:
+                callDirections("1");
+                break;
+            case R.id.shop:
+                callDirections("2");
+                break;
+            case R.id.services:
+                callDirections("3");
+                break;
+            case R.id.care:
+                callDirections("4");
+                break;
+            case R.id.community:
+                callDirections("5");
+                break;
+
+            default:
+                return  false;
+        }
+        return true;
+    }
 }
 

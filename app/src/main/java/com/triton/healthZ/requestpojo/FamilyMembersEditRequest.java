@@ -4,34 +4,20 @@ import java.util.List;
 
 public class FamilyMembersEditRequest {
 
-
     /**
-     * pic : [{"image":"http://54.212.108.156:3000/api/uploads/1631712298359.jpg"}]
      * _id : 6141f42e970912297dc72171
-     * user_id : 6141f34a970912297dc72170
-     * relation : Friend
-     * name : Attapattu
+     * user_id : 618230269dcc2a290e5bae9a
+     * name : Mohammed
      * gender : Male
-     * age : 26
-     * height : 5
-     * weight : 60
-     * anymedicalinfo : No medical information
+     * relation_type : Son
+     * health_issue : No issue
+     * dateofbirth : 23-10-2021
+     * anymedicalinfo : No Issue
+     * covide_vac : Yes
+     * weight : 70
+     * pic : [{"image":"http://Google.com"}]
      */
-
     private String _id;
-    private String user_id;
-    private String relation;
-    private String name;
-    private String gender;
-    private int age;
-    private String height;
-    private String weight;
-    private String anymedicalinfo;
-    /**
-     * image : http://54.212.108.156:3000/api/uploads/1631712298359.jpg
-     */
-
-    private List<PicBean> pic;
 
     public String get_id() {
         return _id;
@@ -41,20 +27,27 @@ public class FamilyMembersEditRequest {
         this._id = _id;
     }
 
+    private String user_id;
+    private String name;
+    private String gender;
+    private String relation_type;
+    private String health_issue;
+    private String dateofbirth;
+    private String anymedicalinfo;
+    private String covide_vac;
+    private String weight;
+    /**
+     * image : http://Google.com
+     */
+
+    private List<FamilyMembersEditRequest.PicBean> pic;
+
     public String getUser_id() {
         return user_id;
     }
 
     public void setUser_id(String user_id) {
         this.user_id = user_id;
-    }
-
-    public String getRelation() {
-        return relation;
-    }
-
-    public void setRelation(String relation) {
-        this.relation = relation;
     }
 
     public String getName() {
@@ -73,28 +66,28 @@ public class FamilyMembersEditRequest {
         this.gender = gender;
     }
 
-    public int getAge() {
-        return age;
+    public String getRelation_type() {
+        return relation_type;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setRelation_type(String relation_type) {
+        this.relation_type = relation_type;
     }
 
-    public String getHeight() {
-        return height;
+    public String getHealth_issue() {
+        return health_issue;
     }
 
-    public void setHeight(String height) {
-        this.height = height;
+    public void setHealth_issue(String health_issue) {
+        this.health_issue = health_issue;
     }
 
-    public String getWeight() {
-        return weight;
+    public String getDateofbirth() {
+        return dateofbirth;
     }
 
-    public void setWeight(String weight) {
-        this.weight = weight;
+    public void setDateofbirth(String dateofbirth) {
+        this.dateofbirth = dateofbirth;
     }
 
     public String getAnymedicalinfo() {
@@ -105,20 +98,36 @@ public class FamilyMembersEditRequest {
         this.anymedicalinfo = anymedicalinfo;
     }
 
-    public List<PicBean> getPic() {
+    public String getCovide_vac() {
+        return covide_vac;
+    }
+
+    public void setCovide_vac(String covide_vac) {
+        this.covide_vac = covide_vac;
+    }
+
+    public String getWeight() {
+        return weight;
+    }
+
+    public void setWeight(String weight) {
+        this.weight = weight;
+    }
+
+    public List<FamilyMembersEditRequest.PicBean> getPic() {
         return pic;
     }
 
-    public void setPic(List<PicBean> pic) {
+    public void setPic(List<FamilyMembersEditRequest.PicBean> pic) {
         this.pic = pic;
     }
 
     public static class PicBean {
         private String image;
 
-        public PicBean(String image) {
+        public PicBean(String serverUrlImagePath) {
 
-            this.image = image;
+            this.image =serverUrlImagePath;
         }
 
         public String getImage() {

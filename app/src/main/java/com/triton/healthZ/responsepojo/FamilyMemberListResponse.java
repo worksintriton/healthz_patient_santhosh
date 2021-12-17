@@ -219,7 +219,7 @@ public class FamilyMemberListResponse implements Serializable {
             this.pic = pic;
         }
 
-        public static class PicBean {
+        public static class PicBean implements Serializable {
             private String image;
 
             public String getImage() {
