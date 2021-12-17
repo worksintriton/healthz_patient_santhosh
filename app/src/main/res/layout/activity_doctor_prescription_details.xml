@@ -223,7 +223,7 @@
                                     android:layout_width="@dimen/width_appoitmentdetails"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/futuramediumbt"
-                                    android:text="@string/pet_name_details"
+                                    android:text="Member Name"
                                     android:textColor="@color/black"
                                     android:textSize="14sp" />
 

@@ -124,6 +124,7 @@
     <color name="neutralgray">#9098B1</color>
     <color name="hz_orders_black">#424242</color>
     <color name="hzlineborder">#EBF0FF</color>
+    <color name="custom_bgm">#E3F7EE</color>
 
 
 </resources>

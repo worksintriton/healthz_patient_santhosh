@@ -158,6 +158,8 @@ public class EditFamilyMemberActivity extends AppCompatActivity implements View.
     @BindView(R.id.img_back)
     ImageView img_back;
 
+
+
     List<FamilyMembersEditRequest.PicBean> picBeanList = new ArrayList<>();
 
     List<GetFamilyMemberResponse.DataBean> getfamilymemberslist;
@@ -326,6 +328,8 @@ public class EditFamilyMemberActivity extends AppCompatActivity implements View.
             weight = extras.getString("weight");
         }
 
+        Log.w(TAG,"health_issue : "+health_issue);
+
         if (new ConnectionDetector(EditFamilyMemberActivity.this).isNetworkAvailable(EditFamilyMemberActivity.this)) {
             getfamilymembersListResponseCall();
 
@@ -352,6 +356,20 @@ public class EditFamilyMemberActivity extends AppCompatActivity implements View.
             edt_weight.setText(weight);
         }
 
+        if(covide_vac!=null){
+
+            if(covide_vac.equals("Yes")){
+
+                cb_yes.setChecked(true);
+                cb_no.setChecked(false);
+            }
+
+            else {
+                cb_yes.setChecked(false);
+                cb_no.setChecked(true);
+            }
+        }
+
 
         ArrayList<String> familymemberstypeArrayList = new ArrayList<>();
 
@@ -368,7 +386,10 @@ public class EditFamilyMemberActivity extends AppCompatActivity implements View.
         spinnerArrayAdapter.setDropDownViewResource(R.layout.spinner_item); // The drop down view
 
         sprgender.setAdapter(spinnerArrayAdapter);
-
+        if (gender != null) {
+            int spinnerPosition = spinnerArrayAdapter.getPosition(gender);
+            sprgender.setSelection(spinnerPosition);
+        }
 
         sprrelationtype.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @SuppressLint("LogNotTimber")
@@ -416,6 +437,22 @@ public class EditFamilyMemberActivity extends AppCompatActivity implements View.
             }
         });
 
+        if(covide_vac!=null){
+
+            if(covide_vac.equals("Yes")){
+
+                cb_yes.setChecked(true);
+                cb_no.setChecked(false);
+            }
+
+            else {
+                cb_yes.setChecked(false);
+                cb_no.setChecked(true);
+            }
+        }
+
+
+
         cb_yes.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked)
             {
@@ -430,6 +467,31 @@ public class EditFamilyMemberActivity extends AppCompatActivity implements View.
                 cb_yes.setChecked(false);
             }
         });
+
+        if(health_issue!=null){
+
+            if(health_issue.equals("Pregnant")){
+
+                cb_pregnant.setChecked(true);
+                cb_diabetes.setChecked(false);
+                cb_ocd.setChecked(false);
+
+            }
+
+            else   if(health_issue.equals("OCD")){
+                cb_pregnant.setChecked(false);
+                cb_diabetes.setChecked(false);
+                cb_ocd.setChecked(true);
+
+            }
+
+            else{
+
+                cb_pregnant.setChecked(false);
+                cb_diabetes.setChecked(true);
+                cb_ocd.setChecked(false);
+            }
+        }
 
         cb_pregnant.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked)
@@ -659,11 +721,18 @@ public class EditFamilyMemberActivity extends AppCompatActivity implements View.
             Log.w(TAG, "relationType-->" + relationType);
             familymemberstypeArrayList.add(relationType);
 
-            ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<>(EditFamilyMemberActivity.this, R.layout.spinner_item, familymemberstypeArrayList);
-            spinnerArrayAdapter.setDropDownViewResource(R.layout.spinner_item); // The drop down view
-            sprrelationtype.setAdapter(spinnerArrayAdapter);
-
         }
+        ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<>(EditFamilyMemberActivity.this, R.layout.spinner_item, familymemberstypeArrayList);
+
+        spinnerArrayAdapter.setDropDownViewResource(R.layout.spinner_item); // The drop down view
+
+        Log.w(TAG, "relationType-->" + relation_type);
+        sprrelationtype.setAdapter(spinnerArrayAdapter);
+        if (relation_type != null) {
+            int spinnerPosition = spinnerArrayAdapter.getPosition(relation_type);
+            sprrelationtype.setSelection(spinnerPosition);
+        }
+
 
     }
 

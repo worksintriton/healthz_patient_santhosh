@@ -39,7 +39,60 @@
         android:ellipsize="end"
         android:maxLines="3"
         android:text="Morning - 1, Afternoon - 0, Night - 0"
+        android:visibility="gone"
         tools:ignore="Autofill,LabelFor,TextFields" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="5dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <CheckBox
+                android:id="@+id/chx_m"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:theme="@style/MyCheckBox" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <CheckBox
+                android:id="@+id/chx_a"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:theme="@style/MyCheckBox" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <CheckBox
+                android:id="@+id/chx_n"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:theme="@style/MyCheckBox" />
+        </LinearLayout>
+
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="0dp"

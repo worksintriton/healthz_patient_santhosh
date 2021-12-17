@@ -58,7 +58,7 @@ public class DoctorPrescriptionsDetailsAdapter extends  RecyclerView.Adapter<Rec
         Log.w(TAG,"prescriptionDataList : "+new Gson().toJson(prescriptionDataList));
         holder.tv_tabletname.setText(prescriptionDataList.get(position).getTablet_name());
         holder.tv_quanity.setText(prescriptionDataList.get(position).getQuantity());
-        holder.tv_consumption.setText(prescriptionDataList.get(position).getConsumption());
+        holder.tv_consumption.setText(""+prescriptionDataList.get(position).getConsumption());
         /*if(prescriptionDataList.get(position).getConsumption()!=null&&!prescriptionDataList.get(position).getConsumption().isEmpty()){
 
             String[] namesList = prescriptionDataList.get(position).getConsumption().split(",");
@@ -74,6 +74,17 @@ public class DoctorPrescriptionsDetailsAdapter extends  RecyclerView.Adapter<Rec
 
         }
 */
+
+        if(currentItem.getConsumption().isMorning()){
+            holder.chx_m.setChecked(true);
+        }
+        if(currentItem.getConsumption().isEvening()){
+            holder.chx_a.setChecked(true);
+        }
+        if(currentItem.getConsumption().isNight()){
+            holder.chx_n.setChecked(true);
+        }
+
         if(currentItem.getIntakeBean().isAfterfood()){
             holder.chx_afterfood.setChecked(true);
         }
@@ -110,14 +121,14 @@ public class DoctorPrescriptionsDetailsAdapter extends  RecyclerView.Adapter<Rec
             tv_tabletname = itemView.findViewById(R.id.tv_tabletname);
             tv_quanity = itemView.findViewById(R.id.tv_quanity);
             tv_consumption = itemView.findViewById(R.id.tv_consumption);
-         /*   chx_m = itemView.findViewById(R.id.chx_m);
+            chx_m = itemView.findViewById(R.id.chx_m);
             chx_a = itemView.findViewById(R.id.chx_a);
-            chx_n = itemView.findViewById(R.id.chx_n);*/
+            chx_n = itemView.findViewById(R.id.chx_n);
             chx_afterfood = itemView.findViewById(R.id.chx_afterfood);
             chx_beforefood = itemView.findViewById(R.id.chx_beforefood);
-         /*   chx_m.setClickable(false);
+            chx_m.setClickable(false);
             chx_a.setClickable(false);
-            chx_n.setClickable(false);*/
+            chx_n.setClickable(false);
             chx_afterfood.setClickable(false);
             chx_beforefood.setClickable(false);
 

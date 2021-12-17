@@ -142,10 +142,10 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
     @BindView(R.id.txt_allergies)
     TextView txt_allergies;
 
-    @SuppressLint("NonConstantResourceId")
+  /*  @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_comments)
     TextView txt_comments;
-
+*/
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_order_date)
     TextView txt_order_date;
@@ -208,9 +208,9 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
     @BindView(R.id.ll_allergies)
     LinearLayout ll_allergies;
 
-    @SuppressLint("NonConstantResourceId")
+   /* @SuppressLint("NonConstantResourceId")
     @BindView(R.id.ll_comments)
-    LinearLayout ll_comments;
+    LinearLayout ll_comments;*/
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.ll_diagnosis)
@@ -344,6 +344,10 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
     @BindView(R.id.ll_age)
     LinearLayout ll_age;
 
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.ll_bgnd)
+    LinearLayout ll_bgnd;
+
 
     TextView txt_no_records_coupon;
     RecyclerView rv_successfully_cancelled;
@@ -373,12 +377,13 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
         img_emergency_appointment.setVisibility(View.GONE);
 
         ll_allergies.setVisibility(View.GONE);
-        ll_comments.setVisibility(View.GONE);
+       // ll_comments.setVisibility(View.GONE);
         ll_diagnosis.setVisibility(View.GONE);
         ll_doctor_comment.setVisibility(View.GONE);
         txt_diagnosis.setVisibility(View.GONE);
 
         txt_doctor_comment.setVisibility(View.GONE);
+
 
         session = new SessionManager(getApplicationContext());
         HashMap<String, String> user = session.getProfileDetails();
@@ -526,6 +531,7 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
             }
             else if(from.equalsIgnoreCase("PetCompletedAppointmentAdapter")) {
                 img_videocall.setVisibility(View.GONE);
+                ll_bgnd.setBackgroundResource(R.drawable.custom_bgm);
 
                 if (userrate != null && userrate.equalsIgnoreCase("0")) {
                     btn_add_review.setVisibility(View.VISIBLE);
@@ -834,8 +840,8 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
                             txt_allergies.setText("");
                         }
 
-                        ll_comments.setVisibility(View.VISIBLE);
-
+                    //    ll_comments.setVisibility(View.VISIBLE);
+/*
                         if(response.body().getData().getProblem_info() != null && !response.body().getData().getProblem_info().isEmpty() ){
 
                             txt_comments.setText(response.body().getData().getProblem_info());
@@ -843,7 +849,7 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
                         else{
 
                             txt_comments.setText("");
-                        }
+                        }*/
 
                         if(from != null && from.equalsIgnoreCase("PetCompletedAppointmentAdapter")){
                             if(response.body().getData().getDiagnosis() != null && !response.body().getData().getDiagnosis().isEmpty()){
