@@ -362,7 +362,7 @@ public class CartDetailsResponse {
             this.cat_id = cat_id;
         }
 
-        public static class CatIdBean {
+        public static class CatIdBean implements Serializable{
             private String _id;
             private String img_path;
             private String product_cate;
