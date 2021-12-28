@@ -632,9 +632,19 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
                             }else{
                                 img_fav.setBackgroundResource(R.drawable.new_hz_like);
                             }
-                            if(response.body().getProduct_details().getCat_id().get_id()!=null){
+                            if(response.body().getProduct_details().getCat_id()!=null){
 
-                                cat_id = response.body().getProduct_details().getCat_id().get_id();
+                                if(response.body().getProduct_details().getCat_id().get_id()!=null){
+                                    cat_id = response.body().getProduct_details().getCat_id().get_id();
+                                }
+                                else {
+                                    cat_id="";
+                                }
+
+                            }
+                            else {
+
+                                cat_id="";
                             }
                             String product_title = response.body().getProduct_details().getProduct_title();
                             int product_review = response.body().getProduct_details().getProduct_review();
@@ -657,9 +667,23 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
                                 if(response.body().getProduct_details().getThreshould() != null){
                                     threshould = response.body().getProduct_details().getThreshould();
                                 }
-                                if(response.body().getProduct_details().getCat_id().getProduct_cate() != null){
-                                    prod_type = response.body().getProduct_details().getCat_id().getProduct_cate();
+                                if(response.body().getProduct_details().getCat_id()!=null) {
+
+                                    if(response.body().getProduct_details().getCat_id().getProduct_cate() != null){
+                                        prod_type = response.body().getProduct_details().getCat_id().getProduct_cate();
+                                    }
+
+                                    else {
+
+                                        prod_type="";
+                                    }
                                 }
+                                else {
+
+                                    prod_type="";
+                                }
+
+
 
                                 if(response.body().getVendor_details().getBussiness_name() != null) {
                                     business_name = response.body().getVendor_details().getBussiness_name();
@@ -919,6 +943,9 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
 
         if(prod_type != null && !prod_type.isEmpty()){
             txt_prod_type.setText(prod_type);
+        }
+        else {
+            txt_prod_type.setText("");
         }
 
         if(product_review != 0){

@@ -125,6 +125,7 @@ public class PetLoverShopNewFavAdapter extends  RecyclerView.Adapter<RecyclerVie
 
         }
 
+/*
 
         if(currentItem.isProduct_fav()){
               Glide.with(context)
@@ -135,6 +136,7 @@ public class PetLoverShopNewFavAdapter extends  RecyclerView.Adapter<RecyclerVie
                       .load(R.drawable.dislike)
                       .into(holder.img_fav);
           }
+*/
 
 
         Log.w(TAG,"getThumbnail_image : "+currentItem.getThumbnail_image());

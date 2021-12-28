@@ -74,8 +74,20 @@ public class Cart_Adapter extends  RecyclerView.Adapter<RecyclerView.ViewHolder>
 
             petImgBeanList.add(productImgBeanList.get(i).getProduct_img());
         }
-        if (data.get(position).getCat_id().getProduct_cate() != null) {
-            holder.txt_products_categ.setText(data.get(position).getCat_id().getProduct_cate());
+        if (data.get(position).getCat_id()!=null){
+
+            if (data.get(position).getCat_id().getProduct_cate() != null) {
+                holder.txt_products_categ.setText(data.get(position).getCat_id().getProduct_cate());
+            }
+            else {
+
+                holder.txt_products_categ.setText("");
+            }
+        }
+
+        else {
+
+            holder.txt_products_categ.setText("");
         }
         if (data.get(position).getProduct_id().getProduct_name() != null) {
             holder.txt_products_title.setText(data.get(position).getProduct_id().getProduct_name());

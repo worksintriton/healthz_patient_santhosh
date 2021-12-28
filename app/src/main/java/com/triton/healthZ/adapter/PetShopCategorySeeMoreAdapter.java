@@ -77,7 +77,7 @@ public class PetShopCategorySeeMoreAdapter extends  RecyclerView.Adapter<Recycle
 //        }
 
 
-        if(data.get(position).isProduct_fav()){
+    /*    if(data.get(position).isProduct_fav()){
             holder.img_like.setVisibility(View.VISIBLE);
             holder.img_dislike.setVisibility(View.GONE);
 
@@ -88,7 +88,7 @@ public class PetShopCategorySeeMoreAdapter extends  RecyclerView.Adapter<Recycle
 
 
 
-        }
+        }*/
 
         Log.w(TAG,"discount : "+data.get(position).getProduct_discount());
 

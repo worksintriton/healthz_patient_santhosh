@@ -88,7 +88,7 @@ public class PetShopTodayDealsSeeMoreAdapter extends  RecyclerView.Adapter<Recyc
 
 
 
-
+/*
         if(currentItem.isProduct_fav()){
             holder.img_like.setVisibility(View.VISIBLE);
             holder.img_dislike.setVisibility(View.GONE);
@@ -96,7 +96,7 @@ public class PetShopTodayDealsSeeMoreAdapter extends  RecyclerView.Adapter<Recyc
         else{
             holder.img_dislike.setVisibility(View.VISIBLE);
             holder.img_like.setVisibility(View.GONE);
-        }
+        }*/
         Log.w(TAG,"discount : "+data.get(position).getProduct_discount());
 
 
