@@ -87,9 +87,7 @@ public class PetShopProductDetailsImageAdapter extends  RecyclerView.Adapter<Rec
             holder.txt_products_offer.setVisibility(View.VISIBLE);
             holder.txt_products_offer.setText(productListBean.getProduct_discount()+" % off");
         }
-        else{
-            holder.txt_products_offer.setText("0 % off");
-        }
+
 
         if (productListBean.getThumbnail_image() != null && !productListBean.getThumbnail_image().isEmpty()) {
 

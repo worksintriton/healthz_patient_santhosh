@@ -590,13 +590,14 @@
                 android:layout_marginEnd="20dp"
                 android:orientation="vertical">
 
-                <de.hdodenhof.circleimageview.CircleImageView
+                <ImageView
                     android:id="@+id/img_selectedserviceimage"
                     android:layout_width="65dp"
                     android:layout_height="75dp"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
-                    android:src="@drawable/services" />
+                    android:src="@drawable/services"
+                   />
 
                 <TextView
                     android:id="@+id/txt_selected_servicesname"

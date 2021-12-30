@@ -562,17 +562,30 @@
 
             </LinearLayout>
 
-            <LinearLayout
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_marginBottom="20dp"
-                android:background="@drawable/new_solid_bgm">
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/new_solid_bgm"
+                    android:orientation="vertical">
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:src="@drawable/icnpattern"
+                    android:orientation="vertical"
+                    android:scaleType="fitCenter"></ImageView>
+
                 <RelativeLayout
                     android:id="@+id/rl_relat_prod"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/icnpattern">
+                    android:layout_height="wrap_content">
 
                     <TextView
                         android:id="@+id/txt_prod_related"
@@ -583,7 +596,7 @@
                         android:layout_marginEnd="10dp"
                         android:fontFamily="@font/futuramediumbt"
                         android:text="You Might Also Like"
-                        android:textColor="@color/green"
+                        android:textColor="@color/green_colour"
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
@@ -591,7 +604,7 @@
                         android:id="@+id/rv_relatedproducts"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_below="@+id/txt_prod_related"
+                        android:layout_below="@id/txt_prod_related"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="10dp"
@@ -599,8 +612,7 @@
 
                 </RelativeLayout>
 
-            </LinearLayout>
-
+            </FrameLayout>
 
 
         </LinearLayout>

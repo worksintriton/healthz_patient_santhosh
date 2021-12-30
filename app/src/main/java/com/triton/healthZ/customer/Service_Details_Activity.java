@@ -754,13 +754,14 @@ public class Service_Details_Activity extends AppCompatActivity implements View.
                         if(selectedServiceImagepath != null && !selectedServiceImagepath.isEmpty()){
                             Glide.with(Service_Details_Activity.this)
                                     .load(selectedServiceImagepath)
+                                    .centerCrop()
                                     .into(img_selectedserviceimage);
 
                         }
 
                         else {
 
-                            img_selectedserviceimage.setImageResource(R.drawable.services);
+                            img_selectedserviceimage.setImageResource(R.drawable.app_logo);
                         }
 
 

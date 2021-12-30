@@ -21,6 +21,7 @@ import com.triton.healthz.adapter.NotificationDashboardAdapter;
 
 import com.triton.healthz.api.APIClient;
 import com.triton.healthz.api.RestApiInterface;
+import com.triton.healthz.customer.CustomerProfileScreenActivity;
 import com.triton.healthz.doctor.DoctorDashboardActivity;
 import com.triton.healthz.customer.CustomerDashboardActivity;
 import com.triton.healthz.requestpojo.NotificationGetlistRequest;
@@ -122,6 +123,15 @@ public class NotificationActivity extends AppCompatActivity {
         img_profile.setVisibility(View.VISIBLE);
 
 
+
+        img_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), CustomerProfileScreenActivity.class);
+                intent.putExtra("fromactivity",TAG);
+                startActivity(intent);
+            }
+        });
 
         img_back.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -67,6 +68,9 @@ public class VerifyOtpActivity extends AppCompatActivity implements View.OnClick
     @BindView(R.id.txt_resend)
     TextView txt_resend;
 
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.ll_editno)
+    LinearLayout ll_editno;
 
     private ApplicationData applicationData;
     private String phonenumber;
@@ -189,6 +193,14 @@ public class VerifyOtpActivity extends AppCompatActivity implements View.OnClick
 
         });
 */
+
+        ll_editno.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                onBackPressed();
+            }
+        });
 
     }
 

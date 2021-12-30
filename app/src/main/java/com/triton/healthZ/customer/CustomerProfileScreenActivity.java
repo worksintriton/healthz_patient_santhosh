@@ -419,6 +419,10 @@ public class CustomerProfileScreenActivity extends AppCompatActivity implements 
             Intent intent = new Intent(getApplicationContext(),PetMyappointmentsActivity.class);
             startActivity(intent);
             finish();
+        }else if(fromactivity != null && fromactivity.equalsIgnoreCase("NotificationActivity")){
+            Intent intent = new Intent(getApplicationContext(),NotificationActivity.class);
+            startActivity(intent);
+            finish();
         }else if(fromactivity != null && fromactivity.equalsIgnoreCase("MedicalHistoryActivity")){
             Intent intent = new Intent(getApplicationContext(),MedicalHistoryActivity.class);
             startActivity(intent);

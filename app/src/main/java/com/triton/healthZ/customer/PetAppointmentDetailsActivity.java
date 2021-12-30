@@ -1312,6 +1312,7 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
 
 
                              Paymentmethod = response.body().getData().getPayment_method();
+                             Log.w(TAG,"Paymentmethod : "+Paymentmethod);
 
                           if(pet_dob != null){
                                 String[] separated = pet_dob.split("-");
@@ -1342,6 +1343,7 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
                             Log.w(TAG,"SPAppointmentDetailsResponse order_date : "+order_date);
                             String orderid = response.body().getData().getAppointment_UID();
                             String payment_method = response.body().getData().getPayment_method();
+                            Log.w(TAG,"payment_method : "+payment_method);
                             String order_cost = response.body().getData().getService_amount();
                             addr = response.body().getData().getSp_business_info().get(0).getSp_loc();
                             appoinment_status = response.body().getData().getAppoinment_status();

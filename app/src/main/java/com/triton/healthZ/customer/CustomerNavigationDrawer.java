@@ -171,15 +171,15 @@ public class CustomerNavigationDrawer extends AppCompatActivity implements View.
         nav_header_profilename = header.findViewById(R.id.nav_header_profilename);
 
         nav_header_ref_code = view.findViewById(R.id.nav_header_ref_code);
-        nav_header_logout = view.findViewById(R.id.nav_header_logout);
+       // nav_header_logout = view.findViewById(R.id.nav_header_logout);
 
-        nav_header_logout.setOnClickListener(new View.OnClickListener() {
+   /*   //  nav_header_logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 showLogOutAppAlert();
             }
         });
-
+*/
 
 
 
@@ -239,9 +239,9 @@ public class CustomerNavigationDrawer extends AppCompatActivity implements View.
                     gotoMedicalHistory();
                     return true;
 //
-//                case R.id.nav_item_six:
-//                    gotoPaymentdetails();
-//                    return true;
+                case R.id.nav_item_eight:
+                    showLogOutAppAlert();
+                    return true;
                 case R.id.nav_item_seven:
                      gotoNotifications();
                     return true;

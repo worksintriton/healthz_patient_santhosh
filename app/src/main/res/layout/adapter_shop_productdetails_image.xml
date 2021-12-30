@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/ll_root"
     android:layout_width="wrap_content"
-    android:layout_height="285dp"
+    android:layout_height="wrap_content"
     android:layout_marginEnd="10dp"
+    android:layout_marginBottom="10dp"
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
@@ -25,9 +26,9 @@
                 android:id="@+id/img_products_image"
                 android:layout_width="match_parent"
                 android:layout_height="140dp"
-                android:background="@drawable/image_thumbnail"
                 android:contentDescription="@string/image"
-                android:scaleType="fitXY" />
+                android:scaleType="fitXY"
+                android:src="@drawable/image_thumbnail"/>
 
             <ImageView
                 android:id="@+id/img_like"
@@ -65,54 +66,62 @@
                     android:layout_marginEnd="5dp"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/txt_products_title"
-                        android:layout_width="match_parent"
-                        android:layout_height="35dp"
-                        android:layout_marginTop="10dp"
-                        android:ellipsize="end"
-                        android:fontFamily="@font/montserrat"
-                        android:maxLines="2"
-                        android:text="Lipton Ice Tea Karpuz Aromalı  Gazsız İçecek 6X330 Ml "
-                        android:textColor="@color/lato_black"
-                        android:textSize="12sp" />
-
-                    <RelativeLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginTop="5dp">
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txt_products_title"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/montserrat"
+                            android:maxLines="1"
+                            android:text="Lipton Ice Tea Karpuz Aromalı  Gazsız İçecek 6X330 Ml "
+                            android:textColor="@color/lato_black"
+                            android:textSize="12sp" />
 
                         <RelativeLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentEnd="true"
-                            android:layout_centerVertical="true"
-                            android:background="@drawable/ic_ellipse_rectangle">
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="0.5">
 
-                            <ImageView
-                                android:id="@+id/hand_img"
-                                android:layout_width="8dp"
-                                android:layout_height="8dp"
-                                android:layout_centerVertical="true"
-                                android:layout_marginStart="5dp"
-                                android:background="@drawable/ic_star_filled"
-                                tools:ignore="ContentDescription" />
-
-                            <TextView
-                                android:id="@+id/txt_products_rating"
+                            <RelativeLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
                                 android:layout_centerVertical="true"
-                                android:layout_marginStart="5dp"
-                                android:layout_marginEnd="5dp"
-                                android:layout_toEndOf="@id/hand_img"
-                                android:fontFamily="@font/montserrat"
-                                android:maxLines="1"
-                                android:text="4.5"
-                                android:textColor="@color/black"
-                                android:textSize="10sp" />
+                                android:background="@drawable/ic_ellipse_rectangle">
+
+                                <ImageView
+                                    android:id="@+id/hand_img"
+                                    android:layout_width="8dp"
+                                    android:layout_height="8dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginStart="5dp"
+                                    android:background="@drawable/ic_star_filled"
+                                    tools:ignore="ContentDescription" />
+
+                                <TextView
+                                    android:id="@+id/txt_products_rating"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_toEndOf="@id/hand_img"
+                                    android:fontFamily="@font/montserrat"
+                                    android:maxLines="1"
+                                    android:text="4.5"
+                                    android:textColor="@color/black"
+                                    android:textSize="10sp" />
+                            </RelativeLayout>
                         </RelativeLayout>
-                    </RelativeLayout>
+                    </LinearLayout>
 
                     <TextView
                         android:id="@+id/txt_category_title"
@@ -132,15 +141,28 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="2dp"
-                    android:layout_marginTop="5dp"
-                    android:gravity="end"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="start"
                     android:orientation="horizontal">
 
-                    <RelativeLayout
+                    <TextView
+                        android:id="@+id/txt_offer"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="end">
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:fontFamily="@font/futurabookfont"
+                        android:text="10 % off"
+                        android:textColor="@color/new_red"
+                        android:textSize="12sp"
+                        android:visibility="visible" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:gravity="end">
 
                         <TextView
                             android:id="@+id/txt_product_discount_price"
@@ -150,10 +172,9 @@
                             android:fontFamily="@font/montserrat"
                             android:gravity="end"
                             android:maxLines="1"
-                            android:padding="2dp"
                             android:text="40"
                             android:textColor="@color/black"
-                            android:textSize="14sp" />
+                            android:textSize="12sp" />
 
                         <TextView
                             android:id="@+id/txt_products_price"
@@ -165,34 +186,11 @@
                             android:gravity="end"
                             android:maxLines="1"
                             android:text="60"
-
                             android:textColor="@color/new_green_btn"
-                            android:textSize="14sp" />
+                            android:textSize="12sp" />
 
-                    </RelativeLayout>
+                    </LinearLayout>
 
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp"
-                    android:layout_marginBottom="10dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/txt_offer"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginEnd="5dp"
-                        android:fontFamily="@font/futurabookfont"
-                        android:padding="2dp"
-                        android:text="10 % off"
-                        android:textColor="@color/new_red"
-                        android:textSize="14sp"
-                        android:visibility="visible" />
 
                 </LinearLayout>
 

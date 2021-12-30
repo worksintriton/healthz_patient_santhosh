@@ -598,7 +598,7 @@
     <string name="btn_sign_up">Sign Up</string>
     <string name="phn_num_hint">Enter Phone Number</string>
     <string name="verify_your_phone_number">Verify your phone number</string>
-    <string name="we_have_sent_you_an_sms_with_a_code_to_enter_number">We have sent you an SMS with a code to enter number</string>
+    <string name="we_have_sent_you_an_sms_with_a_code_to_enter_number">The number you entered will be sent an SMS with a code to confirm</string>
     <string name="phone_verification">Phone Verification</string>
     <string name="enter_your_otp_code_here">Enter your OTP code here</string>
     <string name="verify">Verify</string>

@@ -568,11 +568,11 @@
             android:layout_marginEnd="60dp"
             android:layout_marginBottom="10dp"
             android:background="@drawable/new_rounded_corner_btn_red"
-            android:fontFamily="@font/futuramediumbt"
+            android:fontFamily="@font/montserrat_bold"
             android:text="@string/proceedtobuy"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="18sp"
+            android:textSize="14sp"
             android:visibility="visible" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

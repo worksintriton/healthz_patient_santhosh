@@ -91,10 +91,10 @@ public class DoctorPrescriptionDetailsActivity extends AppCompatActivity {
     @BindView(R.id.txt_pet_name)
     TextView txt_pet_name;
 
-    @SuppressLint("NonConstantResourceId")
+    /*@SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_pet_type)
     TextView txt_pet_type;
-
+*/
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_breed)
     TextView txt_breed;
@@ -403,11 +403,11 @@ public class DoctorPrescriptionDetailsActivity extends AppCompatActivity {
                             }else{
                                 txt_pet_name.setText("");
                             }
-                            if(response.body().getData().getRelation_type() != null && !response.body().getData().getRelation_type().isEmpty()){
+                      /*      if(response.body().getData().getRelation_type() != null && !response.body().getData().getRelation_type().isEmpty()){
                                 txt_pet_type.setText(response.body().getData().getRelation_type());
                             }else{
                                 txt_pet_type.setText("");
-                            }
+                            }*/
                             /*if(response.body().getData().getPet_breed() != null && !response.body().getData().getPet_breed().isEmpty()){
                                 txt_breed.setText(response.body().getData().getPet_breed());
                             }else{
