@@ -1279,7 +1279,7 @@ public class PetNewAppointmentDetailsResponse {
             private int consultancy_fees;
             private boolean calender_status;
             private int comments;
-            private int rating;
+            private double rating;
             private int doctor_exp;
             private String updatedAt;
             private String createdAt;
@@ -1498,11 +1498,11 @@ public class PetNewAppointmentDetailsResponse {
                 this.comments = comments;
             }
 
-            public int getRating() {
+            public double getRating() {
                 return rating;
             }
 
-            public void setRating(int rating) {
+            public void setRating(double rating) {
                 this.rating = rating;
             }
 

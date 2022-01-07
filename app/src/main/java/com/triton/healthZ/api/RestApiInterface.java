@@ -441,7 +441,7 @@ public interface RestApiInterface {
 
 
     /*View the Product's by cat id see more*/
-    @POST("product_details/fetch_product_by_cat")
+    @POST("product_details/cat_text_search")
     Call<FetctProductByCatResponse> fetctProductByCatResponseCall(@Header("Content-Type") String type, @Body FetctProductByCatRequest fetctProductByCatRequest);
 
     /*View Single Product by Id*/

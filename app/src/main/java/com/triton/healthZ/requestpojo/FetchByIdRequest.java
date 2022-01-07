@@ -9,6 +9,8 @@ public class FetchByIdRequest {
 
     private String user_id;
     private String product_id;
+    private String cat_id;
+    private String search_string;
 
     public String getUser_id() {
         return user_id;
@@ -24,5 +26,21 @@ public class FetchByIdRequest {
 
     public void setProduct_id(String product_id) {
         this.product_id = product_id;
+    }
+
+    public String getCat_id() {
+        return cat_id;
+    }
+
+    public void setCat_id(String cat_id) {
+        this.cat_id = cat_id;
+    }
+
+    public String getSearch_string() {
+        return search_string;
+    }
+
+    public void setSearch_string(String search_string) {
+        this.search_string = search_string;
     }
 }

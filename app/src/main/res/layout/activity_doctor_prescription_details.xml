@@ -41,7 +41,7 @@
                     android:id="@+id/header"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/new_gree_color"
+                    android:background="@drawable/icrrectangle"
                     android:orientation="vertical">
 
                     <LinearLayout
@@ -57,10 +57,10 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
                             android:ellipsize="end"
-                            android:fontFamily="@font/futuramediumbt"
+                            android:fontFamily="@font/montserrat_bold"
                             android:maxLines="1"
                             android:text="@string/doctor_name"
-                            android:textColor="@color/white"
+                            android:textColor="@color/black"
                             android:textSize="12sp" />
 
                         <TextView
@@ -69,10 +69,10 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
                             android:ellipsize="end"
-                            android:fontFamily="@font/futuramediumbt"
+                            android:fontFamily="@font/montserrat"
                             android:maxLines="1"
                             android:text="@string/doctor_id"
-                            android:textColor="@color/white"
+                            android:textColor="@color/black"
                             android:textSize="12sp"
                             android:textStyle="normal" />
 
@@ -82,10 +82,10 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
                             android:ellipsize="end"
-                            android:fontFamily="@font/futuramediumbt"
+                            android:fontFamily="@font/montserrat"
                             android:maxLines="1"
                             android:text="@string/clinic_name"
-                            android:textColor="@color/white"
+                            android:textColor="@color/black"
                             android:textSize="12sp" />
 
                         <TextView
@@ -107,10 +107,10 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
                             android:ellipsize="end"
-                            android:fontFamily="@font/futuramediumbt"
+                            android:fontFamily="@font/montserrat"
                             android:maxLines="2"
                             android:text="@string/clinic_loc"
-                            android:textColor="@color/white"
+                            android:textColor="@color/black"
                             android:textSize="12sp" />
 
                         <TextView
@@ -120,10 +120,10 @@
                             android:layout_marginTop="5dp"
                             android:layout_marginBottom="5dp"
                             android:ellipsize="end"
-                            android:fontFamily="@font/futuramediumbt"
+                            android:fontFamily="@font/montserrat"
                             android:maxLines="1"
                             android:text="@string/clinic_number"
-                            android:textColor="@color/white"
+                            android:textColor="@color/black"
                             android:textSize="12sp" />
 
 
@@ -734,19 +734,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@color/green"
         android:gravity="end"
         android:orientation="vertical">
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="110dp"
-            android:background="@drawable/icassest"
-            android:alpha="0.1">
+            android:layout_height="wrap_content"
+           >
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/green"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -897,6 +896,16 @@
                 </LinearLayout>
 
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:alpha="0.1"
+                android:background="@drawable/icassest"
+                android:orientation="vertical"
+
+                ></LinearLayout>
+
         </FrameLayout>
 
 

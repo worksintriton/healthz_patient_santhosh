@@ -681,7 +681,11 @@ public class PetLoverDoctorChoosePaymentMethodActivity extends AppCompatActivity
                 if (response.body() != null) {
                     if(response.body().getCode() == 200){
                         if(response.body().getMessage() != null){
-                            showPaymentSuccessalert(response.body().getMessage());
+                            if(response.body().getData()!=null){
+
+                                showPaymentSuccessalert(response.body().getMessage(),response.body().getData());
+                            }
+
                             // showSuceessLoading(response.body().getMessage());
 
                         }
@@ -879,7 +883,7 @@ public class PetLoverDoctorChoosePaymentMethodActivity extends AppCompatActivity
         return notificationSendRequest;
     }
 
-    private void showPaymentSuccessalert(String message) {
+    private void showPaymentSuccessalert(String message, PetAppointmentCreateResponse.DataBean data) {
         try {
 
             dialog = new Dialog(PetLoverDoctorChoosePaymentMethodActivity.this);
@@ -889,7 +893,19 @@ public class PetLoverDoctorChoosePaymentMethodActivity extends AppCompatActivity
             txt_success_msg.setText(message);
             Button btn_ok = dialog.findViewById(R.id.btn_ok);
             btn_ok.setText("View");
+            ImageView img_close = dialog.findViewById(R.id.img_close);
+            img_close.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
 
+                    dialog.dismiss();
+                    Intent intent = new Intent(PetLoverDoctorChoosePaymentMethodActivity.this, DoctorClinicDetailsActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    intent.putExtra("doctorid",doctorid);
+                    intent.putExtra("fromactivity",TAG);
+                    startActivity(intent);
+
+                }
+            });
             btn_ok.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

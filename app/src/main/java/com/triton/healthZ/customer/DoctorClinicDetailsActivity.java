@@ -892,6 +892,8 @@ public class DoctorClinicDetailsActivity extends AppCompatActivity implements Vi
         }else if(fromactivity != null && fromactivity.equalsIgnoreCase("PetLoverDoctorNewFavAdapter")){
             Intent intent = new Intent(DoctorClinicDetailsActivity.this,PetloverFavListActivity.class);
             startActivity(intent);
+        }else if(fromactivity != null && fromactivity.equalsIgnoreCase("PetLoverDoctorChoosePaymentMethodActivity")){
+           callDirections("4");
         }else {
             Intent intent = new Intent(DoctorClinicDetailsActivity.this, CustomerDashboardActivity.class);
             startActivity(intent);

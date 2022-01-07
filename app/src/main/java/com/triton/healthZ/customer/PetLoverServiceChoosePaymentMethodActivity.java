@@ -707,7 +707,11 @@ public class PetLoverServiceChoosePaymentMethodActivity extends AppCompatActivit
                 if (response.body() != null) {
                     if(response.body().getCode() == 200){
                         if(response.body().getMessage() != null){
-                            showPaymentSuccessalert(response.body().getMessage());
+                            if(response.body().getData()!=null){
+
+                                showPaymentSuccessalert(response.body().getMessage(),response.body().getData());
+
+                            }
 
                             // showSuceessLoading(response.body().getMessage());
                         }
@@ -815,7 +819,7 @@ public class PetLoverServiceChoosePaymentMethodActivity extends AppCompatActivit
         spCreateAppointmentRequest.setDisplay_date(displaydateandtime);
         spCreateAppointmentRequest.setServer_date_time("");
         spCreateAppointmentRequest.setPayment_id(Payment_id);
-        spCreateAppointmentRequest.setPayment_method("Online");
+        spCreateAppointmentRequest.setPayment_method(selectedPaymentMethod);
         spCreateAppointmentRequest.setService_name(selectedServiceTitle);
         spCreateAppointmentRequest.setService_amount(String.valueOf(Total_price));
         spCreateAppointmentRequest.setService_time(servicetime);
@@ -893,7 +897,7 @@ public class PetLoverServiceChoosePaymentMethodActivity extends AppCompatActivit
         return notificationSendRequest;
     }
 
-    private void showPaymentSuccessalert(String message) {
+    private void showPaymentSuccessalert(String message, SPCreateAppointmentResponse.DataBean data) {
         try {
 
             dialog = new Dialog(PetLoverServiceChoosePaymentMethodActivity.this);
@@ -903,7 +907,20 @@ public class PetLoverServiceChoosePaymentMethodActivity extends AppCompatActivit
             txt_success_msg.setText(message);
             Button btn_ok = dialog.findViewById(R.id.btn_ok);
             btn_ok.setText("View");
+            ImageView img_close = dialog.findViewById(R.id.img_close);
+            img_close.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
 
+                    Intent i = new Intent(PetLoverServiceChoosePaymentMethodActivity.this, Service_Details_Activity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    i.putExtra("spid",spid);
+                    i.putExtra("catid",catid);
+                    i.putExtra("from",TAG);
+                    startActivity(i);
+
+
+                }
+            });
             btn_ok.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

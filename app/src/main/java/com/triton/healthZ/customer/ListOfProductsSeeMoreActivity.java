@@ -3,6 +3,7 @@ package com.triton.healthz.customer;
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -205,6 +206,10 @@ public class ListOfProductsSeeMoreActivity extends AppCompatActivity implements 
     ImageView img_back;
 
     @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_toolbar_title)
+    TextView txt_toolbar_title;
+
+    @SuppressLint("NonConstantResourceId")
     @BindView(R.id.img_sos)
     ImageView img_sos;
 
@@ -238,6 +243,10 @@ public class ListOfProductsSeeMoreActivity extends AppCompatActivity implements 
 
     FloatingActionButton fab;
 
+    private int pastVisibleItem,visibleItemCount,totalItemCount,previousTotal =0;
+
+    private final int viewThreshold = 5;
+
     @SuppressLint("LogNotTimber")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -260,6 +269,17 @@ public class ListOfProductsSeeMoreActivity extends AppCompatActivity implements 
             notificationandCartCountResponseCall();
         }
 
+        SharedPreferences prefs = getSharedPreferences("cate_name", MODE_PRIVATE);
+        String name = prefs.getString("cate_name", "No name defined");//"No name defined" is the default value.
+
+        if(name!=null){
+            txt_toolbar_title.setText(name);
+
+        }
+        else {
+
+            txt_toolbar_title.setText("Shop");
+        }
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -314,15 +334,17 @@ public class ListOfProductsSeeMoreActivity extends AppCompatActivity implements 
         rv_today_deal.setLayoutManager(gridLayoutManager);
         rv_today_deal.setItemAnimator(new DefaultItemAnimator());
 
+
         if (fromactivity != null && fromactivity.equalsIgnoreCase("ProductFiltersActivity")) {
             if (new ConnectionDetector(getApplicationContext()).isNetworkAvailable(getApplicationContext())) {
                 productFiltersResponseCall();
             }
         }else{
             if (new ConnectionDetector(getApplicationContext()).isNetworkAvailable(getApplicationContext())) {
-                fetctProductByCatResponseCall();
+                fetctProductByCatResponseCall(searchString);
             }
         }
+
         img_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -344,9 +366,6 @@ public class ListOfProductsSeeMoreActivity extends AppCompatActivity implements 
             }
         });
 
-
-
-        initResultRecylerView();
 
      /*   rl_filters.setOnClickListener(this);
         edt_filter.setOnClickListener(this);*/
@@ -388,12 +407,12 @@ public class ListOfProductsSeeMoreActivity extends AppCompatActivity implements 
                 searchString = s.toString();
                 if(!searchString.isEmpty()){
                     if (new ConnectionDetector(getApplicationContext()).isNetworkAvailable(getApplicationContext())) {
-                        productSearchResponseCall(searchString);
+                        fetctProductByCatResponseCall(searchString);
                     }
                 }else{
                     searchString ="";
                     if (new ConnectionDetector(getApplicationContext()).isNetworkAvailable(getApplicationContext())) {
-                        productSearchResponseCall(searchString);
+                        fetctProductByCatResponseCall(searchString);
                     }
 
                 }
@@ -476,12 +495,12 @@ public class ListOfProductsSeeMoreActivity extends AppCompatActivity implements 
     }
 
     @SuppressLint("LogNotTimber")
-    public void fetctProductByCatResponseCall(){
+    public void fetctProductByCatResponseCall(String searchString){
         avi_indicator.setVisibility(View.VISIBLE);
         avi_indicator.smoothToShow();
         //Creating an object of our api interface
         RestApiInterface ApiService = APIClient.getClient().create(RestApiInterface.class);
-        Call<FetctProductByCatResponse> call = ApiService.fetctProductByCatResponseCall(RestUtils.getContentType(),fetctProductByCatRequest());
+        Call<FetctProductByCatResponse> call = ApiService.fetctProductByCatResponseCall(RestUtils.getContentType(),fetctProductByCatRequest(searchString));
 
         Log.w(TAG,"url  :%s"+ call.request().url().toString());
 
@@ -496,6 +515,7 @@ public class ListOfProductsSeeMoreActivity extends AppCompatActivity implements 
                         Log.w(TAG,"ShopDashboardResponse" + new Gson().toJson(response.body()));
 
                         if(response.body().getData()!= null && response.body().getData().size()>0){
+
                             catListSeeMore = response.body().getData();
 
                             if(catListSeeMore!=null&&catListSeeMore.size()!=0){
@@ -532,8 +552,28 @@ public class ListOfProductsSeeMoreActivity extends AppCompatActivity implements 
                                 Log.w(TAG,"catListSeeMoreAll size : "+catListSeeMoreAll.size());
 
 
+                                if(catListSeeMoreAll!=null&&catListSeeMoreAll.size()>0){
 
-                                setView(catListSeeMoreAll);
+                                    txt_no_records.setVisibility(View.GONE);
+                                    rv_today_deal.setVisibility(View.VISIBLE);
+
+                                    setView(catListSeeMoreAll);
+
+                                }
+                                else{
+
+                                    txt_no_records.setVisibility(View.VISIBLE);
+                                    txt_no_records.setText("No Products Found");
+
+
+                                }
+                            }
+
+                            else{
+
+                                txt_no_records.setVisibility(View.VISIBLE);
+                                txt_no_records.setText("No Products Found");
+
 
                             }
 
@@ -557,7 +597,7 @@ public class ListOfProductsSeeMoreActivity extends AppCompatActivity implements 
 
     }
     @SuppressLint("LogNotTimber")
-    private FetctProductByCatRequest fetctProductByCatRequest() {
+    private FetctProductByCatRequest fetctProductByCatRequest(String searchString) {
         /*
          * cat_id : 5fec14a5ea832e2e73c1fc79
          * skip_count : 6
@@ -566,6 +606,8 @@ public class ListOfProductsSeeMoreActivity extends AppCompatActivity implements 
         FetctProductByCatRequest fetctProductByCatRequest = new FetctProductByCatRequest();
         fetctProductByCatRequest.setCat_id(cat_id);
         fetctProductByCatRequest.setSkip_count(CURRENT_PAGE);
+        fetctProductByCatRequest.setSearch_string(searchString);
+
         Log.w(TAG,"fetctProductByCatRequest"+ "--->" + new Gson().toJson(fetctProductByCatRequest));
         return fetctProductByCatRequest;
     }
@@ -578,7 +620,7 @@ public class ListOfProductsSeeMoreActivity extends AppCompatActivity implements 
 
 
     }
-
+/*
     private void initResultRecylerView() {
         rv_today_deal.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
@@ -592,19 +634,37 @@ public class ListOfProductsSeeMoreActivity extends AppCompatActivity implements 
 
                 LinearLayoutManager linearLayoutManager = (LinearLayoutManager) recyclerView.getLayoutManager();
 
-                if (!isLoading) {
+                visibleItemCount = linearLayoutManager.getChildCount();
+                totalItemCount = linearLayoutManager.getItemCount();
+                pastVisibleItem = linearLayoutManager.findFirstVisibleItemPosition();
+                if (dy > 0) {
+                    if (isLoading) {
+                        if (totalItemCount > previousTotal) {
+
+                            isLoading = false;
+                            previousTotal = totalItemCount;
+                        }
+                    }
+
+                    if (!isLoading && (totalItemCount - visibleItemCount) <= (pastVisibleItem+viewThreshold)) {
+                        CURRENT_PAGE = CURRENT_PAGE + 1;
+                        fetctProductByCatResponseCall(searchString);
+                        isLoading = true;
+                    }
+                }
+            *//*    if (!isLoading) {
                     if (linearLayoutManager != null && linearLayoutManager.findLastCompletelyVisibleItemPosition() == catListSeeMoreAll.size() - 1) {
                         //bottom of list!
                         CURRENT_PAGE += 1;
 
                         Log.w(TAG, "isLoading? " + isLoading + " currentPage " + CURRENT_PAGE);
                         isLoading = true;
-                        fetctProductByCatResponseCall();
+                        fetctProductByCatResponseCall(searchString);
                     }
-                }
+                }*//*
             }
         });
-    }
+    }*/
 
 
     @SuppressLint("NonConstantResourceId")

@@ -801,6 +801,7 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
                                 btn_reschedule_appointment.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View view) {
+                                        Toasty.warning(getApplicationContext(),"Note Re-schedule can be done once",Toasty.LENGTH_LONG).show();
                                         Intent intent = new Intent(PetAppointmentDetailsActivity.this,PetAppointment_Doctor_Date_Time_Activity.class);
                                         intent.putExtra("doctorid",response.body().getData().getDoc_business_info().get(0).getUser_id());
                                         intent.putExtra("fromactivity",TAG);
@@ -1080,7 +1081,16 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
 
                 if (response.body() != null) {
                     if(response.body().getCode() == 200){
-                        notificationSendResponseCall();
+
+                        if(response.body().getData()!=null){
+
+                            if(response.body().getData().getAppointment_UID()!=null){
+
+                                notificationSendResponseCall(response.body().getData().getAppointment_UID());
+
+                            }
+
+                        }
 
                     }
 
@@ -1496,11 +1506,11 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
 
 
     @SuppressLint("LogNotTimber")
-    private void notificationSendResponseCall() {
+    private void notificationSendResponseCall(String appointment_uid) {
         avi_indicator.setVisibility(View.VISIBLE);
         avi_indicator.smoothToShow();
         RestApiInterface ApiService = APIClient.getClient().create(RestApiInterface.class);
-        Call<NotificationSendResponse> call = ApiService.notificationSendResponseCall(RestUtils.getContentType(),notificationSendRequest());
+        Call<NotificationSendResponse> call = ApiService.notificationSendResponseCall(RestUtils.getContentType(),notificationSendRequest(appointment_uid));
 
         Log.w(TAG,"url  :%s"+ call.request().url().toString());
 
@@ -1544,7 +1554,7 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
 
     }
     @SuppressLint("LogNotTimber")
-    private NotificationSendRequest notificationSendRequest() {
+    private NotificationSendRequest notificationSendRequest(String appointment_uid) {
 
         /*
          * status : Payment Failed
@@ -1561,7 +1571,7 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
         NotificationSendRequest notificationSendRequest = new NotificationSendRequest();
         notificationSendRequest.setStatus("Patient Appointment Cancelled");
         notificationSendRequest.setDate(currentDateandTime);
-        notificationSendRequest.setAppointment_UID(appointmentid);
+        notificationSendRequest.setAppointment_UID(appointment_uid);
         notificationSendRequest.setUser_id(userid);
         notificationSendRequest.setDoctor_id(doctorid);
 

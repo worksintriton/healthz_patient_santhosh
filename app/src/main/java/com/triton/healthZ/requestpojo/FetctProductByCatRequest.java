@@ -19,8 +19,15 @@ public class FetctProductByCatRequest {
 
     private String cat_id;
     private int skip_count;
+    private String search_string;
 
+    public String getSearch_string() {
+        return search_string;
+    }
 
+    public void setSearch_string(String search_string) {
+        this.search_string = search_string;
+    }
 
     public String getCat_id() {
         return cat_id;

@@ -3,6 +3,7 @@ package com.triton.healthz.adapter;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -120,6 +121,11 @@ public class PetShopProductDetailsAdapter extends  RecyclerView.Adapter<Recycler
                     if(product_details.get(getAdapterPosition()).getProduct_list() != null && product_details.get(getAdapterPosition()).getProduct_list().size()>0) {
                         Intent intent = new Intent(context, ListOfProductsSeeMoreActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         intent.putExtra("cat_id", product_details.get(getAdapterPosition()).getCat_id());
+                        // MY_PREFS_NAME - a static String variable like:
+//public static final String MY_PREFS_NAME = "MyPrefsFile";
+                        SharedPreferences.Editor editor = context.getSharedPreferences("cate_name", Context.MODE_PRIVATE).edit();
+                        editor.putString("cate_name", product_details.get(getAdapterPosition()).getCat_name());
+                        editor.apply();
                         context.startActivity(intent);
                     }
 
