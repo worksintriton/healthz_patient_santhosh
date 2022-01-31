@@ -603,7 +603,7 @@
     <string name="enter_your_otp_code_here">Enter your OTP code here</string>
     <string name="verify">Verify</string>
     <string name="didn_t_you_received_any_code">Didn’t you received any code?</string>
-    <string name="resent_new_code">Resent new code</string>
+    <string name="resent_new_code">Resend New Code</string>
     <string name="create_your_account">Create your Account</string>
     <string name="email_address">Email Address</string>
     <string name="password">Password</string>

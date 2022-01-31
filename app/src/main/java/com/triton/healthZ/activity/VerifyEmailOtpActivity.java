@@ -210,7 +210,7 @@ public class VerifyEmailOtpActivity extends AppCompatActivity implements View.On
                 if (response.body() != null) {
                     if (200 == response.body().getCode()) {
                         otp_view.setOTP("");
-                        Toasty.success(getApplicationContext(),"OTP Resent Successfully", Toast.LENGTH_SHORT, true).show();
+                        Toasty.success(getApplicationContext(),"OTP Resend Successfully", Toast.LENGTH_SHORT, true).show();
                         if(response.body().getData().getOtp() !=0){
                             otp = response.body().getData().getOtp();
                         }

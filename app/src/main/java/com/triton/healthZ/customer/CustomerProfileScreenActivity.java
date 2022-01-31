@@ -284,6 +284,7 @@ public class CustomerProfileScreenActivity extends AppCompatActivity implements 
         txt_logout.setOnClickListener(this);
         ll_add.setOnClickListener(this);
         txt_edit_profile.setOnClickListener(this);
+        txt_edit_image.setVisibility(View.GONE);
         txt_edit_image.setOnClickListener(this);
 
         img_notification.setOnClickListener(this);
@@ -952,6 +953,9 @@ public class CustomerProfileScreenActivity extends AppCompatActivity implements 
                 startActivity(new Intent(getApplicationContext(), PetLoverEditProfileActivity.class));
                 break;
             case R.id.txt_edit_image:
+                startActivity(new Intent(getApplicationContext(), PetLoverEditProfileImageActivity.class));
+                break;
+                case R.id.img_profile1:
                 startActivity(new Intent(getApplicationContext(), PetLoverEditProfileImageActivity.class));
                 break;
 
