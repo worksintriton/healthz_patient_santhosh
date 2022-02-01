@@ -65,18 +65,18 @@
                 android:textColor="@color/white"
                 android:textSize="20sp" />
 
-           <!-- <com.triton.healthZ.appUtils.PinEntryEditText
-                android:id="@+id/edt_pin_entry"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:cursorVisible="false"
-                android:digits="1234567890"
-                android:inputType="number"
-                android:maxLength="6"
-                android:textColor="@color/white"
-                android:textIsSelectable="false"
-                android:textSize="20sp" />-->
+            <!-- <com.triton.healthZ.appUtils.PinEntryEditText
+                 android:id="@+id/edt_pin_entry"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="20dp"
+                 android:cursorVisible="false"
+                 android:digits="1234567890"
+                 android:inputType="number"
+                 android:maxLength="6"
+                 android:textColor="@color/white"
+                 android:textIsSelectable="false"
+                 android:textSize="20sp" />-->
 
             <in.aabhasjindal.otptextview.OtpTextView
                 android:id="@+id/otp_view"
@@ -92,30 +92,52 @@
                 app:bar_active_color="#ffffff"
                 app:bar_inactive_color="@color/white"
                 android:layout_marginTop="20dp"
-                android:layout_gravity="center">
-
-            </in.aabhasjindal.otptextview.OtpTextView>
+                android:layout_gravity="center"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="30dp"
-                android:fontFamily="@font/montserrat_bold"
-                android:text="@string/didn_t_you_received_any_code"
-                android:textColor="@color/greenishh"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/txt_resend"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:fontFamily="@font/montserrat_bold"
-                android:text="@string/resent_new_code"
+                android:id="@+id/txt_timer_count"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="15dp"
+                android:fontFamily="@font/montserrat"
+                android:text="02:34"
                 android:textColor="@color/white"
-                android:textSize="16sp" />
+                android:textSize="15sp"
+                android:layout_marginStart="10dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginTop="30dp"
+
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/llresendotp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="@string/didn_t_you_received_any_code"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/txt_resend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="@string/resent_new_code"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+
 
             <Button
                 android:id="@+id/btn_verifyotp"

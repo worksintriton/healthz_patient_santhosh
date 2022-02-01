@@ -117,8 +117,8 @@ public class AddYourFamilyMembersOldActivity extends AppCompatActivity implement
     CheckBox cb_ocd;
 
     @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.edt_dob)
-    EditText edt_dob;
+    @BindView(R.id.txt_dob)
+    TextView txt_dob;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.edt_bio)
@@ -399,12 +399,13 @@ public class AddYourFamilyMembersOldActivity extends AppCompatActivity implement
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int arg2, long arg3) {
 
+                ((TextView) parent.getChildAt(0)).setTextColor(getResources().getColor(R.color.green));
+                strrelationtype = sprrelationtype.getSelectedItem().toString();
+
+                Log.w(TAG,"strrelationtype:"+strrelationtype);
                 if(++sprflag > 1) {
 
-                    ((TextView) parent.getChildAt(0)).setTextColor(getResources().getColor(R.color.green));
-                    strrelationtype = sprrelationtype.getSelectedItem().toString();
 
-                    Log.w(TAG,"strrelationtype:"+strrelationtype);
                 }
 
 
@@ -422,12 +423,13 @@ public class AddYourFamilyMembersOldActivity extends AppCompatActivity implement
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int arg2, long arg3) {
 
+                ((TextView) parent.getChildAt(0)).setTextColor(getResources().getColor(R.color.green));
+                strgendertype = sprgender.getSelectedItem().toString();
+
+                Log.w(TAG,"strgendertype:"+strgendertype);
                 if(++sprflag > 1) {
 
-                    ((TextView) parent.getChildAt(0)).setTextColor(getResources().getColor(R.color.green));
-                    strgendertype = sprgender.getSelectedItem().toString();
 
-                    Log.w(TAG,"strgendertype:"+strgendertype);
                 }
 
 
@@ -482,7 +484,7 @@ public class AddYourFamilyMembersOldActivity extends AppCompatActivity implement
 
 
 
-        edt_dob.setOnClickListener(new View.OnClickListener() {
+        txt_dob.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -514,9 +516,9 @@ public class AddYourFamilyMembersOldActivity extends AppCompatActivity implement
             // set date picker for current date
             // add pickerListener listner to date picker
             // return new DatePickerDialog(this, pickerListener, year, month,day);
-            DatePickerDialog dialog = new DatePickerDialog(this, pickerListener, year, month, day);
-            dialog.getDatePicker().setMaxDate(System.currentTimeMillis());
-            return dialog;
+            DatePickerDialog datePickerDialog = new DatePickerDialog(this, pickerListener, year, month, day);
+            datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis());
+            return datePickerDialog;
         }
         return null;
     }
@@ -554,7 +556,7 @@ public class AddYourFamilyMembersOldActivity extends AppCompatActivity implement
             SelectedLastVaccinateddate = strdayOfMonth + "-" + strMonth + "-" + year;
 
             // Show selected date
-            edt_dob.setText(SelectedLastVaccinateddate);
+            txt_dob.setText(SelectedLastVaccinateddate);
 
         }
     };
@@ -565,46 +567,65 @@ public class AddYourFamilyMembersOldActivity extends AppCompatActivity implement
         int namelength = edt_name.getText().toString().trim().length();
         int weightlength = edt_weight.getText().toString().trim().length();
 
-        if (edt_name.getText().toString() != null && edt_name.getText().toString().trim().equals("") && edt_weight.getText().toString()!= null && edt_weight.getText().toString().trim().equals("")
+        if (edt_name.getText().toString().isEmpty()  &&  edt_weight.getText().toString().trim().isEmpty()
         ) {
             Toasty.warning(getApplicationContext(), "Please enter the fields", Toast.LENGTH_SHORT, true).show();
             can_proceed = false;
         } else if (edt_name.getText().toString().trim().equals("")) {
-            edt_name.setError("Please enter name");
-            edt_name.requestFocus();
+            Toasty.warning(getApplicationContext(), "Please enter name", Toast.LENGTH_SHORT, true).show();
+            /*    edt_name.setError("Please enter name");
+            edt_name.requestFocus();*/
             can_proceed = false;
         }else if (namelength > 25) {
-            edt_name.setError("The maximum length for anname is 25 characters.");
-            edt_name.requestFocus();
+            Toasty.warning(getApplicationContext(), "The maximum length for anname is 25 characters.", Toast.LENGTH_SHORT, true).show();
+
+           /* edt_name.setError("The maximum length for anname is 25 characters.");
+            edt_name.requestFocus();*/
             can_proceed = false;
         }
-        else if (edt_weight.getText().toString().trim().equals("")) {
-            edt_weight.setError("Please enter weight");
-            edt_weight.requestFocus();
+        else if(!validdSelectRelationType()){
+            Toasty.warning(getApplicationContext(), "Please select relation type", Toast.LENGTH_SHORT, true).show();
             can_proceed = false;
-        }
-        else if (weightlength > 5) {
-            edt_weight.setError("The maximum length for an weight is 5 characters.");
-            edt_weight.requestFocus();
+
+        } else if(!validdSelectGenderType()){
+            Toasty.warning(getApplicationContext(), "Please select gender type", Toast.LENGTH_SHORT, true).show();
             can_proceed = false;
+
         }
-        else if (edt_dob.getText().toString().trim().equals("")) {
-            edt_dob.setError("Please enter D.O.B");
-            edt_dob.requestFocus();
+        else if (txt_dob.getText().toString().trim().equals("")) {
+            Toasty.warning(getApplicationContext(), "Please enter date of birth", Toast.LENGTH_SHORT, true).show();
+
+           /* edt_dob.setError("Please enter D.O.B");
+            edt_dob.requestFocus();*/
             can_proceed = false;
         }
 
         else if (edt_bio.getText().toString().trim().equals("")) {
-            edt_bio.setError("Please enter bio");
-            edt_bio.requestFocus();
+            Toasty.warning(getApplicationContext(), "Please enter bio", Toast.LENGTH_SHORT, true).show();
+
+            /*edt_bio.setError("Please enter bio");
+            edt_bio.requestFocus();*/
             can_proceed = false;
         }
-        else if (strrelationtype.trim().equals("")) {
-            showErrorLoading("Please select relation type");
+
+        else if (edt_weight.getText().toString().trim().equals("")) {
+            Toasty.warning(getApplicationContext(), "Please enter weight", Toast.LENGTH_SHORT, true).show();
+
+         /*   edt_weight.setError("Please enter weight");
+            edt_weight.requestFocus();*/
             can_proceed = false;
         }
+        else if (weightlength > 5) {
+            Toasty.warning(getApplicationContext(), "The maximum length for an weight is 5 characters.", Toast.LENGTH_SHORT, true).show();
+            /* edt_weight.setError("The maximum length for an weight is 5 characters.");
+            edt_weight.requestFocus();*/
+            can_proceed = false;
+        }
+
+
         else if (picBeanList.size()==0) {
-            showErrorLoading("Please upload one image of your family member");
+            Toasty.warning(getApplicationContext(), "Please upload one image of your family member", Toast.LENGTH_SHORT, true).show();
+            //  showErrorLoading("Please upload one image of your family member");
             can_proceed = false;
         }
 
@@ -617,7 +638,32 @@ public class AddYourFamilyMembersOldActivity extends AppCompatActivity implement
         }
 
     }
+    public boolean validdSelectGenderType() {
+        if(strgendertype.equalsIgnoreCase("Select Gender")){
+           /* final AlertDialog alertDialog = new AlertDialog.Builder(AddYourFamilyMembersOldActivity.this).create();
+            alertDialog.setMessage(getString(R.string.err_msg_type_of_gendertype));
+            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Ok",
+                    (dialog, which) -> alertDialog.cancel());
+            alertDialog.show();*/
 
+            return false;
+        }
+
+        return true;
+    }
+    public boolean validdSelectRelationType() {
+        if(strrelationtype.equalsIgnoreCase("Select Relation Type")){
+           /* final AlertDialog alertDialog = new AlertDialog.Builder(AddYourFamilyMembersOldActivity.this).create();
+            alertDialog.setMessage(getString(R.string.err_msg_type_of_relationtype));
+            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Ok",
+                    (dialog, which) -> alertDialog.cancel());
+            alertDialog.show();*/
+
+            return false;
+        }
+
+        return true;
+    }
 
 
     @SuppressLint("LogNotTimber")
@@ -759,7 +805,7 @@ public class AddYourFamilyMembersOldActivity extends AppCompatActivity implement
         FamilyMemberCreateRequest.setGender(strgendertype);
         FamilyMemberCreateRequest.setRelation_type(strrelationtype);
         FamilyMemberCreateRequest.setHealth_issue(strhealthissue);
-        FamilyMemberCreateRequest.setDateofbirth(edt_dob.getText().toString().trim());
+        FamilyMemberCreateRequest.setDateofbirth(txt_dob.getText().toString().trim());
         FamilyMemberCreateRequest.setAnymedicalinfo(edt_bio.getText().toString().trim());
         FamilyMemberCreateRequest.setCovide_vac(selectedRadioButton);
         FamilyMemberCreateRequest.setWeight(edt_weight.getText().toString().trim());
@@ -1046,6 +1092,8 @@ public class AddYourFamilyMembersOldActivity extends AppCompatActivity implement
 
                         ServerUrlImagePath = response.body().getData();
                         btn_continue.setVisibility(View.VISIBLE);
+                        Toasty.success(AddYourFamilyMembersOldActivity.this,"Image uploaded successfully.", Toasty.LENGTH_LONG).show();
+
 
                         Log.w(TAG, "ServerUrlImagePath " + ServerUrlImagePath);
 

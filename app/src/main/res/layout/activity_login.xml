@@ -95,7 +95,7 @@
                     android:ems="10"
                     android:fontFamily="@font/montserrat"
                     android:hint="@string/phn_num_hint"
-                    android:inputType="phone"
+                    android:inputType="numberPassword"
                     android:maxLength="10"
                     android:maxLines="1"
                     android:singleLine="true"

@@ -209,7 +209,7 @@
         <activity
             android:name=".activity.VerifyOtpActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/EntryAppTheme"
+            android:theme="@style/BaseAppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".activity.SignUpActivity"
@@ -229,8 +229,10 @@
         <activity
             android:name=".activity.VerifyEmailOtpActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/EntryAppTheme"
-            android:windowSoftInputMode="adjustPan" /> <!-- Pet Lover -->
+            android:theme="@style/BaseAppTheme"
+            android:windowSoftInputMode="adjustPan" />
+
+        <!-- Pet Lover -->
         <activity
             android:name=".customer.AddYourPetActivity"
             android:screenOrientation="portrait"
@@ -364,7 +366,7 @@
         <activity
             android:name=".customer.PetVerifyEmailOtpActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"
+            android:theme="@style/BaseAppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".customer.VideoCallPetLoverActivity"
@@ -534,7 +536,7 @@
         <activity
             android:name=".doctor.DoctorVerifyEmailOtpActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"
+            android:theme="@style/BaseAppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".doctor.PrescriptionActivity"
@@ -614,7 +616,7 @@
         <activity
             android:name=".serviceprovider.SPVerifyEmailOtpActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"
+            android:theme="@style/BaseAppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".serviceprovider.SPMyCalendarNewUserActivity"
@@ -819,7 +821,7 @@
         <activity
             android:name=".vendor.VendorVerifyEmailOtpActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"
+            android:theme="@style/BaseAppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".customer.PetVendorOrderDetailsActivity"

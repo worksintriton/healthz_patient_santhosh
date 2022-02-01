@@ -30,6 +30,8 @@ import java.util.List;
 
 public class ManagePetListAdapter extends  RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
+    String TAG = "ManagePetListAdapter";
+
     private final List<FamilyMemberListResponse.DataBean> dataBeanList;
 
     private final Context context;
@@ -68,6 +70,11 @@ public class ManagePetListAdapter extends  RecyclerView.Adapter<RecyclerView.Vie
 
     @SuppressLint({"SetTextI18n", "LogNotTimber"})
     private void initLayoutOne(ViewHolderOne holder, final int position) {
+        Log.w(TAG,"position : "+position+" size : "+(dataBeanList.size()-1));
+
+        if(position == 0){
+            holder.ll_add.setVisibility(View.VISIBLE);
+        }
 
         currentItem = dataBeanList.get(position);
 
@@ -170,9 +177,9 @@ public class ManagePetListAdapter extends  RecyclerView.Adapter<RecyclerView.Vie
         });
         //closing the setOnClickListener method
 
-        if(position == dataBeanList.size()-1){
+       /* if(position == dataBeanList.size()-1){
             holder.ll_add.setVisibility(View.VISIBLE);
-        }
+        }*/
 
        /* holder.cv_root.setOnClickListener(new View.OnClickListener() {
             @Override

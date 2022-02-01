@@ -88,7 +88,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
-            String phonenumber = extras.getString("phonemumber");
+            String phonenumber = extras.getString("phonenumber");
             if(phonenumber != null){
                 edt_emailorphone.setText(phonenumber);
             }

@@ -8,6 +8,7 @@ import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,6 +26,8 @@ import com.triton.healthz.responsepojo.EmailOTPResponse;
 import com.triton.healthz.utils.ConnectionDetector;
 import com.triton.healthz.utils.RestUtils;
 import com.wang.avi.AVLoadingIndicatorView;
+
+import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -78,6 +81,18 @@ public class VerifyEmailOtpActivity extends AppCompatActivity implements View.On
     private String UserType;
     private int UserTypeValue;
 
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.llresendotp)
+    LinearLayout llresendotp;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_timer_count)
+    TextView txt_timer_count;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_lbl_verifyphnno2)
+    TextView txt_lbl_verifyphnno2;
+
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -87,6 +102,8 @@ public class VerifyEmailOtpActivity extends AppCompatActivity implements View.On
         applicationData = (ApplicationData) getApplication();
 
         ButterKnife.bind(this);
+
+        txt_lbl_verifyphnno2.setText("Edit Email");
 
         avi_indicator.setVisibility(View.GONE);
 
@@ -109,8 +126,40 @@ public class VerifyEmailOtpActivity extends AppCompatActivity implements View.On
         btn_verifyotp.setOnClickListener(this);
         txt_resend.setOnClickListener(this);
 
+        startTimer();
+
 
     }
+
+    private void startTimer() {
+        isOTPExpired = false;
+        long timer_milliseconds = 120000;
+        timer = new CountDownTimer(timer_milliseconds, 1000) {
+            @SuppressLint({"DefaultLocale", "SetTextI18n"})
+            @Override
+            public void onTick(long millisUntilFinished) {
+                llresendotp.setVisibility(View.GONE);
+                txt_timer_count.setVisibility(View.VISIBLE);
+
+                applicationData.setTimer_milliseconds(millisUntilFinished);
+                txt_timer_count.setText(getResources().getString(R.string.resendotp)+" " + String.format("%02d : %02d ",
+                        TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished),
+                        TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) -
+                                TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished))));
+
+            }
+
+            @Override
+            public void onFinish() {
+                isOTPExpired = true;
+                txt_timer_count.setVisibility(View.GONE);
+                llresendotp.setVisibility(View.VISIBLE);
+                timer.cancel();
+            }
+        };
+        timer.start();
+    }
+
 
 
     @SuppressLint("NonConstantResourceId")
@@ -150,6 +199,8 @@ public class VerifyEmailOtpActivity extends AppCompatActivity implements View.On
             can_proceed = false;
 
             Toasty.warning(getApplicationContext(), "Incorrect OTP", Toast.LENGTH_SHORT, true).show();
+        }else if(enteredotp.equalsIgnoreCase(responseotp)){
+            can_proceed = true;
         }
 
 
@@ -195,7 +246,7 @@ public class VerifyEmailOtpActivity extends AppCompatActivity implements View.On
 
     @SuppressLint("LogNotTimber")
     private void resendOtpResponseCall() {
-       /* txt_resend.setVisibility(View.GONE);*/
+        llresendotp.setVisibility(View.GONE);
         avi_indicator.setVisibility(View.VISIBLE);
         avi_indicator.smoothToShow();
         RestApiInterface apiInterface = APIClient.getClient().create(RestApiInterface.class);
@@ -210,7 +261,8 @@ public class VerifyEmailOtpActivity extends AppCompatActivity implements View.On
                 if (response.body() != null) {
                     if (200 == response.body().getCode()) {
                         otp_view.setOTP("");
-                        Toasty.success(getApplicationContext(),"OTP Resend Successfully", Toast.LENGTH_SHORT, true).show();
+                        startTimer();
+                        Toasty.success(getApplicationContext(),response.body().getMessage(), Toast.LENGTH_SHORT, true).show();
                         if(response.body().getData().getOtp() !=0){
                             otp = response.body().getData().getOtp();
                         }

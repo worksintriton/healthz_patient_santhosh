@@ -155,7 +155,7 @@ public class PetMyOrdrersNewActivity extends AppCompatActivity implements View.O
         ImageView img_cart = include_petlover_header.findViewById(R.id.img_cart);
         ImageView img_profile = include_petlover_header.findViewById(R.id.img_profile);
         TextView toolbar_title = include_petlover_header.findViewById(R.id.toolbar_title);
-        toolbar_title.setText("My orders");
+        toolbar_title.setText("My Orders");
 
         img_sos.setVisibility(View.GONE);
         img_cart.setVisibility(View.GONE);
