@@ -162,7 +162,7 @@ public class AddYourFamilyMembersOldActivity extends AppCompatActivity implement
 
     int sprflag = 0;
 
-    private String selectedRadioButton = "Yes";
+    private String selectedRadioButton = "";
 
     public final int REQUEST_CODE_ASK_MULTIPLE_PERMISSIONS = 1;
     private static final String CAMERA_PERMISSION = CAMERA ;
@@ -618,6 +618,13 @@ public class AddYourFamilyMembersOldActivity extends AppCompatActivity implement
         else if (weightlength > 5) {
             Toasty.warning(getApplicationContext(), "The maximum length for an weight is 5 characters.", Toast.LENGTH_SHORT, true).show();
             /* edt_weight.setError("The maximum length for an weight is 5 characters.");
+            edt_weight.requestFocus();*/
+            can_proceed = false;
+        }
+        else if (selectedRadioButton != null &&  selectedRadioButton.isEmpty()) {
+            Toasty.warning(getApplicationContext(), "Please select covid vaccine", Toast.LENGTH_SHORT, true).show();
+
+         /*   edt_weight.setError("Please enter weight");
             edt_weight.requestFocus();*/
             can_proceed = false;
         }

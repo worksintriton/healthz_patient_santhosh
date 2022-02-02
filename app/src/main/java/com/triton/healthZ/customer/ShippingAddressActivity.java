@@ -109,6 +109,10 @@ public class ShippingAddressActivity extends AppCompatActivity implements View.O
     TextView txt_addrs_type;
 
     @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_pickuplocation)
+    TextView txt_pickuplocation;
+
+    @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_grand_total)
     TextView txt_grand_total;
 
@@ -384,6 +388,13 @@ public class ShippingAddressActivity extends AppCompatActivity implements View.O
                                     street = dataBeanList.getLocation_address();
 
                                     landmark = dataBeanList.getLocation_nickname();
+                                    if(landmark != null && !landmark.isEmpty()){
+                                        txt_pickuplocation.setVisibility(View.VISIBLE);
+                                        txt_pickuplocation.setText(landmark);
+                                    }else{
+                                        txt_pickuplocation.setVisibility(View.GONE);
+                                    }
+
 
                                     pincode  = dataBeanList.getLocation_pin();
                                     address_type = dataBeanList.getLocation_title();

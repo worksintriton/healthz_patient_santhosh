@@ -20,6 +20,7 @@ import android.view.ViewGroup;
 
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
@@ -130,6 +131,10 @@ public class CustomerCareFragment extends Fragment implements Serializable, View
     @BindView(R.id.linear1)
     LinearLayout linear1;
 
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.img_close)
+    ImageView img_close;
+
 
     private ShimmerFrameLayout mShimmerViewContainer;
     private View includelayout;
@@ -231,7 +236,7 @@ public class CustomerCareFragment extends Fragment implements Serializable, View
             txt_communicationtype.setText("Online");
 
         }else{
-            txt_communicationtype.setText("Visit Clinic");
+            txt_communicationtype.setText("Clinic Visit");
 
         }
 
@@ -246,7 +251,7 @@ public class CustomerCareFragment extends Fragment implements Serializable, View
                         doctorSearchResponseCall(searchString,communication_type);
                     }
                 }else{
-                    txt_communicationtype.setText("Clinic vists");
+                    txt_communicationtype.setText("Clinic Visit");
                     communication_type = 0;
                     if (new ConnectionDetector(mContext).isNetworkAvailable(mContext)) {
                         doctorSearchResponseCall(searchString,communication_type);
@@ -273,6 +278,16 @@ public class CustomerCareFragment extends Fragment implements Serializable, View
             }
         }
 
+        img_close.setVisibility(View.GONE);
+        img_close.setOnClickListener(v -> {
+
+            if(searchString != null && !searchString.isEmpty()){
+                edt_search.setText("");
+                img_close.setVisibility(View.GONE);
+            }
+
+        });
+
 
 
         edt_search.addTextChangedListener(new TextWatcher() {
@@ -290,6 +305,10 @@ public class CustomerCareFragment extends Fragment implements Serializable, View
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 Log.w(TAG,"onTextChanged-->"+s.toString());
                 searchString = s.toString();
+                if(searchString != null && !searchString.isEmpty()){
+                    img_close.setVisibility(View.VISIBLE);
+
+                }
 
             }
 

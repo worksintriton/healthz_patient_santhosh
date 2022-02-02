@@ -663,8 +663,17 @@ public class PickUpLocationActivity extends FragmentActivity implements OnMapRea
         if(fromactivity != null && fromactivity.equalsIgnoreCase("ManageAddressDoctorActivity")){
             startActivity(new Intent(PickUpLocationActivity.this, ManageAddressDoctorActivity.class));
             finish();
-        }else{
-            startActivity(new Intent(PickUpLocationActivity.this, ManageAddressActivity.class));
+        }else if(fromactivity != null && fromactivity.equalsIgnoreCase("CustomerNavigationDrawer")){
+            Intent intent = new Intent(PickUpLocationActivity.this, ManageAddressActivity.class);
+            intent.putExtra("fromactivity", "CustomerNavigationDrawer");
+            startActivity(intent);
+            finish();
+        }
+        else{
+            Log.w(TAG,"onBackPressed : fromactivity : "+fromactivity);
+            Intent intent = new Intent(PickUpLocationActivity.this, ManageAddressActivity.class);
+            intent.putExtra("fromactivity", fromactivity);
+            startActivity(intent);
             finish();
         }
 

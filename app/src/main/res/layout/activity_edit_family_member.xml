@@ -122,7 +122,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@android:color/transparent"
-                    android:entries="@array/array_gender"/>
+                    android:entries="@array/array_gender" />
 
                 <ImageView
                     android:layout_width="30dp"
@@ -234,6 +234,7 @@
                 android:padding="15dp"
                 android:scrollbars="vertical"
                 android:textAlignment="viewStart"
+                android:textColor="@color/green"
                 android:textColorHint="@color/dark_gray"
                 android:textSize="14sp"
                 tools:ignore="Autofill,LabelFor" />
@@ -277,7 +278,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:buttonTint="@drawable/cb_selectorrs"
-                    android:checked="true"
                     android:fontFamily="@font/montserrat"
                     android:text="@string/yes"
                     android:textColor="@color/new_txt_color"

@@ -36,7 +36,7 @@
                       android:drawablePadding="10dp"
                       android:fontFamily="@font/montserrat_bold"
                       android:gravity="end"
-                      android:text="See more.."
+                      android:text="See more >>"
                       android:textColor="@color/green"
                       android:textSize="14sp"
                       android:textStyle="bold" />

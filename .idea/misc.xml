@@ -46,15 +46,20 @@
         <entry key="..\:/TritonAppsGIt/healthz_patient_santhosh/app/src/main/res/layout/activity_add_your_family_members_old.xml" value="0.15489130434782608" />
         <entry key="..\:/TritonAppsGIt/healthz_patient_santhosh/app/src/main/res/layout/activity_customer_dashboard.xml" value="0.16168478260869565" />
         <entry key="..\:/TritonAppsGIt/healthz_patient_santhosh/app/src/main/res/layout/activity_customer_profile_screen.xml" value="0.12360688956433637" />
+        <entry key="..\:/TritonAppsGIt/healthz_patient_santhosh/app/src/main/res/layout/activity_doctor_list_of_products.xml" value="0.2296195652173913" />
         <entry key="..\:/TritonAppsGIt/healthz_patient_santhosh/app/src/main/res/layout/activity_edit_family_member.xml" value="0.15489130434782608" />
         <entry key="..\:/TritonAppsGIt/healthz_patient_santhosh/app/src/main/res/layout/activity_edit_my_address.xml" value="0.2296195652173913" />
         <entry key="..\:/TritonAppsGIt/healthz_patient_santhosh/app/src/main/res/layout/activity_health_check.xml" value="0.19293478260869565" />
+        <entry key="..\:/TritonAppsGIt/healthz_patient_santhosh/app/src/main/res/layout/activity_list_of_products.xml" value="0.2296195652173913" />
         <entry key="..\:/TritonAppsGIt/healthz_patient_santhosh/app/src/main/res/layout/activity_login.xml" value="0.15489130434782608" />
         <entry key="..\:/TritonAppsGIt/healthz_patient_santhosh/app/src/main/res/layout/activity_pet_lover_edit_profile.xml" value="0.15489130434782608" />
         <entry key="..\:/TritonAppsGIt/healthz_patient_santhosh/app/src/main/res/layout/activity_petlover_fav_list.xml" value="0.2296195652173913" />
         <entry key="..\:/TritonAppsGIt/healthz_patient_santhosh/app/src/main/res/layout/activity_pick_up_location_allow.xml" value="0.16530797101449277" />
+        <entry key="..\:/TritonAppsGIt/healthz_patient_santhosh/app/src/main/res/layout/activity_places_search.xml" value="0.2296195652173913" />
         <entry key="..\:/TritonAppsGIt/healthz_patient_santhosh/app/src/main/res/layout/activity_product_detail.xml" value="0.17346014492753623" />
         <entry key="..\:/TritonAppsGIt/healthz_patient_santhosh/app/src/main/res/layout/activity_product_details.xml" value="0.12360688956433637" />
+        <entry key="..\:/TritonAppsGIt/healthz_patient_santhosh/app/src/main/res/layout/activity_service_details.xml" value="0.2296195652173913" />
+        <entry key="..\:/TritonAppsGIt/healthz_patient_santhosh/app/src/main/res/layout/activity_shipping_address.xml" value="0.25181159420289856" />
         <entry key="..\:/TritonAppsGIt/healthz_patient_santhosh/app/src/main/res/layout/activity_sign_up.xml" value="0.12360688956433637" />
         <entry key="..\:/TritonAppsGIt/healthz_patient_santhosh/app/src/main/res/layout/activity_verify_otp.xml" value="0.24547101449275363" />
         <entry key="..\:/TritonAppsGIt/healthz_patient_santhosh/app/src/main/res/layout/adapter_cart.xml" value="0.25416666666666665" />
@@ -62,7 +67,12 @@
         <entry key="..\:/TritonAppsGIt/healthz_patient_santhosh/app/src/main/res/layout/adapter_shop_card.xml" value="0.16168478260869565" />
         <entry key="..\:/TritonAppsGIt/healthz_patient_santhosh/app/src/main/res/layout/adapter_shop_productdetails.xml" value="0.12360688956433637" />
         <entry key="..\:/TritonAppsGIt/healthz_patient_santhosh/app/src/main/res/layout/adapter_shop_productdetails_image.xml" value="0.18659420289855072" />
+        <entry key="..\:/TritonAppsGIt/healthz_patient_santhosh/app/src/main/res/layout/alert_cancel_layout.xml" value="0.15760869565217392" />
+        <entry key="..\:/TritonAppsGIt/healthz_patient_santhosh/app/src/main/res/layout/alert_manage_addresses_layout.xml" value="0.25181159420289856" />
+        <entry key="..\:/TritonAppsGIt/healthz_patient_santhosh/app/src/main/res/layout/content_petcare_details.xml" value="0.2296195652173913" />
         <entry key="..\:/TritonAppsGIt/healthz_patient_santhosh/app/src/main/res/layout/customer_toolbar_layout.xml" value="0.16168478260869565" />
+        <entry key="..\:/TritonAppsGIt/healthz_patient_santhosh/app/src/main/res/layout/fragment_customer_care.xml" value="0.2296195652173913" />
+        <entry key="..\:/TritonAppsGIt/healthz_patient_santhosh/app/src/main/res/layout/fragment_customer_shop.xml" value="0.15760869565217392" />
         <entry key="..\:/TritonAppsGIt/healthz_patient_santhosh/app/src/main/res/layout/navigation_drawer_layout_customer.xml" value="0.16168478260869565" />
         <entry key="..\:/TritonAppsGIt/healthz_patient_santhosh/app/src/main/res/layout/sos_popup_layout.xml" value="0.16666666666666666" />
         <entry key="..\:/TritonAppsGIt/healthz_patient_santhosh/app/src/main/res/layout/spinner_item.xml" value="0.15489130434782608" />

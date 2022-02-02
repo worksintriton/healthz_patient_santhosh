@@ -321,7 +321,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                             Intent intent = new Intent(SignUpActivity.this, VerifyOtpActivity.class);
                             intent.putExtra("phonemumber", response.body().getData().getUser_phone());
                             intent.putExtra("otp", response.body().getData().getOtp());
-                            intent.putExtra("usertype", response.body().getData().getUser_type());
+                            intent.putExtra("usertype",String.valueOf(response.body().getData().getUser_type()));
                             intent.putExtra("userid", response.body().getData().get_id());
                             intent.putExtra("userstatus", "Incomplete");
                             intent.putExtra("firstname", response.body().getData().getFirst_name());
@@ -392,6 +392,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                             intent.putExtra("firstname", edt_firstname.getText().toString());
                             intent.putExtra("lastname", edt_lastname.getText().toString());
                             intent.putExtra("UserType", 1);
+                            intent.putExtra("fromactivity", TAG);
                             startActivity(intent);
                         }
 

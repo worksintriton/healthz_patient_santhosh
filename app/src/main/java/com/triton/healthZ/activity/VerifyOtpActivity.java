@@ -314,20 +314,20 @@ public class VerifyOtpActivity extends AppCompatActivity implements View.OnClick
     public void onBackPressed() {
         super.onBackPressed();
 
-        if(fromactivity!=null){
-
-            if(fromactivity.equals("LoginActivity")){
+        if(fromactivity!=null && fromactivity.equalsIgnoreCase("LoginActivity")){
                 Intent intent =new Intent(VerifyOtpActivity.this, LoginActivity.class);
                 intent.putExtra("phonenumber",phonenumber);
                 startActivity(intent);
                 finish();
             }
+        else if(fromactivity!=null &&  fromactivity.equalsIgnoreCase("SignUpActivity")){
+            Intent intent =new Intent(VerifyOtpActivity.this, SignUpActivity.class);
+            intent.putExtra("phonenumber",phonenumber);
+            startActivity(intent);
+            finish();
 
-      /*      else if(fromactivity.equals("SignUpActivity")){
+            }
 
-                startActivity(new Intent(VerifyOtpActivity.this, SignUpActivity.class));
-            }*/
-        }
 
     }
 

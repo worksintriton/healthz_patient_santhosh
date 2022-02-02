@@ -120,6 +120,16 @@ public class ManageAddressActivity extends AppCompatActivity implements View.OnC
         setContentView(R.layout.activity_manage_address);
         ButterKnife.bind(this);
 
+        Log.w(TAG,"onCreate : ");
+
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            fromactivity = extras.getString("fromactivity");
+            String fromactivity1 = extras.getString("fromactivity1");
+            Log.w(TAG,"fromactivity : "+fromactivity+" fromactivity1 : "+fromactivity1);
+        }
+
+
 
         ImageView img_back = include_petlover_header.findViewById(R.id.img_back);
         ImageView img_sos = include_petlover_header.findViewById(R.id.img_sos);
@@ -138,7 +148,7 @@ public class ManageAddressActivity extends AppCompatActivity implements View.OnC
         img_notification.setOnClickListener(this);
         img_profile.setOnClickListener(this);
 
-        Log.w(TAG,"onCreate : ");
+
         img_back.setOnClickListener(this);
         ll_add_newaddress.setOnClickListener(this);
 
@@ -168,11 +178,6 @@ public class ManageAddressActivity extends AppCompatActivity implements View.OnC
            locationListAddressResponseCall();
         }
 
-        Bundle extras = getIntent().getExtras();
-        if (extras != null) {
-            fromactivity = extras.getString("fromactivity");
-            Log.w(TAG,"fromactivity : "+fromactivity);
-        }
 
 
 
@@ -222,12 +227,14 @@ public class ManageAddressActivity extends AppCompatActivity implements View.OnC
 
     private void gotoAddNewAddress() {
         Intent intent = new Intent(getApplicationContext(),PickUpLocationActivity.class);
+        intent.putExtra("fromactivity",fromactivity);
         startActivity(intent);
     }
 
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+
         if(fromactivity != null && fromactivity.equalsIgnoreCase("CustomerNavigationDrawer")){
             startActivity(new Intent(getApplicationContext(), CustomerDashboardActivity.class));
             finish();

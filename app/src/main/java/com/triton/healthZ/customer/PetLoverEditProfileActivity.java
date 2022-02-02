@@ -185,6 +185,7 @@ public class PetLoverEditProfileActivity extends AppCompatActivity implements Vi
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+        startActivity(new Intent(getApplicationContext(),CustomerProfileScreenActivity.class));
         finish();
     }
 

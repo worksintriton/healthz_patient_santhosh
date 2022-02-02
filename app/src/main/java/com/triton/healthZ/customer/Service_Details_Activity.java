@@ -843,21 +843,23 @@ public class Service_Details_Activity extends AppCompatActivity implements View.
                             sb.append(distance);
 
                             sb.append(" KM Away");
+                            txt_dr_experience.setText(distance+" KM Away");
 
                         }
                         else if(APIClient.SP_DISTANCE != null&&!APIClient.SP_DISTANCE.isEmpty()){
 
-                            //txt_distance.setText(APIClient.SP_DISTANCE+" KM Away");
+                          //  txt_distance.setText(APIClient.SP_DISTANCE+" KM Away");
+                            txt_dr_experience.setText(APIClient.SP_DISTANCE+" KM Away");
 
-                            sb.append(APIClient.SP_DISTANCE);
+                           /* sb.append(APIClient.SP_DISTANCE);
 
-                            sb.append(" KM Away");
+                            sb.append(" KM Away");*/
 
                         }
 
                         if(sb!=null){
 
-                            txt_dr_experience.setText(sb);
+                        //    txt_dr_experience.setText(sb);
                         }
 
                         if(response.body().getData().getComments() != 0){

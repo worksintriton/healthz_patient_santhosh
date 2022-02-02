@@ -103,70 +103,6 @@ public class ListOfProductsSeeMoreActivity extends AppCompatActivity implements 
 
 
 
-  /*  *//*@SuppressLint("NonConstantResourceId")
-    @BindView(R.id.include_petlover_header)
-    View include_petlover_header;*//*
-
-
-    *//* Petlover Bottom Navigation *//*
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_home)
-    RelativeLayout rl_home;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_care)
-    RelativeLayout rl_care;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.title_care)
-    TextView title_care;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_care)
-    ImageView img_care;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_service)
-    RelativeLayout rl_service;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.title_serv)
-    TextView title_serv;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_serv)
-    ImageView img_serv;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_shop)
-    RelativeLayout rl_shop;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.title_shop)
-    TextView title_shop;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_shop)
-    ImageView img_shop;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_comn)
-    RelativeLayout rl_comn;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.title_community)
-    TextView title_community;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_community)
-    ImageView img_community;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_homes)
-    RelativeLayout rl_homes;*/
-
-
 
 
 
@@ -234,6 +170,10 @@ public class ListOfProductsSeeMoreActivity extends AppCompatActivity implements 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.rl_loctn)
     RelativeLayout rl_loctn;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.img_close)
+    ImageView img_close;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.rl_search)
@@ -384,6 +324,17 @@ public class ListOfProductsSeeMoreActivity extends AppCompatActivity implements 
         img_notification.setOnClickListener(this);
         img_cart.setOnClickListener(this);
   //      img_profile.setOnClickListener(this);
+
+        img_close.setVisibility(View.GONE);
+        img_close.setOnClickListener(v -> {
+
+            if(searchString != null && !searchString.isEmpty()){
+                edt_search.setText("");
+                img_close.setVisibility(View.GONE);
+            }
+
+        });
+
         edt_search.addTextChangedListener(new TextWatcher() {
             @SuppressLint("LogNotTimber")
             @Override
@@ -405,6 +356,10 @@ public class ListOfProductsSeeMoreActivity extends AppCompatActivity implements 
             public void afterTextChanged(Editable s) {
                 Log.w(TAG,"afterTextChanged-->"+s.toString());
                 searchString = s.toString();
+                if(!searchString.isEmpty()){
+                    img_close.setVisibility(View.VISIBLE);
+
+                }
                 if(!searchString.isEmpty()){
                     if (new ConnectionDetector(getApplicationContext()).isNetworkAvailable(getApplicationContext())) {
                         fetctProductByCatResponseCall(searchString);

@@ -102,8 +102,8 @@ public class CustomerHomeFragment extends Fragment implements Serializable,
     private String TAG = "CustomerHomeFragment";
     int currentPage = 0;
     Timer timer;
-    final long DELAY_MS = 500;//delay in milliseconds before task is to be executed
-    final long PERIOD_MS = 3000;
+    final long DELAY_MS = 1000;//delay in milliseconds before task is to be executed
+    final long PERIOD_MS = 6000;
 
     double latitude, longitude;
 

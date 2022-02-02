@@ -93,6 +93,10 @@ public class VerifyEmailOtpActivity extends AppCompatActivity implements View.On
     @BindView(R.id.txt_lbl_verifyphnno2)
     TextView txt_lbl_verifyphnno2;
 
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.ll_editno)
+    LinearLayout ll_editno;
+
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -119,7 +123,7 @@ public class VerifyEmailOtpActivity extends AppCompatActivity implements View.On
             lastname = extras.getString("lastname");
             useremail = extras.getString("useremail");
             fromactivity = extras.getString("fromactivity");
-            Log.w(TAG,"Bundle "+" phonenumber : "+phonenumber+" otp :"+otp+" UserType : "+UserType+" userstatus : "+userstatus+ " userid : "+userid);
+            Log.w(TAG,"Bundle "+" phonenumber : "+phonenumber+" otp :"+otp+" UserType : "+UserType+" userstatus : "+userstatus+ " userid : "+userid+" fromactivity : "+fromactivity);
         }
 
         txt_lbl_verifyphnno.setText("Email Verification");
@@ -127,6 +131,12 @@ public class VerifyEmailOtpActivity extends AppCompatActivity implements View.On
         txt_resend.setOnClickListener(this);
 
         startTimer();
+        ll_editno.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
 
 
     }
@@ -204,6 +214,7 @@ public class VerifyEmailOtpActivity extends AppCompatActivity implements View.On
         }
 
 
+
         if (can_proceed) {
             Toasty.success(getApplicationContext(),"Your email verified successfully", Toast.LENGTH_SHORT, true).show();
 
@@ -229,10 +240,7 @@ public class VerifyEmailOtpActivity extends AppCompatActivity implements View.On
     public void onBackPressed() {
 
         super.onBackPressed();
-        if(fromactivity!=null){
-
-            if(fromactivity.equals("SignUpActivity")){
-
+        if(fromactivity!=null && fromactivity.equalsIgnoreCase("SignUpActivity")){
                 Intent intent = new Intent(VerifyEmailOtpActivity.this,SignUpActivity.class);
                 intent.putExtra("verified","verified");
                 intent.putExtra("useremail",useremail);
@@ -241,7 +249,16 @@ public class VerifyEmailOtpActivity extends AppCompatActivity implements View.On
                 intent.putExtra("UserType",UserType);
                 intent.putExtra("UserTypeValue",UserTypeValue);
                 startActivity(intent);
-            }
+
+        }else{
+            Intent intent = new Intent(VerifyEmailOtpActivity.this,SignUpActivity.class);
+            intent.putExtra("verified","verified");
+            intent.putExtra("useremail",useremail);
+            intent.putExtra("firstname",firstname);
+            intent.putExtra("lastname",lastname);
+            intent.putExtra("UserType",UserType);
+            intent.putExtra("UserTypeValue",UserTypeValue);
+            startActivity(intent);
         }
 
     }

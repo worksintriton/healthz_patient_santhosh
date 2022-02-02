@@ -170,7 +170,7 @@ public class EditFamilyMemberActivity extends AppCompatActivity implements View.
 
     int sprflag = 0;
 
-    private String selectedRadioButton = "Yes";
+    private String selectedRadioButton = "";
 
     public final int REQUEST_CODE_ASK_MULTIPLE_PERMISSIONS = 1;
     private static final String CAMERA_PERMISSION = CAMERA ;
@@ -395,13 +395,12 @@ public class EditFamilyMemberActivity extends AppCompatActivity implements View.
             @SuppressLint("LogNotTimber")
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int arg2, long arg3) {
-
+                ((TextView) parent.getChildAt(0)).setTextColor(getResources().getColor(R.color.green));
+                strrelationtype = sprrelationtype.getSelectedItem().toString();
+                Log.w(TAG,"strrelationtype:"+strrelationtype);
                 if(++sprflag > 1) {
 
-                    ((TextView) parent.getChildAt(0)).setTextColor(getResources().getColor(R.color.green));
-                    strrelationtype = sprrelationtype.getSelectedItem().toString();
 
-                    Log.w(TAG,"strrelationtype:"+strrelationtype);
                 }
 
 
@@ -418,13 +417,14 @@ public class EditFamilyMemberActivity extends AppCompatActivity implements View.
             @SuppressLint("LogNotTimber")
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int arg2, long arg3) {
+                ((TextView) parent.getChildAt(0)).setTextColor(getResources().getColor(R.color.green));
+                strgendertype = sprgender.getSelectedItem().toString();
+
+                Log.w(TAG,"strgendertype:"+strgendertype);
 
                 if(++sprflag > 1) {
 
-                    ((TextView) parent.getChildAt(0)).setTextColor(getResources().getColor(R.color.green));
-                    strgendertype = sprgender.getSelectedItem().toString();
 
-                    Log.w(TAG,"strgendertype:"+strgendertype);
                 }
 
 

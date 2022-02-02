@@ -325,6 +325,7 @@ public class BookAppointmentActivity extends AppCompatActivity implements Paymen
 
     private String rzpkey;
     private boolean isproduction;
+    private RadioButton radioButton;
 
     @SuppressLint("LogNotTimber")
     @Override
@@ -339,11 +340,7 @@ public class BookAppointmentActivity extends AppCompatActivity implements Paymen
         rzpkey =  razorpayDetails.get(SessionManager.KEY_RZP_KEY);
         String production =  razorpayDetails.get(SessionManager.KEY_RZP_PRODUCTION);
         if(production != null){
-            if(production.equalsIgnoreCase("true")){
-                isproduction = true;
-            }else{
-                isproduction = false;
-            }
+            isproduction = production.equalsIgnoreCase("true");
         }
 
         Log.w(TAG, "rzpkey : " + rzpkey+ " isproduction : "+isproduction);
@@ -676,11 +673,15 @@ public class BookAppointmentActivity extends AppCompatActivity implements Paymen
 
 
             });
+
         rg_visit_group.setOnCheckedChangeListener((group, checkedId) -> {
             int radioButtonID = rg_visit_group.getCheckedRadioButtonId();
-            RadioButton radioButton = rg_visit_group.findViewById(radioButtonID);
-            selectedVisitType = (String) radioButton.getText();
-            Log.w(TAG,"selectedVisitType : " + selectedVisitType);
+            radioButton = rg_visit_group.findViewById(radioButtonID);
+            if (radioButton != null) {
+                selectedVisitType = (String) radioButton.getText();
+                Log.w(TAG, "selectedVisitType : " + selectedVisitType);
+            }
+
             if(selectedVisitType != null && selectedVisitType.equalsIgnoreCase("Home")){
                 selectedVisitType = "Home Visit";
                 showManageAddressAlert();
@@ -1770,6 +1771,16 @@ public class BookAppointmentActivity extends AppCompatActivity implements Paymen
             txt_savedaddress.setVisibility(View.GONE);
             btn_use_this_addreess.setVisibility(View.GONE);
             rv_manage_address.setVisibility(View.GONE);
+            ImageView img_close = dialog.findViewById(R.id.img_close);
+            img_close.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    dialog.dismiss();
+
+
+
+                }
+            });
 
             if (new ConnectionDetector(BookAppointmentActivity.this).isNetworkAvailable(BookAppointmentActivity.this)) {
                 locationListAddressResponseCall();

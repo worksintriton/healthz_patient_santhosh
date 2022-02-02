@@ -226,6 +226,11 @@ public class PetShopTodayDealsSeeMoreActivity extends AppCompatActivity implemen
     private String strPetBreedType = "";
     private String strCategoryType = "";
 
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.img_close)
+    ImageView img_close;
+
+
 
     @SuppressLint("LogNotTimber")
     @Override
@@ -323,6 +328,18 @@ public class PetShopTodayDealsSeeMoreActivity extends AppCompatActivity implemen
         img_cart.setOnClickListener(this);
       //  img_profile.setOnClickListener(this);
 
+
+        img_close.setVisibility(View.GONE);
+        img_close.setOnClickListener(v -> {
+
+            if(searchString != null && !searchString.isEmpty()){
+                edt_search.setText("");
+                img_close.setVisibility(View.GONE);
+            }
+
+        });
+
+
         edt_search.addTextChangedListener(new TextWatcher() {
             @SuppressLint("LogNotTimber")
             @Override
@@ -345,7 +362,8 @@ public class PetShopTodayDealsSeeMoreActivity extends AppCompatActivity implemen
                 Log.w(TAG,"afterTextChanged-->"+s.toString());
                 searchString = s.toString();
                 if(!searchString.isEmpty()){
-                    if (new ConnectionDetector(getApplicationContext()).isNetworkAvailable(getApplicationContext())) {
+                   img_close.setVisibility(View.VISIBLE);
+                   if (new ConnectionDetector(getApplicationContext()).isNetworkAvailable(getApplicationContext())) {
                         productSearchResponseCall(searchString);
                     }
 

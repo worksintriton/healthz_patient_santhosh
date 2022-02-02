@@ -156,7 +156,7 @@ public class ShippingAddressAddActivity extends AppCompatActivity implements Vie
         ImageView img_cart = include_petlover_header.findViewById(R.id.img_cart);
         ImageView img_profile = include_petlover_header.findViewById(R.id.img_profile);
         TextView toolbar_title = include_petlover_header.findViewById(R.id.toolbar_title);
-        toolbar_title.setText(getResources().getString(R.string.shipping_address));
+        toolbar_title.setText(getResources().getString(R.string.add_or_change_address));
         img_sos.setVisibility(View.GONE);
         img_cart.setVisibility(View.GONE);
 
@@ -524,10 +524,8 @@ public class ShippingAddressAddActivity extends AppCompatActivity implements Vie
 
                 if (response.body() != null) {
                     if(response.body().getCode() == 200){
+                        locationDeleteResponseCall(shippingid);
 
-                        startActivity(getIntent());
-
-                        finish();
 
                     }
                     else{
@@ -679,26 +677,31 @@ public class ShippingAddressAddActivity extends AppCompatActivity implements Vie
             dialog = new Dialog(ShippingAddressAddActivity.this);
             dialog.setContentView(R.layout.alert_cancel_layout);
             dialog.setCanceledOnTouchOutside(false);
-            Button btn_ok = dialog.findViewById(R.id.btn_ok);
-            Button btn_cancel = dialog.findViewById(R.id.btn_cancel);
+            LinearLayout ll_ok = dialog.findViewById(R.id.ll_ok);
+            LinearLayout ll_cancel = dialog.findViewById(R.id.ll_cancel);
+            TextView btn_ok = dialog.findViewById(R.id.btn_ok);
+            TextView btn_cancel = dialog.findViewById(R.id.btn_cancel);
             TextView txt_msg = dialog.findViewById(R.id.txt_text_message);
             txt_msg.setText(R.string.deletemsg);
-            btn_ok.setOnClickListener(new View.OnClickListener() {
+            btn_ok.setText("Yes");
+            btn_cancel.setText("No");
+
+            ll_ok.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
 
                     if (new ConnectionDetector(ShippingAddressAddActivity.this).isNetworkAvailable(ShippingAddressAddActivity.this)) {
-
+                        dialog.dismiss();
                         deleteshipAddrresponseCall(shippingid);
-                        locationDeleteResponseCall(shippingid);
+
 
                     }
 
-                    dialog.dismiss();
+
 
                 }
             });
-            btn_cancel.setOnClickListener(view -> dialog.dismiss());
+            ll_cancel.setOnClickListener(view -> dialog.dismiss());
 
             dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
