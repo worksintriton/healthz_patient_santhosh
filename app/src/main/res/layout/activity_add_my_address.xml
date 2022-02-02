@@ -147,6 +147,7 @@
                 android:layout_marginTop="20dp">
 
                 <EditText
+                    android:maxLength="6"
                     android:id="@+id/edt_pincode"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -163,6 +164,7 @@
                     tools:ignore="Autofill,LabelFor,TextFields" />
 
                 <EditText
+                    android:maxLines="1"
                     android:id="@+id/edt_location"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -179,6 +181,7 @@
                     tools:ignore="Autofill,LabelFor,TextFields" />
 
                 <EditText
+                    android:maxLines="1"
                     android:id="@+id/edt_cityname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -255,6 +258,7 @@
                 </LinearLayout>
 
                 <EditText
+                    android:digits="@string/characters"
                     android:id="@+id/edt_pickname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

@@ -62,18 +62,18 @@
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         android:src="@drawable/ic_hzmenu_notification"
-                        tools:ignore="ContentDescription" />
-
-                    <!--   <TextView
+                        tools:ignore="ContentDescription"
+                        android:layout_marginTop="10dp"/>
+                    <TextView
                         android:id="@+id/txt_notification_count_badge"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
+                        android:layout_gravity="top|right"
                         android:layout_marginStart="-16dp"
                         android:layout_marginEnd="10dp"
                         android:background="@drawable/badge_background"
                         android:ellipsize="marquee"
-                        android:fontFamily="@font/futuramediumbt"
+                        android:fontFamily="@font/montserrat"
                         android:gravity="center"
                         android:marqueeRepeatLimit="marquee_forever"
                         android:minWidth="20dp"
@@ -84,29 +84,37 @@
                         android:paddingBottom="5dp"
                         android:singleLine="true"
                         android:text="0"
-                        android:textColor="@color/white"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />-->
-
-
-                    <ImageView
-                        android:id="@+id/img_cart"
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
+                        android:textColor="@color/black"
+                        android:textSize="10dp"
+                        android:textStyle="bold" />
+                    <RelativeLayout
+                        android:id="@+id/rl_cart"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         android:layout_marginStart="20dp"
-                        android:src="@drawable/ic_hzmenu_shop"
-                        tools:ignore="ContentDescription" />
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/layout_bgm_opaque">
 
-                    <!-- <TextView
+                        <ImageView
+                            android:id="@+id/img_cart"
+                            android:layout_width="25dp"
+                            android:layout_height="20dp"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/ic_hz_cart"
+                            tools:ignore="ContentDescription" />
+
+                    </RelativeLayout>
+
+                    <TextView
                         android:id="@+id/txt_cart_count_badge"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
+                        android:layout_gravity="top|right"
                         android:layout_marginStart="-16dp"
                         android:layout_marginEnd="10dp"
                         android:background="@drawable/badge_background"
                         android:ellipsize="marquee"
-                        android:fontFamily="@font/futuramediumbt"
+                        android:fontFamily="@font/montserrat"
                         android:gravity="center"
                         android:marqueeRepeatLimit="marquee_forever"
                         android:minWidth="20dp"
@@ -117,9 +125,10 @@
                         android:paddingBottom="5dp"
                         android:singleLine="true"
                         android:text="0"
-                        android:textColor="@color/white"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />-->
+                        android:textColor="@color/black"
+                        android:textSize="10dp"
+                        android:textStyle="bold" />
+
 
                 </LinearLayout>
             </LinearLayout>

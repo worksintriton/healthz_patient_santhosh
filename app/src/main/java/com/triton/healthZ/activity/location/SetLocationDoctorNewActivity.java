@@ -208,7 +208,7 @@ public class SetLocationDoctorNewActivity extends FragmentActivity implements On
                     intent.putExtra("docBusInfoUploadRequestList",docBusInfoUploadRequestList);
                     startActivity(intent);
             }else{
-                Toasty.warning(SetLocationDoctorNewActivity.this,"Please select citynmae",Toasty.LENGTH_SHORT).show();
+                Toasty.warning(SetLocationDoctorNewActivity.this,"Please Select City Name",Toasty.LENGTH_SHORT).show();
             }
 
 

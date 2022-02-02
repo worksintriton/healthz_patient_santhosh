@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Healthz</string>
-    <string name="version">31.01.2022.v1</string>
+    <string name="version">01.02.2022.v1</string>
     <string name="verify_otp">Verify OTP</string>
     <string name="emailorphonenumber">Phone Number</string>
     <string name="new_here">New here ?</string>
@@ -217,7 +217,7 @@
 
     <string name="upload_image">Upload Image</string>
 
-    <string name="add_a_new_address">Add a new address</string>
+    <string name="add_a_new_address">Add A New Address</string>
     <string name="add_new_pet">Add a new pet</string>
     <string name="address_info">TESSDGD dgsdg dgasdg saddagdasg dsgasdg sadgdsgds SGADSGD</string>
     <string name="saved_address">Saved Address</string>
@@ -607,7 +607,7 @@
     <string name="verify">Verify</string>
     <string name="didn_t_you_received_any_code">Didn’t you received any code?</string>
     <string name="resent_new_code">Resend New Code</string>
-    <string name="create_your_account">Create your Account</string>
+    <string name="create_your_account">Create Your Account</string>
     <string name="email_address">Email Address</string>
     <string name="password">Password</string>
     <string name="terms">By creating an account you agree with our terms and conditions</string>

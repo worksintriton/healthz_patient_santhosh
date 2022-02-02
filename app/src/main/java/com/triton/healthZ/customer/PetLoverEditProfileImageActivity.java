@@ -376,6 +376,9 @@ public class PetLoverEditProfileImageActivity extends AppCompatActivity implemen
                 if (response.body() != null) {
                     if (200 == response.body().getCode()) {
 
+                        Toasty.success(PetLoverEditProfileImageActivity.this, "Profile image uploaded successfully", Toasty.LENGTH_LONG).show();
+
+
                         profileimage = response.body().getData();
                         btn_continue.setVisibility(View.VISIBLE);
 
@@ -554,6 +557,8 @@ public class PetLoverEditProfileImageActivity extends AppCompatActivity implemen
 
                 if (response.body() != null) {
                     if(response.body().getCode() == 200){
+                        Toasty.success(PetLoverEditProfileImageActivity.this, "Profile image updated successfully", Toasty.LENGTH_LONG).show();
+
                         SessionManager sessionManager = new SessionManager(getApplicationContext());
                         sessionManager.setIsLogin(true);
                         sessionManager.createLoginSession(

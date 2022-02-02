@@ -211,6 +211,13 @@ public class AddMyAddressOldUserActivity extends FragmentActivity implements OnM
         img_sos.setVisibility(View.GONE);
         img_cart.setVisibility(View.GONE);
 
+        img_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               AddMyAddressOldUserActivity.this.finish();
+            }
+        });
+
 
 
         img_notification.setOnClickListener(new View.OnClickListener() {
@@ -235,13 +242,12 @@ public class AddMyAddressOldUserActivity extends FragmentActivity implements OnM
         });
 
         avi_indicator.setVisibility(View.GONE);
-        img_back.setOnClickListener(this);
         btn_change.setOnClickListener(this);
         btn_savethislocation.setOnClickListener(this);
 
-        edt_cityname.setEnabled(false);
+      /*  edt_cityname.setEnabled(false);
         edt_pincode.setEnabled(false);
-        edt_location.setEnabled(false);
+        edt_location.setEnabled(false);*/
 
 
 
@@ -324,9 +330,6 @@ public class AddMyAddressOldUserActivity extends FragmentActivity implements OnM
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.imgBack:
-                onBackPressed();
-                break;
             case R.id.btn_change:
                 onBackPressed();
                 break;
@@ -344,9 +347,25 @@ public class AddMyAddressOldUserActivity extends FragmentActivity implements OnM
 
     public void saveLocationValidator() {
         boolean can_proceed = true;
-        if (edt_pickname.getText().toString().trim().equals("")) {
-             edt_pickname.setError("Please enter pick a nick Name for this location");
-             edt_pickname.requestFocus();
+        int pincodelength = edt_pincode.getText().toString().trim().length();
+
+        if (pincodelength <= 5) {
+            edt_pincode.setError("Please enter valid pincode");
+            edt_pincode.requestFocus();
+            can_proceed = false;
+        }
+        else if (edt_location.getText().toString().trim().equals("")) {
+            edt_location.setError("Please enter location name");
+            edt_location.requestFocus();
+            can_proceed = false;
+        }else if (edt_cityname.getText().toString().trim().equals("")) {
+            edt_location.setError("Please enter city name");
+            edt_location.requestFocus();
+            can_proceed = false;
+        }
+        else if (edt_pickname.getText().toString().trim().equals("")) {
+            edt_pickname.setError("Please enter pick a nick Name for this location");
+            edt_pickname.requestFocus();
             can_proceed = false;
         }
 

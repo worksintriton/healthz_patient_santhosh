@@ -191,7 +191,7 @@ public class SetLocationSPOldActivity extends FragmentActivity implements OnMapR
                     intent.putExtra("fromactivity",fromactivity);
                     startActivity(intent);
             }else{
-                Toasty.warning(SetLocationSPOldActivity.this,"Please select citynmae",Toasty.LENGTH_SHORT).show();
+                Toasty.warning(SetLocationSPOldActivity.this,"Please Select City Name",Toasty.LENGTH_SHORT).show();
             }
 
 

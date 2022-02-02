@@ -57,6 +57,10 @@ import de.hdodenhof.circleimageview.CircleImageView;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import com.triton.healthz.requestpojo.NotificationCartCountRequest;
+import com.triton.healthz.responsepojo.NotificationCartCountResponse;
+
+
 
 
 public class CustomerNavigationDrawer extends AppCompatActivity implements View.OnClickListener{
@@ -326,12 +330,11 @@ public class CustomerNavigationDrawer extends AppCompatActivity implements View.
 
         ImageView img_cart = toolbar_layout.findViewById(R.id.img_cart);
         ImageView img_notification = toolbar_layout.findViewById(R.id.img_notification);
-      /*   txt_notification_count_badge = toolbar_layout.findViewById(R.id.txt_notification_count_badge);
-         txt_cart_count_badge = toolbar_layout.findViewById(R.id.txt_cart_count_badge);
+        txt_notification_count_badge = toolbar_layout.findViewById(R.id.txt_notification_count_badge);
+        txt_cart_count_badge = toolbar_layout.findViewById(R.id.txt_cart_count_badge);
         txt_notification_count_badge.setVisibility(View.GONE);
         txt_cart_count_badge.setVisibility(View.GONE);
-*/
-      
+
 
 
 
@@ -611,15 +614,15 @@ public class CustomerNavigationDrawer extends AppCompatActivity implements View.
     protected void onResume() {
         super.onResume();
         Log.w(TAG,"onResume-->");
-//        notificationandCartCountResponseCall();
+      notificationandCartCountResponseCall();
     }
 
 
-   /* @SuppressLint("LogNotTimber")
+    @SuppressLint("LogNotTimber")
     private void notificationandCartCountResponseCall() {
 
-      avi_indicator.setVisibility(View.VISIBLE);
-        avi_indicator.smoothToShow();
+        //avi_indicator.setVisibility(View.VISIBLE);
+        //avi_indicator.smoothToShow();
 
 
         RestApiInterface apiInterface = APIClient.getClient().create(RestApiInterface.class);
@@ -678,8 +681,8 @@ public class CustomerNavigationDrawer extends AppCompatActivity implements View.
     }
     @SuppressLint("LogNotTimber")
     private NotificationCartCountRequest notificationCartCountRequest() {
-      *//*
-         * user_id : 6048589d0b3a487571a1c567*//*
+      /*
+         * user_id : 6048589d0b3a487571a1c567*/
 
 
         NotificationCartCountRequest notificationCartCountRequest = new NotificationCartCountRequest();
@@ -687,7 +690,7 @@ public class CustomerNavigationDrawer extends AppCompatActivity implements View.
         Log.w(TAG,"notificationCartCountRequest"+ "--->" + new Gson().toJson(notificationCartCountRequest));
         return notificationCartCountRequest;
     }
-*/
+
 
 
     @SuppressLint("LogNotTimber")

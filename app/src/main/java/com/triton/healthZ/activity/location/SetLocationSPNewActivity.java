@@ -198,7 +198,7 @@ public class SetLocationSPNewActivity extends FragmentActivity implements OnMapR
                     intent.putExtra("serviceProviderRegisterFormCreateRequestArrayList",serviceProviderRegisterFormCreateRequestArrayList);
                     startActivity(intent);
             }else{
-                Toasty.warning(SetLocationSPNewActivity.this,"Please select citynmae",Toasty.LENGTH_SHORT).show();
+                Toasty.warning(SetLocationSPNewActivity.this,"Please Select City Name",Toasty.LENGTH_SHORT).show();
             }
 
 

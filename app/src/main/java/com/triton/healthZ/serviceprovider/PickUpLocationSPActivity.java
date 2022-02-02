@@ -221,7 +221,7 @@ public class PickUpLocationSPActivity extends FragmentActivity implements OnMapR
                 intent.putExtra("fromactivity",fromactivity);
                 startActivity(intent);
             }else{
-                Toasty.warning(PickUpLocationSPActivity.this,"Please select citynmae",Toasty.LENGTH_SHORT).show();
+                Toasty.warning(PickUpLocationSPActivity.this,"Please Select City Name",Toasty.LENGTH_SHORT).show();
             }
 
 

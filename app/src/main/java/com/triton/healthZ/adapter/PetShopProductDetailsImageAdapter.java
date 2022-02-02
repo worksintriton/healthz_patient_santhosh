@@ -78,6 +78,7 @@ public class PetShopProductDetailsImageAdapter extends  RecyclerView.Adapter<Rec
             holder.txt_product_discount_price.setText("\u20B9 "+productListBean.getProduct_discount_price());
             holder.txt_product_discount_price.setPaintFlags(holder.txt_product_discount_price.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
         }else{
+            holder.txt_product_discount_price.setVisibility(View.INVISIBLE);
             holder.txt_product_discount_price.setText("\u20B9 "+0);
             holder.txt_product_discount_price.setPaintFlags(holder.txt_product_discount_price.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
         }

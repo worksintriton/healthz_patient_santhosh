@@ -249,7 +249,7 @@ public class PickUpLocationShippingAddressEditActivity extends FragmentActivity 
                     intent.putExtra("prodcut_item_count",prodcut_item_count);
                     startActivity(intent);
             }else{
-                Toasty.warning(PickUpLocationShippingAddressEditActivity.this,"Please select citynmae",Toasty.LENGTH_SHORT).show();
+                Toasty.warning(PickUpLocationShippingAddressEditActivity.this,"Please Select City Name",Toasty.LENGTH_SHORT).show();
             }
 
 

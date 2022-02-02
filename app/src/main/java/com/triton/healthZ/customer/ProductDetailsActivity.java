@@ -289,9 +289,10 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
         fab = include_petlover_footer.findViewById(R.id.fab);
 
         bottom_navigation_view = include_petlover_footer.findViewById(R.id.bottomNavigation);
-        bottom_navigation_view.setItemIconTintList(null);
+        //bottom_navigation_view.setItemIconTintList(null);
         bottom_navigation_view.setOnNavigationItemSelectedListener(this);
-        bottom_navigation_view.getMenu().findItem(R.id.home).setChecked(true);
+        bottom_navigation_view.getMenu().findItem(R.id.shop).setChecked(true);
+
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -594,6 +595,8 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
             finish();
         }else if(fromactivity != null && fromactivity.equalsIgnoreCase("PetLoverShopNewFavAdapter")){
             Intent intent = new Intent(ProductDetailsActivity.this,PetloverFavListActivity.class);
+            intent.putExtra("fav","Shop");
+            intent.putExtra("favposition","2");
             startActivity(intent);
             finish();
         }else if(fromactivity != null && fromactivity.equalsIgnoreCase("PetLoverShopNewAdapter")){
@@ -758,7 +761,7 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
 
 
                                 img_fav.setOnClickListener(ProductDetailsActivity.this);
-                            img_cart.setOnClickListener(view -> {
+                                img_cart.setOnClickListener(view -> {
                                 Intent intent = new Intent(getApplicationContext(),PetCartActivity.class);
                                 intent.putExtra("productid",productid);
                                 intent.putExtra("cat_id",cat_id);

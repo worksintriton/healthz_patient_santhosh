@@ -95,15 +95,15 @@ public class EditMyAddressActivity extends FragmentActivity implements OnMapRead
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.edt_cityname)
-    EditText txt_cityname;
+    EditText edt_cityname;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.edt_pincode)
-    EditText txt_pincode;
+    EditText edt_pincode;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.edt_location)
-    EditText txt_location;
+    EditText edt_location;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.rglocationtype)
@@ -229,7 +229,7 @@ public class EditMyAddressActivity extends FragmentActivity implements OnMapRead
                 edt_pickname.setText(nickname);
 
             }if(pincode != null){
-                txt_pincode.setText(pincode);
+                edt_pincode.setText(pincode);
 
             }
 
@@ -240,11 +240,11 @@ public class EditMyAddressActivity extends FragmentActivity implements OnMapRead
 
 
 
-            txt_cityname.setText(cityname);
+            edt_cityname.setText(cityname);
             txt_cityname_title.setText(cityname);
             if(address != null && !address.isEmpty()){
                 txt_address.setText(address);
-                txt_location.setText(address);
+                edt_location.setText(address);
 
             }
             if(locationtype != null){
@@ -410,11 +410,28 @@ public class EditMyAddressActivity extends FragmentActivity implements OnMapRead
 
     public void saveLocationValidator() {
         boolean can_proceed = true;
-        if (edt_pickname.getText().toString().trim().equals("")) {
-             edt_pickname.setError("Please enter pick a nick Name for this location");
-             edt_pickname.requestFocus();
+        int pincodelength = edt_pincode.getText().toString().trim().length();
+
+        if (pincodelength <= 5) {
+            edt_pincode.setError("Please enter valid pincode");
+            edt_pincode.requestFocus();
             can_proceed = false;
         }
+        else if (edt_location.getText().toString().trim().equals("")) {
+            edt_location.setError("Please enter location name");
+            edt_location.requestFocus();
+            can_proceed = false;
+        }else if (edt_cityname.getText().toString().trim().equals("")) {
+            edt_location.setError("Please enter city name");
+            edt_location.requestFocus();
+            can_proceed = false;
+        }
+        else if (edt_pickname.getText().toString().trim().equals("")) {
+            edt_pickname.setError("Please enter pick a nick Name for this location");
+            edt_pickname.requestFocus();
+            can_proceed = false;
+        }
+
 
         if (can_proceed) {
             if (new ConnectionDetector(EditMyAddressActivity.this).isNetworkAvailable(EditMyAddressActivity.this)) {
@@ -506,13 +523,13 @@ public class EditMyAddressActivity extends FragmentActivity implements OnMapRead
         locationUpdateRequest.setUser_id(userid);
         locationUpdateRequest.setLocation_state(state);
         locationUpdateRequest.setLocation_country(country);
-        locationUpdateRequest.setLocation_city(cityname);
-        locationUpdateRequest.setLocation_pin(pincode);
-        locationUpdateRequest.setLocation_address(address);
+        locationUpdateRequest.setLocation_city(edt_cityname.getText().toString().trim());
+        locationUpdateRequest.setLocation_pin(edt_pincode.getText().toString().trim());
+        locationUpdateRequest.setLocation_address(edt_location.getText().toString().trim());
         locationUpdateRequest.setLocation_lat(latitude);
         locationUpdateRequest.setLocation_long(longtitude);
         locationUpdateRequest.setLocation_title(locationtype);
-        locationUpdateRequest.setLocation_nickname(edt_pickname.getText().toString());
+        locationUpdateRequest.setLocation_nickname(edt_pickname.getText().toString().trim());
         locationUpdateRequest.setDefault_status(defaultstatus);
         locationUpdateRequest.setDate_and_time(currentDateandTime);
 

@@ -205,7 +205,9 @@ public class VerifyEmailOtpActivity extends AppCompatActivity implements View.On
 
 
         if (can_proceed) {
-             Intent intent = new Intent(VerifyEmailOtpActivity.this,SignUpActivity.class);
+            Toasty.success(getApplicationContext(),"Your email verified successfully", Toast.LENGTH_SHORT, true).show();
+
+            Intent intent = new Intent(VerifyEmailOtpActivity.this,SignUpActivity.class);
              intent.putExtra("verified","verified");
              intent.putExtra("useremail",useremail);
              intent.putExtra("firstname",firstname);

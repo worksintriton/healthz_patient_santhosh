@@ -189,7 +189,7 @@ public class PickUpLocationAllowActivity extends FragmentActivity implements OnM
                     intent.putExtra("fromactivity",fromactivity);
                     startActivity(intent);
             }else{
-                Toasty.warning(PickUpLocationAllowActivity.this,"Please select citynmae",Toasty.LENGTH_SHORT).show();
+                Toasty.warning(PickUpLocationAllowActivity.this,"Please Select City Name",Toasty.LENGTH_SHORT).show();
             }
 
 

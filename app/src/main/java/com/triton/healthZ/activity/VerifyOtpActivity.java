@@ -423,6 +423,8 @@ public class VerifyOtpActivity extends AppCompatActivity implements View.OnClick
 
                 if (response.body() != null) {
                     if(response.body().getCode() == 200){
+                        Toasty.success(getApplicationContext(),"Your phone number verified successfully", Toast.LENGTH_SHORT, true).show();
+
                         if(response.body().getData() != null) {
                             if (response.body().getData().isUser_email_verification()) {
                                 verifyemailstatus = "true";

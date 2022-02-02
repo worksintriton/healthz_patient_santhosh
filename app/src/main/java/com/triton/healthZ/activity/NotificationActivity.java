@@ -120,7 +120,11 @@ public class NotificationActivity extends AppCompatActivity {
         ImageView img_profile = include_petlover_header.findViewById(R.id.img_profile);
         TextView toolbar_title = include_petlover_header.findViewById(R.id.toolbar_title);
         toolbar_title.setText(getResources().getString(R.string.notification));
-        img_profile.setVisibility(View.VISIBLE);
+        img_sos.setVisibility(View.GONE);
+        img_cart.setVisibility(View.GONE);
+        img_notification.setVisibility(View.GONE);
+        img_profile.setVisibility(View.GONE);
+
 
 
 

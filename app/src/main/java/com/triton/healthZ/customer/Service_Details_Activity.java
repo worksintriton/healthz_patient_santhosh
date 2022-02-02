@@ -594,6 +594,8 @@ public class Service_Details_Activity extends AppCompatActivity implements View.
         super.onBackPressed();
         if(from != null && from.equalsIgnoreCase("PetLoverSPNewFavAdapter")){
             Intent intent = new Intent(getApplicationContext(),PetloverFavListActivity.class);
+            intent.putExtra("fav","Service");
+            intent.putExtra("favposition","1");
             startActivity(intent);
             finish();
         }else{

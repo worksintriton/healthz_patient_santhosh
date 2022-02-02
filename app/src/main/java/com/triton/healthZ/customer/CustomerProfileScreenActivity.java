@@ -224,16 +224,14 @@ public class CustomerProfileScreenActivity extends AppCompatActivity implements 
         toolbar_title.setText(getResources().getString(R.string.profile));
         img_sos.setVisibility(View.GONE);
         img_cart.setVisibility(View.GONE);
-
-        img_notification.setVisibility(View.VISIBLE);
-        img_profile.setVisibility(View.INVISIBLE);
+        img_notification.setVisibility(View.GONE);
+        img_profile.setVisibility(View.GONE);
 
 
 
         Log.w(TAG,"onCreate : ");
         avi_indicator.setVisibility(View.GONE);
         ll_add.setVisibility(View.GONE);
-        img_notification.setVisibility(View.VISIBLE);
 
 
         session = new SessionManager(getApplicationContext());

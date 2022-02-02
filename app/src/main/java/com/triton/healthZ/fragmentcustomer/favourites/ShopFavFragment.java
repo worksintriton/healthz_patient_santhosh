@@ -158,7 +158,7 @@ public class ShopFavFragment extends Fragment implements View.OnClickListener {
                             if (dataBeanList != null && dataBeanList.size()>0) {
                                 rv_shopfavlist.setVisibility(View.VISIBLE);
                                 txt_no_records.setVisibility(View.GONE);
-                                setViewDoctorsFavList(dataBeanList);
+                                setViewShopFavList(dataBeanList);
                             } else {
                                 rv_shopfavlist.setVisibility(View.GONE);
                                 txt_no_records.setVisibility(View.VISIBLE);
@@ -189,7 +189,7 @@ public class ShopFavFragment extends Fragment implements View.OnClickListener {
         });
 
     }
-    private void setViewDoctorsFavList(List<FetchPetloverShopFavListResponse.DataBean> shopFavList) {
+    private void setViewShopFavList(List<FetchPetloverShopFavListResponse.DataBean> shopFavList) {
 
         rv_shopfavlist.setLayoutManager(new GridLayoutManager(mContext,2));
         rv_shopfavlist.setItemAnimator(new DefaultItemAnimator());

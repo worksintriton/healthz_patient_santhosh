@@ -237,7 +237,7 @@ public class PickUpLocationEditDoctorActivity extends FragmentActivity implement
                     intent.putExtra("fromactivity",fromactivity);
                     startActivity(intent);
             }else{
-                Toasty.warning(PickUpLocationEditDoctorActivity.this,"Please select citynmae",Toasty.LENGTH_SHORT).show();
+                Toasty.warning(PickUpLocationEditDoctorActivity.this,"Please Select City Name",Toasty.LENGTH_SHORT).show();
             }
 
 

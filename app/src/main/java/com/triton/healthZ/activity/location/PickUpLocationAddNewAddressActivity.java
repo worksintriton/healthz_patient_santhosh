@@ -256,7 +256,7 @@ public class PickUpLocationAddNewAddressActivity extends FragmentActivity implem
                     intent.putExtra("prodcut_item_count",prodcut_item_count);
                     startActivity(intent);
             }else{
-                Toasty.warning(PickUpLocationAddNewAddressActivity.this,"Please select citynmae",Toasty.LENGTH_SHORT).show();
+                Toasty.warning(PickUpLocationAddNewAddressActivity.this,"Please Select City Name",Toasty.LENGTH_SHORT).show();
             }
 
 

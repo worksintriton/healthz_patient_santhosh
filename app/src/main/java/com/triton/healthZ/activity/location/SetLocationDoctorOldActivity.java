@@ -191,7 +191,7 @@ public class SetLocationDoctorOldActivity extends FragmentActivity implements On
                     intent.putExtra("fromactivity",fromactivity);
                     startActivity(intent);
             }else{
-                Toasty.warning(SetLocationDoctorOldActivity.this,"Please select citynmae",Toasty.LENGTH_SHORT).show();
+                Toasty.warning(SetLocationDoctorOldActivity.this,"Please Select City Name",Toasty.LENGTH_SHORT).show();
             }
 
 

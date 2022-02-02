@@ -263,7 +263,7 @@ public class PickUpLocationAddNewAddressSPActivity extends FragmentActivity impl
                     intent.putExtra("Coupon_status",Coupon_status);
                     startActivity(intent);
             }else{
-                Toasty.warning(PickUpLocationAddNewAddressSPActivity.this,"Please select citynmae",Toasty.LENGTH_SHORT).show();
+                Toasty.warning(PickUpLocationAddNewAddressSPActivity.this,"Please Select City Name",Toasty.LENGTH_SHORT).show();
             }
 
 

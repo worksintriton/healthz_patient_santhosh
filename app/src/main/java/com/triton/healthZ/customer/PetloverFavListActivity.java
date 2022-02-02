@@ -76,6 +76,7 @@ public class PetloverFavListActivity extends AppCompatActivity implements View.O
 
 
 
+    @SuppressLint("LogNotTimber")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -97,10 +98,35 @@ public class PetloverFavListActivity extends AppCompatActivity implements View.O
         img_notification.setVisibility(View.VISIBLE);
         img_profile.setVisibility(View.VISIBLE);
 
+
         tabLayout.setupWithViewPager(viewPager);
         TabLayout.Tab tab = tabLayout.getTabAt(someIndex);
-        tab.select();
+        if (tab != null) {
+            tab.select();
+        }
         setupViewPager(viewPager);
+
+
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            String fav = bundle.getString("fav");
+            String favposition = bundle.getString("favposition");
+            Log.w(TAG, "bundle fav : " + fav+" favposition : "+favposition);
+            if(favposition != null && favposition.equalsIgnoreCase("0")){
+                someIndex = 0;
+            }else if(favposition != null && favposition.equalsIgnoreCase("1")){
+                someIndex = 1;
+            }else if(favposition != null && favposition.equalsIgnoreCase("2")){
+                someIndex = 2;
+            }
+            tabLayout.setupWithViewPager(viewPager);
+            tab = tabLayout.getTabAt(someIndex);
+            if (tab != null) {
+                tab.select();
+            }
+        }
+
+
         //tabLayout.setupWithViewPager(viewPager);
         img_back.setOnClickListener(v -> onBackPressed());
 
