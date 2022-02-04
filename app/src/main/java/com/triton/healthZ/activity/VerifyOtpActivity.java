@@ -134,7 +134,7 @@ public class VerifyOtpActivity extends AppCompatActivity implements View.OnClick
             lastname = extras.getString("lastname");
             useremail = extras.getString("useremail");
             fromactivity = extras.getString("fromactivity");
-            Log.w(TAG,"Bundle "+" phonenumber : "+phonenumber+" otp :"+otp+" usertype : "+usertype+" userstatus : "+userstatus+ " userid : "+userid);
+            Log.w(TAG,"Bundle "+" phonenumber : "+phonenumber+" otp :"+otp+" usertype : "+usertype+" userstatus : "+userstatus+ " userid : "+userid+"fromactivity : "+fromactivity);
         }
 
 
@@ -288,9 +288,7 @@ public class VerifyOtpActivity extends AppCompatActivity implements View.OnClick
             Toasty.warning(getApplicationContext(), "Please Enter OTP", Toast.LENGTH_SHORT, true).show();
 
         } else if (!responseotp.equalsIgnoreCase(enteredotp)) {
-
             can_proceed = false;
-
             Toasty.warning(getApplicationContext(), "Incorrect OTP", Toast.LENGTH_SHORT, true).show();
         } else if(enteredotp.equalsIgnoreCase(responseotp)){
             can_proceed = true;

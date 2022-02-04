@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-  <LinearLayout
+    <LinearLayout
         android:id="@+id/headerView"
         android:layout_width="match_parent"
         android:layout_height="60dp"
@@ -87,7 +87,7 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/rectangle_corner"
                 android:padding="10dp">
@@ -141,17 +141,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:orientation="horizontal">
-
-                <!--    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:fontFamily="@font/futuramediumbt"
-                        android:gravity="center"
-                        android:text="@string/gender"
-                        android:textColor="@color/new_txt_color"
-                        android:textSize="12sp" />
-    -->
-
                 <CheckBox
                     android:id="@+id/cb_pregnant"
                     android:layout_width="wrap_content"
@@ -164,13 +153,12 @@
                     android:textColor="@color/new_txt_color"
                     android:textSize="12sp"
                     tools:ignore="RtlSymmetry"
-                   />
-
+                    />
                 <CheckBox
                     android:id="@+id/cb_diabetes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
+                    android:layout_marginStart="5dp"
                     android:layout_weight="1"
                     android:buttonTint="@drawable/cb_selectorrs"
                     android:fontFamily="@font/montserrat"
@@ -179,13 +167,17 @@
                     android:textColor="@color/new_txt_color"
                     android:textSize="12sp"
                     tools:ignore="RtlSymmetry" />
-
-
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
                 <CheckBox
                     android:id="@+id/cb_ocd"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
+                    android:layout_marginStart="5dp"
                     android:layout_weight="1"
                     android:buttonTint="@drawable/cb_selectorrs"
                     android:fontFamily="@font/montserrat"
@@ -194,13 +186,41 @@
                     android:textColor="@color/new_txt_color"
                     android:textSize="12sp"
                     tools:ignore="RtlSymmetry" />
-
-
-
+                <CheckBox
+                    android:id="@+id/cb_others"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:buttonTint="@drawable/cb_selectorrs"
+                    android:fontFamily="@font/montserrat"
+                    android:paddingStart="10dp"
+                    android:text="@string/others"
+                    android:textColor="@color/new_txt_color"
+                    android:textSize="12sp"
+                    tools:ignore="RtlSymmetry" />
             </LinearLayout>
 
             <EditText
-                android:id="@+id/edt_dob"
+                android:id="@+id/edt_healthissues_others"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rectangle_corner"
+                android:fontFamily="@font/montserrat"
+                android:hint="@string/health_issues_other"
+                android:inputType="text"
+                android:digits="@string/characters"
+                android:maxLength="50"
+                android:maxLines="1"
+                android:padding="15dp"
+                android:textColor="@color/green"
+                android:textColorHint="@color/dark_gray"
+                android:textSize="14sp"
+                tools:ignore="Autofill,LabelFor,TextFields" />
+
+            <TextView
+                android:id="@+id/txt_dob"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -277,7 +297,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:buttonTint="@drawable/cb_selectorrs"
-                        android:checked="true"
                         android:fontFamily="@font/montserrat"
                         android:text="@string/yes"
                         android:textColor="@color/new_txt_color"

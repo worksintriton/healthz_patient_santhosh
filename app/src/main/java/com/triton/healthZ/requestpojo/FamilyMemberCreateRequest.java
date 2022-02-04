@@ -4,82 +4,35 @@ import java.util.List;
 
 public class FamilyMemberCreateRequest {
 
-
     /**
-     * user_id : 618230269dcc2a290e5bae9a
-     * name : Mohammed
+     * anymedicalinfo : is good
+     * covide_vac : No
+     * dateofbirth : 03-02-2016
      * gender : Male
-     * relation_type : Son
-     * health_issue : No issue
-     * dateofbirth : 23-10-2021
-     * anymedicalinfo : No Issue
-     * covide_vac : Yes
-     * weight : 70
-     * pic : [{"image":"http://Google.com"}]
+     * health_issue : ["Diabetes","OCD","Others"]
+     * health_issue_others : fever
+     * name : Deva
+     * pic : [{"image":"http://35.165.75.97:3000/api/uploads/1643871957791.png"}]
+     * relation_type : Father
+     * user_id : 61b198a49e6f552291dbfa82
+     * weight : 67
      */
 
-    private String user_id;
-    private String name;
-    private String gender;
-    private String relation_type;
-    private String health_issue;
-    private String dateofbirth;
     private String anymedicalinfo;
     private String covide_vac;
+    private String dateofbirth;
+    private String gender;
+    private String health_issue_others;
+    private String name;
+    private String relation_type;
+    private String user_id;
     private String weight;
+    private List<String> health_issue;
     /**
-     * image : http://Google.com
+     * image : http://35.165.75.97:3000/api/uploads/1643871957791.png
      */
 
     private List<PicBean> pic;
-
-    public String getUser_id() {
-        return user_id;
-    }
-
-    public void setUser_id(String user_id) {
-        this.user_id = user_id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public String getRelation_type() {
-        return relation_type;
-    }
-
-    public void setRelation_type(String relation_type) {
-        this.relation_type = relation_type;
-    }
-
-    public String getHealth_issue() {
-        return health_issue;
-    }
-
-    public void setHealth_issue(String health_issue) {
-        this.health_issue = health_issue;
-    }
-
-    public String getDateofbirth() {
-        return dateofbirth;
-    }
-
-    public void setDateofbirth(String dateofbirth) {
-        this.dateofbirth = dateofbirth;
-    }
 
     public String getAnymedicalinfo() {
         return anymedicalinfo;
@@ -97,12 +50,68 @@ public class FamilyMemberCreateRequest {
         this.covide_vac = covide_vac;
     }
 
+    public String getDateofbirth() {
+        return dateofbirth;
+    }
+
+    public void setDateofbirth(String dateofbirth) {
+        this.dateofbirth = dateofbirth;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getHealth_issue_others() {
+        return health_issue_others;
+    }
+
+    public void setHealth_issue_others(String health_issue_others) {
+        this.health_issue_others = health_issue_others;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getRelation_type() {
+        return relation_type;
+    }
+
+    public void setRelation_type(String relation_type) {
+        this.relation_type = relation_type;
+    }
+
+    public String getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(String user_id) {
+        this.user_id = user_id;
+    }
+
     public String getWeight() {
         return weight;
     }
 
     public void setWeight(String weight) {
         this.weight = weight;
+    }
+
+    public List<String> getHealth_issue() {
+        return health_issue;
+    }
+
+    public void setHealth_issue(List<String> health_issue) {
+        this.health_issue = health_issue;
     }
 
     public List<PicBean> getPic() {
@@ -116,10 +125,7 @@ public class FamilyMemberCreateRequest {
     public static class PicBean {
         private String image;
 
-        public PicBean(String serverUrlImagePath) {
 
-            this.image =serverUrlImagePath;
-        }
 
         public String getImage() {
             return image;

@@ -30,6 +30,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 import com.triton.healthz.R;
 import com.triton.healthz.activity.NotificationActivity;
@@ -53,7 +54,11 @@ public class PetWalkinappointmentsActivity extends AppCompatActivity implements 
     @BindView(R.id.include_petlover_footer)
     View include_petlover_footer;
 
+
     BottomNavigationView bottom_navigation_view;
+
+    FloatingActionButton fab;
+
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.viewPager)
@@ -80,67 +85,6 @@ public class PetWalkinappointmentsActivity extends AppCompatActivity implements 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.include_petlover_header)
     View include_petlover_header;
-
-    /* Petlover Bottom Navigation */
-
-    /* Petlover Bottom Navigation */
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_home)
-    RelativeLayout rl_home;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_care)
-    RelativeLayout rl_care;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.title_care)
-    TextView title_care;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_care)
-    ImageView img_care;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_service)
-    RelativeLayout rl_service;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.title_serv)
-    TextView title_serv;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_serv)
-    ImageView img_serv;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_shop)
-    RelativeLayout rl_shop;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.title_shop)
-    TextView title_shop;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_shop)
-    ImageView img_shop;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_comn)
-    RelativeLayout rl_comn;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.title_community)
-    TextView title_community;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_community)
-    ImageView img_community;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_homes)
-    RelativeLayout rl_homes;
-
 
     String appintments;
     private int someIndex = 0;
@@ -190,34 +134,22 @@ public class PetWalkinappointmentsActivity extends AppCompatActivity implements 
         img_cart.setOnClickListener(this);
         img_profile.setOnClickListener(this);
 
-//        bottom_navigation_view = include_petlover_footer.findViewById(R.id.bottom_navigation_view);
-//        bottom_navigation_view.setItemIconTintList(null);
-//        bottom_navigation_view.setOnNavigationItemSelectedListener(this);
-//        bottom_navigation_view.getMenu().findItem(R.id.home).setChecked(true);
+        fab = include_petlover_footer.findViewById(R.id.fab);
 
-        /*shop*/
-        title_care.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-        img_care.setImageResource(R.drawable.grey_care);
-        title_serv.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-        img_serv.setImageResource(R.drawable.grey_servc);
-        title_community.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-        img_community.setImageResource(R.drawable.grey_community);
-        title_shop.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-        img_shop.setImageResource(R.drawable.grey_shop  );
+        bottom_navigation_view = include_petlover_footer.findViewById(R.id.bottomNavigation);
+        bottom_navigation_view.setItemIconTintList(null);
+        bottom_navigation_view.setOnNavigationItemSelectedListener(this);
+        bottom_navigation_view.getMenu().findItem(R.id.home).setChecked(true);
 
-
-        rl_home.setOnClickListener(this);
-
-        rl_care.setOnClickListener(this);
-
-        rl_service.setOnClickListener(this);
-
-        rl_shop.setOnClickListener(this);
-
-        rl_comn.setOnClickListener(this);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                callDirections("1");
+            }
+        });
 
 
-        rl_homes.setOnClickListener(this);
+
 
 
 
@@ -374,33 +306,7 @@ public class PetWalkinappointmentsActivity extends AppCompatActivity implements 
                 startActivity(intent);
                 break;
 
-            case R.id.rl_homes:
-                callDirections("1");
-                break;
 
-            case R.id.rl_home:
-                callDirections("1");
-                break;
-
-
-            case R.id.rl_shop:
-                callDirections("2");
-                break;
-
-
-            case R.id.rl_service:
-                callDirections("3");
-                break;
-
-
-            case R.id.rl_care:
-                callDirections("4");
-                break;
-
-
-            case R.id.rl_comn:
-                callDirections("5");
-                break;
         }
     }
 

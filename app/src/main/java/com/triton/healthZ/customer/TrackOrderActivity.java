@@ -341,7 +341,6 @@ public class TrackOrderActivity extends AppCompatActivity implements View.OnClic
         txt_order_transit_date.setText(" ");
 
 
-        //bottom_navigation_view.getMenu().findItem(R.id.shop).setChecked(true);
 
 
         if (new ConnectionDetector(TrackOrderActivity.this).isNetworkAvailable(TrackOrderActivity.this)) {
@@ -351,7 +350,6 @@ public class TrackOrderActivity extends AppCompatActivity implements View.OnClic
 
         bottom_navigation_view = include_petlover_footer.findViewById(R.id.bottomNavigation);
         floatingActionButton = include_petlover_footer.findViewById(R.id.fab);
-      //  bottom_navigation_view.setItemIconTintList(null);
         bottom_navigation_view.setOnNavigationItemSelectedListener(this);
         bottom_navigation_view.getMenu().findItem(R.id.shop).setChecked(true);
 

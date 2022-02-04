@@ -80,6 +80,7 @@ import com.wang.avi.AVLoadingIndicatorView;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
@@ -212,7 +213,7 @@ public class CustomerHomeFragment extends Fragment implements Serializable,
     private List<PetLoverDashboardResponse.DataBean.DashboarddataBean.MiddleBannerDetailsBean> middleBannerDetailsBeanList;
 
     private Activity mActivity;
-
+    public static List<PetLoverDashboardResponse.DataBean.LocationDetailsBean> defaultLocationList = new ArrayList<>();
 
 
     public CustomerHomeFragment() {
@@ -491,8 +492,14 @@ public class CustomerHomeFragment extends Fragment implements Serializable,
 
                         }
 
+                        if(response.body().getData().getLocationDetails() != null && response.body().getData().getLocationDetails().size()>0){
+                            defaultLocationList.clear();
+                            defaultLocationList  = response.body().getData().getLocationDetails();
+                        }
 
-                    }
+
+
+                        }
                     else {
                         showErrorLoading(response.body().getMessage());
                     }

@@ -54,6 +54,21 @@
             android:scaleType="centerInside"
             android:src="@drawable/upload"
             tools:ignore="ContentDescription" />
+        <TextView
+            android:id="@+id/txt_remove_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/futuramediumbt"
+            android:gravity="center"
+            android:text="@string/remove_image"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:background="@drawable/new_rounded_corner_btn_delete"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:padding="5dp"
+            />
 
         <TextView
             android:id="@+id/txt_uploadpetimage"

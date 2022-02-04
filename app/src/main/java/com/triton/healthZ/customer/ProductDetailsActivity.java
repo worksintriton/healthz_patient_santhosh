@@ -669,6 +669,7 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
                             if( response.body().getVendor_details() != null){
                                 if(response.body().getProduct_details().getThreshould() != null){
                                     threshould = response.body().getProduct_details().getThreshould();
+                                    Log.w(TAG,"threshould---> : "+threshould);
                                 }
                                 if(response.body().getProduct_details().getCat_id()!=null) {
 
@@ -790,6 +791,7 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
                                 setView(response.body().getProduct_details().getProduct_related());
 
                             }
+                            Log.w(TAG,"threshould : "+threshould);
                             setUIData(product_title,product_review,product_rating,product_price,product_discount,product_discription,product_cart_count,threshould,prod_type);
 
 
@@ -845,8 +847,11 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
 
     @SuppressLint("SetTextI18n")
     private void setUIData(String product_title, int product_review, double product_rating, int product_price, int product_discount, String product_discription, int product_cart_count, String threshould, String prod_type) {
-
+        Log.w(TAG,"setUIData threshould : "+threshould);
         //product_cart_counts = product_cart_count;
+
+
+
 
         if(product_title != null && !product_title.isEmpty()){
             txt_products_title.setText(product_title);
@@ -909,15 +914,21 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
             txt_discount.setVisibility(View.INVISIBLE);
 
         }
+
         if(threshould != null && !threshould.isEmpty() ){
             int mythreshould = 0;
             try {
                 mythreshould = Integer.parseInt(threshould);
+                Log.w(TAG,"setUIData mythreshould : "+mythreshould);
+
             } catch(NumberFormatException nfe) {
                 System.out.println("Could not parse " + nfe);
             }
 
             if(mythreshould <= 0){
+                Log.w(TAG,"setUIData mythreshould if : "+mythreshould);
+
+
                 txt_products_quantity.setVisibility(View.VISIBLE);
                 txt_products_quantity.setText("Out Of Stock");
                 ll_increment_add_to_cart.setVisibility(View.GONE);
@@ -925,8 +936,10 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
                 img_add_product.setVisibility(View.GONE);
                 txt_cart_count.setVisibility(View.GONE);
                 img_remove_product.setVisibility(View.GONE);
-                ll_add_to_cart.setVisibility(View.GONE);
+                ll_add_to_cart.setVisibility(View.INVISIBLE);
             }else{
+                Log.w(TAG,"setUIData mythreshould else : "+mythreshould);
+
                 ll_increment_add_to_cart.setVisibility(View.VISIBLE);
                 img_add_product.setVisibility(View.VISIBLE);
                 txt_cart_count.setVisibility(View.VISIBLE);
@@ -940,6 +953,13 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
 
 
         }
+
+        if(threshould != null && !threshould.equalsIgnoreCase("0")){
+            ll_add_to_cart.setVisibility(View.VISIBLE);
+        }else{
+            ll_add_to_cart.setVisibility(View.INVISIBLE);
+        }
+
         if(product_discription != null && !product_discription.isEmpty()){
             txt_product_desc.setText(product_discription);
         }

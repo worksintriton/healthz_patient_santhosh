@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Healthz</string>
-    <string name="version">02.02.2022.v1</string>
+    <string name="version">03.02.2022.v1</string>
     <string name="verify_otp">Verify OTP</string>
     <string name="emailorphonenumber">Phone Number</string>
     <string name="new_here">New here ?</string>
@@ -216,6 +216,7 @@
     <string name="my_addresses">My Addresses</string>
 
     <string name="upload_image">Upload Image</string>
+    <string name="remove_image">Remove Image</string>
 
     <string name="add_a_new_address">Add A New Address</string>
     <string name="add_new_pet">Add a new pet</string>
@@ -643,6 +644,7 @@
     <string name="patient_name">Patient Name</string>
     <string name="image_upload">Image Upload</string>
     <string name="edit_your_family">Edit Your Family Members</string>
+    <string name="view_your_family">View Your Family Members</string>
     <string name="pregrant">Pregnant</string>
     <string name="diabeties">Diabeties</string>
     <string name="ocd">OCD</string>
@@ -689,5 +691,6 @@
     <string name="service_charge_amount">Service Charge Amount</string>
     <string name="price_label">Price</string>
     <string name="shipdetails">Shipping Details</string>
+    <string name="health_issues_other">Health issues other</string>
 </resources>
 

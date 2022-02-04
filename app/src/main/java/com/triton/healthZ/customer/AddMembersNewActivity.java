@@ -49,6 +49,7 @@ import com.triton.healthz.requestpojo.FamilyMemberCreateRequest;
 import com.triton.healthz.responsepojo.FamilyMemberCreateResponse;
 import com.triton.healthz.responsepojo.FileUploadResponse;
 import com.triton.healthz.responsepojo.GetFamilyMemberResponse;
+import com.triton.healthz.responsepojo.SuccessResponse;
 import com.triton.healthz.sessionmanager.SessionManager;
 import com.triton.healthz.utils.ConnectionDetector;
 import com.triton.healthz.utils.RestUtils;
@@ -116,8 +117,16 @@ public class AddMembersNewActivity extends AppCompatActivity implements View.OnC
     CheckBox cb_ocd;
 
     @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.edt_dob)
-    EditText edt_dob;
+    @BindView(R.id.cb_others)
+    CheckBox cb_others;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.edt_healthissues_others)
+    EditText edt_healthissues_others;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_dob)
+    TextView txt_dob;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.edt_bio)
@@ -158,7 +167,7 @@ public class AddMembersNewActivity extends AppCompatActivity implements View.OnC
 
     int sprflag = 0;
 
-    private String selectedRadioButton = "Yes";
+    private String selectedRadioButton = "";
 
     public final int REQUEST_CODE_ASK_MULTIPLE_PERMISSIONS = 1;
     private static final String CAMERA_PERMISSION = CAMERA ;
@@ -212,6 +221,10 @@ public class AddMembersNewActivity extends AppCompatActivity implements View.OnC
     private static final int DATE_PICKER_ID = 0 ;
     private static final int PET_DATE_PICKER_ID = 1 ;
 
+    List<String> health_issue = new ArrayList<>();
+    private String healthissueothers = "";
+
+
     @SuppressLint("LogNotTimber")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -263,13 +276,13 @@ public class AddMembersNewActivity extends AppCompatActivity implements View.OnC
             @SuppressLint("LogNotTimber")
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int arg2, long arg3) {
+                ((TextView) parent.getChildAt(0)).setTextColor(getResources().getColor(R.color.green));
+                strrelationtype = sprrelationtype.getSelectedItem().toString();
 
+                Log.w(TAG,"strrelationtype:"+strrelationtype);
                 if(++sprflag > 1) {
 
-                    ((TextView) parent.getChildAt(0)).setTextColor(getResources().getColor(R.color.green));
-                    strrelationtype = sprrelationtype.getSelectedItem().toString();
-
-                    Log.w(TAG,"strrelationtype:"+strrelationtype);
+                    
                 }
 
 
@@ -286,13 +299,13 @@ public class AddMembersNewActivity extends AppCompatActivity implements View.OnC
             @SuppressLint("LogNotTimber")
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int arg2, long arg3) {
+                ((TextView) parent.getChildAt(0)).setTextColor(getResources().getColor(R.color.green));
+                strgendertype = sprgender.getSelectedItem().toString();
 
+                Log.w(TAG,"strgendertype:"+strgendertype);
                 if(++sprflag > 1) {
 
-                    ((TextView) parent.getChildAt(0)).setTextColor(getResources().getColor(R.color.green));
-                    strgendertype = sprgender.getSelectedItem().toString();
-
-                    Log.w(TAG,"strgendertype:"+strgendertype);
+                   
                 }
 
 
@@ -306,28 +319,6 @@ public class AddMembersNewActivity extends AppCompatActivity implements View.OnC
         });
 
 
-        sprgender.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @SuppressLint("LogNotTimber")
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int arg2, long arg3) {
-
-                if(++sprflag > 1) {
-
-                    ((TextView) parent.getChildAt(0)).setTextColor(getResources().getColor(R.color.green));
-                    strgendertype = sprgender.getSelectedItem().toString();
-
-                    Log.w(TAG,"strgendertype:"+strgendertype);
-                }
-
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> arg0) {
-                // TODO Auto-generated method stub
-
-            }
-        });
 
         cb_yes.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked)
@@ -348,29 +339,48 @@ public class AddMembersNewActivity extends AppCompatActivity implements View.OnC
             if (isChecked)
             {
                 strhealthissue = "Pregnant";
-                cb_diabetes.setChecked(false);
-                cb_ocd.setChecked(false);
+                health_issue.add(strhealthissue);
+                Log.w(TAG,"health_issue if : "+health_issue);
+
+            }else{
+                health_issue.remove("Pregnant");
+                Log.w(TAG,"health_issue else : "+health_issue);
             }
         });
         cb_diabetes.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked)
             {
                 strhealthissue = "Diabetes";
-                cb_pregnant.setChecked(false);
-                cb_ocd.setChecked(false);
+                health_issue.add(strhealthissue);
+
+            }else{
+                health_issue.remove("Diabetes");
             }
         });
         cb_ocd.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked)
             {
                 strhealthissue = "OCD";
-                cb_pregnant.setChecked(false);
-                cb_diabetes.setChecked(false);
+                health_issue.add(strhealthissue);
+
+            }else{
+                health_issue.remove("OCD");
+            }
+        });
+        cb_others.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked)
+            {
+                strhealthissue = "Others";
+                health_issue.add(strhealthissue);
+                edt_healthissues_others.setVisibility(View.VISIBLE);
+            }else{
+                health_issue.remove("Others");
+                edt_healthissues_others.setVisibility(View.GONE);
             }
         });
 
 
-        edt_dob.setOnClickListener(new View.OnClickListener() {
+        txt_dob.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -442,7 +452,7 @@ public class AddMembersNewActivity extends AppCompatActivity implements View.OnC
             SelectedLastVaccinateddate = strdayOfMonth + "-" + strMonth + "-" + year;
 
             // Show selected date
-            edt_dob.setText(SelectedLastVaccinateddate);
+            txt_dob.setText(SelectedLastVaccinateddate);
 
         }
     };
@@ -453,46 +463,51 @@ public class AddMembersNewActivity extends AppCompatActivity implements View.OnC
         int namelength = edt_name.getText().toString().trim().length();
         int weightlength = edt_weight.getText().toString().trim().length();
 
-        if (edt_name.getText().toString() != null && edt_name.getText().toString().trim().equals("") && edt_weight.getText().toString()!= null && edt_weight.getText().toString().trim().equals("")
-         ) {
+        if (edt_name.getText().toString().isEmpty()  &&  edt_weight.getText().toString().trim().isEmpty()) {
             Toasty.warning(getApplicationContext(), "Please enter the fields", Toast.LENGTH_SHORT, true).show();
             can_proceed = false;
         } else if (edt_name.getText().toString().trim().equals("")) {
-            edt_name.setError("Please enter name");
-            edt_name.requestFocus();
+            Toasty.warning(getApplicationContext(), "Please enter name", Toast.LENGTH_SHORT, true).show();
             can_proceed = false;
         }else if (namelength > 25) {
-            edt_name.setError("The maximum length for anname is 25 characters.");
-            edt_name.requestFocus();
+            Toasty.warning(getApplicationContext(), "The maximum length for anname is 25 characters.", Toast.LENGTH_SHORT, true).show();
             can_proceed = false;
         }
-        else if (edt_weight.getText().toString().trim().equals("")) {
-            edt_weight.setError("Please enter weight");
-            edt_weight.requestFocus();
+        else if(!validdSelectRelationType()){
+            Toasty.warning(getApplicationContext(), "Please select relation type", Toast.LENGTH_SHORT, true).show();
             can_proceed = false;
-        }
-        else if (weightlength > 5) {
-            edt_weight.setError("The maximum length for an weight is 5 characters.");
-            edt_weight.requestFocus();
+
+        } else if(!validdSelectGenderType()){
+            Toasty.warning(getApplicationContext(), "Please select gender type", Toast.LENGTH_SHORT, true).show();
             can_proceed = false;
+
         }
-        else if (edt_dob.getText().toString().trim().equals("")) {
-            edt_dob.setError("Please enter D.O.B");
-            edt_dob.requestFocus();
+        else if (txt_dob.getText().toString().trim().equals("")) {
+            Toasty.warning(getApplicationContext(), "Please enter date of birth", Toast.LENGTH_SHORT, true).show();
             can_proceed = false;
         }
 
         else if (edt_bio.getText().toString().trim().equals("")) {
-            edt_bio.setError("Please enter bio");
-            edt_bio.requestFocus();
+            Toasty.warning(getApplicationContext(), "Please enter bio", Toast.LENGTH_SHORT, true).show();
             can_proceed = false;
         }
-        else if (strrelationtype.trim().equals("")) {
-            showErrorLoading("Please select relation type");
+
+        else if (edt_weight.getText().toString().trim().equals("")) {
+            Toasty.warning(getApplicationContext(), "Please enter weight", Toast.LENGTH_SHORT, true).show();
             can_proceed = false;
         }
+        else if (weightlength > 5) {
+            Toasty.warning(getApplicationContext(), "The maximum length for an weight is 5 characters.", Toast.LENGTH_SHORT, true).show();
+            can_proceed = false;
+        }
+        else if (selectedRadioButton != null &&  selectedRadioButton.isEmpty()) {
+            Toasty.warning(getApplicationContext(), "Please select covid vaccine", Toast.LENGTH_SHORT, true).show();
+            can_proceed = false;
+        }
+
+
         else if (picBeanList.size()==0) {
-            showErrorLoading("Please upload one image of your family member");
+            Toasty.warning(getApplicationContext(), "Please upload one image of your family member", Toast.LENGTH_SHORT, true).show();
             can_proceed = false;
         }
 
@@ -586,7 +601,7 @@ public class AddMembersNewActivity extends AppCompatActivity implements View.OnC
         avi_indicator.smoothToShow();
         RestApiInterface apiInterface = APIClient.getClient().create(RestApiInterface.class);
         Call<FamilyMemberCreateResponse> call = apiInterface.familymembercreateResponseCall(RestUtils.getContentType(),FamilyMemberCreateRequest());
-        Log.w(TAG,"FamilyMemberCreateResponse url  :%s"+" "+ call.request().url().toString());
+        Log.w(TAG,"SuccessResponse url  :%s"+" "+ call.request().url().toString());
 
         call.enqueue(new Callback<FamilyMemberCreateResponse>() {
             @SuppressLint("LogNotTimber")
@@ -621,6 +636,7 @@ public class AddMembersNewActivity extends AppCompatActivity implements View.OnC
         });
 
     }
+
     private FamilyMemberCreateRequest FamilyMemberCreateRequest() {
 
         /*
@@ -628,7 +644,8 @@ public class AddMembersNewActivity extends AppCompatActivity implements View.OnC
          * name : Mohammed
          * gender : Male
          * relation_type : Son
-         * health_issue : No issue
+         * health_issue : ["Diabetes","OCD","Others"]
+         * health_issue_others : fever
          * dateofbirth : 23-10-2021
          * anymedicalinfo : No Issue
          * covide_vac : Yes
@@ -639,6 +656,8 @@ public class AddMembersNewActivity extends AppCompatActivity implements View.OnC
 
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm aa", Locale.getDefault());
         String currentDateandTime = sdf.format(new Date());
+        healthissueothers = edt_healthissues_others.getText().toString();
+
 
 
         FamilyMemberCreateRequest FamilyMemberCreateRequest = new FamilyMemberCreateRequest();
@@ -646,8 +665,9 @@ public class AddMembersNewActivity extends AppCompatActivity implements View.OnC
         FamilyMemberCreateRequest.setName(edt_name.getText().toString().trim());
         FamilyMemberCreateRequest.setGender(strgendertype);
         FamilyMemberCreateRequest.setRelation_type(strrelationtype);
-        FamilyMemberCreateRequest.setHealth_issue(strhealthissue);
-        FamilyMemberCreateRequest.setDateofbirth(edt_dob.getText().toString().trim());
+        FamilyMemberCreateRequest.setHealth_issue(health_issue);
+        FamilyMemberCreateRequest.setHealth_issue_others(healthissueothers);
+        FamilyMemberCreateRequest.setDateofbirth(txt_dob.getText().toString().trim());
         FamilyMemberCreateRequest.setAnymedicalinfo(edt_bio.getText().toString().trim());
         FamilyMemberCreateRequest.setCovide_vac(selectedRadioButton);
         FamilyMemberCreateRequest.setWeight(edt_weight.getText().toString().trim());
@@ -778,7 +798,7 @@ public class AddMembersNewActivity extends AppCompatActivity implements View.OnC
         builder.setItems(items, (dialog, item) -> {
             if (items[item].equals("Take Photo"))
             {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && ContextCompat.checkSelfPermission(AddMembersNewActivity.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED)
+                if (ContextCompat.checkSelfPermission(AddMembersNewActivity.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED)
                 {
                     requestPermissions(new String[]{Manifest.permission.CAMERA}, REQUEST_CLINIC_CAMERA_PERMISSION_CODE);
                 }
@@ -966,14 +986,15 @@ public class AddMembersNewActivity extends AppCompatActivity implements View.OnC
 
                             else
                             {
-                                if(ServerUrlImagePath != null&&!ServerUrlImagePath.isEmpty())
-                                {
-                                    picBeanList.add(new FamilyMemberCreateRequest.PicBean(ServerUrlImagePath));
-
+                                if(ServerUrlImagePath != null&&!ServerUrlImagePath.isEmpty()) {
+                                    FamilyMemberCreateRequest.PicBean picBean = new FamilyMemberCreateRequest.PicBean();
+                                    picBean.setImage(ServerUrlImagePath);
+                                    picBeanList.add(picBean);
                                 }
-                                else
-                                {
-                                    picBeanList.add(new FamilyMemberCreateRequest.PicBean(APIClient.IMAGE_BASE_URL));
+                                else{
+                                    FamilyMemberCreateRequest.PicBean picBean = new FamilyMemberCreateRequest.PicBean();
+                                    picBean.setImage(APIClient.IMAGE_BASE_URL);
+                                    picBeanList.add(picBean);
 
                                 }
 
@@ -1142,6 +1163,33 @@ public class AddMembersNewActivity extends AppCompatActivity implements View.OnC
                 })
                 .setCancelButton("Cancel", SweetAlertDialog::dismissWithAnimation)
                 .show();
+    }
+
+    public boolean validdSelectGenderType() {
+        if(strgendertype.equalsIgnoreCase("Select Gender")){
+           /* final AlertDialog alertDialog = new AlertDialog.Builder(AddYourFamilyMembersOldActivity.this).create();
+            alertDialog.setMessage(getString(R.string.err_msg_type_of_gendertype));
+            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Ok",
+                    (dialog, which) -> alertDialog.cancel());
+            alertDialog.show();*/
+
+            return false;
+        }
+
+        return true;
+    }
+    public boolean validdSelectRelationType() {
+        if(strrelationtype.equalsIgnoreCase("Select Relation Type")){
+           /* final AlertDialog alertDialog = new AlertDialog.Builder(AddYourFamilyMembersOldActivity.this).create();
+            alertDialog.setMessage(getString(R.string.err_msg_type_of_relationtype));
+            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Ok",
+                    (dialog, which) -> alertDialog.cancel());
+            alertDialog.show();*/
+
+            return false;
+        }
+
+        return true;
     }
 
 }

@@ -1,5 +1,9 @@
 package com.triton.healthz.customer;
 
+import static android.Manifest.permission.CAMERA;
+import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
+import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
+
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
@@ -49,7 +53,7 @@ import com.triton.healthz.requestpojo.FamilyMemberCreateRequest;
 import com.triton.healthz.responsepojo.FamilyMemberCreateResponse;
 import com.triton.healthz.responsepojo.FileUploadResponse;
 import com.triton.healthz.responsepojo.GetFamilyMemberResponse;
-import com.triton.healthz.responsepojo.PetListResponse;
+import com.triton.healthz.responsepojo.SuccessResponse;
 import com.triton.healthz.sessionmanager.SessionManager;
 import com.triton.healthz.utils.ConnectionDetector;
 import com.triton.healthz.utils.RestUtils;
@@ -76,10 +80,6 @@ import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-
-import static android.Manifest.permission.CAMERA;
-import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
-import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
 public class AddYourFamilyMembersOldActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "AddYourFamilyMembersOldActivity";
@@ -115,6 +115,14 @@ public class AddYourFamilyMembersOldActivity extends AppCompatActivity implement
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.cb_ocd)
     CheckBox cb_ocd;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.cb_others)
+    CheckBox cb_others;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.edt_healthissues_others)
+    EditText edt_healthissues_others;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_dob)
@@ -211,15 +219,8 @@ public class AddYourFamilyMembersOldActivity extends AppCompatActivity implement
     final Calendar myCalendar = Calendar.getInstance();
 
 
-    private SessionManager session;
-    String name,emailid,phoneNo,active_tag,strdistance;
-    private List<PetListResponse.DataBean> petList;
-    private Dialog dialog;
-    private String profileimage;
+    String active_tag,strdistance;
 
-
-    private static final int REQUEST_PHONE_CALL =1 ;
-    private String sosPhonenumber;
 
 
     private int reviewcount;
@@ -231,7 +232,7 @@ public class AddYourFamilyMembersOldActivity extends AppCompatActivity implement
     private int product_id;
     private String orderid;
     private String cancelorder;
-    private String latlng,CityName,AddressLine,PostalCode,nickname;
+    private String nickname;
 
     String locationtype;
     private String pincode,cityname,address;
@@ -239,17 +240,16 @@ public class AddYourFamilyMembersOldActivity extends AppCompatActivity implement
     private String id;
     double latitude, longtitude;
 
-    String appointment_id;
-    String appoinment_status;
-    private String bookedat;
-    private String startappointmentstatus;
-    private String appointmentfor;
-    private String userrate;
+
 
     private int year, month, day;
     String SelectedLastVaccinateddate = "";
     private static final int DATE_PICKER_ID = 0 ;
     private static final int PET_DATE_PICKER_ID = 1 ;
+    private String latlng,CityName,AddressLine,PostalCode;
+
+    List<String> health_issue = new ArrayList<>();
+    private String healthissueothers = "";
 
     @SuppressLint("LogNotTimber")
     @Override
@@ -258,6 +258,7 @@ public class AddYourFamilyMembersOldActivity extends AppCompatActivity implement
         setContentView(R.layout.activity_add_your_family_members_old);
         ButterKnife.bind(this);
         avi_indicator.setVisibility(View.GONE);
+        edt_healthissues_others.setVisibility(View.GONE);
 
         img_back.setOnClickListener(this);
 
@@ -361,12 +362,7 @@ public class AddYourFamilyMembersOldActivity extends AppCompatActivity implement
             cityname = extras.getString("cityname");
             address = extras.getString("address");
 
-            /*PetAppointmentDetailsActivity*/
-            appointment_id = extras.getString("appointment_id");
-            bookedat = extras.getString("bookedat");
-            startappointmentstatus = extras.getString("startappointmentstatus");
-            appointmentfor = extras.getString("appointmentfor");
-            userrate = extras.getString("userrate");
+
             from = extras.getString("from");
 
 
@@ -454,6 +450,7 @@ public class AddYourFamilyMembersOldActivity extends AppCompatActivity implement
             {
                 selectedRadioButton = "No";
                 cb_yes.setChecked(false);
+
             }
         });
 
@@ -461,24 +458,43 @@ public class AddYourFamilyMembersOldActivity extends AppCompatActivity implement
             if (isChecked)
             {
                 strhealthissue = "Pregnant";
-                cb_diabetes.setChecked(false);
-                cb_ocd.setChecked(false);
+                health_issue.add(strhealthissue);
+                Log.w(TAG,"health_issue if : "+health_issue);
+
+            }else{
+                health_issue.remove("Pregnant");
+                Log.w(TAG,"health_issue else : "+health_issue);
             }
         });
         cb_diabetes.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked)
             {
                 strhealthissue = "Diabetes";
-                cb_pregnant.setChecked(false);
-                cb_ocd.setChecked(false);
+                health_issue.add(strhealthissue);
+
+            }else{
+                health_issue.remove("Diabetes");
             }
         });
         cb_ocd.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked)
             {
                 strhealthissue = "OCD";
-                cb_pregnant.setChecked(false);
-                cb_diabetes.setChecked(false);
+                health_issue.add(strhealthissue);
+
+            }else{
+                health_issue.remove("OCD");
+            }
+        });
+        cb_others.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked)
+            {
+                strhealthissue = "Others";
+                health_issue.add(strhealthissue);
+                edt_healthissues_others.setVisibility(View.VISIBLE);
+            }else{
+                health_issue.remove("Others");
+                edt_healthissues_others.setVisibility(View.GONE);
             }
         });
 
@@ -567,20 +583,14 @@ public class AddYourFamilyMembersOldActivity extends AppCompatActivity implement
         int namelength = edt_name.getText().toString().trim().length();
         int weightlength = edt_weight.getText().toString().trim().length();
 
-        if (edt_name.getText().toString().isEmpty()  &&  edt_weight.getText().toString().trim().isEmpty()
-        ) {
+        if (edt_name.getText().toString().isEmpty()  &&  edt_weight.getText().toString().trim().isEmpty()) {
             Toasty.warning(getApplicationContext(), "Please enter the fields", Toast.LENGTH_SHORT, true).show();
             can_proceed = false;
         } else if (edt_name.getText().toString().trim().equals("")) {
             Toasty.warning(getApplicationContext(), "Please enter name", Toast.LENGTH_SHORT, true).show();
-            /*    edt_name.setError("Please enter name");
-            edt_name.requestFocus();*/
             can_proceed = false;
         }else if (namelength > 25) {
             Toasty.warning(getApplicationContext(), "The maximum length for anname is 25 characters.", Toast.LENGTH_SHORT, true).show();
-
-           /* edt_name.setError("The maximum length for anname is 25 characters.");
-            edt_name.requestFocus();*/
             can_proceed = false;
         }
         else if(!validdSelectRelationType()){
@@ -594,45 +604,30 @@ public class AddYourFamilyMembersOldActivity extends AppCompatActivity implement
         }
         else if (txt_dob.getText().toString().trim().equals("")) {
             Toasty.warning(getApplicationContext(), "Please enter date of birth", Toast.LENGTH_SHORT, true).show();
-
-           /* edt_dob.setError("Please enter D.O.B");
-            edt_dob.requestFocus();*/
             can_proceed = false;
         }
 
         else if (edt_bio.getText().toString().trim().equals("")) {
             Toasty.warning(getApplicationContext(), "Please enter bio", Toast.LENGTH_SHORT, true).show();
-
-            /*edt_bio.setError("Please enter bio");
-            edt_bio.requestFocus();*/
             can_proceed = false;
         }
 
         else if (edt_weight.getText().toString().trim().equals("")) {
             Toasty.warning(getApplicationContext(), "Please enter weight", Toast.LENGTH_SHORT, true).show();
-
-         /*   edt_weight.setError("Please enter weight");
-            edt_weight.requestFocus();*/
             can_proceed = false;
         }
         else if (weightlength > 5) {
             Toasty.warning(getApplicationContext(), "The maximum length for an weight is 5 characters.", Toast.LENGTH_SHORT, true).show();
-            /* edt_weight.setError("The maximum length for an weight is 5 characters.");
-            edt_weight.requestFocus();*/
             can_proceed = false;
         }
         else if (selectedRadioButton != null &&  selectedRadioButton.isEmpty()) {
             Toasty.warning(getApplicationContext(), "Please select covid vaccine", Toast.LENGTH_SHORT, true).show();
-
-         /*   edt_weight.setError("Please enter weight");
-            edt_weight.requestFocus();*/
             can_proceed = false;
         }
 
 
         else if (picBeanList.size()==0) {
             Toasty.warning(getApplicationContext(), "Please upload one image of your family member", Toast.LENGTH_SHORT, true).show();
-            //  showErrorLoading("Please upload one image of your family member");
             can_proceed = false;
         }
 
@@ -793,7 +788,8 @@ public class AddYourFamilyMembersOldActivity extends AppCompatActivity implement
          * name : Mohammed
          * gender : Male
          * relation_type : Son
-         * health_issue : No issue
+         * health_issue : ["Diabetes","OCD","Others"]
+         * health_issue_others : fever
          * dateofbirth : 23-10-2021
          * anymedicalinfo : No Issue
          * covide_vac : Yes
@@ -804,6 +800,8 @@ public class AddYourFamilyMembersOldActivity extends AppCompatActivity implement
 
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm aa", Locale.getDefault());
         String currentDateandTime = sdf.format(new Date());
+         healthissueothers = edt_healthissues_others.getText().toString();
+
 
 
         FamilyMemberCreateRequest FamilyMemberCreateRequest = new FamilyMemberCreateRequest();
@@ -811,7 +809,8 @@ public class AddYourFamilyMembersOldActivity extends AppCompatActivity implement
         FamilyMemberCreateRequest.setName(edt_name.getText().toString().trim());
         FamilyMemberCreateRequest.setGender(strgendertype);
         FamilyMemberCreateRequest.setRelation_type(strrelationtype);
-        FamilyMemberCreateRequest.setHealth_issue(strhealthissue);
+        FamilyMemberCreateRequest.setHealth_issue(health_issue);
+        FamilyMemberCreateRequest.setHealth_issue_others(healthissueothers);
         FamilyMemberCreateRequest.setDateofbirth(txt_dob.getText().toString().trim());
         FamilyMemberCreateRequest.setAnymedicalinfo(edt_bio.getText().toString().trim());
         FamilyMemberCreateRequest.setCovide_vac(selectedRadioButton);
@@ -828,9 +827,6 @@ public class AddYourFamilyMembersOldActivity extends AppCompatActivity implement
         alertDialogBuilder.setPositiveButton("ok",
                 (arg0, arg1) -> hideLoading());
 
-
-
-
         AlertDialog alertDialog = alertDialogBuilder.create();
         alertDialog.show();
     }
@@ -844,7 +840,7 @@ public class AddYourFamilyMembersOldActivity extends AppCompatActivity implement
     }
 
     private void gotoPetloverDashboard() {
-        Intent intent = new Intent(AddYourFamilyMembersOldActivity.this,CustomerDashboardActivity.class);
+        Intent intent = new Intent(AddYourFamilyMembersOldActivity.this, CustomerDashboardActivity.class);
         startActivity(intent);
     }
 
@@ -1115,14 +1111,15 @@ public class AddYourFamilyMembersOldActivity extends AppCompatActivity implement
 
                             else
                             {
-                                if(ServerUrlImagePath != null&&!ServerUrlImagePath.isEmpty())
-                                {
-                                    picBeanList.add(new FamilyMemberCreateRequest.PicBean(ServerUrlImagePath));
-
+                                if(ServerUrlImagePath != null&&!ServerUrlImagePath.isEmpty()) {
+                                    FamilyMemberCreateRequest.PicBean picBean = new FamilyMemberCreateRequest.PicBean();
+                                    picBean.setImage(ServerUrlImagePath);
+                                    picBeanList.add(picBean);
                                 }
-                                else
-                                {
-                                    picBeanList.add(new FamilyMemberCreateRequest.PicBean(APIClient.IMAGE_BASE_URL));
+                                else{
+                                    FamilyMemberCreateRequest.PicBean picBean = new FamilyMemberCreateRequest.PicBean();
+                                    picBean.setImage(APIClient.IMAGE_BASE_URL);
+                                    picBeanList.add(picBean);
 
                                 }
 

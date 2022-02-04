@@ -255,7 +255,7 @@ public class CustomerNavigationDrawer extends AppCompatActivity implements View.
                     return true;
 
                 case R.id.nav_item_ten:
-                  //  gotoMyWalkinAppointments();
+                   gotoMyWalkinAppointments();
                     return true;
 
                 default:

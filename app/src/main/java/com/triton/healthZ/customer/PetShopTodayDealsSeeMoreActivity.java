@@ -16,6 +16,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -26,6 +27,8 @@ import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.gson.Gson;
 import com.triton.healthz.R;
 import com.triton.healthz.activity.NotificationActivity;
@@ -34,6 +37,7 @@ import com.triton.healthz.adapter.ProductsSearchAdapter;
 import com.triton.healthz.api.APIClient;
 import com.triton.healthz.api.RestApiInterface;
 
+import com.triton.healthz.fragmentcustomer.bottommenu.CustomerHomeFragment;
 import com.triton.healthz.requestpojo.NotificationCartCountRequest;
 import com.triton.healthz.requestpojo.ProductFiltersRequest;
 import com.triton.healthz.requestpojo.ProductSearchRequest;
@@ -58,7 +62,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class PetShopTodayDealsSeeMoreActivity extends AppCompatActivity implements View.OnClickListener {
+public class PetShopTodayDealsSeeMoreActivity extends AppCompatActivity implements View.OnClickListener,BottomNavigationView.OnNavigationItemSelectedListener {
 
     private String TAG = "PetShopTodayDealsSeeMoreActivity";
 
@@ -232,6 +236,12 @@ public class PetShopTodayDealsSeeMoreActivity extends AppCompatActivity implemen
 
 
 
+
+    BottomNavigationView bottom_navigation_view;
+    FloatingActionButton floatingActionButton;
+
+
+
     @SuppressLint("LogNotTimber")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -321,7 +331,6 @@ public class PetShopTodayDealsSeeMoreActivity extends AppCompatActivity implemen
 
         rl_comn.setOnClickListener(this);*/
 
-//        bottom_navigation_view.getMenu().findItem(R.id.shop).setChecked(true);
 
         img_sos.setOnClickListener(this);
         img_notification.setOnClickListener(this);
@@ -379,21 +388,22 @@ public class PetShopTodayDealsSeeMoreActivity extends AppCompatActivity implemen
             }
         });
 
-//       Log.w(TAG," tag test : "+tag);
-//        if(tag != null){
-//            if(tag.equalsIgnoreCase("1")){
-//                bottom_navigation_view.getMenu().findItem(R.id.home).setChecked(true);
-//            }else if(tag.equalsIgnoreCase("2")){
-//                bottom_navigation_view.getMenu().findItem(R.id.shop).setChecked(true);
-//                //bottom_navigation_view.setSelectedItemId(R.id.shop);
-//            }else if(tag.equalsIgnoreCase("3")){
-//                bottom_navigation_view.getMenu().findItem(R.id.services).setChecked(true);
-//            }else if(tag.equalsIgnoreCase("4")){
-//                bottom_navigation_view.getMenu().findItem(R.id.care).setChecked(true);
-//            } else if(tag.equalsIgnoreCase("5")){
-//                bottom_navigation_view.getMenu().findItem(R.id.community).setChecked(true);
-//            }
-//        }
+        bottom_navigation_view = include_petlover_footer.findViewById(R.id.bottomNavigation);
+        floatingActionButton = include_petlover_footer.findViewById(R.id.fab);
+        bottom_navigation_view.setOnNavigationItemSelectedListener(this);
+        bottom_navigation_view.getMenu().findItem(R.id.shop).setChecked(true);
+
+        floatingActionButton.setImageResource(R.drawable.ic_hzhome_png);
+
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                callDirections("1");
+            }
+        });
+
+
 
 
 
@@ -963,5 +973,28 @@ public class PetShopTodayDealsSeeMoreActivity extends AppCompatActivity implemen
     }
 
 
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.home:
+                callDirections("1");
+                break;
+            case R.id.shop:
+                callDirections("2");
+                break;
+            case R.id.services:
+                callDirections("3");
+                break;
+            case R.id.care:
+                callDirections("4");
+                break;
+            case R.id.community:
+                callDirections("5");
+                break;
 
+            default:
+                return  false;
+        }
+        return true;
+    }
 }

@@ -432,6 +432,7 @@ public class DoctorClinicDetailsActivity extends AppCompatActivity implements Vi
 
                         if (new ConnectionDetector(getApplicationContext()).isNetworkAvailable(getApplicationContext())) {
                             if(doctorid != null){
+                                txt_seemore_spec.setText("See more...");
                                 doctorDetailsResponseCall();
                             }
 
@@ -805,7 +806,7 @@ public class DoctorClinicDetailsActivity extends AppCompatActivity implements Vi
                                 /*This will be the actual content you wish you share.*/
                                 if(doctorname!=null&&clinicname!=null&&ClinicLocationname!=null){
 
-                                    shareBody = "Doctor Name : "+doctorname+"\n"+" Clinic Name : "+clinicname+
+                                    shareBody = "Doctor Name : "+doctorname+"\n"+" Clinic Name : "+clinicname+"\n"+
 
                                             "Location : "+ClinicLocationname;
 
@@ -1001,7 +1002,7 @@ public class DoctorClinicDetailsActivity extends AppCompatActivity implements Vi
             mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
                 @Override
                 public void onMapClick(@NonNull LatLng latLng) {
-                    Log.w(TAG,"mMap onclick : "+"latitude : "+latitude+" longitude : "+longitude+" ClinicLocationname : "+ClinicLocationname);
+                    Log.w(TAG,"mMap onclick : "+"latitude : "+latitude+" longitude : "+longitude+" Clinic Location Name : "+ClinicLocationname);
                     String strUri = "http://maps.google.com/maps?q=loc:" + latitude + "," + longitude + " (" + ClinicLocationname + ")";
                     Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(strUri));
                     intent.setClassName("com.google.android.apps.maps", "com.google.android.maps.MapsActivity");

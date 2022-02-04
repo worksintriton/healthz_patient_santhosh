@@ -67,6 +67,7 @@ import com.wang.avi.AVLoadingIndicatorView;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -86,7 +87,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class EditFamilyMemberActivity extends AppCompatActivity implements View.OnClickListener {
+public class EditFamilyMemberActivity extends AppCompatActivity implements View.OnClickListener, Serializable {
 
     private static final String TAG = "EditFamilyMemberActivity";
 
@@ -119,8 +120,18 @@ public class EditFamilyMemberActivity extends AppCompatActivity implements View.
     CheckBox cb_diabetes;
 
     @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.cb_others)
+    CheckBox cb_others;
+
+    @SuppressLint("NonConstantResourceId")
     @BindView(R.id.cb_ocd)
     CheckBox cb_ocd;
+
+
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.edt_healthissues_others)
+    EditText edt_healthissues_others;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.edt_dob)
@@ -133,6 +144,7 @@ public class EditFamilyMemberActivity extends AppCompatActivity implements View.
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.edt_weight)
     EditText edt_weight;
+
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.cdvw_uploadImage)
@@ -264,13 +276,15 @@ public class EditFamilyMemberActivity extends AppCompatActivity implements View.
     String member_name;
     String gender;
     String relation_type;
-    String health_issue;
     String dateofbirth;
     String anymedicalinfo;
     String covide_vac;
     String weight;
+    List<String> health_issue = new ArrayList<>();
+    private String healthissueothers = "";
 
     List<FamilyMemberListResponse.DataBean.PicBean> petImgBeanList;
+    private  ArrayList<String> myHealthissuesList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -297,6 +311,8 @@ public class EditFamilyMemberActivity extends AppCompatActivity implements View.
         if(args!=null&&!args.isEmpty()){
 
             petImgBeanList = (ArrayList<FamilyMemberListResponse.DataBean.PicBean>) args.getSerializable("PETLIST");
+           myHealthissuesList = (ArrayList<String>) getIntent().getSerializableExtra("myHealthissuesList");
+
         }
 
         if(petImgBeanList!=null&&petImgBeanList.size()>0){
@@ -321,14 +337,14 @@ public class EditFamilyMemberActivity extends AppCompatActivity implements View.
             member_name = extras.getString("member_name");
             gender = extras.getString("gender");
             relation_type = extras.getString("relation_type");
-            health_issue = extras.getString("health_issue");
+            healthissueothers = extras.getString("healthissueothers");
             dateofbirth = extras.getString("dateofbirth");
             anymedicalinfo = extras.getString("anymedicalinfo");
             covide_vac = extras.getString("covide_vac");
             weight = extras.getString("weight");
         }
 
-        Log.w(TAG,"health_issue : "+health_issue);
+        Log.w(TAG,"healthissueothers : "+healthissueothers);
 
         if (new ConnectionDetector(EditFamilyMemberActivity.this).isNetworkAvailable(EditFamilyMemberActivity.this)) {
             getfamilymembersListResponseCall();
@@ -354,6 +370,13 @@ public class EditFamilyMemberActivity extends AppCompatActivity implements View.
         if(weight!=null){
 
             edt_weight.setText(weight);
+        }
+
+        if (healthissueothers != null && !healthissueothers.isEmpty()) {
+            edt_healthissues_others.setVisibility(View.VISIBLE);
+            edt_healthissues_others.setText(healthissueothers);
+        }else{
+            edt_healthissues_others.setVisibility(View.GONE);
         }
 
         if(covide_vac!=null){
@@ -468,53 +491,69 @@ public class EditFamilyMemberActivity extends AppCompatActivity implements View.
             }
         });
 
-        if(health_issue!=null){
+        if (myHealthissuesList != null && myHealthissuesList.size() > 0) {
+            for (int i = 0; i < myHealthissuesList.size(); i++) {
+                if (myHealthissuesList.get(i).equalsIgnoreCase("Pregnant")) {
+                    cb_pregnant.setChecked(true);
 
-            if(health_issue.equals("Pregnant")){
+                } else if (myHealthissuesList.get(i).equalsIgnoreCase("OCD")) {
+                    cb_ocd.setChecked(true);
 
-                cb_pregnant.setChecked(true);
-                cb_diabetes.setChecked(false);
-                cb_ocd.setChecked(false);
 
-            }
+                } else if (myHealthissuesList.get(i).equalsIgnoreCase("Diabetes")) {
+                    cb_diabetes.setChecked(true);
 
-            else   if(health_issue.equals("OCD")){
-                cb_pregnant.setChecked(false);
-                cb_diabetes.setChecked(false);
-                cb_ocd.setChecked(true);
+                } else if (myHealthissuesList.get(i).equalsIgnoreCase("Others")) {
+                    cb_others.setChecked(true);
 
-            }
+                }
 
-            else{
-
-                cb_pregnant.setChecked(false);
-                cb_diabetes.setChecked(true);
-                cb_ocd.setChecked(false);
             }
         }
+
+
 
         cb_pregnant.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked)
             {
                 strhealthissue = "Pregnant";
-                cb_diabetes.setChecked(false);
-                cb_ocd.setChecked(false);
+                health_issue.add(strhealthissue);
+                Log.w(TAG,"health_issue if : "+health_issue);
+
+            }else{
+                health_issue.remove("Pregnant");
+                Log.w(TAG,"health_issue else : "+health_issue);
             }
         });
         cb_diabetes.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked)
             {
                 strhealthissue = "Diabetes";
-                cb_pregnant.setChecked(false);
-                cb_ocd.setChecked(false);
+                health_issue.add(strhealthissue);
+
+            }else{
+                health_issue.remove("Diabetes");
             }
         });
         cb_ocd.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked)
             {
                 strhealthissue = "OCD";
-                cb_pregnant.setChecked(false);
-                cb_diabetes.setChecked(false);
+                health_issue.add(strhealthissue);
+
+            }else{
+                health_issue.remove("OCD");
+            }
+        });
+        cb_others.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked)
+            {
+                strhealthissue = "Others";
+                health_issue.add(strhealthissue);
+                edt_healthissues_others.setVisibility(View.VISIBLE);
+            }else{
+                health_issue.remove("Others");
+                edt_healthissues_others.setVisibility(View.GONE);
             }
         });
 
@@ -741,7 +780,7 @@ public class EditFamilyMemberActivity extends AppCompatActivity implements View.
         avi_indicator.setVisibility(View.VISIBLE);
         avi_indicator.smoothToShow();
         RestApiInterface apiInterface = APIClient.getClient().create(RestApiInterface.class);
-        Call<FamilyMembersEditResponse> call = apiInterface.familymemberseditResponseCall(RestUtils.getContentType(),FamilyMembersEditRequest());
+        Call<FamilyMembersEditResponse> call = apiInterface.familymemberseditResponseCall(RestUtils.getContentType(),familyMembersEditRequest());
         Log.w(TAG,"FamilyMembersEditResponse url  :%s"+" "+ call.request().url().toString());
 
         call.enqueue(new Callback<FamilyMembersEditResponse>() {
@@ -775,7 +814,7 @@ public class EditFamilyMemberActivity extends AppCompatActivity implements View.
         });
 
     }
-    private FamilyMembersEditRequest FamilyMembersEditRequest() {
+    private FamilyMembersEditRequest familyMembersEditRequest() {
 
         /*
          * user_id : 618230269dcc2a290e5bae9a
@@ -795,20 +834,21 @@ public class EditFamilyMemberActivity extends AppCompatActivity implements View.
         String currentDateandTime = sdf.format(new Date());
 
 
-        FamilyMembersEditRequest FamilyMembersEditRequest = new FamilyMembersEditRequest();
-        FamilyMembersEditRequest.set_id(family_id);
-        FamilyMembersEditRequest.setUser_id(userid);
-        FamilyMembersEditRequest.setName(edt_name.getText().toString().trim());
-        FamilyMembersEditRequest.setGender(strgendertype);
-        FamilyMembersEditRequest.setRelation_type(strrelationtype);
-        FamilyMembersEditRequest.setHealth_issue(strhealthissue);
-        FamilyMembersEditRequest.setDateofbirth(edt_dob.getText().toString().trim());
-        FamilyMembersEditRequest.setAnymedicalinfo(edt_bio.getText().toString().trim());
-        FamilyMembersEditRequest.setCovide_vac(selectedRadioButton);
-        FamilyMembersEditRequest.setWeight(edt_weight.getText().toString().trim());
-        FamilyMembersEditRequest.setPic(picBeanList);
-        Log.w(TAG,"FamilyMembersEditRequest "+ new Gson().toJson(FamilyMembersEditRequest));
-        return FamilyMembersEditRequest;
+        FamilyMembersEditRequest familyMembersEditRequest = new FamilyMembersEditRequest();
+        familyMembersEditRequest.set_id(family_id);
+        familyMembersEditRequest.setUser_id(userid);
+        familyMembersEditRequest.setName(edt_name.getText().toString().trim());
+        familyMembersEditRequest.setGender(strgendertype);
+        familyMembersEditRequest.setRelation_type(strrelationtype);
+        familyMembersEditRequest.setHealth_issue(health_issue);
+        familyMembersEditRequest.setHealth_issue_others(healthissueothers);
+        familyMembersEditRequest.setDateofbirth(edt_dob.getText().toString().trim());
+        familyMembersEditRequest.setAnymedicalinfo(edt_bio.getText().toString().trim());
+        familyMembersEditRequest.setCovide_vac(selectedRadioButton);
+        familyMembersEditRequest.setWeight(edt_weight.getText().toString().trim());
+        familyMembersEditRequest.setPic(picBeanList);
+        Log.w(TAG,"FamilyMembersEditRequest "+ new Gson().toJson(familyMembersEditRequest));
+        return familyMembersEditRequest;
     }
 
 
@@ -1132,7 +1172,7 @@ public class EditFamilyMemberActivity extends AppCompatActivity implements View.
 
         rv_uploaded_images.setLayoutManager(layoutManager);
 
-        EditFamilyImageListAdapter addFamilyImageListAdapter = new EditFamilyImageListAdapter(this, picBeanList);
+        EditFamilyImageListAdapter addFamilyImageListAdapter = new EditFamilyImageListAdapter(this, picBeanList,TAG);
 
         rv_uploaded_images.setAdapter(addFamilyImageListAdapter);
 

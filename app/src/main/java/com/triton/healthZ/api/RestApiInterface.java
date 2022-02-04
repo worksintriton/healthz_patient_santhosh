@@ -161,7 +161,7 @@ public interface RestApiInterface {
 
     /*Delete Petdetails Using User id*/
     @POST("familymember/mobile_delete")
-    Call<FamilyMemberDeleteResponse> familyDeleteResponseCall(@Header("Content-Type") String type, @Body FamilyMemberDeleteRequest familyMemberDeleteRequest);
+    Call<SuccessResponse> familyDeleteResponseCall(@Header("Content-Type") String type, @Body FamilyMemberDeleteRequest familyMemberDeleteRequest);
 
     /*location list delete*/
     @POST("locationdetails/delete")

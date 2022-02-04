@@ -62,20 +62,27 @@ import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 public class PetLoverEditProfileImageActivity extends AppCompatActivity implements View.OnClickListener {
     private  String TAG = "PetLoverEditProfileImageActivity";
 
+    @SuppressLint("NonConstantResourceId")
     @BindView(R.id.img_back)
     ImageView img_back;
 
-
+    @SuppressLint("NonConstantResourceId")
     @BindView(R.id.img_pet_imge)
     ImageView img_pet_imge;
 
-
+    @SuppressLint("NonConstantResourceId")
     @BindView(R.id.avi_indicator)
     AVLoadingIndicatorView avi_indicator;
 
+    @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_uploadpetimage)
     TextView txt_uploadpetimage;
 
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_remove_image)
+    TextView txt_remove_image;
+
+    @SuppressLint("NonConstantResourceId")
     @BindView(R.id.btn_continue)
     Button btn_continue;
 
@@ -117,6 +124,7 @@ public class PetLoverEditProfileImageActivity extends AppCompatActivity implemen
             Manifest.permission.WRITE_EXTERNAL_STORAGE,
             Manifest.permission.CAMERA
     };
+    private boolean isRemoveProfile = false;
 
 
     @SuppressLint("SetTextI18n")
@@ -131,6 +139,7 @@ public class PetLoverEditProfileImageActivity extends AppCompatActivity implemen
         img_back.setOnClickListener(this);
         btn_continue.setOnClickListener(this);
         txt_uploadpetimage.setOnClickListener(this);
+        txt_remove_image.setOnClickListener(this);
         img_pet_imge.setOnClickListener(this);
 
         SessionManager session = new SessionManager(getApplicationContext());
@@ -151,12 +160,14 @@ public class PetLoverEditProfileImageActivity extends AppCompatActivity implemen
                     .load(profileimage)
                     .into(img_pet_imge);
             txt_uploadpetimage.setText("Change Image");
+            txt_remove_image.setVisibility(View.VISIBLE);
         }
         else{
             Glide.with(PetLoverEditProfileImageActivity.this)
                     .load(R.drawable.image_thumbnail)
                     .into(img_pet_imge);
             txt_uploadpetimage.setText("Upload Image");
+            txt_remove_image.setVisibility(View.GONE);
 
 
         }
@@ -186,6 +197,11 @@ public class PetLoverEditProfileImageActivity extends AppCompatActivity implemen
                 break;
 
             case R.id.btn_continue:
+                petLoverUpdateProfileImageResponseCall();
+                break;
+
+            case R.id.txt_remove_image:
+                isRemoveProfile = true;
                 petLoverUpdateProfileImageResponseCall();
                 break;
         }
@@ -558,7 +574,9 @@ public class PetLoverEditProfileImageActivity extends AppCompatActivity implemen
                 if (response.body() != null) {
                     if(response.body().getCode() == 200){
                         Toasty.success(PetLoverEditProfileImageActivity.this, "Profile image updated successfully", Toasty.LENGTH_LONG).show();
-
+                      if(response.body().getData().getProfile_img() != null){
+                          profileimage = response.body().getData().getProfile_img();
+                      }
                         SessionManager sessionManager = new SessionManager(getApplicationContext());
                         sessionManager.setIsLogin(true);
                         sessionManager.createLoginSession(
@@ -596,7 +614,11 @@ public class PetLoverEditProfileImageActivity extends AppCompatActivity implemen
     private DoctorUpdateProfileImageRequest doctorUpdateProfileImageRequest() {
         DoctorUpdateProfileImageRequest  doctorUpdateProfileImageRequest = new DoctorUpdateProfileImageRequest();
         doctorUpdateProfileImageRequest.setUser_id(userid);
-        if(profileimage != null && !profileimage.isEmpty()) {
+        if(isRemoveProfile){
+            doctorUpdateProfileImageRequest.setProfile_img(APIClient.PROFILE_IMAGE_URL);
+
+        }
+        else if(profileimage != null && !profileimage.isEmpty()) {
             doctorUpdateProfileImageRequest.setProfile_img(profileimage);
         }else{
             doctorUpdateProfileImageRequest.setProfile_img(APIClient.PROFILE_IMAGE_URL);

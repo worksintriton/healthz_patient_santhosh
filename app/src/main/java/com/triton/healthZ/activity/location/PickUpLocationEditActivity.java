@@ -140,6 +140,8 @@ public class PickUpLocationEditActivity extends FragmentActivity implements OnMa
 
         }
 
+
+
         ImageView img_back = include_petlover_header.findViewById(R.id.img_back);
         ImageView img_sos = include_petlover_header.findViewById(R.id.img_sos);
         ImageView img_notification = include_petlover_header.findViewById(R.id.img_notification);
@@ -147,6 +149,9 @@ public class PickUpLocationEditActivity extends FragmentActivity implements OnMa
         ImageView img_profile = include_petlover_header.findViewById(R.id.img_profile);
         TextView toolbar_title = include_petlover_header.findViewById(R.id.toolbar_title);
         toolbar_title.setText(getResources().getString(R.string.pickup_location));
+        if(fromactivity != null && fromactivity.equalsIgnoreCase("EditMyAddressActivity")){
+            toolbar_title.setText(getResources().getString(R.string.choose_location));
+        }
 
         img_sos.setVisibility(View.GONE);
         img_cart.setVisibility(View.GONE);

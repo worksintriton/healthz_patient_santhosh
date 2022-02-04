@@ -22,10 +22,12 @@ public class EditFamilyImageListAdapter extends RecyclerView.Adapter<EditFamilyI
     Context context;
     List<FamilyMembersEditRequest.PicBean> pet_img;
     View view;
+    String fromactivity;
 
-    public EditFamilyImageListAdapter(Context context, List<FamilyMembersEditRequest.PicBean> pet_img) {
+    public EditFamilyImageListAdapter(Context context, List<FamilyMembersEditRequest.PicBean> pet_img,String fromactivity) {
         this.context = context;
         this.pet_img = pet_img;
+        this.fromactivity = fromactivity;
 
 
     }
@@ -50,6 +52,11 @@ public class EditFamilyImageListAdapter extends RecyclerView.Adapter<EditFamilyI
                     .load(petImgBean.getImage())
                     .into(holder.certificate_pics_1);
 
+        }
+        if(fromactivity != null && fromactivity.equalsIgnoreCase("ViewFamilyMembersActivity")){
+            holder.removeImg.setVisibility(View.INVISIBLE);
+        }else{
+            holder.removeImg.setVisibility(View.VISIBLE);
         }
 
         holder.removeImg.setOnClickListener(view -> {

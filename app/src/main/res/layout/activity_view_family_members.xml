@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-  <LinearLayout
+    <LinearLayout
         android:id="@+id/headerView"
         android:layout_width="match_parent"
         android:layout_height="60dp"
@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:fontFamily="@font/montserrat_bold"
-            android:text="@string/add_your_family"
+            android:text="@string/view_your_family"
             android:textColor="@color/white"
             android:textSize="@dimen/big_txt_size"
             android:textStyle="bold" />
@@ -87,7 +87,7 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/rectangle_corner"
                 android:padding="10dp">
@@ -122,7 +122,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@android:color/transparent"
-                    android:entries="@array/array_gender"/>
+                    android:entries="@array/array_gender" />
 
                 <ImageView
                     android:layout_width="30dp"
@@ -153,7 +153,7 @@
                     android:textColor="@color/new_txt_color"
                     android:textSize="12sp"
                     tools:ignore="RtlSymmetry"
-                   />
+                    />
                 <CheckBox
                     android:id="@+id/cb_diabetes"
                     android:layout_width="wrap_content"
@@ -200,7 +200,6 @@
                     android:textSize="12sp"
                     tools:ignore="RtlSymmetry" />
             </LinearLayout>
-
             <EditText
                 android:id="@+id/edt_healthissues_others"
                 android:layout_width="match_parent"
@@ -219,8 +218,8 @@
                 android:textSize="14sp"
                 tools:ignore="Autofill,LabelFor,TextFields" />
 
-            <TextView
-                android:id="@+id/txt_dob"
+            <EditText
+                android:id="@+id/edt_dob"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -254,8 +253,8 @@
                 android:padding="15dp"
                 android:scrollbars="vertical"
                 android:textAlignment="viewStart"
-                android:textColorHint="@color/dark_gray"
                 android:textColor="@color/green"
+                android:textColorHint="@color/dark_gray"
                 android:textSize="14sp"
                 tools:ignore="Autofill,LabelFor" />
 
@@ -293,26 +292,26 @@
                     android:textSize="12sp" />
 
 
-                    <CheckBox
-                        android:id="@+id/cb_yes"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:buttonTint="@drawable/cb_selectorrs"
-                        android:fontFamily="@font/montserrat"
-                        android:text="@string/yes"
-                        android:textColor="@color/new_txt_color"
-                        android:textSize="12sp" />
+                <CheckBox
+                    android:id="@+id/cb_yes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@drawable/cb_selectorrs"
+                    android:fontFamily="@font/montserrat"
+                    android:text="@string/yes"
+                    android:textColor="@color/new_txt_color"
+                    android:textSize="12sp" />
 
-                    <CheckBox
-                        android:id="@+id/cb_no"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:buttonTint="@drawable/cb_selectorrs"
-                        android:fontFamily="@font/montserrat"
-                        android:text="@string/no"
-                        android:textColor="@color/new_txt_color"
-                        android:textSize="12sp" />
+                <CheckBox
+                    android:id="@+id/cb_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:buttonTint="@drawable/cb_selectorrs"
+                    android:fontFamily="@font/montserrat"
+                    android:text="@string/no"
+                    android:textColor="@color/new_txt_color"
+                    android:textSize="12sp" />
 
 
             </LinearLayout>
@@ -325,7 +324,8 @@
                 android:layout_marginTop="10dp"
                 android:text="@string/upload_image"
                 android:textColor="@color/new_txt_color"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:visibility="gone"/>
 
 
             <androidx.cardview.widget.CardView
@@ -335,7 +335,8 @@
                 android:layout_marginTop="10dp"
                 app:cardBackgroundColor="@color/light_green"
                 app:cardPreventCornerOverlap="true"
-                app:cardUseCompatPadding="true">
+                app:cardUseCompatPadding="true"
+                android:visibility="gone">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -391,7 +392,8 @@
         android:orientation="vertical"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
-        android:layout_marginBottom="20dp">
+        android:layout_marginBottom="20dp"
+        android:visibility="gone">
 
         <Button
             android:id="@+id/btn_continue"

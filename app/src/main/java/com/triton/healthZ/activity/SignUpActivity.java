@@ -318,10 +318,11 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                         Toasty.success(getApplicationContext(),response.body().getMessage(), Toast.LENGTH_SHORT, true).show();
 
                         if(response.body().getData() != null) {
+                            Log.w(TAG,"usertype --->"+response.body().getData().getUser_type());
                             Intent intent = new Intent(SignUpActivity.this, VerifyOtpActivity.class);
                             intent.putExtra("phonemumber", response.body().getData().getUser_phone());
                             intent.putExtra("otp", response.body().getData().getOtp());
-                            intent.putExtra("usertype",String.valueOf(response.body().getData().getUser_type()));
+                            intent.putExtra("usertype",1);
                             intent.putExtra("userid", response.body().getData().get_id());
                             intent.putExtra("userstatus", "Incomplete");
                             intent.putExtra("firstname", response.body().getData().getFirst_name());

@@ -14,8 +14,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginBottom="30dp">
+            android:layout_marginBottom="30dp"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:id="@+id/headerView"
@@ -157,7 +157,6 @@
 
 
                     </androidx.appcompat.widget.Toolbar>
-
 
 
                 </FrameLayout>
@@ -421,7 +420,7 @@
                 android:textColor="@color/new_light_black"
                 android:textSize="14sp"
                 android:textStyle="bold"
-                android:visibility="gone"/>
+                android:visibility="gone" />
 
 
             <TextView
@@ -468,10 +467,11 @@
                 android:textStyle="bold" />
 
             <LinearLayout
+                android:id="@+id/ll_cond"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:id="@+id/ll_cond">
+                android:orientation="horizontal">
+
                 <TextView
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
@@ -499,11 +499,13 @@
                     android:textColor="@color/neutral_black"
                     android:textSize="14sp" />
             </LinearLayout>
+
             <LinearLayout
+                android:id="@+id/ll_price"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:id="@+id/ll_price">
+                android:orientation="horizontal">
+
                 <TextView
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
@@ -537,14 +539,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="50dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="50dp"
+                android:layout_marginBottom="10dp"
                 android:layout_weight="1"
                 android:background="@drawable/new_rounded_corner_btn"
                 android:gravity="center"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp">
-
+                android:orientation="horizontal">
 
 
                 <TextView
@@ -552,11 +553,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/futuramediumbt"
+                    android:gravity="center"
                     android:maxLines="1"
                     android:text="@string/add_to_cart"
                     android:textColor="@color/white"
                     android:textSize="16sp"
-                    android:gravity="center"
 
                     />
 
@@ -578,9 +579,9 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="180dp"
-                    android:src="@drawable/icnpattern"
                     android:orientation="vertical"
-                    android:scaleType="fitCenter"></ImageView>
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/icnpattern"></ImageView>
 
                 <RelativeLayout
                     android:id="@+id/rl_relat_prod"

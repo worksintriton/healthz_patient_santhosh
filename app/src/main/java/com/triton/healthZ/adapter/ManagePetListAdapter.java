@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.triton.healthz.R;
+import com.triton.healthz.activity.ViewFamilyMembersActivity;
 import com.triton.healthz.api.APIClient;
 import com.triton.healthz.customer.EditFamilyMemberActivity;
 import com.triton.healthz.interfaces.FamilyMembersDeleteListener;
@@ -25,6 +26,7 @@ import com.triton.healthz.interfaces.GotoAddFamilyMembersOldActivityListener;
 import com.triton.healthz.responsepojo.FamilyMemberListResponse;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -142,19 +144,22 @@ public class ManagePetListAdapter extends  RecyclerView.Adapter<RecyclerView.Vie
             //Creating the instance of PopupMenu
             PopupMenu popup = new PopupMenu(context, v);
             //Inflating the Popup using xml file
-            popup.getMenuInflater().inflate(R.menu.popup_menu, popup.getMenu());
+            popup.getMenuInflater().inflate(R.menu.popup_menu_familymembers, popup.getMenu());
 
             //registering popup with OnMenuItemClickListener
             popup.setOnMenuItemClickListener(item -> {
                 String titleName = String.valueOf(item.getTitle());
-                if(titleName.equalsIgnoreCase("Edit")){
-                    Intent i = new Intent(context, EditFamilyMemberActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                if(titleName.equalsIgnoreCase("View")){
+
+                    ArrayList<String> myHealthissuesList = dataBeanList.get(position).getHealth_issue();
+                    Intent i = new Intent(context, ViewFamilyMembersActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     i.putExtra("family_id",dataBeanList.get(position).get_id());
                     i.putExtra("userid",dataBeanList.get(position).getUser_id());
                     i.putExtra("member_name",dataBeanList.get(position).getName());
                     i.putExtra("gender",dataBeanList.get(position).getGender());
                     i.putExtra("relation_type",dataBeanList.get(position).getRelation_type());
-                    i.putExtra("health_issue",dataBeanList.get(position).getHealth_issue());
+                    i.putExtra("myHealthissuesList",myHealthissuesList);
+                    i.putExtra("healthissueothers",dataBeanList.get(position).getHealth_issue_others());
                     i.putExtra("dateofbirth",dataBeanList.get(position).getDateofbirth());
                     i.putExtra("anymedicalinfo",dataBeanList.get(position).getAnymedicalinfo());
                     i.putExtra("covide_vac",dataBeanList.get(position).getCovide_vac());
@@ -163,10 +168,31 @@ public class ManagePetListAdapter extends  RecyclerView.Adapter<RecyclerView.Vie
                     //int list = dataBeanList.get(position).getPet_img().size();
                     args.putSerializable("PETLIST", (Serializable) dataBeanList.get(position).getPic());
                     i.putExtra("petimage",args);
-
                     context.startActivity(i);
 
-                } else if(titleName.equalsIgnoreCase("Delete")){
+                }
+                if(titleName.equalsIgnoreCase("Edit")){
+                    ArrayList<String> myHealthissuesList = dataBeanList.get(position).getHealth_issue();
+                    Intent i = new Intent(context, EditFamilyMemberActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    i.putExtra("family_id",dataBeanList.get(position).get_id());
+                    i.putExtra("userid",dataBeanList.get(position).getUser_id());
+                    i.putExtra("member_name",dataBeanList.get(position).getName());
+                    i.putExtra("gender",dataBeanList.get(position).getGender());
+                    i.putExtra("relation_type",dataBeanList.get(position).getRelation_type());
+                    i.putExtra("myHealthissuesList",myHealthissuesList);
+                    i.putExtra("healthissueothers",dataBeanList.get(position).getHealth_issue_others());
+                    i.putExtra("dateofbirth",dataBeanList.get(position).getDateofbirth());
+                    i.putExtra("anymedicalinfo",dataBeanList.get(position).getAnymedicalinfo());
+                    i.putExtra("covide_vac",dataBeanList.get(position).getCovide_vac());
+                    i.putExtra("weight",dataBeanList.get(position).getWeight());
+                    Bundle args = new Bundle();
+                    //int list = dataBeanList.get(position).getPet_img().size();
+                    args.putSerializable("PETLIST", (Serializable) dataBeanList.get(position).getPic());
+                    i.putExtra("petimage",args);
+                    context.startActivity(i);
+
+                }
+                else if(titleName.equalsIgnoreCase("Delete")){
                     petDeleteListener.familyMemberDeleteListener(dataBeanList.get(position).get_id());
 
                 }

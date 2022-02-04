@@ -140,19 +140,19 @@ public class PetShopTodayDealsSeeMoreAdapter extends  RecyclerView.Adapter<Recyc
         holder.ll_root.setOnClickListener(v -> {
             if(fromactivity != null && fromactivity.equalsIgnoreCase("DoctorShopTodayDealsSeeMoreActivity")){
                 Intent intent = new Intent(context, DoctorProductDetailsActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                intent.putExtra("productid",currentItem.get_id());
+                intent.putExtra("productid",data.get(position).get_id());
                 intent.putExtra("fromactivity",fromactivity);
                 intent.putExtra("tag",tag);
                 context.startActivity(intent);
             } else if(fromactivity != null && fromactivity.equalsIgnoreCase("SPShopTodayDealsSeeMoreActivity")){
                 Intent intent = new Intent(context, SPProductDetailsActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                intent.putExtra("productid",currentItem.get_id());
+                intent.putExtra("productid",data.get(position).get_id());
                 intent.putExtra("fromactivity",fromactivity);
                 intent.putExtra("tag",tag);
                 context.startActivity(intent);
             }else{
                 Intent intent = new Intent(context, ProductDetailsActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                intent.putExtra("productid",currentItem.get_id());
+                intent.putExtra("productid",data.get(position).get_id());
                 intent.putExtra("fromactivity",fromactivity);
                 intent.putExtra("tag",tag);
                 context.startActivity(intent);

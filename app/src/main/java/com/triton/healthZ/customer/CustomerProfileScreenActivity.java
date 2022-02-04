@@ -40,6 +40,7 @@ import com.triton.healthz.adapter.ManagePetListAdapter;
 import com.triton.healthz.api.APIClient;
 import com.triton.healthz.api.RestApiInterface;
 
+import com.triton.healthz.fragmentcustomer.bottommenu.CustomerHomeFragment;
 import com.triton.healthz.interfaces.FamilyMembersDeleteListener;
 import com.triton.healthz.customer.myaddresses.MyAddressesListActivity;
 import com.triton.healthz.interfaces.GotoAddFamilyMembersOldActivityListener;
@@ -68,6 +69,7 @@ import es.dmoral.toasty.Toasty;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import com.triton.healthz.responsepojo.PetLoverDashboardResponse;
 
 public class CustomerProfileScreenActivity extends AppCompatActivity implements View.OnClickListener, FamilyMembersDeleteListener, BottomNavigationView.OnNavigationItemSelectedListener, GotoAddFamilyMembersOldActivityListener {
     private  String TAG = "CustomerProfileScreenActivity";
@@ -204,7 +206,29 @@ public class CustomerProfileScreenActivity extends AppCompatActivity implements 
     @BindView(R.id.bottomNavigation)
     BottomNavigationView bottomNavigation;
 
+
+
     public static String active_tag = "1";
+
+    private List<PetLoverDashboardResponse.DataBean.LocationDetailsBean> defaultLocationList ;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.rl_default_address)
+    RelativeLayout rl_default_address;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_location_title)
+    TextView txt_location_title;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_location_nickname)
+    TextView txt_location_nickname;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_address)
+    TextView txt_address;
+
+
 
 
 
@@ -213,6 +237,8 @@ public class CustomerProfileScreenActivity extends AppCompatActivity implements 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_profile_screen);
         ButterKnife.bind(this);
+
+        Log.w(TAG,"onCreate : ");
 
 
         ImageView img_back = include_petlover_header.findViewById(R.id.img_back);
@@ -229,7 +255,10 @@ public class CustomerProfileScreenActivity extends AppCompatActivity implements 
 
 
 
-        Log.w(TAG,"onCreate : ");
+
+
+        defaultLocationList = CustomerHomeFragment.defaultLocationList;
+        Log.w(TAG,"defaultLocationList : "+new Gson().toJson(defaultLocationList));
         avi_indicator.setVisibility(View.GONE);
         ll_add.setVisibility(View.GONE);
 
@@ -263,6 +292,18 @@ public class CustomerProfileScreenActivity extends AppCompatActivity implements 
                     .load(APIClient.PROFILE_IMAGE_URL)
                     .into(img_profile1);
 
+        }
+
+        if(defaultLocationList != null && defaultLocationList.size()>0){
+            rl_default_address.setVisibility(View.VISIBLE);
+            for(int i=0; i<defaultLocationList.size();i++){
+                txt_location_title.setText(defaultLocationList.get(i).getLocation_title());
+                txt_location_nickname.setText(defaultLocationList.get(i).getLocation_nickname());
+                txt_address.setText(defaultLocationList.get(i).getLocation_address());
+
+            }
+        }else{
+            rl_default_address.setVisibility(View.GONE);
         }
 
 
@@ -839,20 +880,20 @@ public class CustomerProfileScreenActivity extends AppCompatActivity implements 
         avi_indicator.smoothToShow();
 
         RestApiInterface apiInterface = APIClient.getClient().create(RestApiInterface.class);
-        Call<FamilyMemberDeleteResponse> call = apiInterface.familyDeleteResponseCall(RestUtils.getContentType(),petDeleteRequest(id));
+        Call<SuccessResponse> call = apiInterface.familyDeleteResponseCall(RestUtils.getContentType(),petDeleteRequest(id));
 
         Log.w(TAG,"url  :%s"+call.request().url().toString());
 
-        call.enqueue(new Callback<FamilyMemberDeleteResponse>() {
+        call.enqueue(new Callback<SuccessResponse>() {
             @SuppressLint("LogNotTimber")
             @Override
-            public void onResponse(@NotNull Call<FamilyMemberDeleteResponse> call, @NotNull Response<FamilyMemberDeleteResponse> response) {
+            public void onResponse(@NotNull Call<SuccessResponse> call, @NotNull Response<SuccessResponse> response) {
                 avi_indicator.smoothToHide();
                 Log.w(TAG,"FamilyMemberDeleteResponse"+ "--->" + new Gson().toJson(response.body()));
 
                 if (response.body() != null) {
                     if(response.body().getCode() == 200){
-                        Toasty.success(getApplicationContext(), "Members Removed Successfully", Toast.LENGTH_SHORT, true).show();
+                        Toasty.success(getApplicationContext(), "Family Members Removed Successfully", Toast.LENGTH_SHORT, true).show();
                         finish();
                         overridePendingTransition( 0, 0);
                         startActivity(getIntent());
@@ -866,7 +907,7 @@ public class CustomerProfileScreenActivity extends AppCompatActivity implements 
             }
 
             @Override
-            public void onFailure(@NotNull Call<FamilyMemberDeleteResponse> call, @NotNull Throwable t) {
+            public void onFailure(@NotNull Call<SuccessResponse> call, @NotNull Throwable t) {
                 avi_indicator.smoothToHide();
 
                 Log.w(TAG,"FamilyMemberDeleteResponse flr"+"--->" + t.getMessage());

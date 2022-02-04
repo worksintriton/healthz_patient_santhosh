@@ -212,6 +212,9 @@ public class AddYourFamilyMembersSelectActivity extends AppCompatActivity implem
     @BindView(R.id.include_petlover_header)
     View include_petlover_header;
 
+    List<String> health_issue = new ArrayList<>();
+
+
 
     @SuppressLint("LogNotTimber")
     @Override
@@ -700,7 +703,7 @@ public class AddYourFamilyMembersSelectActivity extends AppCompatActivity implem
         FamilyMemberCreateRequest.setName(edt_name.getText().toString().trim());
         FamilyMemberCreateRequest.setGender(strgendertype);
         FamilyMemberCreateRequest.setRelation_type(strrelationtype);
-        FamilyMemberCreateRequest.setHealth_issue(strhealthissue);
+        FamilyMemberCreateRequest.setHealth_issue(health_issue);
         FamilyMemberCreateRequest.setDateofbirth(edt_dob.getText().toString().trim());
         FamilyMemberCreateRequest.setAnymedicalinfo(edt_bio.getText().toString().trim());
         FamilyMemberCreateRequest.setCovide_vac(selectedRadioButton);
@@ -1010,17 +1013,17 @@ public class AddYourFamilyMembersSelectActivity extends AppCompatActivity implem
 
                             else
                             {
-                                if(ServerUrlImagePath != null&&!ServerUrlImagePath.isEmpty())
-                                {
-                                    picBeanList.add(new FamilyMemberCreateRequest.PicBean(ServerUrlImagePath));
+                                if(ServerUrlImagePath != null&&!ServerUrlImagePath.isEmpty()) {
+                                    FamilyMemberCreateRequest.PicBean picBean = new FamilyMemberCreateRequest.PicBean();
+                                    picBean.setImage(ServerUrlImagePath);
+                                    picBeanList.add(picBean);
+                                }
+                                else{
+                                    FamilyMemberCreateRequest.PicBean picBean = new FamilyMemberCreateRequest.PicBean();
+                                    picBean.setImage(APIClient.IMAGE_BASE_URL);
+                                    picBeanList.add(picBean);
 
                                 }
-                                else
-                                {
-                                    picBeanList.add(new FamilyMemberCreateRequest.PicBean(APIClient.IMAGE_BASE_URL));
-
-                                }
-
                                 setView();
 
                             }

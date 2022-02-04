@@ -8,7 +8,7 @@ public class PetLoverDashboardResponse{
     /**
      * Status : Success
      * Message : Pet Lover Dashboard Details
-     * Data : {"SOS":[{"Number":9876543210},{"Number":9876543211},{"Number":9876543212},{"Number":9876543214}],"LocationDetails":[{"_id":"61b47f2f057c102ef443dbdb","user_id":"61aef2c658c631738117edf9","location_state":"Tamil Nadu","location_country":"India","location_city":"Chennai","location_pin":"600037","location_address":"82-3, Ambattur Industrial Estate, Chennai, Tamil Nadu 600076, India","location_lat":13.082805432328357,"location_long":80.17043050378561,"location_title":"Home","location_nickname":"hhj","default_status":true,"date_and_time":"11-12-2021 04:06 PM","mobile_type":"Android","delete_status":false,"updatedAt":"2021-12-13T09:47:39.161Z","createdAt":"2021-12-11T10:36:31.785Z","__v":0}],"PetDetails":[{"pic":[{"image":"http://35.164.43.170:3000/api/uploads/1639215630420.jpg"}],"_id":"61b47223057c102ef443dbcc","user_id":"61aef2c658c631738117edf9","name":"fathima","gender":"Female","relation_type":"Daughter","health_issue":"","dateofbirth":"11-12-2012","anymedicalinfo":"this my bio","covide_vac":"Yes","weight":"50","delete_status":false,"createdAt":"2021-12-11T09:40:51.251Z","updatedAt":"2021-12-11T09:40:51.251Z","__v":0},{"pic":[{"image":"http://35.164.43.170:3000/api/uploads/1639220547399.png"}],"_id":"61b48547057c102ef443dbde","user_id":"61aef2c658c631738117edf9","name":"santha kumari","gender":"Female","relation_type":"Others","health_issue":"OCD","dateofbirth":"11-12-1956","anymedicalinfo":"she has undergone a surgery for cancer","covide_vac":"Yes","weight":"65","delete_status":false,"createdAt":"2021-12-11T11:02:31.911Z","updatedAt":"2021-12-11T11:02:31.911Z","__v":0},{"pic":[{"image":"http://35.164.43.170:3000/api/uploads/1639220547399.png"}],"_id":"61b4854d057c102ef443dbdf","user_id":"61aef2c658c631738117edf9","name":"santha kumari","gender":"Female","relation_type":"Others","health_issue":"OCD","dateofbirth":"11-12-1956","anymedicalinfo":"she has undergone a surgery for cancer","covide_vac":"Yes","weight":"65","delete_status":false,"createdAt":"2021-12-11T11:02:37.912Z","updatedAt":"2021-12-11T11:02:37.912Z","__v":0},{"pic":[{"image":"http://35.164.43.170:3000/api/uploads/1639220547399.png"}],"_id":"61b4857b057c102ef443dbe0","user_id":"61aef2c658c631738117edf9","name":"santha kumari","gender":"Female","relation_type":"Others","health_issue":"OCD","dateofbirth":"11-12-1956","anymedicalinfo":"she has undergone a surgery for cancer","covide_vac":"Yes","weight":"65","delete_status":false,"createdAt":"2021-12-11T11:03:23.477Z","updatedAt":"2021-12-11T11:03:23.477Z","__v":0}],"userdetails":{"_id":"61aef2c658c631738117edf9","first_name":"Maddy","last_name":"Sam","user_email":"oriens@gmail.com","user_phone":"9159207294","date_of_reg":"07/12/2021 11:06 AM","user_type":1,"ref_code":"","my_ref_code":"KEI1KND","user_status":"complete","otp":123456,"profile_img":"http://35.164.43.170:3000/api/uploads/1639218019070.jpg","user_email_verification":false,"fb_token":"","device_id":"","device_type":"","mobile_type":"Android","delete_status":false,"updatedAt":"2021-12-14T06:17:35.450Z","createdAt":"2021-12-07T05:36:06.925Z","__v":0},"Dashboarddata":{"Banner_details":[{"_id":"6198826f518ad4520ab14787","title":"","img_path":"http://35.164.43.170:3000/api/uploads/1637384806985.png"},{"_id":"6198828c518ad4520ab14788","title":"","img_path":"http://35.164.43.170:3000/api/uploads/1637384841547.png"},{"_id":"6198829a518ad4520ab14789","title":"","img_path":"http://35.164.43.170:3000/api/uploads/1637384854108.png"},{"_id":"619882d8518ad4520ab1478b","title":"","img_path":"http://35.164.43.170:3000/api/uploads/1637384920174.png"}],"Doctor_details":[{"_id":"61af0ec058c631738117ee0b","doctor_name":"Maddy Sam","doctor_img":"http://35.164.43.170:3000/api/uploads/1638862720313.jpg","thumbnail_image":"http://35.164.43.170:3000/api/uploads/1639207898114.png","specialization":[{"specialization":"General Consultant"},{"specialization":"Virology"},{"specialization":"Pathology"},{"specialization":"Microbiology"},{"specialization":"Theriogenology"},{"specialization":"Behavior"},{"specialization":"Equine Medicine"},{"specialization":"Radiation Oncology"},{"specialization":"Nephrology"},{"specialization":"Neurosurgery"},{"specialization":"IR & Endoscopy"},{"specialization":"Critical Care"},{"specialization":"Avian & Exotic pets"},{"specialization":"Animal Welfare"},{"specialization":"Clinical Pharmocology"},{"specialization":"Opthalmology"},{"specialization":"Preventive Medicine"},{"specialization":"Avian Practice"},{"specialization":"Canine & Feline Practice"},{"specialization":"Equine Practice"},{"specialization":"Feline Practice"},{"specialization":"Reptile & Amphibian practice"},{"specialization":"Swine Health Management"},{"specialization":"Toxicology"},{"specialization":"neurology"}],"distance":"0.00","clinic_name":"Maddy Sam Clinic","fav":true,"star_count":5,"review_count":1},{"_id":"61b1a11bfad4f358a24d94c8","doctor_name":"durga s","doctor_img":"http://35.164.43.170:3000/api/uploads/1639216613655.jpg","thumbnail_image":"http://35.164.43.170:3000/api/uploads/1639207859196.png","specialization":[{"specialization":"General Consultant"},{"specialization":"Surgery"},{"specialization":"Virology"},{"specialization":"Nutrition"},{"specialization":"Dentistry"},{"specialization":"Pathology"},{"specialization":"Radiology"},{"specialization":"Emergency and Critical Care"},{"specialization":"Orthopaedics"},{"specialization":"Neurology"},{"specialization":"Neurosurgery"},{"specialization":"Cardiology"},{"specialization":"Bone and Joint Specialist"},{"specialization":"Behavioral Medicine"},{"specialization":"Dermatology"},{"specialization":"Beef Cattle Practice"},{"specialization":"Exotic Companion mammal Practice"}],"distance":"270.08","clinic_name":"dura clinic","fav":false,"star_count":3.5,"review_count":2}],"Service_details":[{"_id":"61987d53518ad4520ab14781","service_icon":"http://35.164.43.170:3000/api/uploads/1637383464572.png","service_title":"Ayurvedha","background_color":"#F9A826"},{"_id":"61987dbb518ad4520ab14782","service_icon":"http://35.164.43.170:3000/api/uploads/1637383587737.png","service_title":"Yoga","background_color":"#FF7A7A"},{"_id":"61987e73518ad4520ab14785","service_icon":"http://35.164.43.170:3000/api/uploads/1637383794071.png","service_title":"Meditation","background_color":"#9BD152"},{"_id":"61988204518ad4520ab14786","service_icon":"http://35.164.43.170:3000/api/uploads/1637384692422.png","service_title":"Therapy","background_color":"#009377"},{"_id":"5ff7f5171c72093650a13a14","service_icon":"http://35.164.43.170:3000/api/uploads/1639030615800.jpg","service_title":"Counselling","background_color":"#FF0000"}],"middle_Banner_details":[{"_id":"60c35c4ccfa6933a181985af","title":"Pet Service","img_path":"http://35.164.43.170:3000/api/uploads/1639030893177.png"},{"_id":"60c361cfaa96c5441495e076","title":"Shop","img_path":"http://35.164.43.170:3000/api/uploads/1639030908549.png"},{"_id":"61488ac1fdacc41be6e27b16","title":"Pet Care","img_path":"http://35.164.43.170:3000/api/uploads/1639030920981.png"}],"Products_details":[{"_id":"61af3d669e6f552291dbfa6e","product_img":{"product_img":"http://35.164.43.170:3000/api/uploads/1638874408182.jpg"},"cat_name":"Organic Products","product_title":"Sample","product_price":192,"thumbnail_image":"http://35.164.43.170:3000/api/uploads/1638874408182.jpg","product_discount":1,"product_discount_price":194,"product_fav":true,"product_rating":5,"product_review":0},{"_id":"61af46069e6f552291dbfa6f","product_img":{"product_img":"http://35.164.43.170:3000/api/uploads/1638876621297.jpg"},"cat_name":"Men Care","product_title":"price food","product_price":200,"thumbnail_image":"http://35.164.43.170:3000/api/uploads/1638876621297.jpg","product_discount":0,"product_discount_price":0,"product_fav":false,"product_rating":5,"product_review":0}],"Puppy_Products_details":[{"_id":"61af3d669e6f552291dbfa6e","product_img":{"product_img":"http://35.164.43.170:3000/api/uploads/1638874408182.jpg"},"cat_name":"Organic Products","product_title":"Sample","product_price":192,"thumbnail_image":"http://35.164.43.170:3000/api/uploads/1638874408182.jpg","product_discount":1,"product_discount_price":194,"product_fav":true,"product_rating":5,"product_review":0},{"_id":"61af46069e6f552291dbfa6f","product_img":{"product_img":"http://35.164.43.170:3000/api/uploads/1638876621297.jpg"},"cat_name":"Men Care","product_title":"price food","product_price":200,"thumbnail_image":"http://35.164.43.170:3000/api/uploads/1638876621297.jpg","product_discount":0,"product_discount_price":0,"product_fav":false,"product_rating":5,"product_review":0}]},"messages":[{"title":"Doctor","message":"Unable to find the doctor near your location can i show the doctor above the location"},{"title":"Product","message":"Unable to find the Product near your location can i show the doctor above the location"},{"title":"sercive","message":"Unable to find the Sercive near your location can i show the doctor above the location"}]}
+     * Data : {"SOS":[{"Number":9876543210},{"Number":9876543211},{"Number":9876543212},{"Number":9876543214}],"LocationDetails":[{"_id":"61fb6779d014ed6b74d3f0e4","user_id":"61fb66fad014ed6b74d3f0b6","location_state":"Tamil Nadu","location_country":"India","location_city":"Chennai","location_pin":"600042","location_address":"2A, 3rd Main Rd, Ram Nagar, Ramnagar South, Dhadeswaram Nagar, Velachery, Chennai, Tamil Nadu 600042, India","location_lat":12.983176140146533,"location_long":80.22353086620569,"location_title":"Work","location_nickname":"H","default_status":true,"date_and_time":"03-02-2022 10:56 am","mobile_type":"Android","delete_status":false,"updatedAt":"2022-02-03T05:26:17.428Z","createdAt":"2022-02-03T05:26:17.428Z","__v":0}],"PetDetails":[{"health_issue":[""],"pic":[{"image":"http://35.165.75.97:3000/api/uploads/1643865952185.jpg"}],"_id":"61fb676dd014ed6b74d3f0ba","user_id":"61fb66fad014ed6b74d3f0b6","name":"Lavanya","gender":"Female","relation_type":"Friend","dateofbirth":"06-04-2000","anymedicalinfo":"Have diabetes.","covide_vac":"","weight":"60","delete_status":false,"createdAt":"2022-02-03T05:26:05.648Z","updatedAt":"2022-02-03T06:18:57.712Z","__v":0},{"health_issue":["OCD"],"pic":[{"image":"http://35.165.75.97:3000/api/uploads/1643869990070.jpg"}],"_id":"61fb788c3c8d2e6bf634f934","user_id":"61fb66fad014ed6b74d3f0b6","name":"Ju","gender":"Female","relation_type":"Daughter","dateofbirth":"13-04-2007","anymedicalinfo":"Health","covide_vac":"Yes","weight":"60","delete_status":false,"createdAt":"2022-02-03T06:39:08.762Z","updatedAt":"2022-02-03T06:39:08.762Z","__v":0}],"userdetails":{"_id":"61fb66fad014ed6b74d3f0b6","first_name":"Lisa","last_name":"L","user_email":"li@gmail.com","user_phone":"8523697410","date_of_reg":"03/02/2022 10:54 am","user_type":1,"ref_code":"","my_ref_code":"Y3Y4IF4","user_status":"complete","otp":123456,"profile_img":"","user_email_verification":false,"fb_token":"cGKUudp3TUaqWTtKR8_6gH:APA91bF4PbHsuLysvXV_cU5IlWH-ozPT23HpaiVIjSxah9G1tQgWX_d9C4p4nSc6_gcckCYSERAuBy_r07hQ0YdYv_d4ymgEp7sGA5VSM9mc4R3JCNbVOImAISS5cgcLXHc8ZrYbtgPH","device_id":"","device_type":"","mobile_type":"Android","delete_status":false,"updatedAt":"2022-02-03T05:45:14.173Z","createdAt":"2022-02-03T05:24:10.241Z","__v":0},"Dashboarddata":{"Banner_details":[{"_id":"6198826f518ad4520ab14787","title":"","img_path":"http://35.165.75.97:3000/api/uploads/1643869710301.png"},{"_id":"61fb6f873c8d2e6bf634f08a","title":"","img_path":"http://35.165.75.97:3000/api/uploads/1643869645913.png"},{"_id":"61fb6f943c8d2e6bf634f092","title":"","img_path":"http://35.165.75.97:3000/api/uploads/1643869365036.png"},{"_id":"61fb6fce3c8d2e6bf634f0e9","title":"","img_path":"http://35.165.75.97:3000/api/uploads/1643869222038.png"},{"_id":"61fb74c63c8d2e6bf634f5aa","title":"","img_path":"http://35.165.75.97:3000/api/uploads/1643869621522.png"}],"Doctor_details":[{"_id":"61b1a11bfad4f358a24d94c8","doctor_name":"shree","doctor_img":"http://35.165.75.97:3000/api/uploads/1641558967412.jpg","thumbnail_image":"http://35.165.75.97:3000/api/uploads/1641558940743.png","specialization":[{"specialization":"General Consultant"},{"specialization":"Surgery"},{"specialization":"Virology"},{"specialization":"Nutrition"},{"specialization":"Dentistry"},{"specialization":"Pathology"},{"specialization":"Radiology"},{"specialization":"Emergency and Critical Care"},{"specialization":"Orthopaedics"},{"specialization":"Neurology"},{"specialization":"Neurosurgery"},{"specialization":"Cardiology"},{"specialization":"Bone and Joint Specialist"},{"specialization":"Behavioral Medicine"},{"specialization":"Dermatology"},{"specialization":"Beef Cattle Practice"},{"specialization":"Exotic Companion mammal Practice"}],"distance":"0.00","clinic_name":"dura clinic","fav":false,"star_count":3.5,"review_count":2},{"_id":"61c5aa3eba68253db8d9d174","doctor_name":"kumar","doctor_img":"http://35.165.75.97:3000/api/uploads/1641559033194.jpg","thumbnail_image":"http://35.165.75.97:3000/api/uploads/1641559045306.png","specialization":[{"specialization":"Radiology"},{"specialization":"Laboratory Animal Medicine"},{"specialization":"Dentistry"},{"specialization":"Behavior"},{"specialization":"Radiation Oncology"},{"specialization":"Nephrology"},{"specialization":"Orthopaedics"},{"specialization":"Emergency"},{"specialization":"Neurology"},{"specialization":"Bone and Joint Specialist"},{"specialization":"Anesthesia & Analgesia"},{"specialization":"Behavioral Medicine"},{"specialization":"Avian & Exotic pets"},{"specialization":"Animal Welfare"},{"specialization":"Opthalmology"},{"specialization":"Preventive Medicine"},{"specialization":"Beef Cattle Practice"},{"specialization":"Dairy Practice"},{"specialization":"Exotic Companion mammal Practice"},{"specialization":"Reptile & Amphibian practice"},{"specialization":"Swine Health Management"},{"specialization":"Zoological"},{"specialization":"neurology1"}],"distance":"0.00","clinic_name":"saro clinic","fav":false,"star_count":5,"review_count":0},{"_id":"61af0ec058c631738117ee0b","doctor_name":"Sam","doctor_img":"http://35.165.75.97:3000/api/uploads/1641559170544.jpg","thumbnail_image":"http://35.165.75.97:3000/api/uploads/1641559146281.png","specialization":[{"specialization":"General Consultant"},{"specialization":"Virology"},{"specialization":"Pathology"},{"specialization":"Microbiology"},{"specialization":"Theriogenology"},{"specialization":"Behavior"},{"specialization":"Equine Medicine"},{"specialization":"Radiation Oncology"},{"specialization":"Nephrology"},{"specialization":"Neurosurgery"},{"specialization":"IR & Endoscopy"},{"specialization":"Critical Care"},{"specialization":"Avian & Exotic pets"},{"specialization":"Animal Welfare"},{"specialization":"Clinical Pharmocology"},{"specialization":"Opthalmology"},{"specialization":"Preventive Medicine"},{"specialization":"Avian Practice"},{"specialization":"Canine & Feline Practice"},{"specialization":"Equine Practice"},{"specialization":"Feline Practice"},{"specialization":"Reptile & Amphibian practice"},{"specialization":"Swine Health Management"},{"specialization":"Toxicology"},{"specialization":"neurology"}],"distance":"270.07","clinic_name":"Maddy Sam Clinic","fav":false,"star_count":4.5,"review_count":2},{"_id":"61bc495b6299c8306bf65e4d","doctor_name":"imthiyas","doctor_img":"http://35.165.75.97:3000/api/uploads/1641558994088.jpg","thumbnail_image":"http://35.165.75.97:3000/api/uploads/1641558998263.jpg","specialization":[{"specialization":"Virology"},{"specialization":"Dentistry"},{"specialization":"Orthopaedics"},{"specialization":"IR & Endoscopy"}],"distance":"1378.68","clinic_name":"Chennai Medical Clinic","fav":false,"star_count":5,"review_count":0}],"Service_details":[{"_id":"61987d53518ad4520ab14781","service_icon":"http://35.165.75.97:3000/api/uploads/1639816297302.png","service_title":"Ayurvedha","background_color":"#F9A826"},{"_id":"61987dbb518ad4520ab14782","service_icon":"http://35.165.75.97:3000/api/uploads/1639816345423.png","service_title":"Meditation","background_color":"#FF7A7A"},{"_id":"61987e73518ad4520ab14785","service_icon":"http://35.165.75.97:3000/api/uploads/1639816360249.png","service_title":"Yoga Master","background_color":"#9BD152"},{"_id":"61988204518ad4520ab14786","service_icon":"http://35.165.75.97:3000/api/uploads/1639816368570.png","service_title":"Therapy","background_color":"#009377"},{"_id":"61cad70221917361d36c9de5","service_icon":"http://35.165.75.97:3000/api/uploads/1640683254785.png","service_title":"Varma","background_color":"#FF0000"}],"middle_Banner_details":[{"_id":"60c35c4ccfa6933a181985af","title":"Pet Service","img_path":"http://35.165.75.97:3000/api/uploads/1641555814091.png"},{"_id":"60c361cfaa96c5441495e076","title":"Shop","img_path":"http://35.165.75.97:3000/api/uploads/1641558269304.png"},{"_id":"61488ac1fdacc41be6e27b16","title":"Pet Care","img_path":"http://35.165.75.97:3000/api/uploads/1641558283206.png"}],"Products_details":[{"_id":"61b9ef2ed71f04589fb119b5","product_img":{"product_img":"http://35.165.75.97:3000/api/uploads/1639575337353.png"},"cat_name":"Skin & Body Care","product_title":"Good Care","product_price":858,"thumbnail_image":"http://35.165.75.97:3000/api/uploads/1641544493226.png","product_discount":5,"product_discount_price":903,"product_fav":true,"product_rating":5,"product_review":0},{"_id":"61af3d669e6f552291dbfa6e","product_img":{"product_img":"http://35.164.43.170:3000/api/uploads/1638874408182.jpg"},"cat_name":"Organic Products","product_title":"Sample","product_price":192,"thumbnail_image":"http://35.165.75.97:3000/api/uploads/1641544590165.png","product_discount":1,"product_discount_price":194,"product_fav":false,"product_rating":5,"product_review":0},{"_id":"61af46069e6f552291dbfa6f","product_img":{"product_img":"http://35.164.43.170:3000/api/uploads/1638876621297.jpg"},"cat_name":"Men Care","product_title":"juice","product_price":200,"thumbnail_image":"http://35.165.75.97:3000/api/uploads/1641544852783.png","product_discount":0,"product_discount_price":0,"product_fav":false,"product_rating":5,"product_review":0},{"_id":"61b9d901394fee0dd60b4d1f","cat_name":"Health Care","product_title":"Health drinks","product_price":200,"thumbnail_image":"http://35.165.75.97:3000/api/uploads/1641544259618.png","product_discount":0,"product_discount_price":0,"product_fav":false,"product_rating":5,"product_review":0}],"Puppy_Products_details":[{"_id":"61b9ef2ed71f04589fb119b5","product_img":{"product_img":"http://35.165.75.97:3000/api/uploads/1639575337353.png"},"cat_name":"Skin & Body Care","product_title":"Good Care","product_price":858,"thumbnail_image":"http://35.165.75.97:3000/api/uploads/1641544493226.png","product_discount":5,"product_discount_price":903,"product_fav":true,"product_rating":5,"product_review":0},{"_id":"61af3d669e6f552291dbfa6e","product_img":{"product_img":"http://35.164.43.170:3000/api/uploads/1638874408182.jpg"},"cat_name":"Organic Products","product_title":"Sample","product_price":192,"thumbnail_image":"http://35.165.75.97:3000/api/uploads/1641544590165.png","product_discount":1,"product_discount_price":194,"product_fav":false,"product_rating":5,"product_review":0},{"_id":"61af46069e6f552291dbfa6f","product_img":{"product_img":"http://35.164.43.170:3000/api/uploads/1638876621297.jpg"},"cat_name":"Men Care","product_title":"juice","product_price":200,"thumbnail_image":"http://35.165.75.97:3000/api/uploads/1641544852783.png","product_discount":0,"product_discount_price":0,"product_fav":false,"product_rating":5,"product_review":0},{"_id":"61b9d901394fee0dd60b4d1f","cat_name":"Health Care","product_title":"Health drinks","product_price":200,"thumbnail_image":"http://35.165.75.97:3000/api/uploads/1641544259618.png","product_discount":0,"product_discount_price":0,"product_fav":false,"product_rating":5,"product_review":0}]},"messages":[{"title":"Doctor","message":"Unable to find the doctor near your location can i show the doctor above the location"},{"title":"Product","message":"Unable to find the Product near your location can i show the doctor above the location"},{"title":"sercive","message":"Unable to find the Sercive near your location can i show the doctor above the location"}]}
      * Code : 200
      */
 
@@ -16,10 +16,10 @@ public class PetLoverDashboardResponse{
     private String Message;
     /**
      * SOS : [{"Number":9876543210},{"Number":9876543211},{"Number":9876543212},{"Number":9876543214}]
-     * LocationDetails : [{"_id":"61b47f2f057c102ef443dbdb","user_id":"61aef2c658c631738117edf9","location_state":"Tamil Nadu","location_country":"India","location_city":"Chennai","location_pin":"600037","location_address":"82-3, Ambattur Industrial Estate, Chennai, Tamil Nadu 600076, India","location_lat":13.082805432328357,"location_long":80.17043050378561,"location_title":"Home","location_nickname":"hhj","default_status":true,"date_and_time":"11-12-2021 04:06 PM","mobile_type":"Android","delete_status":false,"updatedAt":"2021-12-13T09:47:39.161Z","createdAt":"2021-12-11T10:36:31.785Z","__v":0}]
-     * PetDetails : [{"pic":[{"image":"http://35.164.43.170:3000/api/uploads/1639215630420.jpg"}],"_id":"61b47223057c102ef443dbcc","user_id":"61aef2c658c631738117edf9","name":"fathima","gender":"Female","relation_type":"Daughter","health_issue":"","dateofbirth":"11-12-2012","anymedicalinfo":"this my bio","covide_vac":"Yes","weight":"50","delete_status":false,"createdAt":"2021-12-11T09:40:51.251Z","updatedAt":"2021-12-11T09:40:51.251Z","__v":0},{"pic":[{"image":"http://35.164.43.170:3000/api/uploads/1639220547399.png"}],"_id":"61b48547057c102ef443dbde","user_id":"61aef2c658c631738117edf9","name":"santha kumari","gender":"Female","relation_type":"Others","health_issue":"OCD","dateofbirth":"11-12-1956","anymedicalinfo":"she has undergone a surgery for cancer","covide_vac":"Yes","weight":"65","delete_status":false,"createdAt":"2021-12-11T11:02:31.911Z","updatedAt":"2021-12-11T11:02:31.911Z","__v":0},{"pic":[{"image":"http://35.164.43.170:3000/api/uploads/1639220547399.png"}],"_id":"61b4854d057c102ef443dbdf","user_id":"61aef2c658c631738117edf9","name":"santha kumari","gender":"Female","relation_type":"Others","health_issue":"OCD","dateofbirth":"11-12-1956","anymedicalinfo":"she has undergone a surgery for cancer","covide_vac":"Yes","weight":"65","delete_status":false,"createdAt":"2021-12-11T11:02:37.912Z","updatedAt":"2021-12-11T11:02:37.912Z","__v":0},{"pic":[{"image":"http://35.164.43.170:3000/api/uploads/1639220547399.png"}],"_id":"61b4857b057c102ef443dbe0","user_id":"61aef2c658c631738117edf9","name":"santha kumari","gender":"Female","relation_type":"Others","health_issue":"OCD","dateofbirth":"11-12-1956","anymedicalinfo":"she has undergone a surgery for cancer","covide_vac":"Yes","weight":"65","delete_status":false,"createdAt":"2021-12-11T11:03:23.477Z","updatedAt":"2021-12-11T11:03:23.477Z","__v":0}]
-     * userdetails : {"_id":"61aef2c658c631738117edf9","first_name":"Maddy","last_name":"Sam","user_email":"oriens@gmail.com","user_phone":"9159207294","date_of_reg":"07/12/2021 11:06 AM","user_type":1,"ref_code":"","my_ref_code":"KEI1KND","user_status":"complete","otp":123456,"profile_img":"http://35.164.43.170:3000/api/uploads/1639218019070.jpg","user_email_verification":false,"fb_token":"","device_id":"","device_type":"","mobile_type":"Android","delete_status":false,"updatedAt":"2021-12-14T06:17:35.450Z","createdAt":"2021-12-07T05:36:06.925Z","__v":0}
-     * Dashboarddata : {"Banner_details":[{"_id":"6198826f518ad4520ab14787","title":"","img_path":"http://35.164.43.170:3000/api/uploads/1637384806985.png"},{"_id":"6198828c518ad4520ab14788","title":"","img_path":"http://35.164.43.170:3000/api/uploads/1637384841547.png"},{"_id":"6198829a518ad4520ab14789","title":"","img_path":"http://35.164.43.170:3000/api/uploads/1637384854108.png"},{"_id":"619882d8518ad4520ab1478b","title":"","img_path":"http://35.164.43.170:3000/api/uploads/1637384920174.png"}],"Doctor_details":[{"_id":"61af0ec058c631738117ee0b","doctor_name":"Maddy Sam","doctor_img":"http://35.164.43.170:3000/api/uploads/1638862720313.jpg","thumbnail_image":"http://35.164.43.170:3000/api/uploads/1639207898114.png","specialization":[{"specialization":"General Consultant"},{"specialization":"Virology"},{"specialization":"Pathology"},{"specialization":"Microbiology"},{"specialization":"Theriogenology"},{"specialization":"Behavior"},{"specialization":"Equine Medicine"},{"specialization":"Radiation Oncology"},{"specialization":"Nephrology"},{"specialization":"Neurosurgery"},{"specialization":"IR & Endoscopy"},{"specialization":"Critical Care"},{"specialization":"Avian & Exotic pets"},{"specialization":"Animal Welfare"},{"specialization":"Clinical Pharmocology"},{"specialization":"Opthalmology"},{"specialization":"Preventive Medicine"},{"specialization":"Avian Practice"},{"specialization":"Canine & Feline Practice"},{"specialization":"Equine Practice"},{"specialization":"Feline Practice"},{"specialization":"Reptile & Amphibian practice"},{"specialization":"Swine Health Management"},{"specialization":"Toxicology"},{"specialization":"neurology"}],"distance":"0.00","clinic_name":"Maddy Sam Clinic","fav":true,"star_count":5,"review_count":1},{"_id":"61b1a11bfad4f358a24d94c8","doctor_name":"durga s","doctor_img":"http://35.164.43.170:3000/api/uploads/1639216613655.jpg","thumbnail_image":"http://35.164.43.170:3000/api/uploads/1639207859196.png","specialization":[{"specialization":"General Consultant"},{"specialization":"Surgery"},{"specialization":"Virology"},{"specialization":"Nutrition"},{"specialization":"Dentistry"},{"specialization":"Pathology"},{"specialization":"Radiology"},{"specialization":"Emergency and Critical Care"},{"specialization":"Orthopaedics"},{"specialization":"Neurology"},{"specialization":"Neurosurgery"},{"specialization":"Cardiology"},{"specialization":"Bone and Joint Specialist"},{"specialization":"Behavioral Medicine"},{"specialization":"Dermatology"},{"specialization":"Beef Cattle Practice"},{"specialization":"Exotic Companion mammal Practice"}],"distance":"270.08","clinic_name":"dura clinic","fav":false,"star_count":3.5,"review_count":2}],"Service_details":[{"_id":"61987d53518ad4520ab14781","service_icon":"http://35.164.43.170:3000/api/uploads/1637383464572.png","service_title":"Ayurvedha","background_color":"#F9A826"},{"_id":"61987dbb518ad4520ab14782","service_icon":"http://35.164.43.170:3000/api/uploads/1637383587737.png","service_title":"Yoga","background_color":"#FF7A7A"},{"_id":"61987e73518ad4520ab14785","service_icon":"http://35.164.43.170:3000/api/uploads/1637383794071.png","service_title":"Meditation","background_color":"#9BD152"},{"_id":"61988204518ad4520ab14786","service_icon":"http://35.164.43.170:3000/api/uploads/1637384692422.png","service_title":"Therapy","background_color":"#009377"},{"_id":"5ff7f5171c72093650a13a14","service_icon":"http://35.164.43.170:3000/api/uploads/1639030615800.jpg","service_title":"Counselling","background_color":"#FF0000"}],"middle_Banner_details":[{"_id":"60c35c4ccfa6933a181985af","title":"Pet Service","img_path":"http://35.164.43.170:3000/api/uploads/1639030893177.png"},{"_id":"60c361cfaa96c5441495e076","title":"Shop","img_path":"http://35.164.43.170:3000/api/uploads/1639030908549.png"},{"_id":"61488ac1fdacc41be6e27b16","title":"Pet Care","img_path":"http://35.164.43.170:3000/api/uploads/1639030920981.png"}],"Products_details":[{"_id":"61af3d669e6f552291dbfa6e","product_img":{"product_img":"http://35.164.43.170:3000/api/uploads/1638874408182.jpg"},"cat_name":"Organic Products","product_title":"Sample","product_price":192,"thumbnail_image":"http://35.164.43.170:3000/api/uploads/1638874408182.jpg","product_discount":1,"product_discount_price":194,"product_fav":true,"product_rating":5,"product_review":0},{"_id":"61af46069e6f552291dbfa6f","product_img":{"product_img":"http://35.164.43.170:3000/api/uploads/1638876621297.jpg"},"cat_name":"Men Care","product_title":"price food","product_price":200,"thumbnail_image":"http://35.164.43.170:3000/api/uploads/1638876621297.jpg","product_discount":0,"product_discount_price":0,"product_fav":false,"product_rating":5,"product_review":0}],"Puppy_Products_details":[{"_id":"61af3d669e6f552291dbfa6e","product_img":{"product_img":"http://35.164.43.170:3000/api/uploads/1638874408182.jpg"},"cat_name":"Organic Products","product_title":"Sample","product_price":192,"thumbnail_image":"http://35.164.43.170:3000/api/uploads/1638874408182.jpg","product_discount":1,"product_discount_price":194,"product_fav":true,"product_rating":5,"product_review":0},{"_id":"61af46069e6f552291dbfa6f","product_img":{"product_img":"http://35.164.43.170:3000/api/uploads/1638876621297.jpg"},"cat_name":"Men Care","product_title":"price food","product_price":200,"thumbnail_image":"http://35.164.43.170:3000/api/uploads/1638876621297.jpg","product_discount":0,"product_discount_price":0,"product_fav":false,"product_rating":5,"product_review":0}]}
+     * LocationDetails : [{"_id":"61fb6779d014ed6b74d3f0e4","user_id":"61fb66fad014ed6b74d3f0b6","location_state":"Tamil Nadu","location_country":"India","location_city":"Chennai","location_pin":"600042","location_address":"2A, 3rd Main Rd, Ram Nagar, Ramnagar South, Dhadeswaram Nagar, Velachery, Chennai, Tamil Nadu 600042, India","location_lat":12.983176140146533,"location_long":80.22353086620569,"location_title":"Work","location_nickname":"H","default_status":true,"date_and_time":"03-02-2022 10:56 am","mobile_type":"Android","delete_status":false,"updatedAt":"2022-02-03T05:26:17.428Z","createdAt":"2022-02-03T05:26:17.428Z","__v":0}]
+     * PetDetails : [{"health_issue":[""],"pic":[{"image":"http://35.165.75.97:3000/api/uploads/1643865952185.jpg"}],"_id":"61fb676dd014ed6b74d3f0ba","user_id":"61fb66fad014ed6b74d3f0b6","name":"Lavanya","gender":"Female","relation_type":"Friend","dateofbirth":"06-04-2000","anymedicalinfo":"Have diabetes.","covide_vac":"","weight":"60","delete_status":false,"createdAt":"2022-02-03T05:26:05.648Z","updatedAt":"2022-02-03T06:18:57.712Z","__v":0},{"health_issue":["OCD"],"pic":[{"image":"http://35.165.75.97:3000/api/uploads/1643869990070.jpg"}],"_id":"61fb788c3c8d2e6bf634f934","user_id":"61fb66fad014ed6b74d3f0b6","name":"Ju","gender":"Female","relation_type":"Daughter","dateofbirth":"13-04-2007","anymedicalinfo":"Health","covide_vac":"Yes","weight":"60","delete_status":false,"createdAt":"2022-02-03T06:39:08.762Z","updatedAt":"2022-02-03T06:39:08.762Z","__v":0}]
+     * userdetails : {"_id":"61fb66fad014ed6b74d3f0b6","first_name":"Lisa","last_name":"L","user_email":"li@gmail.com","user_phone":"8523697410","date_of_reg":"03/02/2022 10:54 am","user_type":1,"ref_code":"","my_ref_code":"Y3Y4IF4","user_status":"complete","otp":123456,"profile_img":"","user_email_verification":false,"fb_token":"cGKUudp3TUaqWTtKR8_6gH:APA91bF4PbHsuLysvXV_cU5IlWH-ozPT23HpaiVIjSxah9G1tQgWX_d9C4p4nSc6_gcckCYSERAuBy_r07hQ0YdYv_d4ymgEp7sGA5VSM9mc4R3JCNbVOImAISS5cgcLXHc8ZrYbtgPH","device_id":"","device_type":"","mobile_type":"Android","delete_status":false,"updatedAt":"2022-02-03T05:45:14.173Z","createdAt":"2022-02-03T05:24:10.241Z","__v":0}
+     * Dashboarddata : {"Banner_details":[{"_id":"6198826f518ad4520ab14787","title":"","img_path":"http://35.165.75.97:3000/api/uploads/1643869710301.png"},{"_id":"61fb6f873c8d2e6bf634f08a","title":"","img_path":"http://35.165.75.97:3000/api/uploads/1643869645913.png"},{"_id":"61fb6f943c8d2e6bf634f092","title":"","img_path":"http://35.165.75.97:3000/api/uploads/1643869365036.png"},{"_id":"61fb6fce3c8d2e6bf634f0e9","title":"","img_path":"http://35.165.75.97:3000/api/uploads/1643869222038.png"},{"_id":"61fb74c63c8d2e6bf634f5aa","title":"","img_path":"http://35.165.75.97:3000/api/uploads/1643869621522.png"}],"Doctor_details":[{"_id":"61b1a11bfad4f358a24d94c8","doctor_name":"shree","doctor_img":"http://35.165.75.97:3000/api/uploads/1641558967412.jpg","thumbnail_image":"http://35.165.75.97:3000/api/uploads/1641558940743.png","specialization":[{"specialization":"General Consultant"},{"specialization":"Surgery"},{"specialization":"Virology"},{"specialization":"Nutrition"},{"specialization":"Dentistry"},{"specialization":"Pathology"},{"specialization":"Radiology"},{"specialization":"Emergency and Critical Care"},{"specialization":"Orthopaedics"},{"specialization":"Neurology"},{"specialization":"Neurosurgery"},{"specialization":"Cardiology"},{"specialization":"Bone and Joint Specialist"},{"specialization":"Behavioral Medicine"},{"specialization":"Dermatology"},{"specialization":"Beef Cattle Practice"},{"specialization":"Exotic Companion mammal Practice"}],"distance":"0.00","clinic_name":"dura clinic","fav":false,"star_count":3.5,"review_count":2},{"_id":"61c5aa3eba68253db8d9d174","doctor_name":"kumar","doctor_img":"http://35.165.75.97:3000/api/uploads/1641559033194.jpg","thumbnail_image":"http://35.165.75.97:3000/api/uploads/1641559045306.png","specialization":[{"specialization":"Radiology"},{"specialization":"Laboratory Animal Medicine"},{"specialization":"Dentistry"},{"specialization":"Behavior"},{"specialization":"Radiation Oncology"},{"specialization":"Nephrology"},{"specialization":"Orthopaedics"},{"specialization":"Emergency"},{"specialization":"Neurology"},{"specialization":"Bone and Joint Specialist"},{"specialization":"Anesthesia & Analgesia"},{"specialization":"Behavioral Medicine"},{"specialization":"Avian & Exotic pets"},{"specialization":"Animal Welfare"},{"specialization":"Opthalmology"},{"specialization":"Preventive Medicine"},{"specialization":"Beef Cattle Practice"},{"specialization":"Dairy Practice"},{"specialization":"Exotic Companion mammal Practice"},{"specialization":"Reptile & Amphibian practice"},{"specialization":"Swine Health Management"},{"specialization":"Zoological"},{"specialization":"neurology1"}],"distance":"0.00","clinic_name":"saro clinic","fav":false,"star_count":5,"review_count":0},{"_id":"61af0ec058c631738117ee0b","doctor_name":"Sam","doctor_img":"http://35.165.75.97:3000/api/uploads/1641559170544.jpg","thumbnail_image":"http://35.165.75.97:3000/api/uploads/1641559146281.png","specialization":[{"specialization":"General Consultant"},{"specialization":"Virology"},{"specialization":"Pathology"},{"specialization":"Microbiology"},{"specialization":"Theriogenology"},{"specialization":"Behavior"},{"specialization":"Equine Medicine"},{"specialization":"Radiation Oncology"},{"specialization":"Nephrology"},{"specialization":"Neurosurgery"},{"specialization":"IR & Endoscopy"},{"specialization":"Critical Care"},{"specialization":"Avian & Exotic pets"},{"specialization":"Animal Welfare"},{"specialization":"Clinical Pharmocology"},{"specialization":"Opthalmology"},{"specialization":"Preventive Medicine"},{"specialization":"Avian Practice"},{"specialization":"Canine & Feline Practice"},{"specialization":"Equine Practice"},{"specialization":"Feline Practice"},{"specialization":"Reptile & Amphibian practice"},{"specialization":"Swine Health Management"},{"specialization":"Toxicology"},{"specialization":"neurology"}],"distance":"270.07","clinic_name":"Maddy Sam Clinic","fav":false,"star_count":4.5,"review_count":2},{"_id":"61bc495b6299c8306bf65e4d","doctor_name":"imthiyas","doctor_img":"http://35.165.75.97:3000/api/uploads/1641558994088.jpg","thumbnail_image":"http://35.165.75.97:3000/api/uploads/1641558998263.jpg","specialization":[{"specialization":"Virology"},{"specialization":"Dentistry"},{"specialization":"Orthopaedics"},{"specialization":"IR & Endoscopy"}],"distance":"1378.68","clinic_name":"Chennai Medical Clinic","fav":false,"star_count":5,"review_count":0}],"Service_details":[{"_id":"61987d53518ad4520ab14781","service_icon":"http://35.165.75.97:3000/api/uploads/1639816297302.png","service_title":"Ayurvedha","background_color":"#F9A826"},{"_id":"61987dbb518ad4520ab14782","service_icon":"http://35.165.75.97:3000/api/uploads/1639816345423.png","service_title":"Meditation","background_color":"#FF7A7A"},{"_id":"61987e73518ad4520ab14785","service_icon":"http://35.165.75.97:3000/api/uploads/1639816360249.png","service_title":"Yoga Master","background_color":"#9BD152"},{"_id":"61988204518ad4520ab14786","service_icon":"http://35.165.75.97:3000/api/uploads/1639816368570.png","service_title":"Therapy","background_color":"#009377"},{"_id":"61cad70221917361d36c9de5","service_icon":"http://35.165.75.97:3000/api/uploads/1640683254785.png","service_title":"Varma","background_color":"#FF0000"}],"middle_Banner_details":[{"_id":"60c35c4ccfa6933a181985af","title":"Pet Service","img_path":"http://35.165.75.97:3000/api/uploads/1641555814091.png"},{"_id":"60c361cfaa96c5441495e076","title":"Shop","img_path":"http://35.165.75.97:3000/api/uploads/1641558269304.png"},{"_id":"61488ac1fdacc41be6e27b16","title":"Pet Care","img_path":"http://35.165.75.97:3000/api/uploads/1641558283206.png"}],"Products_details":[{"_id":"61b9ef2ed71f04589fb119b5","product_img":{"product_img":"http://35.165.75.97:3000/api/uploads/1639575337353.png"},"cat_name":"Skin & Body Care","product_title":"Good Care","product_price":858,"thumbnail_image":"http://35.165.75.97:3000/api/uploads/1641544493226.png","product_discount":5,"product_discount_price":903,"product_fav":true,"product_rating":5,"product_review":0},{"_id":"61af3d669e6f552291dbfa6e","product_img":{"product_img":"http://35.164.43.170:3000/api/uploads/1638874408182.jpg"},"cat_name":"Organic Products","product_title":"Sample","product_price":192,"thumbnail_image":"http://35.165.75.97:3000/api/uploads/1641544590165.png","product_discount":1,"product_discount_price":194,"product_fav":false,"product_rating":5,"product_review":0},{"_id":"61af46069e6f552291dbfa6f","product_img":{"product_img":"http://35.164.43.170:3000/api/uploads/1638876621297.jpg"},"cat_name":"Men Care","product_title":"juice","product_price":200,"thumbnail_image":"http://35.165.75.97:3000/api/uploads/1641544852783.png","product_discount":0,"product_discount_price":0,"product_fav":false,"product_rating":5,"product_review":0},{"_id":"61b9d901394fee0dd60b4d1f","cat_name":"Health Care","product_title":"Health drinks","product_price":200,"thumbnail_image":"http://35.165.75.97:3000/api/uploads/1641544259618.png","product_discount":0,"product_discount_price":0,"product_fav":false,"product_rating":5,"product_review":0}],"Puppy_Products_details":[{"_id":"61b9ef2ed71f04589fb119b5","product_img":{"product_img":"http://35.165.75.97:3000/api/uploads/1639575337353.png"},"cat_name":"Skin & Body Care","product_title":"Good Care","product_price":858,"thumbnail_image":"http://35.165.75.97:3000/api/uploads/1641544493226.png","product_discount":5,"product_discount_price":903,"product_fav":true,"product_rating":5,"product_review":0},{"_id":"61af3d669e6f552291dbfa6e","product_img":{"product_img":"http://35.164.43.170:3000/api/uploads/1638874408182.jpg"},"cat_name":"Organic Products","product_title":"Sample","product_price":192,"thumbnail_image":"http://35.165.75.97:3000/api/uploads/1641544590165.png","product_discount":1,"product_discount_price":194,"product_fav":false,"product_rating":5,"product_review":0},{"_id":"61af46069e6f552291dbfa6f","product_img":{"product_img":"http://35.164.43.170:3000/api/uploads/1638876621297.jpg"},"cat_name":"Men Care","product_title":"juice","product_price":200,"thumbnail_image":"http://35.165.75.97:3000/api/uploads/1641544852783.png","product_discount":0,"product_discount_price":0,"product_fav":false,"product_rating":5,"product_review":0},{"_id":"61b9d901394fee0dd60b4d1f","cat_name":"Health Care","product_title":"Health drinks","product_price":200,"thumbnail_image":"http://35.165.75.97:3000/api/uploads/1641544259618.png","product_discount":0,"product_discount_price":0,"product_fav":false,"product_rating":5,"product_review":0}]}
      * messages : [{"title":"Doctor","message":"Unable to find the doctor near your location can i show the doctor above the location"},{"title":"Product","message":"Unable to find the Product near your location can i show the doctor above the location"},{"title":"sercive","message":"Unable to find the Sercive near your location can i show the doctor above the location"}]
      */
 
@@ -60,26 +60,26 @@ public class PetLoverDashboardResponse{
 
     public static class DataBean {
         /**
-         * _id : 61aef2c658c631738117edf9
-         * first_name : Maddy
-         * last_name : Sam
-         * user_email : oriens@gmail.com
-         * user_phone : 9159207294
-         * date_of_reg : 07/12/2021 11:06 AM
+         * _id : 61fb66fad014ed6b74d3f0b6
+         * first_name : Lisa
+         * last_name : L
+         * user_email : li@gmail.com
+         * user_phone : 8523697410
+         * date_of_reg : 03/02/2022 10:54 am
          * user_type : 1
          * ref_code :
-         * my_ref_code : KEI1KND
+         * my_ref_code : Y3Y4IF4
          * user_status : complete
          * otp : 123456
-         * profile_img : http://35.164.43.170:3000/api/uploads/1639218019070.jpg
+         * profile_img :
          * user_email_verification : false
-         * fb_token :
+         * fb_token : cGKUudp3TUaqWTtKR8_6gH:APA91bF4PbHsuLysvXV_cU5IlWH-ozPT23HpaiVIjSxah9G1tQgWX_d9C4p4nSc6_gcckCYSERAuBy_r07hQ0YdYv_d4ymgEp7sGA5VSM9mc4R3JCNbVOImAISS5cgcLXHc8ZrYbtgPH
          * device_id :
          * device_type :
          * mobile_type : Android
          * delete_status : false
-         * updatedAt : 2021-12-14T06:17:35.450Z
-         * createdAt : 2021-12-07T05:36:06.925Z
+         * updatedAt : 2022-02-03T05:45:14.173Z
+         * createdAt : 2022-02-03T05:24:10.241Z
          * __v : 0
          */
 
@@ -91,42 +91,42 @@ public class PetLoverDashboardResponse{
 
         private List<SOSBean> SOS;
         /**
-         * _id : 61b47f2f057c102ef443dbdb
-         * user_id : 61aef2c658c631738117edf9
+         * _id : 61fb6779d014ed6b74d3f0e4
+         * user_id : 61fb66fad014ed6b74d3f0b6
          * location_state : Tamil Nadu
          * location_country : India
          * location_city : Chennai
-         * location_pin : 600037
-         * location_address : 82-3, Ambattur Industrial Estate, Chennai, Tamil Nadu 600076, India
-         * location_lat : 13.082805432328357
-         * location_long : 80.17043050378561
-         * location_title : Home
-         * location_nickname : hhj
+         * location_pin : 600042
+         * location_address : 2A, 3rd Main Rd, Ram Nagar, Ramnagar South, Dhadeswaram Nagar, Velachery, Chennai, Tamil Nadu 600042, India
+         * location_lat : 12.983176140146533
+         * location_long : 80.22353086620569
+         * location_title : Work
+         * location_nickname : H
          * default_status : true
-         * date_and_time : 11-12-2021 04:06 PM
+         * date_and_time : 03-02-2022 10:56 am
          * mobile_type : Android
          * delete_status : false
-         * updatedAt : 2021-12-13T09:47:39.161Z
-         * createdAt : 2021-12-11T10:36:31.785Z
+         * updatedAt : 2022-02-03T05:26:17.428Z
+         * createdAt : 2022-02-03T05:26:17.428Z
          * __v : 0
          */
 
         private List<LocationDetailsBean> LocationDetails;
         /**
-         * pic : [{"image":"http://35.164.43.170:3000/api/uploads/1639215630420.jpg"}]
-         * _id : 61b47223057c102ef443dbcc
-         * user_id : 61aef2c658c631738117edf9
-         * name : fathima
+         * health_issue : [""]
+         * pic : [{"image":"http://35.165.75.97:3000/api/uploads/1643865952185.jpg"}]
+         * _id : 61fb676dd014ed6b74d3f0ba
+         * user_id : 61fb66fad014ed6b74d3f0b6
+         * name : Lavanya
          * gender : Female
-         * relation_type : Daughter
-         * health_issue :
-         * dateofbirth : 11-12-2012
-         * anymedicalinfo : this my bio
-         * covide_vac : Yes
-         * weight : 50
+         * relation_type : Friend
+         * dateofbirth : 06-04-2000
+         * anymedicalinfo : Have diabetes.
+         * covide_vac :
+         * weight : 60
          * delete_status : false
-         * createdAt : 2021-12-11T09:40:51.251Z
-         * updatedAt : 2021-12-11T09:40:51.251Z
+         * createdAt : 2022-02-03T05:26:05.648Z
+         * updatedAt : 2022-02-03T06:18:57.712Z
          * __v : 0
          */
 
@@ -382,27 +382,27 @@ public class PetLoverDashboardResponse{
             /**
              * _id : 6198826f518ad4520ab14787
              * title :
-             * img_path : http://35.164.43.170:3000/api/uploads/1637384806985.png
+             * img_path : http://35.165.75.97:3000/api/uploads/1643869710301.png
              */
 
             private List<BannerDetailsBean> Banner_details;
             /**
-             * _id : 61af0ec058c631738117ee0b
-             * doctor_name : Maddy Sam
-             * doctor_img : http://35.164.43.170:3000/api/uploads/1638862720313.jpg
-             * thumbnail_image : http://35.164.43.170:3000/api/uploads/1639207898114.png
-             * specialization : [{"specialization":"General Consultant"},{"specialization":"Virology"},{"specialization":"Pathology"},{"specialization":"Microbiology"},{"specialization":"Theriogenology"},{"specialization":"Behavior"},{"specialization":"Equine Medicine"},{"specialization":"Radiation Oncology"},{"specialization":"Nephrology"},{"specialization":"Neurosurgery"},{"specialization":"IR & Endoscopy"},{"specialization":"Critical Care"},{"specialization":"Avian & Exotic pets"},{"specialization":"Animal Welfare"},{"specialization":"Clinical Pharmocology"},{"specialization":"Opthalmology"},{"specialization":"Preventive Medicine"},{"specialization":"Avian Practice"},{"specialization":"Canine & Feline Practice"},{"specialization":"Equine Practice"},{"specialization":"Feline Practice"},{"specialization":"Reptile & Amphibian practice"},{"specialization":"Swine Health Management"},{"specialization":"Toxicology"},{"specialization":"neurology"}]
+             * _id : 61b1a11bfad4f358a24d94c8
+             * doctor_name : shree
+             * doctor_img : http://35.165.75.97:3000/api/uploads/1641558967412.jpg
+             * thumbnail_image : http://35.165.75.97:3000/api/uploads/1641558940743.png
+             * specialization : [{"specialization":"General Consultant"},{"specialization":"Surgery"},{"specialization":"Virology"},{"specialization":"Nutrition"},{"specialization":"Dentistry"},{"specialization":"Pathology"},{"specialization":"Radiology"},{"specialization":"Emergency and Critical Care"},{"specialization":"Orthopaedics"},{"specialization":"Neurology"},{"specialization":"Neurosurgery"},{"specialization":"Cardiology"},{"specialization":"Bone and Joint Specialist"},{"specialization":"Behavioral Medicine"},{"specialization":"Dermatology"},{"specialization":"Beef Cattle Practice"},{"specialization":"Exotic Companion mammal Practice"}]
              * distance : 0.00
-             * clinic_name : Maddy Sam Clinic
-             * fav : true
-             * star_count : 5
-             * review_count : 1
+             * clinic_name : dura clinic
+             * fav : false
+             * star_count : 3.5
+             * review_count : 2
              */
 
             private List<DoctorDetailsBean> Doctor_details;
             /**
              * _id : 61987d53518ad4520ab14781
-             * service_icon : http://35.164.43.170:3000/api/uploads/1637383464572.png
+             * service_icon : http://35.165.75.97:3000/api/uploads/1639816297302.png
              * service_title : Ayurvedha
              * background_color : #F9A826
              */
@@ -411,19 +411,19 @@ public class PetLoverDashboardResponse{
             /**
              * _id : 60c35c4ccfa6933a181985af
              * title : Pet Service
-             * img_path : http://35.164.43.170:3000/api/uploads/1639030893177.png
+             * img_path : http://35.165.75.97:3000/api/uploads/1641555814091.png
              */
 
             private List<MiddleBannerDetailsBean> middle_Banner_details;
             /**
-             * _id : 61af3d669e6f552291dbfa6e
-             * product_img : {"product_img":"http://35.164.43.170:3000/api/uploads/1638874408182.jpg"}
-             * cat_name : Organic Products
-             * product_title : Sample
-             * product_price : 192
-             * thumbnail_image : http://35.164.43.170:3000/api/uploads/1638874408182.jpg
-             * product_discount : 1
-             * product_discount_price : 194
+             * _id : 61b9ef2ed71f04589fb119b5
+             * product_img : {"product_img":"http://35.165.75.97:3000/api/uploads/1639575337353.png"}
+             * cat_name : Skin & Body Care
+             * product_title : Good Care
+             * product_price : 858
+             * thumbnail_image : http://35.165.75.97:3000/api/uploads/1641544493226.png
+             * product_discount : 5
+             * product_discount_price : 903
              * product_fav : true
              * product_rating : 5
              * product_review : 0
@@ -431,14 +431,14 @@ public class PetLoverDashboardResponse{
 
             private List<ProductsDetailsBean> Products_details;
             /**
-             * _id : 61af3d669e6f552291dbfa6e
-             * product_img : {"product_img":"http://35.164.43.170:3000/api/uploads/1638874408182.jpg"}
-             * cat_name : Organic Products
-             * product_title : Sample
-             * product_price : 192
-             * thumbnail_image : http://35.164.43.170:3000/api/uploads/1638874408182.jpg
-             * product_discount : 1
-             * product_discount_price : 194
+             * _id : 61b9ef2ed71f04589fb119b5
+             * product_img : {"product_img":"http://35.165.75.97:3000/api/uploads/1639575337353.png"}
+             * cat_name : Skin & Body Care
+             * product_title : Good Care
+             * product_price : 858
+             * thumbnail_image : http://35.165.75.97:3000/api/uploads/1641544493226.png
+             * product_discount : 5
+             * product_discount_price : 903
              * product_fav : true
              * product_rating : 5
              * product_review : 0
@@ -705,7 +705,7 @@ public class PetLoverDashboardResponse{
             public static class ProductsDetailsBean {
                 private String _id;
                 /**
-                 * product_img : http://35.164.43.170:3000/api/uploads/1638874408182.jpg
+                 * product_img : http://35.165.75.97:3000/api/uploads/1639575337353.png
                  */
 
                 private ProductImgBean product_img;
@@ -823,7 +823,7 @@ public class PetLoverDashboardResponse{
             public static class PuppyProductsDetailsBean {
                 private String _id;
                 /**
-                 * product_img : http://35.164.43.170:3000/api/uploads/1638874408182.jpg
+                 * product_img : http://35.165.75.97:3000/api/uploads/1639575337353.png
                  */
 
                 private ProductImgBean product_img;
@@ -1122,7 +1122,6 @@ public class PetLoverDashboardResponse{
             private String name;
             private String gender;
             private String relation_type;
-            private String health_issue;
             private String dateofbirth;
             private String anymedicalinfo;
             private String covide_vac;
@@ -1131,8 +1130,9 @@ public class PetLoverDashboardResponse{
             private String createdAt;
             private String updatedAt;
             private int __v;
+            private List<String> health_issue;
             /**
-             * image : http://35.164.43.170:3000/api/uploads/1639215630420.jpg
+             * image : http://35.165.75.97:3000/api/uploads/1643865952185.jpg
              */
 
             private List<PicBean> pic;
@@ -1175,14 +1175,6 @@ public class PetLoverDashboardResponse{
 
             public void setRelation_type(String relation_type) {
                 this.relation_type = relation_type;
-            }
-
-            public String getHealth_issue() {
-                return health_issue;
-            }
-
-            public void setHealth_issue(String health_issue) {
-                this.health_issue = health_issue;
             }
 
             public String getDateofbirth() {
@@ -1247,6 +1239,14 @@ public class PetLoverDashboardResponse{
 
             public void set__v(int __v) {
                 this.__v = __v;
+            }
+
+            public List<String> getHealth_issue() {
+                return health_issue;
+            }
+
+            public void setHealth_issue(List<String> health_issue) {
+                this.health_issue = health_issue;
             }
 
             public List<PicBean> getPic() {

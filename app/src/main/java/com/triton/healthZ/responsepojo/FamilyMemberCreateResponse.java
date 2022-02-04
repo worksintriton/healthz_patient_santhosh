@@ -4,31 +4,31 @@ import java.util.List;
 
 public class FamilyMemberCreateResponse {
 
-
     /**
      * Status : Success
      * Message : Added successfully
-     * Data : {"pic":[{"image":"http://Google.com"}],"_id":"618b7d9a99566a5096d9e2d4","user_id":"618230269dcc2a290e5bae9a","name":"Mohammed","gender":"Male","relation_type":"Son","health_issue":"No issue","dateofbirth":"23-10-2021","anymedicalinfo":"No Issue","covide_vac":"Yes","weight":"70","delete_status":false,"createdAt":"2021-11-10T08:06:50.070Z","updatedAt":"2021-11-10T08:06:50.070Z","__v":0}
+     * Data : {"health_issue":["Diabetes","OCD","Others"],"pic":[{"image":"http://35.165.75.97:3000/api/uploads/1643871957791.png"}],"_id":"61fbcd965877cf71413a0913","user_id":"61b198a49e6f552291dbfa82","name":"Deva","gender":"Male","relation_type":"Father","health_issue_others":"fever","dateofbirth":"03-02-2016","anymedicalinfo":"is good","covide_vac":"No","weight":"67","delete_status":false,"createdAt":"2022-02-03T12:41:58.525Z","updatedAt":"2022-02-03T12:41:58.525Z","__v":0}
      * Code : 200
      */
 
     private String Status;
     private String Message;
     /**
-     * pic : [{"image":"http://Google.com"}]
-     * _id : 618b7d9a99566a5096d9e2d4
-     * user_id : 618230269dcc2a290e5bae9a
-     * name : Mohammed
+     * health_issue : ["Diabetes","OCD","Others"]
+     * pic : [{"image":"http://35.165.75.97:3000/api/uploads/1643871957791.png"}]
+     * _id : 61fbcd965877cf71413a0913
+     * user_id : 61b198a49e6f552291dbfa82
+     * name : Deva
      * gender : Male
-     * relation_type : Son
-     * health_issue : No issue
-     * dateofbirth : 23-10-2021
-     * anymedicalinfo : No Issue
-     * covide_vac : Yes
-     * weight : 70
+     * relation_type : Father
+     * health_issue_others : fever
+     * dateofbirth : 03-02-2016
+     * anymedicalinfo : is good
+     * covide_vac : No
+     * weight : 67
      * delete_status : false
-     * createdAt : 2021-11-10T08:06:50.070Z
-     * updatedAt : 2021-11-10T08:06:50.070Z
+     * createdAt : 2022-02-03T12:41:58.525Z
+     * updatedAt : 2022-02-03T12:41:58.525Z
      * __v : 0
      */
 
@@ -73,7 +73,7 @@ public class FamilyMemberCreateResponse {
         private String name;
         private String gender;
         private String relation_type;
-        private String health_issue;
+        private String health_issue_others;
         private String dateofbirth;
         private String anymedicalinfo;
         private String covide_vac;
@@ -82,8 +82,9 @@ public class FamilyMemberCreateResponse {
         private String createdAt;
         private String updatedAt;
         private int __v;
+        private List<String> health_issue;
         /**
-         * image : http://Google.com
+         * image : http://35.165.75.97:3000/api/uploads/1643871957791.png
          */
 
         private List<PicBean> pic;
@@ -128,12 +129,12 @@ public class FamilyMemberCreateResponse {
             this.relation_type = relation_type;
         }
 
-        public String getHealth_issue() {
-            return health_issue;
+        public String getHealth_issue_others() {
+            return health_issue_others;
         }
 
-        public void setHealth_issue(String health_issue) {
-            this.health_issue = health_issue;
+        public void setHealth_issue_others(String health_issue_others) {
+            this.health_issue_others = health_issue_others;
         }
 
         public String getDateofbirth() {
@@ -198,6 +199,14 @@ public class FamilyMemberCreateResponse {
 
         public void set__v(int __v) {
             this.__v = __v;
+        }
+
+        public List<String> getHealth_issue() {
+            return health_issue;
+        }
+
+        public void setHealth_issue(List<String> health_issue) {
+            this.health_issue = health_issue;
         }
 
         public List<PicBean> getPic() {

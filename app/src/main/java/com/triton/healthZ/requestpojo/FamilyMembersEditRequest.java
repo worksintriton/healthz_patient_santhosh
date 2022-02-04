@@ -31,11 +31,30 @@ public class FamilyMembersEditRequest {
     private String name;
     private String gender;
     private String relation_type;
-    private String health_issue;
+    private List<String> health_issue;
+
+    public List<String> getHealth_issue() {
+        return health_issue;
+    }
+
+    public void setHealth_issue(List<String> health_issue) {
+        this.health_issue = health_issue;
+    }
+
     private String dateofbirth;
     private String anymedicalinfo;
     private String covide_vac;
     private String weight;
+    private String health_issue_others;
+
+    public String getHealth_issue_others() {
+        return health_issue_others;
+    }
+
+    public void setHealth_issue_others(String health_issue_others) {
+        this.health_issue_others = health_issue_others;
+    }
+
     /**
      * image : http://Google.com
      */
@@ -74,13 +93,7 @@ public class FamilyMembersEditRequest {
         this.relation_type = relation_type;
     }
 
-    public String getHealth_issue() {
-        return health_issue;
-    }
 
-    public void setHealth_issue(String health_issue) {
-        this.health_issue = health_issue;
-    }
 
     public String getDateofbirth() {
         return dateofbirth;

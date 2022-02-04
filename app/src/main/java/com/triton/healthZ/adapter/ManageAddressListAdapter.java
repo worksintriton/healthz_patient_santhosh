@@ -99,7 +99,13 @@ public class ManageAddressListAdapter extends  RecyclerView.Adapter<RecyclerView
                 popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     public boolean onMenuItemClick(MenuItem item) {
                         String titleName = String.valueOf(item.getTitle());
-                        if(titleName != null && titleName.equalsIgnoreCase("Edit")){
+
+                        if(titleName.equalsIgnoreCase("Make Default")){
+                            if(!locationListResponseList.get(position).isDefault_status()) {
+                                locationDefaultListener.locationDefaultListener(locationListResponseList.get(position).isDefault_status(), locationListResponseList.get(position).get_id(), locationListResponseList.get(position).getUser_id());
+                            }
+                        }
+                        else if(titleName.equalsIgnoreCase("Edit")){
                             if(fromactivity != null && fromactivity.equalsIgnoreCase("ManageAddressDoctorActivity")){
                                 Intent i = new Intent(context, EditMyAddressDoctorActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                 i.putExtra("id",locationListResponseList.get(position).get_id());
@@ -165,7 +171,8 @@ public class ManageAddressListAdapter extends  RecyclerView.Adapter<RecyclerView
                             }
 
 
-                        } else if(titleName != null && titleName.equalsIgnoreCase("Delete")){
+                        }
+                        else if(titleName.equalsIgnoreCase("Delete")){
                             locationDeleteListener.locationDeleteListener(locationListResponseList.get(position).isDefault_status(),locationListResponseList.get(position).get_id());
 
                         }
@@ -180,27 +187,20 @@ public class ManageAddressListAdapter extends  RecyclerView.Adapter<RecyclerView
         holder.rl_root.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!locationListResponseList.get(position).isDefault_status()) {
+               /* if(!locationListResponseList.get(position).isDefault_status()) {
                     locationDefaultListener.locationDefaultListener(locationListResponseList.get(position).isDefault_status(), locationListResponseList.get(position).get_id(), locationListResponseList.get(position).getUser_id());
-                }
+                }*/
             }
         });
-
-
 
         if(locationListResponseList.get(position).isDefault_status()){
             holder.iv_default_location.setVisibility(View.GONE);
             holder.txt_default.setVisibility(View.VISIBLE);
-            }else{
+            }
+        else{
                 holder.iv_default_location.setVisibility(View.GONE);
                 holder.txt_default.setVisibility(View.GONE);
             }
-
-
-
-
-
-
     }
 
 
